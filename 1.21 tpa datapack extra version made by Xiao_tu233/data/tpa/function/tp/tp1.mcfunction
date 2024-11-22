@@ -1,0 +1,21 @@
+execute if score @p[scores={player_id=2}] accept matches 1 if score @s tp_to matches 2 run function tpa:tp/tp2
+execute if score @p[scores={player_id=3}] accept matches 1 if score @s tp_to matches 3 run function tpa:tp/tp3
+execute if score @p[scores={player_id=4}] accept matches 1 if score @s tp_to matches 4 run function tpa:tp/tp4
+execute if score @p[scores={player_id=5}] accept matches 1 if score @s tp_to matches 5 run function tpa:tp/tp5
+execute if score @p[scores={player_id=6}] accept matches 1 if score @s tp_to matches 6 run function tpa:tp/tp6
+execute if score @p[scores={player_id=7}] accept matches 1 if score @s tp_to matches 7 run function tpa:tp/tp7
+execute if score @p[scores={player_id=8}] accept matches 1 if score @s tp_to matches 8 run function tpa:tp/tp8
+execute if score @p[scores={player_id=9}] accept matches 1 if score @s tp_to matches 9 run function tpa:tp/tp9
+execute if score @p[scores={player_id=10}] accept matches 1 if score @s tp_to matches 10 run function tpa:tp/tp10
+execute if score @p[scores={player_id=11}] accept matches 1 if score @s tp_to matches 11 run function tpa:tp/tp11
+execute if score @p[scores={player_id=12}] accept matches 1 if score @s tp_to matches 12 run function tpa:tp/tp12
+execute if score @p[scores={player_id=13}] accept matches 1 if score @s tp_to matches 13 run function tpa:tp/tp13
+execute if score @p[scores={player_id=14}] accept matches 1 if score @s tp_to matches 14 run function tpa:tp/tp14
+execute if score @p[scores={player_id=15}] accept matches 1 if score @s tp_to matches 15 run function tpa:tp/tp15
+execute if score @p[scores={player_id=16}] accept matches 1 if score @s tp_to matches 16 run function tpa:tp/tp16
+execute if score @p[scores={player_id=17}] accept matches 1 if score @s tp_to matches 17 run function tpa:tp/tp17
+execute if score @p[scores={player_id=18}] accept matches 1 if score @s tp_to matches 18 run function tpa:tp/tp18
+execute if score @p[scores={player_id=19}] accept matches 1 if score @s tp_to matches 19 run function tpa:tp/tp19
+execute if score @p[scores={player_id=20}] accept matches 1 if score @s tp_to matches 20 run function tpa:tp/tp20
+execute if score @p[scores={player_id=21}] accept matches 1 if score @s tp_to matches 21 run function tpa:tp/tp21
+scoreboard players set @a[scores={tpaccept=-1..1}] tpaccept 0
