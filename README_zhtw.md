@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
 
 
-[English](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/README.md) | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/README_zhcn.md) | **繁體中文**
+[English](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/bolb/main/README.md) | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/bolb/main/README_zhcn.md) | **繁體中文**
 
 這是一個Minecraft資料包，允許玩家在沒有操作員的情况下相互傳送，並具有更多功能.
 
