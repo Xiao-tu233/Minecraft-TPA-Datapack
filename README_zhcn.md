@@ -14,7 +14,7 @@
 
 ## Advantage
 
-- 它正在服务器上方运行。它根本不需要修改服务器，这会让一切保持原样. 
+- 它正在服务器上运行。它根本不需要修改服务器，这会让一切保持原样. 
 - 多平台/服务器兼容性。支持Linux/Windows上的Vanilla, Paper, BungeeCord等. 
 
 ## How it works?
