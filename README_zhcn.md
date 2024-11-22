@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
 
 
-[English](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) | **简体中文** | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md))
+[English](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) | **简体中文** | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
 
 这是一个Minecraft数据包，允许玩家在没有OP的情况下相互传送，并具有更多功能. 
 
