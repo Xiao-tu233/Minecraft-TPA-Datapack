@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
 
 
-**English** | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/bolb/main/README_zhcn.md) | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/bolb/main/README_zhtw.md)
+**English** | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
 
 This is a Minecraft Datapack which allowes players to teleport to each others without operator permission given and more features.
 
