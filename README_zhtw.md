@@ -14,9 +14,8 @@
 
 ## 優勢
 
--它正在伺服器上運行。 它根本不需要修改伺服器，這會讓一切保持原樣.
-
--多平臺/伺服器相容性。 支持Linux/Windows上的Vanilla，Paper，BungeeCord等.
+- 它正在伺服器上運行。 它根本不需要修改伺服器，這會讓一切保持原樣.
+- 多平臺/伺服器相容性。 支持Linux/Windows上的Vanilla，Paper，BungeeCord等.
 
 ## 如何工作? 
 
