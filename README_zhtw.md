@@ -10,7 +10,7 @@
 
 加入或關注我們的社交媒體來獲取更多資訊或提供一些鬼點子！
 
-[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) | [![YouTube]( https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) | [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://www.bilibili.com/space/433412367) | [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://www.bilibili.com/space/433412367) | ![QQ group](https://img.shields.io/badge/QQ-_%E7%BE%A4-white):814709389
+[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) | [![YouTube]( https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) | [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://space.bilibili.com/433412367) | [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://space.bilibili.com/433412367) | ![QQ group](https://img.shields.io/badge/QQ-_%E7%BE%A4-white):814709389
 
 ## 優勢
 
