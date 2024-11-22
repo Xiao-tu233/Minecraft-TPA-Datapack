@@ -10,7 +10,7 @@ This is a Minecraft Datapack which allowes players to teleport to each others wi
 
 Join or follow our social media for more information or giving some ideas!
 
-[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) | [![YouTube]( https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) | [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://www.bilibili.com/space/433412367) | [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://www.bilibili.com/space/433412367) | ![QQ group](https://img.shields.io/badge/QQ-_%E7%BE%A4-white):814709389
+[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) | [![YouTube]( https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) | [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://space.bilibili.com/433412367) | [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://www.bilibili.com/space/433412367) | ![QQ group](https://img.shields.io/badge/QQ-_%E7%BE%A4-white):814709389
 
 ## Advantage
 
