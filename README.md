@@ -42,9 +42,11 @@ Go to [Tutorial of installing datapacks](https://zh.minecraft.wiki/w/Tutorial:%E
 7. If you think the sound is annoying, find mute datapack in tpa menu. (EXTRA VERISION ONLY)
 8. To look up more players' ids, click "...more". ( EXTRA VERSION & GAME VERSION >= 1.20.2 ONLY)
 9. If you want someone to be where you're, Use /trigger tpahere. (EXTRA VERISION ONLY)
-10. If you are using a language the datapack doesn't support, you can modify it in the langtell file folder. In fact, to avoid that great work of who using datapack, we are planning to make a add-on for it to make sure everyone can use the datapack with their language!
+10. If you are using a language the datapack doesn't support, you can modify it in the langtell file folder. In fact, to avoid that great work of who using datapack, we are planning to make a add-on for it to make sure everyone can use the datapack with their language! (EXTRA VERISION ONLY)
 
+## Ending
 THANKS A LOT FOR USING TPA DATAPACK MADE BY XIAO_TU233!
-
+Latest version: v2.0.0 extra version, v2.0.0 light version 
+Last edit time: Nov.28th.2024
 
 
