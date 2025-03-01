@@ -3,10 +3,11 @@
 [![Minecraft Website](https://img.shields.io/badge/Minecraft-green)](https://www.minecraft.net/)
 [![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
 
+软依赖: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet)
 
 [English](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) | **简体中文** | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
 
-这是一个Minecraft数据包，允许玩家在没有OP的情况下相互传送，并具有更多功能. 
+TPA数据包是一个Minecraft数据包，允许玩家在没有OP权限的情况下相互传送. 与其他具有这些功能的mods/插件相比，这个数据包支持许多不同的语言，并且可以简单的通过/function tpa:options来调整设置，几乎所有功能都可以禁用. 我们也愿意听取用户提供的每一条建议，希望您喜欢这个数据包。
 
 加入或关注我们的社交媒体来获取更多信息或提供一些鬼点子！
 
@@ -23,15 +24,23 @@
 
 ## 我该挑哪个下啊?
 
-1. 确认你的Minecraft游戏版本. 如果你的游戏版本与你安装的数据包版本不匹配，可能会导致很多问题.
-2. 轻量版仅有简体中文 且没有请求接受传送功能 extra(完整)相比与light(轻量)版 更加适合于大型服务器服主以及外国或非简中华语区人而不是大陆的好友联机玩家们
-此外，在轻量级版本中，无论请求者是谁，每个人都会接受每个tpa请求。
+1. 确认你的Minecraft游戏版本, 并选择相对应的版本. 
+2. 选择轻量版和完整版:
+   相比完整版, 轻量版支持比较基础的功能 效果就好像是两个好友之间联机时使用/tp指令， 请求一发就会执行传送.
+   而完整版则支持比如返回上一位置, 它的效果可以参考某些插件里的/back功能
 
 ## 咋安装啊?
 
-看[数据包下载教程](https://zh.minecraft.wiki/w/Tutorial:%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%8C%85).
+1. 根据你的需要下载数据包文件, 如果你不知道下哪个请看上面.
+2. 解压数据包文件
+3. 把数据包放到文件夹里. (路径: 服务器是"/world/datapacks/" , 局域网联机是".minecraft/saves/(Your world name)/datapacks")
+4. 在游戏里/reload
 
-## 咋用啊? 
+## 咋用啊?
+
+更多信息: [wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/wiki)
+
+## 功能
 
 1. 使用 /trigger tpa 来发送你的传送请求和设置选项
 2. 在tpa界面中调整back, 自动接受, 语言和ID修复. (仅extra版)
@@ -47,5 +56,5 @@
 ## 结尾
 
 非常感谢您使用由Xiao_tu233制作的TPA 数据包!
-最新版本: v2.0.0 extra version, v2.0.0 light version 
-上次编辑: 2024/11/28
+最新版本: v2.0.2 extra version, v2.0.1 light version 
+上次编辑: 2025/3/1
