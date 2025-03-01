@@ -6,7 +6,7 @@
 
 **English** | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
 
-This is a Minecraft Datapack which allowes players to teleport to each others without operator permission given and more features.
+TPA datapack is a Minecraft Datapack which allows players to teleport to each others without operator permission given. When compared to other mods/plugins with these functions, this datapack support many different languages, and options can be easily modified just simply do /function tpa:options, nearly every functions are available to disable. We are also willing to listen to every advise provided by users, hope you enjoy this datapack.
 
 Join or follow our social media for more information or giving some ideas!
 
