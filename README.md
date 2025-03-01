@@ -3,6 +3,7 @@
 [![Minecraft Website](https://img.shields.io/badge/Minecraft-green)](https://www.minecraft.net/)
 [![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
 
+Soft Dependencies: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet)
 
 **English** | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
 
@@ -10,7 +11,7 @@ TPA datapack is a Minecraft Datapack which allows players to teleport to each ot
 
 Join or follow our social media for more information or giving some ideas!
 
-[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) | [![YouTube]( https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) | [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://space.bilibili.com/433412367) | [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://space.bilibili.com/433412367) | ![QQ group](https://img.shields.io/badge/QQ-_%E7%BE%A4-white):814709389
+[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) | [![YouTube]( https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) | [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://www.bilibili.com/space/433412367) | [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://space.bilibili.com/433412367) | ![QQ group](https://img.shields.io/badge/QQ-_%E7%BE%A4-white):814709389
 
 ## Advantage
 
@@ -23,15 +24,24 @@ With the help of built-in way of datapack since 1.13, we realized the feature by
 
 ## How can I choose which to download?
 
-1. ensure your Minecraft game version. If your game version isn't fit the datapack version you installed, it may cause a lot of problems.
-2. choose light version or extra version. The light version only has simplified Chinese and decreased some functions comparing to extra versions. As a comparation, the extra version is more suitable for mega server owners and the users who don't speak simplified Chinese.
-3. And also, in light versions, everyone will accept every tpa requests no matter who the requester is.
+1. Check your Minecraft game version, and choose the version.
+2. Choose light or extra version:
+   the light version only support really basic features comparing to the extra version,
+   the effect is just like using a /tp command, players will be instantly teleported when a request was sent. 
+   while the extra version contains more features like going back to the last position like /back in some plugins. 
 
 ## How to install?
 
-Go to [Tutorial of installing datapacks](https://zh.minecraft.wiki/w/Tutorial:%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%8C%85).
+1. Download datapack file according to your need, see above if you're not sure.
+2. Upzip the datapack file.
+3. Put it in the folder. (The paths: "/world/datapacks/" for server, ".minecraft/saves/(Your world name)/datapacks" for LAN players)
+4. Do /reload in game.
 
 ## How to use?
+
+For detail, go [wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/wiki)
+
+## Features
 
 1. Use /trigger tpa to sent your tpa request and opt options.
 2. Modify back, always-accept, language and idfix in tpa menu. (EXTRA VERISION ONLY)
@@ -45,8 +55,9 @@ Go to [Tutorial of installing datapacks](https://zh.minecraft.wiki/w/Tutorial:%E
 10. If you are using a language the datapack doesn't support, you can modify it in the langtell file folder. In fact, to avoid that great work of who using datapack, we are planning to make a add-on for it to make sure everyone can use the datapack with their language! (EXTRA VERISION ONLY)
 
 ## Ending
+
 THANKS A LOT FOR USING TPA DATAPACK MADE BY XIAO_TU233!
-Latest version: v2.0.0 extra version, v2.0.0 light version 
-Last edit time: Nov.28th.2024
+Latest version: v2.0.2 extra version, v2.0.1 light version 
+Last edit time: Mar.1st.2025
 
 
