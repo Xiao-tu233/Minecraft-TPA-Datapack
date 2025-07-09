@@ -4,6 +4,7 @@
 [![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
 
 Soft Dependencies: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet)
+Soft Dependencies for Search ID and Teleport Position: [![Ingame Keyboard](https://img.shields.io/badge/InGame-Keyboard-green)] https://modrinth.com/datapack/in-game-keyboard/versions)
 
 **English** | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
 
