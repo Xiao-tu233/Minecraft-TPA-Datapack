@@ -138,7 +138,7 @@ execute if score #uses_tick_scheduling tpa.config matches 1 run function tpa:tic
 #! 超级大饼:    
 # - public tp spot (warp) §aOK
 #     - Every warp contains: Warp Position(xyz, dimension), Warp Name(Show before teleport button), Warp ID(Number), Warp Description(Optional but recommended, show when hover the warp name)
-#     - Dicide: Show warps in 传送点菜单 or a independent warp menu? §aOK
+#     - Decide: Show warps in 传送点菜单 or a independent warp menu? §aOK
 #     - For the first index of the warp list, make the first compound stores the lang for options.warp §aOK
 #     - Realize [Move Up] [Move Down] §aOK
 #     - Make dimensions customized(Add option: dimensions) §aOK
