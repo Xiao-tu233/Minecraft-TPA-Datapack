@@ -1,2 +1,2 @@
-datapack disable "file/TPA_datapack-2.0.5+mc1.15"
-datapack disable "file/TPA_datapack-2.0.5+mc1.15.zip"
+datapack disable "file/TPA_datapack-2.0.6+mc1.20.2"
+datapack disable "file/TPA_datapack-2.0.6+mc1.20.2.zip"

@@ -34,6 +34,6 @@ execute if score #is_y_inputted tpa.variables matches 1 store result storage tpa
 execute if score #is_z_inputted tpa.variables matches 1 store result storage tpa:tpa temp.tp_pos.menu_z int 1 run scoreboard players get @s tpa.pos.z_temp
 
 function tpa:sounds/pick_orb
-tellraw @s [{"storage": "tpa:tpa", "nbt": "temp.lang.header"}, {"storage": "tpa:tpa", "nbt": "temp.lang.tp_pos_title"}]
+tellraw @s [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_title"}]
 tellraw @s ["  ", {"color": "aqua", "storage": "tpa:tpa", "nbt": "temp.tp_pos.menu_x", "clickEvent": {"action": "suggest_command", "value": "/trigger tpa.pos.x set "}}, " ", {"color": "aqua", "storage": "tpa:tpa", "nbt": "temp.tp_pos.menu_y", "clickEvent": {"action": "suggest_command", "value": "/trigger tpa.pos.y set "}}, " ", {"color": "aqua", "storage": "tpa:tpa", "nbt": "temp.tp_pos.menu_z", "clickEvent": {"action": "suggest_command", "value": "/trigger tpa.pos.z set "}}]
-tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "temp.lang.tp_pos_button_teleport", "color": "green", "clickEvent": {"action": "run_command", "value": "/trigger tpa.pos set -2"}}, " ", {"storage": "tpa:tpa", "nbt": "temp.lang.tp_pos_button_abort", "color": "red", "clickEvent": {"action": "run_command", "value": "/trigger tpa.pos set -1"}}]
+tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_button_teleport", "color": "green", "clickEvent": {"action": "run_command", "value": "/trigger tpa.pos set -2"}}, " ", {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_button_abort", "color": "red", "clickEvent": {"action": "run_command", "value": "/trigger tpa.pos set -1"}}]

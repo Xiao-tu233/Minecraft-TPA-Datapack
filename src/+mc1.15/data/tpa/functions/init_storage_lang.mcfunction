@@ -1,1 +1,505 @@
-data modify storage tpa:tpa lang set value [{},{"id": 1,"name": "zh_cn","name_display": "简体中文（中国大陆）","header": "[§bTPA§r] ","back_act": "已将你传送至上一位置","back_disabled": "服务器不允许§a返回上一位置§r","back_not_exist": "没有找到上一位置","back_spec": "旁观者模式玩家不允许§a返回上一位置","book_disabled": "§a传送书§r不兼容此游戏版本","book_lore": "§r§b右键打开TPA菜单. 丢出刷新. 切换至副手停止使用.","book_title": "§r§b传送菜单书 §a[按Q刷新] ","book_mainhand_busy": "请空手来获得传送书.","book_spec": "旁观者模式玩家不允许使用§a传送书§r","book_stop": "你已停止使用§a传送书§r, 可在TPA菜单里再次获取","command_syntax_error": "命令格式错误","extended_menu_title": "======================§bTPA§6 菜单§r========================","extended_menu_previous_page": "§b查看上一页","extended_menu_next_page": "§b查看下一页","here_button_tpa": "[§b请求传送§r]","here_button_tpa_hoverevent": "§b点击快捷向他发送传送请求","here_voxel_hoverevent": "§b点击添加VoxelMap路径点","here_xaero_hoverevent": "§6点击添加Xearo's Minimap路径点","here_spec": "旁观者模式玩家不允许使用§a广播位置§r","home_act_left_part": "已将你传送至传送点#","home_act_right_part": "","home_create": "你尚未建立传送点","home_create_button": "[§a新建§r]","home_create_button_hoverevent": "§a点击设置一个传送点","home_disabled": "服务器未启用§a传送点§r","home_display": "§b传送点#","home_display_tp_button": "[§b传送§r]","home_display_tp_button_hoverevent": "§b点击传送到这个传送点","home_display_rm_button": "[§c移除§r]","home_display_rm_button_hoverevent": "§c点击删除这个传送点","home_display_set_button": "[§a设置§r]","home_display_set_button_hoverevent": "§a点击设置传送点","home_menu_title": "你现在拥有如下的传送点槽位: ","home_missing_hoverevent": "该传送点尚未设定","home_new": "§a新建: ","home_number": "传送点#","home_not_found_left_part": "你访问的传送点#","home_not_found_hoverevent": "§b你访问的传送点","home_not_found_right_part": "不存在","home_out_of_range_left_part": "你访问的传送点#","home_out_of_range_right_part": "超出了服务器的限制","home_remove_left_part": "你移除了传送点#","home_remove_hoverevent": "§b移除的传送点","home_remove_right_part": "","home_set_left_part": "你把传送点#","home_set_middle_part": "设置为","home_set_overworld": "§a主世界","home_set_the_nether": "§c下界","home_set_the_end": "§e末地","home_set_position": "坐标","home_set_right_part": "","home_spec": "旁观者模式玩家不允许操作§a传送点§r","idfix_act_left_part": "","idfix_act_hoverevent": "§b这名玩家使用了ID修复","idfix_act_right_part": "使用了§aID修复§r, 所有玩家的数据包ID与上一位置已被重置","idfix_cooldown": "§aID修复§r还在冷却中","idfix_disabled": "服务器不允许§aID修复§r","lang_button": "[§6点击这里选择语言§r]","lang_button_server": "[§6点击这里选择服务器语言§r]","lang_button_hoverevent": "§b点击查看语言菜单","lang_menu_title": "请在下方选择语言:","lang_menu_select_button": "[§a加载推荐命令§r]","lang_menu_select_button_hoverevent": "§b点击在聊天栏加载推荐命令: ","lang_disabled": "服务器已禁止玩家选择语言","lang_selected_left_part": "你已切换语言到","lang_selected_right_part": "","lang_server_follow_left_part": "由于数据包服务端默认语言尚未设置, 现在它被设置为","lang_server_follow_right_part": "","load_title": "§e重载中...","load_add_objectives": "正在添加42个记分项... (1/6)","load_added_objectives": "已成功地添加记分项... (2/6)","load_reset_scores": "正在重设在线玩家分数... (2/6)","load_did_reset_scores": "已成功重设在线玩家分数... (3/6)","load_init_storage": "正在初始化相关命令存储... (3/6)","load_initted_storage": "已成功初始化相关命令存储... (4/6)","load_remove_tags": "正在移除标签... (4/6)","load_removed_tags": "已成功移除标签... (5/6)","load_init_vars": "正在初始化变量... (5/6)","load_initted_vars": "已成功初始化变量... (6/6)","load_done": "§a数据包重载完成: §r1.15 - 1.20.1 完整版 ","load_version_hoverevent": "§b这是TPA数据包的版本, 而不是Minecraft版本.","load_welcome": "欢迎使用TPA数据包! ","load_copyright_claim": "Copyright © 2024-2025 Xiao_tu233 保留所有权利. 不允许商业使用. 具体请点击下方\"[协议]\"按钮","load_author": "此数据包由§6Xiao_tu233§r制作. ","load_button_options": "[设置]","load_button_options_hoverevent": "点击更改数据包配置","load_button_help": "[帮助]","load_button_help_hoverevent": "点击查看帮助","load_button_update": "[更新]","load_button_update_hoverevent": "点击开始更新数据包","load_button_license": "[协议]","load_button_license_hoverevent": "§b使用TPA数据包必须遵循我们在Github网站上 开源协议以及对§l§n商业§r§b使用的限制 否则将会存在§6§l侵权§r§b的风险 所以请您仔细认真阅读全文","mute_disable": "你开启了§a数据包音效§r","mute_enable": "你§a静音§r了数据包","option_carpet_disabled": "本功能需要Carpet模组作为依赖, 而服务器尚未安装Carpet模组. ","option_title_line1": "======================§bTPA§6 设置菜单§r=====================","option_title_line2": "请在下方调整设置: (需重新呼出菜单以查看更改)","option_button_enable": "§r[§a启用§r","option_button_disable": "§c禁用§r]","option_button_set": "§r[§a设置§r]","option_debug_mode": "调试模式","option_tp_spec": "允许传送旁观者","option_remove_offline": "是否在玩家离线后移除ID空位","option_carpet_fake_player_fix": "Carpet模组假人修复","option_back": "是否禁用返回上一位置","option_search_id": "是否禁用搜索ID","option_book": "是否禁用传送书","option_player_lang": "是否允许玩家语言选择","option_lang": "服务器语言","option_lang_hoverevent": "§b在下方进入语言选择菜单","option_home": "拥有传送点的个数","option_home_hoverevent": "§b在下方更改§a拥有传送点的个数 §r(§6单位: 个§r), §b填0来设置禁止传送点 §b填-1来设置不限制传送点的数量(不推荐)","option_tp_pos": "传送坐标允许半径","option_tp_pos_hoverevent": "§b在下方更改§a传送坐标允许半径 §r(§6单位: 米§r), §b填0来设置禁止传送 §b填-1来设置不限制半径(不推荐)","option_tp_pos_cooldown": "传送坐标冷却时间","option_tp_pos_cooldown_hoverevent": "§b在下方更改§a冷却时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置无冷却 §b填-1来设置禁止传送","option_time_out": "传送请求超时时间","option_time_out_hoverevent": "§b在下方更改§a传送请求超时时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置禁止传送 §b填-1来设置永不超时","option_idfix_cooldown": "§bID修复冷却时间","option_idfix_cooldown_hoverevent": "§b在下方更改§aID修复冷却时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置无冷却 填-1来设置禁止ID修复","option_frequency": "数据包运行频率","option_frequency_hoverevent": "§b在下方更改§a数据包运行频率 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来禁止数据包运行","option_sim_dist": "模拟距离","option_sim_dist_hoverevent": "§b在下方更改§a模拟距离 §r(§6单位: 区块§r)  请在点击前保证主世界原点模拟距离内没有玩家","option_sim_dist_button_cal": "[§a计算§r]","option_enabled": "§a启用§r","option_disabled": "§c禁用§r","option_button_uninstall": "[§4卸载§r]","option_button_uninstall_hoverevent": "§4点击此按钮来§l§n卸载§r§4TPA数据包! 请考虑你是否真的需要!","option_button_update": "[§4更新§r]","option_button_update_hoverevent": "§b点击开始更新数据包","option_button_license": "[§4协议§r]","option_button_license_hoverevent": "§b使用TPA数据包必须遵循我们在Github网站上 开源协议以及对§l§n商业§r§b使用的限制 否则将会存在§6§l侵权§r§b的风险 所以请您仔细认真阅读全文","option_button_help": "[§4帮助§r]","option_button_help_hoverevent": "§b点击打开帮助菜单","output_default": "你将输出位置切换为§a聊天栏和动作栏§r","output_hide_actionbar": "你将输出位置切换为§a仅聊天栏§r","output_hide_chatbar": "你将输出位置切换为§a仅动作栏§r","recver_accept_tpa_left_part": "你接受了","recver_accept_tpa_hoverevent": "§b你所接受传送请求的玩家","recver_accept_tpa_right_part": "的传送请求","recver_accept_tpahere_left_part": "你接受了","recver_accept_tpahere_hoverevent": "§b你所接受§l传送此处§r请求的玩家","recver_accept_tpahere_right_part": "的§l传送此处§r请求","recver_accept_auto_left_part": "自动接受了","recver_accept_auto_hoverevent": "§b向你发送传送请求的玩家","recver_accept_auto_right_part": "的传送请求","recver_accept_toggle_on": "你开启了§a自动接受§r","recver_accept_toggle_off": "你关闭了§a自动接受§r","recver_cancel_left_part": "","recver_cancel_hoverevent": "§b取消对你请求的玩家","recver_cancel_right_part": "取消了对你的请求","recver_deny_tpa_left_part": "你拒绝了","recver_deny_tpa_hoverevent": "§b你所拒绝传送请求的玩家","recver_deny_tpa_right_part": "的传送请求","recver_deny_tpahere_left_part": "你拒绝了","recver_deny_tpahere_hoverevent": "§b你所拒绝§l传送此处§r请求的玩家","recver_deny_tpahere_right_part": "的§l传送此处§r请求","recver_recv_button_accept": "[§a接受§r]","recver_recv_button_accept_hoverevent": "§b点击接受他的请求","recver_recv_button_deny": "[§c拒绝§r]","recver_recv_button_deny_hoverevent": "§b点击拒绝他的请求","recver_recv_tpa_chatbar_left_part": "","recver_recv_tpa_hoverevent": "§b向你发送传送请求的玩家","recver_recv_tpa_chatbar_right_part": "向你发送了一个传送请求","recver_recv_tpa_actionbar_left_part": "","recver_recv_tpa_actionbar_right_part": "向你发送了一个传送请求, 点头3次以接受请求, 摇头3次以拒绝请求","recver_recv_tpahere_chatbar_left_part": "","recver_recv_tpahere_hoverevent": "§b向你发送§l传送此处§r请求的玩家","recver_recv_tpahere_chatbar_right_part": "向你发送了一个§l传送此处§r请求","recver_recv_tpahere_actionbar_left_part": "","recver_recv_tpahere_actionbar_right_part": "向你发送了一个§l传送此处§r请求, 点头3次以接受请求, 摇头3次以拒绝请求","recver_req_not_exist": "没有需要处理的请求","recver_timeout_left_part": "","recver_timeout_hoverevent": "§b向你发送超时请求的玩家","recver_timeout_right_part": "的传送请求已超时","reqer_accept_tpa_left_part": "正在传送你至","reqer_accept_tpa_hoverevent": "§b接受了你的传送请求的玩家","reqer_accept_tpa_right_part": "...","reqer_accept_tpahere_left_part": "正在传送","reqer_accept_tpahere_hoverevent": "§b接受了你的§l传送此处§r请求的玩家","reqer_accept_tpahere_right_part": "至你...","reqer_accept_auto_left_part": "对方开启了自动接受, 将你传送至","reqer_accept_auto_hoverevent": "§b自动同意了你的传送请求的玩家","reqer_accept_auto_right_part": "...","reqer_button_tpa": "[§b传送§r]","reqer_button_tpa_hoverevent": "§b点击传送向他发送传送请求","reqer_button_tpahere": "[§b传送此处§r]","reqer_button_tpahere_hoverevent": "§b点击请求他传送到你的当前位置","reqer_cancel_left_part": "你取消了向","reqer_cancel_hoverevent": "§b你取消了请求的玩家","reqer_cancel_right_part": "的请求","reqer_cancel_spec": "旁观者模式玩家不允许§a取消请求§r","reqer_change_chatbar_left_part": "你之前发送过了一个向","reqer_change_hoverevent": "§b你之前发送请求的玩家","reqer_change_chatbar_middle_part": "的请求, 已取消前一个请求. 现在向","reqer_change_chatbar_right_part": "发送了请求, 等待他接受","reqer_change_actionbar_left_part": "你之前发送过了一个向","reqer_change_actionbar_middle_part": "的请求, 已取消前一个请求. 现在向","reqer_change_actionbar_right_part": "发送了请求, 等待他接受, 摇头3次以取消请求","reqer_deny_tpa_left_part": "","reqer_deny_tpa_hoverevent": "§b拒绝了你的传送请求的玩家","reqer_deny_tpa_right_part": "拒绝了你的传送请求","reqer_deny_tpahere_left_part": "","reqer_deny_tpahere_hoverevent": "§b拒绝了你的§l传送此处§r请求的玩家","reqer_deny_tpahere_right_part": "拒绝了你的传送请求","reqer_recver_invalid": "你请求的玩家已离线或不允许被传送","reqer_disabled": "服务器不允许§a传送§r","reqer_first_join": "[§6点我打开TPA菜单§r]","reqer_no_req_found": "你还未向玩家发送任何请求","reqer_req_button_cancel": "[§4取消§r]","reqer_req_button_cancel_hoverevent": "§b点击取消请求","reqer_req_hoverevent": "§b你所发送请求的玩家","reqer_req_tpa_chatbar_left_part": "你向","reqer_req_tpa_hoverevent": "§b你所发送传送请求的玩家","reqer_req_tpa_chatbar_right_part": "发送了一个传送请求. 等待他接受","reqer_req_tpa_actionbar_left_part": "你向","reqer_req_tpa_actionbar_right_part": "发送了一个传送请求. 等待他接受, 摇头3次以取消请求","reqer_req_tpahere_chatbar_left_part": "你向","reqer_req_tpahere_hoverevent": "§b你所发送§l传送此处§r请求的玩家","reqer_req_tpahere_chatbar_right_part": "发送了一个传送他到你的所在位置请求. 等待他接受","reqer_req_tpahere_actionbar_left_part": "你向","reqer_req_tpahere_actionbar_right_part": "发送了一个传送他到你的所在位置的请求. 等待他接受, 摇头3次以取消请求","reqer_req_not_exist": "请求的玩家不存在或不在线","reqer_self": "你不能tp你自己","reqer_spam": "你已经向他发送过请求了","reqer_spec": "旁观者模式玩家不允许§a传送§r","reqer_timeout_left_part": "你向","reqer_timeout_hoverevent": "§b未接受你的请求的玩家","reqer_timeout_right_part": "的传送请求已超时","search_id_disabled": "§a搜索ID§r不兼容该游戏版本","search_id_throw_on_invalid_char": "你输入的名字包含不合法的字符","search_id_unavail_player": "对方不在线或不允许被传送","simple_menu_disable": "你将TPA菜单切换至§a详细菜单","simple_menu_enable": "你将TPA菜单切换至§a简略菜单 §r你现在可以直接使用/trigger tpa来打开简略菜单","simple_menu_title": "点击下方玩家名发送传送请求","simple_menu_button": "[§b详细菜单§r]","simple_menu_button_hoverevent": "§b点击切换至详细菜单","teleport_tryagain": "请重试","tp_pos_act_left_part": "已将你传送至坐标","tp_pos_act_right_part": "","tp_pos_cooldown": "§a传送坐标§r还在冷却中","tp_pos_disabled": "服务器不允许§a传送坐标§r","tp_pos_out_of_range": "传送距离超过了服务器设定的半径","tp_pos_spec": "旁观者模式玩家不允许§a传送坐标§r","tp_pos_throw_on_invalid_char": "你输入的坐标包含不合法的字符","tp_pos_title": "在下方调整坐标: ","tp_pos_button_teleport": "[传送]","tp_pos_button_abort": "[停止]","tp_pos_abort": "你已停止输入传送坐标","tpa_menu_hoverevent_left_part": "§b点击向","tpa_menu_hoverevent_right_part": "§b发送传送请求","tpa_menu_title": "这是玩家游戏用户名和玩家数据包id, 点击id发送传送请求: ","tpahere_menu_title": "这是玩家游戏用户名和玩家数据包id, 点击id发送§l传送此处§r请求: ","tpa_menu_extend_hoverevent": "§b点击展开菜单","tpa_menu_extend": "§b展开§r","tpa_menu_you": "你","tpa_menu_has_id_of": "的§a数据包ID§r是","tpa_menu_idfix_button": "[§bID修复§r]","tpa_menu_idfix_button_hoverevent": "§b如果你遇到两个相同玩家拥有同一id的问题, 你可以尝试这个修复. 此修复会重置所有玩家的id.","tpa_menu_search_id_button": "[§b搜索ID§r]","tpa_menu_search_id_button_hoverevent": "§b点击呼出聊天栏键盘输入tpa指令","tpa_menu_tpamenu_button": "[§b传送菜单§r]","tpa_menu_tpamenu_button_hoverevent": "§b点击来跳转到传送菜单","tpa_menu_tpaheremenu_button": "[§b传送此处菜单§r]","tpa_menu_tpaheremenu_button_hoverevent": "§b点击来跳转到传送此处菜单","tpa_menu_back_button": "[§b返回上一位置§r]","tpa_menu_back_button_hoverevent": "§b回到传送前位置","tpa_menu_lang_button": "[§b切换语言§r]","tpa_menu_lang_button_hoverevent": "§b点击切换语言","tpa_menu_book_button": "[§b获取传送书§r]","tpa_menu_book_button_hoverevent": "§b点击来获取传送书","tpa_menu_pos_button": "[§b传送坐标§r]","tpa_menu_pos_button_hoverevent": "§b点击呼出聊天栏键盘输入tpa指令","tpa_menu_here_button": "[§b广播位置§r]","tpa_menu_here_button_hoverevent": "§b点击广播你的位置","tpa_menu_home_button": "[§b传送点菜单§r]","tpa_menu_home_button_hoverevent": "§b点击打开传送点(home)菜单","tpa_menu_auto_accept": "自动接受: ","tpa_menu_mute": "静音数据包: ","tpa_menu_output": "输出显示位置: ","tpa_menu_output_default": "[§b默认§r","tpa_menu_output_actionbar": "§b隐藏聊天栏§r","tpa_menu_output_chatbar": "§b隐藏动作栏§r]","tpa_menu_enable": "[§a开启§r","tpa_menu_disable": "§c关闭§r]","tpa_menu_refresh": "[§6刷新TPA菜单§r]","tpa_menu_refresh_hoverevent": "§b点击此处刷新或重新呼出TPA菜单","tpa_menu_simplemenu_button": "[§b简略菜单§r]","tpa_menu_simplemenu_button_hoverevent": "§b切换到简略菜单","tick_not_working_cmdblk_name": "§r§b在合适的地方把它放下", "extended_menu_disabled": "§a展开菜单§r不兼容此游戏版本","simple_menu_disabled": "§a简略菜单§r不兼容此游戏版本"},{"id": 2,"name": "en_us","name_display": "English (United States)","header": "[§bTPA§r] ","back_act": "Teleported you to previous location","back_disabled": "§aBack§r feature is disabled on this server","back_not_exist": "No previous location found","back_spec": "Spectators cannot use §aBack§r","book_disabled": "§aTeleport Book§r is incompatible with this game version","book_lore": "§r§bRight-click to open TPA menu. Throw to refresh. Switch to offhand to disable.","book_title": "§r§bTeleport Menu Book §a[Press Q to Refresh] ","book_mainhand_busy": "Empty your main hand to receive the teleport book","book_spec": "Spectators cannot use §aTeleport Book§r","book_stop": "You disabled §aTeleport Book§r. Re-enable in TPA menu","command_syntax_error": "Invalid command syntax","extended_menu_title": "======================§bTPA§6 Menu§r========================","extended_menu_previous_page": "§bPrevious Page","extended_menu_next_page": "§bNext Page","here_button_tpa": "[§bRequest Teleport§r]","here_button_tpa_hoverevent": "§bClick to send teleport request","here_voxel_hoverevent": "§bClick to add VoxelMap waypoint","here_xaero_hoverevent": "§6Click to add Xaero's Minimap waypoint","here_spec": "Spectators cannot §abroadcast location§r","home_act_left_part": "Teleported to home #","home_act_right_part": "","home_create": "You haven't set a home","home_create_button": "[§aCreate§r]","home_create_button_hoverevent": "§aClick to set home","home_disabled": "§aHomes§r are disabled on this server","home_display": "§bHome #","home_display_tp_button": "[§bTeleport§r]","home_display_tp_button_hoverevent": "§bClick to teleport","home_display_rm_button": "[§cRemove§r]","home_display_rm_button_hoverevent": "§cClick to delete","home_display_set_button": "[§aSet§r]","home_display_set_button_hoverevent": "§aClick to set location","home_menu_title": "Your available home slots: ","home_missing_hoverevent": "Home not set","home_new": "§aNew: ","home_number": "Home #","home_not_found_left_part": "Home #","home_not_found_hoverevent": "§bRequested home","home_not_found_right_part": " does not exist","home_out_of_range_left_part": "Home #","home_out_of_range_right_part": " exceeds server limits","home_remove_left_part": "Removed home #","home_remove_hoverevent": "§bRemoved home","home_remove_right_part": "","home_set_left_part": "Set home #","home_set_middle_part": " at ","home_set_overworld": "§aOverworld","home_set_the_nether": "§cNether","home_set_the_end": "§eEnd","home_set_position": "Position","home_set_right_part": "","home_spec": "Spectators cannot manage §aHomes§r","idfix_act_left_part": "","idfix_act_hoverevent": "§bPlayer used ID Fix","idfix_act_right_part": " used §aID Fix§r. All player IDs and locations have been reset","idfix_cooldown": "§aID Fix§r is on cooldown","idfix_disabled": "§aID Fix§r is disabled on this server","lang_button": "[§6Select Language§r]","lang_button_server": "[§6Select Server Language§r]","lang_button_hoverevent": "§bClick to open language menu","lang_menu_title": "Select language:","lang_menu_select_button": "[§aLoad Command§r]","lang_menu_select_button_hoverevent": "§bClick to load recommended command: ","lang_disabled": "Language selection is disabled","lang_selected_left_part": "Switched language to ","lang_selected_right_part": "","lang_server_follow_left_part": "Server language set to ","lang_server_follow_right_part": "","load_title": "§eReloading...","load_add_objectives": "Adding 42 scoreboard objectives... (1/6)","load_added_objectives": "Objectives added... (2/6)","load_reset_scores": "Resetting player scores... (2/6)","load_did_reset_scores": "Scores reset... (3/6)","load_init_storage": "Initializing storage... (3/6)","load_initted_storage": "Storage initialized... (4/6)","load_remove_tags": "Removing tags... (4/6)","load_removed_tags": "Tags removed... (5/6)","load_init_vars": "Initializing variables... (5/6)","load_initted_vars": "Variables initialized... (6/6)","load_done": "§aTPA Datapack reloaded: §r1.15 - 1.20.1 Full Version ","load_version_hoverevent": "§bTPA datapack version, not Minecraft version","load_welcome": "Welcome to TPA Datapack! ","load_copyright_claim": "Copyright © 2024-2025 Xiao_tu233. All rights reserved. Non-commercial use only. See [License]","load_author": "Created by §6Xiao_tu233§r. ","load_button_options": "[Options]","load_button_options_hoverevent": "Click to configure datapack","load_button_help": "[Help]","load_button_help_hoverevent": "Click for help","load_button_update": "[Update]","load_button_update_hoverevent": "Click to update datapack","load_button_license": "[License]","load_button_license_hoverevent": "§bYou MUST comply with our license on GitHub. Commercial use restrictions apply. §6§lLegal risks§r§b may occur if violated","mute_disable": "Datapack sounds §aenabled§r","mute_enable": "Datapack sounds §amuted§r","option_carpet_disabled": "Requires Carpet mod. Not installed on server.","option_title_line1": "======================§bTPA§6 Settings§r=====================","option_title_line2": "Adjust settings below: (Reopen menu to see changes)","option_button_enable": "§r[§aEnable§r","option_button_disable": "§cDisable§r]","option_button_set": "§r[§aSet§r]","option_debug_mode": "Debug Mode","option_tp_spec": "Allow teleporting spectators","option_remove_offline": "Clear IDs when offline","option_carpet_fake_player_fix": "Carpet Fake Player Fix","option_back": "Disable Back feature","option_search_id": "Disable ID Search","option_book": "Disable Teleport Book","option_player_lang": "Allow player language selection","option_lang": "Server Language","option_lang_hoverevent": "§bClick to select language","option_home": "Max Homes","option_home_hoverevent": "§bSet §amax home slots§r (§6count§r). 0=disable, -1=unlimited (not recommended)","option_tp_pos": "Coordinate Teleport Radius","option_tp_pos_hoverevent": "§bSet §aallowed radius§r (§6meters§r). 0=disable, -1=unlimited (not recommended)","option_tp_pos_cooldown": "Coordinate Teleport Cooldown","option_tp_pos_cooldown_hoverevent": "§bSet §acool down§r (§6ticks§r). 0=no cooldown, -1=disable","option_time_out": "Request Timeout","option_time_out_hoverevent": "§bSet §atimeout§r (§6ticks§r). 0=disable, -1=no timeout","option_idfix_cooldown": "§bID Fix Cooldown","option_idfix_cooldown_hoverevent": "§bSet §acool down§r (§6ticks§r). 0=no cooldown, -1=disable","option_frequency": "Datapack Frequency","option_frequency_hoverevent": "§bSet §arun interval§r (§6ticks§r). 0=disable","option_sim_dist": "Simulation Distance","option_sim_dist_hoverevent": "§bSet §asimulation distance§r (§6chunks§r). Ensure no players near world origin first","option_sim_dist_button_cal": "[§aCalculate§r]","option_enabled": "§aEnabled§r","option_disabled": "§cDisabled§r","option_button_uninstall": "[§4Uninstall§r]","option_button_uninstall_hoverevent": "§4Click to §l§nuninstall§r§4 TPA Datapack! Confirm?","option_button_update": "[§4Update§r]","option_button_update_hoverevent": "§bClick to update datapack","option_button_license": "[§4License§r]","option_button_license_hoverevent": "§bCommercial restrictions apply. See GitHub for full license. §6§lLegal risks§r§b if violated","option_button_help": "[§4Help§r]","option_button_help_hoverevent": "§bClick for help","output_default": "Output set to §achat + action bar§r","output_hide_actionbar": "Output set to §achat only§r","output_hide_chatbar": "Output set to §aaction bar only§r","recver_accept_tpa_left_part": "Accepted ","recver_accept_tpa_hoverevent": "§bRequester","recver_accept_tpa_right_part": "'s teleport request","recver_accept_tpahere_left_part": "Accepted ","recver_accept_tpahere_hoverevent": "§bRequester of §lTeleport Here§r","recver_accept_tpahere_right_part": "'s §lTeleport Here§r request","recver_accept_auto_left_part": "Always accepted ","recver_accept_auto_hoverevent": "§bRequester","recver_accept_auto_right_part": "'s request","recver_accept_toggle_on": "§aAlways accept§r enabled","recver_accept_toggle_off": "§aAlways accept§r disabled","recver_cancel_left_part": "","recver_cancel_hoverevent": "§bRequester","recver_cancel_right_part": " canceled request","recver_deny_tpa_left_part": "Denied ","recver_deny_tpa_hoverevent": "§bRequester","recver_deny_tpa_right_part": "'s teleport request","recver_deny_tpahere_left_part": "Denied ","recver_deny_tpahere_hoverevent": "§bRequester of §lTeleport Here§r","recver_deny_tpahere_right_part": "'s §lTeleport Here§r request","recver_recv_button_accept": "[§aAccept§r]","recver_recv_button_accept_hoverevent": "§bClick to accept","recver_recv_button_deny": "[§cDeny§r]","recver_recv_button_deny_hoverevent": "§bClick to deny","recver_recv_tpa_chatbar_left_part": "","recver_recv_tpa_hoverevent": "§bRequester","recver_recv_tpa_chatbar_right_part": " requested to teleport to you","recver_recv_tpa_actionbar_left_part": "","recver_recv_tpa_actionbar_right_part": " requested teleport. Nod 3 times to accept, shake 3 times to deny","recver_recv_tpahere_chatbar_left_part": "","recver_recv_tpahere_hoverevent": "§bRequester of §lTeleport Here§r","recver_recv_tpahere_chatbar_right_part": " requested you teleport to them","recver_recv_tpahere_actionbar_left_part": "","recver_recv_tpahere_actionbar_right_part": " requests you teleport to them. Nod 3 times to accept, shake 3 times to deny","recver_req_not_exist": "No pending requests","recver_timeout_left_part": "","recver_timeout_hoverevent": "§bRequester","recver_timeout_right_part": "'s request timed out","reqer_accept_tpa_left_part": "Teleporting to ","reqer_accept_tpa_hoverevent": "§bAcceptor","reqer_accept_tpa_right_part": "...","reqer_accept_tpahere_left_part": "Teleporting ","reqer_accept_tpahere_hoverevent": "§bAcceptor of §lTeleport Here§r","reqer_accept_tpahere_right_part": " to you...","reqer_accept_auto_left_part": "Accepted automatically. Teleporting to ","reqer_accept_auto_hoverevent": "§bAlways-acceptor","reqer_accept_auto_right_part": "...","reqer_button_tpa": "[§bTeleport§r]","reqer_button_tpa_hoverevent": "§bClick to request teleport to them","reqer_button_tpahere": "[§bTeleport Here§r]","reqer_button_tpahere_hoverevent": "§bClick to request they teleport to you","reqer_cancel_left_part": "Canceled request to ","reqer_cancel_hoverevent": "§bTarget player","reqer_cancel_right_part": "","reqer_cancel_spec": "Spectators cannot §acancel requests§r","reqer_change_chatbar_left_part": "Canceled previous request to ","reqer_change_hoverevent": "§bPrevious target","reqer_change_chatbar_middle_part": ". New request sent to ","reqer_change_chatbar_right_part": ". Waiting for acceptance","reqer_change_actionbar_left_part": "Canceled previous request to ","reqer_change_actionbar_middle_part": ". New request sent to ","reqer_change_actionbar_right_part": ". Shake head 3 times to cancel","reqer_deny_tpa_left_part": "","reqer_deny_tpa_hoverevent": "§bDenier","reqer_deny_tpa_right_part": " denied your teleport request","reqer_deny_tpahere_left_part": "","reqer_deny_tpahere_hoverevent": "§bDenier of §lTeleport Here§r","reqer_deny_tpahere_right_part": " denied your request","reqer_recver_invalid": "Target offline or not teleportable","reqer_disabled": "§aTeleport§r disabled on server","reqer_first_join": "[§6Click to Open TPA Menu§r]","reqer_no_req_found": "No active requests","reqer_req_button_cancel": "[§4Cancel§r]","reqer_req_button_cancel_hoverevent": "§bClick to cancel request","reqer_req_hoverevent": "§bTarget player","reqer_req_tpa_chatbar_left_part": "Sent teleport request to ","reqer_req_tpa_hoverevent": "§bTarget player","reqer_req_tpa_chatbar_right_part": ". Waiting for acceptance","reqer_req_tpa_actionbar_left_part": "Request sent to ","reqer_req_tpa_actionbar_right_part": ". Shake head 3 times to cancel","reqer_req_tpahere_chatbar_left_part": "Sent §lTeleport Here§r request to ","reqer_req_tpahere_hoverevent": "§bTarget player","reqer_req_tpahere_chatbar_right_part": ". Waiting for acceptance","reqer_req_tpahere_actionbar_left_part": "Requested they teleport to you: ","reqer_req_tpahere_actionbar_right_part": ". Shake head 3 times to cancel","reqer_req_not_exist": "Player not found or offline","reqer_self": "Cannot teleport to yourself","reqer_spam": "You already have a pending request","reqer_spec": "Spectators cannot §asend requests§r","reqer_timeout_left_part": "Request to ","reqer_timeout_hoverevent": "§bTarget player","reqer_timeout_right_part": " timed out","search_id_disabled": "§aID Search§r incompatible with this version","search_id_throw_on_invalid_char": "Invalid characters in name","search_id_unavail_player": "Player unavailable","simple_menu_disable": "TPA menu set to §adetailed mode§r","simple_menu_enable": "TPA menu set to §asimple mode§r. Use /trigger tpa to open","simple_menu_title": "Click player to send request","simple_menu_button": "[§bDetailed Menu§r]","simple_menu_button_hoverevent": "§bSwitch to detailed menu","teleport_tryagain": "Please try again","tp_pos_act_left_part": "Teleported to coordinates ","tp_pos_act_right_part": "","tp_pos_cooldown": "§aCoordinate Teleport§r on cooldown","tp_pos_disabled": "§aCoordinate Teleport§r disabled","tp_pos_out_of_range": "Exceeds allowed teleport radius","tp_pos_spec": "Spectators cannot §ateleport to coordinates§r","tp_pos_throw_on_invalid_char": "Invalid coordinate characters","tp_pos_title": "Enter coordinates: ","tp_pos_button_teleport": "[Teleport]","tp_pos_button_abort": "[Cancel]","tp_pos_abort": "Coordinate input canceled","tpa_menu_hoverevent_left_part": "§bClick to request teleport to ","tpa_menu_hoverevent_right_part": "","tpa_menu_title": "Player names and datapack IDs. Click ID to request: ","tpahere_menu_title": "Player names and datapack IDs. Click ID to request §lTeleport Here§r: ","tpa_menu_extend_hoverevent": "§bExpand menu","tpa_menu_extend": "§bmore§r","tpa_menu_you": "You","tpa_menu_has_id_of": "r §adatapack ID§r is ","tpa_menu_idfix_button": "[§bID Fix§r]","tpa_menu_idfix_button_hoverevent": "§bFix duplicate ID issues (resets all player IDs)","tpa_menu_search_id_button": "[§bSearch ID§r]","tpa_menu_search_id_button_hoverevent": "§bOpen ID search in chat","tpa_menu_tpamenu_button": "[§bTeleport Menu§r]","tpa_menu_tpamenu_button_hoverevent": "§bGo to teleport menu","tpa_menu_tpaheremenu_button": "[§bTeleport Here Menu§r]","tpa_menu_tpaheremenu_button_hoverevent": "§bGo to Teleport Here menu","tpa_menu_back_button": "[§bBack§r]","tpa_menu_back_button_hoverevent": "§bReturn to previous location","tpa_menu_lang_button": "[§bChange Language§r]","tpa_menu_lang_button_hoverevent": "§bChange language","tpa_menu_book_button": "[§bGet Teleport Book§r]","tpa_menu_book_button_hoverevent": "§bGet teleport menu book","tpa_menu_pos_button": "[§bTeleport to Coordinates§r]","tpa_menu_pos_button_hoverevent": "§bOpen coordinate input","tpa_menu_here_button": "[§bBroadcast Location§r]","tpa_menu_here_button_hoverevent": "§bBroadcast your position","tpa_menu_home_button": "[§bHomes Menu§r]","tpa_menu_home_button_hoverevent": "§bManage homes","tpa_menu_auto_accept": "Always-accept: ","tpa_menu_mute": "Mute sounds: ","tpa_menu_output": "Output location: ","tpa_menu_output_default": "[§bDefault§r","tpa_menu_output_actionbar": "§bHide Chat§r","tpa_menu_output_chatbar": "§bHide Action Bar§r]","tpa_menu_enable": "[§aENABLE§r","tpa_menu_disable": "§cDISABLE§r]","tpa_menu_refresh": "[§6Refresh TPA Menu§r]","tpa_menu_refresh_hoverevent": "§bClick to refresh or reopen TPA menu","tpa_menu_simplemenu_button": "[§bSimple Menu§r]","tpa_menu_simplemenu_button_hoverevent": "§bSwitch to simple menu","tick_not_working_cmdblk_name": "§r§bPlace this in a valid location","extended_menu_disabled": "§aExpand Menu§r is incompatible with this game version","simple_menu_disabled": "§aSimple Menu§r is incompatible with this game version"},{"id": 3,"name": "zh_tw","name_display": "繁體中文（臺灣）","header": "[§bTPA§r] ","back_act": "已將你傳送至上一位置","back_disabled": "伺服器不允許§a返回上一位置§r","back_not_exist": "沒有找到上一位置","back_spec": "旁觀者模式玩家不允許§a返回上一位置§r","book_disabled": "§a傳送書§r不相容該遊戲版本","book_lore": "§r§b右鍵開啟TPA選單. 丟出刷新. 切換至副手停止使用.","book_title": "§r§b傳送選單書 §a[按Q刷新] ","book_mainhand_busy": "請空手來獲得傳送書.","book_spec": "旁觀者模式玩家不允許使用§a傳送書§r","book_stop": "你已停止使用§a傳送書§r, 可在TPA選單裡再次獲取","command_syntax_error": "指令格式錯誤","extended_menu_title": "======================§bTPA§6 選單§r========================","extended_menu_previous_page": "§b檢視上一頁","extended_menu_next_page": "§b檢視下一頁","here_button_tpa": "[§b請求傳送§r]","here_button_tpa_hoverevent": "§b點擊快捷向他發送傳送請求","here_voxel_hoverevent": "§b點擊新增VoxelMap路徑點","here_xaero_hoverevent": "§6點擊新增Xaero's Minimap路徑點","here_spec": "旁觀者模式玩家不允許使用§a廣播位置§r","home_act_left_part": "已將你傳送至傳送點#","home_act_right_part": "","home_create": "你尚未建立傳送點","home_create_button": "[§a新建§r]","home_create_button_hoverevent": "§a點擊設定一個傳送點","home_disabled": "伺服器未啟用§a傳送點§r","home_display": "§b傳送點#","home_display_tp_button": "[§b傳送§r]","home_display_tp_button_hoverevent": "§b點擊傳送到這個傳送點","home_display_rm_button": "[§c移除§r]","home_display_rm_button_hoverevent": "§c點擊刪除這個傳送點","home_display_set_button": "[§a設定§r]","home_display_set_button_hoverevent": "§a點擊設定傳送點","home_menu_title": "你現在擁有如下的傳送點欄位: ","home_missing_hoverevent": "該傳送點尚未設定","home_new": "§a新建: ","home_number": "傳送點#","home_not_found_left_part": "你存取的傳送點#","home_not_found_hoverevent": "§b你存取的傳送點","home_not_found_right_part": "不存在","home_out_of_range_left_part": "你存取的傳送點#","home_out_of_range_right_part": "超出了伺服器的限制","home_remove_left_part": "你移除了傳送點#","home_remove_hoverevent": "§b移除的傳送點","home_remove_right_part": "","home_set_left_part": "你把傳送點#","home_set_middle_part": "設定為","home_set_overworld": "§a主世界","home_set_the_nether": "§c地獄","home_set_the_end": "§e終界","home_set_position": "座標","home_set_right_part": "","home_spec": "旁觀者模式玩家不允許操作§a傳送點§r","idfix_act_left_part": "","idfix_act_hoverevent": "§b這名玩家使用了ID修復","idfix_act_right_part": "使用了§aID修復§r, 所有玩家的資料包ID與上一位置已被重設","idfix_cooldown": "§aID修復§r還在冷卻中","idfix_disabled": "伺服器不允許§aID修復§r","lang_button": "[§6點擊這裡選擇語言§r]","lang_button_server": "[§6點擊這裡選擇伺服器語言§r]","lang_button_hoverevent": "§b點擊檢視語言選單","lang_menu_title": "請在下方選擇語言:","lang_menu_select_button": "[§a載入推薦指令§r]","lang_menu_select_button_hoverevent": "§b點擊在聊天欄載入推薦指令: ","lang_disabled": "伺服器禁止了玩家選擇語言","lang_selected_left_part": "你已切換語言到","lang_selected_right_part": "","lang_server_follow_left_part": "由於資料包伺服器預設語言尚未設定, 現在它被設定為","lang_server_follow_right_part": "","load_title": "§e重新載入中...","load_add_objectives": "正在新增42個計分項... (1/6)","load_added_objectives": "已成功地新增計分項... (2/6)","load_reset_scores": "正在重設線上玩家分數... (2/6)","load_did_reset_scores": "已成功重設線上玩家分數... (3/6)","load_init_storage": "正在初始化相關指令儲存... (3/6)","load_initted_storage": "已成功初始化相關指令儲存... (4/6)","load_remove_tags": "正在移除標籤... (4/6)","load_removed_tags": "已成功移除標籤... (5/6)","load_init_vars": "正在初始化變數... (5/6)","load_initted_vars": "已成功初始化變數... (6/6)","load_done": "§a資料包重新載入完成: §r1.15 - 1.20.1 完整版 ","load_version_hoverevent": "§b這是TPA資料包的版本, 而不是Minecraft版本.","load_welcome": "歡迎使用TPA資料包! ","load_copyright_claim": "版權所有 © 2024-2025 Xiao_tu233 保留所有權利. 不允許商業使用. 具體請點擊下方\"[協議]\"按鈕","load_author": "此資料包由§6Xiao_tu233§r製作. ","load_button_options": "[設定]","load_button_options_hoverevent": "點擊變更資料包設定","load_button_help": "[說明]","load_button_help_hoverevent": "點擊檢視說明","load_button_update": "[更新]","load_button_update_hoverevent": "點擊開始更新資料包","load_button_license": "[協議]","load_button_license_hoverevent": "§b使用TPA資料包必須遵循我們在Github網站上的開源協議以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文","mute_disable": "你開啟了§a資料包音效§r","mute_enable": "你§a靜音§r了資料包","option_carpet_disabled": "本功能需要Carpet模組作為依賴, 而伺服器尚未安裝Carpet模組. ","option_title_line1": "======================§bTPA§6 設定選單§r=====================","option_title_line2": "請在下方調整設定: (需重新呼出選單以檢視變更)","option_button_enable": "§r[§a啟用§r","option_button_disable": "§c停用§r]","option_button_set": "§r[§a設定§r]","option_debug_mode": "除錯模式","option_tp_spec": "允許傳送旁觀者","option_remove_offline": "是否在玩家離線後移除ID空位","option_carpet_fake_player_fix": "Carpet模組假人修復","option_back": "是否停用返回上一位置","option_search_id": "是否停用搜尋ID","option_book": "是否停用傳送書","option_player_lang": "是否允許玩家語言選擇","option_lang": "伺服器語言","option_lang_hoverevent": "§b在下方進入語言選擇選單","option_home": "擁有傳送點的個數","option_home_hoverevent": "§b在下方變更§a擁有傳送點的個數 §r(§6單位: 個§r), §b填0來設定禁止傳送點 §b填-1來設定不限制傳送點的數量(不推薦)","option_tp_pos": "傳送座標允許半徑","option_tp_pos_hoverevent": "§b在下方變更§a傳送座標允許半徑 §r(§6單位: 公尺§r), §b填0來設定禁止傳送 §b填-1來設定不限制半徑(不推薦)","option_tp_pos_cooldown": "傳送座標冷卻時間","option_tp_pos_cooldown_hoverevent": "§b在下方變更§a冷卻時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定無冷卻 §b填-1來設定禁止傳送","option_time_out": "傳送請求逾時時間","option_time_out_hoverevent": "§b在下方變更§a傳送請求逾時時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定禁止傳送 §b填-1來設定永不逾時","option_idfix_cooldown": "§bID修復冷卻時間","option_idfix_cooldown_hoverevent": "§b在下方變更§aID修復冷卻時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定無冷卻 填-1來設定禁止ID修復","option_frequency": "資料包執行頻率","option_frequency_hoverevent": "§b在下方變更§a資料包執行頻率 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來禁止資料包執行","option_sim_dist": "模擬距離","option_sim_dist_hoverevent": "§b在下方變更§a模擬距離 §r(§6單位: 區塊§r) 請在點擊前保證主世界原模擬點距離內","option_sim_dist_button_cal": "[§a計算§r]","option_enabled": "§a啟用§r","option_disabled": "§c停用§r","option_button_uninstall": "[§4解除安裝§r]","option_button_uninstall_hoverevent": "§4點擊此按鈕來§l§n解除安裝§r§4TPA資料包! 請考慮你是否真的需要!","option_button_update": "[§4更新§r]","option_button_update_hoverevent": "§b點擊開始更新資料包","option_button_license": "[§4協議§r]","option_button_license_hoverevent": "§b使用TPA資料包必須遵循我們在Github網站上的開源協議以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文","option_button_help": "[§4說明§r]","option_button_help_hoverevent": "§b點擊開啟說明選單","output_default": "你將輸出位置切換為§a聊天欄和動作欄§r","output_hide_actionbar": "你將輸出位置切換為§a僅聊天欄§r","output_hide_chatbar": "你將輸出位置切換為§a僅動作欄§r","recver_accept_tpa_left_part": "你接受了","recver_accept_tpa_hoverevent": "§b你所接受傳送請求的玩家","recver_accept_tpa_right_part": "的傳送請求","recver_accept_tpahere_left_part": "你接受了","recver_accept_tpahere_hoverevent": "§b你所接受§l傳送到此處§r請求的玩家","recver_accept_tpahere_right_part": "的§l傳送到此處§r請求","recver_accept_auto_left_part": "自動接受了","recver_accept_auto_hoverevent": "§b向你發送傳送請求的玩家","recver_accept_auto_right_part": "的傳送請求","recver_accept_toggle_on": "你開啟了§a自動接受§r","recver_accept_toggle_off": "你關閉了§a自動接受§r","recver_cancel_left_part": "","recver_cancel_hoverevent": "§b取消對你請求的玩家","recver_cancel_right_part": "取消了对你的請求","recver_deny_tpa_left_part": "你拒絕了","recver_deny_tpa_hoverevent": "§b你所拒絕傳送請求的玩家","recver_deny_tpa_right_part": "的傳送請求","recver_deny_tpahere_left_part": "你拒絕了","recver_deny_tpahere_hoverevent": "§b你所拒絕§l傳送到此處§r請求的玩家","recver_deny_tpahere_right_part": "的§l傳送到此處§r請求","recver_recv_button_accept": "[§a接受§r]","recver_recv_button_accept_hoverevent": "§b點擊接受他的請求","recver_recv_button_deny": "[§c拒絕§r]","recver_recv_button_deny_hoverevent": "§b點擊拒絕他的請求","recver_recv_tpa_chatbar_left_part": "","recver_recv_tpa_hoverevent": "§b向你發送傳送請求的玩家","recver_recv_tpa_chatbar_right_part": "向你發送了一個傳送請求","recver_recv_tpa_actionbar_left_part": "","recver_recv_tpa_actionbar_right_part": "向你發送了一個傳送請求, 點頭三次以接受請求, 搖頭三次以拒絕請求","recver_recv_tpahere_chatbar_left_part": "","recver_recv_tpahere_hoverevent": "§b向你發送§l傳送到此處§r請求的玩家","recver_recv_tpahere_chatbar_right_part": "向你發送了一個§l傳送到此處§r請求","recver_recv_tpahere_actionbar_left_part": "","recver_recv_tpahere_actionbar_right_part": "向你發送了一個§l傳送到此處§r請求, 點頭三次以接受請求, 搖頭三次以拒絕請求","recver_req_not_exist": "沒有需要處理的請求","recver_timeout_left_part": "","recver_timeout_hoverevent": "§b向你發送逾時請求的玩家","recver_timeout_right_part": "的傳送請求已逾時","reqer_accept_tpa_left_part": "正在傳送你至","reqer_accept_tpa_hoverevent": "§b接受了你的傳送請求的玩家","reqer_accept_tpa_right_part": "...","reqer_accept_tpahere_left_part": "正在傳送","reqer_accept_tpahere_hoverevent": "§b接受了你的§l傳送到此處§r請求的玩家","reqer_accept_tpahere_right_part": "至你...","reqer_accept_auto_left_part": "對方開啟了自動接受, 將你傳送至","reqer_accept_auto_hoverevent": "§b自動同意了你的傳送請求的玩家","reqer_accept_auto_right_part": "...","reqer_button_tpa": "[§b傳送§r]","reqer_button_tpa_hoverevent": "§b點擊傳送向他發送傳送請求","reqer_button_tpahere": "[§b傳送至此處§r]","reqer_button_tpahere_hoverevent": "§b點擊請求他傳送到你的目前位置","reqer_cancel_left_part": "你取消了向","reqer_cancel_hoverevent": "§b你取消了請求的玩家","reqer_cancel_right_part": "的請求","reqer_cancel_spec": "旁觀者模式玩家不允許§a取消請求§r","reqer_change_chatbar_left_part": "你之前發送過了一個向","reqer_change_hoverevent": "§b你之前發送請求的玩家","reqer_change_chatbar_middle_part": "的請求, 已取消前一個請求. 現在向","reqer_change_chatbar_right_part": "發送了請求, 等待他接受","reqer_change_actionbar_left_part": "你之前發送過了一個向","reqer_change_actionbar_middle_part": "的請求, 已取消前一個請求. 現在向","reqer_change_actionbar_right_part": "發送了請求, 等待他接受, 搖頭三次以取消請求","reqer_deny_tpa_left_part": "","reqer_deny_tpa_hoverevent": "§b拒絕了你的傳送請求的玩家","reqer_deny_tpa_right_part": "拒絕了你的傳送請求","reqer_deny_tpahere_left_part": "","reqer_deny_tpahere_hoverevent": "§b拒絕了你的§l傳送到此處§r請求的玩家","reqer_deny_tpahere_right_part": "拒絕了你的傳送請求","reqer_recver_invalid": "你請求的玩家已離線或不允許被傳送","reqer_disabled": "伺服器不允許§a傳送§r","reqer_first_join": "[§6點我開啟TPA選單§r]","reqer_no_req_found": "你還未向玩家發送任何請求","reqer_req_button_cancel": "[§4取消§r]","reqer_req_button_cancel_hoverevent": "§b點擊取消請求","reqer_req_hoverevent": "§b你所發送請求的玩家","reqer_req_tpa_chatbar_left_part": "你向","reqer_req_tpa_hoverevent": "§b你所發送傳送請求的玩家","reqer_req_tpa_chatbar_right_part": "發送了一個傳送請求. 等待他接受","reqer_req_tpa_actionbar_left_part": "你向","reqer_req_tpa_actionbar_right_part": "發送了一個傳送請求. 等待他接受, 搖頭三次以取消請求","reqer_req_tpahere_chatbar_left_part": "你向","reqer_req_tpahere_hoverevent": "§b你所發送§l傳送到此處§r請求的玩家","reqer_req_tpahere_chatbar_right_part": "發送了一個傳送他到你的所在位置請求. 等待他接受","reqer_req_tpahere_actionbar_left_part": "你向","reqer_req_tpahere_actionbar_right_part": "發送了一個傳送他到你的所在位置的請求. 等待他接受, 搖頭三次以取消請求","reqer_req_not_exist": "請求的玩家不存在或不在線","reqer_self": "你不能傳送你自己","reqer_spam": "你已經向他發送過請求了","reqer_spec": "旁觀者模式玩家不允許§a傳送§r","reqer_timeout_left_part": "你向","reqer_timeout_hoverevent": "§b未接受你的請求的玩家","reqer_timeout_right_part": "的傳送請求已逾時","search_id_disabled": "§a搜尋ID§r不相容該遊戲版本","search_id_throw_on_invalid_char": "你輸入的名稱包含不合法的字元","search_id_unavail_player": "對方離線或不允許被傳送","simple_menu_disable": "你將TPA選單切換至§a詳細選單","simple_menu_enable": "你將TPA選單切換至§a簡略選單 §r你現在可以直接使用/trigger tpa來開啟簡略選單","simple_menu_title": "點擊下方玩家名稱發送傳送請求","simple_menu_button": "[§b詳細選單§r]","simple_menu_button_hoverevent": "§b點擊切換至詳細選單","teleport_tryagain": "請重試","tp_pos_act_left_part": "已將你傳送至座標","tp_pos_act_right_part": "","tp_pos_cooldown": "§a傳送座標§r還在冷卻中","tp_pos_disabled": "伺服器不允許§a傳送座標§r","tp_pos_out_of_range": "傳送距離超過了伺服器設定的半徑","tp_pos_spec": "旁觀者模式玩家不允許§a傳送座標§r","tp_pos_throw_on_invalid_char": "你輸入的座標包含不合法的字元","tp_pos_title": "在下方調整坐標: ","tp_pos_button_teleport": "[傳送]","tp_pos_button_abort": "[停止]","tp_pos_abort": "你已停止輸入傳送坐標","tpa_menu_hoverevent_left_part": "§b點擊向","tpa_menu_hoverevent_right_part": "§b發送傳送請求","tpa_menu_title": "這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送傳送請求: ","tpahere_menu_title": "這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送§l傳送到此處§r請求: ","tpa_menu_extend_hoverevent": "§b點擊展開選單","tpa_menu_extend": "§b展開§r","tpa_menu_you": "你","tpa_menu_has_id_of": "的§a資料包ID§r是","tpa_menu_idfix_button": "[§bID修復§r]","tpa_menu_idfix_button_hoverevent": "§b如果你遇到兩個相同玩家擁有同一id的問題, 你可以嘗試這個修復. 此修復會重設所有玩家的id.","tpa_menu_search_id_button": "[§b搜尋ID§r]","tpa_menu_search_id_button_hoverevent": "§b點擊呼出聊天欄鍵盤輸入tpa指令","tpa_menu_tpamenu_button": "[§b傳送選單§r]","tpa_menu_tpamenu_button_hoverevent": "§b點擊來跳轉到傳送選單","tpa_menu_tpaheremenu_button": "[§b傳送至此處選單§r]","tpa_menu_tpaheremenu_button_hoverevent": "§b點擊來跳轉到傳送至此處選單","tpa_menu_back_button": "[§b返回上一位置§r]","tpa_menu_back_button_hoverevent": "§b回到傳送前位置","tpa_menu_lang_button": "[§b切換語言§r]","tpa_menu_lang_button_hoverevent": "§b點擊切換語言","tpa_menu_book_button": "[§b取得傳送書§r]","tpa_menu_book_button_hoverevent": "§b點擊來取得傳送書","tpa_menu_pos_button": "[§b傳送座標§r]","tpa_menu_pos_button_hoverevent": "§b點擊呼出聊天欄鍵盤輸入tpa指令","tpa_menu_here_button": "[§b廣播位置§r]","tpa_menu_here_button_hoverevent": "§b點擊廣播你的位置","tpa_menu_home_button": "[§b傳送點選單§r]","tpa_menu_home_button_hoverevent": "§b點擊開啟傳送點(home)選單","tpa_menu_auto_accept": "自動接受: ","tpa_menu_mute": "靜音資料包: ","tpa_menu_output": "輸出顯示位置: ","tpa_menu_output_default": "[§b預設§r","tpa_menu_output_actionbar": "§b隱藏聊天欄§r","tpa_menu_output_chatbar": "§b隱藏動作欄§r]","tpa_menu_enable": "[§a開啟§r","tpa_menu_disable": "§c關閉§r]","tpa_menu_refresh": "[§6刷新TPA選單§r]","tpa_menu_refresh_hoverevent": "§b點擊此處刷新或重新呼出TPA選單","tpa_menu_simplemenu_button": "[§b簡略選單§r]","tpa_menu_simplemenu_button_hoverevent": "§b切換到簡略選單","tick_not_working_cmdblk_name": "§r§b在合適的地方把它放下", "extended_menu_disabled": "§a展開選單§r不相容此遊戲版本","simple_menu_disabled": "§a簡略選單§r不相容此遊戲版本"}]
+data modify storage tpa:tpa lang set value [{}, \
+    {\
+        id: "1", \
+        name: "zh_cn", \
+        name_display: "简体中文（中国大陆）", \
+        header: "[§bTPA§r] ", \
+        back_act: "已将你传送至上一位置", \
+        back_disabled: "§a返回上一位置§r已被服务器禁用", \
+        back_not_exist: "没有找到上一位置", \
+        back_spec: "旁观者模式玩家不允许§a返回上一位置§r", \
+        book_check_missing: "检测到传送书丢失, 已重新给予", \
+        book_disabled: "§a传送书§r已被服务器禁用", \
+        book_incompatible: "§a传送书§r不兼容此游戏版本", \
+        book_lore: "§r§b右键打开TPA菜单. 丢出刷新. 切换至副手停止使用.", \
+        book_mainhand_busy: "请空手来获得传送书", \
+        book_refresh: "你刷新了§a传送菜单书", \
+        book_reget: "[§b重新获取§r]", \
+        book_reget_hoverevent: "§b点击重新获取传送书", \
+        book_spec: "旁观者模式玩家不允许使用§a传送书§r", \
+        book_stacking: "检测到传送书堆叠, 已没收多余的书", \
+        book_stop: "你已停止使用§a传送书§r, 可在TPA菜单里再次获取 ", \
+        book_title: "§r§b传送菜单书 §a[扔出刷新] ", \
+        dimension_menu_button: "[§b维度设置菜单§r]", \
+        dimension_menu_button_hoverevent: "§b点击设置维度", \
+        dimension_overworld: "主世界", \
+        dimension_the_nether: "下界", \
+        dimension_the_end: "末地", \
+        dimension_unknown: "未知维度", \
+        dimension_unknown_detected_leftpart: "检测到未知维度(", \
+        dimension_unknown_detected_rightpart: "), 请在维度菜单设置: ", \
+        extended_menu_incompatible: "§a展开菜单§r不兼容此游戏版本", \
+        extended_menu_next_page: "§b查看下一页", \
+        extended_menu_previous_page: "§b查看上一页", \
+        extended_menu_title: "======================§bTPA§6 菜单§r========================", \
+        here_button_tpa: "[§b请求传送§r]", \
+        here_button_tpa_hoverevent: "§b点击快捷向他发送传送请求", \
+        here_button_tpa_notavail_hoverevent: "§c玩家不允许被传送", \
+        here_spec: "旁观者模式玩家不允许使用§a广播位置§r", \
+        here_voxel_hoverevent: "§b点击添加VoxelMap路径点", \
+        here_xaero_hoverevent: "§6点击添加Xearo's Minimap路径点", \
+        home_act_left_part: "已将你传送至传送点#", \
+        home_act_right_part: "", \
+        home_create: "你尚未建立传送点", \
+        home_create_button: "[§a新建§r]", \
+        home_create_button_hoverevent: "§a点击设置一个传送点", \
+        home_disabled: "§a传送点§r已被服务器禁用", \
+        home_display: "§b传送点#", \
+        home_display_rm_button: "[§c移除§r]", \
+        home_display_rm_button_hoverevent: "§c点击删除这个传送点", \
+        home_display_set_button: "[§a设置§r]", \
+        home_display_set_button_hoverevent: "§a点击设置传送点", \
+        home_display_tp_button: "[§b传送§r]", \
+        home_display_tp_button_hoverevent: "§b点击传送到这个传送点", \
+        home_menu_title: "你现在拥有如下的传送点槽位: ", \
+        home_missing_hoverevent: "该传送点尚未设定", \
+        home_new: "§a新建: ", \
+        home_not_found_hoverevent: "§b你访问的传送点", \
+        home_not_found_left_part: "你访问的传送点#", \
+        home_not_found_right_part: "不存在", \
+        home_number: "传送点#", \
+        home_out_of_range_left_part: "你访问的传送点#", \
+        home_out_of_range_right_part: "超出了服务器的限制", \
+        home_remove_hoverevent: "§b移除的传送点", \
+        home_remove_left_part: "你移除了传送点#", \
+        home_remove_right_part: "", \
+        home_set_left_part: "你把传送点#", \
+        home_set_middle_part: "设置为", \
+        home_set_position: "坐标", \
+        home_set_right_part: "", \
+        home_spec: "旁观者模式玩家不允许操作§a传送点§r", \
+        idfix_act_hoverevent: "§b这名玩家使用了ID修复", \
+        idfix_act_left_part: "", \
+        idfix_act_right_part: "使用了§aID修复§r, 所有玩家的数据编号与上一位置已被重置", \
+        idfix_cooldown: "§aID修复§r还在冷却中", \
+        idfix_disabled: "§aID修复§r已被服务器禁用", \
+        lang_button: "[§6点击这里选择语言§r]", \
+        lang_button_hoverevent: "§b点击查看语言菜单", \
+        lang_button_server: "[§6点击这里选择服务器语言§r]", \
+        lang_disabled: "§a玩家选择语言§r已被服务器禁用", \
+        lang_menu_select_button: "[§a加载推荐命令§r]", \
+        lang_menu_select_button_hoverevent: "§b点击在聊天栏加载推荐命令: ", \
+        lang_menu_title: "请在下方选择语言:", \
+        lang_selected_left_part: "你已切换语言到", \
+        lang_selected_right_part: "", \
+        lang_server_follow_left_part: "由于数据包服务端默认语言尚未设置, 因此现在它被设置为", \
+        lang_server_follow_right_part: "", \
+        load_add_objectives: "正在添加46个记分项... (1/6)", \
+        load_added_objectives: "已成功地添加记分项... (2/6)", \
+        load_author: "此数据包由§6Xiao_tu233§r制作. ", \
+        load_button_help: "[帮助]", \
+        load_button_help_hoverevent: "点击查看帮助", \
+        load_button_license: "[协议]", \
+        load_button_license_hoverevent: "§b使用TPA数据包必须遵循我们在Github网站上 开源协议以及对§l§n商业§r§b使用的限制 否则将会存在§6§l侵权§r§b的风险 所以请您仔细认真阅读全文", \
+        load_button_options: "[设置]", \
+        load_button_options_hoverevent: "点击更改数据包配置", \
+        load_button_update: "[更新]", \
+        load_button_update_hoverevent: "点击开始数据包的更新导引", \
+        load_copyright_claim: "Copyright © 2024-2025 Xiao_tu233. 不允许商业使用. 具体请点击下方\"[协议]\"按钮", \
+        load_date_check_left_part: "目前版本发布于", \
+        load_date_check_format: 123, \
+        load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
+        load_date_check_year_prefix: "", \
+        load_date_check_year_suffix: "年", \
+        load_date_check_year_local_prefix: "", \
+        load_date_check_year_local_suffix: "", \
+        load_date_check_month_prefix: "", \
+        load_date_check_month_suffix: "月", \
+        load_date_check_day_prefix: "", \
+        load_date_check_day_suffix: "日", \
+        load_date_check_right_part: ", 请注意更新", \
+        load_did_reset_scores: "已成功重设在线玩家分数... (3/6)", \
+        load_done: "§a数据包重载完成: ", \
+        load_done_extra: " 完整版 ", \
+        load_init_storage: "正在初始化相关命令存储... (3/6)", \
+        load_init_vars: "正在初始化变量... (5/6)", \
+        load_initted_storage: "已成功初始化相关命令存储... (4/6)", \
+        load_initted_vars: "已成功初始化变量... (6/6)", \
+        load_remove_tags: "正在移除标签... (4/6)", \
+        load_removed_tags: "已成功移除标签... (5/6)", \
+        load_reset_scores: " 正在重设在线玩家分数... (2/6)", \
+        load_title: "§e重载中...", \
+        load_version_hoverevent: "§b这是TPA数据包的版本, 而不是Minecraft版本.", \
+        load_welcome: "欢迎使用TPA数据包! ", \
+        mute_disable: "你开启了§a数据包音效§r", \
+        mute_enable: "你§a静音§r了数据包", \
+        option_advenced_warn: "下方设置为高级设置，请勿随意修改，除非你知道自己在做什么", \
+        option_advenced_tip: "打开调试模式以调节更多设置(高级设置)", \
+        option_anchor_search_retries: "寻找传送锚点的重试次数", \
+        option_anchor_search_retries_hoverevent: "§b在下方更改§a寻找传送锚点的重试次数 §r(§6单位: 次 §r或 §6游戏刻/运行频率 §r), §b调节过大会延长等待, 过小可能导致锚点误判或污染", \
+        option_back: "禁止玩家返回上一位置", \
+        option_book: "禁止玩家使用传送书", \
+        option_button_disable: "§c禁用§r]", \
+        option_button_enable: "§r[§a启用§r", \
+        option_button_help: "[§4帮助§r]", \
+        option_button_help_hoverevent: "§b点击打开帮助菜单", \
+        option_button_license: "[§4协议§r]", \
+        option_button_license_hoverevent: "§b使用TPA数据包必须遵循我们在Github网站上 开源协议以及对§l§n商业§r§b使用的限制 否则将会存在§6§l侵权§r§b的风险 所以请您仔细认真阅读全文", \
+        option_button_notworking: "[§4无法运行§r]", \
+        option_button_notworking_hoverevent: "§b当遇到tick函数无法运行(TPA菜单无法打开)时请点击", \
+        option_button_set: "§r[§a设置§r]", \
+        option_button_uninstall: "[§4卸载§r]", \
+        option_button_uninstall_hoverevent: "§4点击此按钮来§l§n卸载§r§4TPA数据包! 请考虑你是否真的需要!", \
+        option_button_update: "[§4更新§r]", \
+        option_button_update_hoverevent: "§b点击开始更新数据包", \
+        option_carpet_disabled: "本功能需要Carpet模组作为依赖, 而服务器尚未安装Carpet模组. ", \
+        option_carpet_fake_player_fix: "Carpet模组假人修复", \
+        option_compact_ids: "是否在玩家离线后移除编号空位", \
+        option_current_game_version: "当前检测到的游戏版本", \
+        option_debug_mode: "调试模式", \
+        option_debug_mode_hoverevent: "§b点击下方启用来启用调试模式 这会在聊天栏向你提供排除问题的相关讯息 但同时也可能导致刷屏 打开调试模式后再次打开设置菜单便可以调整高级设置", \
+        option_dimension: "已兼容维度", \
+        option_dimension_button_add: "[§a添加§r]", \
+        option_dimension_button_add_hoverevent: "§b点击添加新维度", \
+        option_dimension_button_edit_color: "[§a编辑颜色§r]", \
+        option_dimension_button_edit_color_hoverevent: "§b点击编辑该维度的主题颜色(点击后请在指令末尾填写原版16色的英文或#XXXXXX的16进制格式, 输好后回车)", \
+        option_dimension_button_edit_id: "[§a编辑维度ID§r]", \
+        option_dimension_button_edit_id_hoverevent: "§b点击编辑该维度的维度ID(点击后请按下键盘上的左箭头, 在冒号后填写, 输好后回车)", \
+        option_dimension_button_edit_namespaceid: "[§a编辑命名空间ID§r]", \
+        option_dimension_button_edit_namespaceid_hoverevent: "§b点击编辑该维度的命名空间ID(namespace:id, source location 形如minecraft:xxx)(点击后请按两次键盘上的左箭头, 在引号中填写, 输好后回车)", \
+        option_dimension_button_edit_name: "[§a编辑名字§r]", \
+        option_dimension_button_edit_name_hoverevent: "§b点击编辑该维度的显示名称(点击后请按按两次键盘上的左箭头, 在引号中填写, 输好后回车, 该项对于原版维度会跟随语言设置而不是当前设置)", \
+        option_dimension_button_remove: "[§c移除§r]", \
+        option_dimension_button_remove_hoverevent: "§b点击移除该维度", \
+        option_dimension_button_remove_notavail_hoverevent: "§c原版维度无法移除", \
+        option_dimension_hoverevent: "§b在下方设置按钮打开§a维度兼容§6菜单 §b同时右侧的数字会是目前已兼容的维度数量", \
+        option_dimension_menu_title: "服务器兼容了如下的维度: ", \
+        option_dimension_number_hoverevent_leftpart: "§b服务器目前兼容了 ", \
+        option_dimension_number_hoverevent_rightpart: " 个维度", \
+        option_disabled: "§c禁用§r", \
+        option_enabled: "§a启用§r", \
+        option_frequency: "数据包运行频率", \
+        option_frequency_hoverevent: "§b在下方更改§a数据包运行频率 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b点击禁用来暂时停止数据包运作", \
+        option_game_version: "数据包文件兼容的游戏版本", \
+        option_home: "拥有传送点的个数", \
+        option_home_hoverevent: "§b在下方更改§a拥有传送点的个数 §r(§6单位: 个§r), §b填0来设置禁止传送点 §b填-1来设置不限制传送点的数量(不推荐)", \
+        option_idfix_cooldown: "§bID修复冷却时间", \
+        option_idfix_cooldown_hoverevent: "§b在下方更改§aID修复冷却时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置无冷却 填-1来设置禁止ID修复", \
+        option_lang: "服务器语言", \
+        option_lang_hoverevent: "§b在下方进入语言选择菜单", \
+        option_player_lang: "是否允许玩家语言选择", \
+        option_max_anchor_summons_attempts: "传送锚点最大召唤尝试次数", \
+        option_max_anchor_summons_attempts_hoverevent: "§b在下方更改§a传送锚点最大召唤尝试次数 §r(§6单位: 次§r) §b调节过大会增加卡顿和无效等待, 过小可能导致传送频繁失败", \
+        option_search_id: "是否禁用搜索玩家编号", \
+        option_sim_dist: "模拟距离", \
+        option_stricter_book_check: "更严格的传送书检测", \
+        option_stricter_book_check_incompatible: "更严格的传送书检测不兼容该版本", \
+        option_stricter_book_check_disabled: "本功能需要Bookshelf数据包作为依赖, 而服务器尚未安装Bookshelf数据包. ", \
+        option_sim_dist_button_cal: "[§a计算§r]", \
+        option_sim_dist_hoverevent: "§b在下方更改§a模拟距离 §r(§6单位: 区块§r)  请在点击前保证主世界原点模拟距离内没有玩家", \
+        option_time_out: "传送请求超时时间", \
+        option_time_out_hoverevent: "§b在下方更改§a传送请求超时时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置禁止传送 §b填-1来设置永不超时", \
+        option_title_line1: "======================§bTPA§6 设置菜单§r=====================", \
+        option_title_line2: "请在下方调整设置: (需重新呼出菜单以查看更改)", \
+        option_tp_pos: "传送坐标允许半径", \
+        option_tp_pos_cooldown: "传送坐标冷却时间", \
+        option_tp_pos_cooldown_hoverevent: "§b在下方更改§a冷却时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置无冷却 §b填-1来设置禁止传送", \
+        option_tp_pos_hoverevent: "§b在下方更改§a传送坐标允许半径 §r(§6单位: 米§r), §b填0来设置禁止传送 §b填-1来设置不限制半径(不推荐)", \
+        option_tp_spec: "允许传送旁观者", \
+        option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
+        option_server_calling_comment: "§l§n§4这里是一个注释 因为上面的option_server_calling需要被控制台所显示 如果直接写汉字会被显示为乱码 这里使用拼音来进行表示", \
+        option_uses_binary_teleport: "是否使用二分法传送", \
+        option_uses_binary_teleport_hoverevent: "§b在下方选择§a使用二分法传送(启用) §6抑或是 §c使用锚点传送(禁用)", \
+        option_uses_string_dimension: "是否识别字符串维度", \
+        option_uses_string_dimension_hoverevent: "§b在下方选择§a用字符串储存维度1.16+(启用) §6抑或是 §c用整型储存维度1.16-(禁用)", \
+        option_version: "数据包版本", \
+        option_warp: "公共传送点", \
+        option_warp_hoverevent: "§b在下方设置按钮打开§a公共传送点§6菜单 §b同时右侧的数字会是目前已经设置的公共传送点数量", \
+        option_warp_number_hoverevent_leftpart: "§b服务器目前设置了 ", \
+        option_warp_number_hoverevent_rightpart: "§b 个公共传送点", \
+        option_uses_tick_scheduling: "是否使用/schedule指令调用Tick函数", \
+        output_default: "你将输出位置切换为§a聊天栏和动作栏§r", \
+        output_hide_actionbar: "你将输出位置切换为§a仅聊天栏§r", \
+        output_hide_chatbar: "你将输出位置切换为§a仅动作栏§r", \
+        recver_accept_auto_hoverevent: "§b向你发送传送请求的玩家", \
+        recver_accept_auto_left_part: "自动接受了", \
+        recver_accept_auto_right_part: "的传送请求", \
+        recver_accept_toggle_off: "你关闭了§a自动接受§r", \
+        recver_accept_toggle_on: "你开启了§a自动接受§r", \
+        recver_accept_tpa_hoverevent: "§b你所接受传送请求的玩家", \
+        recver_accept_tpa_left_part: "你接受了", \
+        recver_accept_tpa_right_part: "的传送请求", \
+        recver_accept_tpahere_hoverevent: "§b你所接受§l传送此处§r请求的玩家", \
+        recver_accept_tpahere_left_part: "你接受了", \
+        recver_accept_tpahere_right_part: "的§l 传送此处§r请求", \
+        recver_cancel_hoverevent: "§b取消对你请求的玩家", \
+        recver_cancel_left_part: "", \
+        recver_cancel_right_part: "取消了对你的请求", \
+        recver_deny_tpa_hoverevent: "§b你所拒绝传送请求的玩家", \
+        recver_deny_tpa_left_part: "你拒绝了", \
+        recver_deny_tpa_right_part: "的传送请求", \
+        recver_deny_tpahere_hoverevent: "§b你所拒绝§l传送此处§r请求的玩家", \
+        recver_deny_tpahere_left_part: "你拒绝了", \
+        recver_deny_tpahere_right_part: "的§l传送此处§r请求", \
+        recver_recv_button_accept: "[§a接受§r]", \
+        recver_recv_button_accept_hoverevent: "§b点击接受他的请求", \
+        recver_recv_button_deny: "[§c拒绝§r]", \
+        recver_recv_button_deny_hoverevent: "§b点击拒绝他的请求", \
+        recver_recv_tpa_actionbar_left_part: "", \
+        recver_recv_tpa_actionbar_right_part: "向你发送了一个传送请求, 使用/trigger tpaccept来接受请求", \
+        recver_recv_tpa_chatbar_left_part: "", \
+        recver_recv_tpa_chatbar_right_part: "向你发送了一个传送请求", \
+        recver_recv_tpa_hoverevent: "§b向你发送传送请求的玩家", \
+        recver_recv_tpahere_actionbar_left_part: "", \
+        recver_recv_tpahere_actionbar_right_part: "向你发送了一个§l传送此处§r请求, 使用/trigger tpaccept来接受请求", \
+        recver_recv_tpahere_chatbar_left_part: "", \
+        recver_recv_tpahere_chatbar_right_part: "向你发送了一个§l传送此处§r请求", \
+        recver_recv_tpahere_hoverevent: "§b向你发送§l传送此处§r请求的玩家", \
+        recver_req_not_exist: "没有 需要处理的请求", \
+        recver_timeout_hoverevent: "§b向你发送超时请求的玩家", \
+        recver_timeout_left_part: "", \
+        recver_timeout_right_part: "的传送请求已超时", \
+        reqer_accept_auto_hoverevent: "§b自动同意了你的传送请求的玩家", \
+        reqer_accept_auto_left_part: "对方开启了自动接受, 将你传送至", \
+        reqer_accept_auto_right_part: "...", \
+        reqer_accept_tpa_hoverevent: "§b接受了你的传送请求的玩家", \
+        reqer_accept_tpa_left_part: "正在传送你至", \
+        reqer_accept_tpa_right_part: "...", \
+        reqer_accept_tpahere_hoverevent: "§b接受了你的§l传送此处§r请求的玩家", \
+        reqer_accept_tpahere_left_part: "正在传送", \
+        reqer_accept_tpahere_right_part: "至你...", \
+        reqer_button_tpa: "[§b传送§r]", \
+        reqer_button_tpa_hoverevent: "§b点击传送向他发送传送请求", \
+        reqer_button_tpahere: "[§b传送此处§r]", \
+        reqer_button_tpahere_hoverevent: "§b点击请求他传送到你的当前位置", \
+        reqer_cancel_hoverevent: "§b你取消了请求的玩家", \
+        reqer_cancel_left_part: "你取消了向", \
+        reqer_cancel_right_part: "的请求", \
+        reqer_cancel_spec: "旁观者模式玩家不允许§a取消请求§r", \
+        reqer_change_actionbar_left_part: "你之前发送过了一个向", \
+        reqer_change_actionbar_middle_part: "的请求, 已取消前一个请求. 现在向", \
+        reqer_change_actionbar_right_part: "发送了请求, 等待他接受, 蹲下并摇头3次以取消请求", \
+        reqer_change_chatbar_left_part: "你之前发送过了一个 向", \
+        reqer_change_chatbar_middle_part: "的请求, 已取消前一个请求. 现在向", \
+        reqer_change_chatbar_right_part: "发送了请求, 等待他接受", \
+        reqer_change_hoverevent: "§b你之前发送请求的玩家", \
+        reqer_deny_tpa_hoverevent: "§b拒绝了你的传送请求的玩家", \
+        reqer_deny_tpa_left_part: "", \
+        reqer_deny_tpa_right_part: "拒绝了你的传送请求", \
+        reqer_deny_tpahere_hoverevent: "§b拒绝了你的§l传送此处§r请求的玩家", \
+        reqer_deny_tpahere_left_part: "", \
+        reqer_deny_tpahere_right_part: "拒绝了你的传送请求", \
+        reqer_disabled: "服务器不允许§a传送§r", \
+        reqer_first_join: "[§6点我打开TPA菜单§r]", \
+        reqer_no_req_found: "你还未向玩家发送任何请求", \
+        reqer_recver_invalid: "你请求的玩家已离线或不允许被传送", \
+        reqer_req_button_cancel: "[§4取消§r]", \
+        reqer_req_button_cancel_hoverevent: "§b点击取消请求", \
+        reqer_req_hoverevent: "§b你所发送请求的玩家", \
+        reqer_req_not_exist: "请求的玩家不存在或不在线", \
+        reqer_req_tpa_actionbar_left_part: "你向", \
+        reqer_req_tpa_actionbar_right_part: "发送了一个传送请求. 等待他接受, 蹲下并摇头3次以取消请求", \
+        reqer_req_tpa_chatbar_left_part: "你向", \
+        reqer_req_tpa_chatbar_right_part: "发送了一个传送请求. 等待他接受", \
+        reqer_req_tpa_hoverevent: "§b你所发送传送请求的玩家", \
+        reqer_req_tpahere_actionbar_left_part: "你向", \
+        reqer_req_tpahere_actionbar_right_part: "发送了一个传送他到你的所在位置的请求. 等待他接受, 蹲下并摇头3次以取消请求", \
+        reqer_req_tpahere_chatbar_left_part: "你向", \
+        reqer_req_tpahere_chatbar_right_part: "发送了一个传送他到你的所在位置请求. 等待他接受", \
+        reqer_req_tpahere_hoverevent: "§b你所发送§l传送此处§r请求的玩家", \
+        reqer_self: "你不能tp你自己", \
+        reqer_spam: "你已经向他发送过请求了", \
+        reqer_spec: "旁观者模式玩家不允许§a传送§r", \
+        reqer_timeout_hoverevent: "§b未接受你的请求的玩家", \
+        reqer_timeout_left_part: "你向", \
+        reqer_timeout_right_part: "的传送请求已超时", \
+        search_id_abort: "你停止了§a搜索玩家编号§r", \
+        search_id_dialog_done_tooltip: "§b点击提交名字", \
+        search_id_dialog_cancel: "取消", \
+        search_id_dialog_cancel_tooltip: "§b点击取消输入", \
+        search_id_disabled: "§a搜索玩家编号§r被服务器禁用", \
+        search_id_incompatible: "§a搜索玩家编号§r不兼容该游戏版本", \
+        search_id_keyboard_title: "请点击下方键盘按键来在上方输入玩家名: ", \
+        search_id_name_input: "已输入: ", \
+        search_id_recall: "[§b重新呼出§r]", \
+        search_id_recall_hoverevent: "§b重新呼出搜索玩家编号软键盘", \
+        search_id_throw_on_invalid_char: "你输入的名字包含不合法的字符", \
+        search_id_unavail_player: "对方不在线或不允许被传送", \
+        simple_menu_button: "[§b详细菜单§r]", \
+        simple_menu_button_hoverevent: "§b点击切换至详细菜单", \
+        simple_menu_disable: "你将TPA菜单切换至§a详细菜单", \
+        simple_menu_incompatible: "§a简略菜单§r不兼容此游戏版本", \
+        simple_menu_enable: "你将TPA菜单切换至§a简略菜单 §r你现在可以直接使用/trigger tpa来打开简略菜单", \
+        simple_menu_title: "点击下方玩家名发送传送请求", \
+        teleport_incompatible: "§a锚点传送§r不兼容此游戏版本", \
+        teleport_tryagain: "请重试", \
+        tick_not_working_button_set_schedule: "§b[设置]", \
+        tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
+        tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
+        tick_not_working_server_calling_comment: "§l§n§c这里是一个注释 因为上面的tick_not_working_server_calling需要被控制台所显示 如果直接写汉字会被显示为乱码 这里使用拼音来进行表示", \
+        tick_not_working_tips_line1: "你现在正在调用Tick不工作函数 因此你应该遇到了Tick函数不工作的情况 你现在可以实现以下两种方式的其中一种:", \
+        tick_not_working_tips_line2: "        1. 设置使用/schedule指令调用Tick函数", \
+        tick_not_working_tips_line3: "   或者 2. 把你手中的命令方块放到隐蔽的位置 以避免被破基岩机破坏", \
+        tp_pos_abort: "你已停止输入传送坐标", \
+        tp_pos_act_left_part: "已将你传送至坐标", \
+        tp_pos_act_right_part: "", \
+        tp_pos_button_abort: "[停止]", \
+        tp_pos_button_teleport: "[传送]", \
+        tp_pos_cooldown: "§a传送坐标§r还在冷却中", \
+        tp_pos_disabled: "服务器设置未启用§a传送坐标§r", \
+        tp_pos_dialog_cancel_tooltip: "§b点击取消输入", \
+        tp_pos_dialog_done_tooltip: "§b点击传送提交的坐标", \
+        tp_pos_dialog_set: "当前: ", \
+        tp_pos_dialog_set_x: "设置X坐标", \
+        tp_pos_dialog_set_x_tooltip: "§b点击设置X坐标", \
+        tp_pos_dialog_set_y: "设置Y坐标", \
+        tp_pos_dialog_set_y_tooltip: "§b点击设置Y坐标", \
+        tp_pos_dialog_set_z: "设置Z坐标", \
+        tp_pos_dialog_set_z_tooltip: "§b点击设置Z坐标", \
+        tp_pos_out_of_range: "传送距离超过了服务器设定的半径", \
+        tp_pos_recall: "[§b重新呼出§r]", \
+        tp_pos_recall_hoverevent: "§b点击重新呼出传送坐标菜单", \
+        tp_pos_spec: "旁观者模式玩家不允许§a传送坐标§r", \
+        tp_pos_throw_on_invalid_char: "你输入的坐标包含不合法的字符", \
+        tp_pos_title: "在下方调整坐标: ", \
+        tpa_menu_auto_accept: "自动接受: ", \
+        tpa_menu_back_button: "[§b返回上一位置§r]", \
+        tpa_menu_back_button_hoverevent: "§b回到传送前位置", \
+        tpa_menu_book_button: "[§b获取传送书§r]", \
+        tpa_menu_book_button_hoverevent: "§b点击来获取传送书", \
+        tpa_menu_dialog: "[§b对话框菜单§r]", \
+        tpa_menu_dialog_title: "§bTPA菜单", \
+        tpa_menu_dialog_hoverevent: "§b点击打开对话框菜单", \
+        tpa_menu_switch_hoverevent: "§b点击切换", \
+        tpa_menu_disable: "§c关闭§r]", \
+        tpa_menu_disabled: "§c禁用", \
+        tpa_menu_disabled_hoverevent: "§b点击切换到§a启用", \
+        tpa_menu_enable: "[§a开启§r", \
+        tpa_menu_enabled: "§a启用", \
+        tpa_menu_enabled_hoverevent: "§b点击切换到§c禁用", \
+        tpa_menu_extend: "§b更多§r", \
+        tpa_menu_extend_hoverevent: "§b点击展开菜单", \
+        tpa_menu_has_id_of: "的§a数据包编号§r是", \
+        tpa_menu_has_id_of_hoverevent: "§b数据包内部为每名玩家分配的编号 用于对应玩家", \
+        tpa_menu_here_button: "[§b广播位置§r]", \
+        tpa_menu_here_button_hoverevent: "§b点击广播你的位置", \
+        tpa_menu_home_button: "[§b家菜单§r]", \
+        tpa_menu_home_button_hoverevent: "§b点击打开私人传送点(家)菜单", \
+        tpa_menu_warp_button: "[§b地标菜单§r]", \
+        tpa_menu_warp_button_hoverevent: "§b点击打开公共传送点(地标)菜单", \
+        tpa_menu_hoverevent_left_part: "§b点击向", \
+        tpa_menu_hoverevent_right_part: "§b发送传送请求", \
+        tpa_menu_idfix_button: "[§bID修复§r]", \
+        tpa_menu_idfix_button_hoverevent: "§b如果你遇到两个相同玩家拥有同一id的问题, 你可以尝试这个修复. 此修复会重置所有玩家的id.", \
+        tpa_menu_lang_button: "[§b切换语言§r]", \
+        tpa_menu_lang_button_hoverevent: "§b点击切换语言", \
+        tpa_menu_mute: "静音数据包: ", \
+        tpa_menu_output: "输出显示位置: ", \
+        tpa_menu_output_actionbar: "§b隐藏聊天栏§r", \
+        tpa_menu_output_chatbar: "§b隐藏动作栏§r]", \
+        tpa_menu_output_default: "[§b默认§r", \
+        tpa_menu_output_actionbar_hidden: "§b仅聊天栏§r", \
+        tpa_menu_output_chatbar_hidden: "§b仅动作栏§r", \
+        tpa_menu_output_no_hidden: "§b动作栏和聊天栏§r", \
+        tpa_menu_pos_button: "[§b传送坐标§r]", \
+        tpa_menu_pos_button_hoverevent: "§b点击呼出传送坐标菜单", \
+        tpa_menu_refresh: "[§6刷新TPA菜单§r]", \
+        tpa_menu_refresh_hoverevent: "§b点击此处刷新或重新呼出TPA菜单", \
+        tpa_menu_search_id_button: "[§b搜索玩家§r]", \
+        tpa_menu_search_id_button_hoverevent: "§b点击呼出聊天栏键盘来搜索用户名", \
+        tpa_menu_simplemenu_button: "[§b简略菜单§r]", \
+        tpa_menu_simplemenu_button_hoverevent: "§b切换到简略菜单", \
+        tpa_menu_title: "下方是玩家数据包编号和游戏用户名, 点击编号来请求传送§l其他玩家§r: {", \
+        tpa_menu_tpaheremenu_button: "[§b传送此处菜单§r]", \
+        tpa_menu_tpaheremenu_button_hoverevent: "§b点击来跳转到传送此处菜单", \
+        tpa_menu_tpamenu_button: "[§b传送菜单§r]", \
+        tpa_menu_tpamenu_button_hoverevent: "§b点击来跳转到传送菜单", \
+        tpa_menu_you: "你", \
+        tpahere_menu_title: "下方是玩家数据包编号和游戏用户名, 点击编号来请求其他玩家传送§l你§r: {", \
+        uninstall_start: "正在卸载... (0/2)", \
+        uninstall_rmv_objs: "移除所有记分项... (0/2)", \
+        uninstall_rmv_done_1: "成功移除. (1/2)", \
+        uninstall_rmv_tags: "正在移除所有标签... (1/2)", \
+        uninstall_rmv_done_2: "成功移除. (2/2)", \
+        uninstall_done_leftpart: "§a成功卸载. 使用", \
+        uninstall_done_hoverevent: "点击运行命令", \
+        uninstall_done_rightpart: "来再次启用", \
+        update_reload: "§b[重载]", \
+        update_reload_hoverevent: "点击重载", \
+        update_step1_leftpart: "您正在进行TPA数据包的更新程序 目前已安装的数据包版本是 ", \
+        update_step1_rightpart: " 请在此处确认开始更新", \
+        update_step1_button: "§b§n§l[我知道我在做什么]", \
+        update_step1_hoverevent: "请谨慎点击", \
+        update_step2: "请从github,QQ群或Modrinth中下载最新版本的数据包备用", \
+        update_step3: "请点击右手边的按钮将数据包暂时禁用 以便下一步的安装", \
+        update_step3_button: "§b[禁用数据包]", \
+        update_step3_hoverevent: "如果遇到无法禁用 请检查数据包的文件名是否正确", \
+        update_step4: "我们即将完成, 请将数据包文件拖入datapacks文件夹并解压 然后删掉原来的数据包", \
+        update_step5_leftright: "后, 我们已经完成了TPA数据包的安装 如果数据包使用没有问题 请开始调整数据包设置 如果数据包没有正确加载 请尝试", \
+        update_step5_button: "§b[加载]", \
+        update_step5_hoverevent: "点击加载数据包", \
+        update_step5_rightpart: " 如果出现未知的记分项 请从第3步开始检查 这可能是由数据包安装版本不正确或未知不正确所导致的 其他问题请咨询Xiao_tu233", \
+        update_nextstep: "§b[下一步]", \
+        warp_button_add: "[§a新建传送点§r]", \
+        warp_button_add_hoverevent: "§b点击在当前位置新建一个公共传送点", \
+        warp_button_enable: "[§a启用§r]", \
+        warp_button_enable_hoverevent: "§b点击启用该公共传送点", \
+        warp_button_disable: "[§c禁用§r]", \
+        warp_button_disable_hoverevent: "§b点击禁用该公共传送点(除名字之外的相关信息将被隐藏 启用以查看)", \
+        warp_button_moveup: "[§d上移§r]", \
+        warp_button_moveup_hoverevent: "§b点击互换该公共传送点与上方公共传送点的位置", \
+        warp_button_moveup_notavail_hoverevent: "§c无法上移, 该传送点已经位于最上方", \
+        warp_button_movedown: "[§d下移§r]", \
+        warp_button_movedown_hoverevent: "§b点击互换该公共传送点与下方公共传送点的位置", \
+        warp_button_tp: "[§b传送§r]", \
+        warp_button_tp_hoverevent: "§b点击传送到该公共传送点", \
+        warp_button_rm: "[§c移除§r]", \
+        warp_button_rm_hoverevent: "§b点击移除该公共传送点", \
+        warp_button_setdesc: "[§a设描述§r]", \
+        warp_button_setdesc_hoverevent: "§b点击设置该公共传送点的描述(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
+        warp_button_setname: "[§a取名§r]", \
+        warp_button_setname_hoverevent: "§b点击设置该公共传送点的名字(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
+        warp_button_setpos: "[§a取址§r]", \
+        warp_button_setpos_hoverevent: "§b点击把该公共传送点设置到当前位置", \
+        warp_desc_disabled: "§c该公共传送点已被禁用", \
+        warp_disabled: "§a公共传送点§r已被服务器禁用", \
+        warp_menu_title: "服务器设置了如下的公共传送点: ", \
+        warp_number: "公共传送点#", \
+        warp_out_of_range: "该公共传送点尚未设置", \
+        warp_set_left_part: "你把", \
+        warp_set_middle_part: "设置为", \
+        warp_set_position: "坐标", \
+        warp_set_right_part: "", \
+        warp_set_default_name: "未命名传送点", \
+        warp_slot_disabled_leftpart: "你所访问的公共传送点", \
+        warp_slot_disabled_rightpart: "已被禁用", \
+        warp_spec: "旁观者模式玩家不允许传送§a公共传送点§r", \
+        warp_teleport_left_part: "已将你传送至", \
+        warp_teleport_right_part: "" \
+    }, \
+    {\
+        id: 2, \
+        name: "en_us", \
+        name_display: "English (United States)" \
+    }, \
+    {\
+        id: 3, \
+        name: "zh_tw", \
+        name_display: "繁體中文 (臺灣)", \
+        load_date_check_format: 123, \
+        load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
+        load_date_check_year_prefix: "", \
+        load_date_check_year_suffix: "年", \
+        load_date_check_year_local_prefix: "(民國", \
+        load_date_check_year_local_suffix: "年）", \
+        load_date_check_month_prefix: "", \
+        load_date_check_month_suffix: "月", \
+        load_date_check_day_prefix: "", \
+        load_date_check_day_suffix: "日", \
+    }, \
+    {\
+        id: 4, \
+        name: "jp_jp", \
+        name_display: "日本語（日本）", \
+        load_date_check_format: 123, \
+        load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
+        load_date_check_year_prefix: "", \
+        load_date_check_year_suffix: "年", \
+        load_date_check_year_local_prefix: "(令和", \
+        load_date_check_year_local_suffix: "年）", \
+        load_date_check_month_prefix: "", \
+        load_date_check_month_suffix: "月", \
+        load_date_check_day_prefix: "", \
+        load_date_check_day_suffix: "日", \
+    }\
+]

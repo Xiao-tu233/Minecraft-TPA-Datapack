@@ -1,3 +1,3 @@
 function tpa:sounds/no
-tellraw @s[scores={tpa.output=1..2}] [{"storage":"tpa:tpa", "nbt":"temp.lang.header"}, {"storage":"tpa:tpa", "nbt":"temp.lang.reqer_req_not_exist"}, ". "]
-title @s[scores={tpa.output=0..1}] subtitle [{"storage":"tpa:tpa", "nbt":"temp.lang.reqer_req_not_exist"}]
+tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_req_not_exist"}, ". "]
+title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_req_not_exist", "color": "red"}]

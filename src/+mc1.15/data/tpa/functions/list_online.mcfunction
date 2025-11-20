@@ -1,21 +1,39 @@
-# Parent function: tpa:remove_offline
-# i is iterable target, while j is to count if some player has the player id, cuz: 
-# No one have tpa.player_id equals to i => #j == 0 => the id with this id is offlined =
-# => take 1 score from everyone whose id's greater than the offlined one
-#! #offline_count here also counts the spectator players
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow #i: ",{"score":{"name":"#i","objective":"tpa.variables"}}]
+# Parent function: tpa:compact_ids
 
+# for (int i = 2; i< #global_current; i++)
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow Pointer(#i) @ ", {"score": {"name": "#i", "objective": "tpa.variables"}}, "/", {"score": {"name": "#global_current", "objective": "tpa.player_id"}}]
+
+# #j: bool = len(@a[@s.player_id == #i] (is_target_player_unanvail)
 execute as @a[scores={tpa.player_id=2..}] if score @s tpa.player_id = #i tpa.variables run scoreboard players add #j tpa.variables 1
+# if(#j){#offline_count: int +=1;}
 execute unless score #j tpa.variables matches 1.. run scoreboard players add #offline_count tpa.variables 1
 
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rSo far found: ",{"score":{"name":"#offline_count","objective":"tpa.variables"}}," players are offline/spectating/fake players."]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a [\
+    "[§bTPA§r] §6 Debug: §rSo far found: ", \
+    {"score": {"name": "#offline_count", "objective": "tpa.variables"}}, \
+    " players are offline/spectating/fake players." \
+]
+execute as @a if score #debug_mode tpa.config matches 1 run tellraw @a [\
+    "[§bTPA§r] §6 Debug: ", \
+    {"selector": "@s"}, \
+    "§r with id of ", \
+    {"score": {"name": "@s", "objective": "tpa.player_id_temp"}} \
+]
 
-execute as @a if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: ",{"selector":"@s"},"§r with id of ",{"score":{"name":"@s","objective":"tpa.player_id_"}}]
+# temp.back = back[@a[@s.player_id == #i].player_id_temp]
+execute as @a[scores={tpa.player_id=2..}] if score @s tpa.player_id = #i tpa.variables run \
+    scoreboard players operation #target_id tpa.variables = @s tpa.player_id_temp
+    function tpa:back/get
 
-function tpa:back/set
-
+# @a[@s.player_id == #i].player_id_temp -= #offline_count
 scoreboard players set #j tpa.variables 0
-execute as @a[scores={tpa.player_id=2..}] if score @s tpa.player_id_ = #i tpa.variables run scoreboard players operation @s tpa.player_id_ -= #offline_count tpa.variables
+execute as @a[scores={tpa.player_id=2..}] if score @s tpa.player_id_temp = #i tpa.variables run \
+    scoreboard players operation @s tpa.player_id_temp -= #offline_count tpa.variables
+
+# back[@a[@s.player_id == #i].player_id_temp] = temp.back
+execute as @a[scores={tpa.player_id=2..}] if score @s tpa.player_id = #i tpa.variables if score #offline_count tpa.variables matches 1.. run \
+    scoreboard players operation #target_id tpa.variables = @s tpa.player_id_temp
+    function tpa:back/set
 
 # For looping
 scoreboard players add #i tpa.variables 1
