@@ -1,0 +1,5 @@
+effect give @s resistance 1 255 true
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aWaiting terrain for anchor being loaded... (Retried: ", {"score": {"name": "#teleport_load_awaits", "objective": "tpa.variables"}}, "/", {"score": {"name": "#teleport_threshold_retry", "objective": "tpa.config"}, "underlined": true, "clickEvent": {"action": "suggest_command", "value": "/scoreboard players set #teleport_threshold_retry tpa.config "}, "hoverEvent": {"action": "show_text", "value": "Click to edit Teleport retry threshold"}},")"]
+execute if score #debug_mode tpa.config matches 1 run scoreboard players add #teleport_load_awaits tpa.variables 1
+execute if score #teleport_load_awaits tpa.variables >= #teleport_threshold_retry tpa.config run function tpa:teleport/main_0
+execute if score #teleport_summon_retried tpa.variables >= #teleport_threshold_retry_summon tpa.config run function tpa:teleport/stop_process

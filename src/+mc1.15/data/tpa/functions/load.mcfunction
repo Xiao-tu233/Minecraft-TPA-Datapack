@@ -17,7 +17,7 @@ scoreboard objectives add back trigger
 scoreboard objectives add tpaccept trigger
 scoreboard objectives add tpa.help trigger
 scoreboard objectives add tpa.tpaccept trigger
-scoreboard objectives add tpa.tpaccept_toggle trigger
+scoreboard objectives add tpa.tpaccept_tgl trigger
 scoreboard objectives add tpa.tpa trigger
 scoreboard objectives add tpa.tp_to dummy
 scoreboard objectives add tpa.tpahere trigger
@@ -32,12 +32,12 @@ scoreboard objectives add tpa.spec dummy
 scoreboard objectives add tpa.idfix trigger
 scoreboard objectives add tpa.idfix_cd dummy
 scoreboard objectives add tpa.back trigger
-scoreboard objectives add tpa.extended_menu trigger
+scoreboard objectives add tpa.ext_menu trigger
 scoreboard objectives add tpa.mute trigger
 scoreboard objectives add tpa.output trigger
 scoreboard objectives add tpa.search_id trigger
-scoreboard objectives add tpa.search_id.key trigger
-scoreboard objectives add tpa.search_id.capslock dummy
+scoreboard objectives add tpa.search_id.ky trigger
+scoreboard objectives add tpa.search_id.cl dummy
 scoreboard objectives add tpa.req_timer dummy
 scoreboard objectives add tpa.if_death deathCount
 scoreboard objectives add tpa.if_online dummy
@@ -80,8 +80,8 @@ scoreboard players set @a tpa.tpaccept 0
 scoreboard players set @a tpa.req_timer 0
 scoreboard players set @a tpa.if_death 0
 scoreboard players set @a tpa.pos 0
-scoreboard players set @a tpa.search_id.key 0
-scoreboard players set @a tpa.search_id.capslock 0
+scoreboard players set @a tpa.search_id.ky 0
+scoreboard players set @a tpa.search_id.cl 0
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_did_reset_scores"}]
 
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_init_storage"}]
@@ -96,6 +96,7 @@ tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tp
 tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
+#! Consider adding score-format config of game version: Text Display: 1.17+
 kill @e[type=text_display, tag=tpa.license_displayer]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_removed_tags"}]
 
@@ -115,34 +116,17 @@ scoreboard players set #debug_mode tpa.config 0
 execute if score #carpet_fake_player_fix tpa.config matches 0 run tag @a remove tpa.fake_player
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_initted_vars"}]
 
-tellraw @a [\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_done"}, {"storage": "tpa:tpa", "nbt": "option.version_range"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_done_extra"},\
-    {"storage": "tpa:tpa", "nbt": "option.version", "hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_version_hoverevent"}}}\
-]
+tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_done"}, {"storage": "tpa:tpa", "nbt": "option.version_range"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_done_extra"},{"storage": "tpa:tpa", "nbt": "option.version", "hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_version_hoverevent"}}}]
 
 # Show the publish date, with local format
 function tpa:load_date_format
-tellraw @a [\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_left_part"}, \
-    {"storage": "tpa:tpa", "nbt": "temp.option.dates[]", "separator": ""}, "(UTC+8)", {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_right_part"}\
-]
+#! Consider adding score-format config of game version: seporator in Text components: 1.17+
+tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_left_part"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[]", "separator": ""}, "(UTC+8)", {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_right_part"}]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_welcome"}]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_copyright_claim"}]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_author"}]
-tellraw @a [\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, " ", \
-    {"text":"§9Discord","hoverEvent":{"action":"show_text", "value":"https://discord.gg/QgkpxsFahw"},"clickEvent":{"action":"open_url","value":"https://discord.gg/QgkpxsFahw"}}," • ",\
-    {"text":"§cYouTube","hoverEvent":{"action":"show_text", "value":"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"},"clickEvent":{"action":"open_url","value":"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"}}," • ",\
-    {"text":"§bBilibili","hoverEvent":{"action":"show_text", "value":"https://space.bilibili.com/433412367"},"clickEvent":{"action":"open_url","value":"https://www.bilibili.com/space/433412367"}}," • ",\
-    {"text":"§rQQ群","hoverEvent":{"action":"show_text", "value":"点击复制群号: 814709389"},"clickEvent":{"action":"copy_to_clipboard","value":"814709389"}}, " • ", \
-    {"text":"§0Github","hoverEvent":{"action":"show_text", "value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"},"clickEvent":{"action":"open_url","value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"}}\
-]
-tellraw @a [\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, \
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_options", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:options"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_options_hoverevent"}}}," ",\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_help", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:help"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_help_hoverevent"}}}," ",\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_update", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:update"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_update_hoverevent"}}}," ",\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_license", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:license"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_license_hoverevent"}}}]
+tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, " ", {"text":"§9Discord","hoverEvent":{"action":"show_text", "value":"https://discord.gg/QgkpxsFahw"},"clickEvent":{"action":"open_url","value":"https://discord.gg/QgkpxsFahw"}}," • ",{"text":"§cYouTube","hoverEvent":{"action":"show_text", "value":"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"},"clickEvent":{"action":"open_url","value":"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"}}," • ",{"text":"§bBilibili","hoverEvent":{"action":"show_text", "value":"https://space.bilibili.com/433412367"},"clickEvent":{"action":"open_url","value":"https://www.bilibili.com/space/433412367"}}," • ",{"text":"§rQQ群","hoverEvent":{"action":"show_text", "value":"点击复制群号: 814709389"},"clickEvent":{"action":"copy_to_clipboard","value":"814709389"}}, " • ", {"text":"§0Github","hoverEvent":{"action":"show_text", "value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"},"clickEvent":{"action":"open_url","value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"}}]
+tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_options", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:options"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_options_hoverevent"}}}," ",{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_help", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:help"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_help_hoverevent"}}}," ",{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_update", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:update"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_update_hoverevent"}}}," ",{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_license", "color": "gold", "clickEvent":{"action":"run_command","value":"/function tpa:license"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.load_button_license_hoverevent"}}}]
 
 execute unless score #language tpa.config matches 1.. run tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {"text": "[§a设置 | Set§r]", "clickEvent": {"action": "run_command", "value": "/function tpa:option_lang_menu"}}]
 function tpa:dimension/refresh
@@ -206,11 +190,11 @@ execute if score #uses_tick_scheduling tpa.config matches 1 run function tpa:tic
 # - Use uid instead of the tag of TPA_user §aOK
 # - Use tpahere filefolder to simplify tpa:tpahere §aOK
 # - Fix !s will continue to make ids greater and greater: §aOK§r, will also update the whole system in the future.
-    # Add also the third mode for compact_ids "混合模式"
-    # #compact_ids == Any && #tp_spec == Any && #carpet_fake_player_fix == 0 -> fake: their uid
-    # #compact_ids == 1 && #tp_spec == 0 && #carpet_fake_player_fix == 1 -> offline: null; spec, fake: -1
-    # #compact_ids == 0 && #tp_spec == 0 && #carpet_fake_player_fix == 1 -> offline: their uid; spec: negative of their uid; fake: -1
-    # #compact_ids == 0 && #tp_spec == 1 && #carpet_fake_player_fix == 1 -> offline: their uid; spec: their uid; fake: -1
+# Add also the third mode for compact_ids "混合模式"
+# #compact_ids == Any && #tp_spec == Any && #carpet_fake_player_fix == 0 -> fake: their uid
+# #compact_ids == 1 && #tp_spec == 0 && #carpet_fake_player_fix == 1 -> offline: null; spec, fake: -1
+# #compact_ids == 0 && #tp_spec == 0 && #carpet_fake_player_fix == 1 -> offline: their uid; spec: negative of their uid; fake: -1
+# #compact_ids == 0 && #tp_spec == 1 && #carpet_fake_player_fix == 1 -> offline: their uid; spec: their uid; fake: -1
 # - When Server Terminal access `/function tpa:options` or `/function tpa:tick_not_working` console will now return warning msg §aOK
 #! - Edit wiki
 # - Make tpa.output Default: tellraw & actionbar §aOK

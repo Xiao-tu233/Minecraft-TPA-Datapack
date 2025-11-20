@@ -1,3 +1,5 @@
+# Parent function: tpa:tick
+# This functions runs when the current tick is neither skipped since frequency nor teleporting processing
 
 scoreboard players enable @a tpa.help
 scoreboard players enable @a tpa
@@ -24,47 +26,58 @@ scoreboard players enable @a home
 scoreboard players enable @a tpa.home
 scoreboard players enable @a tpa.sethome
 scoreboard players enable @a tpa.removehome
+scoreboard players enable @a tpa.warp
 scoreboard players enable @a tpa.simple_menu
 scoreboard players enable @a tpa.language
 
+# Store config to storage
+# execute store result storage tpa:tpa option.tp_spec int 1 run scoreboard players get #tp_spec tpa.config
+# execute store result storage tpa:tpa option.carpet_fake_player_fix int 1 run scoreboard players get #carpet_fake_player_fix tpa.config
+# For 1.20.4-: storage value check is not available for predicates, we use functions to do that then re-store it to predicates
+# Below function doesn't exist for 1.20.5+
+execute as @a run function tpa:available
 
-# offline detect
-execute store result score #current_player_count tpa.variables if entity @a
-execute if score #current_player_count tpa.variables < #previous_player_count tpa.variables run function tpa:remove_offline
-scoreboard players operation #previous_player_count tpa.variables = #current_player_count tpa.variables
-
-# show [TPA menu] whenever some1 logged on
-execute as @a[tag=!__tpa__] unless score @s tpa.is_online matches 1 run function tpa:detect_join
+# Refresh player's scores when he's online
+execute as @a unless score @s tpa.is_online matches 1 run function tpa:detect_join
 
 # Make spectators and fake players not available to teleport by setting their tpa.player_id to -1
-execute if score #tp_spec tpa.config matches 0 as @a[gamemode=spectator] unless score @s tpa.player_id matches -1 run function tpa:remove_invalid_requests
-execute if score #tp_spec tpa.config matches 0 as @a[gamemode=spectator] unless score @s tpa.player_id matches -1 run scoreboard players set @s tpa.player_id -1
-execute if score #carpet_fake_player_fix tpa.config matches 1 run scoreboard players set @a[tag=fake_player] tpa.player_id -1
+execute if score #compact_ids tpa.config matches 1 run scoreboard players set @a[predicate=!tpa:available] tpa.player_id -1
+execute if score #compact_ids tpa.config matches 0 run scoreboard players operation @a[predicate=!tpa:available] tpa.player_id *= #-1 tpa.variables
+
+# Offline detect: {Player count decreased ? Remove offline Player ids : do nothing}
+execute store result score #current_avail_count tpa.variables if entity @a[predicate=tpa:available]
+execute store result score #current_online_count tpa.variables if entity @a
+scoreboard players set #sum_of_id tpa.variables 0
+execute as @a[predicate=tpa:available] run scoreboard players operation #sum_of_id tpa.variables += @s tpa.player_id
+
 # Give spectators and fake players whose game id was shaderred a new id
-execute as @a[gamemode=!spectator, scores={tpa.player_id=-1}, tag=!fake_player] run scoreboard players set @s tpa.player_id 1
+execute if score #compact_ids tpa.config matches 1 as @a[predicate=tpa:available, scores={tpa.player_id=..-1}] run scoreboard players set @s tpa.player_id 1
+execute if score #compact_ids tpa.config matches 0 as @a[predicate=tpa:available, scores={tpa.player_id=..-1}] run scoreboard players operation @s tpa.player_id = @s tpa.uid
 
-# give players a new id if their id is 0, 1
-execute as @a unless score @s tpa.player_id = @s tpa.player_id run scoreboard players set @s tpa.player_id 1
-execute as @a if score @s tpa.player_id matches 0..1 run scoreboard players set @s tpa.player_id 1
+# Remove offline player's id and give them to online players if the option is enabled
+execute if score #current_avail_count tpa.variables < #previous_avail_count tpa.variables if score #compact_ids tpa.config matches 1 run function tpa:compact_ids
 
-execute as @r[scores={tpa.player_id=0..1}] run function tpa:giveid
+# Reset for next change
+execute unless score #current_avail_count tpa.variables = #previous_avail_count tpa.variables run scoreboard players operation #previous_avail_count tpa.variables = #current_avail_count tpa.variables
 
+# Update online players' online status if player count changed
+execute unless score #current_online_count tpa.variables = #previous_online_count tpa.variables run function tpa:update_online
+scoreboard players operation #previous_sum_of_id tpa.variables = #sum_of_id tpa.variables
+
+# Give players a new id if their id is 1
+execute as @r[scores={tpa.player_id=1}] run function tpa:giveid
+
+# Teleport requests & TPA menu
+execute as @a[scores={tpa.simple_menu=2..3}] run function tpa:simple_menu
 execute as @a[scores={tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere
 
-# store pos before death
-execute as @a[scores={tpa.if_death=1}] if score #back tpa.config matches 0 run function tpa:back/push_confirm
-execute as @a[scores={tpa.if_death=1}] if score #back tpa.config matches 0 run scoreboard players operation #timer_to_sleep tpa.variables = #sleep_mode tpa.config
-execute as @a[scores={tpa.if_death=1}] if score #back tpa.config matches 0 if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §r",{"selector":"@s"},"'s death was detected, pos stored."]
-scoreboard players set @a tpa.if_death 0
+# Set back pos before death, and kill tpa book who dropped
+execute as @a[scores={tpa.if_death=1..}] run function tpa:player_died
 
-# time out detect
-execute as @a[scores={tpa.req_timer=0, tpa.tp_to=2..}] run function tpa:time_out
-execute as @a[scores={tpa.tp_to=2..}] if score @s tpa.req_timer > #ticks_skipped tpa.variables run scoreboard players operation @s tpa.req_timer -= #ticks_skipped tpa.variables
-# set zero if timer will be negative after minus
-execute as @a[scores={tpa.req_timer=0.., tpa.tp_to=2..}] if score @s tpa.req_timer <= #ticks_skipped tpa.variables run scoreboard players set @s tpa.req_timer 0
-execute as @a unless score @s tpa.tp_to matches 2.. run scoreboard players set @s tpa.req_timer 0
+# Time out detect
+execute as @a[scores={tpa.tp_to=2..}] run function tpa:req_timer
 
 execute as @a[scores={tpa.cancel_req=1..}] run function tpa:cancel_req
 
@@ -84,31 +97,46 @@ execute as @a if score @s tpa.idfix_cd > #ticks_skipped tpa.variables run scoreb
 execute as @a[scores={tpa.idfix_cd=0..}] if score @s tpa.idfix_cd <= #ticks_skipped tpa.variables run scoreboard players set @s tpa.idfix_cd 0
 
 execute as @a[scores={tpa.ext_menu=1..}] run function tpa:extended_menu
-execute as @a[scores={tpa.simple_menu=1..}] run function tpa:simple_menu
 execute as @a[scores={tpa.mute=2..}] run function tpa:mute
 execute as @a[scores={tpa.output=3..}] run function tpa:output
 execute as @a[scores={tpa.here=1..}] run function tpa:here
 
+# TPA book 传送书
+execute as @a[predicate=tpa:is_requesting_book] run function tpa:book
+execute as @a[scores={tpa.book=2}] run function tpa:book/state_validation
+execute as @a[scores={tpa.book=2}] if entity @s[nbt={Inventory: [{Slot: -106b, id: "minecraft:written_book", tag: {isTpaBook:1b}}]}] run function tpa:book/stop
+# Clear Players shouldn't have book
+clear @a[scores={tpa.book=0}] minecraft:written_book{isTpaBook:1b}
+# Kill book item entity which is not dropped by any avail player
+execute as @e[type=item, name='Written Book'] if data entity @s Item.tag.isTpaBook run kill @s
+# Remove book from Item Frame with book=0 player nearby
+execute as @e[type=!item, nbt={Item:{tag:{isTpaBook: 1b}}}] run data remove entity @s Item
+
+# 上一位置
 execute as @a[scores={back=1..}] run function tpa:back
 execute as @a[scores={tpa.back=1..}] run function tpa:back
 
 # Home
-execute as @a[scores={home=..-1}] run function tpa:home
-execute as @a[scores={home=1..}] run function tpa:home
-execute as @a[scores={tpa.home=..-1}] run function tpa:home
-execute as @a[scores={tpa.home=1..}] run function tpa:home
+execute as @a[predicate=tpa:home] run function tpa:home
 execute as @a[scores={tpa.sethome=1..}] run function tpa:sethome
 execute as @a[scores={tpa.removehome=1..}] run function tpa:removehome
 
+# Warp
+execute as @a[predicate=tpa:warp] run function tpa:warp
+
+# Both below ones need Ingame keyboard datapack as dependency
 # Search ID
 execute as @a[scores={tpa.search_id=1..}] run function tpa:search_id
-
-# TPA book
-execute as @a[scores={tpa.book=1..}] run function tpa:book
+execute as @a[scores={tpa.search_id.ky=1..}] run function tpa:search_id/input_key
+execute as @a[scores={tpa.search_id.ky=..-1}] run function tpa:search_id/abort
 
 # Teleport to a certain position given by requester (No available if wasn't enabled @ tpa:options)
 execute as @a[scores={tpa.pos=..-1}] run function tpa:tp_pos/conditions
 execute as @a[scores={tpa.pos=1..}] run function tpa:tp_pos/conditions
+
 # cd -= ticks_skipped ? ticks_skipped > cd : cd = 0
 execute as @a if score @s tpa.pos_cd > #ticks_skipped tpa.variables run scoreboard players operation @s tpa.pos_cd -= #ticks_skipped tpa.variables
 execute as @a[scores={tpa.pos_cd=0..}] if score @s tpa.pos_cd <= #ticks_skipped tpa.variables run scoreboard players set @s tpa.pos_cd 0
+
+# Call the tick function if the option is enabled
+execute if score #uses_tick_scheduling tpa.config matches 1 run schedule function tpa:tick 1t
