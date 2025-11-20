@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "TPA Quick Action | TPA 快速操作",
+    "actions": [
+        {
+            "label": "TPA dialog menu | TPA对话框菜单",
+            "tooltip": "Click to open the TPA dialog menu | 点击打开TPA对话框菜单",
+            "width": 200,
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger tpa.dialog"
+            }
+        }
+    ],
+    "after_action": "none",
+    "pause": false
+}

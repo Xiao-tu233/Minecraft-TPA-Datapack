@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "",
+    "inputs": [
+        {
+            "label": "time_out",
+            "type": "minecraft:text",
+            "key": "time_out"
+        }
+    ],
+    "actions": [
+        {
+            "label": {"translate": "gui.done"},
+            "action": {
+                "type": "dynamic/run_command",
+                "template": "scoreboard players set #time_out tpa.config $(time_out)"
+            }
+        }
+    ]
+}

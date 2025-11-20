@@ -1,0 +1,1 @@
+$data remove storage tpa:tpa search_id.$(name)
