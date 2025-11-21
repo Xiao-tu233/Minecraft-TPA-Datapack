@@ -1,0 +1,14 @@
+#> tpa:options.mcfunction
+execute if score #debug_mode tpa_config matches 1 run tellraw @a "[§bTPA§r] §6 Debug: §rNow executing: §atpa:options"
+
+tellraw @s "[§bTPA§r] Current config:"
+execute if score #debug_mode tpa_config matches 1 run tellraw @s "§bdebugMode: §aON"
+execute if score #debug_mode tpa_config matches 0 run tellraw @s "§bdebugMode: §cOFF"
+execute if score #tp_spec tpa_config matches 1 run tellraw @s "§bifStopSpectatorPlayerFromBeingTeleported: §aON"
+execute if score #tp_spec tpa_config matches 0 run tellraw @s "§bifStopSpectatorPlayerFromBeingTeleported: §cOFF"
+execute if score #remove_offline tpa_config matches 1 run tellraw @s "§bifRemoveOfflinePlayersId: §aON"
+execute if score #remove_offline tpa_config matches 0 run tellraw @s "§bifRemoveOfflinePlayersId: §cOFF"
+execute if score #back tpa_config matches 1 run tellraw @s "§bifAllowPlayerToDoBack: §aON"
+execute if score #back tpa_config matches 0 run tellraw @s "§bifAllowPlayerToDoBack: §cOFF"
+tellraw @s ["§btpRequestTimeOutTime: §c",{"score":{"name":"#time_out","objective":"tpa_config"}}]
+tellraw @s [" §6debugMode:",{"text":"[§aEnable§r","clickEvent":{"action":"run_command","value":"/scoreboard players set #debug_mode tpa_config 1"}},"|",{"text":"§cDisable§r]","clickEvent":{"action":"run_command","value":"/scoreboard players set #debug_mode tpa_config 0"}}," "," §6ifStopSpectatorPlayerFromBeingTeleported:",{"text":"[§aEnable§r","clickEvent":{"action":"run_command","value":"/scoreboard players set #tp_spec tpa_config 1"}},"|",{"text":"§cDisable§r]","clickEvent":{"action":"run_command","value":"/scoreboard players set #tp_spec tpa_config 0"}}," "," §6ifRemoveOfflinePlayersId:",{"text":"[§aEnable§r","clickEvent":{"action":"run_command","value":"/scoreboard players set #remove_offline tpa_config 1"}},"|",{"text":"§cDisable§r]","clickEvent":{"action":"run_command","value":"/scoreboard players set #remove_offline tpa_config 0"}}," "," §6ifAllowPlayerToDoBack:",{"text":"[§aEnable§r","clickEvent":{"action":"run_command","value":"/scoreboard players set #back tpa_config 1"}},"|",{"text":"§cDisable§r]","clickEvent":{"action":"run_command","value":"/scoreboard players set #back tpa_config 0"}}," "," §6tpRequestTimeOutTime:",{"text":"[§aSet§r]","hoverEvent":{"action":"show_text","value":{"text":"§bClick to set §atpRequestTimeOutTime §r(§6unit: 1 tick = 1/20 second§r), §bset -1 for infinity time"}},"clickEvent":{"action":"suggest_command","value":"/scoreboard players set #time_out tpa_config "}}," ",{"text":"[§4Reload§r]","clickEvent":{"action":"run_command","value":"/reload"},"hoverEvent":{"action":"show_text","value":"§4Click this button to reload TPA datapack! Reloading can solve many problems!"}}," ",{"text":"[§4Uninstall§r]","clickEvent":{"action":"run_command","value":"/function tpa:uninstall"},"hoverEvent":{"action":"show_text","value":"§4Click this button to uninstall TPA datapack! Consider if you really need to!"}}]

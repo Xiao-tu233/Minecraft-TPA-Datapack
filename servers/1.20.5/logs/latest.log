@@ -1,0 +1,291 @@
+[20:59:08] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[20:59:09] [ServerMain/INFO]: Found new data pack file/TPA_datapack-2.0.6+mc1.20.2, loading it automatically
+[20:59:11] [ServerMain/INFO]: Loaded 1175 recipes
+[20:59:12] [ServerMain/INFO]: Loaded 1277 advancements
+[20:59:13] [Server thread/INFO]: Starting minecraft server version 1.20.5
+[20:59:13] [Server thread/INFO]: Loading properties
+[20:59:13] [Server thread/INFO]: Default game type: SURVIVAL
+[20:59:13] [Server thread/INFO]: Generating keypair
+[20:59:14] [Server thread/INFO]: Starting Minecraft server on *:25565
+[20:59:14] [Server thread/INFO]: Using default channel type
+[20:59:14] [Server thread/INFO]: Preparing level "world"
+[20:59:14] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[20:59:16] [Worker-Main-11/INFO]: Preparing spawn area: 0%
+[20:59:16] [Worker-Main-11/INFO]: Preparing spawn area: 0%
+[20:59:16] [Worker-Main-11/INFO]: Preparing spawn area: 0%
+[20:59:16] [Worker-Main-11/INFO]: Preparing spawn area: 0%
+[20:59:16] [Server thread/INFO]: Time elapsed: 1869 ms
+[20:59:16] [Server thread/INFO]: Done (2.196s)! For help, type "help"
+[21:01:07] [User Authenticator #1/INFO]: UUID of player Xiao_tu233 is c6660e2c-d1b1-4a59-ae42-27c138b26705
+[21:01:08] [Server thread/INFO]: Xiao_tu233[/127.0.0.1:54786] logged in with entity id 1 at (-0.5, -60.0, -1.5)
+[21:01:08] [Server thread/INFO]: Xiao_tu233 joined the game
+[21:01:28] [Server thread/INFO]: [@: Teleported Xiao_tu233 to 0.500000, 1.000000, 2.500000]
+[21:01:49] [Server thread/INFO]: [@: Reloading!]
+[21:01:49] [Server thread/INFO]: Loaded 1175 recipes
+[21:01:49] [Server thread/INFO]: Loaded 1277 advancements
+[21:01:56] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa]]
+[21:01:59] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.idfix]]
+[21:02:01] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id]]
+[21:02:02] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 23)]
+[21:02:03] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 35)]
+[21:02:04] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 20)]
+[21:02:05] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 24)]
+[21:02:06] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 21)]
+[21:02:07] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 11)]
+[21:02:08] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 17)]
+[21:02:09] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 19)]
+[21:02:09] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 2)]
+[21:02:10] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 3)]
+[21:02:10] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 3)]
+[21:02:10] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.search_id.key] (set value to 33)]
+[21:02:17] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa]]
+[21:02:20] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.tpahere]]
+[21:02:21] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.tpa]]
+[21:02:22] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.back]]
+[21:02:27] [Server thread/INFO]: Xiao_tu233 was killed
+[21:02:27] [Server thread/INFO]: [Xiao_tu233: Killed Xiao_tu233]
+[21:02:29] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.back]]
+[21:02:37] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.language] (set value to -1)]
+[21:02:38] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.language] (set value to 1)]
+[21:02:43] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.book]]
+[21:02:46] [Server thread/INFO]: [Xiao_tu233: Running function tpa:options]
+[21:02:50] [Server thread/INFO]: [Xiao_tu233: Running function tpa:book/track/enable]
+[21:03:15] [Server thread/INFO]: [@: Reloading!]
+[21:03:16] [Server thread/INFO]: Loaded 1175 recipes
+[21:03:17] [Server thread/INFO]: Loaded 1278 advancements
+[21:03:17] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2885ms or 57 ticks behind
+[21:03:18] [Server thread/ERROR]: Display entityNot a string
+[21:03:18] [Server thread/ERROR]: Display entityNot a string
+[21:03:18] [Server thread/ERROR]: Display entityNot a string
+[21:03:18] [Server thread/ERROR]: Display entityNot a string
+[21:03:23] [Server thread/INFO]: [Xiao_tu233: Running function tpa:options]
+[21:03:25] [Server thread/INFO]: [Xiao_tu233: Running function tpa:book/track/enable]
+[21:03:25] [Server thread/INFO]: [Xiao_tu233: Function tpa:book/track/enable returned 0]
+[21:03:27] [Server thread/ERROR]: Tried to load invalid item: 'Item must not be minecraft:air'
+[21:03:36] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.book]]
+[21:03:37] [Server thread/ERROR]: Tried to load invalid item: 'Item must not be minecraft:air'
+[21:03:48] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.book]]
+[21:03:56] [Server thread/ERROR]: Tried to load invalid item: 'Item must not be minecraft:air'
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:58] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:03:59] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:00] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:01] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:02] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:03] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:04] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [@: Set [tpa.config] for #debug_mode to 1]
+[21:04:05] [Server thread/INFO]: [Xiao_tu233: Gamerule commandBlockOutput is now set to: false]
+[21:05:24] [Server thread/INFO]: Loaded 1175 recipes
+[21:05:24] [Server thread/INFO]: Loaded 1278 advancements
+[21:05:25] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2669ms or 53 ticks behind
+[21:05:29] [Server thread/ERROR]: Tried to load invalid item: 'Item must not be minecraft:air'
+[21:07:02] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.tpa] (set value to 2)]
+[21:09:08] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:09:09] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.sethome]]
+[21:09:13] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:09:13] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:09:14] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:09:16] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:09:41] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:10:36] [Server thread/INFO]: [Xiao_tu233: Set the time to 1000]
+[21:10:40] [Server thread/INFO]: [Xiao_tu233: Gamerule doDaylightCycle is now set to: false]
+[21:11:32] [Server thread/INFO]: [Xiao_tu233: Set [tpa.variables] for #is_exist to 0]
+[21:11:34] [Server thread/INFO]: [Xiao_tu233: Running function tpa:home/is_exist]
+[21:11:34] [Server thread/INFO]: [Xiao_tu233: Function tpa:home/is_exist returned 1]
+[21:11:45] [Server thread/INFO]: [Xiao_tu233: Running function tpa:back/set]
+[21:11:47] [Server thread/INFO]: [Xiao_tu233: Running function tpa:home/act_macro]
+[21:12:15] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa]]
+[21:12:37] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:13:02] [Server thread/INFO]: [Xiao_tu233: Running function tpa:home/act]
+[21:13:04] [Server thread/INFO]: [Xiao_tu233: Running function tpa:home/act]
+[21:13:51] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:14:17] [Server thread/INFO]: Loaded 1175 recipes
+[21:14:17] [Server thread/INFO]: Loaded 1278 advancements
+[21:14:18] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2952ms or 59 ticks behind
+[21:14:21] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:14:22] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:14:22] [Server thread/INFO]: [Not Secure] [Xiao_tu233] 1
+[21:14:45] [Server thread/INFO]: Loaded 1175 recipes
+[21:14:46] [Server thread/INFO]: Loaded 1278 advancements
+[21:14:46] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2067ms or 41 ticks behind
+[21:14:56] [Server thread/INFO]: Loaded 1175 recipes
+[21:14:56] [Server thread/INFO]: Loaded 1278 advancements
+[21:15:02] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:15:03] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:15:18] [Server thread/INFO]: Loaded 1175 recipes
+[21:15:18] [Server thread/INFO]: Loaded 1278 advancements
+[21:15:19] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2228ms or 44 ticks behind
+[21:15:20] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:15:21] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:15:21] [Server thread/INFO]: [Not Secure] [Xiao_tu233] function tpa:home/act with storage tpa:tpa temp.home.2
+[21:16:28] [Server thread/INFO]: Loaded 1175 recipes
+[21:16:28] [Server thread/INFO]: Loaded 1278 advancements
+[21:16:29] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2091ms or 41 ticks behind
+[21:16:35] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:16:36] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to 1)]
+[21:16:36] [Server thread/INFO]: [Not Secure] [Xiao_tu233] function tpa:home/act with storage tpa:tpa temp.home.1
+[21:16:40] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.home] (set value to -1)]
+[21:16:41] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.warp] (set value to -1)]
+[21:16:47] [Server thread/INFO]: [Xiao_tu233: Running function tpa:dimension/menu]
+[21:16:52] [Server thread/INFO]: [Xiao_tu233: Running function tpa:warp/option]
+[21:16:53] [Server thread/INFO]: [Xiao_tu233: Running function tpa:warp/setpos]
+[21:16:57] [Server thread/INFO]: [Xiao_tu233: Running function tpa:warp/setpos]
+[21:16:58] [Server thread/INFO]: [Xiao_tu233: Running function tpa:warp/setpos]
+[21:17:06] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.warp] (set value to -1)]
+[21:17:07] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.warp] (set value to 1)]
+[21:17:09] [Server thread/INFO]: [Xiao_tu233: Running function tpa:warp/disable]
+[21:17:13] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.warp] (set value to -1)]
+[21:17:16] [Server thread/INFO]: [Xiao_tu233: Running function tpa:warp/enable]
+[21:17:57] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.tpaccept_toggle] (set value to 3)]
+[21:17:58] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.tpaccept_toggle] (set value to 2)]
+[21:17:59] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.output] (set value to 3)]
+[21:18:00] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.output] (set value to 4)]
+[21:18:01] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.output] (set value to 5)]
+[21:18:02] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.output] (set value to 3)]
+[21:18:03] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.simple_menu] (set value to 2)]
+[21:18:04] [Server thread/INFO]: [Xiao_tu233: Triggered [tpa.tpa] (set value to 2)]
+[21:18:40] [Server thread/INFO]: Stopping the server
+[21:18:40] [Server thread/INFO]: Stopping server
+[21:18:40] [Server thread/INFO]: Saving players
+[21:18:40] [Server thread/INFO]: Xiao_tu233 lost connection: Server closed
+[21:18:40] [Server thread/INFO]: Xiao_tu233 left the game
+[21:18:41] [Server thread/INFO]: Saving worlds
+[21:18:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[SuperFlat 1.20.5]'/minecraft:overworld
+[21:18:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[SuperFlat 1.20.5]'/minecraft:the_end
+[21:18:42] [Server thread/INFO]: Saving chunks for level 'ServerLevel[SuperFlat 1.20.5]'/minecraft:the_nether
+[21:18:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:18:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:18:42] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:18:42] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

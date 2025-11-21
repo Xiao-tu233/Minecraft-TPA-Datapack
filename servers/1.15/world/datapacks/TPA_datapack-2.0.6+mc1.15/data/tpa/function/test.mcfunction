@@ -1,0 +1,1 @@
+tellraw @a ["§5", {"text": "t", "color": "light_purple"}]

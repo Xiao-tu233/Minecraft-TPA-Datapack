@@ -1,0 +1,21 @@
+[21:15:48] [ERROR] [FabricLoader/]: Uncaught exception in thread "main"
+java.lang.RuntimeException: An exception occurred when launching the server!
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:71)
+Caused by: java.lang.RuntimeException: Error invoking MC server bundler: java.lang.UnsupportedClassVersionError: net/minecraft/bundler/Main has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at net.fabricmc.loader.impl.game.minecraft.BundlerProcessor.process(BundlerProcessor.java:102)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.locateGame(MinecraftGameProvider.java:193)
+	at net.fabricmc.loader.impl.launch.knot.Knot.createGameProvider(Knot.java:175)
+	at net.fabricmc.loader.impl.launch.knot.Knot.init(Knot.java:130)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:68)
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23)
+	at net.fabricmc.loader.impl.launch.server.FabricServerLauncher.main(FabricServerLauncher.java:69)
+Caused by: java.lang.UnsupportedClassVersionError: net/minecraft/bundler/Main has been compiled by a more recent version of the Java Runtime (class file version 61.0), this version of the Java Runtime only recognizes class file versions up to 55.0
+	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1016)
+	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:877)
+	at net.fabricmc.loader.impl.game.minecraft.BundlerProcessor$1.loadClass(BundlerProcessor.java:65)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:398)
+	at net.fabricmc.loader.impl.game.minecraft.BundlerProcessor.process(BundlerProcessor.java:85)
+	... 6 more

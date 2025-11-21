@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "supported_formats": {
+            "min_inclusive": 4, "max_inclusive": 17
+        },
+        "pack_format": 4,
+        "description": "tpa datapack extra version v1.9.0 made by Xiao_tu233 v1.9.0."
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "condition": "any_of",
+    "terms": [
+        {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+                "tpa.output": 0
+            }
+        },
+        {
+            "condition": "entity_scores",
+            "entity": "this",
+            "scores": {
+                "tpa.output": 2
+            }
+        }
+    ]
+}
