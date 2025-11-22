@@ -96,8 +96,7 @@ tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tp
 tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
-#! Consider adding score-format config of game version: Text Display: 1.17+
-kill @e[type=text_display, tag=tpa.license_displayer]
+execute if score #game_version tpa.variables matches 117.. run kill @e[type=text_display, tag=tpa.license_displayer]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_removed_tags"}]
 
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_init_vars"}]
@@ -120,8 +119,8 @@ tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tp
 
 # Show the publish date, with local format
 function tpa:load_date_format
-#! Consider adding score-format config of game version: seporator in Text components: 1.17+
-tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_left_part"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[]", "separator": ""}, "(UTC+8)", {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_right_part"}]
+# Separator not supported before 1.17, so expanded manuall, origin: {"storage": "tpa:tpa", "nbt": "temp.option.dates[]", "separator": ""}
+tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_left_part"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[0]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[1]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[2]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[3]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[4]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[5]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[6]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[7]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[8]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[9]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[10]"}, {"storage": "tpa:tpa", "nbt": "temp.option.dates[11]"}, "(UTC+8)", {"storage": "tpa:tpa", "nbt": "loaded_lang.load_date_check_right_part"}]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_welcome"}]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_copyright_claim"}]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_author"}]
