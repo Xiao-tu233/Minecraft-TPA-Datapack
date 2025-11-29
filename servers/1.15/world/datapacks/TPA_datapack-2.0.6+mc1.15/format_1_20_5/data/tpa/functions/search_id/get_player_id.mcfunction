@@ -1,1 +1,0 @@
-$return run scoreboard players get @p[name="$(player)"] tpa.player_id

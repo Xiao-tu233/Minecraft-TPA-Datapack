@@ -96,7 +96,7 @@ tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tp
 tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
-execute if score #game_version tpa.variables matches 117.. run kill @e[type=text_display, tag=tpa.license_displayer]
+execute if score #game_version tpa.variables matches 117.. run kill @e[tag=tpa.license_displayer]
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_removed_tags"}]
 
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_init_vars"}]

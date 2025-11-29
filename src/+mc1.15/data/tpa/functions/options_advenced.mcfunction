@@ -2,41 +2,26 @@
 
 tellraw @s {"storage": "tpa:tpa", "nbt": "loaded_lang.option_advenced_warn"}
 
-execute if score #uses_tick_scheduling tpa.config matches 1 run \
-    tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_tick_scheduling", "color": "aqua"}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_enabled"}]
-execute if score #uses_tick_scheduling tpa.config matches 0 run \
-    tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_tick_scheduling", "color": "aqua"}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_disabled"}]
-tellraw @s ["      §6- ", \
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_enable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_tick_scheduling tpa.config 1"}},"|",\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_disable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_tick_scheduling tpa.config 0"}}]
+execute if score #uses_tick_scheduling tpa.config matches 1 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_tick_scheduling", "color": "aqua"}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_enabled"}]
+execute if score #uses_tick_scheduling tpa.config matches 0 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_tick_scheduling", "color": "aqua"}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_disabled"}]
+tellraw @s ["      §6- ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_enable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_tick_scheduling tpa.config 1"}},"|",{"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_disable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_tick_scheduling tpa.config 0"}}]
 
-execute if score #uses_string_dimension tpa.config matches 1 run \
-    tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_string_dimension", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_string_dimension_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_enabled"}]
-execute if score #uses_string_dimension tpa.config matches 0 run \
-    tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_string_dimension", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_string_dimension_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_disabled"}]
-tellraw @s ["      §6- ", \
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_enable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_string_dimension tpa.config 1"}},"|",\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_disable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_string_dimension tpa.config 0"}}]
+execute if score #uses_string_dimension tpa.config matches 1 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_string_dimension", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_string_dimension_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_enabled"}]
+execute if score #uses_string_dimension tpa.config matches 0 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_string_dimension", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_string_dimension_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_disabled"}]
+tellraw @s ["      §6- ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_enable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_string_dimension tpa.config 1"}},"|",{"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_disable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_string_dimension tpa.config 0"}}]
 
 tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_hoverevent"}}}, ": ", {"score":{"name":"#dimension","objective":"tpa.config"}, "color": "white", "hoverEvent": {"action": "show_text", "value": [{"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_number_hoverevent_leftpart"}, {"score":{"name":"#dimension","objective":"tpa.config"}, "color": "white"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_number_hoverevent_rightpart"}]}}]
-tellraw @s ["      §6- ", \
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_set", "clickEvent":{"action":"run_command","value":"/function tpa:dimension/menu"}}]
+tellraw @s ["      §6- ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_set", "clickEvent":{"action":"run_command","value":"/function tpa:dimension/menu"}}]
 
-execute if score #uses_binary_teleport tpa.config matches 1 run \
-    tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_binary_teleport", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_binary_teleport_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_enabled"}]
-execute if score #uses_binary_teleport tpa.config matches 0 run \
-    tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_binary_teleport", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_binary_teleport_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_disabled"}]
-tellraw @s ["      §6- ", \
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_enable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_binary_teleport tpa.config 1"}},"|",\
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_disable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_binary_teleport tpa.config 0"}}]
+execute if score #uses_binary_teleport tpa.config matches 1 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_binary_teleport", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_binary_teleport_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_enabled"}]
+execute if score #uses_binary_teleport tpa.config matches 0 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_uses_binary_teleport", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_option_uses_binary_teleport_hoverevent"}}}, ": ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_disabled"}]
+tellraw @s ["      §6- ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_enable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_binary_teleport tpa.config 1"}},"|",{"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_disable", "clickEvent":{"action":"run_command","value":"/scoreboard players set #uses_binary_teleport tpa.config 0"}}]
 
 tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_sim_dist", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_sim_dist_hoverevent"}}}, ": ", {"score":{"name":"#sim_dist","objective":"tpa.config"}, "color": "white"}]
 tellraw @s ["      §6- ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_set", "clickEvent":{"action":"suggest_command","value":"/scoreboard players set #sim_dist tpa.config "}}, " ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_sim_dist_button_cal", "clickEvent":{"action":"run_command","value":"/function tpa:teleport/cal_sim_dist"}}]
 
 tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_anchor_search_retries", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_anchor_search_retries_hoverevent"}}}, ": ", {"score":{"name":"#anchor_search_retries","objective":"tpa.config"}, "color": "white"}]
-tellraw @s ["      §6- ", \
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_set", "clickEvent":{"action":"suggest_command","value":"/scoreboard players set #anchor_search_retries tpa.config "}}]
+tellraw @s ["      §6- ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_set", "clickEvent":{"action":"suggest_command","value":"/scoreboard players set #anchor_search_retries tpa.config "}}]
 
 tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_max_anchor_summons_attempts", "color": "aqua", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_max_anchor_summons_attempts_hoverevent"}}}, ": ", {"score":{"name":"#max_anchor_summons_attempts","objective":"tpa.config"}, "color": "white"}]
-tellraw @s ["      §6- ", \
-    {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_set", "clickEvent":{"action":"suggest_command","value":"/scoreboard players set #max_anchor_summons_attempts tpa.config "}}]
+tellraw @s ["      §6- ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_button_set", "clickEvent":{"action":"suggest_command","value":"/scoreboard players set #max_anchor_summons_attempts tpa.config "}}]
