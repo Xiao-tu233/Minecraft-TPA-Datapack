@@ -1,13 +1,13 @@
 # Parent function: tpa:tick(mc version: 1.20.2 - 1.20.4)
 
 # (
-#     ( (tp_spec == 0 且 非旁观者) ) 
-#     或 (tp_spec == 1)
+# ( (tp_spec == 0 且 非旁观者) ) 
+# 或 (tp_spec == 1)
 # )
 # 且
 # (
-#     (carpet_fake_player_fix == 0)
-#     或 (carpet_fake_player_fix == 1 且 实体带 tag=tpa.fake_player)
+# (carpet_fake_player_fix == 0)
+# 或 (carpet_fake_player_fix == 1 且 实体带 tag=tpa.fake_player)
 # )
 
 scoreboard players set @s tpa.available 0

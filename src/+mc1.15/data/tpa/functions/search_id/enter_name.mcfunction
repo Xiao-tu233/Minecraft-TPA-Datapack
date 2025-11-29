@@ -12,10 +12,7 @@ execute if score #is_not_str_end tpa.variables matches 1 run function tpa:search
 function tpa:search_id/get_player_id with storage tpa:tpa temp.args
 
 execute unless score #player_id tpa.variables matches 2.. run function tpa:sounds/no
-execute unless score #player_id tpa.variables matches 2.. run tellraw @s[predicate=tpa:output/show_chatbar] [\
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.search_id_unavail_player"}, "." \
-]
+execute unless score #player_id tpa.variables matches 2.. run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.search_id_unavail_player"}, "." ]
 execute unless score #player_id tpa.variables matches 2.. run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.search_id_unavail_player"}]
 
 execute if score #player_id tpa.variables matches 2.. run scoreboard players operation @s tpa.tpa = #player_id tpa.variables

@@ -14,18 +14,8 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 
 # Check if home is in range
 execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 run function tpa:sounds/no
-execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 \
-    run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_left_part"}, \
-        {"score":{"name": "#home", "objective": "tpa.variables"}}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_right_part"}, ". " \
-    ]
-execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 \
-    run title @s[predicate=tpa:output/show_actionbar] actionbar [ \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_left_part", "color": "red"}, \
-        {"score":{"name": "#home", "objective": "tpa.variables"}, "color": "red"}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_right_part", "color": "red"} \
-    ]
+execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_left_part"}, {"score":{"name": "#home", "objective": "tpa.variables"}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_right_part"}, ". " ]
+execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 run title @s[predicate=tpa:output/show_actionbar] actionbar [ {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_left_part", "color": "red"}, {"score":{"name": "#home", "objective": "tpa.variables"}, "color": "red"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_out_of_range_right_part", "color": "red"} ]
 execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 run return 0
 
 function tpa:get_name
@@ -35,15 +25,7 @@ execute store result score #has_home tpa.variables run function tpa:home/temp wi
 
 # Tip the player if he hasn't had a home yet
 execute if score #has_home tpa.variables matches 0 run function tpa:sounds/no
-execute unless data storage tpa:tpa temp.home run tellraw @s[predicate=tpa:output/show_actionbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_create"}, ". ", \
-        {\
-            "storage":"tpa:tpa", \
-            "nbt":"loaded_lang.home_create_button", \
-            "clickEvent": {"action": "run_command", "value": "/trigger tpa.sethome"}, \
-            "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_create_button_hoverevent"}}\
-        }\
-    ]
+execute unless data storage tpa:tpa temp.home run tellraw @s[predicate=tpa:output/show_actionbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_create"}, ". ", {"storage":"tpa:tpa", "nbt":"loaded_lang.home_create_button", "clickEvent": {"action": "run_command", "value": "/trigger tpa.sethome"}, "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_create_button_hoverevent"}}}]
 execute unless data storage tpa:tpa temp.home run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.home_create", "color":"red"}]
 execute unless data storage tpa:tpa temp.home run return 0
 
@@ -53,18 +35,8 @@ execute store result score #is_exist tpa.variables run function tpa:home/is_exis
 
 # If he has one, but the provided id is not valid, tell him home's not found.
 execute if score #is_exist tpa.variables matches 0 run function tpa:sounds/no
-execute if score #is_exist tpa.variables matches 0 \
-    run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_left_part"}, \
-        {"score":{"name": "#home", "objective": "tpa.variables"}, "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_hoverevent"}}}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_right_part"}, ". " \
-    ]
-execute if score #is_exist tpa.variables matches 0 \
-    run title @s[predicate=tpa:output/show_actionbar] actionbar [\
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_left_part", "color": "red"}, \
-        {"score":{"name": "#home", "objective": "tpa.variables"}, "color": "red", "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_hoverevent"}}}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_right_part", "color": "red"} \
-    ]
+execute if score #is_exist tpa.variables matches 0 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_left_part"}, {"score":{"name": "#home", "objective": "tpa.variables"}, "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_hoverevent"}}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_right_part"}, ". " ]
+execute if score #is_exist tpa.variables matches 0 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_left_part", "color": "red"}, {"score":{"name": "#home", "objective": "tpa.variables"}, "color": "red", "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_hoverevent"}}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_not_found_right_part", "color": "red"} ]
 execute if score #is_exist tpa.variables matches 0 run return 0
 
 # Because empty NBT compounds {} returns 1 when use execute store, 
@@ -80,13 +52,5 @@ execute if score #home_owns tpa.variables matches 2.. run function tpa:home/remo
 
 function tpa:home/menu
 function tpa:sounds/click
-tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_left_part"}, \
-        {"score":{"name": "#home", "objective": "tpa.variables"}, "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_hoverevent"}}}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_right_part"}, ". " \
-    ]
-title @s[predicate=tpa:output/show_actionbar] actionbar [\
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_left_part", "color": "red"}, \
-        {"score":{"name": "#home", "objective": "tpa.variables"}, "color": "red", "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_hoverevent"}}}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_right_part", "color": "red"} \
-    ]
+tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_left_part"}, {"score":{"name": "#home", "objective": "tpa.variables"}, "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_hoverevent"}}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_right_part"}, ". " ]
+title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_left_part", "color": "red"}, {"score":{"name": "#home", "objective": "tpa.variables"}, "color": "red", "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_hoverevent"}}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_remove_right_part", "color": "red"} ]

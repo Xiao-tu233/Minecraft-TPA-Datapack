@@ -25,17 +25,11 @@ execute if score #error_code tpa.variables matches 1.. run function tpa:sounds/n
 # 2 - spec
 # 3 - not exist
 
-execute if score #error_code tpa.variables matches 1 \
-    run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.back_disabled"}, ". "]
-execute if score #error_code tpa.variables matches 1 \
-    run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.back_disabled", "color":"red"}]
+execute if score #error_code tpa.variables matches 1 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.back_disabled"}, ". "]
+execute if score #error_code tpa.variables matches 1 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.back_disabled", "color":"red"}]
 
-execute if score #error_code tpa.variables matches 2 \
-    run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.back_spec"}, ". "]
-execute if score #error_code tpa.variables matches 2 \
-    run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.back_spec", "color":"red"}]
+execute if score #error_code tpa.variables matches 2 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.back_spec"}, ". "]
+execute if score #error_code tpa.variables matches 2 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.back_spec", "color":"red"}]
 
-execute if score #error_code tpa.variables matches 3 \
-    run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.back_not_exist"}, ". "]
-execute if score #error_code tpa.variables matches 3 \
-    run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.back_not_exist", "color":"red"}]
+execute if score #error_code tpa.variables matches 3 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.back_not_exist"}, ". "]
+execute if score #error_code tpa.variables matches 3 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.back_not_exist", "color":"red"}]

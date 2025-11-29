@@ -12,16 +12,8 @@ execute if score @s tpa.idfix_cd matches 1.. run title @s[predicate=tpa:output/s
 execute if score @s tpa.idfix_cd matches 1.. run return 0
 
 function tpa:sounds/levelup
-tellraw @a[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_left_part"}, \
-    {"selector": "@s", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.idfix_act_hoverevent"}}}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_right_part"}, ". " \
-]
-title @a[predicate=tpa:output/show_actionbar] actionbar [\
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_left_part", "color": "gold"}, \
-        {"selector": "@s"},  \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_right_part", "color": "gold"} \
-    ]
+tellraw @a[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_left_part"}, {"selector": "@s", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.idfix_act_hoverevent"}}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_right_part"}, ". " ]
+title @a[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_left_part", "color": "gold"}, {"selector": "@s"},  {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_right_part", "color": "gold"} ]
 scoreboard players operation @s tpa.idfix_cd = #idfix_cooldown tpa.config
 
 data remove storage tpa:tpa back

@@ -18,29 +18,23 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 
 # Check if warp is in range
 execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 run function tpa:sounds/no
-execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 \
-    run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_out_of_range"}, ". " \
-    ]
-execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 \
-    run title @s[predicate=tpa:output/show_actionbar] actionbar [ \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_out_of_range", "color": "red"} \
-    ]
+execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_out_of_range"}, ". " ]
+execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 run title @s[predicate=tpa:output/show_actionbar] actionbar [ {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_out_of_range", "color": "red"} ]
 execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 run return 0
 
 # The storage structure of tpa:tpa warp is:
 # warp: {
-#     <id1>: {
-#         1: {x: int, y: int, z: int, dim: string[Dimension]}, 
-#         2:{x,y,z,dim}, 
-#         ...more warps
-#     }, 
-#     <id2>: {
-#         1:{x,y,z,dim}, 
-#         2:{x,y,z,dim}, 
-#         ...more warps
-#     }, 
-#     ...more ids
+# <id1>: {
+# 1: {x: int, y: int, z: int, dim: string[Dimension]}, 
+# 2:{x,y,z,dim}, 
+# ...more warps
+# }, 
+# <id2>: {
+# 1:{x,y,z,dim}, 
+# 2:{x,y,z,dim}, 
+# ...more warps
+# }, 
+# ...more ids
 # }
 
 data remove storage tpa:tpa temp.args

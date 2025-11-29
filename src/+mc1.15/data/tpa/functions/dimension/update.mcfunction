@@ -13,5 +13,4 @@ execute store result score #is_not_end tpa.variables run data modify storage tpa
 execute if score #is_not_overworld tpa.variables matches 0 run data modify storage tpa:tpa temp.args.new_dim set value "minecraft:overworld"
 execute if score #is_not_nether tpa.variables matches 0 run data modify storage tpa:tpa temp.args.new_dim set value "minecraft:the_nether"
 execute if score #is_not_end tpa.variables matches 0 run data modify storage tpa:tpa temp.args.new_dim set value "minecraft:the_end"
-execute if score #is_not_overworld tpa.variables matches 1 if score #is_not_nether tpa.variables matches 1 if score #is_not_end tpa.variables matches 1 \
-    run data modify storage tpa:tpa temp.args.new_dim set from storage tpa:tpa temp.args.old_dim
+execute if score #is_not_overworld tpa.variables matches 1 if score #is_not_nether tpa.variables matches 1 if score #is_not_end tpa.variables matches 1 run data modify storage tpa:tpa temp.args.new_dim set from storage tpa:tpa temp.args.old_dim

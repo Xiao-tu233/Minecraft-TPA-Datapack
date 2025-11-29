@@ -14,8 +14,4 @@ $function tpa:iddisplay {"id_1":$(index_3)7,"id_2":$(index_3)8,"id_3":$(index_3)
 $function tpa:iddisplay {"id_1":$(index_4)2,"id_2":$(index_4)3,"id_3":$(index_4)4,"id_4":$(index_4)5,"id_5":$(index_4)6,"direction":"tpa"}
 $function tpa:iddisplay {"id_1":$(index_4)7,"id_2":$(index_4)8,"id_3":$(index_4)9,"id_4":$(index_5)0,"id_5":$(index_5)1,"direction":"tpa"}
 
-$tellraw @s ["======================( ", \
-{text:"§b<§r",click_event:{"action":"run_command","value":"/trigger tpa.extended_menu set $(previous)"},hover_event:{"action":"show_text","value":[{storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_previous_page"},"§b($(previous))"]}}, \
-{text:" $(page) ",click_event:{"action":"suggest_command","value":"/trigger tpa.extended_menu set "}},\
-{text:"§b>§r",click_event:{"action":"run_command","value":"/trigger tpa.extended_menu set $(next)"},hover_event:{"action":"show_text","value":[{storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_next_page"},"§b($(next))"]}}, \
-" )======================"]
+$tellraw @s ["======================( ", {text:"§b<§r",click_event:{"action":"run_command","value":"/trigger tpa.extended_menu set $(previous)"},hover_event:{"action":"show_text","value":[{storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_previous_page"},"§b($(previous))"]}}, {text:" $(page) ",click_event:{"action":"suggest_command","value":"/trigger tpa.extended_menu set "}},{text:"§b>§r",click_event:{"action":"run_command","value":"/trigger tpa.extended_menu set $(next)"},hover_event:{"action":"show_text","value":[{storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_next_page"},"§b($(next))"]}}, " )======================"]

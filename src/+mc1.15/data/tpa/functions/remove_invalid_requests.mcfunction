@@ -1,6 +1,6 @@
 # sum: int = 0
 # for player in players:
-#     sum += player.id
+# sum += player.id
 # offline_id = sum_temp - sum
 
 # Calc sum

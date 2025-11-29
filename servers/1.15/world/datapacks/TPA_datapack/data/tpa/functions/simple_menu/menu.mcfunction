@@ -11,15 +11,7 @@ function tpa:simple_menu/loop
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rLoop ends."]
 
 function tpa:sounds/levelup
-tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.simple_menu_title"}, \
-    {\
-        "storage":"tpa:tpa", \
-        "nbt":"loaded_lang.simple_menu_button", \
-        "clickEvent": {"action": "run_command", "value": "/trigger tpa.simple_menu set 3"}, \
-        "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.simple_menu_button_hoverevent"}}\
-    }, " " \
-] 
+tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.simple_menu_title"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.simple_menu_button", "clickEvent": {"action": "run_command", "value": "/trigger tpa.simple_menu set 3"}, "hoverEvent": {"action": "show_text", "value": {"storage":"tpa:tpa", "nbt":"loaded_lang.simple_menu_button_hoverevent"}}}, " " ] 
 
 # Remove the ', {"color":"dark_gray", "text": " | "}, ', and trailing comma, by C style: result = result[40:]
 data modify storage tpa:tpa temp.simple_menu.result set string storage tpa:tpa temp.simple_menu.result 40

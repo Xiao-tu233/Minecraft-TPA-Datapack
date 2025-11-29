@@ -7,7 +7,7 @@ tag @a remove not_match
 tag @a remove to_modify
 
 # return chain: 
-# in tpa:recver_loop                                                        | tpa:recver_test   | (Parent function)
+# in tpa:recver_loop| tpa:recver_test   | (Parent function)
 # (recver_id == i + tpa.tpaccept_toggle[@a[scores={tpa.player_id=i}]] == 1) => #matching_status -> #is_recver_found
 execute if score #i tpa.variables matches 1.. run function tpa:recver_loop
 tag @a remove not_match

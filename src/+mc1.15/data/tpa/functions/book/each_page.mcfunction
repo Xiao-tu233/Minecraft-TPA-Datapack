@@ -1,21 +1,14 @@
 # Parent Function: tpa:book, tpa:each_page(loop)
 data remove storage tpa:tpa book.each_page
-data modify storage tpa:tpa book.each_page set value {\
-    "id_0":'\\"\\"', "id_1":'\\"\\"', \
-    "id_2":'\\"\\"', "id_3":'\\"\\"', \
-    "id_4":'\\"\\"', "id_5":'\\"\\"', \
-    "id_6":'\\"\\"', "id_7":'\\"\\"', \ 
-    "id_8":'\\"\\"', "id_9":'\\"\\"', \
-    "id_10":'\\"\\"', "id_11":'\\"\\"', \
-    "id_12":'\\"\\"', "id_13":'\\"\\"'\
-}
+data modify storage tpa:tpa book.each_page set value {"id_0":'\\"\\"', "id_1":'\\"\\"', "id_2":'\\"\\"', "id_3":'\\"\\"', "id_4":'\\"\\"', "id_5":'\\"\\"', "id_6":'\\"\\"', "id_7":'\\"\\"', \ 
+"id_8":'\\"\\"', "id_9":'\\"\\"', "id_10":'\\"\\"', "id_11":'\\"\\"', "id_12":'\\"\\"', "id_13":'\\"\\"'}
 scoreboard players set #j tpa.variables 0
 function tpa:book/each_lines
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow gotten page ",{"score": {"name": "#pages_current","objective": "tpa.variables"}}," content: §a",{"storage":"tpa:tpa","nbt":"book.each_page"}]
 
 # {"text":"The Real text"}
-# 0123456789            21-
+# 012345678921-
 data remove storage tpa:tpa book.arg
 data modify storage tpa:tpa book.arg set from storage tpa:tpa book.each_page
 data modify storage tpa:tpa book.arg set string storage tpa:tpa book.arg 9 -2

@@ -1,8 +1,8 @@
 
 # tpa_change: the code here may be really messed up. Regardless, all you need to know what'll be done is that:
-#     1. tell the requester the ex-recver and the recver now; 
-#     2. tell the ex-recver that the request has been cancelled; 
-#     3. tell the recver that he's been requested.
+# 1. tell the requester the ex-recver and the recver now; 
+# 2. tell the ex-recver that the request has been cancelled; 
+# 3. tell the recver that he's been requested.
 
 function tpa:sounds/click
 tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_change_chatbar_left_part"}, {"selector": "@p[tag=temp_modify]", "hoverEvent":{"action":"show_text","value":{"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_change_hoverevent"}}},  {"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_change_chatbar_middle_part"}, {"selector": "@p[tag=to_modify]", "hoverEvent":{"action":"show_text","value":{"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_req_tpa_hoverevent"}}},  {"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_change_chatbar_right_part"}, " ", {"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_req_button_cancel", "clickEvent": {"action":"run_command", "value":"/trigger tpa.cancel_req"}, "hoverEvent":{"action":"show_text", "value":{"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_req_button_cancel_hoverevent"}}}]
