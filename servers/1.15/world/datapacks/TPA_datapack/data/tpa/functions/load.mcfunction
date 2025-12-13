@@ -85,7 +85,7 @@ scoreboard players set @a tpa.search_id.cl 0
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_did_reset_scores"}]
 
 tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.load_init_storage"}]
-data modify storage tpa:tpa back set value {}
+data modify storage tpa:tpa back set value []
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp
