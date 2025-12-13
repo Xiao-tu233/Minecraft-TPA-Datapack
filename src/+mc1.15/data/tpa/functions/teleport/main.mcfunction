@@ -2,7 +2,7 @@
 # scoreboard players set #debug_mode tpa.config 1
 # data modify storage tpa:tpa temp.teleport set value {Pos: [1024d, 4d, 512d], Rotation: [0.0f, 0.0f], Dimension: 0}
 
-
+execute if score #uses_binary_teleport tpa.config 
 
 execute if score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/main__
 
