@@ -1,4 +1,4 @@
-# Parent function: 
+# Parent function: tpa:teleport/main
 # @input: tpa:tpa temp.args.id
 
 data modify storage tpa:tpa temp.dimension set from storage tpa:tpa option.dimension
