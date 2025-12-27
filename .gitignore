@@ -1,6 +1,6 @@
 spyglass.json
-.vscode\
-servers\
+.vscode/
+servers/
 sync_datapack.py
-java\
+java/
 remove_backslash_newline.py
