@@ -1,5 +1,0 @@
-data modify storage tpa:tpa config.publish_date.year set value "2025"
-data modify storage tpa:tpa config.publish_date.year_tw set value "114"
-data modify storage tpa:tpa config.publish_date.year_jp set value "7"
-data modify storage tpa:tpa config.publish_date.month set value "11"
-data modify storage tpa:tpa config.publish_date.day set value "15"

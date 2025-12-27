@@ -1,1 +1,0 @@
-$execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6Debug breakpoint reached§r: ", $(info)]

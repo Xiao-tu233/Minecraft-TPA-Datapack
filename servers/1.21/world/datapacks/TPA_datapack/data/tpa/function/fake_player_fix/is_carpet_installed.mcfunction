@@ -1,1 +1,0 @@
-$execute store success score #is_carpet_installed tpa.variables run $(carpet)

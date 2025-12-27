@@ -1,5 +1,0 @@
-[" §b7 ",{"selector":"@a[scores={player_id=7}]","clickEvent":{"action":"run_command","value":"/trigger tpa set 7"},"hoverEvent":{"action":"show_text","value":"§btp to player 7"}}, \
-" §b$(id_2) ",{"selector":"@a[scores={player_id=$(id_2)}]","clickEvent":{"action":"run_command","value":"/trigger tpa set $(id_2)"},"hoverEvent":{"action":"show_text","value":"§btp to player $(id_2)"}}, \
-" §b$(id_3) ",{"selector":"@a[scores={player_id=$(id_3)}]","clickEvent":{"action":"run_command","value":"/trigger tpa set $(id_3)"},"hoverEvent":{"action":"show_text","value":"§btp to player $(id_3)"}}, \
-" §b$(id_4) ",{"selector":"@a[scores={player_id=$(id_4)}]","clickEvent":{"action":"run_command","value":"/trigger tpa set $(id_4)"},"hoverEvent":{"action":"show_text","value":"§btp to player $(id_4)"}}, \
-" §b$(id_5) ",{"selector":"@a[scores={player_id=$(id_5)}]","clickEvent":{"action":"run_command","value":"/trigger tpa set $(id_5)"},"hoverEvent":{"action":"show_text","value":"§btp to player $(id_5)"}}]
