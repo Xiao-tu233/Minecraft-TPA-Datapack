@@ -335,6 +335,8 @@ execute if score #uses_tick_scheduling tpa.config matches 1 run function tpa:tic
 #  考虑是否有开销影响：在每个玩家进游戏的时候计算他们的游戏名 然后仅仅在构建菜单是调用他们而不是对于每个玩家都重新计算 （此处有优化空间 可以复制一份uid和玩家游戏名的数组 在每查找到一名玩家后移除一个）
 #  新的id管理方案可以直接移除id修复（或者保守一点将其移入设置界面）
 # 区分对应所需权限的按钮 with 不同的按钮边框颜色
+# 考虑减少item作为锚点 而是盔甲架 例子如下
+# summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
 # 无点击事件 灰色
 # 无需op 白色
 # 需op 金色
