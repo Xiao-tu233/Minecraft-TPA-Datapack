@@ -5,6 +5,7 @@
 # 1 - same as 0 but summon anchor to the exact destin
 # 2 - teleport player to the final anchor and then quit teleport process 
 # 3 - kill the final anchor of simdist calcing and teleport player back and kill again
+# 4 - run binary main to approach to the destin anchor
 
 execute if score #teleport_state tpa.variables matches 3 run function tpa:sim_dist/end
 
