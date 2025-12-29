@@ -18,7 +18,8 @@ scoreboard players set #is_teleporting_executing tpa.variables 1
 scoreboard players set #teleport_state tpa.variables 0
 
 execute if score #uses_binary_teleport tpa.config matches 1 run function tpa:teleport/binary/main
-execute if score #uses_binary_teleport tpa.config matches 0 run function tpa:teleport/anchor/main
+execute if score #uses_binary_teleport tpa.config matches 0 if score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/anchor/main
+execute if score #uses_binary_teleport tpa.config matches 0 unless score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/anchor/warn_sim_dist
 
 
 # execute if score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/main__

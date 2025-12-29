@@ -1,4 +1,4 @@
-# Parent function: EXACT "tpa:tick
+# Parent function: EXACT "tpa:tick"
 
 # #teleport_state:
 # 0 - teleport player to the nearest anchor and summon a new anchor

@@ -3,25 +3,15 @@
 
 # Function calls: main -(1 tick)-> main_0 -(1 tick)-> main_1 -(1 tick)-> main_1 -(1 tick)-> main_1 -> ... -> main_complete/stop_process
 
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: A teleport process has been started: §r", {"selector": "@s"}, " -> ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[0]"}, " ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[1]"}, " ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[2]"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: A teleport process has been started: §r", {"selector": "@a[tag=tpa.teleport]"}, " -> ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[0]"}, " ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[1]"}, " ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[2]"}]
 
-# Target block is updated in 1.16 we seporate versions by check if we could give player this item
-execute unless score #is_1_16 tpa.config = #is_1_16 tpa.config run scoreboard players set #is_1_16 tpa.config 0
-execute unless score #is_1_16 tpa.config = #is_1_16 tpa.config store result score #is_1_16 tpa.config run function tpa:teleport/give_target
+# Get current dimension to see if player's dim is correct
+scoreboard players operation #target_dimension tpa.variables = #dim_num tpa.variables
+data modify storage tpa:tpa temp.args.id set from entity @s Dimension
+function tpa:dimension/get
+execute store result score #current_dimension tpa.variables run data get storage tpa:tpa temp.dimension.id
+execute unless score #target_dimension tpa.variables = #current_dimension tpa.variables run tpa:teleport/anchor/reset_dimension
 
-scoreboard players set #is_dimension_loaded tpa.variables 1
-scoreboard players set #is_teleport_executing tpa.variables 1
-scoreboard players set #teleport_load_awaits tpa.variables 0
-scoreboard players set #teleport_summon_retried tpa.variables -1
-tag @s add teleport
 
-execute if score #is_1_16 tpa.config matches 1 run function tpa:teleport/dimension_check_1_16
-execute if score #is_1_16 tpa.config matches 0 run function tpa:teleport/dimension_check_1_15
-
-execute if score #target_dimension tpa.variables matches 0 in minecraft:overworld unless score #target_dimension tpa.variables = #current_dimension tpa.variables run tp 0 336 0
-execute if score #target_dimension tpa.variables matches 1 in minecraft:the_end unless score #target_dimension tpa.variables = #current_dimension tpa.variables run tp 0 336 0
-execute if score #target_dimension tpa.variables matches -1 in minecraft:the_nether unless score #target_dimension tpa.variables = #current_dimension tpa.variables run tp 0 336 0
-# Usage example:
-# scoreboard players set #debug_mode tpa.config 1
-# data modify storage tpa:tpa temp.teleport set value {Pos: [1024d, 4d, 512d], Rotation: [0.0f, 0.0f], Dimension: 0}
-# function tpa:teleport/main
+#! Calc the first anchor and set state
+# scoreboard players set #teleport_state tpa.variables 1
