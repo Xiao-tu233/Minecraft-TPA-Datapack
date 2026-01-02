@@ -10,7 +10,7 @@ scoreboard players operation #target_dimension tpa.variables = #dim_num tpa.vari
 data modify storage tpa:tpa temp.args.id set from entity @s Dimension
 function tpa:dimension/get
 execute store result score #current_dimension tpa.variables run data get storage tpa:tpa temp.dimension.id
-execute unless score #target_dimension tpa.variables = #current_dimension tpa.variables run tpa:teleport/anchor/reset_dimension
+execute unless score #target_dimension tpa.variables = #current_dimension tpa.variables run function tpa:teleport/anchor/reset_dimension
 
 
 #! Calc the first anchor and set state
