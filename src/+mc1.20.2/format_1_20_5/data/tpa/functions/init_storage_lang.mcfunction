@@ -95,7 +95,7 @@ data modify storage tpa:tpa lang set value [{}, \
         load_button_options_hoverevent: "点击更改数据包配置", \
         load_button_update: "[更新]", \
         load_button_update_hoverevent: "点击开始数据包的更新导引", \
-        load_copyright_claim: "Copyright © 2024-2025 Xiao_tu233. 不允许商业使用. 具体请点击下方\"[协议]\"按钮", \
+        load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233. 不允许商业使用. 具体请点击下方\"[协议]\"按钮", \
         load_date_check_left_part: "目前版本发布于", \
         load_date_check_format: 123, \
         load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
