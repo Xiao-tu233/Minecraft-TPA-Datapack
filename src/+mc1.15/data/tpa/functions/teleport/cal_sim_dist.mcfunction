@@ -11,7 +11,7 @@
 # Standard Y: 336
 scoreboard players set #sim_dist tpa.config 0
 function tpa:teleport/summon_anchor
-function tpa:teleport/cal_sim_dist/loop
+function tpa:teleport/sim_dist/loop
 
 scoreboard players operation #sim_dist tpa.variables = #sim_dist tpa.config
 scoreboard players remove #sim_dist tpa.config 2
@@ -21,7 +21,7 @@ scoreboard players remove #sim_dist tpa.variables 1
 # Go 16 blocks east and kill the final anchor which cannot be reached
 function tpa:teleport/summon_anchor
 tag @e[sort=nearest, limit=1, tag=tpa.teleport_anchor] add tpa.teleport_anchor_
-tag @e[sort=nearest, limit=1, tag=tpa.teleport_anchor] remove tpa.teleport_anchor
+tag @e[sort=nearest, limit=1, tag=tpa.teleport_anchor_] remove tpa.teleport_anchor
 
 tp @s ~16 336 ~
 scoreboard players set #teleport_state tpa.variables 3

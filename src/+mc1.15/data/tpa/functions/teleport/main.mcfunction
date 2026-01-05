@@ -10,7 +10,7 @@ function tpa:dimension/get
 execute store result score #dim_num tpa.variables run data get storage tpa:tpa temp.dimension.id
 
 # Debugs
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: Got teleporting target dimension ", {"storage": "tpa:tpa", "nbt": "temp.dimension.namespaceid"}, "(", {"storage": "tpa:tpa", "nbt": "temp.dimension.namespaceid"}, ")"]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rGot teleporting target dimension ", {"storage": "tpa:tpa", "nbt": "temp.dimension.namespaceid"}, "(", {"storage": "tpa:tpa", "nbt": "temp.dimension.namespaceid"}, ")"]
 
 # Teleport initializations (Definition for teleport_state is at tpa:teleport/next_node)
 tag @s add tpa.teleport

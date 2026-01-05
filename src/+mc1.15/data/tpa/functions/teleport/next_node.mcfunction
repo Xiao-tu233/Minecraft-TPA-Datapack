@@ -7,7 +7,7 @@
 # 3 - kill the final anchor of simdist calcing and teleport player back and kill again
 # 4 - run binary main to approach to the destin anchor
 
-execute if score #teleport_state tpa.variables matches 3 run function tpa:sim_dist/end
+execute if score #teleport_state tpa.variables matches 3 run function tpa:teleport/sim_dist/end
 
 execute if score #is_cal_sim_dist_executing tpa.variables matches 1 positioned 0 1 0 as @p run function tpa:teleport/cal_sim_dist_
 execute unless score #is_cal_sim_dist_executing tpa.variables matches 1 if score #is_dimension_loaded tpa.variables matches 1 as @p[tag=teleport] run function tpa:teleport/main_0

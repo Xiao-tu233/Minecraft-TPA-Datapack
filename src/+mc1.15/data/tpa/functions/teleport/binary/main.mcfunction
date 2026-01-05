@@ -32,7 +32,7 @@ execute store result score #z_dist tpa.variables run data get storage tpa:tpa te
 
 
 # Debugs
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: Server enabled Binary Teleport, teleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ", {"score":{"objective":"tpa.variables","name":"#z_dist"}}, "'s at most 8 blocks away"]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aServer enabled Binary Teleport, §rteleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ", {"score":{"objective":"tpa.variables","name":"#z_dist"}}, "'s at most 8 blocks away"]
 
 # 16,777,216 = 2^24
 # X: Positive
