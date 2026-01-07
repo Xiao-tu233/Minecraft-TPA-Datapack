@@ -7,7 +7,11 @@
 # Resolve target dimension
 data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.teleport.Dimension
 function tpa:dimension/get
-execute store result score #dim_num tpa.variables run data get storage tpa:tpa temp.dimension.id
+execute store result score #destin_dimension tpa.variables run data get storage tpa:tpa temp.dimension.id
+data modify storage tpa:tpa temp.args.id set from entity @s Dimension
+function tpa:dimension/get
+execute store result score #current_dimension tpa.variables run data get storage tpa:tpa temp.dimension.id
+execute unless score #destin_dimension tpa.variables = #current_dimension tpa.variables run function tpa:teleport/reset_dimension
 
 # Debugs
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rGot teleporting target dimension ", {"storage": "tpa:tpa", "nbt": "temp.dimension.namespaceid"}, "(", {"storage": "tpa:tpa", "nbt": "temp.dimension.namespaceid"}, ")"]
@@ -17,12 +21,9 @@ tag @s add tpa.teleport
 scoreboard players set #is_teleporting_executing tpa.variables 1
 scoreboard players set #teleport_state tpa.variables 0
 
-# Get current dimension to see if player's dim is correct
-scoreboard players operation #target_dimension tpa.variables = #dim_num tpa.variables
-data modify storage tpa:tpa temp.args.id set from entity @s Dimension
-function tpa:dimension/get
-execute store result score #current_dimension tpa.variables run data get storage tpa:tpa temp.dimension.id
-execute unless score #target_dimension tpa.variables = #current_dimension tpa.variables run function tpa:teleport/reset_dimension
+function tpa:teleport/summon_destin_anchor
+
+execute if entity @e[sort=nearest, limit=1, tag=tpa.teleport_destin_anchor] run scoreboard players set #teleport_state tpa.variables 1
 
 execute if score #uses_binary_teleport tpa.config matches 0 if score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/anchor/main
 execute if score #uses_binary_teleport tpa.config matches 0 unless score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/anchor/warn_sim_dist
