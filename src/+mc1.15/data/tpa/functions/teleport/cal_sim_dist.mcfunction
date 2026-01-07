@@ -15,3 +15,9 @@ tag @s add tpa.teleport
 scoreboard players set #teleport_state tpa.variables 4
 scoreboard players set #is_teleport_executing tpa.variables 1
 scoreboard players set #teleport_origin_anchor_summoned tpa.variables 0
+
+# Debugs
+scoreboard players operation #target_lang tpa.variables = #language tpa.config
+function tpa:load_lang
+tellraw @a [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.teleport_cal_sim_dist_start"}, ". "]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rSimulate distance Calculating has been started with origin position @", {"entity": "@s", "nbt": "Pos"}, ". ", {"score":{"objective":"tpa.config","name":"#sim_dist"}, "color": "green"}, " is the original simulate distance before calculating. "]
