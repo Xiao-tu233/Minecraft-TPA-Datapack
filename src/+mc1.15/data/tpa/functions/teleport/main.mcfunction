@@ -17,9 +17,16 @@ tag @s add tpa.teleport
 scoreboard players set #is_teleporting_executing tpa.variables 1
 scoreboard players set #teleport_state tpa.variables 0
 
-execute if score #uses_binary_teleport tpa.config matches 1 run function tpa:teleport/binary/main
+# Get current dimension to see if player's dim is correct
+scoreboard players operation #target_dimension tpa.variables = #dim_num tpa.variables
+data modify storage tpa:tpa temp.args.id set from entity @s Dimension
+function tpa:dimension/get
+execute store result score #current_dimension tpa.variables run data get storage tpa:tpa temp.dimension.id
+execute unless score #target_dimension tpa.variables = #current_dimension tpa.variables run function tpa:teleport/reset_dimension
+
 execute if score #uses_binary_teleport tpa.config matches 0 if score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/anchor/main
 execute if score #uses_binary_teleport tpa.config matches 0 unless score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/anchor/warn_sim_dist
+execute if score #uses_binary_teleport tpa.config matches 1 run function tpa:teleport/binary/main
 
 
 # execute if score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/main__
