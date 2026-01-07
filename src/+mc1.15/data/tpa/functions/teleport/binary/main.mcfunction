@@ -20,19 +20,16 @@
 # teleport step is performed.
 # """
 
-
-# Initialize dimension
-execute if score #dim_num tpa.variables matches 0 in minecraft:overworld run tp @s 0 336 0
-execute if score #dim_num tpa.variables matches -1 in minecraft:the_nether run tp @s 0 336 0
-execute if score #dim_num tpa.variables matches 1 in minecraft:the_end run tp @s 0 336 0
-
 # Binary Teleports
+execute store result score #x tpa.variables run data get entity @s Pos[0]
 execute store result score #x_dist tpa.variables run data get storage tpa:tpa temp.teleport.Pos[0]
+scoreboard players operation #x_dist tpa.variables -= #x tpa.variables
+execute store result score #z tpa.variables run data get entity @s Pos[2]
 execute store result score #z_dist tpa.variables run data get storage tpa:tpa temp.teleport.Pos[2]
-
+scoreboard players operation #z_dist tpa.variables -= #z tpa.variables
 
 # Debugs
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: Server enabled Binary Teleport, teleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ", {"score":{"objective":"tpa.variables","name":"#z_dist"}}, "'s at most 8 blocks away"]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aServer enabled Binary Teleport, §rteleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ", {"score":{"objective":"tpa.variables","name":"#z_dist"}}, "'s at most 8 blocks away"]
 
 # 16,777,216 = 2^24
 # X: Positive
