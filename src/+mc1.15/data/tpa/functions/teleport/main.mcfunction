@@ -28,10 +28,8 @@ execute if score #uses_binary_teleport tpa.config matches 0 if score #sim_dist t
 execute if score #uses_binary_teleport tpa.config matches 0 unless score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/anchor/warn_sim_dist
 execute if score #uses_binary_teleport tpa.config matches 1 run function tpa:teleport/binary/main
 
-
-# execute if score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:teleport/main__
-
-# execute unless score #sim_dist tpa.config = #sim_dist tpa.config run function tpa:sounds/no
-# execute unless score #sim_dist tpa.config = #sim_dist tpa.config run tellraw @s[scores={tpa.output=1..2}] [{"storage":"tpa:tpa", "nbt":"temp.lang.header"}, {"storage":"tpa:tpa", "nbt":"temp.lang.teleport_tryagain"}, "."]
-# execute unless score #sim_dist tpa.config = #sim_dist tpa.config run title @s[scores={tpa.output=0..1}] actionbar [{"storage":"tpa:tpa", "nbt":"temp.lang.teleport_tryagain", "color": "red"}]
-# execute unless score #sim_dist tpa.config = #sim_dist tpa.config as @p run function tpa:teleport/cal_sim_dist
+#! Teleport to-do list:
+# - for binary teleport, we just need to call the main function every tick until destin anchor is loaded
+# - for binary teleport, we need a percentage displaying which shows the percentage of now distance dividing by origin distance
+# - for anchor teleport, the percentage should be showed according to the count of anchors which haven't been teleported yet dividing by count of anchors needed in the whole process
+# [] for sim dist calc, actionbar should also show the currently chunks we've traveled if 

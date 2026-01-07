@@ -4,3 +4,4 @@ servers/
 sync_datapack.py
 java/
 remove_backslash_newline.py
+*/test.mcfunction
