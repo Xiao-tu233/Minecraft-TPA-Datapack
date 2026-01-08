@@ -20,7 +20,21 @@
 # teleport step is performed.
 # """
 
+# Binary Teleports
+execute store result score #x tpa.variables run data get entity @s Pos[0]
+execute store result score #x_dist tpa.variables run data get storage tpa:tpa temp.teleport.Pos[0]
+scoreboard players operation #x_dist tpa.variables -= #x tpa.variables
+execute store result score #z tpa.variables run data get entity @s Pos[2]
+execute store result score #z_dist tpa.variables run data get storage tpa:tpa temp.teleport.Pos[2]
+scoreboard players operation #z_dist tpa.variables -= #z tpa.variables
+
+scoreboard players set #original_distance tpa.variables 0
+execute if score #x tpa.variables matches 1.. run scoreboard players operation #original_distance tpa.variables += #x tpa.variables
+execute if score #x tpa.variables matches ..0 run scoreboard players operation #original_distance tpa.variables -= #x tpa.variables
+execute if score #z tpa.variables matches 1.. run scoreboard players operation #original_distance tpa.variables += #z tpa.variables
+execute if score #z tpa.variables matches ..0 run scoreboard players operation #original_distance tpa.variables -= #z tpa.variables
+
 # Debugs
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aServer enabled Binary Teleport, §rteleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ", {"score":{"objective":"tpa.variables","name":"#z_dist"}}, "'s at most 8 blocks away"]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aServer enabled Binary Teleport, §rteleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ~", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ~", {"score":{"objective":"tpa.variables","name":"#z_dist"}}]
 
 scoreboard players set #teleport_state tpa.variables 3

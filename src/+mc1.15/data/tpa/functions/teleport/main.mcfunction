@@ -18,7 +18,7 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 
 # Teleport initializations (Definition for teleport_state is at tpa:teleport/next_node)
 tag @s add tpa.teleport
-scoreboard players set #is_teleporting_executing tpa.variables 1
+scoreboard players set #is_teleport_executing tpa.variables 1
 scoreboard players get #teleport_state tpa.variables
 
 # Summon destin anchor @ destination

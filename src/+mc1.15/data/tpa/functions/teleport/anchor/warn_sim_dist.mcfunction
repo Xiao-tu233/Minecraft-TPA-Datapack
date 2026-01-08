@@ -1,6 +1,6 @@
 # Parent function: tpa:teleport/main
 
-scoreboard players set #is_teleporting_executing tpa.variables 0
+scoreboard players set #is_teleport_executing tpa.variables 0
 
 function tpa:load_lang
 function tpa:sounds/no

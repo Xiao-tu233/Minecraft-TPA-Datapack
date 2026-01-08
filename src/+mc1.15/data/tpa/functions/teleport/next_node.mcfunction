@@ -11,6 +11,6 @@
 execute if score #teleport_state tpa.variables matches 0 run function tpa:teleport/anchor/approach
 execute if score #teleport_state tpa.variables matches 1 run function tpa:teleport/anchor/last_approach
 execute if score #teleport_state tpa.variables matches 2 run function tpa:teleport/get_destin
-execute if score #teleport_state tpa.variables matches 3 run function tpa:teleport/binary/approach
+execute if score #teleport_state tpa.variables matches 3 as @p[tag=tpa.teleport] run function tpa:teleport/binary/approach
 execute if score #teleport_state tpa.variables matches 4 run function tpa:teleport/sim_dist/approach
 execute if score #teleport_state tpa.variables matches 5 as @p[tag=tpa.teleport] run function tpa:teleport/sim_dist/end
