@@ -1,10 +1,11 @@
 # Parent function: tpa:teleport/main
 
+scoreboard players set #is_teleporting_executing tpa.variables 0
+
 function tpa:load_lang
 function tpa:sounds/no
 tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.teleport_sim_dist_disabled"}, ". "]
 title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.teleport_sim_dist_disabled", "color":"red"}]
-
 
 scoreboard players operation #target_lang tpa.variables = #language tpa.config
 function tpa:load_lang

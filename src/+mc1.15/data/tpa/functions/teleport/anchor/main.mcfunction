@@ -5,5 +5,7 @@
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aA teleport process has been started: §r", {"selector": "@a[tag=tpa.teleport]"}, " -> ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[0]"}, " ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[1]"}, " ", {"storage": "tpa:tpa", "nbt": "temp.teleport.Pos[2]"}]
 
+
+
 #! Calc the first anchor and set state
 # scoreboard players set #teleport_state tpa.variables 1
