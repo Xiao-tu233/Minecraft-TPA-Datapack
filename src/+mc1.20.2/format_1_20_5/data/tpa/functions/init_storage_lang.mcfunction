@@ -1,4 +1,8 @@
-data modify storage tpa:tpa lang set value [{}, \
+data modify storage tpa:tpa lang set value \
+[\
+    {\
+        id: 0 \
+    }, \
     {\
         id: "1", \
         name: "zh_cn", \
@@ -172,9 +176,9 @@ data modify storage tpa:tpa lang set value [{}, \
         option_frequency_hoverevent: "§b在下方更改§a数据包运行频率 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b点击禁用来暂时停止数据包运作", \
         option_game_version: "数据包文件兼容的游戏版本", \
         option_home: "拥有传送点的个数", \
-        option_home_hoverevent: "§b在下方更改§a拥有传送点的个数 §r(§6单位: 个§r), §b填0来设置禁止传送点 §b填-1来设置不限制传送点的数量(不推荐)", \
+        option_home_hoverevent: "§b在下方更改§a拥有传送点的个数 §r(§6单位: 个§r), §b填0来设置禁止传送点, §b填-1来设置不限制传送点的数量(不推荐)", \
         option_idfix_cooldown: "§bID修复冷却时间", \
-        option_idfix_cooldown_hoverevent: "§b在下方更改§aID修复冷却时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置无冷却 填-1来设置禁止ID修复", \
+        option_idfix_cooldown_hoverevent: "§b在下方更改§aID修复冷却时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置无冷却, 填-1来设置禁止ID修复", \
         option_lang: "服务器语言", \
         option_lang_hoverevent: "§b在下方进入语言选择菜单", \
         option_player_lang: "是否允许玩家语言选择", \
@@ -321,8 +325,17 @@ data modify storage tpa:tpa lang set value [{}, \
         simple_menu_incompatible: "§a简略菜单§r不兼容此游戏版本", \
         simple_menu_enable: "你将TPA菜单切换至§a简略菜单 §r你现在可以直接使用/trigger tpa来打开简略菜单", \
         simple_menu_title: "点击下方玩家名发送传送请求", \
+        teleport_cal_sim_dist_actionbar: "模拟距离", \
+        teleport_cal_sim_dist_end_leftpart: "模拟距离计算成功, 目前服务器所设置数据包模拟距离为: ", \
+        teleport_cal_sim_dist_end_rightpart: "", \
+        teleport_cal_sim_dist_start: "计算模拟距离已开始", \
         teleport_incompatible: "§a锚点传送§r不兼容此游戏版本", \
-        teleport_tryagain: "请重试", \
+        teleport_sim_dist_disabled: "服务器尚未设置模拟距离", \
+        teleport_sim_dist_warn: "检测到服务器未设置模拟距离，当前尝试对非玩家目标进行传送。若出现失败，请联系管理员重新计算距离，或手动设置参数，或使用二分法传送", \
+        teleport_sim_dist_warn_button_calc: "[§a计算§r]", \
+        teleport_sim_dist_warn_button_calc_hoverevent: "§b点击开始自动计算模拟距离   §c注意: 执行可能会导致执行者被传送到其他位置   请确保你的位置不需要保持加载再点击", \
+        teleport_sim_dist_warn_button_binary: "[§a二分法§r]", \
+        teleport_sim_dist_warn_button_binary_hoverevent: "§b点击将传送方式设置为二分法传送", \
         tick_not_working_button_set_schedule: "§b[设置]", \
         tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
         tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
@@ -475,11 +488,31 @@ data modify storage tpa:tpa lang set value [{}, \
     {\
         id: 3, \
         name: "zh_tw", \
-        name_display: "繁體中文 (臺灣)" \
+        name_display: "繁體中文 (臺灣)", \
+        load_date_check_format: 123, \
+        load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
+        load_date_check_year_prefix: "", \
+        load_date_check_year_suffix: "年", \
+        load_date_check_year_local_prefix: "(民國", \
+        load_date_check_year_local_suffix: "年）", \
+        load_date_check_month_prefix: "", \
+        load_date_check_month_suffix: "月", \
+        load_date_check_day_prefix: "", \
+        load_date_check_day_suffix: "日" \
     }, \
     {\
         id: 4, \
         name: "jp_jp", \
-        name_display: "日本語（日本）" \
-    }\
+        name_display: "日本語（日本）", \
+        load_date_check_format: 123, \
+        load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
+        load_date_check_year_prefix: "", \
+        load_date_check_year_suffix: "年", \
+        load_date_check_year_local_prefix: "(令和", \
+        load_date_check_year_local_suffix: "年）", \
+        load_date_check_month_prefix: "", \
+        load_date_check_month_suffix: "月", \
+        load_date_check_day_prefix: "", \
+        load_date_check_day_suffix: "日" \
+    } \
 ]

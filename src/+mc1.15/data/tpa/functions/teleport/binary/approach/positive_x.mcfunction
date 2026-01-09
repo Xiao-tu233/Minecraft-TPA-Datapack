@@ -1,0 +1,23 @@
+# Parent function: tpa:teleport/binary/approach.
+execute if score #x_dist tpa.variables matches 8.. run tp @s ~8 ~ ~
+execute if score #x_dist tpa.variables matches 16.. run tp @s ~16 ~ ~
+execute if score #x_dist tpa.variables matches 32.. run tp @s ~32 ~ ~
+execute if score #x_dist tpa.variables matches 64.. run tp @s ~64 ~ ~
+execute if score #x_dist tpa.variables matches 128.. run tp @s ~128 ~ ~
+execute if score #x_dist tpa.variables matches 256.. run tp @s ~256 ~ ~
+execute if score #x_dist tpa.variables matches 512.. run tp @s ~512 ~ ~
+execute if score #x_dist tpa.variables matches 1024.. run tp @s ~1024 ~ ~
+execute if score #x_dist tpa.variables matches 2048.. run tp @s ~2048 ~ ~
+execute if score #x_dist tpa.variables matches 4096.. run tp @s ~4096 ~ ~
+execute if score #x_dist tpa.variables matches 8192.. run tp @s ~8192 ~ ~
+execute if score #x_dist tpa.variables matches 16384.. run tp @s ~16384 ~ ~
+execute if score #x_dist tpa.variables matches 32768.. run tp @s ~32768 ~ ~
+execute if score #x_dist tpa.variables matches 65536.. run tp @s ~65536 ~ ~
+execute if score #x_dist tpa.variables matches 131072.. run tp @s ~131072 ~ ~
+execute if score #x_dist tpa.variables matches 262144.. run tp @s ~262144 ~ ~
+execute if score #x_dist tpa.variables matches 524288.. run tp @s ~524288 ~ ~
+execute if score #x_dist tpa.variables matches 1048576.. run tp @s ~1048576 ~ ~
+execute if score #x_dist tpa.variables matches 2097152.. run tp @s ~2097152 ~ ~
+execute if score #x_dist tpa.variables matches 4194304.. run tp @s ~4194304 ~ ~
+execute if score #x_dist tpa.variables matches 8388608.. run tp @s ~8388608 ~ ~
+execute if score #x_dist tpa.variables matches 16777216.. run tp @s ~16777216 ~ ~
