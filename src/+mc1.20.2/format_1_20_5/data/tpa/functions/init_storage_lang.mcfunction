@@ -186,11 +186,11 @@ data modify storage tpa:tpa lang set value \
         option_max_anchor_summons_attempts_hoverevent: "§b在下方更改§a传送锚点最大召唤尝试次数 §r(§6单位: 次§r) §b调节过大会增加卡顿和无效等待, 过小可能导致传送频繁失败", \
         option_search_id: "是否禁用搜索玩家编号", \
         option_sim_dist: "模拟距离", \
+        option_sim_dist_button_cal: "[§a计算§r]", \
+        option_sim_dist_hoverevent: "§b在下方更改§a模拟距离 §r(§6单位: 区块§r)  请在点击前保证主世界原点模拟距离内没有玩家", \
         option_stricter_book_check: "更严格的传送书检测", \
         option_stricter_book_check_incompatible: "更严格的传送书检测不兼容该版本", \
         option_stricter_book_check_disabled: "本功能需要Bookshelf数据包作为依赖, 而服务器尚未安装Bookshelf数据包. ", \
-        option_sim_dist_button_cal: "[§a计算§r]", \
-        option_sim_dist_hoverevent: "§b在下方更改§a模拟距离 §r(§6单位: 区块§r)  请在点击前保证主世界原点模拟距离内没有玩家", \
         option_time_out: "传送请求超时时间", \
         option_time_out_hoverevent: "§b在下方更改§a传送请求超时时间 §r(§6单位: 1 游戏刻 = 1/20 秒§r), §b填0来设置禁止传送 §b填-1来设置永不超时", \
         option_title_line1: "======================§bTPA§6 设置菜单§r=====================", \
