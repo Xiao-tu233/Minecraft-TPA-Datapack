@@ -35,25 +35,25 @@ scoreboard players set #dir tpa.variables 0
 execute if score #dx tpa.variables < #sim_dist tpa.variables if score #dx tpa.variables > #negative_sim_dist tpa.variables if score #dz tpa.variables < #sim_dist tpa.variables if score #dz tpa.variables > #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 0
 
 # 1: East (dx >= +, dz ~= 0)
-execute if score #dx tpa.variables >= #sim_dist tpa.variables if score #dz tpa.variables <  #sim_dist tpa.variables if score #dz tpa.variables >  #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 1
+execute if score #dx tpa.variables >= #sim_dist tpa.variables if score #dz tpa.variables < #sim_dist tpa.variables if score #dz tpa.variables > #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 1
 
 # 2: SouthEast (dx >= +, dz >= +)
 execute if score #dx tpa.variables >= #sim_dist tpa.variables if score #dz tpa.variables >= #sim_dist tpa.variables run scoreboard players set #dir tpa.variables 2
 
 # 3: South (dx ~= 0, dz >= +)
-execute if score #dx tpa.variables <  #sim_dist tpa.variables if score #dx tpa.variables >  #negative_sim_dist tpa.variables if score #dz tpa.variables >= #sim_dist tpa.variables run scoreboard players set #dir tpa.variables 3
+execute if score #dx tpa.variables < #sim_dist tpa.variables if score #dx tpa.variables > #negative_sim_dist tpa.variables if score #dz tpa.variables >= #sim_dist tpa.variables run scoreboard players set #dir tpa.variables 3
 
 # 4: SouthWest (dx <= -, dz >= +)
 execute if score #dx tpa.variables <= #negative_sim_dist tpa.variables if score #dz tpa.variables >= #sim_dist tpa.variables run scoreboard players set #dir tpa.variables 4
 
 # 5: West (dx <= -, dz ~= 0)
-execute if score #dx tpa.variables <= #negative_sim_dist tpa.variables if score #dz tpa.variables <  #sim_dist tpa.variables if score #dz tpa.variables >  #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 5
+execute if score #dx tpa.variables <= #negative_sim_dist tpa.variables if score #dz tpa.variables < #sim_dist tpa.variables if score #dz tpa.variables > #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 5
 
 # 6: NorthWest (dx <= -, dz <= -)
 execute if score #dx tpa.variables <= #negative_sim_dist tpa.variables if score #dz tpa.variables <= #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 6
 
 # 7: North (dx ~= 0, dz <= -)
-execute if score #dx tpa.variables <  #sim_dist tpa.variables if score #dx tpa.variables >  #negative_sim_dist tpa.variables if score #dz tpa.variables <= #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 7
+execute if score #dx tpa.variables < #sim_dist tpa.variables if score #dx tpa.variables > #negative_sim_dist tpa.variables if score #dz tpa.variables <= #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 7
 
 # 8: NorthEast (dx >= +, dz <= -)
 execute if score #dx tpa.variables >= #sim_dist tpa.variables if score #dz tpa.variables <= #negative_sim_dist tpa.variables run scoreboard players set #dir tpa.variables 8
