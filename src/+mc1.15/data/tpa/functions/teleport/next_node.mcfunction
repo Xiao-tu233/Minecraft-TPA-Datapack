@@ -8,6 +8,8 @@
 # 4 - approach sim dist, tp ~16 ~ ~
 # 5 - kill the final anchor of simdist calcing and teleport player back and kill again
 
+# Keep player floating while waiting
+execute unless score #teleport_state tpa.variables matches 4..5 run tp @p[tag=tpa.teleport] - 336 -
 execute if score #teleport_state tpa.variables matches 0 run function tpa:teleport/anchor/approach
 execute if score #teleport_state tpa.variables matches 1 run function tpa:teleport/anchor/last_approach
 execute if score #teleport_state tpa.variables matches 2 run function tpa:teleport/get_destin
