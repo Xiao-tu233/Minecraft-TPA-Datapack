@@ -108,7 +108,9 @@ scoreboard players set #4 tpa.variables 4
 scoreboard players set #5 tpa.variables 5
 scoreboard players set #9 tpa.variables 9
 scoreboard players set #14 tpa.variables 14
+scoreboard players set #16 tpa.variables 16
 scoreboard players set #20 tpa.variables 20
+scoreboard players set #100 tpa.variables 100
 # Variables initializations
 scoreboard players set #commands_not_match tpa.variables 0
 scoreboard players set #debug_mode tpa.config 0

@@ -325,6 +325,8 @@ data modify storage tpa:tpa lang set value \
         simple_menu_incompatible: "§a简略菜单§r不兼容此游戏版本", \
         simple_menu_enable: "你将TPA菜单切换至§a简略菜单 §r你现在可以直接使用/trigger tpa来打开简略菜单", \
         simple_menu_title: "点击下方玩家名发送传送请求", \
+        teleport_anchor_actionbar: "锚点传送进度: ", \
+        teleport_binary_actionbar: "二分法传送进度: ", \
         teleport_cal_sim_dist_actionbar: "模拟距离", \
         teleport_cal_sim_dist_end_leftpart: "模拟距离计算成功, 目前服务器所设置数据包模拟距离为: ", \
         teleport_cal_sim_dist_end_rightpart: "", \
