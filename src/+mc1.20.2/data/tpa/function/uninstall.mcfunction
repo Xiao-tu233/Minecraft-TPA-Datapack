@@ -52,6 +52,8 @@ scoreboard objectives remove tpa.language
 scoreboard objectives remove tpa.lang_temp
 scoreboard objectives remove tpa.warp
 scoreboard objectives remove tpa.available
+scoreboard objectives remove tpa.output_
+scoreboard objectives remove tpa.dialog
 # scoreboard objectives remove tpa.yaw
 # scoreboard objectives remove tpa.pitch
 # scoreboard objectives remove tpa.yaw.origin

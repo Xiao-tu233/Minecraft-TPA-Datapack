@@ -1,0 +1,7 @@
+{
+    "condition": "entity_scores",
+    "entity": "this",
+    "scores": {
+        "tpa.available": 1
+    }
+}

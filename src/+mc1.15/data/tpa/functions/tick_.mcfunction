@@ -36,6 +36,7 @@ scoreboard players enable @a tpa.language
 # For 1.20.4-: storage value check is not available for predicates, we use functions to do that then re-store it to predicates
 # Below function doesn't exist for 1.20.5+
 execute as @a run function tpa:available
+execute as @a run function tpa:output_
 
 # Refresh player's scores when he's online
 execute as @a unless score @s tpa.is_online matches 1 run function tpa:detect_join
@@ -102,7 +103,8 @@ execute as @a[scores={tpa.output=3..}] run function tpa:output
 execute as @a[scores={tpa.here=1..}] run function tpa:here
 
 # TPA book 传送书
-execute as @a[predicate=tpa:is_requesting_book] run function tpa:book
+execute as @a[scores={tpa.book=1}] run function tpa:book
+execute as @a[scores={tpa.book=3..}] run function tpa:book
 execute as @a[scores={tpa.book=2}] run function tpa:book/state_validation
 execute as @a[scores={tpa.book=2}] if entity @s[nbt={Inventory: [{Slot: -106b, id: "minecraft:written_book", tag: {isTpaBook:1b}}]}] run function tpa:book/stop
 # Clear Players shouldn't have book
@@ -117,12 +119,14 @@ execute as @a[scores={back=1..}] run function tpa:back
 execute as @a[scores={tpa.back=1..}] run function tpa:back
 
 # Home
-execute as @a[predicate=tpa:home] run function tpa:home
+execute as @a[scores={tpa.home=..-1}] run function tpa:home
+execute as @a[scores={tpa.home=1..}] run function tpa:home
 execute as @a[scores={tpa.sethome=1..}] run function tpa:sethome
 execute as @a[scores={tpa.removehome=1..}] run function tpa:removehome
 
 # Warp
-execute as @a[predicate=tpa:warp] run function tpa:warp
+execute as @a[scores={tpa.warp=..-1}] run function tpa:warp
+execute as @a[scores={tpa.warp=1..}] run function tpa:warp
 
 # Both below ones need Ingame keyboard datapack as dependency
 # Search ID

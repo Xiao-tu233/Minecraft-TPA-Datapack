@@ -60,6 +60,9 @@ scoreboard objectives add tpa.lang_temp dummy
 scoreboard objectives add tpa.warp trigger
 # For only 1.20.4-
 scoreboard objectives add tpa.available dummy
+# For only 1.20.2-
+scoreboard objectives add tpa.output_ dummy
+scoreboard objectives add tpa.dialog trigger
 # scoreboard objectives add tpa.head_gestures dummy
 # scoreboard objectives add tpa.yaw dummy
 # scoreboard objectives add tpa.pitch dummy
