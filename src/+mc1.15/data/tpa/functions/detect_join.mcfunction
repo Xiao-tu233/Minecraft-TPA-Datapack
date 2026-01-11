@@ -18,12 +18,12 @@ scoreboard players reset @s tpa.pos.x_temp
 scoreboard players reset @s tpa.pos.y_temp
 scoreboard players reset @s tpa.pos.z_temp
 scoreboard players set @s tpa.is_online 1
-scoreboard players set @a tpa.search_id.key 0
-scoreboard players set @a tpa.search_id.capslock 0
+scoreboard players set @a tpa.search_id.ky 0
+scoreboard players set @a tpa.search_id.cl 0
 
 # Fake player detection
 tag @s remove tpa.fake_player
-execute if score #carpet_fake_player_fix tpa.config matches 1 run function tpa:fake_player_fix/tag {cmd: "script run query(player(), 'player_type') == 'fake'"}
+# execute if score #carpet_fake_player_fix tpa.config matches 1 run function tpa:fake_player_fix/tag {cmd: "script run query(player(), 'player_type') == 'fake'"}
 
 # Abandon old tag
 execute if score #is_updated_from_205 tpa.config matches 1 run tag @s remove TPA_user

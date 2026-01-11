@@ -119,6 +119,8 @@ execute as @a[scores={back=1..}] run function tpa:back
 execute as @a[scores={tpa.back=1..}] run function tpa:back
 
 # Home
+execute as @a[scores={home=..-1}] run function tpa:home
+execute as @a[scores={home=1..}] run function tpa:home
 execute as @a[scores={tpa.home=..-1}] run function tpa:home
 execute as @a[scores={tpa.home=1..}] run function tpa:home
 execute as @a[scores={tpa.sethome=1..}] run function tpa:sethome
