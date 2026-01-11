@@ -3,6 +3,7 @@
 
 tp @s @e[sort=nearest, limit=1, tag=tpa.teleport_anchor_origin]
 kill @e[tag=tpa.teleport_anchor_origin]
+tag @a remove tpa.teleport
 scoreboard players set #is_teleport_executing tpa.variables 0
 scoreboard players operation #sim_dist tpa.variables = #sim_dist tpa.config
 scoreboard players remove #sim_dist tpa.config 2

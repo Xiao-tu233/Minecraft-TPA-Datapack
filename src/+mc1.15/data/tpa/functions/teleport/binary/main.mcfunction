@@ -35,6 +35,6 @@ execute if score #z_dist tpa.variables matches 1.. run scoreboard players operat
 execute if score #z_dist tpa.variables matches ..0 run scoreboard players operation #original_distance tpa.variables -= #z_dist tpa.variables
 
 # Debugs
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aServer enabled Binary Teleport, §rteleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ~", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ~", {"score":{"objective":"tpa.variables","name":"#z_dist"}}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §aServer enabled Binary Teleport, §rteleporting ", {"selector":"@p[tag=tpa.teleport]"}, " to ", {"score":{"objective":"tpa.variables","name":"#x_dist"}}, " ~ ", {"score":{"objective":"tpa.variables","name":"#z_dist"}}]
 
 scoreboard players set #teleport_state tpa.variables 3

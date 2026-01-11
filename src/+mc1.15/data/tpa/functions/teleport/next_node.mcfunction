@@ -9,7 +9,7 @@
 # 5 - kill the final anchor of simdist calcing and teleport player back and kill again
 
 # Keep player floating while waiting
-execute unless score #teleport_state tpa.variables matches 0..1 as @p[tag=tpa.teleport] at @s run tp ~ 336 ~
+execute unless score #teleport_state tpa.variables matches 1 as @p[tag=tpa.teleport] at @s run tp ~ 336 ~
 execute if score #teleport_state tpa.variables matches 0 if entity @e[sort=nearest, limit=1, tag=tpa.teleport_anchor_dim_checker] run function tpa:teleport/wait_dimension
 execute if score #teleport_state tpa.variables matches 1 as @p[tag=tpa.teleport] at @s run function tpa:teleport/anchor/approach
 execute if score #teleport_state tpa.variables matches 2 run function tpa:teleport/get_destin
