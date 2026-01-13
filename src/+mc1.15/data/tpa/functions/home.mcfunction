@@ -16,6 +16,7 @@ execute if score #error_code tpa.variables matches 0 if score #home tpa.variable
 # Act teleport using interface written
 execute if score #error_code tpa.variables matches 0 if score #home tpa.variables matches 1.. run function tpa:home/teleport
 
+# Before v2.0.5:
 # The storage structure of tpa:tpa home is:
 # home: [
 #     {
@@ -39,6 +40,8 @@ execute if score #error_code tpa.variables matches 0 if score #home tpa.variable
 #     ...more ids
 # ]
 
+# After 2.0.6:
+# [{uid, x, y, z, number}, ...]
 
 # Example Usage:
 # data modify storage tpa:tpa home set value [{uid: 0, homes: [{}, {x: 0, y: 4, z: 0, dim: 0}, {}, {x: -5, y: 9, z: -5, dim: 0}]}, {uid: 1, homes: [{}, {x: 0, y: -60, z: 0, dim: 0}, {}, {x: -5, y: 0, z: -5, dim: 0}]}]
