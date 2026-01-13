@@ -1,3 +1,5 @@
+# Parent function: tpa:home
+
 data remove storage tpa:tpa temp.teleport
 # x = (double)x; y = (double)y; z = (double)z;
 
@@ -25,4 +27,3 @@ function tpa:teleport/main
 function tpa:sounds/tp
 tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_act_left_part"}, {"score":{"name": "#home", "objective": "tpa.variables"}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_act_right_part"}, ". " ]
 title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.home_act_left_part", "color": "gold"}, {"score":{"name": "#home", "objective": "tpa.variables"}, "color": "gold"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_act_right_part", "color": "gold"}]
-

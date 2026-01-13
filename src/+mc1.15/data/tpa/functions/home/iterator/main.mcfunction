@@ -1,8 +1,9 @@
 # Parent function: tpa:home/get
-# @input: #op (0 for get, 1 for set, 2 for remove), #uid, #home
-# @output: temp.home, #uid_found
+# @input: #op (0 for get, 1 for set, 2 for remove), #uid, #home temp.home(#op==1)
+# @output: temp.home(#op==0), #uid_found
 
 data modify storage tpa:tpa home append value {sentinel: 1b}
+execute if score #op tpa.variables matches 0..1 run data remove storage tpa:tpa temp.home
 
 function tpa:home/iterator/iterate
 
