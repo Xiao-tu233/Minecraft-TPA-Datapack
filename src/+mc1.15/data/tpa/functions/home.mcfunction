@@ -12,9 +12,9 @@ data remove storage tpa:tpa temp.home
 execute if score #error_code tpa.variables matches 0 if score #home tpa.variables matches ..-1 run function tpa:home/menu
 
 # Otherwise, teleport to the specified home
-execute if score #error_code tpa.variables matches 0 if score #home tpa.variables matches 1.. run function tpa:home/check_home
+execute if score #error_code tpa.variables matches 0 if score #home tpa.variables matches 1.. run function tpa:home/get
 # Act teleport using interface written
-execute if score #error_code tpa.variables matches 0 if score #home tpa.variables matches 1.. run function tpa:home/teleport
+execute if data storage tpa:tpa temp.home.x if score #home tpa.variables matches 1.. run function tpa:home/teleport
 
 # Before v2.0.5:
 # The storage structure of tpa:tpa home is:

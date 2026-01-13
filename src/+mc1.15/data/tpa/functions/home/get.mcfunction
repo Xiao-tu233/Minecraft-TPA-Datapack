@@ -1,9 +1,10 @@
+# Parent function: tpa:home
+
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow executing: §a#home: ",{"score": {"name": "#home","objective": "tpa.variables"}}]
 
-# temp.home = home[uid].homes
-function tpa:home/get_homes
-# temp.home = temp.home[id]
-function tpa:home/get_home
+scoreboard players operation #uid tpa.variables = @s tpa.uid
+scoreboard players set #op tpa.variables 0
+function tpa:home/iterator/main
 
 # #error_code == 4: player visited home which doesn't exist
 execute if score #is_home_found tpa.variables matches 0 run scoreboard players set #error_code tpa.variables 4

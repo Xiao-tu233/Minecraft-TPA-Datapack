@@ -42,9 +42,11 @@ scoreboard players set #sequence_timer tpa.config 30
 execute store result score #max_command_sequence_length tpa.variables run gamerule maxCommandChainLength
 execute if score #max_command_sequence_length tpa.variables matches ..65535 run gamerule maxCommandChainLength 65536
 
+# For v2.0.5-, 1.15-1.20.1, it's 2, for 1.20.2+ it's 1, for v2.0.6+, 1.15-1.20.1 it's 3
+scoreboard players set #home_storage_format tpa.config 1
+
 # For only 1.15 - 1.20.1
 
-# sim_dist
 scoreboard players set #uses_string_dimension tpa.config 1
 scoreboard players set #uses_binary_teleport tpa.config 0
 execute if score #is_updated_from_205 tpa.config matches 1 run scoreboard players operation #anchor_search_retries tpa.config = #teleport_threshold_retry tpa.config

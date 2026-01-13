@@ -42,9 +42,12 @@ scoreboard players set #sequence_timer tpa.config 30
 execute store result score #max_command_sequence_length tpa.variables run gamerule maxCommandChainLength
 execute if score #max_command_sequence_length tpa.variables matches ..65535 run gamerule maxCommandChainLength 65536
 
-# For only 1.15 - 1.20.1
+# For v2.0.5-, 1.15-1.20.1, it's 2, for 1.20.2+ it's 1, for v2.0.6+, 1.15-1.20.1 it's 3
+execute if score #is_updated_from_205 tpa.config matches 1 run scoreboard players set #home_storage_format tpa.config 2
+execute unless score #is_updated_from_205 tpa.config matches 1 run scoreboard players set #home_storage_format tpa.config 3
+execute if score #home_storage_format tpa.config matches 2 run function tpa:home/migrate
 
-# sim_dist
+# For only 1.15 - 1.20.1
 scoreboard players set #uses_string_dimension tpa.config 0
 execute if score #game_version tpa.config matches 116.. run scoreboard players set #uses_string_dimension tpa.config 1
 scoreboard players set #uses_binary_teleport tpa.config 0
