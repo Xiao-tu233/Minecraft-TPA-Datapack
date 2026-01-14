@@ -4,3 +4,10 @@ function tpa:load_lang
 function tpa:home/conditions
 
 execute if score #error_code tpa.variables matches 0 run function tpa:home/set
+data modify storage tpa:tpa temp.sethome set from storage tpa:tpa temp.home
+
+execute if score #error_code tpa.variables matches 0 run function tpa:home/menu
+
+
+data modify storage tpa:tpa temp.home set from storage tpa:tpa temp.sethome
+execute if score #error_code tpa.variables matches 0 run function tpa:home/set/output
