@@ -1,8 +1,8 @@
-data modify storage tpa:tpa temp.home_src set value {}
-execute store result storage tpa:tpa temp.home_src.x int 1 run data get entity @s Pos[0]
-execute store result storage tpa:tpa temp.home_src.y int 1 run data get entity @s Pos[1]
-execute store result storage tpa:tpa temp.home_src.z int 1 run data get entity @s Pos[2]
-data modify storage tpa:tpa temp.home_src.dim set from entity @s Dimension
+data modify storage tpa:tpa temp.home set value {}
+execute store result storage tpa:tpa temp.home.x int 1 run data get entity @s Pos[0]
+execute store result storage tpa:tpa temp.home.y int 1 run data get entity @s Pos[1]
+execute store result storage tpa:tpa temp.home.z int 1 run data get entity @s Pos[2]
+data modify storage tpa:tpa temp.home.dim set from entity @s Dimension
 function tpa:sounds/pick_orb
 tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_left_part"}, {"score":{"name": "#home", "objective": "tpa.variables"}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_middle_part"}, {"storage":"tpa:tpa", "nbt":"temp.home_src.dim"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_position"}, {"storage":"tpa:tpa", "nbt":"temp.home_src.x"}, " ", {"storage":"tpa:tpa", "nbt":"temp.home_src.y"}, " ", {"storage":"tpa:tpa", "nbt":"temp.home_src.z"}, " ", {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_right_part"}, "." ]
 title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_left_part"}, {"score":{"name": "#home", "objective": "tpa.variables"}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_middle_part"}, {"storage":"tpa:tpa", "nbt":"temp.home_src.dim"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_position"}, {"storage":"tpa:tpa", "nbt":"temp.home_src.x"}, " ", {"storage":"tpa:tpa", "nbt":"temp.home_src.y"}, " ", {"storage":"tpa:tpa", "nbt":"temp.home_src.z"}, " ", {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_right_part"}]
