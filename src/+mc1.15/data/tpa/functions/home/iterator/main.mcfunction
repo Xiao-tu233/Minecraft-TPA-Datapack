@@ -1,6 +1,6 @@
 # Parent function: tpa:home/get
 # @input: #op (0 for get, 1 for set, 2 for remove, 3 for menu), #uid, #home temp.home(#op==1)
-# @output: temp.home(#op==0, 3), #uid_found
+# @output: temp.home(#op==0, 2, 3), #uid_found
 
 data modify storage tpa:tpa home append value {sentinel: 1b}
 execute unless score #op tpa.variables matches 1 run data remove storage tpa:tpa temp.home

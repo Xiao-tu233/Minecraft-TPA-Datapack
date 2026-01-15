@@ -14,6 +14,7 @@ execute if score #uid tpa.variables = #current_uid tpa.variables if score #home 
 
 # Matched and save current as outout or set current to input
 execute if score #current_matching tpa.variables matches 1 if score #op tpa.variables matches 0 run data modify storage tpa:tpa temp.home set from storage tpa:tpa home[0]
+execute if score #current_matching tpa.variables matches 1 if score #op tpa.variables matches 2 run data modify storage tpa:tpa temp.home set from storage tpa:tpa home[0]
 execute if score #current_matching tpa.variables matches 1 if score #op tpa.variables matches 1 run data modify storage tpa:tpa home[0] set from storage tpa:tpa temp.home
 
 # Not append if current matched and op is 2

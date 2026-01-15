@@ -10,4 +10,3 @@ execute store result storage tpa:tpa temp.home.number int 1 run scoreboard playe
 
 scoreboard players set #op tpa.variables 1
 function tpa:home/iterator/main
-

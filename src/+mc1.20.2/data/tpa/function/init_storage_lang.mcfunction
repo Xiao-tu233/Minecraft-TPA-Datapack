@@ -72,6 +72,7 @@ data modify storage tpa:tpa lang set value \
         home_set_position: "坐标", \
         home_set_right_part: "", \
         home_spec: "旁观者模式玩家不允许操作§a传送点§r", \
+        hoverevent_suggest_tip: "§a你应将指令补全为: ", \
         idfix_act_hoverevent: "§b这名玩家使用了ID修复", \
         idfix_act_left_part: "", \
         idfix_act_right_part: "使用了§aID修复§r, 所有玩家的数据编号与上一位置已被重置", \

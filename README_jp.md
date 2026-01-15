@@ -1,7 +1,7 @@
 
 ---
 
-# Minecraft-TPA-資料パック
+# Minecraft-TPA-Datapack
 
 ---
 
