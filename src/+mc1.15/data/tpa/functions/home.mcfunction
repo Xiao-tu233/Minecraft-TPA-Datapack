@@ -5,6 +5,7 @@ scoreboard players set @s home 0
 
 function tpa:load_lang
 function tpa:home/conditions
+scoreboard players operation #uid tpa.variables = @s tpa.uid
 
 data remove storage tpa:tpa temp.home
 

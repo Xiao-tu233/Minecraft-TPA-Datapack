@@ -3,8 +3,8 @@ scoreboard players set @s tpa.removehome 0
 function tpa:load_lang
 function tpa:home/conditions
 
+scoreboard players operation #uid tpa.variables = @s tpa.uid
 execute if score #error_code tpa.variables matches 0 run function tpa:home/remove
-
 
 execute if score #error_code tpa.variables matches 0 run function tpa:home/menu
 
