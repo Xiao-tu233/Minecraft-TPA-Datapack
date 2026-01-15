@@ -8,6 +8,7 @@ function tpa:home/iterator/main
 
 # Sort temp.home
 function tpa:home/menu/sort
+data modify storage tpa:tpa temp.home set from storage tpa:tpa temp.home_sorted
 
 scoreboard players set #i tpa.variables 1
 execute if data storage tpa:tpa temp.home if data storage tpa:tpa temp.home[0] run function tpa:home/menu/display_lines
