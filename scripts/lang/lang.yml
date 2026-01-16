@@ -482,7 +482,7 @@
   name_display: "English (United States)"
 - id: 3
   name: "zh_tw"
-  name_display: "繁體中文 (臺灣)"
+  name_display: "正體中文 (臺灣)"
   load_date_check_format: 123
   load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day"
   load_date_check_year_prefix: ""
