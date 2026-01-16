@@ -7,3 +7,4 @@
  - [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md)
  - [繁體中文(香港特別行政區)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhhk.md)
 - [한국어(대한민국)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_ko.md)
+- [文言(華夏)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_lzh.md)
