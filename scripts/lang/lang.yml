@@ -494,7 +494,7 @@
   load_date_check_day_prefix: ""
   load_date_check_day_suffix: "日"
 - id: 4
-  name: "jp_jp"
+  name: "ja_jp"
   name_display: "日本語（日本）"
   load_date_check_format: 123
   load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day"

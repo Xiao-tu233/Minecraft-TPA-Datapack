@@ -11,7 +11,8 @@
 可选依赖: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet), [![Bookshelf Datapack](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
 
-[English(United States)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) - **简体中文(中国大陆)** - [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) - [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md)
+[English(United States)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) · [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md) · [更多语言](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/languages.md) 
+
 
 
 TPA 数据包是一个 Minecraft 数据包，它允许非 OP 玩家轻松互相传送，同时还提供了诸如 Back、Home、Warp、多语言支持等额外功能。
