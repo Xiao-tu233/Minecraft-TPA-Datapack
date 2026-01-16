@@ -10,7 +10,7 @@
 
 オプション依存: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet), [![Bookshelf Datapack](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
-[English](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) - [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) - [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) - **日本語**
+[English(United States)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) - [简体中文(中国大陆)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) - [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) - **日本語(日本)**
 
 TPA 資料パックは、非 OP プレイヤーでも簡単に互いにテレポートできる Minecraft 資料パックです。また、Back、Home、Warp、複数言語対応などの追加機能も提供されています。
 

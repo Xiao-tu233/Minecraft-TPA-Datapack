@@ -5,7 +5,7 @@
 
 Optional Dependencies: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet), [![Bookshelf Datapack](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
-**English** - [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) - [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) - [日本語](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md)
+**English(United States)** - [简体中文(中国大陆)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) - [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) - [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md)
 
 TPA datapack is a Minecraft Datapack which allows non-OP players to teleport each others easily, multiple additional features like Back, Home, Warp, Languages for different regions, etc. are also provided.
 
