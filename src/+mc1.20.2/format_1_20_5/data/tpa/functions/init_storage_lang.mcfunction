@@ -149,6 +149,7 @@ data modify storage tpa:tpa lang set value \
         option_button_update_hoverevent: "§b点击开始更新数据包", \
         option_carpet_disabled: "本功能需要Carpet模组作为依赖, 而服务器尚未安装Carpet模组. ", \
         option_carpet_fake_player_fix: "Carpet模组假人修复", \
+        option_carpet_fake_player_fix_incompatible: "Carpet模组假人修复不兼容该版本", \
         option_compact_ids: "是否在玩家离线后移除编号空位", \
         option_current_game_version: "当前检测到的游戏版本", \
         option_debug_mode: "调试模式", \
@@ -491,7 +492,7 @@ data modify storage tpa:tpa lang set value \
     {\
         id: 3, \
         name: "zh_tw", \
-        name_display: "繁體中文 (臺灣)", \
+        name_display: "正體中文 (臺灣)", \
         load_date_check_format: 123, \
         load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
         load_date_check_year_prefix: "", \
@@ -505,7 +506,7 @@ data modify storage tpa:tpa lang set value \
     }, \
     {\
         id: 4, \
-        name: "jp_jp", \
+        name: "ja_jp", \
         name_display: "日本語（日本）", \
         load_date_check_format: 123, \
         load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \

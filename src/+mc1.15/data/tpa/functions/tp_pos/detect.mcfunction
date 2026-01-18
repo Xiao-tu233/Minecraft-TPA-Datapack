@@ -1,4 +1,4 @@
-
+# Parent function: tpa:tp_pos/conditions
 # Fill missing values with current position: Use the fallback way that if pos is None
 # The original way is not working cuz the tpa.pos has been changed that we cannot know if pos is set or not by simply checking tpa.pos
 execute unless score @s tpa.pos.x_temp = @s tpa.pos.x_temp store result score @s tpa.pos.x_temp run data get entity @s Pos[0]
@@ -36,4 +36,4 @@ execute if score #condition tpa.variables matches 4 run title @s[predicate=tpa:o
 execute store result storage tpa:tpa temp.arg.x int 1 run scoreboard players get @s tpa.pos.x_temp
 execute store result storage tpa:tpa temp.arg.y int 1 run scoreboard players get @s tpa.pos.y_temp
 execute store result storage tpa:tpa temp.arg.z int 1 run scoreboard players get @s tpa.pos.z_temp
-execute if score #condition tpa.variables matches 6 run function tpa:tp_pos/act with storage tpa:tpa temp.arg
+execute if score #condition tpa.variables matches 6 run function tpa:tp_pos/act

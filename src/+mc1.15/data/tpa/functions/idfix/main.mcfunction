@@ -6,7 +6,7 @@ scoreboard players operation @s tpa.idfix_cd = #idfix_cooldown tpa.config
 scoreboard players set #global_current tpa.player_id 1
 scoreboard players set #back_length tpa.variables 0
 data remove storage tpa:tpa back
-tag @a remove fake_player
+tag @a remove tpa.fake_player
 scoreboard objectives remove tpa.player_id
 scoreboard objectives add tpa.player_id dummy
 scoreboard players set @a tpa.tp_to 0
