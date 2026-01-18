@@ -7,7 +7,7 @@ scoreboard players set #op tpa.variables 0
 function tpa:home/iterator/main
 
 # #error_code == 4: player visited home which doesn't exist
-execute if score #uid_found tpa.variables matches 1 if data storage tpa:tpa temp.home run scoreboard players set #error_code tpa.variables 4
+execute if score #uid_found tpa.variables matches 1 unless data storage tpa:tpa temp.home run scoreboard players set #error_code tpa.variables 4
 
 # #error_code == 5: player has no home
 execute if score #uid_found tpa.variables matches 0 run scoreboard players set #error_code tpa.variables 5

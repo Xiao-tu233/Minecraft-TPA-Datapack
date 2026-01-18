@@ -1,4 +1,4 @@
-# Parent function: tpa:home/menu
+# Parent function: tpa:home/menu, tpa:home/menu/display_lines
 
 # Get dimension
 data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.home[0].dim
@@ -18,4 +18,4 @@ data remove storage tpa:tpa temp.home[0]
 # i++
 scoreboard players add #i tpa.variables 1
 
-execute if data storage tpa:tpa temp.home[0] run function tpa:home/display_homes
+execute if data storage tpa:tpa temp.home[0] run function tpa:home/menu/display_lines
