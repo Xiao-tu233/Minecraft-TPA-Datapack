@@ -3,7 +3,7 @@
 # {x: int, y: int, z: int, dim: string[Dimension], name: str, desc: str, disabled: boolean}
 $scoreboard players set #index tpa.variables $(index)
 # return fail if index is 1 (the first warp cannot move up)
-execute unless score #index tpa.variables matches 2.. run return 0
+execute unless score #index tpa.variables matches 2.. run return fail
 $data modify storage tpa:tpa temp.args.index set value $(index)
 scoreboard players operation #previous_index tpa.variables = #index tpa.variables
 scoreboard players remove #previous_index tpa.variables 1
