@@ -4,7 +4,7 @@ Project To-do lists:
    - Dxcide: Show warps in 传送点菜单 or a independent warp menu? 
    - Fxr the first index of the warp list, make the first compound stores the lang for options.warp 
    - Rxalize [Move Up] [Move Down] 
-   - Mxke dimensions customized(Add option: dimensions) 
+   - Make dimensions customized(Add option: dimensions) 
 - [o] Optimize the code structure 
 - [x] Check if scoreboard objectives tpa is already exists to see if the other TPA datapack is installed §cNot Necessary
 - [o] Update & Uninstall langauge supportive 

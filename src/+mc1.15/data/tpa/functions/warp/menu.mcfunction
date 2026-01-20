@@ -35,7 +35,7 @@ execute unless score #if_display_warp_menu_title tpa.variables matches 1 run fun
 execute if data storage tpa:tpa temp.warp[0] run function tpa:warp/show_each
 
 execute store result storage tpa:tpa temp.args.index int 1 run scoreboard players get #i tpa.variables
-execute if score #is_editting_warp tpa.variables matches 1 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "warp[0].warp_button_add","hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.warp_button_add_hoverevent"}},"clickEvent":{"action":"suggest_command","value":"/data modify storage tpa:tpa warp append value {desc: <InputDescHere>, name: <InputNameHere>, x: <InputXHere>, y: <InputYHere>, z: <InputZHere>, dim: <InputDimensionHere>, disabled: 0b}"}}]
+execute if score #is_editting_warp tpa.variables matches 1 run tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "warp[0].warp_button_add","hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.warp_button_add_hoverevent"}},"clickEvent":{"action":"suggest_command","value":"/data modify storage tpa:tpa warp append value {desc: \"<InputDescHere>\", name: \"<InputNameHere>\", x: <InputXHere>, y: <InputYHere>, z: <InputZHere>, dim: \"<InputDimensionHere>\", disabled: 0b}"}}]
 
 # Remove button display for non-OPs
 scoreboard players set #is_editting_warp tpa.variables 0
