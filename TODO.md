@@ -101,7 +101,7 @@ Project To-do lists:
 - [o] Move some load datas to tpa:tpa options instead of tpa:tpa * 
 - [o] Add a sentence at the end of option that enabling debug mode to modify advenced settings 
 - [o] Show the gray button of [Request Teleport] when player who cannot be requested sent a here 
-- [o] Version overlay now changed: 1.20.2 - 1.20.3, 1.20.4, 1.20.5-1.20.6 -> 1.20.2, 1.20.3 - 1.20.4, 1.20.5-1.20.6 
+- [o] Version overlay now changed: 1.20.2-1.20.3, 1.20.4, 1.20.5-1.20.6 -> 1.20.2, 1.20.3-1.20.4, 1.20.5-1.20.6 
 - [o] Add following switches: 
    - Accept Toggles(When tpaccept_toggle+==4): Disable -> Enable -> Disable
    - Mute(When +==4): Unmute -> Mute -> unmute
