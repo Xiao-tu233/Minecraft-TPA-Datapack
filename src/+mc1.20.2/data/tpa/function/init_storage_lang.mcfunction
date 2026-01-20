@@ -449,6 +449,10 @@ data modify storage tpa:tpa lang set value \
         update_nextstep: "§b[下一步]", \
         warp_button_add: "[§a新建传送点§r]", \
         warp_button_add_hoverevent: "§b点击在当前位置新建一个公共传送点", \
+        warp_button_apply: "[§a应用§r]", \
+        warp_button_apply_hoverevent: "§b点击应用所缓存的更改", \
+        warp_button_cancel: "[§c取消§r]", \
+        warp_button_cancel_hoverevent: "§b点击放弃所缓存的更改", \
         warp_button_enable: "[§a启用§r]", \
         warp_button_enable_hoverevent: "§b点击启用该公共传送点", \
         warp_button_disable: "[§c禁用§r]", \
@@ -462,6 +466,10 @@ data modify storage tpa:tpa lang set value \
         warp_button_tp_hoverevent: "§b点击传送到该公共传送点", \
         warp_button_rm: "[§c移除§r]", \
         warp_button_rm_hoverevent: "§b点击移除该公共传送点", \
+        warp_button_select: "[§a选择§r]", \
+        warp_button_select_hoverevent: "§b点击选择该公共传送点槽位, 以作为应用时写入更改的槽位", \
+        warp_button_unselect: None, \
+        warp_button_unselect_hoverevent: "§b点击取消选择该公共传送点槽位", \
         warp_button_setdesc: "[§a设描述§r]", \
         warp_button_setdesc_hoverevent: "§b点击设置该公共传送点的描述(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
         warp_button_setname: "[§a取名§r]", \
@@ -471,6 +479,7 @@ data modify storage tpa:tpa lang set value \
         warp_desc_disabled: "§c该公共传送点已被禁用", \
         warp_disabled: "§a公共传送点§r已被服务器禁用", \
         warp_menu_title: "服务器设置了如下的公共传送点: ", \
+        warp_menu_edit_tip: "目前处于编辑模式 请在下方通过索引选择操作槽位后在下方按钮更改具体数据最后点击应用来应用更改", \
         warp_number: "公共传送点#", \
         warp_out_of_range: "该公共传送点尚未设置", \
         warp_set_left_part: "你把", \

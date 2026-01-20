@@ -70,7 +70,7 @@ Project To-do lists:
     -! For 1.20.4-: tpa:book/set_interaction_context:7:106 generic.block_interaction_range instead of player.block_interaction_range
                  : tpa:book/track/confiscate_from_entity:5:435 Slot: byte instead of slot: int
                  : tpa:book/track/confiscate_from_ender_chest:5:435 Slot: byte instead of slot: int
-!    -! For Newer version: advencement tpa:book_container_detect, add shelf, #copper_chest
+    - For Newer version: advencement tpa:book_container_detect, add shelf, #copper_chest  §aOK
     - Detect Item dropped when player died instead of dropping for refresh(Distance Detection) §aOK
     - Use keybind instead of hard code key 'Q', 'F' §cNot Realizable, chat component not supportive
     -! Maybe make book wearable and craftable for different slots
@@ -81,7 +81,7 @@ Project To-do lists:
     - Containing: #sequence_timer, #sim_dist, #is_1_16(Rename Needed), #teleport_summon_retried(Rename Needed), #teleport_threshold_retry_summon(Rename Needed), #uses_binary_teleport, Shake or Nod related: #timer_sequence, #detectable_range, ...
  - Frequency will be set to 20 if 0 was set when calling tpa:tick_not_working function. §aOK
  - Make Settings Initialize when version is not correct instead of everytimes. §aOK
-! - 1.15 teleport changes:
+ - 1.15 teleport changes: §aOK
     - Summon visual item of Target instead giving player a target to check the 1.15/1.16 
     - Make player keeping floating in the midair instead of falling them when chunks are loading
     - Show Retries Debug infos in action bar instead of chat
@@ -106,9 +106,10 @@ Project To-do lists:
     - Accept Toggles(When tpaccept_toggle+==4): Disable -> Enable -> Disable
     - Mute(When +==4): Unmute -> Mute -> unmute
     - Outputs At(When +==6): Both -> Actionbar -> Chatbar -> Both
- - Searching ID inputs may be interupted by other players when they're inputting too
- - license could be a written book to be read
- - warp
+ -! Searching ID inputs may be interupted by other players when they're inputting too
+ -! license could be a written book to be read
+ -! warp
+    - 地标编辑考虑将编辑按钮合并到上方 对于每个点 可以单选 选择后点击上方编辑按钮修改即将并入的内容的细节 点击应用来并入修改 取消来放弃更改
 
  TESTS:
  - [ ] mc1.13 on 1.13
@@ -196,3 +197,4 @@ Project To-do lists:
   2 for BAC
   and ...3 more
   Consider more flexible way for language extras: containing indexes checking when language is loaded
+ - Make menus like home and warp page switchable to make every button directly commands accessible without index adding in the end 比方说传送点，第一页比如我放5个位置 那就会存在玩家分数储存为页码比如是2 那我就会在触发记分项的时候比方说触发的8 那就会是 传送点#6的第二个操作
