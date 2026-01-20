@@ -25,13 +25,5 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 function tpa:back/push_confirm
 function tpa:teleport/main
 function tpa:sounds/tp
-tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_left_part"}, \
-    {"storage": "tpa:tpa", "nbt": "temp.warp.name", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "temp.warp.desc"}}}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_right_part"}, ". " \
-]
-title @s[predicate=tpa:output/show_actionbar] actionbar [\
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_left_part", "color": "gold"}, \
-    {"storage": "tpa:tpa", "nbt": "temp.warp.name", "color": "gold"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_right_part", "color": "gold"}\
-]
+tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_left_part"}, {"storage": "tpa:tpa", "nbt": "temp.warp.name", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "temp.warp.desc"}}}, {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_right_part"}, ". " ]
+title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_left_part", "color": "gold"}, {"storage": "tpa:tpa", "nbt": "temp.warp.name", "color": "gold"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_teleport_right_part", "color": "gold"}]
