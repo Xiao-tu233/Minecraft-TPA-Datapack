@@ -465,7 +465,6 @@
   warp_button_select_hoverevent: "§b点击选择该公共传送点槽位, 以作为应用时写入更改的槽位"
   warp_button_unselect: "[§c取消选择§r]"
   warp_button_unselect_hoverevent: "§b点击取消选择该公共传送点槽位"
-  warp_button_unselect: 
   warp_button_setdesc: "[§a设描述§r]"
   warp_button_setdesc_hoverevent: "§b点击设置该公共传送点的描述(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)"
   warp_button_setname: "[§a取名§r]"
