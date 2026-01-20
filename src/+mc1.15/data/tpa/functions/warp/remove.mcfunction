@@ -1,4 +1,5 @@
-# Called by: (Player) Any OP, Quoted from: tpa:warp/show_each_macro
+# Parent function: tpa:tick_
 # @macro: {index: int}
-$data remove storage tpa:tpa warp[$(index)]
+scoreboard players set #op tpa.variables 2
+function tpa:warp/iterator/main
 function tpa:warp/option

@@ -7,7 +7,7 @@ execute store result score #current_uid tpa.variables run data get storage tpa:t
 execute if score #uid tpa.variables = #current_uid tpa.variables run scoreboard players set #uid_found tpa.variables 1
 
 # Append every homes with matching uid
-execute if score #uid tpa.variables = #current_uid tpa.variables run data modify storage tpa:tpa temp.home append from storage tpa:tpa home[0]
+execute if score #uid tpa.variables = #current_uid tpa.variables if score #op tpa.variables matches 3 run data modify storage tpa:tpa temp.home append from storage tpa:tpa home[0]
 
 scoreboard players set #current_matching tpa.variables 0
 execute if score #uid tpa.variables = #current_uid tpa.variables if score #home tpa.variables = #current_home tpa.variables run scoreboard players set #current_matching tpa.variables 1

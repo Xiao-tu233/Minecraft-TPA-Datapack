@@ -129,6 +129,7 @@ execute as @a[scores={tpa.removehome=1..}] run function tpa:removehome
 # Warp
 execute as @a[scores={tpa.warp=..-1}] run function tpa:warp
 execute as @a[scores={tpa.warp=1..}] run function tpa:warp
+execute if score #editting_warp.trigger tpa.variables = #editting_warp.trigger tpa.variables unless score  #editting_warp.trigger tpa.variables = #editting_warp tpa.variables run function tpa:warp/select
 
 # Both below ones need Ingame keyboard datapack as dependency
 # Search ID

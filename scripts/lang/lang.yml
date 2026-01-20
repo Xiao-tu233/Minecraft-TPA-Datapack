@@ -477,6 +477,8 @@
   warp_menu_edit_tip: "目前处于编辑模式 请在下方通过索引选择操作槽位后在下方按钮更改具体数据最后点击应用来应用更改"
   warp_number: "公共传送点#"
   warp_out_of_range: "该公共传送点尚未设置"
+  warp_select_left_part: "你选中了"
+  warp_select_right_part: "作为正在编辑的槽位"
   warp_set_left_part: "你把"
   warp_set_middle_part: "设置为"
   warp_set_position: "坐标"
