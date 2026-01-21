@@ -468,7 +468,7 @@ data modify storage tpa:tpa lang set value \
         warp_button_rm_hoverevent: "§b点击移除该公共传送点", \
         warp_button_select: "[§a选择§r]", \
         warp_button_select_hoverevent: "§b点击选择该公共传送点槽位, 以作为应用时写入更改的槽位", \
-        warp_button_unselect: None, \
+        warp_button_unselect: "[§c取消选择§r]", \
         warp_button_unselect_hoverevent: "§b点击取消选择该公共传送点槽位", \
         warp_button_setdesc: "[§a设描述§r]", \
         warp_button_setdesc_hoverevent: "§b点击设置该公共传送点的描述(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
@@ -482,6 +482,8 @@ data modify storage tpa:tpa lang set value \
         warp_menu_edit_tip: "目前处于编辑模式 请在下方通过索引选择操作槽位后在下方按钮更改具体数据最后点击应用来应用更改", \
         warp_number: "公共传送点#", \
         warp_out_of_range: "该公共传送点尚未设置", \
+        warp_select_left_part: "你选中了", \
+        warp_select_right_part: "作为正在编辑的槽位", \
         warp_set_left_part: "你把", \
         warp_set_middle_part: "设置为", \
         warp_set_position: "坐标", \
