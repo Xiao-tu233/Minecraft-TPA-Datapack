@@ -169,7 +169,7 @@ Project To-do lists:
    - Use more predicts instead of conditions "execute if"
    - Considering use `execute positioned over <heightmap> -> execute: 将执行位置设置为符合特定高度图的一纵列方块的最高的位置。`
    - Consider use tag instead of item customdata to select Visual Items
-   - Show specific player acount in TPA menu according to the currently server player and even server settings
+   - Show specific player amount in TPA menu according to the currently server player and even server settings
    - For 1.17+ consider use entity mark to replace most of the visual items
    - Add Search ID Book back, by crafting TPA menu book to get one
    - Add [APPLY] button in options menu
