@@ -111,6 +111,7 @@ Project To-do lists:
 - [ ] warp
    - 地标编辑考虑将编辑按钮合并到上方 对于每个点 可以单选 选择后点击上方编辑按钮修改即将并入的内容的细节 点击应用来并入修改 取消来放弃更改
    - With test, warp just increases whenever edits for reason, warp names should be fallback to Warp#XX instead of displaying that
+   - modifier tag should be added when menu executes and removes with a clock about 5 min
 
  TESTS:
    L   E
