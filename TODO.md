@@ -199,3 +199,7 @@ Project To-do lists:
   and ...3 more
   Consider more flexible way for language extras: containing indexes checking when language is loaded
 - [ ] Make menus like home and warp page switchable to make every button directly commands accessible without index adding in the end 比方说传送点，第一页比如我放5个位置 那就会存在玩家分数储存为页码比如是2 那我就会在触发记分项的时候比方说触发的8 那就会是 传送点#6的第二个操作
+- [ ] 在编辑公共传送点时
+   - 检测比如name, desc这些字符串的变化
+   - 考虑直接应用更改 或者在更改后更改对应按钮的外观 或者直接将更改结果拟显示在目标槽位
+   - 增加这些更改之后的提示就像选择槽位时一样
