@@ -107,9 +107,10 @@ Project To-do lists:
    - Mute(When +==4): Unmute -> Mute -> unmute
    - Outputs At(When +==6): Both -> Actionbar -> Chatbar -> Both
 - [ ] Searching ID inputs may be interupted by other players when they're inputting too
-- [ ] license could be a written book to be read
+- [o] license could be a written book to be read
 - [ ] warp
    - 地标编辑考虑将编辑按钮合并到上方 对于每个点 可以单选 选择后点击上方编辑按钮修改即将并入的内容的细节 点击应用来并入修改 取消来放弃更改
+   - With test, warp just increases whenever edits for reason, warp names should be fallback to Warp#XX instead of displaying that
 
  TESTS:
    L   E
