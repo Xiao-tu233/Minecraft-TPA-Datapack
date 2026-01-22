@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "supported_formats": [5, 999], 
+        "pack_format": 5,
+        "min_format": [5, 0],
+        "max_format": [999, 0],
+        "description": "§bTPA Datapack language extra pack v1.0 for TPA Datapack v2.0.6 and MC1.15-1.21.11 by Xiao_tu233 at YT/Bilibili/抖音/Modrinth/PMC/CurseForge/Discord/MC百科"
+    }
+}

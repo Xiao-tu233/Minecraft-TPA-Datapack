@@ -3,7 +3,7 @@
 execute if score #version tpa.config matches ..205 run scoreboard players set #is_updated_from_205 tpa.config 1
 
 # Language Initialization
-data remove storage tpa:tpa lang
+data modify storage tpa:tpa lang set value []
 function tpa:init_storage_lang
 function tpa_extra:init_storage_lang
 

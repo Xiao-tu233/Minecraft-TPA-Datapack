@@ -106,7 +106,7 @@ Project To-do lists:
    - Accept Toggles(When tpaccept_toggle+==4): Disable -> Enable -> Disable
    - Mute(When +==4): Unmute -> Mute -> unmute
    - Outputs At(When +==6): Both -> Actionbar -> Chatbar -> Both
-- [ ] Searching ID inputs may be interupted by other players when they're inputting too
+- [x] Searching ID inputs may be interupted by other players when they're inputting too
 - [o] license could be a written book to be read
 - [ ] warp
    - 地标编辑考虑将编辑按钮合并到上方 对于每个点 可以单选 选择后点击上方编辑按钮修改即将并入的内容的细节 点击应用来并入修改 取消来放弃更改
@@ -205,3 +205,5 @@ Project To-do lists:
    - 检测比如name, desc这些字符串的变化
    - 考虑直接应用更改 或者在更改后更改对应按钮的外观 或者直接将更改结果拟显示在目标槽位
    - 增加这些更改之后的提示就像选择槽位时一样
+- [ ] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
+- [ ] 语言的index键应该在reload的时候被添加而不是语言的yml里

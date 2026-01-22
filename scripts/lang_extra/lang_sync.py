@@ -7,15 +7,11 @@ YML_PATH = "lang.yml"
 
 TARGETS = [
     {
-        "path": ROOT / "src/+mc1.15/data/tpa/functions/init_storage_lang.mcfunction",
+        "path": ROOT / "src/lang_extra/data/tpa_extra/functions/init_storage_lang.mcfunction",
         "pretty": False,
     },
     {
-        "path": ROOT / "src/+mc1.20.2/format_1_20_5/data/tpa/functions/init_storage_lang.mcfunction",
-        "pretty": True,   # 使用反斜杠换行
-    },
-    {
-        "path": ROOT / "src/+mc1.20.2/data/tpa/function/init_storage_lang.mcfunction",
+        "path": ROOT / "src/lang_extra/data/tpa_extra/function/init_storage_lang.mcfunction",
         "pretty": True,
     },
 ]
