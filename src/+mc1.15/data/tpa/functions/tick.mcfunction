@@ -10,3 +10,6 @@ execute if score #is_teleport_executing tpa.variables matches 1 run function tpa
 
 scoreboard players add #ticks_skipped tpa.variables 1
 execute if score #if_skip_tick tpa.variables matches 0 run function tpa:tick_
+
+# Call the tick function if the option is enabled
+execute if score #uses_tick_scheduling tpa.config matches 1 run schedule function tpa:tick 1t

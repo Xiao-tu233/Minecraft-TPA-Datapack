@@ -129,7 +129,9 @@ execute as @a[scores={tpa.removehome=1..}] run function tpa:removehome
 # Warp
 execute as @a[scores={tpa.warp=..-1}] run function tpa:warp
 execute as @a[scores={tpa.warp=1..}] run function tpa:warp
-execute if score #editting_warp.trigger tpa.variables = #editting_warp.trigger tpa.variables unless score #editting_warp.trigger tpa.variables = #editting_warp tpa.variables run function tpa:warp/select
+execute if score #editting_warp.trigger tpa.variables = #editting_warp.trigger tpa.variables unless score #editting_warp.trigger tpa.variables = #editting_warp tpa.variables as @p[tag=tpa.warp_editor] run function tpa:warp/select
+execute if entity @p[tag=tpa.warp_editor] run function tpa:warp/countdown
+execute unless entity @p[tag=tpa.warp_editor] run scoreboard players set #warp_edit_countdown tpa.variables 100
 
 # Both below ones need Ingame keyboard datapack as dependency
 # Search ID
@@ -145,5 +147,3 @@ execute as @a[scores={tpa.pos=1..}] run function tpa:tp_pos/conditions
 execute as @a if score @s tpa.pos_cd > #ticks_skipped tpa.variables run scoreboard players operation @s tpa.pos_cd -= #ticks_skipped tpa.variables
 execute as @a[scores={tpa.pos_cd=0..}] if score @s tpa.pos_cd <= #ticks_skipped tpa.variables run scoreboard players set @s tpa.pos_cd 0
 
-# Call the tick function if the option is enabled
-execute if score #uses_tick_scheduling tpa.config matches 1 run schedule function tpa:tick 1t

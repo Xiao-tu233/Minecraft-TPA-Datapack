@@ -13,7 +13,7 @@ function tpa:warp/ensure_index
 
 # Check enable status
 scoreboard players operation #warp tpa.variables = #editting_warp tpa.variables
-scoreboard players set #op tpa.variables 0
+scoreboard players set #op tpa.variables 3
 function tpa:warp/iterator/main
 execute store result score #warp_disabled tpa.variables run data get storage tpa:tpa temp.warp.disabled
 
