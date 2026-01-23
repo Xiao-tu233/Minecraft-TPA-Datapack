@@ -11,7 +11,7 @@
 可选依赖: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet), [![Bookshelf Datapack](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
 
-[English(United States)](README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) · [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md) · [更多语言](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/languages.md) 
+[English(United States)](README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](README_zhtw.md) · [日本語(日本)](README_jp.md) · [更多语言](languages.md) 
 
 
 
@@ -70,7 +70,7 @@ TPA 数据包是一个 Minecraft 数据包，它允许非 OP 玩家轻松互相�
 
 ## 使用方法
 
-请参考 Wiki 获取详细用法: [wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/wiki)
+请参考 [文档](docs/index.md) 获取详细用法
 
 ## 结语
 
