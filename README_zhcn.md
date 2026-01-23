@@ -70,7 +70,7 @@ TPA 数据包是一个 Minecraft 数据包，它允许非 OP 玩家轻松互相�
 
 ## 使用方法
 
-请参考 [文档](docs/index.md) 获取详细用法
+请参考 [文档](docs/zh-cn/index.md) 获取详细用法
 
 ## 结语
 
