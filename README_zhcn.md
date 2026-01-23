@@ -11,7 +11,7 @@
 可选依赖: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet), [![Bookshelf Datapack](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
 
-[English(United States)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) · [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md) · [更多语言](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/languages.md) 
+[English(United States)](README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) · [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md) · [更多语言](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/languages.md) 
 
 
 
