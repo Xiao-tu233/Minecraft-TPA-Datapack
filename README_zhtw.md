@@ -96,7 +96,7 @@ TPA 資料包是一個 Minecraft 資料包，允許非 OP 玩家輕鬆互相傳�
 
 ## 使用方法
 
-請參考 Wiki 取得詳細用法：[wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/wiki)
+請參考 Doc 取得詳細用法：[wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/docs/zh-tw/index.md)
 
 ## 結語
 

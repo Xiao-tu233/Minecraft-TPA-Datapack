@@ -83,7 +83,7 @@ So here's basically the same as how you can install any other datapacks, if you 
 4. Do `/datapack list` to make sure datapack is recognised.
 
 ## How to Use?
-Go wiki for usage: [wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/wiki)
+Go docs for usage: [wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/docs/en-us/index.md)
 
 ## Ending
 

@@ -53,6 +53,7 @@ TPA 数据包是一个 Minecraft 数据包，它允许非 OP 玩家轻松互相�
 
    * 轻量版 版本仅包含基础功能: 传送和菜单。
    * 完整版 版本包含我们开发的所有功能，如 Back、Home、Warp、多语言支持（未来可能还有更多）。
+   * 详细见 https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/docs/zh-cn/download%20and%20install.md
 3. 前往 *Releases* 页面下载。
 
 示例: 

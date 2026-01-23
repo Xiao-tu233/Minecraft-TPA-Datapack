@@ -95,7 +95,7 @@ Minecraft バージョンが 1.20.1 で、完全版を使用したい場合、�
 
 ## 使用方法
 
-詳細な使用方法は Wiki を参照してください：[wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/wiki)
+詳細な使用方法は Doc を参照してください：[wiki](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/docs/ja-jp/index.md)
 
 ## 結び
 
