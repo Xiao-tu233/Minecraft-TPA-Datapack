@@ -10,7 +10,7 @@ Project To-do lists:
 - [o] Update & Uninstall langauge supportive 
 - [o] Not using the Vanilla tick interface, instead use schedule function 
 - [o] Make the req timer ticks in the time_out function 
-- [x] Use text component after scoreboard objectives declares §c Only static text components supported so achieving in 1.15- and light version
+- [ ] Use text component after scoreboard objectives declares §c Only static text components supported so achieving in 1.15- and light version
    Translated sample texts are below:
    - scoreboard_tpa: "TPA菜单/传送请求目标"
    - scoreboard_back: "返回上一位置"
@@ -108,15 +108,15 @@ Project To-do lists:
    - Outputs At(When +==6): Both -> Actionbar -> Chatbar -> Both
 - [x] Searching ID inputs may be interupted by other players when they're inputting too
 - [o] license could be a written book to be read
-- [ ] warp
+- [o] warp
    - 地标编辑考虑将编辑按钮合并到上方 对于每个点 可以单选 选择后点击上方编辑按钮修改即将并入的内容的细节 点击应用来并入修改 取消来放弃更改
    - With test, warp just increases whenever edits for reason, warp names should be fallback to Warp#XX instead of displaying that
    - modifier tag should be added when menu executes and removes with a clock about 5 min
 
  TESTS:
    L   E
-- [ ] [ ] mc1.13 on 1.13
-- [ ] [ ] mc1.15 on 1.15
+- [ ] [o] mc1.13 on 1.13
+- [ ] [o] mc1.15 on 1.15
 - [ ] [ ] mc1.15 on 1.20.1
 - [ ] [ ] mc1.20.2 on 1.20.2
 - [ ] [ ] mc1.20.2 on 1.20.4

@@ -3,7 +3,7 @@
 # Storage Format:
 # {desc: string, name: string, x: int, y: int, z: int, dim: Dimension, disabled: boolean, index: int}
 
-scoreboard players set #warp_menu_open tpa.variables 0
+scoreboard players set #warp_menu_open tpa.variables 1
 
 # Load language, title
 function tpa:load_lang
@@ -13,20 +13,20 @@ function tpa:warp/ensure_index
 
 # Check enable status
 scoreboard players operation #warp tpa.variables = #editting_warp tpa.variables
-scoreboard players set #op tpa.variables 3
+scoreboard players set #op tpa.variables 0
 function tpa:warp/iterator/main
 execute store result score #warp_disabled tpa.variables run data get storage tpa:tpa temp.warp.disabled
 
+
 # Load the warp data
 execute if score #is_editting_warp tpa.variables matches 1 run function tpa:warp/load_edit_buttons
-
-data modify storage tpa:tpa temp.warp set from storage tpa:tpa warp
 
 # Refresh warp count: warp = len(warp) - 1
 execute store result score #warp tpa.config run data get storage tpa:tpa warp
 scoreboard players remove #warp tpa.config 1
 
 # int i = 0; i++; temp.warp.pop()
+data modify storage tpa:tpa temp.warp set from storage tpa:tpa warp
 data remove storage tpa:tpa temp.warp[0]
 scoreboard players set #i tpa.variables 1
 
@@ -49,3 +49,6 @@ execute if score #is_editting_warp tpa.variables matches 1 run tellraw @s ["  ",
 # Remove button display for non-OPs
 scoreboard players set #is_editting_warp tpa.variables 0
 data modify storage tpa:tpa warp[0] set value {}
+
+# Tag self for selection
+tag @s add tpa.warp_editor

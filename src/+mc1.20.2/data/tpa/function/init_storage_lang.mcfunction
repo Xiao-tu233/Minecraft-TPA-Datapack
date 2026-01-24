@@ -4,7 +4,7 @@ data modify storage tpa:tpa temp.lang set value \
         id: 0 \
     }, \
     {\
-        id: "1", \
+        id: 1, \
         name: "zh_cn", \
         name_display: "简体中文（中国大陆）", \
         header: "[§bTPA§r] ", \
@@ -496,7 +496,7 @@ data modify storage tpa:tpa temp.lang set value \
         warp_teleport_right_part: "" \
     }, \
     {\
-        id: "2", \
+        id: 2, \
         name: "en_us", \
         name_display: "English (United States)", \
         header: "[§bTPA§r] ", \

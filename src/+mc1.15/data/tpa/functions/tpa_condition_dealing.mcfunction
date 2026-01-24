@@ -1,5 +1,5 @@
 scoreboard players set #condition tpa.variables 0
-execute store result score #condition tpa.variables run function tpa:tpa_conditions
+function tpa:tpa_conditions
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Condition dealt: ", {"score": {"name": "#condition", "objective": "tpa.variables"}}]
 # conditions:
 # 0: no condition met

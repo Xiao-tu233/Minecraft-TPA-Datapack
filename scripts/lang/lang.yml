@@ -1,5 +1,5 @@
 - id: 0
-- id: "1"
+- id: 1
   name: "zh_cn"
   name_display: "简体中文（中国大陆）"
   header: "[§bTPA§r] "
@@ -134,7 +134,7 @@
   option_button_help: "[§4帮助§r]"
   option_button_help_hoverevent: "§b点击打开帮助菜单"
   option_button_license: "[§4协议§r]"
-  option_button_license_hoverevent: "§b使用TPA数据包必须遵循我们在Github网站上 开源协议以及对§l§n商业§r§b使用的限制 否则将会存在§6§l侵权§r§b的风险 所以请您仔细认真阅读全文"
+  option_button_license_hoverevent: "§b使用 TPA 数据包时请遵循我们在 GitHub 上开源协议. §b同时, 作者§l§n不建议§r§b将本数据包用于§l§n商业用途§r§b的服务器. §b为避免误解, 请您在使用前仔细阅读并理解完整协议内容. "
   option_button_notworking: "[§4无法运行§r]"
   option_button_notworking_hoverevent: "§b当遇到tick函数无法运行(TPA菜单无法打开)时请点击"
   option_button_set: "§r[§a设置§r]"
@@ -489,7 +489,7 @@
   warp_spec: "旁观者模式玩家不允许传送§a公共传送点§r"
   warp_teleport_left_part: "已将你传送至"
   warp_teleport_right_part: ""
-- id: "2"
+- id: 2
   name: "en_us"
   name_display: "English (United States)"
   header: "[§bTPA§r] "

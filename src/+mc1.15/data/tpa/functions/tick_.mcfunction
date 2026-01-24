@@ -131,9 +131,9 @@ execute as @a[scores={tpa.warp=..-1}] run function tpa:warp
 execute as @a[scores={tpa.warp=1..}] run function tpa:warp
 execute if score #editting_warp.trigger tpa.variables = #editting_warp.trigger tpa.variables unless score #editting_warp.trigger tpa.variables = #editting_warp tpa.variables as @p[tag=tpa.warp_editor] run function tpa:warp/select
 execute if entity @p[tag=tpa.warp_editor] run function tpa:warp/countdown
-execute unless entity @p[tag=tpa.warp_editor] run scoreboard players set #warp_edit_countdown tpa.variables 100
+execute unless entity @p[tag=tpa.warp_editor] run scoreboard players set #warp_edit_countdown tpa.variables 3000
 
-# Both below ones need Ingame keyboard datapack as dependency
+# Both below one no longer needs Ingame keyboard datapack as dependency
 # Search ID
 execute as @a[scores={tpa.search_id=1..}] run function tpa:search_id
 execute as @a[scores={tpa.search_id.ky=1..}] run function tpa:search_id/input_key

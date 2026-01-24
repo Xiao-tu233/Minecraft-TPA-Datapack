@@ -135,6 +135,7 @@ tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tp
 execute unless score #language tpa.config matches 1.. run tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {"text": "[§a设置 | Set§r]", "clickEvent": {"action": "run_command", "value": "/function tpa:option_lang_menu"}}]
 function tpa:dimension/refresh
 tellraw @a[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_first_join", "clickEvent": {"action": "run_command", "value": "/trigger tpa"}}]
+function tpa:warp/cancel
 
 # Call the tick function if the option is enabled
 execute if score #uses_tick_scheduling tpa.config matches 1 run function tpa:tick

@@ -19,8 +19,9 @@ execute store result score #langs_installed tpa.variables run data get storage t
 execute if score #has_lang_loaded tpa.variables matches 0 run function tpa:check_lang
 
 # Fallback to default lang: lang[1] if selected lang is not loaded properly
-scoreboard players set #is_lang_loaded tpa.variables 1
-execute unless data storage tpa:tpa loaded_lang.id run scoreboard players set #is_lang_loaded tpa.variables 0
+scoreboard players set #is_lang_loaded tpa.variables 0
+execute store result score #current_lang tpa.variables run data get storage tpa:tpa loaded_lang.id
+execute if score #current_lang tpa.variables matches 1.. if score #current_lang tpa.variables = #target_lang tpa.variables run scoreboard players set #is_lang_loaded tpa.variables 1
 execute if score #is_lang_loaded tpa.variables matches 0 run data modify storage tpa:tpa loaded_lang set from storage tpa:tpa lang[1]
 execute if score #is_lang_loaded tpa.variables matches 0 run data modify storage tpa:tpa loaded_lang.id set value 0
 execute if score #is_lang_loaded tpa.variables matches 0 run data modify storage tpa:tpa loaded_lang.name_display set value "Default"

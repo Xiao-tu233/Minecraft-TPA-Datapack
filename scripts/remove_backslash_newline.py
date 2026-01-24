@@ -13,7 +13,7 @@ some commands here the rest part
 
 import os
 
-folder = "."  # 改成你的 mcfunction 文件所在目录
+folder = r"D:\TPA_Datapack\Minecraft-TPA-Datapack\src\+mc1.13\data\tpa\functions"  # 改成你的 mcfunction 文件所在目录
 
 for root, dirs, files in os.walk(folder):
     for file in files:
@@ -23,7 +23,7 @@ for root, dirs, files in os.walk(folder):
                 content = f.read()
 
             # 删除所有 "\\n"
-            new_content = content.replace("    ", "")
+            new_content = content.replace("predicate=tpa:available", "scores={tpa.available=1}")
 
             with open(path, "w", encoding="utf-8") as f:
                 f.write(new_content)
