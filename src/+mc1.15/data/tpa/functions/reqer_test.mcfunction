@@ -17,4 +17,5 @@ execute if score #i tpa.variables matches 1.. run function tpa:reqer_loop
 tag @a remove not_match
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rLoop broke. Found requester: [",{"color":"green","selector":"@a[tag=to_modify]"}, "]"]
+say reqer_test: @p[tag=to_modify]
 execute if score @p[tag=to_modify] tpa.tp_here matches 1 run scoreboard players add #is_reqer_found tpa.variables 1

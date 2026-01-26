@@ -117,7 +117,7 @@ Project To-do lists:
    L   E
 - [ ] [o] mc1.13 on 1.13
 - [ ] [o] mc1.15 on 1.15
-- [ ] [ ] mc1.15 on 1.20.1
+- [ ] [o] mc1.15 on 1.20.1
 - [ ] [ ] mc1.20.2 on 1.20.2
 - [ ] [ ] mc1.20.2 on 1.20.4
 - [ ] [ ] mc1.20.2 on 1.20.5
@@ -207,3 +207,5 @@ Project To-do lists:
    - 增加这些更改之后的提示就像选择槽位时一样
 - [ ] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
 - [ ] 语言的index键应该在reload的时候被添加而不是语言的yml里
+- [ ] 传送过程有可能会触发Caves & Cliffs成就
+- [ ] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分
