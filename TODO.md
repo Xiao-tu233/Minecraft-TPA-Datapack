@@ -10,7 +10,7 @@ Project To-do lists:
 - [o] Update & Uninstall langauge supportive 
 - [o] Not using the Vanilla tick interface, instead use schedule function 
 - [o] Make the req timer ticks in the time_out function 
-- [ ] Use text component after scoreboard objectives declares §c Only static text components supported so achieving in 1.15- and light version
+- [o] Use text component after scoreboard objectives declares §c Only static text components supported so achieving in 1.15- and light version
    Translated sample texts are below:
    - scoreboard_tpa: "TPA菜单/传送请求目标"
    - scoreboard_back: "返回上一位置"
