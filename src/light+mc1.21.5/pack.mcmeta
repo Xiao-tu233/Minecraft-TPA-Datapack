@@ -1,6 +1,9 @@
 {
     "pack": {
-        "pack_format": 5,
-        "description": "§bTPA_datapack v2.0.6 for MC1.15-1.20.1 by Xiao_tu233 at YT/Bilibili/抖音/Modrinth/PMC/CurseForge/Discord/MC百科"
+        "supported_formats": [62, 999], 
+        "pack_format": 71,
+        "min_format": [62, 0],
+        "max_format": [999, 0],
+        "description": "§bTPA_datapack v2.0.6 light version for MC1.21.5-26.1 by Xiao_tu233 at YT/Bilibili/抖音/Modrinth/PMC/CurseForge/Discord/MC百科"
     }
 }
