@@ -209,3 +209,4 @@ Project To-do lists:
 - [ ] 语言的index键应该在reload的时候被添加而不是语言的yml里
 - [ ] 传送过程有可能会触发Caves & Cliffs成就
 - [ ] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分
+- [ ] trigger记分板显示名最好可以带颜色
