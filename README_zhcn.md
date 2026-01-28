@@ -8,7 +8,8 @@
 [![Minecraft Website](https://img.shields.io/badge/Minecraft-green)](https://www.minecraft.net/)
 [![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
 
-可选依赖: [![Carpet mod](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet), [![Bookshelf Datapack](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
+可选依赖
+[![地毯模组](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
 
 [English(United States)](README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](README_zhtw.md) · [日本語(日本)](README_jp.md) · [更多语言](languages.md) 
