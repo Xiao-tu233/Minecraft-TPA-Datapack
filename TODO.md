@@ -210,3 +210,7 @@ Project To-do lists:
 - [ ] 传送过程有可能会触发Caves & Cliffs成就
 - [ ] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分
 - [ ] trigger记分板显示名最好可以带颜色
+- [ ] make objective tpa default -1 so that /trigger tpa will make tpa 0
+- [ ] 上述问题解决之后 id就可以从1开始了
+- [ ] 考虑是否要在新版本直接使用宏函数/数据存储替代基于tags的recver_test/reqer_test
+- [ ] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
