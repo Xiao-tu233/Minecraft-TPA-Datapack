@@ -12,12 +12,12 @@
   &nbsp;
   <a href="https://www.minecraft.net/"><img src="https://img.shields.io/badge/Minecraft%20-1.13--26.1-green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=minecraft&logoColor=cad3f5"></a>
   &nbsp;
-  <a href="https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/tree/main?tab=GPL-3.0-1-ov-file#readme"><img src="https://img.shields.io/badge/LICENSE-GPL--3.0-green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=minecraft&logoColor=cad3f5"></a>
+  <a href="https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/tree/main?tab=GPL-3.0-1-ov-file#readme"><img src="https://img.shields.io/badge/LICENSE-GPL--3.0-green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KPHBhdGggZD0iTTY0IDMyYTI0IDI0IDAgMCAwLTI0IDI0djE0NGMwIDEzLjMgMTAuNyAyNCAyNCAyNGgxMjhjMTMuMyAwIDI0LTEwLjcgMjQtMjRWOTZjMC02LjQtMi41LTEyLjUtNy0xNy4wTDExNyAzMmgtNTN6bTAgMjRoNDZsNDYgNDZoLTQ2VjU2em0yNCAxMjhjLTYuNiAwLTEyLTUuNC0xMi0xMnM1LjQtMTIgMTItMTJoNDhjNi42IDAgMTIgNS40IDEyIDEyczUuNC0xMiAxMi0xMmg0OGM2LjYgMCAxMiA1LjQgMTIgMTJzLTUuNCAxMi0xMiAxMmgtNDhjLTYuNiAwLTEyLTUuNC0xMi0xMnMtNS40IDEyLTEyIDEySDg4em0zMiA0OGMtNi42IDAtMTItNS40LTEyLTEyczUuNC0xMiAxMi0xMmg0OGM2LjYgMCAxMiA1LjQgMTIgMTJzLTUuNCAxMi0xMiAxMmgtNDh6IiBmaWxsPSIjQ0FEM0Y1Ii8+Cjwvc3ZnPg==&logoColor=cad3f5"></a>
 </div>
 
 可选前置
 
-[![地毯模组](https://img.shields.io/badge/Ca-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
+[![地毯模组](https://img.shields.io/badge/Catpet-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
 
 [English(United States)](README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](README_zhtw.md) · [日本語(日本)](README_jp.md) · [更多语言](languages.md) 
