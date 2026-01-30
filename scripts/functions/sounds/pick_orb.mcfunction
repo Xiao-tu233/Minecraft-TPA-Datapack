@@ -1,0 +1,1 @@
+execute at @s run playsound minecraft:entity.experience_orb.pickup ambient @s[scores={tpa.mute=0}]
