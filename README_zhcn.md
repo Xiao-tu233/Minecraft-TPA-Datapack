@@ -20,14 +20,11 @@
 </p>
 
 <div align="center">
-  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet--Mod-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
+  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet%20Mod-1.20.2---green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
   &nbsp;
-  <a href="https://github.com/mcbookshelf/bookshelf"><img src="https://img.shields.io/badge/Book--Shelf-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
+  <a href="https://github.com/mcbookshelf/bookshelf"><img src="https://img.shields.io/badge/Book%20Shelf-1.20.2---green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
   &nbsp;
 </div>
-
-[![地毯模组](https://img.shields.io/badge/Catpet-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
-
 
 [English(United States)](README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](README_zhtw.md) · [日本語(日本)](README_jp.md) · [更多语言](languages.md) 
 

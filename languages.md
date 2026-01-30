@@ -1,6 +1,5 @@
-## Language List
+# Readme Language List
 
-## Available Now
  - [English](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README.md)
  - [简体中文(中国大陆)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md)
  - [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
