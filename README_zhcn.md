@@ -20,9 +20,9 @@
 </p>
 
 <div align="center">
-  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet--Mod-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo="></a>
+  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet--Mod-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
   &nbsp;
-  <a href="https://github.com/mcbookshelf/bookshelf"><img src="https://img.shields.io/badge/Book--Shelf-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo="></a>
+  <a href="https://github.com/mcbookshelf/bookshelf"><img src="https://img.shields.io/badge/Book--Shelf-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
   &nbsp;
 </div>
 
