@@ -15,9 +15,9 @@
   <a href="https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/tree/main?tab=GPL-3.0-1-ov-file#readme"><img src="https://img.shields.io/badge/LICENSE-GPL--3.0-green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=minecraft&logoColor=cad3f5"></a>
 </div>
 
-可选依赖
+可选前置
 
-[![地毯模组](https://img.shields.io/badge/Carpet-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
+[![地毯模组](https://img.shields.io/badge/Ca-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
 
 [English(United States)](README.md) · **简体中文(中国大陆)** · [正體中文(臺灣)](README_zhtw.md) · [日本語(日本)](README_jp.md) · [更多语言](languages.md) 
