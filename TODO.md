@@ -214,3 +214,4 @@ Project To-do lists:
 - [ ] 上述问题解决之后 id就可以从1开始了
 - [ ] 考虑是否要在新版本直接使用宏函数/数据存储替代基于tags的recver_test/reqer_test
 - [ ] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
+- [ ] 尝试execute at, execute position子指令能不能把二分法的approach缩减到一个1tick
