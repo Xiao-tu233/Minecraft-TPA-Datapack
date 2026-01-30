@@ -18,10 +18,11 @@
 可选前置
 
 <div align="center">
-  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet--Mod-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjgiIGZpbGw9IiMzNjNhNGYiLz4KPHBhdGggZD0iTTIwIDI0aDE2djE2SDIwWiIgZmlsbD0iI2E2ZGE5NSIvPgo8cGF0aCBkPSJNNDQgMjRoMTZ2MTZINDRaIiBmaWxsPSIjYTJjMmU5Ii8+CjxsaW5lIHgxPSIzNiIgeTE9IjMyIiB4Mj0iNDQiIHkyPSIzMiIgc3Ryb2tlPSIjY2FkM2Y1IiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+"></a>
+  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet--Mod-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
+  &nbsp;
+  <a href="https://github.com/mcbookshelf/bookshelf"><img src="https://img.shields.io/badge/Book--Shelf-1.20.2--?colorA=363a4f&colorB=a6da95&style=for-the-badge"></a>
   &nbsp;
 </div>
-
 
 [![地毯模组](https://img.shields.io/badge/Catpet-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
