@@ -11,11 +11,12 @@
             {"formats": [16, 41], "directory": "format_1_20_5"},
             {"formats": [16, 26], "directory": "format_1_20_3"},
             {"formats": [16, 18], "directory": "format_1_20_2"},
-            {"formats": [49, 999], "directory": "format_1_21_2"},
-            {"formats": [62, 999], "directory": "format_1_21_5"},
-            {"formats": [72, 999], "directory": "format_1_21_6"},
-            {"formats": [88, 91], "min_format": 88, "max_format": 91, "directory": "format_1_21_9"},
-            {"formats": [92, 999], "min_format": 92, "max_format": 999, "directory": "format_1_21_11"}
+            {"formats": [49, 999], "min_format": 49, "max_format": 999, "directory": "format_1_21_2"},
+            {"formats": [62, 999], "min_format": 62, "max_format": 999, "directory": "format_1_21_5"},
+            {"formats": [72, 999], "min_format": 72, "max_format": 999, "directory": "format_1_21_6"},
+            {"formats": [88, 999], "min_format": 88, "max_format": 999, "directory": "format_1_21_9"},
+            {"formats": [92, 999], "min_format": 92, "max_format": 999, "directory": "format_1_21_11"},
+            {"formats": [98, 999], "min_format": 98, "max_format": 999, "directory": "format_26_1"}
         ]
     }
 }

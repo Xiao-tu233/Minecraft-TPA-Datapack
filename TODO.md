@@ -41,7 +41,6 @@ Project To-do lists:
    - scoreboard_tpa_language: "语言"
 - [o] Fix home menu doesn't show existing homes(Version:1.21.6+) 
 - [o] Make Key G available on displaying TPA menu 
-- [ ] Combining language file into one, translate more languages in extra pack
 - [o] Abandon ingame keyboard as dependency, instead, write it inbuilt datapack in easier way 
 - [o] Re-write Carpet Fake Player detection or even use carpet scripts if problems continue (Problem occurs:  
    - Some fake players are spawned by players but insta-kicked by Datapack unexpectedly; 
@@ -112,6 +111,8 @@ Project To-do lists:
    - 地标编辑考虑将编辑按钮合并到上方 对于每个点 可以单选 选择后点击上方编辑按钮修改即将并入的内容的细节 点击应用来并入修改 取消来放弃更改
    - With test, warp just increases whenever edits for reason, warp names should be fallback to Warp#XX instead of displaying that
    - modifier tag should be added when menu executes and removes with a clock about 5 min
+- [ ] For 26.1-snapshot-5: add "interpret: true, " before every {storage: *}s (You should need a script for that)
+- [ ] Combining language file into one, translate more languages in extra pack (分离各种语言, 比如zh-cn 并以其为标准 fallback 别的 missing keys, 并使用老版本的键替代目前仅仅被fallback的键)
 
  TESTS:
    L   E
