@@ -17,6 +17,12 @@
 
 可选前置
 
+<div align="center">
+  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet-Mod-green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3Jhc3MiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4YmM0N2YiLz4KICAgIDxzdG9wIG9mZnNldD0iNDUlIiBzdHlsZT0ic3RvcC1jb2xvcjojN2FiMzY0Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ2JSIgc3R5bGU9InN0b3AtY29sb3I6IzZiNGEyZiIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojOGI3NDRhIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHJ4PSI4IiBmaWxsPSJ1cmwoI2dyYXNzKSIvPgo8dGV4dCB4PSIzMiIgeT0iNDIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMzYiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjMmYzNDM3Ij5DTTwvdGV4dD4KPC9zdmc+"></a>
+  &nbsp;
+</div>
+
+
 [![地毯模组](https://img.shields.io/badge/Catpet-Mod-green)](https://modrinth.com/mod/carpet)   [![Bookshelf数据包](https://img.shields.io/badge/Book-Shelf-green)](https://github.com/mcbookshelf/bookshelf)
 
 
