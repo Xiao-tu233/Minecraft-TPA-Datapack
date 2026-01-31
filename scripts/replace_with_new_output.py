@@ -2,10 +2,10 @@ import os
 import shutil
 
 # ===== 配置区 =====
-input_dir = r"functions"     # 原文件夹
-output_dir = r"..\src\+mc1.20.2\format_26_1\data\tpa\function"   # 输出文件夹
-target = "{storage: "
-replacement = "{interpret: true, storage: "
+input_dir = r"D:\TPA_Datapack\Minecraft-TPA-Datapack\scripts\functions"     # 原文件夹
+output_dir = r"D:\TPA_Datapack\Minecraft-TPA-Datapack\src\+mc1.20.2\format_26_1\data\tpa\function"   # 输出文件夹
+target = "{entity:"
+replacement = "{interpret: true, entity:"
 # =================
 
 os.makedirs(output_dir, exist_ok=True)
@@ -15,7 +15,7 @@ for root, _, files in os.walk(input_dir):
         src_path = os.path.join(root, filename)
 
         # 只处理文本文件（可按需删掉这个判断）
-        if not filename.endswith((".mcfunction", ".json", ".txt", ".yml")):
+        if not filename.endswith((".mcfunction")):
             continue
 
         with open(src_path, "r", encoding="utf-8") as f:

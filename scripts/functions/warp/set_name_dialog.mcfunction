@@ -1,3 +1,0 @@
-# Called by: (Player) Any OP, Quoted by: (dialog: inline) tpa:warp/show_each_macro
-# @macro: {index: int, name: Literal['$(name)']}
-$dialog show @s {title: "", type:"multi_action", pause:false, inputs: [{label: "", label_visible: false, type: "text", key: "name"}], actions: [{label: {keybind: "gui.done"}, action: {type:"minecraft:dynamic/run_command", template: "/function tpa:warp/set_name {index: $(index), name: \"$$(name)\"}"}}]}

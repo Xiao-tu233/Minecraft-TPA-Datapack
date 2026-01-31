@@ -1,0 +1,32 @@
+scoreboard players operation #home tpa.variables = @s tpa.sethome
+scoreboard players set @s tpa.sethome 0
+
+function tpa:load_lang
+
+# Check if player's able to modify homes
+function tpa:home/conditions
+execute if score #error_code tpa.variables matches 1..2 run return 0
+
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow executing: §a#home: ",{score: {name: "#home",objective: "tpa.variables"}}]
+
+# Check if home is in range
+execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 run function tpa:sounds/no
+execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 \
+    run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_out_of_range_left_part"}, \
+        {score:{name: "#home", objective: "tpa.variables"}}, \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_out_of_range_right_part"}, ". " \
+    ]
+execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 \
+    run title @s[predicate=tpa:output/show_actionbar] actionbar [ \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_out_of_range_left_part", color: "red"}, \
+        {score:{name: "#home", objective: "tpa.variables"}, color: "red"}, \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_out_of_range_right_part", color: "red"} \
+    ]
+execute if score #home tpa.variables > #home tpa.config unless score #home tpa.config matches ..-1 run return 0
+
+
+function tpa:get_name
+execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get #home tpa.variables
+data modify storage tpa:tpa temp.args.name set from storage tpa:tpa temp.name
+function tpa:home/set with storage tpa:tpa temp.args
