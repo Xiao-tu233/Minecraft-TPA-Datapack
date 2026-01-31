@@ -560,7 +560,7 @@ data modify storage tpa:tpa temp.lang set value \
     lang_button_hoverevent: "§bClick to open language menu", \
     lang_menu_title: "Please select language below:", \
     lang_menu_select_button: "[§aLoad recommended commands§r]", \
-    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                  ", \
+    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                     ", \
     lang_disabled: "Language feature is disabled", \
     lang_selected_left_part: "You have switched language to ", \
     lang_selected_right_part: "", \
@@ -726,8 +726,8 @@ data modify storage tpa:tpa temp.lang set value \
     tp_pos_throw_on_invalid_char: "The coordinates you entered contain invalid characters", \
     tpa_menu_hoverevent_left_part: "§bClick to send a teleport request to ", \
     tpa_menu_hoverevent_right_part: "", \
-    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                  ", \
-    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                  ", \
+    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                     ", \
+    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                     ", \
     tpa_menu_extend_hoverevent: "§bClick to expand menu", \
     tpa_menu_extend: "§bExpand§r", \
     tpa_menu_you: "You", \
@@ -787,7 +787,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "The following settings are advanced options. Do not modify unless you know what you are doing.", \
     option_advenced_tip: "Enable debug mode to access more advanced settings", \
     option_anchor_search_retries: "Anchor search retry count", \
-    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:    times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
+    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:       times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
     option_carpet_fake_player_fix_incompatible: "Carpet fake player fix is incompatible with this version", \
@@ -802,7 +802,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id: "[§aEdit Dimension ID§r]", \
     option_dimension_button_edit_id_hoverevent: "§bClick to edit the dimension ID (press Left Arrow, then enter after colon)", \
     option_dimension_button_edit_namespaceid: "[§aEdit Namespace ID§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bClick to edit namespace ID (namespace:   id). Press Left Arrow twice and type inside quotes.", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bClick to edit namespace ID (namespace:      id). Press Left Arrow twice and type inside quotes.", \
     option_dimension_button_edit_name: "[§aEdit Name§r]", \
     option_dimension_button_edit_name_hoverevent: "§bClick to edit display name. Vanilla dimensions follow language settings.", \
     option_dimension_button_remove: "[§cRemove§r]", \
@@ -839,7 +839,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_anchor_actionbar: "Anchor teleport progress: ", \
     teleport_binary_actionbar: "Binary search teleport progress: ", \
     teleport_cal_sim_dist_actionbar: "Simulation distance", \
-    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:    ", \
+    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:       ", \
     teleport_cal_sim_dist_start: "Simulation distance calculation started", \
     teleport_sim_dist_warn: "Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails, please contact admin to recalculate or manually set, or use binary teleport.", \
     teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
@@ -1152,7 +1152,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id: "[§a编辑维度ID§r]", \
     option_dimension_button_edit_id_hoverevent: "§b点击编辑该维度的维度ID(点击后请按下键盘上的左箭头, 在冒号后填写, 输好后回车)", \
     option_dimension_button_edit_namespaceid: "[§a编辑命名空间ID§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§b点击编辑该维度的命名空间ID(namespace:id, source location 形如minecraft:               xxx)(点击后请按两次键盘上的左箭头, 在引号中填写, 输好后回车)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§b点击编辑该维度的命名空间ID(namespace:id, source location 形如minecraft:                  xxx)(点击后请按两次键盘上的左箭头, 在引号中填写, 输好后回车)", \
     option_dimension_button_edit_name: "[§a编辑名字§r]", \
     option_dimension_button_edit_name_hoverevent: "§b点击编辑该维度的显示名称(点击后请按按两次键盘上的左箭头, 在引号中填写, 输好后回车, 该项对于原版维度会跟随语言设置而不是当前设置)", \
     option_dimension_button_remove: "[§c移除§r]", \
@@ -1845,7 +1845,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_stricter_book_check_disabled: "此功能需要 Bookshelf 資料包作為依賴，但伺服器尚未安裝", \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
     option_dimension_button_edit_id_hoverevent: "§b点击编辑该维度的维度ID(点击后请按下键盘上的左箭头, 在冒号后填写, 输好后回车)", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§b点击编辑该维度的命名空间ID(namespace:id, source location 形如minecraft:  xxx)(点击后请按两次键盘上的左箭头, 在引号中填写, 输好后回车)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§b点击编辑该维度的命名空间ID(namespace:id, source location 形如minecraft:     xxx)(点击后请按两次键盘上的左箭头, 在引号中填写, 输好后回车)", \
     option_dimension_button_edit_name_hoverevent: "§b点击编辑该维度的显示名称(点击后请按按两次键盘上的左箭头, 在引号中填写, 输好后回车, 该项对于原版维度会跟随语言设置而不是当前设置)", \
     option_dimension_button_remove_hoverevent: "§b点击移除该维度", \
     option_dimension_hoverevent: "§b在下方设置按钮打开§a维度兼容§6菜单 §b同时右侧的数字会是目前已兼容的维度数量", \

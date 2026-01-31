@@ -365,7 +365,7 @@ option_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 
 option_dimension_button_edit_id_hoverevent:  "§b点击编辑该维度的维度ID(点击后请按下键盘上的左箭头, 在冒号后填写,\
   \ 输好后回车)"
 option_dimension_button_edit_namespaceid_hoverevent:  "§b点击编辑该维度的命名空间ID(namespace:id,\
-  \ source location 形如minecraft:   xxx)(点击后请按两次键盘上的左箭头, 在引号中填写, 输好后回车)"
+  \ source location 形如minecraft:      xxx)(点击后请按两次键盘上的左箭头, 在引号中填写, 输好后回车)"
 option_dimension_button_edit_name_hoverevent:  "§b点击编辑该维度的显示名称(点击后请按按两次键盘上的左箭头, 在引号中填写,\
   \ 输好后回车, 该项对于原版维度会跟随语言设置而不是当前设置)"
 option_dimension_button_remove_hoverevent:  "§b点击移除该维度"

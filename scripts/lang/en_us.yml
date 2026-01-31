@@ -66,7 +66,7 @@ lang_button_hoverevent:  "§bClick to open language menu"
 lang_menu_title:  "Please select language below:"
 lang_menu_select_button:  "[§aLoad recommended commands§r]"
 lang_menu_select_button_hoverevent:  "§bClick to load recommended commands in chat\
-  \ bar:                   "
+  \ bar:                      "
 lang_disabled:  "Language feature is disabled"
 lang_selected_left_part:  "You have switched language to "
 lang_selected_right_part:  ""
@@ -260,9 +260,9 @@ tp_pos_throw_on_invalid_char:  "The coordinates you entered contain invalid char
 tpa_menu_hoverevent_left_part:  "§bClick to send a teleport request to "
 tpa_menu_hoverevent_right_part:  ""
 tpa_menu_title:  "Player usernames and datapack IDs. Click an ID to send a teleport\
-  \ request:                   "
+  \ request:                      "
 tpahere_menu_title:  "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r\
-  \ request:                   "
+  \ request:                      "
 tpa_menu_extend_hoverevent:  "§bClick to expand menu"
 tpa_menu_extend:  "§bExpand§r"
 tpa_menu_you:  "You"
@@ -326,8 +326,8 @@ option_advenced_warn:  "The following settings are advanced options. Do not modi
 option_advenced_tip:  "Enable debug mode to access more advanced settings"
 option_anchor_search_retries:  "Anchor search retry count"
 option_anchor_search_retries_hoverevent:  "§bModify the number of anchor search retries\
-  \ below §r(§6Units:     times §ror §6game ticks / frequency§r). §bToo high may increase\
-  \ wait time, too low may cause misdetection or data pollution."
+  \ below §r(§6Units:        times §ror §6game ticks / frequency§r). §bToo high may\
+  \ increase wait time, too low may cause misdetection or data pollution."
 option_button_notworking:  "[§4Not Working§r]"
 option_button_notworking_hoverevent:  "§bClick when tick function does not work (TPA\
   \ menu cannot be opened)"
@@ -349,7 +349,7 @@ option_dimension_button_edit_id_hoverevent:  "§bClick to edit the dimension ID 
   \ Left Arrow, then enter after colon)"
 option_dimension_button_edit_namespaceid:  "[§aEdit Namespace ID§r]"
 option_dimension_button_edit_namespaceid_hoverevent:  "§bClick to edit namespace\
-  \ ID (namespace:    id). Press Left Arrow twice and type inside quotes."
+  \ ID (namespace:       id). Press Left Arrow twice and type inside quotes."
 option_dimension_button_edit_name:  "[§aEdit Name§r]"
 option_dimension_button_edit_name_hoverevent:  "§bClick to edit display name. Vanilla\
   \ dimensions follow language settings."
@@ -390,7 +390,7 @@ teleport_anchor_actionbar:  "Anchor teleport progress: "
 teleport_binary_actionbar:  "Binary search teleport progress: "
 teleport_cal_sim_dist_actionbar:  "Simulation distance"
 teleport_cal_sim_dist_end_leftpart:  "Simulation distance calculated successfully.\
-  \ Current datapack simulation distance is:     "
+  \ Current datapack simulation distance is:        "
 teleport_cal_sim_dist_start:  "Simulation distance calculation started"
 teleport_sim_dist_warn:  "Server simulation distance is not set. Attempting to teleport\
   \ non-player targets. If teleport fails, please contact admin to recalculate or\
