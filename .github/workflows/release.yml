@@ -25,7 +25,6 @@ jobs:
     - name: Package all variants
       run: |
         mkdir -p build
-        VERSION=${GITHUB_REF_NAME}  # 当前 push 的 tag，例如 2.0.6
 
         for dir in src/*; do
           name=$(basename "$dir")
@@ -36,15 +35,11 @@ jobs:
             continue
           fi
 
-          # 拼接版本号 + 文件夹名
-          # 判断 name 开头是否是 +
-          if [[ "$name" == +* ]]; then
-            ZIP_NAME="TPA_datapack-${VERSION}${name}.zip"
-          else
-            ZIP_NAME="TPA_datapack-${VERSION}-${name}.zip"
-          fi
-          echo "Packaging '$name' → $ZIP_NAME"
-          zip -r "build/$ZIP_NAME" "$dir/src/$name"
+          # 进入 variant 目录，打 zip，zip 内容是当前目录下的 data/ 和 pack.mcmeta
+          (
+            cd "$dir"
+            zip -r "../../build/TPA_datapack-2.0.6-${name}.zip" *
+          )
         done
 
         echo "Generated files in build:"
