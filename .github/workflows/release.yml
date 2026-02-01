@@ -25,6 +25,7 @@ jobs:
     - name: Package all variants
       run: |
         mkdir -p build
+        VERSION=${GITHUB_REF_NAME}  # 当前 push 的 tag，例如 2.0.6
 
         for dir in src/*; do
           name=$(basename "$dir")
@@ -35,29 +36,35 @@ jobs:
             continue
           fi
 
-          # zip 路径加引号，避免 + 或 - 出问题
-          zip -r "build/TPA_datapack-${name}.zip" "$dir"
+          # 拼接版本号 + 文件夹名
+          # 判断 name 开头是否是 +
+          if [[ "$name" == +* ]]; then
+            ZIP_NAME="TPA_datapack-${VERSION}${name}.zip"
+          else
+            ZIP_NAME="TPA_datapack-${VERSION}-${name}.zip"
+          fi
+          echo "Packaging '$name' → $ZIP_NAME"
+          zip -r "build/$ZIP_NAME" "$dir"
         done
 
         echo "Generated files in build:"
         ls -lh build/
 
-    # 4️⃣ Read changelog for this tag
     - name: Prepare release notes
       id: changelog
       run: |
-        TAG_NAME="${GITHUB_REF_NAME}"
-        # 如果 CHANGELOG.md 按版本分块，提取对应版本内容
-        NOTES=$(awk "/^## ${TAG_NAME}/,/^## /{if(\$0!~\"^## ${TAG_NAME}\"){print}}" CHANGELOG.md)
-        echo "::set-output name=notes::$NOTES"
+        NOTES=$(cat CHANGELOG.md)
+        echo "notes<<EOF" >> $GITHUB_ENV
+        echo "$NOTES" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
 
     # 5️⃣ Create GitHub Release with assets
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ github.ref_name }}
-        name: Release ${{ github.ref_name }}
-        body: ${{ steps.changelog.outputs.notes }}
+        name: TPA Datapack ${{ github.ref_name }}
+        body: ${{ env.notes }}
         files: build/*.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
