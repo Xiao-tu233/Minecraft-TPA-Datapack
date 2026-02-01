@@ -66,7 +66,7 @@ lang_button_hoverevent:  "§bClick to open language menu"
 lang_menu_title:  "Please select language below:"
 lang_menu_select_button:  "[§aLoad recommended commands§r]"
 lang_menu_select_button_hoverevent:  "§bClick to load recommended commands in chat\
-  \ bar:                        "
+  \ bar:                                   "
 lang_disabled:  "Language feature is disabled"
 lang_selected_left_part:  "You have switched language to "
 lang_selected_right_part:  ""
@@ -260,9 +260,9 @@ tp_pos_throw_on_invalid_char:  "The coordinates you entered contain invalid char
 tpa_menu_hoverevent_left_part:  "§bClick to send a teleport request to "
 tpa_menu_hoverevent_right_part:  ""
 tpa_menu_title:  "Player usernames and datapack IDs. Click an ID to send a teleport\
-  \ request:                        "
+  \ request:                                   "
 tpahere_menu_title:  "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r\
-  \ request:                        "
+  \ request:                                   "
 tpa_menu_extend_hoverevent:  "§bClick to expand menu"
 tpa_menu_extend:  "§bExpand§r"
 tpa_menu_you:  "You"
@@ -326,8 +326,8 @@ option_advenced_warn:  "The following settings are advanced options. Do not modi
 option_advenced_tip:  "Enable debug mode to access more advanced settings"
 option_anchor_search_retries:  "Anchor search retry count"
 option_anchor_search_retries_hoverevent:  "§bModify the number of anchor search retries\
-  \ below §r(§6Units:          times §ror §6game ticks / frequency§r). §bToo high may\
-  \ increase wait time, too low may cause misdetection or data pollution."
+  \ below §r(§6Units:                     times §ror §6game ticks / frequency§r). §bToo\
+  \ high may increase wait time, too low may cause misdetection or data pollution."
 option_button_notworking:  "[§4Not Working§r]"
 option_button_notworking_hoverevent:  "§bClick when tick function does not work (TPA\
   \ menu cannot be opened)"
@@ -349,7 +349,7 @@ option_dimension_button_edit_id_hoverevent:  "§bClick to edit the dimension ID 
   \ Left Arrow, then enter after colon)"
 option_dimension_button_edit_namespaceid:  "[§aEdit Namespace ID§r]"
 option_dimension_button_edit_namespaceid_hoverevent:  "§bClick to edit namespace\
-  \ ID (namespace:         id). Press Left Arrow twice and type inside quotes."
+  \ ID (namespace:                    id). Press Left Arrow twice and type inside quotes."
 option_dimension_button_edit_name:  "[§aEdit Name§r]"
 option_dimension_button_edit_name_hoverevent:  "§bClick to edit display name. Vanilla\
   \ dimensions follow language settings."
@@ -390,7 +390,7 @@ teleport_anchor_actionbar:  "Anchor teleport progress: "
 teleport_binary_actionbar:  "Binary search teleport progress: "
 teleport_cal_sim_dist_actionbar:  "Simulation distance"
 teleport_cal_sim_dist_end_leftpart:  "Simulation distance calculated successfully.\
-  \ Current datapack simulation distance is:          "
+  \ Current datapack simulation distance is:                     "
 teleport_cal_sim_dist_start:  "Simulation distance calculation started"
 teleport_sim_dist_warn:  "Server simulation distance is not set. Attempting to teleport\
   \ non-player targets. If teleport fails, please contact admin to recalculate or\
@@ -415,42 +415,61 @@ warp_slot_disabled_leftpart:  "The warp you accessed"
 warp_slot_disabled_rightpart:  "has been disabled"
 warp_teleport_left_part:  "You have been teleported to "
 warp_teleport_right_part:  ""
-reqer_deny_tpahere_left_part:  ""
 reqer_deny_tpahere_left_part:  "The requestor is denied from teleporting here."
 option_game_version:  "The compatible game version for the datapack file"
 option_max_anchor_summons_attempts:  "Maximum summon attempts for teleportation anchor"
-option_max_anchor_summons_attempts_hoverevent:  "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit: attempts§r)\ 
-  \ §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures."
+option_max_anchor_summons_attempts_hoverevent:  "§bChange the §aMaximum summon attempts\
+  \ for teleportation anchor §r(§6Unit:            attempts§r)   §bSetting it too high\
+  \ may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation\
+  \ failures."
 option_sim_dist:  "Simulation distance"
 option_sim_dist_button_cal:  "[§aCalculate§r]"
-option_sim_dist_hoverevent:  "§bChange the §aSimulation distance §r(§6Unit: chunks§r)  Please make sure there are no players within the simulation distance from the origin in the overworld before clicking."
+option_sim_dist_hoverevent:  "§bChange the §aSimulation distance §r(§6Unit: chunks§r)\
+  \  Please make sure there are no players within the simulation distance from the\
+  \ origin in the overworld before clicking."
 option_stricter_book_check:  "Stricter teleportation book check"
-option_stricter_book_check_incompatible:  "Stricter teleportation book check is incompatible with this version"
-option_stricter_book_check_disabled:  "This feature requires the Bookshelf datapack as a dependency, but the server has not installed the Bookshelf datapack."
-option_server_calling_comment:  "§l§n§4This is a comment because the option_server_calling above needs to be displayed to the console.\
-  \ If written directly in Chinese, it will appear as garbled text. This uses Pinyin for representation."
+option_stricter_book_check_incompatible:  "Stricter teleportation book check is incompatible\
+  \ with this version"
+option_stricter_book_check_disabled:  "This feature requires the Bookshelf datapack\
+  \ as a dependency, but the server has not installed the Bookshelf datapack."
+option_server_calling_comment:  "§l§n§4This is a comment because the option_server_calling\
+  \ above needs to be displayed to the console. If written directly in Chinese, it\
+  \ will appear as garbled text. This uses Pinyin for representation."
 option_uses_binary_teleport:  "Use binary teleportation?"
-option_uses_binary_teleport_hoverevent:  "§bChoose §aBinary teleportation (enabled) §6or §cAnchor teleportation (disabled)"
+option_uses_binary_teleport_hoverevent:  "§bChoose §aBinary teleportation (enabled)\
+  \ §6or §cAnchor teleportation (disabled)"
 option_uses_string_dimension:  "Recognize string dimensions?"
-option_uses_string_dimension_hoverevent:  "§bChoose §aUse strings for dimension storage (1.16+ enabled) §6or §cUse integers for dimension storage (1.16- disabled)"
+option_uses_string_dimension_hoverevent:  "§bChoose §aUse strings for dimension storage\
+  \ (1.16+ enabled) §6or §cUse integers for dimension storage (1.16- disabled)"
 option_version:  "Datapack version"
 option_warp:  "Public teleport points"
-option_warp_hoverevent:  "§bClick below to open the §aPublic teleport point §6menu, the number on the right indicates the number of public teleport points currently set."
+option_warp_hoverevent:  "§bClick below to open the §aPublic teleport point §6menu,\
+  \ the number on the right indicates the number of public teleport points currently\
+  \ set."
 option_warp_number_hoverevent_leftpart:  "§bThe server currently has "
 option_warp_number_hoverevent_rightpart:  "§b public teleport points."
 option_uses_tick_scheduling:  "Use /schedule command to call the Tick function?"
 simple_menu_button:  "[§bDetailed menu§r]"
-simple_menu_incompatible:  "§aSimplified menu§r is not compatible with this game version"
+simple_menu_incompatible:  "§aSimplified menu§r is not compatible with this game\
+  \ version"
 teleport_cal_sim_dist_end_rightpart:  ""
-teleport_incompatible:  "§aAnchor teleportation§r is not compatible with this game version"
+teleport_incompatible:  "§aAnchor teleportation§r is not compatible with this game\
+  \ version"
 teleport_sim_dist_disabled:  "The server has not set the simulation distance"
-teleport_sim_dist_warn_button_calc_hoverevent:  "§bClick to start automatically calculating simulation distance. §cWarning: This operation may teleport the executor to a different location.\
-  \ Please make sure your position doesn’t need to remain loaded before clicking."
-tick_not_working_server_calling_comment:  "§l§n§cThis is a comment because the tick_not_working_server_calling above needs to be displayed to the console.\
-  \ If written directly in Chinese, it will appear as garbled text. This uses Pinyin for representation."
-tick_not_working_tips_line1:  "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:"
-tick_not_working_tips_line2:  "        1. Use the /schedule command to call the Tick function."
-tick_not_working_tips_line3:  "   Or 2. Place your command block in a hidden location to avoid being destroyed by Bedrock-breaking machines."
+teleport_sim_dist_warn_button_calc_hoverevent:  "§bClick to start automatically calculating\
+  \ simulation distance. §cWarning:            This operation may teleport the executor\
+  \ to a different location. Please make sure your position doesn’t need to remain\
+  \ loaded before clicking."
+tick_not_working_server_calling_comment:  "§l§n§cThis is a comment because the tick_not_working_server_calling\
+  \ above needs to be displayed to the console. If written directly in Chinese, it\
+  \ will appear as garbled text. This uses Pinyin for representation."
+tick_not_working_tips_line1:  "You are currently calling a Tick function that doesn't\
+  \ work, so you may have encountered an issue where the Tick function doesn't work.\
+  \ You can implement one of the following two methods:           "
+tick_not_working_tips_line2:  "        1. Use the /schedule command to call the Tick\
+  \ function."
+tick_not_working_tips_line3:  "   Or 2. Place your command block in a hidden location\
+  \ to avoid being destroyed by Bedrock-breaking machines."
 tp_pos_button_abort:  "[Abort]"
 tp_pos_button_teleport:  "[Teleport]"
 tp_pos_dialog_cancel_tooltip:  "§bClick to cancel input"
@@ -475,11 +494,13 @@ tpa_menu_disabled:  "§cDisabled"
 tpa_menu_disabled_hoverevent:  "§bClick to switch to §aEnabled"
 tpa_menu_enabled:  "§aEnabled"
 tpa_menu_enabled_hoverevent:  "§bClick to switch to §cDisabled"
-tpa_menu_has_id_of_hoverevent:  "§bThe internal player ID assigned to each player for correspondence"
+tpa_menu_has_id_of_hoverevent:  "§bThe internal player ID assigned to each player\
+  \ for correspondence"
 tpa_menu_here_button:  "[§bBroadcast position§r]"
 tpa_menu_home_button:  "[§bHome menu§r]"
 tpa_menu_warp_button:  "[§bLandmark menu§r]"
-tpa_menu_warp_button_hoverevent:  "§bClick to open the public teleport point (landmark) menu"
+tpa_menu_warp_button_hoverevent:  "§bClick to open the public teleport point (landmark)\
+  \ menu"
 tpa_menu_idfix_button:  "[§bID fix§r]"
 tpa_menu_lang_button:  "[§bSwitch language§r]"
 tpa_menu_output_actionbar_hidden:  "§bOnly action bar§r"
@@ -498,19 +519,27 @@ update_reload_hoverevent:  "Click to reload"
 update_step1_rightpart:  " Please confirm to begin updating here."
 update_step1_button:  "§b§n§l[I'm sure of what I'm doing]"
 update_step1_hoverevent:  "Please click carefully"
-update_step2:  "Please download the latest version of the datapack from GitHub, QQ group, or Modrinth as a backup."
-update_step3:  "Please click the button on the right to temporarily disable the datapack for the next installation step."
+update_step2:  "Please download the latest version of the datapack from GitHub, QQ\
+  \ group, or Modrinth as a backup."
+update_step3:  "Please click the button on the right to temporarily disable the datapack\
+  \ for the next installation step."
 update_step3_button:  "§b[Disable datapack]"
-update_step3_hoverevent:  "If you can’t disable it, please check if the datapack’s file name is correct."
-update_step4:  "We're almost done, please drag the datapack file into the datapacks folder and unzip it, then delete the old datapack."
-update_step5_leftright:  "Afterwards, we’ve completed the installation of the TPA datapack. If everything works, start adjusting the datapack settings. If it didn’t load correctly,\
-  \ please try."
+update_step3_hoverevent:  "If you can’t disable it, please check if the datapack’s\
+  \ file name is correct."
+update_step4:  "We're almost done, please drag the datapack file into the datapacks\
+  \ folder and unzip it, then delete the old datapack."
+update_step5_leftright:  "Afterwards, we’ve completed the installation of the TPA\
+  \ datapack. If everything works, start adjusting the datapack settings. If it didn’t\
+  \ load correctly, please try."
 update_step5_button:  "§b[Load]"
 update_step5_hoverevent:  "Click to load the datapack"
-update_step5_rightpart:  " If unknown scoreboard items appear, please start from step 3. This may be caused by incorrect version or unknown issues. For other issues, please consult Xiao_tu233."
+update_step5_rightpart:  " If unknown scoreboard items appear, please start from\
+  \ step 3. This may be caused by incorrect version or unknown issues. For other issues,\
+  \ please consult Xiao_tu233."
 update_nextstep:  "§b[Next step]"
 warp_button_add:  "[§aCreate new teleport point§r]"
-warp_button_add_hoverevent:  "§bClick to create a new public teleport point at your current location"
+warp_button_add_hoverevent:  "§bClick to create a new public teleport point at your\
+  \ current location"
 warp_button_apply:  "[§aApply§r]"
 warp_button_apply_hoverevent:  "§bClick to apply the cached changes"
 warp_button_cancel:  "[§cCancel§r]"
@@ -518,30 +547,43 @@ warp_button_cancel_hoverevent:  "§bClick to discard the cached changes"
 warp_button_enable:  "[§aEnable§r]"
 warp_button_enable_hoverevent:  "§bClick to enable this public teleport point"
 warp_button_disable:  "[§cDisable§r]"
-warp_button_disable_hoverevent:  "§bClick to disable this public teleport point (except for name, other information will be hidden, enable to view)"
+warp_button_disable_hoverevent:  "§bClick to disable this public teleport point (except\
+  \ for name, other information will be hidden, enable to view)"
 warp_button_moveup:  "[§dMove up§r]"
-warp_button_moveup_hoverevent:  "§bClick to swap this public teleport spot with the one above"
-warp_button_moveup_notavail_hoverevent:  "§cCannot move up, this teleport spot is already at the top"
+warp_button_moveup_hoverevent:  "§bClick to swap this public teleport spot with the\
+  \ one above"
+warp_button_moveup_notavail_hoverevent:  "§cCannot move up, this teleport spot is\
+  \ already at the top"
 warp_button_movedown:  "[§dMove Down§r]"
-warp_button_movedown_hoverevent:  "§bClick to swap this public teleport spot with the one below"
+warp_button_movedown_hoverevent:  "§bClick to swap this public teleport spot with\
+  \ the one below"
 warp_button_tp:  "[§bTeleport§r]"
 warp_button_tp_hoverevent:  "§bClick to teleport to this public teleport spot"
 warp_button_rm:  "[§cRemove§r]"
 warp_button_rm_hoverevent:  "§bClick to remove this public teleport spot"
 warp_button_select:  "[§aSelect§r]"
-warp_button_select_hoverevent:  "§bClick to select this public teleport spot slot to write changes when applying"
+warp_button_select_hoverevent:  "§bClick to select this public teleport spot slot\
+  \ to write changes when applying"
 warp_button_unselect:  "[§cUnselect§r]"
-warp_button_unselect_hoverevent:  "§bClick to unselect this public teleport spot slot"
+warp_button_unselect_hoverevent:  "§bClick to unselect this public teleport spot\
+  \ slot"
 warp_button_setdesc:  "[§aSet Description§r]"
-warp_button_setdesc_hoverevent:  "§bClick to set the description of this public teleport spot (after clicking, press the left arrow key on your keyboard, enter the description within quotes, then press Enter)"
+warp_button_setdesc_hoverevent:  "§bClick to set the description of this public teleport\
+  \ spot (after clicking, press the left arrow key on your keyboard, enter the description\
+  \ within quotes, then press Enter)"
 warp_button_setname:  "[§aSet Name§r]"
-warp_button_setname_hoverevent:  "§bClick to set the name of this public teleport spot (after clicking, press the left arrow key on your keyboard, enter the name within quotes, then press Enter)"
+warp_button_setname_hoverevent:  "§bClick to set the name of this public teleport\
+  \ spot (after clicking, press the left arrow key on your keyboard, enter the name\
+  \ within quotes, then press Enter)"
 warp_button_setpos:  "[§aSet Position§r]"
-warp_button_setpos_hoverevent:  "§bClick to set this public teleport spot to your current position"
+warp_button_setpos_hoverevent:  "§bClick to set this public teleport spot to your\
+  \ current position"
 warp_desc_disabled:  "§cThis public teleport spot is disabled"
 warp_disabled:  "§aPublic teleport spot§r has been disabled by the server"
 warp_menu_title:  "The server has set the following public teleport spots: "
-warp_menu_edit_tip:  "You are currently in edit mode. Select the operation slot below by index, then modify specific data using the buttons below. Finally, click Apply to apply the changes"
+warp_menu_edit_tip:  "You are currently in edit mode. Select the operation slot below\
+  \ by index, then modify specific data using the buttons below. Finally, click Apply\
+  \ to apply the changes"
 warp_number:  "Public Teleport Spot #"
 warp_out_of_range:  "This public teleport spot has not been set yet"
 warp_select_left_part:  "You have selected"
@@ -551,4 +593,5 @@ warp_set_middle_part:  "to"
 warp_set_position:  "coordinates"
 warp_set_right_part:  ""
 warp_set_default_name:  "Unnamed Teleport Spot"
-warp_spec:  "Spectator mode players are not allowed to teleport to §aPublic Teleport Spot§r"
+warp_spec:  "Spectator mode players are not allowed to teleport to §aPublic Teleport\
+  \ Spot§r"

@@ -72,13 +72,12 @@ def escape_snbt_string(s: str) -> str:
     return s.replace("\\", "\\\\").replace('"', '\\"')
 
 def snbt_compound(d: dict, pretty: bool) -> str:
-    parts = []
+    parts = [] 
     for k, v in d.items():
         if isinstance(v, str):
             parts.append(f'{k}: "{escape_snbt_string(v)}"')
         else:
             parts.append(f"{k}: {v}")
-
     if not pretty:
         return "{" + ", ".join(parts) + "}"
 
@@ -86,14 +85,16 @@ def snbt_compound(d: dict, pretty: bool) -> str:
 
 def snbt_list(items: list, pretty: bool) -> str:
     if not pretty:
-        return "[{id:0}, " + ", ".join(items) + "]"
+        return "[" + ", ".join(items) + "]"
 
-    return "[{id:0}, \\\n  " + ", \\\n  ".join(items) + " \\\n]"
+    return "[ \\\n  " + ", \\\n  ".join(items) + " \\\n]"
 
-def generate_mcfunction(lang_map: dict[str, dict], pretty: bool) -> str:
-    compounds = []
+def generate_mcfunction(lang_map: dict[str, dict], pretty: bool, extra: bool) -> str:
+    # compounds = [] 
+    compounds = [] if extra else ["{id: 0}"]
     for lang, data in lang_map.items():
         compound = snbt_compound({"lang": lang, **data}, pretty)
+        # print(compound)
         compounds.append(compound)
 
     snbt = snbt_list(compounds, pretty)
@@ -163,12 +164,12 @@ print("\n== 生成 mcfunction ==")
 
 for t in CORE_TARGETS:
     t["path"].parent.mkdir(parents=True, exist_ok=True)
-    t["path"].write_text(generate_mcfunction(core_langs, t["pretty"]), encoding="utf-8")
+    t["path"].write_text(generate_mcfunction(core_langs, t["pretty"], extra=False), encoding="utf-8")
     print(f"[CORE] {t['path']} 写入了 {list(core_langs)} 语言")
 
 for t in EXTRA_TARGETS:
     t["path"].parent.mkdir(parents=True, exist_ok=True)
-    t["path"].write_text(generate_mcfunction(extra_langs, t["pretty"]), encoding="utf-8")
+    t["path"].write_text(generate_mcfunction(extra_langs, t["pretty"], extra=True), encoding="utf-8")
     print(f"[EXTRA] {t['path']} 写入了 {list(extra_langs)} 语言")
 
 print("\n✓ sync_lang.py 完成")

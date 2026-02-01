@@ -363,8 +363,10 @@ option_stricter_book_check_disabled:  "此功能需要 Bookshelf 資料包作為
 option_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2\
   \ tiao2zheng3 she4zhi4!"
 option_dimension_button_edit_id_hoverevent:  "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)"
-option_dimension_button_edit_namespaceid_hoverevent:  "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:        xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)"
-option_dimension_button_edit_name_hoverevent:  "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車, 該項對於原版維度會跟隨語言設定而不是當前設定)"
+option_dimension_button_edit_namespaceid_hoverevent:  "§b點擊編輯該維度的命名空間ID(namespace:id,\
+  \ source location 形如minecraft:                   xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)"
+option_dimension_button_edit_name_hoverevent:  "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車,\
+  \ 該項對於原版維度會跟隨語言設定而不是當前設定)"
 option_dimension_button_remove_hoverevent:  "§b點擊移除該維度"
 option_dimension_hoverevent:  "§b在下方設定按鈕開啟§a維度兼容§6菜單 §b同時右側的數字會是目前已兼容的維度數量"
 option_server_calling_comment:  "§l§n§4這裡是一個註解 因為上面的option_server_calling需要被控制台所顯示\
@@ -456,8 +458,7 @@ update_step3:  "請點擊右手邊的按鈕將資料包暫時禁用 以便下一
 update_step3_button:  "§b[禁用資料包]"
 update_step3_hoverevent:  "如果遇到無法禁用 請檢查資料包的檔案名稱是否正確"
 update_step4:  "我們即將完成，請將資料包檔案拖入datapacks資料夾並解壓 然後刪掉原來的資料包"
-update_step5_leftright:  "後，我們已經完成了TPA資料包的安裝 如果資料包使用沒有問題 請開始調整資料包設置 如果資料包沒有正確載入\
-  \ 請嘗試"
+update_step5_leftright:  "後，我們已經完成了TPA資料包的安裝 如果資料包使用沒有問題 請開始調整資料包設置 如果資料包沒有正確載入 請嘗試"
 update_step5_button:  "§b[載入]"
 update_step5_hoverevent:  "點擊載入資料包"
 update_step5_rightpart:  " 如果出現未知的計分項 請從第3步開始檢查 這可能是由資料包安裝版本不正確或未知不正確所導致的 其他問題請洽詢Xiao_tu233"
