@@ -92,7 +92,6 @@ function tpa:back/set
 execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get #home tpa.variables
 function tpa:home/act_macro with storage tpa:tpa temp.args
 # function tpa:load_lang
-say 2
 function tpa:sounds/tp
 tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
     {"storage":"tpa:tpa", "nbt":"loaded_lang.home_act_left_part"}, \
