@@ -1,0 +1,63 @@
+name: Release TPA Datapack
+
+on:
+  push:
+    tags:
+      - '*'   # 任何 tag 推送都会触发
+
+jobs:
+  release:
+    name: Build & Release Datapack
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1️⃣ Checkout
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2️⃣ Set up zip (Ubuntu 默认已安装，但加上保证)
+    - name: Install zip (if needed)
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y zip
+
+    # 3️⃣ Build all variants
+    - name: Package all variants
+      run: |
+        mkdir -p build
+
+        for dir in src/*; do
+          name=$(basename "$dir")
+          echo "Packaging '$name'"
+
+          if [ ! -f "$dir/pack.mcmeta" ]; then
+            echo "Skipping '$name' (no pack.mcmeta)"
+            continue
+          fi
+
+          # zip 路径加引号，避免 + 或 - 出问题
+          zip -r "build/TPA_datapack-${name}.zip" "$dir"
+        done
+
+        echo "Generated files in build:"
+        ls -lh build/
+
+    # 4️⃣ Read changelog for this tag
+    - name: Prepare release notes
+      id: changelog
+      run: |
+        TAG_NAME="${GITHUB_REF_NAME}"
+        # 如果 CHANGELOG.md 按版本分块，提取对应版本内容
+        NOTES=$(awk "/^## ${TAG_NAME}/,/^## /{if(\$0!~\"^## ${TAG_NAME}\"){print}}" CHANGELOG.md)
+        echo "::set-output name=notes::$NOTES"
+
+    # 5️⃣ Create GitHub Release with assets
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.ref_name }}
+        name: Release ${{ github.ref_name }}
+        body: ${{ steps.changelog.outputs.notes }}
+        files: build/*.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -448,7 +448,7 @@ option_warp_hoverevent:  "§bClick below to open the §aPublic teleport point §
   \ set."
 option_warp_number_hoverevent_leftpart:  "§bThe server currently has "
 option_warp_number_hoverevent_rightpart:  "§b public teleport points."
-option_uses_tick_scheduling:  "Use /schedule command to call the Tick function?"
+option_uses_tick_scheduling:  "Use /schedule command to call the Tick function"
 simple_menu_button:  "[§bDetailed menu§r]"
 simple_menu_incompatible:  "§aSimplified menu§r is not compatible with this game\
   \ version"

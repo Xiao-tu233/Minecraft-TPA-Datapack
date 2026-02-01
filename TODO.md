@@ -1,133 +1,20 @@
-Project To-do lists:    
-- [o] public tp spot (warp) 
-  - Every warp contains: Warp Position(xyz, dimension), Warp Name(Show before teleport button), Warp ID(Number), Warp Description(Optional but recommended, show when hover the warp name)
-   - Dxcide: Show warps in 传送点菜单 or a independent warp menu? 
-   - Fxr the first index of the warp list, make the first compound stores the lang for options.warp 
-   - Rxalize [Move Up] [Move Down] 
-   - Make dimensions customized(Add option: dimensions) 
-- [o] Optimize the code structure 
-- [x] Check if scoreboard objectives tpa is already exists to see if the other TPA datapack is installed §cNot Necessary
-- [o] Update & Uninstall langauge supportive 
-- [o] Not using the Vanilla tick interface, instead use schedule function 
-- [o] Make the req timer ticks in the time_out function 
-- [o] Use text component after scoreboard objectives declares §c Only static text components supported so achieving in 1.15- and light version
-   Translated sample texts are below:
-   - scoreboard_tpa: "TPA菜单/传送请求目标"
-   - scoreboard_back: "返回上一位置"
-   - scoreboard_tpaccept: "接受请求/自动接受"
-   - scoreboard_tpa_help: "帮助"
-   - scoreboard_tpa_tpaccept: "接受请求"
-   - scoreboard_tpa_tpaccept_toggle: "自动接受"
-   - scoreboard_tpa_tpa: "传送请求目标"
-   - scoreboard_tpa_tpahere: "传送此处请求目标"
-   - scoreboard_tpa_simple_menu: "简易菜单"
-   - scoreboard_tpa_cancel_req: "取消请求"
-   - scoreboard_tpa_idfix: "ID修复"
-   - scoreboard_tpa_back: "返回上一位置"
-   - scoreboard_tpa_extended_menu: "展开菜单"
-   - scoreboard_tpa_mute: "静音"
-   - scoreboard_tpa_output: "输出位置"
-   - scoreboard_tpa_search_id: "搜索ID"
-   - scoreboard_tpa_book: "传送书"
-   - scoreboard_tpa_pos: "传送坐标输入状态"
-   - scoreboard_tpa_pos_x: "传送坐标目标X坐标"
-   - scoreboard_tpa_pos_y: "传送坐标目标Y坐标"
-   - scoreboard_tpa_pos_z: "传送坐标目标Z坐标"
-   - scoreboard_tpa_here: "广播位置"
-   - scoreboard_tpa_sethome: "设置传送点"
-   - scoreboard_tpa_home: "传送传送点"
-   - scoreboard_home: "传送传送点"
-   - scoreboard_tpa_removehome: "移除传送点"
-   - scoreboard_tpa_language: "语言"
-- [o] Fix home menu doesn't show existing homes(Version:1.21.6+) 
-- [o] Make Key G available on displaying TPA menu 
-- [o] Abandon ingame keyboard as dependency, instead, write it inbuilt datapack in easier way 
-- [o] Re-write Carpet Fake Player detection or even use carpet scripts if problems continue (Problem occurs:  
-   - Some fake players are spawned by players but insta-kicked by Datapack unexpectedly; 
-   - When Fake Players working at worldpoint, tick function is stopped with entity data exception raising( It may be caused by low TPS situations as well )
-      )
-- [o] Boardcast Position displays red instead of purple in the dimension of the end; 
-- [o] Avoid load lang into temp storage causing polute the storage 
-- [o] Tell to modify configs in client instead of server terminal when server did `/function tpa:options` 
-- [o] Use uid instead of the tag of TPA_user 
-- [o] Use tpahere filefolder to simplify tpa:tpahere 
-- [o] Fix !s will continue to make ids greater and greater: §r, will also update the whole system in the future.
-   - Add also the third mode for compact_ids "混合模式"
-   - #compact_ids == Any && #tp_spec == Any && #carpet_fake_player_fix == 0 -> fake: their uid
-   - #compact_ids == 1 && #tp_spec == 0 && #carpet_fake_player_fix == 1 -> offline: null; spec, fake: -1
-   - #compact_ids == 0 && #tp_spec == 0 && #carpet_fake_player_fix == 1 -> offline: their uid; spec: negative of their uid; fake: -1
-   - #compact_ids == 0 && #tp_spec == 1 && #carpet_fake_player_fix == 1 -> offline: their uid; spec: their uid; fake: -1
-- [o] When Server Terminal access `/function tpa:options` or `/function tpa:tick_not_working` console will now return warning mxg 
-- [ ] Edit wiki
-- [o] Make tpa.output Default: tellraw & actionbar 
-- [x] Sneak detect need to be detected when using elytra to fly §cVanilla bug
-- [x] Button to choose selected game language in the language menu §cNot Realizable
-- [o] I can req myself : Caused by accidently deleting of tpa:tpa_conditions
-- [o] Clear TPA book whenever player put that into a container(Not only chests): by achivements 
-   - ^ tpa:book/track_missing
-   - ^ (advancements) tpa:book_container_detect
-   -! For 1.20.4-: tpa:book/set_interaction_context:7:106 generic.block_interaction_range instead of player.block_interaction_range
-                 : tpa:book/track/confiscate_from_entity:5:435 Slot: byte instead of slot: int
-                 : tpa:book/track/confiscate_from_ender_chest:5:435 Slot: byte instead of slot: int
-   - Fxr Newer version: advencement tpa:book_container_detect, add shelf, #copper_chest  
-   - Dxtect Item dropped when player died instead of dropping for refresh(Distance Detection) 
-   - Use keybind instead of hard code key 'Q', 'F' §cNot Realizable, chat component not supportive
-   -! Maybe make book wearable and craftable for different slots
-   - Dxtect Block Container (Prevent from detecting the same block for times) §r, but gave up ray detection
-- [o] Add re-get way when tpabook is turned offhand 
-- [o] If one feature is disabled, show setting button beside to guide the user to enable it. 
-- [o] Make Technic settings defaultly hidden whenever debug mode is enabled, they show. 
-   - Containing: #sequence_timer, #sim_dist, #is_1_16(Rename Needed), #teleport_summon_retried(Rename Needed), #teleport_threshold_retry_summon(Rename Needed), #uses_binary_teleport, Shake or Nod related: #timer_sequence, #detectable_range, ...
-- [o] Frequency will be set to 20 if 0 was set when calling tpa:tick_not_working function. 
-- [o] Make Settings Initialize when version is not correct instead of everytimes. 
-- [o] 1.15 teleport changes: 
-   - Summon visual item of Target instead giving player a target to check the 1.15/1.16 
-   - Make player keeping floating in the midair instead of falling them when chunks are loading
-   - Show Retries Debug infos in action bar instead of chat
-- [o] Make License showed in a text displayer and Button provided for ending reading 
-- [o] Avoid using long target selectors instead, use predicates 
-- [o] Compact with the newest pack.mcmeta format 
-- [o] Show version infos in options like current datapack version, game version 
-- [o] For Chinese-like Languages, use follow translates 
-     Original Name | Short Name(通称) | Formal Name
-     Home          | 家               | (私人)传送点
-     Warp          | 地标             | 公共传送点
-- [o] Add the version post time(UTC) when loaded the datapack right after the datapack version 
-- [o] 考虑 init_language_storage是否要放在 initialize里 
-- [o] ^ https://docs.mcbookshelf.dev/en/latest/modules/raycast/ Maybe Raycasting usable 
-- [o] Make some menu to be used more convenient, automatically call menu again when editted 
-- [o] Make custom dimension supported, add a new dimension number when which is called 
-- [o] Move some load datas to tpa:tpa options instead of tpa:tpa * 
-- [o] Add a sentence at the end of option that enabling debug mode to modify advenced settings 
-- [o] Show the gray button of [Request Teleport] when player who cannot be requested sent a here 
-- [o] Version overlay now changed: 1.20.2-1.20.3, 1.20.4, 1.20.5-1.20.6 -> 1.20.2, 1.20.3-1.20.4, 1.20.5-1.20.6 
-- [o] Add following switches: 
-   - Accept Toggles(When tpaccept_toggle+==4): Disable -> Enable -> Disable
-   - Mute(When +==4): Unmute -> Mute -> unmute
-   - Outputs At(When +==6): Both -> Actionbar -> Chatbar -> Both
-- [x] Searching ID inputs may be interupted by other players when they're inputting too
-- [o] license could be a written book to be read
-- [o] warp
-   - 地标编辑考虑将编辑按钮合并到上方 对于每个点 可以单选 选择后点击上方编辑按钮修改即将并入的内容的细节 点击应用来并入修改 取消来放弃更改
-   - With test, warp just increases whenever edits for reason, warp names should be fallback to Warp#XX instead of displaying that
-   - modifier tag should be added when menu executes and removes with a clock about 5 min
-- [o] For 26.1-snapshot-5: add "interpret: true, " before every {storage: *}s (You should need a script for that)
-- [ ] Combining language file into one, translate more languages in extra pack
+Project To-do lists:
 
  TESTS:
-- [o] mc1.13 on 1.13
-- [o] mc1.15 on 1.15
-- [o] mc1.15 on 1.20.1
-- [o] mc1.20.2 on 1.20.2
-- [o] mc1.20.2 on 1.20.4
-- [o] mc1.20.2 on 1.20.5
-- [o] mc1.20.2 on 1.21
-- [o] mc1.20.2 on 1.21.5
-- [o] mc1.20.2 on 1.21.6
-- [o] mc1.20.2 on lastest release
+- [ ] mc1.13 on 1.13
+- [ ] mc1.15 on 1.15
+- [ ] mc1.15 on 1.20.1
+- [ ] mc1.20.2 on 1.20.2
+- [ ] mc1.20.2 on 1.20.4
+- [ ] mc1.20.2 on 1.20.5
+- [ ] mc1.20.2 on 1.21
+- [ ] mc1.20.2 on 1.21.5
+- [ ] mc1.20.2 on 1.21.6
+- [ ] mc1.20.2 on lastest release
 
- Futures: (v2.1)
-- Add Signed Binary TP(to avoid numbers like 1023 takes too long)
+# v2.1 todo
+- [ ] edit docs
+- [ ] Add Signed Binary TP(to avoid numbers like 1023 takes too long)
 - [ ] Head gestures (Functions are at zhencangthings/datapacks/head_gestures)
    - Sneak + Head up/down: Agree/Deny
    - Sneak + Turn around: open menu
@@ -215,3 +102,4 @@ Project To-do lists:
 - [ ] 考虑是否要在新版本直接使用宏函数/数据存储替代基于tags的recver_test/reqer_test
 - [ ] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
 - [ ] 尝试execute at, execute position子指令能不能把二分法的approach缩减到一个1tick
+- [ ] 考虑使用调试模组 Sniffer BV14TmrB1EhA
