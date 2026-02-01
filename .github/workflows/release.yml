@@ -25,6 +25,7 @@ jobs:
     - name: Package all variants
       run: |
         mkdir -p build
+        VERSION = ${GITHUB_REF_NAME}
 
         for dir in src/*; do
           name=$(basename "$dir")
