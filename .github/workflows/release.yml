@@ -44,7 +44,7 @@ jobs:
             ZIP_NAME="TPA_datapack-${VERSION}-${name}.zip"
           fi
           echo "Packaging '$name' → $ZIP_NAME"
-          zip -r "build/$ZIP_NAME" "$dir"
+          zip -r "build/$ZIP_NAME" "$dir/src/$name"
         done
 
         echo "Generated files in build:"
