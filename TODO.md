@@ -13,6 +13,7 @@ Project To-do lists:
 - [ ] mc1.20.2 on lastest release
 
 # v2.1 todo
+- [ ] 应该有2个启用按钮对应两种文件名在tpa:uninstall
 - [ ] edit docs
 - [ ] Add Signed Binary TP(to avoid numbers like 1023 takes too long)
 - [ ] Head gestures (Functions are at zhencangthings/datapacks/head_gestures)
