@@ -12,7 +12,8 @@ Project To-do lists:
 - [ ] mc1.20.2 on 1.21.6
 - [ ] mc1.20.2 on lastest release
 
-# v2.1 todo
+# v2.1 to
+- [ ] BUG ENCOUTNED: 1.20.10 get name gets nothing
 - [ ] 应该有2个启用按钮对应两种文件名在tpa:uninstall
 - [ ] edit docs
 - [ ] Add Signed Binary TP(to avoid numbers like 1023 takes too long)
