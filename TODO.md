@@ -27,11 +27,11 @@ Project To-do lists:
    - Tutorial for new players
 
 - [ ] Lang contains author key to specify the source of the translations
-   - Consider about the color of actionbar
-   - For 1.13-1.15 添加虚拟物品实体储存1.15+的 storage tpa:tpa 物品储存位置需要被加载到(玩家位置上空 或 出生点常加载区块)
-   - 传送前摇 落地空气检测
-   - 触发保护及延迟机制要基于请求是否是被接收者拖了很久才接 如果发了马上接则不应该触发这些 或者这里的threshold应该允许设置
-   - {
+- [ ] Consider about the color of actionbar
+- [ ] For 1.13-1.15 添加虚拟物品实体储存1.15+的 storage tpa:tpa 物品储存位置需要被加载到(玩家位置上空 或 出生点常加载区块)
+- [ ] 传送前摇 落地空气检测
+- [ ] 触发保护及延迟机制要基于请求是否是被接收者拖了很久才接 如果发了马上接则不应该触发这些 或者这里的threshold应该允许设置
+- [ ] {
            "teleport_delay": 3,            // 请求被接受后延迟秒数（设置为0即与原来一致）
          "interrupt_by_moving": boolean  // 可以禁止透过移动中断传送避免误判 考虑使用视角转向以及按钮 或者使用实体子谓词{type:player, input: *}
          "may_skip_delay": boolean,      // 允许跳过延迟
@@ -40,12 +40,12 @@ Project To-do lists:
           basic	检查脚下是否为空气/液体	若不安全则取消传送
           strict	检查脚下方块可站立、头顶空间可容纳、周围无岩浆/虚空
       }
-   - 加入服务器预设配置 方便不同体量服务器
-   - Chest menu
-   - Add a snowball menu
-   - If the above one is posible, make Actionbar a screen and player and turn their rotations to control the 光标 in a GUI-like way
-   - Update TPA book format, including buttons in TPA menu
-   - Use binary format to achieve tp instead of anchors:
+- [ ] 加入服务器预设配置 方便不同体量服务器
+- [ ] Chest menu
+- [ ] Add a snowball menu
+- [ ] If the above one is posible, make Actionbar a screen and player and turn their rotations to control the 光标 in a GUI-like way
+- [ ] Update TPA book format, including buttons in TPA menu
+- [ ] Use binary format to achieve tp instead of anchors:
      E.g. Our target x/z is 1000
       1000 = 0b11 1110 1000
       So, we run tp ~0b(1*0b10**n) ~ ~ whenever n is 1
@@ -55,14 +55,14 @@ Project To-do lists:
                     execute as @a[scores={...=1..}] run tp @s ~1 ~ ~
                     execute as @a[scores={...=1..}] run scoreboard players remove @s ... 1
       The reason why it can't be a must because we must have the maxinum distance when using binary format.
-   - Use more predicts instead of conditions "execute if"
-   - Considering use `execute positioned over <heightmap> -> execute: 将执行位置设置为符合特定高度图的一纵列方块的最高的位置。`
-   - Consider use tag instead of item customdata to select Visual Items
-   - Show specific player amount in TPA menu according to the currently server player and even server settings
-   - For 1.17+ consider use entity mark to replace most of the visual items
-   - Add Search ID Book back, by crafting TPA menu book to get one
-   - Add [APPLY] button in options menu
-   - ID 改革
+- [ ] Use more predicts instead of conditions "execute if"
+- [ ] Considering use `execute positioned over <heightmap> -> execute: 将执行位置设置为符合特定高度图的一纵列方块的最高的位置。`
+- [ ] Consider use tag instead of item customdata to select Visual Items
+- [ ] Show specific player amount in TPA menu according to the currently server player and even server settings
+- [ ] For 1.17+ consider use entity mark to replace most of the visual items
+- [ ] Add Search ID Book back, by crafting TPA menu book to get one
+- [ ] Add [APPLY] button in options menu
+- [ ] ID 改革
      id译名： 编号
      uid译名：用户编号
      玩家id译名：玩家名称
@@ -105,3 +105,8 @@ Project To-do lists:
 - [ ] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
 - [ ] 尝试execute at, execute position子指令能不能把二分法的approach缩减到一个1tick
 - [ ] 考虑使用调试模组 Sniffer BV14TmrB1EhA
+- [ ] 将主版本改为26.1
+- [ ] 增加更多脚本 在增加新功能的时候同步更改
+- [ ] 增加数据包设置项管理
+- [ ] 增加不同玩家对不同功能使用的可能性调整（权限组系统？）
+- [ ] 测试1.21.6+ 版本中 tpa:get_name 是不是因为text_display实体未生成而导致的获取失败
