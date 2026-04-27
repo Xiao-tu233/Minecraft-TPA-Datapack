@@ -12,7 +12,7 @@
 </div>
 
 <p align="center">
-可选前置
+Optional Dependencies
 </p>
 
 <div align="center">
