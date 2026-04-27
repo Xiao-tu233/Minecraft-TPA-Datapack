@@ -27,6 +27,9 @@
   &nbsp;
 </div>
 
+[English(United States)](README.md) · [简体中文(中国大陆)](README_zhcn.md) · [正體中文(臺灣)](README_zhtw.md) · **日本語(日本)** · [更多语言](languages.md) 
+
+
 TPA データパックは、非 OP プレイヤーでも簡単に互いにテレポートできる Minecraft データパックです。また、Back、Home、Warp、複数言語対応などの追加機能も提供されています。
 
 詳細情報や意見を提供したい場合は、ぜひ私たちのソーシャルメディアをフォローしてください！
