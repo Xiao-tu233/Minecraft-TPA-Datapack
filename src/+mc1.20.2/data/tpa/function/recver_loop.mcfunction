@@ -2,7 +2,7 @@
 
 tag @p[tag=!not_match] add to_modify
 
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rModifier now is: ",{"color":"green","selector":"@a[tag=to_modify]"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rModifier now is: ",{color:"green",selector:"@a[tag=to_modify]"}]
 
 execute if score @p[tag=to_modify] tpa.player_id = #recver_id tpa.variables run return 1
 

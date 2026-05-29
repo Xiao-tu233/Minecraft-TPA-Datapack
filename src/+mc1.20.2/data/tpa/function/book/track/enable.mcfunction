@@ -12,4 +12,4 @@ execute if score #bookshelf_raycast_installed tpa.variables matches 1 run \
     scoreboard players set #stricter_book_check tpa.config 0
     scoreboard players operation #target_lang tpa.variables = #language tpa.config
     function tpa:load_lang
-    tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.option_stricter_book_check_disabled"}]
+    tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_stricter_book_check_disabled"}]

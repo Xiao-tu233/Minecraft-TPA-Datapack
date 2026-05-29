@@ -2,7 +2,7 @@
 # Parent Function: tpa:extended_menu_argument_page_location
 function tpa:load_lang
 function tpa:sounds/levelup
-tellraw @s [{"storage": "tpa:tpa", "nbt": "loaded_lang.extended_menu_title"}]
+tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_title"}]
 $function tpa:iddisplay {"id_1":$(index_0)2,"id_2":$(index_0)3,"id_3":$(index_0)4,"id_4":$(index_0)5,"id_5":$(index_0)6,"direction":"tpa"}
 $function tpa:iddisplay {"id_1":$(index_0)7,"id_2":$(index_0)8,"id_3":$(index_0)9,"id_4":$(index_1)0,"id_5":$(index_1)1,"direction":"tpa"}
 $function tpa:iddisplay {"id_1":$(index_1)2,"id_2":$(index_1)3,"id_3":$(index_1)4,"id_4":$(index_1)5,"id_5":$(index_1)6,"direction":"tpa"}
@@ -15,7 +15,7 @@ $function tpa:iddisplay {"id_1":$(index_4)2,"id_2":$(index_4)3,"id_3":$(index_4)
 $function tpa:iddisplay {"id_1":$(index_4)7,"id_2":$(index_4)8,"id_3":$(index_4)9,"id_4":$(index_5)0,"id_5":$(index_5)1,"direction":"tpa"}
 
 $tellraw @s ["======================( ", \
-{text:"§b<§r",click_event:{"action":"run_command","value":"/trigger tpa.extended_menu set $(previous)"},hover_event:{"action":"show_text","value":[{storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_previous_page"},"§b($(previous))"]}}, \
-{text:" $(page) ",click_event:{"action":"suggest_command","value":"/trigger tpa.extended_menu set "}},\
-{text:"§b>§r",click_event:{"action":"run_command","value":"/trigger tpa.extended_menu set $(next)"},hover_event:{"action":"show_text","value":[{storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_next_page"},"§b($(next))"]}}, \
+{text:"§b<§r",click_event:{action:"run_command",command:"/trigger tpa.extended_menu set $(previous)"},hover_event:{action:"show_text",value:[{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_previous_page"},"§b($(previous))"]}}, \
+{text:" $(page) ",click_event:{action:"suggest_command",command:"/trigger tpa.extended_menu set "}},\
+{text:"§b>§r",click_event:{action:"run_command",command:"/trigger tpa.extended_menu set $(next)"},hover_event:{action:"show_text",value:[{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_next_page"},"§b($(next))"]}}, \
 " )======================"]

@@ -1,0 +1,3 @@
+# Called by: (Player) Any OP, Quoted by: (dialog: inline) tpa:warp/show_each_macro
+# @macro: {index: int, desc: Literal['$(desc)']}
+$dialog show @s {title: "", type:"multi_action", pause:false, inputs: [{label: "", label_visible: false, type: "text", key: "desc"}], actions: [{label: {keybind: "gui.done"}, action: {type:"minecraft:dynamic/run_command", template: "/function tpa:warp/set_desc {index: $(index), desc: \"$$(desc)\"}"}}]}

@@ -10,7 +10,7 @@ function tpa:load_lang
 scoreboard players set #can_choose tpa.variables 1
 execute if score #player_lang tpa.config matches 0 if score #language tpa.config matches 1.. run scoreboard players set #can_choose tpa.variables 0
 
-execute if score #can_choose tpa.variables matches 1 run tellraw @s {"storage": "tpa:tpa","nbt": "loaded_lang.lang_button","clickEvent":{"action":"run_command","value":"/trigger tpa.language set -1"},"hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.lang_button_hoverevent"}}}
+execute if score #can_choose tpa.variables matches 1 run tellraw @s {interpret: true, storage: "tpa:tpa",nbt: "loaded_lang.lang_button",click_event:{action:"run_command",command:"/trigger tpa.language set -1"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.lang_button_hoverevent"}}}
 
 # Use default language 1:chinese if lang is not selected
 function tpa:get_name

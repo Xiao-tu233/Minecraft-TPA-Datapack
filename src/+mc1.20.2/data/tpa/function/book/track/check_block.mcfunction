@@ -15,4 +15,4 @@ execute store result storage tpa:tpa temp.args.y int 1 run data get storage bs:o
 execute store result storage tpa:tpa temp.args.z int 1 run data get storage bs:out raycast.targeted_block[2]
 function tpa:book/track/is_block_container with storage tpa:tpa temp.args
 execute if score #is_block_container tpa.variables matches 1 run function tpa:book/track/check_block_slots
-execute if score #is_block_container tpa.variables matches 0 if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: The Block ", {"storage": "tpa:tpa", "nbt": "temp.args.x"}, " ", {"storage": "tpa:tpa", "nbt": "temp.args.y"}, " ", {"storage": "tpa:tpa", "nbt": "temp.args.z"}, " is not a block container"]
+execute if score #is_block_container tpa.variables matches 0 if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: The Block ", {interpret: true, storage: "tpa:tpa", nbt: "temp.args.x"}, " ", {interpret: true, storage: "tpa:tpa", nbt: "temp.args.y"}, " ", {interpret: true, storage: "tpa:tpa", nbt: "temp.args.z"}, " is not a block container"]

@@ -2,25 +2,25 @@ scoreboard players set @s tpa.idfix 0
 function tpa:load_lang
 
 execute if score #idfix_cooldown tpa.config matches -1 run function tpa:sounds/no
-execute if score #idfix_cooldown tpa.config matches -1 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_disabled"}, ". "]
-execute if score #idfix_cooldown tpa.config matches -1 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_disabled", "color":"red"}]
+execute if score #idfix_cooldown tpa.config matches -1 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_disabled"}, ". "]
+execute if score #idfix_cooldown tpa.config matches -1 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_disabled", color:"red"}]
 execute if score #idfix_cooldown tpa.config matches -1 run return 0
 
 execute if score @s tpa.idfix_cd matches 1.. run function tpa:sounds/no
-execute if score @s tpa.idfix_cd matches 1.. run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_cooldown"}, ". "]
-execute if score @s tpa.idfix_cd matches 1.. run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_cooldown", "color":"red"}]
+execute if score @s tpa.idfix_cd matches 1.. run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_cooldown"}, ". "]
+execute if score @s tpa.idfix_cd matches 1.. run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_cooldown", color:"red"}]
 execute if score @s tpa.idfix_cd matches 1.. run return 0
 
 function tpa:sounds/levelup
-tellraw @a[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_left_part"}, \
-    {"selector": "@s", "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.idfix_act_hoverevent"}}}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_right_part"}, ". " \
+tellraw @a[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_act_left_part"}, \
+    {selector: "@s", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.idfix_act_hoverevent"}}}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_act_right_part"}, ". " \
 ]
 title @a[predicate=tpa:output/show_actionbar] actionbar [\
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_left_part", "color": "gold"}, \
-        {"selector": "@s"},  \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.idfix_act_right_part", "color": "gold"} \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_act_left_part", color: "gold"}, \
+        {selector: "@s"},  \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.idfix_act_right_part", color: "gold"} \
     ]
 scoreboard players operation @s tpa.idfix_cd = #idfix_cooldown tpa.config
 

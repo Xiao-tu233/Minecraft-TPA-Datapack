@@ -1,5 +1,7 @@
 # Parent function: tpa:search_id/input_key
 
+dialog clear @s
+
 # temp.args.input_name = sum(temp.search_id.input)
 data modify storage tpa:tpa temp.args.input_name set value ''
 data modify storage tpa:tpa temp.args.char set value ''
@@ -13,10 +15,10 @@ execute store result score #player_id tpa.variables run function tpa:search_id/g
 
 execute unless score #player_id tpa.variables matches 2.. run function tpa:sounds/no
 execute unless score #player_id tpa.variables matches 2.. run tellraw @s[predicate=tpa:output/show_chatbar] [\
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.search_id_unavail_player"}, "." \
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.search_id_unavail_player"}, "." \
 ]
-execute unless score #player_id tpa.variables matches 2.. run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.search_id_unavail_player"}]
+execute unless score #player_id tpa.variables matches 2.. run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.search_id_unavail_player"}]
 
 execute if score #player_id tpa.variables matches 2.. run scoreboard players operation @s tpa.tpa = #player_id tpa.variables
 

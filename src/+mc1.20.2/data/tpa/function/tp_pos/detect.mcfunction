@@ -30,8 +30,8 @@ scoreboard players operation #limit_sq tpa.variables *= #tp_pos tpa.config
 execute if score #dist_sq tpa.variables > #limit_sq tpa.variables if score #tp_pos tpa.config matches 1.. run scoreboard players set #condition tpa.variables 4
 
 execute if score #condition tpa.variables matches 4 run function tpa:sounds/no
-execute if score #condition tpa.variables matches 4 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_out_of_range"}, ". "]
-execute if score #condition tpa.variables matches 4 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_out_of_range", "color": "red"}]
+execute if score #condition tpa.variables matches 4 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_out_of_range"}, ". "]
+execute if score #condition tpa.variables matches 4 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_out_of_range", color: "red"}]
 
 execute store result storage tpa:tpa temp.arg.x int 1 run scoreboard players get @s tpa.pos.x_temp
 execute store result storage tpa:tpa temp.arg.y int 1 run scoreboard players get @s tpa.pos.y_temp

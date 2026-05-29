@@ -5,4 +5,4 @@ execute unless score #flag tpa.variables matches 1 run return 0
 data remove storage tpa:tpa temp.back
 $data modify storage tpa:tpa temp.back set from storage tpa:tpa back.$(id)
 execute if score #debug_mode tpa.config matches 1 run \
-    tellraw @a ["[§bTPA§r] §6 Debug: §rNow showing: §adata storage tpa:tpa temp.back:§r", {"storage": "tpa:tpa", "nbt": "temp.back"}]
+    tellraw @a ["[§bTPA§r] §6 Debug: §rNow showing: §adata storage tpa:tpa temp.back:§r", {interpret: true, storage: "tpa:tpa", nbt: "temp.back"}]

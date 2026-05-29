@@ -2,7 +2,7 @@
 # Set default language to server language if lang is set before player first join
 execute unless score @s tpa.lang_temp matches 1.. run scoreboard players operation @s tpa.lang_temp = #language tpa.config
 function tpa:load_lang
-execute unless score #language tpa.config matches 1.. run tellraw @s [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {"text": "[§a设置 | Set§r]", "clickEvent": {"action": "run_command", "value": "/trigger tpa.language set -1"}}]
+execute unless score #language tpa.config matches 1.. run tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {text: "[§a设置 | Set§r]", click_event:{action:"run_command",command: "/trigger tpa.language set -1"}}]
 
 # Reset scores
 scoreboard players set @s tpa.tp_to 0
@@ -36,4 +36,4 @@ execute if score #compact_ids tpa.config matches 0 as @s[predicate=tpa:available
 execute if score #compact_ids tpa.config matches 1 as @s[predicate=tpa:available] run scoreboard players set @s tpa.player_id 1
 
 # Show TPA menu button when player joins
-tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.reqer_first_join", "clickEvent": {"action": "run_command", "value": "/trigger tpa"}}]
+tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.reqer_first_join", click_event:{action:"run_command",command: "/trigger tpa"}}]

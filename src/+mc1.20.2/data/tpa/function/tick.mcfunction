@@ -34,6 +34,7 @@ scoreboard players enable @a tpa.warp
 scoreboard players enable @a tpa.simple_menu
 scoreboard players enable @a tpa.language
 scoreboard players enable @a tpa.search_id.key
+scoreboard players enable @a tpa.dialog
 
 # Store config to storage
 execute store result storage tpa:tpa option.tp_spec int 1 run scoreboard players get #tp_spec tpa.config
@@ -72,6 +73,7 @@ execute as @r[scores={tpa.player_id=1}] run function tpa:giveid
 
 # Teleport requests & TPA menu
 execute as @a[scores={tpa.simple_menu=2..3}] run function tpa:simple_menu
+execute as @a[scores={tpa.dialog=1..}] run function tpa:dialog
 execute as @a[scores={tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere

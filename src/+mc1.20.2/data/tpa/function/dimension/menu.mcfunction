@@ -9,11 +9,11 @@ scoreboard players operation #target_lang tpa.variables = #language tpa.config
 function tpa:load_lang
 
 # Title
-tellraw @s [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.option_dimension_menu_title"}]
+tellraw @s [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.option_dimension_menu_title"}]
 
 # Load the dimension data
 data modify storage tpa:tpa temp.option.dimension set from storage tpa:tpa option.dimension
 scoreboard players set #i tpa.variables 0
 execute if data storage tpa:tpa temp.option.dimension[0] run function tpa:dimension/show_each
 
-tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_add", "hoverEvent":{"action":"show_text","value":{"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_add_hoverevent"}},"clickEvent":{"action":"suggest_command", "value":"/data modify storage tpa:tpa option.dimension append value {namespaceid: \"mynamespace:my_dimension\", name: \"Dimension Name\", color: \"#FF0000\", id: }"}}]
+tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_add", hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_add_hoverevent"}},click_event:{action:"suggest_command",command:"/data modify storage tpa:tpa option.dimension append value {namespaceid: \"mynamespace:my_dimension\", name: \"Dimension Name\", color: \"#FF0000\", id: }"}}]

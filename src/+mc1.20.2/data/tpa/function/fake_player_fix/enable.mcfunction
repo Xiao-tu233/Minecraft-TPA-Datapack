@@ -12,4 +12,4 @@ execute if score #is_carpet_installed tpa.variables matches 1 run \
     scoreboard players set #carpet_fake_player_fix tpa.config 0
     scoreboard players operation #target_lang tpa.variables = #language tpa.config
     function tpa:load_lang
-    tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.option_carpet_disabled"}]
+    tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_carpet_disabled"}]

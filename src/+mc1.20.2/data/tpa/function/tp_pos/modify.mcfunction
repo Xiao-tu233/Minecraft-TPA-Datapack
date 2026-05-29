@@ -33,7 +33,9 @@ execute if score #is_x_inputted tpa.variables matches 1 store result storage tpa
 execute if score #is_y_inputted tpa.variables matches 1 store result storage tpa:tpa temp.tp_pos.menu_y int 1 run scoreboard players get @s tpa.pos.y_temp
 execute if score #is_z_inputted tpa.variables matches 1 store result storage tpa:tpa temp.tp_pos.menu_z int 1 run scoreboard players get @s tpa.pos.z_temp
 
+function tpa:tp_pos/dialog
+
 function tpa:sounds/pick_orb
-tellraw @s [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_title"}]
-tellraw @s ["  ", {"color": "aqua", "storage": "tpa:tpa", "nbt": "temp.tp_pos.menu_x", "clickEvent": {"action": "suggest_command", "value": "/trigger tpa.pos.x set "}}, " ", {"color": "aqua", "storage": "tpa:tpa", "nbt": "temp.tp_pos.menu_y", "clickEvent": {"action": "suggest_command", "value": "/trigger tpa.pos.y set "}}, " ", {"color": "aqua", "storage": "tpa:tpa", "nbt": "temp.tp_pos.menu_z", "clickEvent": {"action": "suggest_command", "value": "/trigger tpa.pos.z set "}}]
-tellraw @s ["  ", {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_button_teleport", "color": "green", "clickEvent": {"action": "run_command", "value": "/trigger tpa.pos set -2"}}, " ", {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_button_abort", "color": "red", "clickEvent": {"action": "run_command", "value": "/trigger tpa.pos set -1"}}]
+tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tp_pos_title"}]
+tellraw @s ["  ", {color: "aqua", storage: "tpa:tpa", nbt: "temp.tp_pos.menu_x", click_event:{action:"suggest_command",command: "/trigger tpa.pos.x set "}}, " ", {color: "aqua", storage: "tpa:tpa", nbt: "temp.tp_pos.menu_y", click_event:{action:"suggest_command",command: "/trigger tpa.pos.y set "}}, " ", {color: "aqua", storage: "tpa:tpa", nbt: "temp.tp_pos.menu_z", click_event:{action:"suggest_command",command: "/trigger tpa.pos.z set "}}]
+tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tp_pos_button_teleport", color: "green", click_event:{action:"run_command",command: "/trigger tpa.pos set -2"}}, " ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tp_pos_button_abort", color: "red", click_event:{action:"run_command",command: "/trigger tpa.pos set -1"}}]

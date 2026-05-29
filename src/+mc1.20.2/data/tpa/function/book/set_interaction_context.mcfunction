@@ -11,7 +11,7 @@ data modify storage tpa:tpa temp.book.interaction_context.eyes_y set from entity
 kill @n[nbt={Item:{components:{"minecraft:custom_data":{isInterationEyesAnchor: 1b}}}}]
 
 # Store context 
-execute store result storage tpa:tpa temp.book.interaction_context.reachable_distance int 1 run attribute @s player.block_interaction_range get
+execute store result storage tpa:tpa temp.book.interaction_context.reachable_distance int 1 run attribute @s minecraft:block_interaction_range get
 data modify storage tpa:tpa temp.book.interaction_context.x set from entity @s Pos[0]
 data modify storage tpa:tpa temp.book.interaction_context.y set from entity @s Pos[1]
 data modify storage tpa:tpa temp.book.interaction_context.z set from entity @s Pos[2]

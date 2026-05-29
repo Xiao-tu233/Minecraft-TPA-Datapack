@@ -5,119 +5,119 @@ execute store result score #current_dimension tpa.variables run data get storage
 
 $execute unless score #current_dimension tpa.variables matches -1..1 run tellraw @s ["  ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "temp.option.dimension[0].name", \
-        "color": "$(color)", \
-        "hoverEvent": {\
-            "action": "show_text", \
-            "value": {\
-                "storage": "tpa:tpa", \
-                "nbt": "temp.option.dimension[0].namespaceid" \
+        storage: "tpa:tpa", \
+        nbt: "temp.option.dimension[0].name", \
+        color: "$(color)", \
+        hover_event: {\
+            action: "show_text", \
+            value: {\
+                storage: "tpa:tpa", \
+                nbt: "temp.option.dimension[0].namespaceid" \
             } \
         } \
     }, "(", \
-    {"storage": "tpa:tpa", "nbt": "temp.option.dimension[0].id", "color": "$(color)"}, ") ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dimension[0].id", color: "$(color)"}, ") ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_id", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_id_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_id {index: $(index), id: }" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_id", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_id_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_id {index: $(index), id: }" \
         } \
     }, " ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_name", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_name_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_name {index: $(index), name: \"\"}" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_name", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_name_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_name {index: $(index), name: \"\"}" \
         } \
     }, " ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_color", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_color_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_color {index: $(index), color: \"\"}" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_color", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_color_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_color {index: $(index), color: \"\"}" \
         } \
     }, " ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_namespaceid", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_namespaceid_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_namespaceid {index: $(index), namespaceid: \"\"}" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_namespaceid", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_namespaceid_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_namespaceid {index: $(index), namespaceid: \"\"}" \
         } \
     }, " ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_remove", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_remove_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "run_command", \
-            "value": "/function tpa:dimension/remove {index: $(index)}" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_remove", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_remove_hoverevent"}}, \
+        click_event: {\
+            action: "run_command", \
+            command: "/function tpa:dimension/remove {index: $(index)}" \
         } \
     } \
 ]
 
 $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s ["  ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "temp.option.dimension[0].name", \
-        "color": "$(color)", \
-        "hoverEvent": {\
-            "action": "show_text", \
-            "value": {\
-                "storage": "tpa:tpa", \
-                "nbt": "temp.option.dimension[0].namespaceid" \
+        storage: "tpa:tpa", \
+        nbt: "temp.option.dimension[0].name", \
+        color: "$(color)", \
+        hover_event: {\
+            action: "show_text", \
+            value: {\
+                storage: "tpa:tpa", \
+                nbt: "temp.option.dimension[0].namespaceid" \
             } \
         } \
     }, "(", \
-    {"storage": "tpa:tpa", "nbt": "temp.option.dimension[0].id", "color": "$(color)"}, ") ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dimension[0].id", color: "$(color)"}, ") ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_id", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_id_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_id {index: $(index), id: }" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_id", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_id_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_id {index: $(index), id: }" \
         } \
     }, " ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_name", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_name_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_name {index: $(index), name: \"\"}" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_name", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_name_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_name {index: $(index), name: \"\"}" \
         } \
     }, " ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_color", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_color_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_color {index: $(index), color: \"\"}" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_color", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_color_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_color {index: $(index), color: \"\"}" \
         } \
     }, " ", \
     {\
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_edit_namespaceid", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_edit_namespaceid_hoverevent"}}, \
-        "clickEvent": {\
-            "action": "suggest_command", \
-            "value": "/function tpa:dimension/edit_namespaceid {index: $(index), namespaceid: \"\"}" \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_edit_namespaceid", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_namespaceid_hoverevent"}}, \
+        click_event: {\
+            action: "suggest_command", \
+            command: "/function tpa:dimension/edit_namespaceid {index: $(index), namespaceid: \"\"}" \
         } \
     }, " ", \
     {\
-        "color": "gray", \
-        "storage": "tpa:tpa", \
-        "nbt": "loaded_lang.option_dimension_button_remove", \
-        "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.option_dimension_button_remove_notavail_hoverevent"}} \
+        color: "gray", \
+        storage: "tpa:tpa", \
+        nbt: "loaded_lang.option_dimension_button_remove", \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_remove_notavail_hoverevent"}} \
     } \
 ]

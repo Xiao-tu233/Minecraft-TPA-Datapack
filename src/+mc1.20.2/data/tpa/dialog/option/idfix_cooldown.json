@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "",
+    "inputs": [
+        {
+            "label": "idfix_cooldown",
+            "type": "minecraft:text",
+            "key": "idfix_cooldown"
+        }
+    ],
+    "actions": [
+        {
+            "label": {"translate": "gui.done"},
+            "action": {
+                "type": "dynamic/run_command",
+                "template": "scoreboard players set #idfix_cooldown tpa.config $(idfix_cooldown)"
+            }
+        }
+    ]
+}

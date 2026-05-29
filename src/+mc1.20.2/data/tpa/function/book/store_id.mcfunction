@@ -1,7 +1,7 @@
 # Parent Function: tpa:each_line
-# @macro: {id: int, key: int, name: str}
-$data merge storage tpa:tpa {book:{each_page:{id_$(key):'{"text":"$(name)","clickEvent":{"action":"run_command","value":"/trigger tpa.tpa set $(id)"},"hoverEvent":{"action":"show_text","value":"§b点击向玩家$(name)发送传送请求"}}'}}}
-$data modify entity @n[type=minecraft:text_display,tag=tpa.text_display] text set value '{"storage":"tpa:tpa","nbt":"book.each_page.id_$(key)"}'
-$data modify storage tpa:tpa book.each_page.id_$(key) set from entity @n[type=minecraft:text_display,tag=tpa.text_display] text
-$data modify storage tpa:tpa book.each_page.id_$(key) set string storage tpa:tpa book.each_page.id_$(key) 1 -1
-scoreboard players add #j tpa.variables 1
+# @macro: {id: int}
+
+$data modify storage tpa:tpa temp.book.lines append value {text:'', click_event: {action: 'run_command', command: '/trigger tpa.tpa set $(id)'}, hover_event: {action:'show_text', value: [{interpret: true, storage: 'tpa:tpa', nbt: 'loaded_lang.tpa_menu_hoverevent_left_part'}, {text: ''}, {interpret: true, storage: 'tpa:tpa', nbt: 'loaded_lang.tpa_menu_hoverevent_right_part'}]}}
+data modify storage tpa:tpa temp.book.lines[-1].text set from storage tpa:tpa temp.name
+data modify storage tpa:tpa temp.book.lines[-1].hover_event.value[1] set from storage tpa:tpa temp.name
+scoreboard players add #lines tpa.variables 1

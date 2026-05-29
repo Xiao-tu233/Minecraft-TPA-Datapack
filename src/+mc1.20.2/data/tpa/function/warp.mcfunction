@@ -14,17 +14,17 @@ data remove storage tpa:tpa temp.args
 execute if score #warp tpa.variables matches ..-1 run function tpa:warp/menu
 execute if score #warp tpa.variables matches ..-1 run return 0
 
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow executing: §a#warp: ",{"score": {"name": "#warp","objective": "tpa.variables"}}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow executing: §a#warp: ",{score: {name: "#warp",objective: "tpa.variables"}}]
 
 # Check if warp is in range
 execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 run function tpa:sounds/no
 execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 \
-    run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_out_of_range"}, ". " \
+    run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_out_of_range"}, ". " \
     ]
 execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 \
     run title @s[predicate=tpa:output/show_actionbar] actionbar [ \
-        {"storage":"tpa:tpa", "nbt":"loaded_lang.warp_out_of_range", "color": "red"} \
+        {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_out_of_range", color: "red"} \
     ]
 execute if score #warp tpa.variables > #warp tpa.config unless score #warp tpa.config matches ..-1 run return 0
 

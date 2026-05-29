@@ -16,12 +16,12 @@
 # 3. If Still not found, abandon Rotations and check every blocks the previous context without directions provided
 
 function tpa:sounds/no
-tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.book_check_missing"}, ". "]
-title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.book_check_missing", "color":"red"}]
+tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.book_check_missing"}, ". "]
+title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.book_check_missing", color:"red"}]
 function tpa:book
 
 # Item Frame or Glow Item Frame
-execute if score #debug_mode tpa.config matches 1 as @e[type=!item, nbt={Item:{components:{"minecraft:custom_data":{isTpaBook: 1b}}}}] run tellraw @a ["[§bTPA§r] §6 Debug§r: Missing Book Discovered: Item Frame / Glow Item Frame @ ", {"entity": "@s", "nbt": "Pos[]", "separator": ","}]
+execute if score #debug_mode tpa.config matches 1 as @e[type=!item, nbt={Item:{components:{"minecraft:custom_data":{isTpaBook: 1b}}}}] run tellraw @a ["[§bTPA§r] §6 Debug§r: Missing Book Discovered: Item Frame / Glow Item Frame @ ", {interpret: true, entity: "@s", nbt: "Pos[]", "separator": ","}]
 execute as @e[type=!item, nbt={Item:{components:{"minecraft:custom_data":{isTpaBook: 1b}}}}] run data remove entity @s Item
 
 # Ender Chest

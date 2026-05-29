@@ -1,7 +1,7 @@
 scoreboard players operation #target_lang tpa.variables = #language tpa.config
 function tpa:load_lang
-tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.uninstall_start"}, ". "]
-tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.uninstall_rmv_objs"}]
+tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_start"}, ". "]
+tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_rmv_objs"}]
 #remove all objectives
 scoreboard objectives remove tpa
 scoreboard objectives remove back
@@ -54,6 +54,7 @@ scoreboard objectives remove tpa.warp
 scoreboard objectives remove tpa.available
 scoreboard objectives remove tpa.output_
 scoreboard objectives remove tpa.dialog
+
 # scoreboard objectives remove tpa.yaw
 # scoreboard objectives remove tpa.pitch
 # scoreboard objectives remove tpa.yaw.origin
@@ -62,9 +63,9 @@ scoreboard objectives remove tpa.dialog
 # scoreboard objectives remove tpa.second_extreme
 # scoreboard objectives remove tpa.hg.interval_timer
 # scoreboard objectives remove tpa.hg.sequence_timer
-tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.uninstall_rmv_done_1"}]
+tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_rmv_done_1"}]
 
-tellraw @a [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, {"storage": "tpa:tpa", "nbt": "loaded_lang.uninstall_rmv_tags"}]
+tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_rmv_tags"}]
 tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
@@ -90,9 +91,9 @@ data remove storage tpa:tpa loaded_lang
 data remove storage tpa:tpa version
 data remove storage tpa:tpa game_version
 data remove storage tpa:tpa version_range
-tellraw @a [{"entity": "@n[tag=tpa.uninstall.datapack_last_words]", "nbt": "Item.components.\"minecraft:custom_data\".header"}, {"entity": "@n[tag=tpa.uninstall.datapack_last_words]", "nbt": "Item.components.\"minecraft:custom_data\".rmv_done_2"}]
+tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".rmv_done_2"}]
 function tpa:update_disable
-tellraw @a [{"entity": "@n[tag=tpa.uninstall.datapack_last_words]", "nbt": "Item.components.\"minecraft:custom_data\".header"}, {"entity": "@n[tag=tpa.uninstall.datapack_last_words]", "nbt": "Item.components.\"minecraft:custom_data\".done_leftpart"}, {"text":"§n/datapack enable \"file/TPA_datapack-2.0.6+mc1.20.2.zip\"","clickEvent": {"action": "run_command","value": "/datapack enable \"file/TPA_datapack-2.0.6+mc1.20.2.zip\""},"hoverEvent": {"action": "show_text","value": {"entity": "@n[tag=tpa.uninstall.datapack_last_words]", "nbt": "Item.components.\"minecraft:custom_data\".done_hoverevent"}}}, {"entity": "@n[tag=tpa.uninstall.datapack_last_words]", "nbt": "Item.components.\"minecraft:custom_data\".done_rightpart"}, "."]
+tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done_leftpart"}, {text:"§n/datapack enable \"file/TPA_datapack-2.0.6+mc1.20.2.zip\"",click_event: {action: "run_command", command: "/datapack enable \"file/TPA_datapack-2.0.6+mc1.20.2.zip\""},hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done_hoverevent"}}}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done_rightpart"}, "."]
 
 # Kill the visual entity
 kill @e[tag=tpa.uninstall.datapack_last_words]

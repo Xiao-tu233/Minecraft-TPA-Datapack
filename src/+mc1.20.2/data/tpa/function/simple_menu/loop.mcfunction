@@ -1,4 +1,4 @@
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow #i:",{"score":{"name":"#i","objective":"tpa.variables"}}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow #i:",{score:{name:"#i",objective:"tpa.variables"}}]
 
 # Count players with that id (0 or 1 in fact)
 scoreboard players set #j tpa.variables 0

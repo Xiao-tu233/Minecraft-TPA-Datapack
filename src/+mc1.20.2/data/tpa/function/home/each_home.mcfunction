@@ -19,7 +19,7 @@ execute if score #is_exist tpa.variables matches 1 run scoreboard players add #h
 # i++
 scoreboard players add #i tpa.variables 1
 
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow executing: §a#home_displayed: ",{"score": {"name": "#home_displayed","objective": "tpa.variables"}}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow executing: §a#home_displayed: ",{score: {name: "#home_displayed",objective: "tpa.variables"}}]
 
 # return if homes finished displaying
 execute unless score #home tpa.config matches ..-1 if score #i tpa.variables > #home tpa.config run scoreboard players set #if_show_new tpa.variables 0

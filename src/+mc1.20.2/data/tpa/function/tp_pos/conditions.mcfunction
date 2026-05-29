@@ -41,14 +41,14 @@ execute if score @s tpa.pos matches 2.. unless score @s tpa.pos.z = @s tpa.pos.z
 # Outputs
 execute if score #condition tpa.variables matches 1..3 run function tpa:sounds/no
 execute if score #condition tpa.variables matches 5 run function tpa:sounds/click
-execute if score #condition tpa.variables matches 1 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_spec"}, ". "]
-execute if score #condition tpa.variables matches 1 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_spec", "color":"red"}]
-execute if score #condition tpa.variables matches 2 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_disabled"}, ". "]
-execute if score #condition tpa.variables matches 2 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_disabled", "color":"red"}]
-execute if score #condition tpa.variables matches 3 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_cooldown"}, ". "]
-execute if score #condition tpa.variables matches 3 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_cooldown", "color":"red"}]
-execute if score #condition tpa.variables matches 5 run tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, {"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_abort"}, " ", {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_recall", "clickEvent": {"action": "run_command", "value": "/trigger tpa.pos"}, "hoverEvent": {"action": "show_text", "value": {"storage": "tpa:tpa", "nbt": "loaded_lang.tp_pos_recall_hoverevent"}}}]
-execute if score #condition tpa.variables matches 5 run title @s[predicate=tpa:output/show_actionbar] actionbar [{"storage":"tpa:tpa", "nbt":"loaded_lang.tp_pos_abort", "color": "red"}]
+execute if score #condition tpa.variables matches 1 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_spec"}, ". "]
+execute if score #condition tpa.variables matches 1 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_spec", color:"red"}]
+execute if score #condition tpa.variables matches 2 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_disabled"}, ". "]
+execute if score #condition tpa.variables matches 2 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_disabled", color:"red"}]
+execute if score #condition tpa.variables matches 3 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_cooldown"}, ". "]
+execute if score #condition tpa.variables matches 3 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_cooldown", color:"red"}]
+execute if score #condition tpa.variables matches 5 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_abort"}, " ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tp_pos_recall", click_event:{action:"run_command",command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tp_pos_recall_hoverevent"}}}]
+execute if score #condition tpa.variables matches 5 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_abort", color: "red"}]
 
 execute if score #condition tpa.variables matches 10 run function tpa:tp_pos/main
 execute if score #condition tpa.variables matches 6 run function tpa:tp_pos/detect

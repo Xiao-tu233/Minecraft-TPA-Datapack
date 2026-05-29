@@ -1,0 +1,1 @@
+$data modify storage tpa:tpa book.interaction_contexts.$(name) set from storage tpa:tpa temp.book.interaction_context

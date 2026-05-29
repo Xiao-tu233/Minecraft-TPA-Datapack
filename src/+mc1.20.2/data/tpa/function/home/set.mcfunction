@@ -21,25 +21,25 @@ data modify storage tpa:tpa temp.home set from storage tpa:tpa temp.home_
 data remove storage tpa:tpa temp.home_
 
 function tpa:sounds/pick_orb
-tellraw @s[predicate=tpa:output/show_chatbar] [{"storage":"tpa:tpa", "nbt":"loaded_lang.header"}, \ 
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_left_part"}, \ 
-    {"storage":"tpa:tpa", "nbt":"temp.home.id"}, \ 
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_middle_part"}, \
-    {"storage":"tpa:tpa", "nbt":"temp.home.dimension"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_position"}, \
-    {"storage":"tpa:tpa", "nbt":"temp.home.x"}, " ", \ 
-    {"storage":"tpa:tpa", "nbt":"temp.home.y"}, " ", \ 
-    {"storage":"tpa:tpa", "nbt":"temp.home.z"}, " ", \ 
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_right_part"}, "." \
+tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_left_part"}, \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.id"}, \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_middle_part"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.dimension"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_position"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.x"}, " ", \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.y"}, " ", \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.z"}, " ", \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_right_part"}, "." \
 ]
 title @s[predicate=tpa:output/show_actionbar] actionbar [ \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_left_part"}, \ 
-    {"storage":"tpa:tpa", "nbt":"temp.home.id"}, \ 
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_middle_part"}, \
-    {"storage":"tpa:tpa", "nbt":"temp.home.dimension"}, \
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_position"}, \
-    {"storage":"tpa:tpa", "nbt":"temp.home.x"}, " ", \ 
-    {"storage":"tpa:tpa", "nbt":"temp.home.y"}, " ", \ 
-    {"storage":"tpa:tpa", "nbt":"temp.home.z"}, " ", \ 
-    {"storage":"tpa:tpa", "nbt":"loaded_lang.home_set_right_part"}\
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_left_part"}, \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.id"}, \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_middle_part"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.dimension"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_position"}, \
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.x"}, " ", \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.y"}, " ", \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"temp.home.z"}, " ", \ 
+    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_set_right_part"}\
 ]
