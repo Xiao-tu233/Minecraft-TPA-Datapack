@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "",
+    "inputs": [
+        {
+            "label": "home",
+            "type": "minecraft:text",
+            "key": "home"
+        }
+    ],
+    "actions": [
+        {
+            "label": {"translate": "gui.done"},
+            "action": {
+                "type": "dynamic/run_command",
+                "template": "scoreboard players set #home tpa.config $(home)"
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+# TPA Datapack Documents
+
+> Here's an apologize that the doc in current language is still in progress. However, you can view the Chinese one with a translator app if need. Sorry for the inconvenience I caused for you. Welcome for community translation providing!
+
+Chinese link:  [文档](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/docs/zh-cn/index.md)
+
+# Introduction
+TPA数据包是一个Minecraft数据包，允许玩家在没有OP权限的情况下相互传送. 与其他具有这些功能的mods/插件相比，这个数据包支持许多不同的语言，并且可以轻松地调整设置，几乎所有功能都可以禁用. 我们也愿意听取用户提供的每一条建议，希望您喜欢这个数据包。
+
+# 阅读注意事项
+每个页面前都会标注其支持的版本 请注意区别
+
+文中所有的服务端设置均通过/function tpa:options 指令更改 所以这些更改需要OP权限
+
+更改时 点击按钮不会出现问题提示 这是正常现象 是否更改成功要看应用时功能是否生效/失效
+
+有些更改是通过填入具体数值 点击设置后 请在提示的命令结尾处补上需要填写的数值 并回车来更改
+
+文中所有内容均以最新版本为准 请及时更新最新版
+
+# 目录
+
+## 1. 下载安装卸载
+- [1.1 下载](../zh-cn/1.%20下载安装卸载/1.1%20下载.md)
+- [1.2 安装](../zh-cn/1.%20下载安装卸载/1.2%20安装.md)
+- [1.3 使用除错](../zh-cn/1.%20下载安装卸载/1.3%20使用除错.md)
+- [1.4 卸载](../zh-cn/1.%20下载安装卸载/1.4%20卸载.md) 
+- [1.5 更新](../zh-cn/1.%20下载安装卸载/1.5%20更新.md)
+- [1.6 1.13-和基岩版的命令方块方案](../zh-cn/1.%20下载安装卸载/1.6%201.13-和基岩版的命令方块方案.md)

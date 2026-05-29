@@ -1,0 +1,15 @@
+{
+    "condition": "entity_properties",
+    "entity": "this",
+    "predicate": {
+        "type": [
+            "minecraft:chest_minecart",
+            "minecraft:hopper_minecart",
+            "minecraft:chest_boat",
+            "minecraft:mule",
+            "minecraft:donkey",
+            "minecraft:llama",
+            "minecraft:trader_llama"
+        ]
+    }
+}

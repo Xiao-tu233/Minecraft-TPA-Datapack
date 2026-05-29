@@ -1,26 +1,109 @@
 # Minecraft-TPA-Datapack
---------
-[![Minecraft Website](https://img.shields.io/badge/Minecraft-green)](https://www.minecraft.net/)
-[![License](https://img.shields.io/github/license/MCDReforged/MCDReforged.svg)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/edit/main/LICENSE)
+---
 
+<div align="center">
+  <a href="https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/stargazers"><img src="https://img.shields.io/github/stars/Xiao-tu233/Minecraft-TPA-Datapack?colorA=363a4f&colorB=b7bdf8&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KPHBhdGggZD0iTTIzNS4yNCw4NC4zOGwtMjguMDYsMjMuNjgsOC41NiwzNS4zOWExMy4zNCwxMy4zNCwwLDAsMS01LjA5LDEzLjkxLDEzLjU0LDEzLjU0LDAsMCwxLTE1LC42OUwxNjQsMTM5bC0zMS42NSwxOS4wNmExMy41MSwxMy41MSwwLDAsMS0xNS0uNjksMTMuMzIsMTMuMzIsMCwwLDEtNS4xLTEzLjkxbDguNTYtMzUuMzlMOTIuNzYsODQuMzhhMTMuMzksMTMuMzksMCwwLDEsNy42Ni0yMy41OGwzNi45NC0yLjkyLDE0LjIxLTMzLjY2YTEzLjUxLDEzLjUxLDAsMCwxLDI0Ljg2LDBsMTQuMjEsMzMuNjYsMzYuOTQsMi45MmExMy4zOSwxMy4zOSwwLDAsMSw3LjY2LDIzLjU4Wk04OC4xMSwxMTEuODlhOCw4LDAsMCwwLTExLjMyLDBMMTguMzQsMTcwLjM0YTgsOCwwLDAsMCwxMS4zMiwxMS4zMmw1OC40NS01OC40NUE4LDgsMCwwLDAsODguMTEsMTExLjg5Wm0tLjUsNjEuMTlMMzQuMzQsMjI2LjM0YTgsOCwwLDAsMCwxMS4zMiwxMS4zMmw1My4yNi01My4yN2E4LDgsMCwwLDAtMTEuMzEtMTEuMzFabTczLTEtNTQuMjksNTQuMjhhOCw4LDAsMCwwLDExLjMyLDExLjMybDU0LjI4LTU0LjI4YTgsOCwwLDAsMC0xMS4zMS0xMS4zMloiIHN0eWxlPSJmaWxsOiAjQ0FEM0Y1OyIvPgo8L3N2Zz4="></a>
+  &nbsp;
+  <a href="https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/releases/latest"><img src="https://img.shields.io/github/v/release/Xiao-tu233/Minecraft-TPA-Datapack?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=github&logoColor=cad3f5"></a>
+  &nbsp;
+  <a href="https://www.minecraft.net/"><img src="https://img.shields.io/badge/Minecraft%20-1.13--26.1-green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KICA8IS0tIFRvcCBncmFzcyAtLT4KICA8cmVjdCB4PSIzMiIgeT0iMzIiIHdpZHRoPSIxOTIiIGhlaWdodD0iNjQiIHJ4PSI4IiBmaWxsPSIjN0NDODQzIi8+CiAgPCEtLSBEaXJ0IHNpZGUgLS0+CiAgPHJlY3QgeD0iMzIiIHk9Ijk2IiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjEyOCIgcng9IjgiIGZpbGw9IiM4QjVBNkEiLz4KICA8IS0tIFBpeGVsIGRldGFpbHMgLS0+CiAgPHJlY3QgeD0iNjQiIHk9IjExMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjNzA0MTI5Ii8+CiAgPHJlY3QgeD0iMTI4IiB5PSIxNDQiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iIzZCM0QyNSIvPgogIDxyZWN0IHg9IjE2MCIgeT0iMTEyIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9IiM3MDQxMjkiLz4KICA8IS0tIEdyYXNzIGVkZ2UgLS0+CiAgPHJlY3QgeD0iMzIiIHk9Ijk2IiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE2IiBmaWxsPSIjNkZCMTM1Ii8+Cjwvc3ZnPg=="></a>
+  &nbsp;
+  <a href="https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/tree/main?tab=GPL-3.0-1-ov-file#readme"><img src="https://img.shields.io/badge/LICENSE-GPL--3.0-green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KPHBhdGggZD0iTTY0IDMyYTI0IDI0IDAgMCAwLTI0IDI0djE0NGMwIDEzLjMgMTAuNyAyNCAyNCAyNGgxMjhjMTMuMyAwIDI0LTEwLjcgMjQtMjRWOTZjMC02LjQtMi41LTEyLjUtNy0xNy4wTDExNyAzMmgtNTN6bTAgMjRoNDZsNDYgNDZoLTQ2VjU2em0yNCAxMjhjLTYuNiAwLTEyLTUuNC0xMi0xMnM1LjQtMTIgMTItMTJoNDhjNi42IDAgMTIgNS40IDEyIDEyczUuNC0xMiAxMi0xMmg0OGM2LjYgMCAxMiA1LjQgMTIgMTJzLTUuNCAxMi0xMiAxMmgtNDhjLTYuNiAwLTEyLTUuNC0xMi0xMnMtNS40IDEyLTEyIDEySDg4em0zMiA0OGMtNi42IDAtMTItNS40LTEyLTEyczUuNC0xMiAxMi0xMmg0OGM2LjYgMCAxMiA1LjQgMTIgMTJzLTUuNCAxMi0xMiAxMmgtNDh6IiBmaWxsPSIjQ0FEM0Y1Ii8+Cjwvc3ZnPg=="></a>
+</div>
 
-**English** | [简体中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) | [繁體中文](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md)
+<p align="center">
+Optional Dependencies
+</p>
 
-This is a Minecraft Datapack which allowes players to teleport to each others without operator permission given and more features.
+<div align="center">
+  <a href="https://modrinth.com/mod/carpet"><img src="https://img.shields.io/badge/Carpet%20Mod-1.20.2---green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
+  &nbsp;
+  <a href="https://github.com/mcbookshelf/bookshelf"><img src="https://img.shields.io/badge/Book%20Shelf-1.20.2---green?colorA=363a4f&colorB=a6da95&style=for-the-badge&logo=nologo"></a>
+  &nbsp;
+</div>
+
+**English(United States)** · [简体中文(中国大陆)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhcn.md) · [正體中文(臺灣)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_zhtw.md) · [日本語(日本)](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/README_jp.md) · [More Languages](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/blob/main/languages.md) 
+
+TPA datapack is a Minecraft Datapack which allows non-OP players to teleport each others easily, multiple additional features like Back, Home, Warp, Languages for different regions, etc. are also provided.
 
 Join or follow our social media for more information or giving some ideas!
 
-[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) | [![YouTube]( https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) | [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://www.bilibili.com/space/433412367) | [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://www.bilibili.com/space/433412367) | ![QQ group](https://img.shields.io/badge/QQ-_%E7%BE%A4-white):814709389
+！[![Discord](https://img.shields.io/badge/Discord-blue)](https://discord.gg/QgkpxsFahw) · [![YouTube](https://img.shields.io/badge/YouTube-red)](https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg) · [![Bilibili](https://img.shields.io/badge/Bilibili-aqua)](https://www.bilibili.com/space/433412367) · [![Bilibili](https://img.shields.io/badge/Bilibili-_space-aqua)](https://space.bilibili.com/433412367)
 
 ## Advantage
 
-- It's running above the server. It doesn't need to modify the server at all which keep everything vanilla
-- Multi-platform / server compatibility. Supports vanilla, paper, bungeecord etc. on Linux / Windows
+- All options are editable using `/function tpa:options`. No more worries about bad experience caused by bad presets.
+- We use the simplest way to install: Datapacks. Datapacks are the easiest type of content to install into Minecraft.
+- We are also willing to actively ensure compatibility with any other datapacks/mods/plugins/resourcepacks. So even if you met some bugs which's probably not caused by TPA datapack, you can still report this to us with full contexts and show us how you can reproduce that.
+- We provide two versions for you to choose from: the Extra version and the Light version. The Extra version includes all features we’ve developed, while the Light version includes only the basic features to suit different needs.
 
-## How it works?
+## How it Works?
 
-With the help of built-in way of datapack since 1.13, we realized the feature by writing a datapack with function files in it.
+It works through the Vanilla Interface since Minecraft 1.13.
 
-## How to use?
+## How can I Choose which to Download?
 
-Go to [Tutorial of installing datapacks](https://zh.minecraft.wiki/w/Tutorial:%E5%AE%89%E8%A3%85%E6%95%B0%E6%8D%AE%E5%8C%85).
+Use the table below to determine which file suffix matches your Minecraft version:
+Mapping Between Minecraft Versions and Datapack Filename *Suffixes*
+
+| Game Versions | Extra | Light |
+| :-- | --: | --: |
+| 1.13 - 1.14.4 | +mc1.13 | light+mc1.13 |
+| 1.15 - 1.20.1 | +mc1.15 | light+mc1.13 |
+| 1.20.2 - 1.20.6 | +mc1.20.2 | light+mc1.13 |
+| 1.21 - 1.21.4 | +mc1.20.2 | light+mc1.21 |
+| 1.21.5 - | +mc1.20.2 | light+mc1.21.5 |
+
+Lastest version for Light: v2.0.6
+Lastest version for Extra: v2.0.6
+
+1. Check your current game version.
+2. Decide if you want to use the Extra version or the Light version, here's the difference:
+   the Light version only contains basic feature: teleports and menus.
+   the Extra version contains every features we've written like Back, Home, Warp and Languages. (Maybe more in the future)
+3. Go *Releases* page and download.
+
+e.g. 
+   If my Minecraft version is 1.20.1 and I want to use the Extra version, I'll choose the file named `TPA_datapack-v2.0.6+mc1.15.zip`.
+
+## How to Install?
+
+So here's basically the same as how you can install any other datapacks, if you have already learnt that before, just skip this paragraph.
+
+### In Cloud-hosted Servers
+1. Open the server console of your hosted server.
+2. Find and click a button labeled *File Manager*.
+3. The following steps are the same as installing In local Server.
+
+### In Local Server
+1. Find the server folder containing the server JAR file
+2. If there is a `world` folder, open the `./world/datapacks/` directory
+3. If there's not or it doesn't work after doing step 4, check `server.properties -> level-name` and find the correct level folder
+4. Put Datapack File into the `datapacks` folder.
+5. Enter the server and do `/reload`, and then do `/datapack list` to make sure datapack's been recognised.
+
+### In Singleplayer levels
+1. Quit the world.
+2. Go to the World Selection Menu and select the world.
+3. Click the left bottom button `Edit`
+4. Click the Button `Open World Folder`, if you do have the button, skip and go step 8
+5. Go back to the World Selection Menu and memorize the gray title below the level in-game title.
+6. Go Main Menu and then `Options... -> Resource Packs... -> Open Pack Folder...`
+7. And then switch to the parent folder (It should be `.minecraft` btw) , go `saves` folder, and then the gray text you've memorized. (The directory will be like: `../saves/(Your Level)/datapacks`)
+8. Go `datapacks` folder and then put Datapack File into the `datapacks` folder.
+9. Enter the level, do `/datapack list` to make sure datapack is recognised.
+
+### In the Level You're Creating
+1. Go `More -> Data Packs -> Open Pack Folder`.
+2. Put Datapack file inside.
+3. Create
+4. Do `/datapack list` to make sure datapack is recognised.
+
+## How to Use?
+Go documents for usage: [Docs](https://github.com/Xiao-tu233/Minecraft-TPA-Datapack/docs/en-us/index.md)
+
+## Ending
+
+Thank you for using the TPA Datapack!
+Latest version: v2.0.6 Extra version, v2.0.6 Light version 
+Last edit time: Apr 27th, 2026
