@@ -3,6 +3,7 @@
 $execute if score #warp_disabled tpa.variables matches 0 if score #i tpa.variables matches 2.. run tellraw @s [\
     "  ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", nbt: "temp.warp[0].name", color:"$(dim_color)", \
         hover_event: {action: "show_text", value: [\
             {interpret: true, storage: "tpa:tpa", nbt: "temp.warp[0].desc"}, " (", \
@@ -24,6 +25,7 @@ $execute if score #warp_disabled tpa.variables matches 0 if score #i tpa.variabl
 $execute if score #warp_disabled tpa.variables matches 1 if score #i tpa.variables matches 2.. run tellraw @s [\
     "  ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", nbt: "temp.warp[0].name", color:"gray", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_desc_disabled"}}\
     }, " ", \
@@ -41,6 +43,7 @@ $execute if score #warp_disabled tpa.variables matches 1 if score #i tpa.variabl
 $execute if score #warp_disabled tpa.variables matches 0 if score #i tpa.variables matches 1 run tellraw @s [\
     "  ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", nbt: "temp.warp[0].name", color:"$(dim_color)", \
         hover_event: {action: "show_text", value: [\
             {interpret: true, storage: "tpa:tpa", nbt: "temp.warp[0].desc"}, " (", \
@@ -62,6 +65,7 @@ $execute if score #warp_disabled tpa.variables matches 0 if score #i tpa.variabl
 $execute if score #warp_disabled tpa.variables matches 1 if score #i tpa.variables matches 1 run tellraw @s [\
     "  ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", nbt: "temp.warp[0].name", color:"gray", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_desc_disabled"}}\
     }, " ", \

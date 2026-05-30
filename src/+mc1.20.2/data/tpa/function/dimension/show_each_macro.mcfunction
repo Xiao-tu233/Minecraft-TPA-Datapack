@@ -5,19 +5,22 @@ execute store result score #current_dimension tpa.variables run data get storage
 
 $execute unless score #current_dimension tpa.variables matches -1..1 run tellraw @s ["  ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "temp.option.dimension[0].name", \
         color: "$(color)", \
         hover_event: {\
             action: "show_text", \
             value: {\
+                interpret: true, \
                 storage: "tpa:tpa", \
                 nbt: "temp.option.dimension[0].namespaceid" \
             } \
         } \
     }, "(", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dimension[0].id", color: "$(color)"}, ") ", \
+    {storage: "tpa:tpa", nbt: "temp.option.dimension[0].id", color: "$(color)"}, ") ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_id", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_id_hoverevent"}}, \
@@ -27,6 +30,7 @@ $execute unless score #current_dimension tpa.variables matches -1..1 run tellraw
         } \
     }, " ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_name", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_name_hoverevent"}}, \
@@ -36,6 +40,7 @@ $execute unless score #current_dimension tpa.variables matches -1..1 run tellraw
         } \
     }, " ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_color", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_color_hoverevent"}}, \
@@ -45,6 +50,7 @@ $execute unless score #current_dimension tpa.variables matches -1..1 run tellraw
         } \
     }, " ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_namespaceid", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_namespaceid_hoverevent"}}, \
@@ -54,6 +60,7 @@ $execute unless score #current_dimension tpa.variables matches -1..1 run tellraw
         } \
     }, " ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_remove", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_remove_hoverevent"}}, \
@@ -66,19 +73,22 @@ $execute unless score #current_dimension tpa.variables matches -1..1 run tellraw
 
 $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s ["  ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "temp.option.dimension[0].name", \
         color: "$(color)", \
         hover_event: {\
             action: "show_text", \
             value: {\
+                interpret: true, \
                 storage: "tpa:tpa", \
                 nbt: "temp.option.dimension[0].namespaceid" \
             } \
         } \
     }, "(", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dimension[0].id", color: "$(color)"}, ") ", \
+    {storage: "tpa:tpa", nbt: "temp.option.dimension[0].id", color: "$(color)"}, ") ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_id", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_id_hoverevent"}}, \
@@ -88,6 +98,7 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
         } \
     }, " ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_name", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_name_hoverevent"}}, \
@@ -97,6 +108,7 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
         } \
     }, " ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_color", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_color_hoverevent"}}, \
@@ -106,6 +118,7 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
         } \
     }, " ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_namespaceid", \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_namespaceid_hoverevent"}}, \
@@ -115,6 +128,7 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
         } \
     }, " ", \
     {\
+        interpret: true, \
         color: "gray", \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_remove", \

@@ -15,10 +15,11 @@ Project To-do lists:
 # v2.1 TO DO
 
 ## Critical Bugs　(“现在有什么坏掉了？”)
-- [ ] BUG ENCOUTNED: 1.20.10 get name gets nothing
+- [x] BUG ENCOUTNED: 1.20.10 get name gets nothing
 - [ ] 传送过程有可能会触发Caves & Cliffs成就
 - [ ] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分
-- [ ] 测试1.21.6+ 版本中 tpa:get_name 是不是因为text_display实体未生成而导致的获取失败
+- [x] Dialog 在远离出生点的地方不工作
+- [x] 测试1.21.6+ 版本中 tpa:get_name 是不是因为text_display实体未生成而导致的获取失败
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
@@ -54,7 +55,7 @@ Project To-do lists:
   Consider more flexible way for language extras: containing indexes checking when language is loaded
 - [ ] 语言的inde0x键应该在reload的时候被添加而不是语言的yml里
 - [ ] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
-- [ ] 考虑使用调试模组 Sniffer BV14TmrB1EhA
+- [x] 考虑使用调试模组 Sniffer BV14TmrB1EhA
 - [ ] 将主版本改为26.1
 - [ ] 增加更多脚本 在增加新功能的时候同步更改
 - [ ] 单独的update函数来更新命令存储(关于warp和home)
@@ -125,6 +126,8 @@ Project To-do lists:
    - 检测比如name, desc这些字符串的变化
    - 考虑直接应用更改 或者在更改后更改对应按钮的外观 或者直接将更改结果拟显示在目标槽位
    - 增加这些更改之后的提示就像选择槽位时一样
+- [ ] 精简 load 函数中的提示
+- [ ] 特别是日语 很多语序坏掉了
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [ ] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index

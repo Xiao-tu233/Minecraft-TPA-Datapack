@@ -1,6 +1,6 @@
 # Parent function: tpa:book/each_lines, tpa:book/store_interaction_context, tpa:first_join, tpa:here, tpa:home, tpa:dialog(1.12.6+)
 # @return: data storage tpa:tpa temp.name
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
+execute at @s run summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 tag @s add self
 data remove storage tpa:tpa temp.text
 data modify entity @n[type=minecraft:text_display,tag=tpa.text_display] text set value {selector:"@p[tag=self]"}

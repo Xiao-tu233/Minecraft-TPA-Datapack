@@ -2,7 +2,7 @@
 $tellraw @s[predicate=tpa:output/show_chatbar] [\
     "  ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_number", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_missing_hoverevent"}}}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.args.id"}, \
+    {storage: "tpa:tpa", nbt: "temp.args.id"}, \
     " ", \
     {\
         storage: "tpa:tpa", \

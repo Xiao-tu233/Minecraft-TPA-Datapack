@@ -24,7 +24,7 @@ execute unless data storage tpa:tpa temp.home run return 0
 
 data remove storage tpa:tpa temp.args.dialog
 data modify storage tpa:tpa temp.args.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "none", title: "$(title)", columns: 4, actions: []}
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
+execute at @s run summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.home_menu_title
 data modify storage tpa:tpa temp.args.dialog.title set from entity @n[type=text_display, tag=tpa.text_display] text
 

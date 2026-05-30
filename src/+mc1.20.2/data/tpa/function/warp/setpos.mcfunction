@@ -30,14 +30,15 @@ $data modify storage tpa:tpa temp.args.desc set from storage tpa:tpa warp[$(inde
 data modify storage tpa:tpa temp.args_ set from storage tpa:tpa temp.args
 function tpa:warp/option
 data modify storage tpa:tpa temp.args set from storage tpa:tpa temp.args_
+
 tellraw @s [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \ 
     {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_set_left_part"}, \ 
     {interpret: true, storage:"tpa:tpa", nbt:"temp.args.name"}, \ 
     {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_set_middle_part"}, \
     {interpret: true, storage:"tpa:tpa", nbt:"temp.args.dimension"}, \
     {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_set_position"}, \
-    {interpret: true, storage:"tpa:tpa", nbt:"temp.args.x"}, " ", \ 
-    {interpret: true, storage:"tpa:tpa", nbt:"temp.args.y"}, " ", \ 
-    {interpret: true, storage:"tpa:tpa", nbt:"temp.args.z"}, " ", \ 
+    {storage:"tpa:tpa", nbt:"temp.args.x"}, " ", \ 
+    {storage:"tpa:tpa", nbt:"temp.args.y"}, " ", \ 
+    {storage:"tpa:tpa", nbt:"temp.args.z"}, " ", \ 
     {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_set_right_part"}, "." \
 ]

@@ -4,13 +4,14 @@
 $tellraw @s[predicate=tpa:output/show_chatbar] [\
     "  ", \
     {\
+        interpret: true, \
         storage: "tpa:tpa", nbt: "loaded_lang.home_number", color:"$(dim_color)", \
         hover_event: {action: "show_text", value: [\
             {nbt: "temp.home.$(id).x", storage: "tpa:tpa",color:"$(dim_color)"}, " ", \
             {nbt: "temp.home.$(id).y", storage: "tpa:tpa",color:"$(dim_color)"}, " ", \
             {nbt: "temp.home.$(id).z", storage: "tpa:tpa",color:"$(dim_color)"}\
         ]}\
-    }, {interpret: true, storage: "tpa:tpa", nbt: "temp.args.id", color:"$(dim_color)"}, " ", \
+    }, {storage: "tpa:tpa", nbt: "temp.args.id", color:"$(dim_color)"}, " ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_tp_button", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_tp_button_hoverevent"}},click_event: {action: "run_command", command: "/trigger tpa.home set $(id)"}}, " ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_rm_button", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_rm_button_hoverevent"}},click_event: {action: "run_command", command: "/trigger tpa.removehome set $(id)"}}, " ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_set_button", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_set_button_hoverevent"}},click_event: {action: "run_command", command: "/trigger tpa.sethome set $(id)"}} \
