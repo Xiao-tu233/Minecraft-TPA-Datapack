@@ -561,23 +561,12 @@ data modify storage tpa:tpa temp.lang set value \
     lang_button_hoverevent: "§bClick to open language menu", \
     lang_menu_title: "Please select language below:", \
     lang_menu_select_button: "[§aLoad recommended commands§r]", \
-    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                        ", \
+    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                         ", \
     lang_disabled: "Language feature is disabled", \
     lang_selected_left_part: "You have switched language to ", \
     lang_selected_right_part: "", \
     lang_server_follow_left_part: "Since Datapack default language haven't been set, so it's set to ", \
     lang_server_follow_right_part: " now", \
-    load_title: "§eReloading...", \
-    load_add_objectives: "Adding 42 objectives... (1/6)", \
-    load_added_objectives: "Objectives have been added... (2/6)", \
-    load_reset_scores: "Resetting online player scores... (2/6)", \
-    load_did_reset_scores: "Online player scores have been reset... (3/6)", \
-    load_init_storage: "Initializing data storage... (3/6)", \
-    load_initted_storage: "Data storage has been initialized... (4/6)", \
-    load_remove_tags: "Removing tags... (4/6)", \
-    load_removed_tags: "Tags are removed... (5/6)", \
-    load_init_vars: "Initializing variables... (5/6)", \
-    load_initted_vars: "Variables have been initialized... (6/6)", \
     load_done: "§aData pack has been reloaded: ", \
     load_version_hoverevent: "§bIt's the version of TPA Datapack, Instead of Minecraft Version.", \
     load_welcome: "Welcome use TPA Datapack! ", \
@@ -727,8 +716,8 @@ data modify storage tpa:tpa temp.lang set value \
     tp_pos_throw_on_invalid_char: "The coordinates you entered contain invalid characters", \
     tpa_menu_hoverevent_left_part: "§bClick to send a teleport request to ", \
     tpa_menu_hoverevent_right_part: "", \
-    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                        ", \
-    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                        ", \
+    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                         ", \
+    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                         ", \
     tpa_menu_extend_hoverevent: "§bClick to expand menu", \
     tpa_menu_extend: "§bExpand§r", \
     tpa_menu_you: "You", \
@@ -788,7 +777,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "The following settings are advanced options. Do not modify unless you know what you are doing.", \
     option_advenced_tip: "Enable debug mode to access more advanced settings", \
     option_anchor_search_retries: "Anchor search retry count", \
-    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                          times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
+    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                           times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
     option_carpet_fake_player_fix_incompatible: "Carpet fake player fix is incompatible with this version", \
@@ -803,7 +792,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id: "[§aEdit Dimension ID§r]", \
     option_dimension_button_edit_id_hoverevent: "§bClick to edit the dimension ID (press Left Arrow, then enter after colon)", \
     option_dimension_button_edit_namespaceid: "[§aEdit Namespace ID§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bClick to edit namespace ID (namespace:                         id). Press Left Arrow twice and type inside quotes.", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bClick to edit namespace ID (namespace:                          id). Press Left Arrow twice and type inside quotes.", \
     option_dimension_button_edit_name: "[§aEdit Name§r]", \
     option_dimension_button_edit_name_hoverevent: "§bClick to edit display name. Vanilla dimensions follow language settings.", \
     option_dimension_button_remove: "[§cRemove§r]", \
@@ -840,7 +829,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_anchor_actionbar: "Anchor teleport progress: ", \
     teleport_binary_actionbar: "Binary search teleport progress: ", \
     teleport_cal_sim_dist_actionbar: "Simulation distance", \
-    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                          ", \
+    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                           ", \
     teleport_cal_sim_dist_start: "Simulation distance calculation started", \
     teleport_sim_dist_warn: "Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails, please contact admin to recalculate or manually set, or use binary teleport.", \
     teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
@@ -864,7 +853,7 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_deny_tpahere_left_part: "The requestor is denied from teleporting here.", \
     option_game_version: "The compatible game version for the datapack file", \
     option_max_anchor_summons_attempts: "Maximum summon attempts for teleportation anchor", \
-    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                 attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
+    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                  attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
     option_sim_dist: "Simulation distance", \
     option_sim_dist_button_cal: "[§aCalculate§r]", \
     option_sim_dist_hoverevent: "§bChange the §aSimulation distance §r(§6Unit: chunks§r)  Please make sure there are no players within the simulation distance from the origin in the overworld before clicking.", \
@@ -887,9 +876,9 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_cal_sim_dist_end_rightpart: "", \
     teleport_incompatible: "§aAnchor teleportation§r is not compatible with this game version", \
     teleport_sim_dist_disabled: "The server has not set the simulation distance", \
-    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                 This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
+    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                  This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
     tick_not_working_server_calling_comment: "§l§n§cThis is a comment because the tick_not_working_server_calling above needs to be displayed to the console. If written directly in Chinese, it will appear as garbled text. This uses Pinyin for representation.", \
-    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                ", \
+    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                 ", \
     tick_not_working_tips_line2: "        1. Use the /schedule command to call the Tick function.", \
     tick_not_working_tips_line3: "   Or 2. Place your command block in a hidden location to avoid being destroyed by Bedrock-breaking machines.", \
     tp_pos_button_abort: "[Abort]", \
@@ -991,7 +980,18 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set_position: "coordinates", \
     warp_set_right_part: "", \
     warp_set_default_name: "Unnamed Teleport Spot", \
-    warp_spec: "Spectator mode players are not allowed to teleport to §aPublic Teleport Spot§r" \
+    warp_spec: "Spectator mode players are not allowed to teleport to §aPublic Teleport Spot§r", \
+    load_add_objectives: "正在添加46个记分项... (1/6)", \
+    load_added_objectives: "已成功地添加记分项... (2/6)", \
+    load_did_reset_scores: "已成功重设在线玩家分数... (3/6)", \
+    load_init_storage: "正在初始化相关命令存储... (3/6)", \
+    load_init_vars: "正在初始化变量... (5/6)", \
+    load_initted_storage: "已成功初始化相关命令存储... (4/6)", \
+    load_initted_vars: "已成功初始化变量... (6/6)", \
+    load_remove_tags: "正在移除标签... (4/6)", \
+    load_removed_tags: "已成功移除标签... (5/6)", \
+    load_reset_scores: " 正在重设在线玩家分数... (2/6)", \
+    load_title: "§e重载中..." \
 }, \
   {\
     lang: "ja_jp", \
@@ -1153,7 +1153,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id: "[§aディメンションIDを編集§r]", \
     option_dimension_button_edit_id_hoverevent: "§bクリックしてディメンションIDを編集（クリック後、左矢印キーを押してコロンの後に入力しEnter）", \
     option_dimension_button_edit_namespaceid: "[§aネームスペースIDを編集§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションのネームスペースIDを編集(namespace:id, source location 例:                 minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションのネームスペースIDを編集(namespace:id, source location 例:                  minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
     option_dimension_button_edit_name: "[§a名前を編集§r]", \
     option_dimension_button_edit_name_hoverevent: "§bクリックしてディメンションの表示名を編集（クリック後、左矢印キーを2回押して引用符内に入力しEnter。原版ディメンションは言語設定に従います）", \
     option_dimension_button_remove: "[§c削除§r]", \
@@ -1193,8 +1193,8 @@ data modify storage tpa:tpa temp.lang set value \
     option_tp_pos_cooldown_hoverevent: "§b以下で§aクールダウン時間を変更§r(§6単位: 1ゲームティック = 1/20秒§r), §b0を入力するとクールダウン無し, §b-1を入力するとテレポート禁止", \
     option_tp_pos_hoverevent: "§b以下で§aテレポート座標許可範囲を変更§r(§6単位: メートル§r), §b0でテレポート禁止, §b-1で範囲無制限(非推奨)", \
     option_tp_spec: "観戦者のテレポートを許可", \
-    option_server_calling: "クライアントから呼び出してください。コンソールからではありません！", \
-    option_server_calling_comment: "§l§n§4これはコメントです。option_server_callingはコンソールで表示する必要があります。漢字を直接書くと文字化けするため、ここではピンインを使用しています。", \
+    option_server_calling: "kuraianto wo shiyou shi, konso-ru dewa naku settei wo henkou shite kudasai!", \
+    option_server_calling_comment: "§l§n§4これはコメントです：option_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     option_uses_binary_teleport: "二分法テレポートを使用するか", \
     option_uses_binary_teleport_hoverevent: "§b以下で§a二分法テレポートを使用(有効) §6または §cアンカー式テレポート(無効)", \
     option_uses_string_dimension: "文字列次元を認識するか", \
@@ -1333,8 +1333,8 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_sim_dist_warn_button_binary_hoverevent: "§bクリックしてテレポート方法を二分法に設定", \
     tick_not_working_button_set_schedule: "§b[設定]", \
     tick_not_working_button_set_schedule_hoverevent: "§bクリックして /schedule コマンドでTick関数を呼び出し", \
-    tick_not_working_server_calling: "クライアントではなくコンソールから命令ブロックを使用してください！", \
-    tick_not_working_server_calling_comment: "§l§n§c注釈: tick_not_working_server_calling はコンソールに表示する必要があります。漢字を直接書くと文字化けするため、ここではローマ字で表示しています", \
+    tick_not_working_server_calling: "kuraianto wo shiyou shi, konso-ru dewa naku komando burokku wo shutoku sshite kudasai!", \
+    tick_not_working_server_calling_comment: "§l§n§4これはコメントです：tick_not_working_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     tick_not_working_tips_line1: "現在 Tick不動関数を呼び出しています。そのため、Tick関数が動作しない状況に直面する可能性があります。次のどちらかの方法を実施してください:", \
     tick_not_working_tips_line2: "        1. /schedule コマンドで Tick関数を呼び出す", \
     tick_not_working_tips_line3: "   または 2. 命令ブロックを隠し場所に置いて、破壊防止", \
@@ -1412,7 +1412,7 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_tpaheremenu_button_hoverevent: "§bクリックしてここにテレポートメニューを開く", \
     tpa_menu_tpamenu_button: "[§bテレポートメニュー§r]", \
     tpa_menu_tpamenu_button_hoverevent: "§bクリックしてテレポートメニューを開く", \
-    tpa_menu_you: "あなた", \
+    tpa_menu_you: "自分", \
     tpahere_menu_title: "下はプレイヤーデータパックIDとゲーム内ユーザー名、IDをクリックして他のプレイヤー§lにあなた§rをテレポートリクエスト: {", \
     uninstall_start: "アンインストール中... (0/2)", \
     uninstall_rmv_objs: "すべてのスコア項目を削除中... (0/2)", \
@@ -1846,7 +1846,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_stricter_book_check_disabled: "此功能需要 Bookshelf 資料包作為依賴，但伺服器尚未安裝", \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
     option_dimension_button_edit_id_hoverevent: "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                        xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                         xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
     option_dimension_button_edit_name_hoverevent: "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車, 該項對於原版維度會跟隨語言設定而不是當前設定)", \
     option_dimension_button_remove_hoverevent: "§b點擊移除該維度", \
     option_dimension_hoverevent: "§b在下方設定按鈕開啟§a維度兼容§6菜單 §b同時右側的數字會是目前已兼容的維度數量", \

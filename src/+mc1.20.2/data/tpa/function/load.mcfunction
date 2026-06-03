@@ -5,13 +5,7 @@ scoreboard objectives add tpa.variables dummy
 scoreboard objectives add tpa.config dummy
 execute unless score #version tpa.config matches 206 run function tpa:initialize
 
-# Load language file
-scoreboard players operation #target_lang tpa.variables = #language tpa.config
-function tpa:load_lang
-
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_title"}]
-
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_add_objectives"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Adding 42 objectives... (1/6)"]
 scoreboard objectives add tpa trigger
 scoreboard objectives add back trigger
 scoreboard objectives add tpaccept trigger
@@ -72,8 +66,8 @@ scoreboard objectives add tpa.dialog trigger
 # scoreboard objectives add tpa.second_extreme dummy
 # scoreboard objectives add tpa.hg.interval_timer dummy
 # scoreboard objectives add tpa.hg.sequence_timer dummy
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_added_objectives"}]
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_reset_scores"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Objectives have been added. (1/6)"]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Resetting online player scores... (2/6)"]
 scoreboard players set #global_current tpa.player_id 2
 execute unless score #global_current tpa.uid = #global_current tpa.uid run scoreboard players set #global_current tpa.uid 2
 execute if score #compact_ids tpa.config matches 0 run scoreboard players set @a tpa.player_id 1
@@ -85,24 +79,24 @@ scoreboard players set @a tpa.if_death 0
 scoreboard players set @a tpa.pos 0
 scoreboard players set @a tpa.search_id.key 0
 scoreboard players set @a tpa.search_id.capslock 0
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_did_reset_scores"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Online player scores have been reset. (3/6)"]
 
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_init_storage"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing data storage... (3/6)"]
 data modify storage tpa:tpa back set value {}
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp
 
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_initted_storage"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Data storage has been initialized. (4/6)"]
 
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_remove_tags"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Removing tags... (4/6)"]
 tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
 kill @e[type=text_display, tag=tpa.license_displayer]
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_removed_tags"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Tags are removed. (5/6)"]
 
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_init_vars"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing variables... (5/6)"]
 # constants
 scoreboard players set #-1 tpa.variables -1
 scoreboard players set #2 tpa.variables 2
@@ -116,38 +110,51 @@ scoreboard players set #20 tpa.variables 20
 scoreboard players set #100 tpa.variables 100
 # Variables initializations
 scoreboard players set #commands_not_match tpa.variables 0
-scoreboard players set #debug_mode tpa.config 0
 execute if score #carpet_fake_player_fix tpa.config matches 0 run tag @a remove tpa.fake_player
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_initted_vars"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Variables initialized. (6/6)"]
+
+# Load language file
+scoreboard players operation #target_lang tpa.variables = #language tpa.config
+function tpa:load_lang
 
 tellraw @a [\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_done"}, {interpret: true, storage: "tpa:tpa", nbt: "option.version_range"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_done_extra"},\
     {interpret: true, storage: "tpa:tpa", nbt: "option.version", hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_version_hoverevent"}}}\
 ]
 
+tellraw @a [\
+    {text:"§9Discord",hover_event:{action:"show_text", "value":"https://discord.gg/QgkpxsFahw"},click_event:{action:"open_url", url:"https://discord.gg/QgkpxsFahw"}}," • ",\
+    {text:"§cYouTube",hover_event:{action:"show_text", "value":"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"},click_event:{action:"open_url", url:"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"}}," • ",\
+    {text:"§bBilibili",hover_event:{action:"show_text", "value":"https://space.bilibili.com/433412367"},click_event:{action:"open_url", url:"https://www.bilibili.com/space/433412367"}}," • ",\
+    {text:"§0Github",hover_event:{action:"show_text", "value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"},click_event:{action:"open_url", url:"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"}}\
+]
+
 # Show the publish date, with local format
-function tpa:load_date_format
+function tpa:load/date_format
 tellraw @a [\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check_left_part"}, \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dates[]", "separator": ""}, "(UTC+8)", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check_right_part"}\
 ]
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_welcome"}]
+
 tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_copyright_claim"}]
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_author"}]
-tellraw @a [\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, " ", \
-    {text:"§9Discord",hover_event:{action:"show_text", "value":"https://discord.gg/QgkpxsFahw"},click_event:{action:"open_url", url:"https://discord.gg/QgkpxsFahw"}}," • ",\
-    {text:"§cYouTube",hover_event:{action:"show_text", "value":"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"},click_event:{action:"open_url", url:"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"}}," • ",\
-    {text:"§bBilibili",hover_event:{action:"show_text", "value":"https://space.bilibili.com/433412367"},click_event:{action:"open_url", url:"https://www.bilibili.com/space/433412367"}}," • ",\
-    {text:"§rQQ群",hover_event:{action:"show_text", "value":"点击复制群号: 814709389"},click_event:{action:"copy_to_clipboard", value:"814709389"}}, " • ", \
-    {text:"§0Github",hover_event:{action:"show_text", "value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"},click_event:{action:"open_url", url:"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"}}\
+
+tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_welcome"}]
+
+execute if score #debug_mode tpa.config matches 1 run tellraw @a [\
+    "[§bTPA§r] §6 Debug§r: Debug Mode has been automatically disabled due to reload. Click here to re-enable it: ", \
+    {\
+        text: "§6[§rRe-enable§6]", \
+        hover_event: {action: "show_text", value: "§6Click to re-enable Debug Mode"}, \
+        click_event: {action: "run_command", command: "/scoreboard players set #debug_mode tpa.config 1"}} \
 ]
+scoreboard players set #debug_mode tpa.config 0
+
 tellraw @a [\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_options", color: "gold", click_event:{action:"run_command",command:"/function tpa:options"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_options_hoverevent"}}}," ",\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_help", color: "gold", click_event:{action:"run_command",command:"/function tpa:help"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_help_hoverevent"}}}," ",\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_update", color: "gold", click_event:{action:"run_command",command:"/function tpa:update"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_update_hoverevent"}}}," ",\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_license", color: "gold", click_event:{action:"run_command",command:"/function tpa:license"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_license_hoverevent"}}}]
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_license", color: "gold", click_event:{action:"run_command",command:"/function tpa:license"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_license_hoverevent"}}} \
+]
 
 execute unless score #language tpa.config matches 1.. run tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {text: "[§a设置 | Set§r]", click_event:{action:"run_command",command: "/function tpa:option_lang_menu"}}]
 function tpa:dimension/refresh

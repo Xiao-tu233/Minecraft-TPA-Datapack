@@ -7,14 +7,8 @@ function tpa:load_lang
 execute if score #frequency tpa.config matches 0 run scoreboard players set #frequency tpa.config 20
 
 # Server calling check
-summon item ~ ~ ~ {Item: {id: "stone", count: 1, components: {custom_data: {isOptionServerCallingItem: 1b}}}, PickupDelay: 32767s, Age: -32768s, Health: 0, NoGravity: true}
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
-data modify entity @n[tag=tpa.text_display] text set value '["[TPA] ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tick_not_working_server_calling"}]'
-data modify entity @n[nbt={Item: {components: {"minecraft:custom_data": {isOptionServerCallingItem: 1b}}}}] CustomName set from entity @n[tag=tpa.text_display] text 
-kill @e[tag=tpa.text_display]
-execute unless entity @s run say @n[nbt={Item: {components: {"minecraft:custom_data": {isOptionServerCallingItem: 1b}}}}]
-execute unless entity @s run say Please acquire Command block in client instead of server terminal.
-kill @e[nbt={Item: {components: {"minecraft:custom_data": {isOptionServerCallingItem: 1b}}}}]
+# Show warning messages if options is called by server terminal by showing visual item entity's name
+function tpa:console_calling_check/tick_not_working
 execute unless entity @s run return 0
 
 # Disable command block output to avoid spamming "Executing function tpa:tick"

@@ -5,14 +5,7 @@ scoreboard players operation #target_lang tpa.variables = #language tpa.config
 function tpa:load_lang
 
 # Show warning messages if options is called by server terminal by showing visual item entity's name
-summon item ~ ~ ~ {Item: {id: "stone", count: 1, components: {custom_data: {isOptionServerCallingItem: 1b}}}, PickupDelay: 32767s, Age: -32768s, Health: 0, NoGravity: true}
-summon minecraft:text_display ~ ~ ~ {alignment:"center", Tags: ["tpa.text_display"]}
-data modify entity @n[tag=tpa.text_display] text set value '["[TPA] ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_server_calling"}]'
-data modify entity @n[nbt={Item: {components: {"minecraft:custom_data": {isOptionServerCallingItem: 1b}}}}] CustomName set from entity @n[tag=tpa.text_display] text 
-kill @e[tag=tpa.text_display]
-execute unless entity @s run say @n[nbt={Item: {components: {"minecraft:custom_data": {isOptionServerCallingItem: 1b}}}}]
-execute unless entity @s run say Please modify configs in Client instead of Server terminal.
-kill @e[nbt={Item: {components: {"minecraft:custom_data": {isOptionServerCallingItem: 1b}}}}]
+function tpa:console_calling_check/options
 
 tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_title_line1"}]
 tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_title_line2"}]
