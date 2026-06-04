@@ -1,8 +1,9 @@
-scoreboard players operation #target_lang tpa.variables = #language tpa.config
-function tpa:load_lang
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_start"}, ". "]
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_rmv_objs"}]
-#remove all objectives
+# Show warning messages if options is called by server terminal by showing visual item entity's name
+function tpa:console_calling_check/uninstall
+execute unless entity @s run return 0
+
+
+# Remove all objectives
 scoreboard objectives remove tpa
 scoreboard objectives remove back
 scoreboard objectives remove tpaccept
@@ -54,7 +55,6 @@ scoreboard objectives remove tpa.warp
 scoreboard objectives remove tpa.available
 scoreboard objectives remove tpa.output_
 scoreboard objectives remove tpa.dialog
-
 # scoreboard objectives remove tpa.yaw
 # scoreboard objectives remove tpa.pitch
 # scoreboard objectives remove tpa.yaw.origin
@@ -63,9 +63,7 @@ scoreboard objectives remove tpa.dialog
 # scoreboard objectives remove tpa.second_extreme
 # scoreboard objectives remove tpa.hg.interval_timer
 # scoreboard objectives remove tpa.hg.sequence_timer
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_rmv_done_1"}]
 
-tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.uninstall_rmv_tags"}]
 tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
@@ -79,21 +77,24 @@ data remove storage tpa:tpa home
 data remove storage tpa:tpa warp
 data remove storage tpa:tpa option
 
-# Language system will no longer work, so store the last 2 words in visual entity
-summon item ~ ~ ~ {Item: {id: "stone", count: 1}, PickupDelay: 32767s, Age: -32768s, Health: 0, NoGravity: true, Tags: ["tpa.uninstall.datapack_last_words"]}
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".header set from storage tpa:tpa loaded_lang.header
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".rmv_done_2 set from storage tpa:tpa loaded_lang.uninstall_rmv_done_2
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_leftpart set from storage tpa:tpa loaded_lang.uninstall_done_leftpart
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_hoverevent set from storage tpa:tpa loaded_lang.uninstall_done_hoverevent
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_rightpart set from storage tpa:tpa loaded_lang.uninstall_done_rightpart
+scoreboard players operation #target_lang tpa.variables = #language tpa.config
+function tpa:load_lang
 
+# Language system will no longer work, so store the last 2 words in visual entity
+execute at @s run summon item ~ ~ ~ {Item: {id: "stone", count: 1}, PickupDelay: 32767s, Age: -32768s, Health: 0, NoGravity: true, Tags: ["tpa.uninstall.datapack_last_words"]}
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".header set from storage tpa:tpa loaded_lang.header
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".rmv_done_2 set from storage tpa:tpa loaded_lang.uninstall_done
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_leftpart set from storage tpa:tpa loaded_lang.uninstall_enable_folder_button
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_leftpart set from storage tpa:tpa loaded_lang.uninstall_enable_folder_button_hoverevent
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_hoverevent set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_hoverevent set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button_hoverevent
 data remove storage tpa:tpa loaded_lang
 data remove storage tpa:tpa version
 data remove storage tpa:tpa game_version
 data remove storage tpa:tpa version_range
-tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".rmv_done_2"}]
 function tpa:update_disable
-tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done_leftpart"}, {text:"§n/datapack enable \"file/TPA_datapack-2.0.6+mc1.20.2.zip\"",click_event: {action: "run_command", command: "/datapack enable \"file/TPA_datapack-2.0.6+mc1.20.2.zip\""},hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done_hoverevent"}}}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done_rightpart"}, "."]
+#<--!Script Version Inserting Locator-->
+tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done"}, {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_datapack-2.1+mc1.20.2\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button_hoverevent"}}}, {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_datapack-2.1+mc1.20.2.zip\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button_hoverevent"}}}]
 
 # Kill the visual entity
 kill @e[tag=tpa.uninstall.datapack_last_words]

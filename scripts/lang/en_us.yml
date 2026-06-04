@@ -66,7 +66,7 @@ lang_button_hoverevent:  "§bClick to open language menu"
 lang_menu_title:  "Please select language below:"
 lang_menu_select_button:  "[§aLoad recommended commands§r]"
 lang_menu_select_button_hoverevent:  "§bClick to load recommended commands in chat\
-  \ bar:                                          "
+  \ bar:                                               "
 lang_disabled:  "Language feature is disabled"
 lang_selected_left_part:  "You have switched language to "
 lang_selected_right_part:  ""
@@ -249,9 +249,9 @@ tp_pos_throw_on_invalid_char:  "The coordinates you entered contain invalid char
 tpa_menu_hoverevent_left_part:  "§bClick to send a teleport request to "
 tpa_menu_hoverevent_right_part:  ""
 tpa_menu_title:  "Player usernames and datapack IDs. Click an ID to send a teleport\
-  \ request:                                          "
+  \ request:                                               "
 tpahere_menu_title:  "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r\
-  \ request:                                          "
+  \ request:                                               "
 tpa_menu_extend_hoverevent:  "§bClick to expand menu"
 tpa_menu_extend:  "§bExpand§r"
 tpa_menu_you:  "You"
@@ -315,7 +315,7 @@ option_advenced_warn:  "The following settings are advanced options. Do not modi
 option_advenced_tip:  "Enable debug mode to access more advanced settings"
 option_anchor_search_retries:  "Anchor search retry count"
 option_anchor_search_retries_hoverevent:  "§bModify the number of anchor search retries\
-  \ below §r(§6Units:                            times §ror §6game ticks / frequency§r).\
+  \ below §r(§6Units:                                 times §ror §6game ticks / frequency§r).\
   \ §bToo high may increase wait time, too low may cause misdetection or data pollution."
 option_button_notworking:  "[§4Not Working§r]"
 option_button_notworking_hoverevent:  "§bClick when tick function does not work (TPA\
@@ -338,8 +338,8 @@ option_dimension_button_edit_id_hoverevent:  "§bClick to edit the dimension ID 
   \ Left Arrow, then enter after colon)"
 option_dimension_button_edit_namespaceid:  "[§aEdit Namespace ID§r]"
 option_dimension_button_edit_namespaceid_hoverevent:  "§bClick to edit namespace\
-  \ ID (namespace:                           id). Press Left Arrow twice and type inside\
-  \ quotes."
+  \ ID (namespace:                                id). Press Left Arrow twice and type\
+  \ inside quotes."
 option_dimension_button_edit_name:  "[§aEdit Name§r]"
 option_dimension_button_edit_name_hoverevent:  "§bClick to edit display name. Vanilla\
   \ dimensions follow language settings."
@@ -380,7 +380,7 @@ teleport_anchor_actionbar:  "Anchor teleport progress: "
 teleport_binary_actionbar:  "Binary search teleport progress: "
 teleport_cal_sim_dist_actionbar:  "Simulation distance"
 teleport_cal_sim_dist_end_leftpart:  "Simulation distance calculated successfully.\
-  \ Current datapack simulation distance is:                            "
+  \ Current datapack simulation distance is:                                 "
 teleport_cal_sim_dist_start:  "Simulation distance calculation started"
 teleport_sim_dist_warn:  "Server simulation distance is not set. Attempting to teleport\
   \ non-player targets. If teleport fails, please contact admin to recalculate or\
@@ -393,12 +393,21 @@ tick_not_working_button_set_schedule_hoverevent:  "§b点击设置/schedule指�
 tick_not_working_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2\
   \ lai2 huo4qu3 Ming4ling4fang1kuai4!"
 tp_pos_abort:  "You stopped entering teleport coordinates"
-uninstall_start:  "Uninstalling... (0/2)"
-uninstall_rmv_objs:  "移除所有记分项... (0/2)"
-uninstall_rmv_done_1:  "成功移除. (1/2)"
-uninstall_rmv_tags:  "正在移除所有标签... (1/2)"
-uninstall_rmv_done_2:  "成功移除. (2/2)"
-uninstall_done_leftpart:  "§aSuccessfully uninstalled. Use "
+uninstall_done:  "§aSuccessfully uninstalled and disabled the datapack. To fully\
+  \ remove it, delete the datapack from the folder. But you can also click the button\
+  \ on the right to enable it again:  "
+uninstall_enable_folder_button:  "ENABLE1"
+uninstall_enable_folder_button_hoverevent:  "Click to enable folder-based datapack\
+  \ (if exists)"
+uninstall_enable_zip_button:  "ENABLE2"
+uninstall_enable_zip_button_hoverevent:  "Click to enable ZIP-based datapack (if\
+  \ exists)"
+uninstall_server_calling:  "Please use the client instead of the console to uninstall\
+  \ the datapack!"
+uninstall_server_calling_comment:  "§l§n§4§l§n§4 This is a comment. The value of\
+  \ `uninstall_server_calling` is intended for console output. Since some console\
+  \ environments may not correctly render Unicode characters, for non-English languages,\
+  \ an ASCII-compatible romanized form is used instead."
 update_step1_leftpart:  "You are updating the TPA datapack. Current installed version\
   \ is "
 warp_slot_disabled_leftpart:  "The warp you accessed"
@@ -409,9 +418,9 @@ reqer_deny_tpahere_left_part:  "The requestor is denied from teleporting here."
 option_game_version:  "The compatible game version for the datapack file"
 option_max_anchor_summons_attempts:  "Maximum summon attempts for teleportation anchor"
 option_max_anchor_summons_attempts_hoverevent:  "§bChange the §aMaximum summon attempts\
-  \ for teleportation anchor §r(§6Unit:                   attempts§r)   §bSetting it\
-  \ too high may cause lag and unnecessary waiting, setting it too low may cause frequent\
-  \ teleportation failures."
+  \ for teleportation anchor §r(§6Unit:                        attempts§r)   §bSetting\
+  \ it too high may cause lag and unnecessary waiting, setting it too low may cause\
+  \ frequent teleportation failures."
 option_sim_dist:  "Simulation distance"
 option_sim_dist_button_cal:  "[§aCalculate§r]"
 option_sim_dist_hoverevent:  "§bChange the §aSimulation distance §r(§6Unit: chunks§r)\
@@ -422,9 +431,9 @@ option_stricter_book_check_incompatible:  "Stricter teleportation book check is 
   \ with this version"
 option_stricter_book_check_disabled:  "This feature requires the Bookshelf datapack\
   \ as a dependency, but the server has not installed the Bookshelf datapack."
-option_server_calling_comment:  "§l§n§4This is a comment because the option_server_calling\
-  \ above needs to be displayed to the console. If written directly in Chinese, it\
-  \ will appear as garbled text. This uses Pinyin for representation."
+option_server_calling_comment:  "§l§n§4 This is a comment. The value of `option_server_calling`\
+  \ is intended for console output. Since some console environments may not correctly\
+  \ render Unicode characters, an ASCII-compatible romanized form is used instead."
 option_uses_binary_teleport:  "Use binary teleportation?"
 option_uses_binary_teleport_hoverevent:  "§bChoose §aBinary teleportation (enabled)\
   \ §6or §cAnchor teleportation (disabled)"
@@ -447,15 +456,16 @@ teleport_incompatible:  "§aAnchor teleportation§r is not compatible with this 
   \ version"
 teleport_sim_dist_disabled:  "The server has not set the simulation distance"
 teleport_sim_dist_warn_button_calc_hoverevent:  "§bClick to start automatically calculating\
-  \ simulation distance. §cWarning:                   This operation may teleport the\
-  \ executor to a different location. Please make sure your position doesn’t need\
+  \ simulation distance. §cWarning:                        This operation may teleport\
+  \ the executor to a different location. Please make sure your position doesn’t need\
   \ to remain loaded before clicking."
-tick_not_working_server_calling_comment:  "§l§n§cThis is a comment because the tick_not_working_server_calling\
-  \ above needs to be displayed to the console. If written directly in Chinese, it\
-  \ will appear as garbled text. This uses Pinyin for representation."
+tick_not_working_server_calling_comment:  "§l§n§4 This is a comment. The value of\
+  \ `tick_not_working_server_calling` is intended for console output. Since some console\
+  \ environments may not correctly render Unicode characters, an ASCII-compatible\
+  \ romanized form is used instead."
 tick_not_working_tips_line1:  "You are currently calling a Tick function that doesn't\
   \ work, so you may have encountered an issue where the Tick function doesn't work.\
-  \ You can implement one of the following two methods:                  "
+  \ You can implement one of the following two methods:                       "
 tick_not_working_tips_line2:  "        1. Use the /schedule command to call the Tick\
   \ function."
 tick_not_working_tips_line3:  "   Or 2. Place your command block in a hidden location\
@@ -596,3 +606,8 @@ load_remove_tags:  "正在移除标签... (4/6)"
 load_removed_tags:  "已成功移除标签... (5/6)"
 load_reset_scores:  " 正在重设在线玩家分数... (2/6)"
 load_title:  "§e重载中..."
+uninstall_start:  "正在卸载... (0/2)"
+uninstall_rmv_objs:  "移除所有记分项... (0/2)"
+uninstall_rmv_done_1:  "成功移除. (1/2)"
+uninstall_rmv_tags:  "正在移除所有标签... (1/2)"
+uninstall_rmv_done_2:  "成功移除. (2/2)"

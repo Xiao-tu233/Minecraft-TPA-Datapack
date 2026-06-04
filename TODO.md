@@ -20,6 +20,9 @@ Project To-do lists:
 - [ ] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分
 - [x] Dialog 在远离出生点的地方不工作
 - [x] 测试1.21.6+ 版本中 tpa:get_name 是不是因为text_display实体未生成而导致的获取失败
+- [ ] 语言选择菜单中的数字丢失了
+- [ ] tpa:uninstall 不显示了
+- [ ] 需要更多测试: component_parser 似乎不工作
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
@@ -91,7 +94,7 @@ Project To-do lists:
 ## Performance Optimization (“哪里还能更快？” )
 
 - [ ] Use more predicts instead of conditions "execute if"
-- [ ] Consider use tag instead of item customdata to select Visual Items
+- [x] Consider use tag instead of item customdata to select Visual Items
 - [ ] 触发保护及延迟机制要基于请求是否是被接收者拖了很久才接 如果发了马上接则不应该触发这些 或者这里的threshold应该允许设置 
    {
          "teleport_delay": 3,            // 请求被接受后延迟秒数（设置为0即与原来一致）
@@ -114,7 +117,7 @@ Project To-do lists:
       The reason why it can't be a must because we must have the maxinum distance when using binary format.
 
 ## UX Improvements (“玩家体验哪里不好？”)
-- [ ] 应该有2个启用按钮对应两种文件名在tpa:uninstall
+- [x] 应该有2个启用按钮对应两种文件名在tpa:uninstall
 - [ ] Lang contains author key to specify the source of the translations
 - [ ] 传送前摇 落地空气检测
 - [ ] Consider about the color of actionbar

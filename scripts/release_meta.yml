@@ -1,0 +1,4 @@
+version: "2.1"
+date: [2026,07,01]
+
+# To edit functions: tpa:uninstall, tpa:initialize, tpa:publish_date, tpa:update, tpa:update_disable

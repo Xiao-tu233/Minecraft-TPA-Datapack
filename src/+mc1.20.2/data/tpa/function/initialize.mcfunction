@@ -8,6 +8,7 @@ function tpa:init_storage_lang
 function tpa_extra:init_storage_lang
 
 scoreboard players set #version tpa.config 206
+#<--!Script Version Inserting Locator-->
 data modify storage tpa:tpa option.version set value "v2.1"
 data modify storage tpa:tpa option.version_range set value "1.20.2 - 26.1.2"
 function tpa:set_game_version

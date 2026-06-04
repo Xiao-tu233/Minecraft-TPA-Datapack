@@ -427,9 +427,13 @@ data modify storage tpa:tpa temp.lang set value \
     uninstall_rmv_done_1: "成功移除. (1/2)", \
     uninstall_rmv_tags: "正在移除所有标签... (1/2)", \
     uninstall_rmv_done_2: "成功移除. (2/2)", \
-    uninstall_done_leftpart: "§a成功卸载. 使用", \
-    uninstall_done_hoverevent: "点击运行命令", \
-    uninstall_done_rightpart: "来再次启用", \
+    uninstall_done: "§a成功卸载并禁用数据包. 在文件夹删除数据包本体来彻底卸载 或者 点击右边的按钮再次启用: ", \
+    uninstall_enable_folder_button: "启用1", \
+    uninstall_enable_folder_button_hoverevent: "点击启用文件夹形式的数据包(如果存在)", \
+    uninstall_enable_zip_button: "启用2", \
+    uninstall_enable_zip_button_hoverevent: "点击启用ZIP形式的数据包(如果存在)", \
+    uninstall_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 xie4zai3 Shu4ju4bao1!", \
+    uninstall_server_calling_comment: "§l§n§4这里是一个注释 因为上面的uninstall_server_calling需要被控制台所显示 如果直接写汉字会被显示为乱码 这里使用拼音来进行表示", \
     update_reload: "§b[重载]", \
     update_reload_hoverevent: "点击重载", \
     update_step1_leftpart: "您正在进行TPA数据包的更新程序 目前已安装的数据包版本是 ", \
@@ -561,7 +565,7 @@ data modify storage tpa:tpa temp.lang set value \
     lang_button_hoverevent: "§bClick to open language menu", \
     lang_menu_title: "Please select language below:", \
     lang_menu_select_button: "[§aLoad recommended commands§r]", \
-    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                         ", \
+    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                              ", \
     lang_disabled: "Language feature is disabled", \
     lang_selected_left_part: "You have switched language to ", \
     lang_selected_right_part: "", \
@@ -716,8 +720,8 @@ data modify storage tpa:tpa temp.lang set value \
     tp_pos_throw_on_invalid_char: "The coordinates you entered contain invalid characters", \
     tpa_menu_hoverevent_left_part: "§bClick to send a teleport request to ", \
     tpa_menu_hoverevent_right_part: "", \
-    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                         ", \
-    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                         ", \
+    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                              ", \
+    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                              ", \
     tpa_menu_extend_hoverevent: "§bClick to expand menu", \
     tpa_menu_extend: "§bExpand§r", \
     tpa_menu_you: "You", \
@@ -777,7 +781,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "The following settings are advanced options. Do not modify unless you know what you are doing.", \
     option_advenced_tip: "Enable debug mode to access more advanced settings", \
     option_anchor_search_retries: "Anchor search retry count", \
-    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                           times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
+    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                                times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
     option_carpet_fake_player_fix_incompatible: "Carpet fake player fix is incompatible with this version", \
@@ -792,7 +796,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id: "[§aEdit Dimension ID§r]", \
     option_dimension_button_edit_id_hoverevent: "§bClick to edit the dimension ID (press Left Arrow, then enter after colon)", \
     option_dimension_button_edit_namespaceid: "[§aEdit Namespace ID§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bClick to edit namespace ID (namespace:                          id). Press Left Arrow twice and type inside quotes.", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bClick to edit namespace ID (namespace:                               id). Press Left Arrow twice and type inside quotes.", \
     option_dimension_button_edit_name: "[§aEdit Name§r]", \
     option_dimension_button_edit_name_hoverevent: "§bClick to edit display name. Vanilla dimensions follow language settings.", \
     option_dimension_button_remove: "[§cRemove§r]", \
@@ -829,7 +833,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_anchor_actionbar: "Anchor teleport progress: ", \
     teleport_binary_actionbar: "Binary search teleport progress: ", \
     teleport_cal_sim_dist_actionbar: "Simulation distance", \
-    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                           ", \
+    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                                ", \
     teleport_cal_sim_dist_start: "Simulation distance calculation started", \
     teleport_sim_dist_warn: "Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails, please contact admin to recalculate or manually set, or use binary teleport.", \
     teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
@@ -839,12 +843,13 @@ data modify storage tpa:tpa temp.lang set value \
     tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
     tp_pos_abort: "You stopped entering teleport coordinates", \
-    uninstall_start: "Uninstalling... (0/2)", \
-    uninstall_rmv_objs: "移除所有记分项... (0/2)", \
-    uninstall_rmv_done_1: "成功移除. (1/2)", \
-    uninstall_rmv_tags: "正在移除所有标签... (1/2)", \
-    uninstall_rmv_done_2: "成功移除. (2/2)", \
-    uninstall_done_leftpart: "§aSuccessfully uninstalled. Use ", \
+    uninstall_done: "§aSuccessfully uninstalled and disabled the datapack. To fully remove it, delete the datapack from the folder. But you can also click the button on the right to enable it again: ", \
+    uninstall_enable_folder_button: "ENABLE1", \
+    uninstall_enable_folder_button_hoverevent: "Click to enable folder-based datapack (if exists)", \
+    uninstall_enable_zip_button: "ENABLE2", \
+    uninstall_enable_zip_button_hoverevent: "Click to enable ZIP-based datapack (if exists)", \
+    uninstall_server_calling: "Please use the client instead of the console to uninstall the datapack!", \
+    uninstall_server_calling_comment: "§l§n§4§l§n§4 This is a comment. The value of `uninstall_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, for non-English languages, an ASCII-compatible romanized form is used instead.", \
     update_step1_leftpart: "You are updating the TPA datapack. Current installed version is ", \
     warp_slot_disabled_leftpart: "The warp you accessed", \
     warp_slot_disabled_rightpart: "has been disabled", \
@@ -853,14 +858,14 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_deny_tpahere_left_part: "The requestor is denied from teleporting here.", \
     option_game_version: "The compatible game version for the datapack file", \
     option_max_anchor_summons_attempts: "Maximum summon attempts for teleportation anchor", \
-    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                  attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
+    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                       attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
     option_sim_dist: "Simulation distance", \
     option_sim_dist_button_cal: "[§aCalculate§r]", \
     option_sim_dist_hoverevent: "§bChange the §aSimulation distance §r(§6Unit: chunks§r)  Please make sure there are no players within the simulation distance from the origin in the overworld before clicking.", \
     option_stricter_book_check: "Stricter teleportation book check", \
     option_stricter_book_check_incompatible: "Stricter teleportation book check is incompatible with this version", \
     option_stricter_book_check_disabled: "This feature requires the Bookshelf datapack as a dependency, but the server has not installed the Bookshelf datapack.", \
-    option_server_calling_comment: "§l§n§4This is a comment because the option_server_calling above needs to be displayed to the console. If written directly in Chinese, it will appear as garbled text. This uses Pinyin for representation.", \
+    option_server_calling_comment: "§l§n§4 This is a comment. The value of `option_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
     option_uses_binary_teleport: "Use binary teleportation?", \
     option_uses_binary_teleport_hoverevent: "§bChoose §aBinary teleportation (enabled) §6or §cAnchor teleportation (disabled)", \
     option_uses_string_dimension: "Recognize string dimensions?", \
@@ -876,9 +881,9 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_cal_sim_dist_end_rightpart: "", \
     teleport_incompatible: "§aAnchor teleportation§r is not compatible with this game version", \
     teleport_sim_dist_disabled: "The server has not set the simulation distance", \
-    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                  This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
-    tick_not_working_server_calling_comment: "§l§n§cThis is a comment because the tick_not_working_server_calling above needs to be displayed to the console. If written directly in Chinese, it will appear as garbled text. This uses Pinyin for representation.", \
-    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                 ", \
+    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                       This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
+    tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
+    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                      ", \
     tick_not_working_tips_line2: "        1. Use the /schedule command to call the Tick function.", \
     tick_not_working_tips_line3: "   Or 2. Place your command block in a hidden location to avoid being destroyed by Bedrock-breaking machines.", \
     tp_pos_button_abort: "[Abort]", \
@@ -991,7 +996,12 @@ data modify storage tpa:tpa temp.lang set value \
     load_remove_tags: "正在移除标签... (4/6)", \
     load_removed_tags: "已成功移除标签... (5/6)", \
     load_reset_scores: " 正在重设在线玩家分数... (2/6)", \
-    load_title: "§e重载中..." \
+    load_title: "§e重载中...", \
+    uninstall_start: "正在卸载... (0/2)", \
+    uninstall_rmv_objs: "移除所有记分项... (0/2)", \
+    uninstall_rmv_done_1: "成功移除. (1/2)", \
+    uninstall_rmv_tags: "正在移除所有标签... (1/2)", \
+    uninstall_rmv_done_2: "成功移除. (2/2)" \
 }, \
   {\
     lang: "ja_jp", \
@@ -1036,7 +1046,7 @@ data modify storage tpa:tpa temp.lang set value \
     extended_menu_incompatible: "§a展開メニュー§rはこのゲームバージョンと互換性がありません", \
     extended_menu_next_page: "§b次のページを見る", \
     extended_menu_previous_page: "§b前のページを見る", \
-    extended_menu_title: "======================§bTPA§6 メニュー§r========================", \
+    extended_menu_title: "======================§bTPA§6 メニュー§r=====================", \
     here_button_tpa: "[§b転送リクエスト§r]", \
     here_button_tpa_hoverevent: "§bクリックして転送リクエストを送信", \
     here_button_tpa_notavail_hoverevent: "§cプレイヤーは転送を許可していません", \
@@ -1153,7 +1163,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id: "[§aディメンションIDを編集§r]", \
     option_dimension_button_edit_id_hoverevent: "§bクリックしてディメンションIDを編集（クリック後、左矢印キーを押してコロンの後に入力しEnter）", \
     option_dimension_button_edit_namespaceid: "[§aネームスペースIDを編集§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションのネームスペースIDを編集(namespace:id, source location 例:                  minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションのネームスペースIDを編集(namespace:id, source location 例:                       minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
     option_dimension_button_edit_name: "[§a名前を編集§r]", \
     option_dimension_button_edit_name_hoverevent: "§bクリックしてディメンションの表示名を編集（クリック後、左矢印キーを2回押して引用符内に入力しEnter。原版ディメンションは言語設定に従います）", \
     option_dimension_button_remove: "[§c削除§r]", \
@@ -1186,14 +1196,14 @@ data modify storage tpa:tpa temp.lang set value \
     option_stricter_book_check_disabled: "この機能にはBookshelfデータパックが必要ですが、サーバーにはインストールされていません。", \
     option_time_out: "テレポートリクエストのタイムアウト時間", \
     option_time_out_hoverevent: "§b以下で§aテレポートリクエストのタイムアウト時間を変更§r(§6単位: 1ティック=1/20秒§r)、§b0で禁止、§b-1で無限", \
-    option_title_line1: "======================§bTPA§6 設定メニュー§r=====================", \
+    option_title_line1: "===================§bTPA§6 設定メニュー§r===================", \
     option_title_line2: "以下で設定を調整してください: (変更を確認するにはメニューを再度開く必要があります)", \
     option_tp_pos: "テレポート座標許可範囲", \
     option_tp_pos_cooldown: "テレポート座標クールダウン時間", \
     option_tp_pos_cooldown_hoverevent: "§b以下で§aクールダウン時間を変更§r(§6単位: 1ゲームティック = 1/20秒§r), §b0を入力するとクールダウン無し, §b-1を入力するとテレポート禁止", \
     option_tp_pos_hoverevent: "§b以下で§aテレポート座標許可範囲を変更§r(§6単位: メートル§r), §b0でテレポート禁止, §b-1で範囲無制限(非推奨)", \
     option_tp_spec: "観戦者のテレポートを許可", \
-    option_server_calling: "kuraianto wo shiyou shi, konso-ru dewa naku settei wo henkou shite kudasai!", \
+    option_server_calling: "kuraianto wo shiyou shi, konsouru dewa naku settei wo henkou shite kudasai!", \
     option_server_calling_comment: "§l§n§4これはコメントです：option_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     option_uses_binary_teleport: "二分法テレポートを使用するか", \
     option_uses_binary_teleport_hoverevent: "§b以下で§a二分法テレポートを使用(有効) §6または §cアンカー式テレポート(無効)", \
@@ -1333,7 +1343,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_sim_dist_warn_button_binary_hoverevent: "§bクリックしてテレポート方法を二分法に設定", \
     tick_not_working_button_set_schedule: "§b[設定]", \
     tick_not_working_button_set_schedule_hoverevent: "§bクリックして /schedule コマンドでTick関数を呼び出し", \
-    tick_not_working_server_calling: "kuraianto wo shiyou shi, konso-ru dewa naku komando burokku wo shutoku sshite kudasai!", \
+    tick_not_working_server_calling: "kuraianto wo shiyou shi, konsouru dewa naku komando burokku wo shutoku shite kudasai!", \
     tick_not_working_server_calling_comment: "§l§n§4これはコメントです：tick_not_working_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     tick_not_working_tips_line1: "現在 Tick不動関数を呼び出しています。そのため、Tick関数が動作しない状況に直面する可能性があります。次のどちらかの方法を実施してください:", \
     tick_not_working_tips_line2: "        1. /schedule コマンドで Tick関数を呼び出す", \
@@ -1414,14 +1424,13 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_tpamenu_button_hoverevent: "§bクリックしてテレポートメニューを開く", \
     tpa_menu_you: "自分", \
     tpahere_menu_title: "下はプレイヤーデータパックIDとゲーム内ユーザー名、IDをクリックして他のプレイヤー§lにあなた§rをテレポートリクエスト: {", \
-    uninstall_start: "アンインストール中... (0/2)", \
-    uninstall_rmv_objs: "すべてのスコア項目を削除中... (0/2)", \
-    uninstall_rmv_done_1: "削除成功. (1/2)", \
-    uninstall_rmv_tags: "すべてのタグを削除中... (1/2)", \
-    uninstall_rmv_done_2: "削除成功. (2/2)", \
-    uninstall_done_leftpart: "§aアンインストール成功. 実行するには", \
-    uninstall_done_hoverevent: "クリックしてコマンド実行", \
-    uninstall_done_rightpart: "で再度有効化", \
+    uninstall_done: "§a成功卸载并禁用数据包. 在文件夹删除数据包本体来彻底卸载 或者 点击右边的按钮再次启用: ", \
+    uninstall_enable_folder_button: "启用1", \
+    uninstall_enable_folder_button_hoverevent: "点击启用文件夹形式的数据包(如果存在)", \
+    uninstall_enable_zip_button: "启用2", \
+    uninstall_enable_zip_button_hoverevent: "点击启用ZIP形式的数据包(如果存在)", \
+    uninstall_server_calling: "Deitapaketto no aninsutouru ni wa, konsourude wa naku kuraianto wo shiyou shite kudasai!", \
+    uninstall_server_calling_comment: "§l§n§4これはコメントです：uninstall_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     update_reload: "§b[リロード]", \
     update_reload_hoverevent: "クリックしてリロード", \
     update_step1_leftpart: "TPAデータパックのアップデートを実行中です。現在インストールされているデータパックのバージョンは ", \
@@ -1484,7 +1493,12 @@ data modify storage tpa:tpa temp.lang set value \
     warp_slot_disabled_rightpart: "は無効化されています", \
     warp_spec: "観戦モードのプレイヤーは§a公共ワープポイント§rにテレポートできません", \
     warp_teleport_left_part: "テレポートされました：", \
-    warp_teleport_right_part: "" \
+    warp_teleport_right_part: "", \
+    uninstall_start: "正在卸载... (0/2)", \
+    uninstall_rmv_objs: "移除所有记分项... (0/2)", \
+    uninstall_rmv_done_1: "成功移除. (1/2)", \
+    uninstall_rmv_tags: "正在移除所有标签... (1/2)", \
+    uninstall_rmv_done_2: "成功移除. (2/2)" \
 }, \
   {\
     lang: "zh_tw", \
@@ -1846,7 +1860,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_stricter_book_check_disabled: "此功能需要 Bookshelf 資料包作為依賴，但伺服器尚未安裝", \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
     option_dimension_button_edit_id_hoverevent: "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                         xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                              xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
     option_dimension_button_edit_name_hoverevent: "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車, 該項對於原版維度會跟隨語言設定而不是當前設定)", \
     option_dimension_button_remove_hoverevent: "§b點擊移除該維度", \
     option_dimension_hoverevent: "§b在下方設定按鈕開啟§a維度兼容§6菜單 §b同時右側的數字會是目前已兼容的維度數量", \
@@ -1916,14 +1930,13 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_output_actionbar_hidden: "§b僅聊天欄§r", \
     tpa_menu_output_chatbar_hidden: "§b僅動作欄§r", \
     tpa_menu_output_no_hidden: "§b動作欄和聊天欄§r", \
-    uninstall_start: "正在卸載... (0/2)", \
-    uninstall_rmv_objs: "移除所有記分項... (0/2)", \
-    uninstall_rmv_done_1: "成功移除. (1/2)", \
-    uninstall_rmv_tags: "正在移除所有標籤... (1/2)", \
-    uninstall_rmv_done_2: "成功移除. (2/2)", \
-    uninstall_done_leftpart: "§a成功卸載。使用", \
-    uninstall_done_hoverevent: "點擊執行命令", \
-    uninstall_done_rightpart: "來再次啟用", \
+    uninstall_done: "§a成功卸载并禁用数据包. 在文件夹删除数据包本体来彻底卸载 或者 点击右边的按钮再次启用: ", \
+    uninstall_enable_folder_button: "启用1", \
+    uninstall_enable_folder_button_hoverevent: "点击启用文件夹形式的数据包(如果存在)", \
+    uninstall_enable_zip_button: "启用2", \
+    uninstall_enable_zip_button_hoverevent: "点击启用ZIP形式的数据包(如果存在)", \
+    uninstall_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 xie4zai3 Shu4ju4bao1!", \
+    uninstall_server_calling_comment: "§l§n§4這裡是一個註解。由於上方的 uninstall_server_calling 需要顯示於控制台，如果直接使用漢字可能會顯示為亂碼，因此此處使用拼音表示。", \
     update_reload: "§b[重載]", \
     update_reload_hoverevent: "點擊重載", \
     update_step1_leftpart: "您正在進行TPA資料包的更新程序 目前已安裝的資料包版本是 ", \
@@ -1986,7 +1999,12 @@ data modify storage tpa:tpa temp.lang set value \
     warp_slot_disabled_rightpart: "已被禁用", \
     warp_spec: "旁觀者模式玩家不允許傳送§a公共傳送點§r", \
     warp_teleport_left_part: "已將你傳送至", \
-    warp_teleport_right_part: "" \
+    warp_teleport_right_part: "", \
+    uninstall_start: "正在卸载... (0/2)", \
+    uninstall_rmv_objs: "移除所有记分项... (0/2)", \
+    uninstall_rmv_done_1: "成功移除. (1/2)", \
+    uninstall_rmv_tags: "正在移除所有标签... (1/2)", \
+    uninstall_rmv_done_2: "成功移除. (2/2)" \
 } \
 ]
 data modify storage tpa:tpa lang append from storage tpa:tpa temp.lang[]

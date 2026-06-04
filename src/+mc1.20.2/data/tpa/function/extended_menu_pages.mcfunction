@@ -1,5 +1,5 @@
 #! Originally named tpa:langtell/langtell_25, tpa:extended_menu_pagen
-# Parent Function: tpa:extended_menu_argument_page_location
+# Parent Function: tpa:extended_menu_argument_page_location, tpa:extended_menu
 function tpa:load_lang
 function tpa:sounds/levelup
 tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.extended_menu_title"}]
