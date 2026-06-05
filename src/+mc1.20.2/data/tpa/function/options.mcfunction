@@ -89,7 +89,8 @@ tellraw @s ["      §6- ", \
 # non-boolean values part:
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_lang", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_lang_hoverevent"}}}, ": ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.name_display", color: "white"}]
 tellraw @s ["      §6- ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"run_command",command:"/function tpa:option_lang_menu"}}]
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"run_command",command:"/function tpa:option_lang_menu"}}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_", click_event:{action:"run_command",command:"/function tpa:option_lang_menu"}}]
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_home", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_home_hoverevent"}}}, ": ", {score:{name:"#home",objective:"tpa.config"}, color: "white"}]
 tellraw @s ["      §6- ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"show_dialog",dialog:"tpa:option/home"}}]

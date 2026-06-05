@@ -20,9 +20,11 @@ Project To-do lists:
 - [ ] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分
 - [x] Dialog 在远离出生点的地方不工作
 - [x] 测试1.21.6+ 版本中 tpa:get_name 是不是因为text_display实体未生成而导致的获取失败
-- [ ] 语言选择菜单中的数字丢失了
-- [ ] tpa:uninstall 不显示了
-- [ ] 需要更多测试: component_parser 似乎不工作
+- [x] 语言选择菜单中的数字丢失了
+- [x] tpa:uninstall 不显示了
+- [x] 需要更多测试: component_parser 似乎不工作 REMOVED
+- [x] File name: TPA_datapack-{VERSION}{-LIGHT}{MC_VERSION} -> TPA_Datapack-{VERSION}{-LIGHT}{MC_VERSION} 
+                     ^　　　　　　　　　　　　　　　　　　　　　　　　^
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs

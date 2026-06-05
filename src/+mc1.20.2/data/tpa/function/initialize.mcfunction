@@ -7,7 +7,11 @@ data modify storage tpa:tpa lang set value []
 function tpa:init_storage_lang
 function tpa_extra:init_storage_lang
 
-scoreboard players set #version tpa.config 206
+# Add Text Display for component parsing
+forceload add 29999984 29999984
+summon minecraft:text_display 29999984 336 29999984 {alignment:"center", Tags: ["tpa.text_display"]}
+
+scoreboard players set #version tpa.config 210
 #<--!Script Version Inserting Locator-->
 data modify storage tpa:tpa option.version set value "v2.1"
 data modify storage tpa:tpa option.version_range set value "1.20.2 - 26.1.2"

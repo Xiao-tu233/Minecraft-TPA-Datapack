@@ -2,6 +2,8 @@
 function tpa:console_calling_check/uninstall
 execute unless entity @s run return 0
 
+scoreboard players operation #target_lang tpa.variables = #language tpa.config
+function tpa:load_lang
 
 # Remove all objectives
 scoreboard objectives remove tpa
@@ -77,24 +79,25 @@ data remove storage tpa:tpa home
 data remove storage tpa:tpa warp
 data remove storage tpa:tpa option
 
-scoreboard players operation #target_lang tpa.variables = #language tpa.config
-function tpa:load_lang
+# Remove text display
+kill @e[tag=tpa.text_display]
+forceload remove 29999984 29999984
 
 # Language system will no longer work, so store the last 2 words in visual entity
 execute at @s run summon item ~ ~ ~ {Item: {id: "stone", count: 1}, PickupDelay: 32767s, Age: -32768s, Health: 0, NoGravity: true, Tags: ["tpa.uninstall.datapack_last_words"]}
 data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".header set from storage tpa:tpa loaded_lang.header
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".rmv_done_2 set from storage tpa:tpa loaded_lang.uninstall_done
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_leftpart set from storage tpa:tpa loaded_lang.uninstall_enable_folder_button
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_leftpart set from storage tpa:tpa loaded_lang.uninstall_enable_folder_button_hoverevent
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_hoverevent set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button
-data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done_hoverevent set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button_hoverevent
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".done set from storage tpa:tpa loaded_lang.uninstall_done
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".uninstall_enable_folder_button set from storage tpa:tpa loaded_lang.uninstall_enable_folder_button
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".uninstall_enable_folder_button_hoverevent set from storage tpa:tpa loaded_lang.uninstall_enable_folder_button_hoverevent
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".uninstall_enable_zip_button set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button
+data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".uninstall_enable_zip_button_hoverevent set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button_hoverevent
 data remove storage tpa:tpa loaded_lang
 data remove storage tpa:tpa version
 data remove storage tpa:tpa game_version
 data remove storage tpa:tpa version_range
 function tpa:update_disable
 #<--!Script Version Inserting Locator-->
-tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done"}, {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_datapack-2.1+mc1.20.2\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button_hoverevent"}}}, {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_datapack-2.1+mc1.20.2.zip\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button_hoverevent"}}}]
+tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done"}, {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_Datapack-2.1+mc1.20.2\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button_hoverevent"}}}, " ", {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_Datapack-2.1+mc1.20.2.zip\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button_hoverevent"}}}]
 
 # Kill the visual entity
 kill @e[tag=tpa.uninstall.datapack_last_words]

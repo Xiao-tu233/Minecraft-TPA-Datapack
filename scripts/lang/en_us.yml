@@ -393,7 +393,7 @@ tick_not_working_button_set_schedule_hoverevent:  "§b点击设置/schedule指�
 tick_not_working_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2\
   \ lai2 huo4qu3 Ming4ling4fang1kuai4!"
 tp_pos_abort:  "You stopped entering teleport coordinates"
-uninstall_done:  "§aSuccessfully uninstalled and disabled the datapack. To fully\
+uninstall_done:  "§aSuccessfully uninstalled and disabled the datapack. §rTo fully\
   \ remove it, delete the datapack from the folder. But you can also click the button\
   \ on the right to enable it again:  "
 uninstall_enable_folder_button:  "ENABLE1"
@@ -512,8 +512,6 @@ tpa_menu_search_id_button:  "[§bSearch player§r]"
 tpa_menu_simplemenu_button:  "[§bSimplified menu§r]"
 tpa_menu_tpaheremenu_button:  "[§bTeleport here menu§r]"
 tpa_menu_tpamenu_button:  "[§bTeleport menu§r]"
-uninstall_done_hoverevent:  "Click to run command"
-uninstall_done_rightpart:  "To enable it again"
 update_reload:  "§b[Reload]"
 update_reload_hoverevent:  "Click to reload"
 update_step1_rightpart:  " Please confirm to begin updating here."

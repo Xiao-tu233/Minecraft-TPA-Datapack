@@ -1,6 +1,6 @@
 execute if data storage tpa:tpa loaded_language[0] unless score #is_server_selecting tpa.variables matches 1 \
     run tellraw @s[predicate=tpa:output/show_chatbar] [\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_language[0].id"}, ": ", \
+    {storage: "tpa:tpa", nbt: "loaded_language[0].id"}, ": ", \
     {\
         interpret: true, \
         storage: "tpa:tpa", \
@@ -11,7 +11,7 @@ execute if data storage tpa:tpa loaded_language[0] unless score #is_server_selec
 
 execute if data storage tpa:tpa loaded_language[0] if score #is_server_selecting tpa.variables matches 1 \
     run tellraw @s [\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_language[0].id"}, ": ", \
+    {storage: "tpa:tpa", nbt: "loaded_language[0].id"}, ": ", \
     {\
         interpret: true, \
         storage: "tpa:tpa", \

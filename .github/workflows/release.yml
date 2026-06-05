@@ -39,9 +39,9 @@ jobs:
           # 拼接版本号 + 文件夹名
           # 判断 name 开头是否是 +
           if [[ "$name" == +* ]]; then
-            ZIP_NAME="TPA_datapack-${VERSION}${name}.zip"
+            ZIP_NAME="TPA_Datapack-${VERSION}${name}.zip"
           else
-            ZIP_NAME="TPA_datapack-${VERSION}-${name}.zip"
+            ZIP_NAME="TPA_Datapack-${VERSION}-${name}.zip"
           fi
 
           # 进入子目录，再打 zip

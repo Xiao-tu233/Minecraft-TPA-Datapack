@@ -3,7 +3,8 @@
 scoreboard objectives remove tpa.variables
 scoreboard objectives add tpa.variables dummy
 scoreboard objectives add tpa.config dummy
-execute unless score #version tpa.config matches 206 run function tpa:initialize
+#<--!Script Version Inserting Locator-->
+execute unless score #version tpa.config matches 210 run function tpa:initialize
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Adding 42 objectives... (1/6)"]
 scoreboard objectives add tpa trigger

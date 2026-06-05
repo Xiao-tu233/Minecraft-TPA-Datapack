@@ -59,4 +59,4 @@ tag @a remove tpa_book
 tag @a remove have_placeholder
 tellraw @a ["[§bTPA§r] 成功移除. (2/2)"]
 function tpa:update_disable
-tellraw @a ["[§bTPA§r] §a成功卸载. 使用 ", {"text":"§n/datapack enable \"file/TPA_datapack-2.0.6+mc1.13\"","clickEvent": {"action": "run_command","value": "/datapack enable \"file/TPA_datapack-2.0.6+mc1.13\""},"hoverEvent": {"action": "show_text","value": "点击运行命令"}},"来再次启用."]
+tellraw @a ["[§bTPA§r] §a成功卸载. 使用 ", {"text":"§n/datapack enable \"file/TPA_Datapack-2.0.6+mc1.13\"","clickEvent": {"action": "run_command","value": "/datapack enable \"file/TPA_Datapack-2.0.6+mc1.13\""},"hoverEvent": {"action": "show_text","value": "点击运行命令"}},"来再次启用."]

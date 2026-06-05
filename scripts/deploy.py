@@ -37,7 +37,7 @@ def get_src_folder(mc_version: str) -> str:
 for version in versions:
     print(f"Deploying version {version}...")
     src_folder = get_src_folder(version)
-    datapack_name = f"TPA_Datapack_{datapack_version}{src_folder}"
+    datapack_name = f"TPA_Datapack-{datapack_version}{src_folder}"
     print(f"  with datapack version: {datapack_name}")
     dst = SERVER_DIR / version / "world" / "datapacks" / datapack_name
     if dst.exists():
