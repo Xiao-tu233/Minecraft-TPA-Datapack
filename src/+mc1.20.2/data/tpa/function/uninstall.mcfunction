@@ -78,6 +78,13 @@ data remove storage tpa:tpa temp
 data remove storage tpa:tpa home
 data remove storage tpa:tpa warp
 data remove storage tpa:tpa option
+data remove storage tpa:tpa loaded_language
+data remove storage tpa:tpa lang
+
+data remove storage tpa:tpa config
+data remove storage tpa:tpa version
+data remove storage tpa:tpa game_version
+data remove storage tpa:tpa version_range
 
 # Remove text display
 kill @e[tag=tpa.text_display]
@@ -92,9 +99,6 @@ data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."mi
 data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".uninstall_enable_zip_button set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button
 data modify entity @n[tag=tpa.uninstall.datapack_last_words] Item.components."minecraft:custom_data".uninstall_enable_zip_button_hoverevent set from storage tpa:tpa loaded_lang.uninstall_enable_zip_button_hoverevent
 data remove storage tpa:tpa loaded_lang
-data remove storage tpa:tpa version
-data remove storage tpa:tpa game_version
-data remove storage tpa:tpa version_range
 function tpa:update_disable
 #<--!Script Version Inserting Locator-->
 tellraw @a [{interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".header"}, {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".done"}, {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_Datapack-2.1+mc1.20.2\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_folder_button_hoverevent"}}}, " ", {text: "", extra: ["§6[§r", {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button"}, "§6]"], click_event: {action: "run_command", command: "/datapack enable \"file/TPA_Datapack-2.1+mc1.20.2.zip\""}, hover_event: {action: "show_text", value: {interpret: true, entity: "@n[tag=tpa.uninstall.datapack_last_words]", nbt: "Item.components.\"minecraft:custom_data\".uninstall_enable_zip_button_hoverevent"}}}]

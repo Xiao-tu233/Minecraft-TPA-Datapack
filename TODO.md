@@ -25,6 +25,7 @@ Project To-do lists:
 - [x] 需要更多测试: component_parser 似乎不工作 REMOVED
 - [x] File name: TPA_datapack-{VERSION}{-LIGHT}{MC_VERSION} -> TPA_Datapack-{VERSION}{-LIGHT}{MC_VERSION} 
                      ^　　　　　　　　　　　　　　　　　　　　　　　　^
+- [ ] 三种原版维度不应该允许更改数字和命名空间ID
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
@@ -89,7 +90,7 @@ Project To-do lists:
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu
 - [ ] Add a snowball menu
-- [ ] If the above one is posible, make Actionbar a screen and player and turn their rotations to control the 光标 in a GUI-like way
+- [ ] If the above one is possible, make Actionbar a screen and player and turn their rotations to control the 光标 in a GUI-like way
 - [ ] 考虑是否要在新版本直接使用宏函数/数据存储替代基于tags的recver_test/reqer_test
 - [ ] 增加不同玩家对不同功能使用的可能性调整（权限组系统？）
 
@@ -133,6 +134,14 @@ Project To-do lists:
    - 增加这些更改之后的提示就像选择槽位时一样
 - [x] 精简 load 函数中的提示   将部分提示改到调试模式 然后在数据包完全加载之后再关调试模式同时提示它被关掉
 - [ ] 特别是日语 很多语序坏掉了
+- [ ] 维度的名称总会是简体中文. 
+      变成别的语言的复现: 
+      1. function tpa:initialize
+      2. 选择任何非简体中文语言
+      3. 任何形式触碰维度相关内容（调用function tpa:dimension/get）
+      4. 维度名称从空(name键不存在) 变为当前语言的指定维度名
+      期望的效果: name 键 在被取名之前 默认不存在或者特殊值 如果被命名则显示该命名名称
+
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [ ] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
