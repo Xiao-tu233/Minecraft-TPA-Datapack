@@ -91,11 +91,7 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
         interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_id", \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_id_hoverevent"}}, \
-        click_event: {\
-            action: "suggest_command", \
-            command: "/function tpa:dimension/edit_id {index: $(index), id: }" \
-        } \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_notavail_id_hoverevent"}} \
     }, " ", \
     {\
         interpret: true, \
@@ -121,11 +117,7 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
         interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_namespaceid", \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_namespaceid_hoverevent"}}, \
-        click_event: {\
-            action: "suggest_command", \
-            command: "/function tpa:dimension/edit_namespaceid {index: $(index), namespaceid: \"\"}" \
-        } \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_notavail_namespaceid_hoverevent"}} \
     }, " ", \
     {\
         interpret: true, \

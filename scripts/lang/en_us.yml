@@ -336,10 +336,14 @@ option_dimension_button_edit_color_hoverevent:  "§bClick to edit this dimension
 option_dimension_button_edit_id:  "[§aEdit Dimension ID§r]"
 option_dimension_button_edit_id_hoverevent:  "§bClick to edit the dimension ID (press\
   \ Left Arrow, then enter after colon)"
+option_dimension_button_edit_id_hoverevent:  "§cVanilla dimensions cannot\
+  \ be editted"
 option_dimension_button_edit_namespaceid:  "[§aEdit Namespace ID§r]"
 option_dimension_button_edit_namespaceid_hoverevent:  "§bClick to edit namespace\
   \ ID (namespace:                                 id). Press Left Arrow twice and\
   \ type inside quotes."
+option_dimension_button_edit_namespaceid_hoverevent:  "§cVanilla dimensions cannot\
+  \ be editted"
 option_dimension_button_edit_name:  "[§aEdit Name§r]"
 option_dimension_button_edit_name_hoverevent:  "§bClick to edit display name. Vanilla\
   \ dimensions follow language settings."

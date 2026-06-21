@@ -24,8 +24,8 @@ Project To-do lists:
 - [x] tpa:uninstall 不显示了
 - [x] 需要更多测试: component_parser 似乎不工作 REMOVED
 - [x] File name: TPA_datapack-{VERSION}{-LIGHT}{MC_VERSION} -> TPA_Datapack-{VERSION}{-LIGHT}{MC_VERSION} 
-                     ^　　　　　　　　　　　　　　　　　　　　　　　　^
-- [ ] 三种原版维度不应该允许更改数字和命名空间ID
+                     ^　　　　　　　　　　　　　　　　　　　　　　 ^
+- [x] 三种原版维度不应该允许更改数字和命名空间ID
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
