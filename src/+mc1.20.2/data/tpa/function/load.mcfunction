@@ -51,7 +51,7 @@ scoreboard objectives add tpa.home trigger
 scoreboard objectives add home trigger
 scoreboard objectives add tpa.removehome trigger
 scoreboard objectives add tpa.language trigger
-scoreboard objectives add tpa.lang_temp dummy
+scoreboard objectives add tpa.selected_language dummy
 scoreboard objectives add tpa.warp trigger
 # For only 1.20.4-
 scoreboard objectives add tpa.available dummy

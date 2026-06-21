@@ -9,7 +9,7 @@ scoreboard players set #can_choose tpa.variables 1
 execute if score #player_lang tpa.config matches 0 if score #is_server_selecting tpa.variables matches 0 if score #language tpa.config matches 1.. run scoreboard players set #can_choose tpa.variables 0
 
 # Tell player failed to choose a language
-execute if score #can_choose tpa.variables matches 0 run scoreboard players operation @s tpa.lang_temp = #language tpa.config
+execute if score #can_choose tpa.variables matches 0 run scoreboard players operation @s tpa.selected_language = #language tpa.config
 execute if score #can_choose tpa.variables matches 0 run function tpa:sounds/no
 execute if score #can_choose tpa.variables matches 0 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.lang_disabled"}]
 execute if score #can_choose tpa.variables matches 0 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.lang_disabled", color: "red"}]

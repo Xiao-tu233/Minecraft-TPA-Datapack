@@ -1,6 +1,6 @@
 
 # Set default language to server language if lang is set before player first join
-execute unless score @s tpa.lang_temp matches 1.. run scoreboard players operation @s tpa.lang_temp = #language tpa.config
+execute unless score @s tpa.slct_lang matches 1.. run scoreboard players operation @s tpa.slct_lang = #language tpa.config
 function tpa:load_lang
 execute unless score #language tpa.config matches 1.. run tellraw @s [{"storage": "tpa:tpa", "nbt": "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {"text": "[§a设置 | Set§r]", "clickEvent": {"action": "run_command", "value": "/trigger tpa.language set -1"}}]
 

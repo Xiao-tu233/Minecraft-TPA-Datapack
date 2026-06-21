@@ -49,7 +49,7 @@ scoreboard objectives remove tpa.removehome
 scoreboard objectives remove tpa.output
 scoreboard objectives remove tpa.simple_menu
 scoreboard objectives remove tpa.language
-scoreboard objectives remove tpa.lang_temp
+scoreboard objectives remove tpa.slct_lang
 scoreboard objectives remove tpa.warp
 scoreboard objectives remove tpa.available
 scoreboard objectives remove tpa.output_

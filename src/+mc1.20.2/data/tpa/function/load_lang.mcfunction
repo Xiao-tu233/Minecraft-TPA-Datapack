@@ -3,7 +3,7 @@ data remove storage tpa:tpa loaded_lang
 data modify storage tpa:tpa loaded_lang set from storage tpa:tpa lang
 
 # Check if function is called by a player or the server: #target_lang is None
-execute unless score #target_lang tpa.variables = #target_lang tpa.variables run scoreboard players operation #target_lang tpa.variables = @s tpa.lang_temp
+execute unless score #target_lang tpa.variables = #target_lang tpa.variables run scoreboard players operation #target_lang tpa.variables = @s tpa.selected_language
 
 # Skip load lang if lang has been loaded to temp
 execute store result score #lang_temp tpa.variables run data get storage tpa:tpa loaded_lang.id

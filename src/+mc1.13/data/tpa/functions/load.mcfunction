@@ -56,7 +56,7 @@ scoreboard objectives add tpa.pos.x_temp dummy
 scoreboard objectives add tpa.pos.y_temp dummy
 scoreboard objectives add tpa.pos.z_temp dummy
 scoreboard objectives add tpa.pos_cd dummy
-scoreboard objectives add tpa.lang_temp dummy
+scoreboard objectives add tpa.slct_lang dummy
 scoreboard objectives add tpa.warp trigger
 # For only 1.20.4-
 scoreboard objectives add tpa.available dummy

@@ -4,7 +4,7 @@ execute unless score @s tpa.mute = @s tpa.mute run scoreboard players set @s tpa
 execute unless score @s tpa.req_timer = @s tpa.req_timer run scoreboard players set @s tpa.req_timer 0
 execute unless score @s tpa.idfix_cd = @s tpa.idfix_cd run scoreboard players set @s tpa.idfix_cd 0
 execute unless score @s tpa.output = @s tpa.output run scoreboard players set @s tpa.output 0
-execute unless score @s tpa.lang_temp matches 1.. run scoreboard players operation @s tpa.lang_temp = #language tpa.config
+execute unless score @s tpa.selected_language matches 1.. run scoreboard players operation @s tpa.selected_language = #language tpa.config
 function tpa:load_lang
 
 scoreboard players set #can_choose tpa.variables 1

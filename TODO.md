@@ -60,9 +60,9 @@ Project To-do lists:
   and ...3 more
   Consider more flexible way for language extras: containing indexes checking when language is loaded
 - [ ] 语言的inde0x键应该在reload的时候被添加而不是语言的yml里
-- [ ] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
+- [x] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
 - [x] 考虑使用调试模组 Sniffer BV14TmrB1EhA
-- [ ] 将主版本改为26.1
+- [ ] 将主版本改为26.2
 - [ ] 增加更多脚本 在增加新功能的时候同步更改
 - [ ] 单独的update函数来更新命令存储(关于warp和home)
 - [ ] 建立List(名字可以再斟酌一下)的class 用来处理所有 列表里放复合标签 且用复合标签的特定键来辩识是否匹配的所有对象
