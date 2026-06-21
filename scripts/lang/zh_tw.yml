@@ -365,7 +365,7 @@ option_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 
 option_dimension_button_edit_id_hoverevent:  "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)"
 option_dimension_button_edit_id_notavail_hoverevent:  "§c原版維度無法編輯"
 option_dimension_button_edit_namespaceid_hoverevent:  "§b點擊編輯該維度的命名空間ID(namespace:id,\
-  \ source location 形如minecraft:                                xxx)(點擊後請按兩次鍵盤上的左箭頭,\
+  \ source location 形如minecraft:                                   xxx)(點擊後請按兩次鍵盤上的左箭頭,\
   \ 在引號中填寫, 輸入好後回車)"
 option_dimension_button_edit_namespaceid_notavail_hoverevent:  "§c原版維度無法編輯"
 option_dimension_button_edit_name_hoverevent:  "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車,\
@@ -514,8 +514,3 @@ warp_slot_disabled_rightpart:  "已被禁用"
 warp_spec:  "旁觀者模式玩家不允許傳送§a公共傳送點§r"
 warp_teleport_left_part:  "已將你傳送至"
 warp_teleport_right_part:  ""
-uninstall_start:  "正在卸载... (0/2)"
-uninstall_rmv_objs:  "移除所有记分项... (0/2)"
-uninstall_rmv_done_1:  "成功移除. (1/2)"
-uninstall_rmv_tags:  "正在移除所有标签... (1/2)"
-uninstall_rmv_done_2:  "成功移除. (2/2)"
