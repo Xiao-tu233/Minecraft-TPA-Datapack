@@ -26,7 +26,6 @@ execute if score #error_code tpa.variables matches 1..3 run return 0
 clear @s minecraft:written_book[minecraft:custom_data={isTpaBook:1b}]
 
 # Prepare for the book content editting
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 
     # Calc Book Arguments
     execute store result score #total_lines tpa.variables if entity @a[predicate=tpa:available]
@@ -51,5 +50,3 @@ summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"
     data modify storage tpa:tpa temp.args.lore set from entity @n[type=minecraft:text_display,tag=tpa.text_display] text
 
     function tpa:book/give with storage tpa:tpa temp.args
-
-kill @n[type=text_display, tag=tpa.text_display]

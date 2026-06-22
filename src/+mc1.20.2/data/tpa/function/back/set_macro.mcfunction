@@ -17,4 +17,4 @@ $data modify storage tpa:tpa back.$(id).pitch set from entity @s Rotation[1]
 $data modify storage tpa:tpa back.$(id).Dimension set from entity @s Dimension
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a "[§bTPA§r] §6 Debug: §rNow showing: §adata storage tpa:tpa back:"
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §a ", {interpret: true, storage:"tpa:tpa",nbt:"back"}]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §a ", {interpret: false, storage:"tpa:tpa", nbt:"back"}]

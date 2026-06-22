@@ -29,13 +29,10 @@ execute store result score #langs_installed tpa.variables run data get storage t
 data remove storage tpa:tpa loaded_language[0]
 
 data modify storage tpa:tpa temp.args.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "close", title: "$(title)", columns: 1, actions: []}
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.lang_menu_title
 data modify storage tpa:tpa temp.args.dialog.title set from entity @n[type=text_display, tag=tpa.text_display] text
 
 # Call loop function
 function tpa:language_menu_loop
-
-kill @n[type=text_display, tag=tpa.text_display]
 
 function tpa:language/dialog with storage tpa:tpa temp.args

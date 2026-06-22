@@ -17,7 +17,6 @@ execute if score @s tpa.search_id.capslock matches 1 run data modify storage tpa
 execute unless score @s tpa.search_id.capslock matches 1 run data modify storage tpa:tpa temp.args.caps set value '§bCaps'
 execute if score @s tpa.search_id.capslock matches 1 run data modify storage tpa:tpa temp.args.caps set value '§aCAPS'
 
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 data modify entity @n[type=minecraft:text_display,tag=tpa.text_display] text set value [{interpret: true, storage: "tpa:tpa", nbt: "temp.search_id.input[]", separator: ""}, {text: " ", underlined: true}]
 data modify storage tpa:tpa temp.args.input set from entity @n[type=minecraft:text_display,tag=tpa.text_display] text
 data modify entity @n[type=minecraft:text_display,tag=tpa.text_display] text set value ""
@@ -25,7 +24,6 @@ data modify entity @n[type=minecraft:text_display,tag=tpa.text_display] text set
 data modify storage tpa:tpa temp.args.done_tooltip set from entity @n[type=minecraft:text_display,tag=tpa.text_display] text
 data modify entity @n[type=minecraft:text_display,tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.search_id_dialog_cancel_tooltip
 data modify storage tpa:tpa temp.args.cancel_tooltip set from entity @n[type=minecraft:text_display,tag=tpa.text_display] text
-kill @n[type=minecraft:text_display,tag=tpa.text_display]
 function tpa:search_id/dialog with storage tpa:tpa temp.args
 # Keyboard style
 # [ESC] [1] [2] [3] [4] [5] [6] [7] [8] [9] [0] [-] [backspace]

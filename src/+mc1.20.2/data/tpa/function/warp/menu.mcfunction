@@ -29,7 +29,6 @@ execute unless score #if_display_warp_menu_title tpa.variables matches 1 run fun
 data remove storage tpa:tpa temp.args.dialog
 data modify storage tpa:tpa temp.args.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "none", title: "$(title)", columns: 2, actions: []}
 execute if score #is_editting_warp tpa.variables matches 1 run data modify storage tpa:tpa temp.args.dialog.columns set value 9
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 execute if score #if_display_warp_menu_title tpa.variables matches 1 run data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.warp_menu_title
 execute if score #if_display_warp_menu_title tpa.variables matches 1 run data modify storage tpa:tpa temp.args.dialog.title set from entity @n[type=text_display, tag=tpa.text_display] text
 
@@ -39,8 +38,6 @@ execute if data storage tpa:tpa temp.warp[0] run function tpa:warp/show_each
 
 execute store result storage tpa:tpa temp.args.index int 1 run scoreboard players get #i tpa.variables
 execute if score #is_editting_warp tpa.variables matches 1 run function tpa:warp/show_add with storage tpa:tpa temp.args
-
-kill @n[type=text_display, tag=tpa.text_display]
 
 # Dialogs
 execute if score #if_display_warp_menu_title tpa.variables matches 1 run function tpa:warp/dialog with storage tpa:tpa temp.args

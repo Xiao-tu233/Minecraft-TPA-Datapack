@@ -24,7 +24,6 @@ execute unless data storage tpa:tpa temp.home run return 0
 
 data remove storage tpa:tpa temp.args.dialog
 data modify storage tpa:tpa temp.args.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "none", title: "$(title)", columns: 4, actions: []}
-execute at @s run summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.home_menu_title
 data modify storage tpa:tpa temp.args.dialog.title set from entity @n[type=text_display, tag=tpa.text_display] text
 
@@ -43,7 +42,5 @@ execute if score #home tpa.config matches 1.. store result storage tpa:tpa temp.
 # slash and limit won't be displayed when #home config is -1
 
 execute if score #if_show_new tpa.variables matches 1 run function tpa:home/new with storage tpa:tpa temp.args
-
-kill @n[type=text_display, tag=tpa.text_display]
 
 function tpa:home/dialog with storage tpa:tpa temp.args

@@ -20,7 +20,12 @@ execute store result storage tpa:tpa temp.args.x int 1 run data get entity @s Po
 execute store result storage tpa:tpa temp.args.y int 1 run data get entity @s Pos[1]
 execute store result storage tpa:tpa temp.args.z int 1 run data get entity @s Pos[2]
 
-$execute unless data storage tpa:tpa warp[$(index)].name run data modify storage tpa:tpa warp[$(index)].name set from storage tpa:tpa loaded_lang.warp_set_default_name
+# 1.20.1-: 
+# $execute unless data storage tpa:tpa warp[$(index)].name run data modify storage tpa:tpa warp[$(index)].name set from storage tpa:tpa loaded_lang.warp_set_default_name
+
+data modify storage tpa:tpa temp.args_ set from storage tpa:tpa temp.args
+$execute unless data storage tpa:tpa warp[$(index)].name run function tpa:warp/set_default_name {index: $(index)}
+data modify storage tpa:tpa temp.args set from storage tpa:tpa temp.args_
 $execute unless data storage tpa:tpa warp[$(index)].desc run data modify storage tpa:tpa warp[$(index)].desc set value ""
 $execute unless data storage tpa:tpa warp[$(index)].disabled run data modify storage tpa:tpa warp[$(index)].disabled set value 0b
 
@@ -39,6 +44,6 @@ tellraw @s [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
     {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_set_position"}, \
     {storage:"tpa:tpa", nbt:"temp.args.x"}, " ", \ 
     {storage:"tpa:tpa", nbt:"temp.args.y"}, " ", \ 
-    {storage:"tpa:tpa", nbt:"temp.args.z"}, " ", \ 
+    {storage:"tpa:tpa", nbt:"temp.args.z"}, \ 
     {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_set_right_part"}, "." \
 ]

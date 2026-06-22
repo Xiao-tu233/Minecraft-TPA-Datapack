@@ -1,7 +1,5 @@
 # Parent function: tpa:tp_pos/modify,  tpa:tp_pos/main
 
-summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
-
 data remove storage tpa:tpa temp.args
 
 tag @s add self
@@ -42,7 +40,5 @@ data modify entity @n[type=text_display, tag=tpa.text_display] text set from sto
 data modify storage tpa:tpa temp.args.set set from entity @n[type=text_display, tag=tpa.text_display] text
 
 data modify storage tpa:tpa temp.args merge value {x: "$(x)", y: "$(y)", z: "$(z)"}
-
-kill @n[type=text_display, tag=tpa.text_display]
 
 function tpa:tp_pos/dialog_ with storage tpa:tpa temp.args

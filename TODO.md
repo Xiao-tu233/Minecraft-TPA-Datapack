@@ -26,6 +26,7 @@ Project To-do lists:
 - [x] File name: TPA_datapack-{VERSION}{-LIGHT}{MC_VERSION} -> TPA_Datapack-{VERSION}{-LIGHT}{MC_VERSION} 
                      ^　　　　　　　　　　　　　　　　　　　　　　 ^
 - [x] 三种原版维度不应该允许更改数字和命名空间ID
+- [ ] TPA菜单对话框菜单应该和Manhunt一样 通过esc同样可以启动
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
@@ -144,5 +145,5 @@ Project To-do lists:
 
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
-- [ ] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
+- [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
 - [ ] For 1.17+ consider use entity mark to replace most of the visual items

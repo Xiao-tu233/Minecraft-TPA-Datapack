@@ -89,9 +89,10 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
     {storage: "tpa:tpa", nbt: "temp.option.dimension[0].id", color: "$(color)"}, ") ", \
     {\
         interpret: true, \
+        color: "gray", \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_id", \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_notavail_id_hoverevent"}} \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_id_notavail_hoverevent"}} \
     }, " ", \
     {\
         interpret: true, \
@@ -115,9 +116,10 @@ $execute if score #current_dimension tpa.variables matches -1..1 run tellraw @s 
     }, " ", \
     {\
         interpret: true, \
+        color: "gray", \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.option_dimension_button_edit_namespaceid", \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_notavail_namespaceid_hoverevent"}} \
+        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_button_edit_namespaceid_notavail_hoverevent"}} \
     }, " ", \
     {\
         interpret: true, \
