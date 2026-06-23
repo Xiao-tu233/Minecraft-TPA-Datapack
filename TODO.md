@@ -27,7 +27,7 @@ Project To-do lists:
                      ^　　　　　　　　　　　　　　　　　　　　　　 ^
 - [x] 三种原版维度不应该允许更改数字和命名空间ID
 - [x] TPA菜单对话框菜单应该和Manhunt一样 通过esc同样可以启动
-- [ ] Fixed grammar exceptions in predicates
+- [x] Fixed grammar exceptions in predicates
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
@@ -48,20 +48,26 @@ Project To-do lists:
      使用modrinth上数据包的方案 loottable获得玩家头颅从而获得玩家游戏名
      考虑是否有开销影响：在每个玩家进游戏的时候计算他们的游戏名 然后仅仅在构建菜单是调用他们而不是对于每个玩家都重新计算 （此处有优化空间 可以复制一份uid和玩家游戏名的数组 在每查找到一名玩家后移除一个）
      新的id管理方案可以直接移除id修复（或者保守一点将其移入设置界面）
-  区分对应所需权限的按钮 with 不同的按钮边框颜色
-  考虑减少item作为锚点 而是盔甲架 例子如下
-  summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
+- [ ] 区分对应所需权限的按钮 with 不同的按钮边框颜色
   无点击事件 灰色
   无需op 白色
   需op 金色
-  避免leftpart 和rightpart 使用列表
+
+- [ ] 考虑减少item作为锚点 而是盔甲架 例子如下
+  summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
+
+- [ ]  避免leftpart 和rightpart 使用列表
   对于2个插入元素及以上 使用顺序数字来表示 
   0 for ABC
   1 for ACB
   2 for BAC
   and ...3 more
   Consider more flexible way for language extras: containing indexes checking when language is loaded
-- [ ] 语言的inde0x键应该在reload的时候被添加而不是语言的yml里
+   在yml中只需要用%1$s, %2$s来表示参数的位置 并由python脚本进行解析
+   对于含一个参数的语言键 将两部分分开打包成列表
+   对于含两个及以上的参数的语言键, 分开打包成列表之后用添加"_format"的键另建一个上述的表示顺序的数字
+   并根据参数数量在调用时使用output文件夹下的函数解析输出
+- [ ] 语言的index键应该在reload的时候被添加而不是语言的yml里
 - [x] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
 - [x] 考虑使用调试模组 Sniffer BV14TmrB1EhA
 - [ ] 将主版本改为26.2

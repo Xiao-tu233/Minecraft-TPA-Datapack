@@ -1,3 +1,4 @@
+scoreboard players set @s tpa.is_online 1
 
 # Set default language to server language if lang is set before player first join
 execute unless score @s tpa.selected_language matches 1.. run scoreboard players operation @s tpa.selected_language = #language tpa.config
@@ -17,7 +18,6 @@ scoreboard players set @s tpa.pos.z 0
 scoreboard players reset @s tpa.pos.x_temp
 scoreboard players reset @s tpa.pos.y_temp
 scoreboard players reset @s tpa.pos.z_temp
-scoreboard players set @s tpa.is_online 1
 scoreboard players set @a tpa.search_id.key 0
 scoreboard players set @a tpa.search_id.capslock 0
 
@@ -32,8 +32,8 @@ execute if score #is_updated_from_205 tpa.config matches 1 run tag @s remove TPA
 execute unless score @s tpa.uid = @s tpa.uid run function tpa:first_join
 
 # Set player ID
-execute if score #compact_ids tpa.config matches 0 as @s[predicate=tpa:available] run scoreboard players operation @s tpa.player_id = @s tpa.uid
-execute if score #compact_ids tpa.config matches 1 as @s[predicate=tpa:available] run scoreboard players set @s tpa.player_id 1
+# execute if score #compact_ids tpa.config matches 0 as @s[predicate=tpa:available] run scoreboard players operation @s tpa.player_id = @s tpa.uid
+# execute if score #compact_ids tpa.config matches 1 as @s[predicate=tpa:available] run scoreboard players set @s tpa.player_id 1
 
 # Show TPA menu button when player joins
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.reqer_first_join", click_event:{action:"run_command",command: "/trigger tpa"}}]

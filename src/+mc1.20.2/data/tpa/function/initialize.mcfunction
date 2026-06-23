@@ -14,7 +14,7 @@ summon minecraft:text_display 29999984 336 29999984 {alignment:"center", Tags: [
 scoreboard players set #version tpa.config 210
 #<--!Script Version Inserting Locator-->
 data modify storage tpa:tpa option.version set value "v2.1"
-data modify storage tpa:tpa option.version_range set value "1.20.2 - 26.1.2"
+data modify storage tpa:tpa option.version_range set value "1.20.2 - 26.2"
 function tpa:set_game_version
 scoreboard players set #tp_spec tpa.config 0
 execute if score #is_updated_from_205 tpa.config matches 1 run scoreboard players operation #compact_ids tpa.config = #remove_offline tpa.config
