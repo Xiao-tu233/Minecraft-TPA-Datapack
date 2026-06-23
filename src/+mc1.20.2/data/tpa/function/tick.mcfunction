@@ -41,7 +41,7 @@ execute store result storage tpa:tpa option.tp_spec int 1 run scoreboard players
 execute store result storage tpa:tpa option.carpet_fake_player_fix int 1 run scoreboard players get #carpet_fake_player_fix tpa.config
 
 # Refresh player's scores when he's online
-execute as @a unless score @s tpa.is_online matches 1 run function tpa:detect_join
+execute as @a unless score @s tpa.is_online matches 1 run function tpa:on_join
 
 # Make spectators and fake players not available to teleport by setting their tpa.player_id to -1
 execute if score #compact_ids tpa.config matches 1 run scoreboard players set @a[predicate=!tpa:available] tpa.player_id -1

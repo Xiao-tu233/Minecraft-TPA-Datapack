@@ -26,7 +26,7 @@ Project To-do lists:
 - [x] File name: TPA_datapack-{VERSION}{-LIGHT}{MC_VERSION} -> TPA_Datapack-{VERSION}{-LIGHT}{MC_VERSION} 
                      ^　　　　　　　　　　　　　　　　　　　　　　 ^
 - [x] 三种原版维度不应该允许更改数字和命名空间ID
-- [ ] TPA菜单对话框菜单应该和Manhunt一样 通过esc同样可以启动
+- [x] TPA菜单对话框菜单应该和Manhunt一样 通过esc同样可以启动
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs

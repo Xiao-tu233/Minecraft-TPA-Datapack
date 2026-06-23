@@ -8,7 +8,7 @@
     },
     "overlays": {
         "entries": [
-            {"formats": [16, 100], "min_format": 16, "max_format": 100, "directory": "format_26_1"},
+            {"formats": [16, 100], "min_format": 16, "max_format": 102, "directory": "format_26_1_2"},
             {"formats": [16, 97], "min_format": 16, "max_format": 97, "directory": "format_1_21_11"},
             {"formats": [16, 91], "min_format": 16, "max_format": 91, "directory": "format_1_21_9"},
             {"formats": [16, 87], "min_format": 16, "max_format": 87, "directory": "format_1_21_6"},
