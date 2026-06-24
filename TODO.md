@@ -56,7 +56,7 @@ Project To-do lists:
 - [ ] 考虑减少item作为锚点 而是盔甲架 例子如下
   summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
 
-- [ ]  避免leftpart 和rightpart 使用列表
+- [x]  避免leftpart 和rightpart 使用列表
   对于2个插入元素及以上 使用顺序数字来表示 
   0 for ABC
   1 for ACB

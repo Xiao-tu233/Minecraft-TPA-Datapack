@@ -21,8 +21,7 @@ here_button_tpa_hoverevent:  "§bClick to send a teleport request to the player"
 here_voxel_hoverevent:  "§bClick to add VoxelMap Waypoint"
 here_xaero_hoverevent:  "§6Click to add Xearo's Minimap Waypoint"
 here_spec:  "Spectator mode players can't use §aBroadcast Position§r"
-home_act_left_part:  "You have teleported to Home#"
-home_act_right_part:  ""
+home_act:  "You have teleported to Home#%s"
 home_create:  "You haven't set any home yet."
 home_create_button:  "[§aCreate§r]"
 home_create_button_hoverevent:  "§aClick to set a home"
@@ -38,26 +37,20 @@ home_menu_title:  "You own now following homes slot: "
 home_missing_hoverevent:  "This home hasn't been set"
 home_new:  "§aCreate: "
 home_number:  "Home#"
-home_not_found_left_part:  "The Home#"
+home_not_found:  "The Home#%sdoesn't exist"
 home_not_found_hoverevent:  "§bThe home you are looking for"
-home_not_found_right_part:  "doesn't exist"
-home_out_of_range_left_part:  "The Home#"
-home_out_of_range_right_part:  "is out of the server limit."
-home_remove_left_part:  "You removed Home#"
+home_out_of_range:  "The Home#%sis out of the server limit."
+home_remove:  "You removed Home#%s"
 home_remove_hoverevent:  "§bHome which has been removed"
-home_remove_right_part:  ""
-home_set_left_part:  "You have set Home#"
-home_set_middle_part:  "at"
+home_set:  "You have set Home#%1$sat%2$s"
 home_set_overworld:  "§aOverworld"
 home_set_the_nether:  "§cNether"
 home_set_the_end:  "§eThe End"
 home_set_position:  "Positon"
-home_set_right_part:  ""
 home_spec:  "Spectators are not allowed to modify §aHomes§r"
-idfix_act_left_part:  ""
+idfix_act:  "%sused ID fix, all player's datapack ID has been reset to the previous\
+  \ position"
 idfix_act_hoverevent:  "§bThis player used ID fix"
-idfix_act_right_part:  "used ID fix, all player's datapack ID has been reset to the\
-  \ previous position"
 idfix_cooldown:  "§aID fix§r is on cooldown"
 idfix_disabled:  "Server doesn't allow §aID fix§r"
 lang_button:  "[§6Click here to select language§r]"
@@ -66,13 +59,11 @@ lang_button_hoverevent:  "§bClick to open language menu"
 lang_menu_title:  "Please select language below:"
 lang_menu_select_button:  "[§aLoad recommended commands§r]"
 lang_menu_select_button_hoverevent:  "§bClick to load recommended commands in chat\
-  \ bar:                                                   "
+  \ bar:                                                     "
 lang_disabled:  "Language feature is disabled"
-lang_selected_left_part:  "You have switched language to "
-lang_selected_right_part:  ""
-lang_server_follow_left_part:  "Since Datapack default language haven't been set,\
-  \ so it's set to "
-lang_server_follow_right_part:  " now"
+lang_selected:  "You have switched language to %s"
+lang_server_follow:  "Since Datapack default language haven't been set, so it's set\
+  \ to %s now"
 load_done:  "§aData pack has been reloaded: "
 load_version_hoverevent:  "§bIt's the version of TPA Datapack, Instead of Minecraft\
   \ Version."
@@ -145,36 +136,28 @@ option_button_help_hoverevent:  "Click to open help menu"
 output_default:  "You have changed the output position to §aBOTH CHATBAR AND ACTIONBAR§r"
 output_hide_actionbar:  "You have changed the output position to §bCHATBAR ONLY§r"
 output_hide_chatbar:  "You have changed the output position to §aACTIONBAR ONLY§r"
-recver_accept_tpa_left_part:  "You accepted"
+recver_accept_tpa:  "You accepted%s's teleport request"
 recver_accept_tpa_hoverevent:  "§bThe player who sent you a teleport request"
-recver_accept_tpa_right_part:  "'s teleport request"
-recver_accept_tpahere_left_part:  "You accepted to teleport you to"
+recver_accept_tpahere:  "You accepted to teleport you to%s's place."
 recver_accept_tpahere_hoverevent:  "§bPlayer whose §ltpahere§r request you have accepted "
-recver_accept_tpahere_right_part:  "'s place."
-recver_accept_auto_left_part:  "Have automatically accepted"
+recver_accept_auto:  "Have automatically accepted%s's teleport request'"
 recver_accept_auto_hoverevent:  "§bPlayer who sent you a teleport request"
-recver_accept_auto_right_part:  "'s teleport request'"
 recver_accept_toggle_on:  "You have enabled §aalways-accept§r"
 recver_accept_toggle_off:  "You have disabled §aalways-accept§r"
-recver_cancel_left_part:  ""
+recver_cancel:  "%shas cancelled the request to you"
 recver_cancel_hoverevent:  "§bwho has canceled the request to you"
-recver_cancel_right_part:  "has cancelled the request to you"
-recver_deny_tpa_left_part:  "You denied"
+recver_deny_tpa:  "You denied%s's teleport request"
 recver_deny_tpa_hoverevent:  "§bThe player who sent you a teleport request"
-recver_deny_tpa_right_part:  "'s teleport request"
-recver_deny_tpahere_left_part:  "You denied to teleport you to"
+recver_deny_tpahere:  "You denied to teleport you to%s's place."
 recver_deny_tpahere_hoverevent:  "§bPlayer whose §ltpahere§r request you have denied "
-recver_deny_tpahere_right_part:  "'s place."
 recver_recv_button_accept:  "[§aACCEPT§r]"
 recver_recv_button_accept_hoverevent:  "§bClick to accept the request"
 recver_recv_button_deny:  "[§cDENY§r]"
 recver_recv_button_deny_hoverevent:  "§bClick to deny the request"
-recver_recv_tpa_chatbar_left_part:  ""
+recver_recv_tpa_chatbar:  "%ssent you a teleport request"
 recver_recv_tpa_hoverevent:  "§bThe player who sent you a teleport request"
-recver_recv_tpa_chatbar_right_part:  "sent you a teleport request"
-recver_recv_tpa_actionbar_left_part:  ""
-recver_recv_tpa_actionbar_right_part:  "sent you a teleport request. Nod 3 times\
-  \ to accept, shake head 3 times to deny."
+recver_recv_tpa_actionbar:  "%ssent you a teleport request. Nod 3 times to accept,\
+  \ shake head 3 times to deny."
 recver_recv_tpahere_hoverevent:  "§bThe player who sent you a §ltpahere§r request"
 recver_recv_tpahere_chatbar_right_part:  "sent you a §ltpahere§r request"
 recver_recv_tpahere_actionbar_right_part:  "sent you a §ltpahere§r request. Nod 3\
@@ -182,16 +165,12 @@ recver_recv_tpahere_actionbar_right_part:  "sent you a §ltpahere§r request. No
 recver_req_not_exist:  "No pending requests to process"
 recver_timeout_hoverevent:  "§bThe player whose request to you timed out"
 recver_timeout_right_part:  "'s teleport request timed out"
-reqer_accept_tpa_left_part:  "Teleporting to "
+reqer_accept_tpa:  "Teleporting to %s..."
 reqer_accept_tpa_hoverevent:  "§bThe player who accepted your teleport request"
-reqer_accept_tpa_right_part:  "..."
-reqer_accept_tpahere_left_part:  "Teleporting "
+reqer_accept_tpahere:  "Teleporting %sto you..."
 reqer_accept_tpahere_hoverevent:  "§bThe player who accepted your §ltpahere§r request"
-reqer_accept_tpahere_right_part:  "to you..."
-reqer_accept_auto_left_part:  "The player enabled always-accept, teleporting you\
-  \ to "
+reqer_accept_auto:  "The player enabled always-accept, teleporting you to %s..."
 reqer_accept_auto_hoverevent:  "§bThe player who auto-accepted your teleport request"
-reqer_accept_auto_right_part:  "..."
 reqer_button_tpa_hoverevent:  "§bClick to send a teleport request to this player"
 reqer_button_tpahere_hoverevent:  "§bClick to request they teleport to your current\
   \ location"
@@ -206,9 +185,8 @@ reqer_change_actionbar_middle_part:  "'s request. The previous request was cance
   \ Sent a new request to "
 reqer_change_actionbar_right_part:  ", waiting for acceptance. Shake head 3 times\
   \ to cancel"
-reqer_deny_tpa_left_part:  "Teleporting to "
+reqer_deny_tpa:  "Teleporting to %s..."
 reqer_deny_tpa_hoverevent:  "§bThe player who denied your teleport request"
-reqer_deny_tpa_right_part:  "..."
 reqer_deny_tpahere_hoverevent:  "§bThe player who denied your §ltpahere§r request"
 reqer_deny_tpahere_right_part:  "to you..."
 reqer_recver_invalid:  "Target offline or not teleportable"
@@ -239,19 +217,17 @@ simple_menu_enable:  "Switched TPA menu to §asimple mode§r. You can now use §
   \ tpa§r to open it"
 simple_menu_title:  "Click a player below to send a teleport request"
 simple_menu_button_hoverevent:  "§bClick to switch to detailed menu"
-tp_pos_act_left_part:  "Teleported you to position "
-tp_pos_act_right_part:  ""
+tp_pos_act:  "Teleported you to position %s"
 tp_pos_cooldown:  "§aCoordinate teleport§r is on cooldown"
 tp_pos_disabled:  "Server does not allow §acoordinate teleport§r"
 tp_pos_out_of_range:  "Teleport distance exceeds server radius: "
 tp_pos_spec:  "Spectators cannot §ateleport to coordinates§r"
 tp_pos_throw_on_invalid_char:  "The coordinates you entered contain invalid characters"
-tpa_menu_hoverevent_left_part:  "§bClick to send a teleport request to "
-tpa_menu_hoverevent_right_part:  ""
+tpa_menu_hoverevent:  "§bClick to send a teleport request to %s"
 tpa_menu_title:  "Player usernames and datapack IDs. Click an ID to send a teleport\
-  \ request:                                                   "
+  \ request:                                                     "
 tpahere_menu_title:  "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r\
-  \ request:                                                   "
+  \ request:                                                     "
 tpa_menu_extend_hoverevent:  "§bClick to expand menu"
 tpa_menu_extend:  "§bExpand§r"
 tpa_menu_you:  "You"
@@ -296,8 +272,7 @@ dimension_unknown_detected_rightpart:  "), please configure it in the dimension 
 extended_menu_incompatible:  "§aExtended menu§r is incompatible with this game version"
 here_button_tpa_notavail_hoverevent:  "§cThis player does not allow teleporting"
 hoverevent_suggest_tip:  "§aYou should complete the command as: "
-load_date_check_left_part:  "Current version was released on"
-load_date_check_right_part:  ", please pay attention to updates"
+load_date_check:  "Current version was released on%s, please pay attention to updates"
 load_done_extra:  " Extra version "
 load_date_check_format:  !!int "231"
 load_date_check_format_comment:  "§r§l§n# 1 for year, 2 for month, 3 for day, '123'\
@@ -315,8 +290,8 @@ option_advenced_warn:  "The following settings are advanced options. Do not modi
 option_advenced_tip:  "Enable debug mode to access more advanced settings"
 option_anchor_search_retries:  "Anchor search retry count"
 option_anchor_search_retries_hoverevent:  "§bModify the number of anchor search retries\
-  \ below §r(§6Units:                                     times §ror §6game ticks /\
-  \ frequency§r). §bToo high may increase wait time, too low may cause misdetection\
+  \ below §r(§6Units:                                       times §ror §6game ticks\
+  \ / frequency§r). §bToo high may increase wait time, too low may cause misdetection\
   \ or data pollution."
 option_button_notworking:  "[§4Not Working§r]"
 option_button_notworking_hoverevent:  "§bClick when tick function does not work (TPA\
@@ -352,20 +327,28 @@ option_dimension_number_hoverevent_leftpart:  "§bThe server currently supports 
 option_dimension_number_hoverevent_rightpart:  " dimensions"
 option_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2\
   \ tiao2zheng3 she4zhi4!"
-recver_recv_tpahere_actionbar_left_part:  ""
-recver_recv_tpahere_chatbar_left_part:  ""
-recver_timeout_left_part:  ""
+recver_recv_tpahere_actionbar:  "%ssent you a §ltpahere§r request. Nod 3 times to\
+  \ accept, shake head 3 times to deny."
+recver_recv_tpahere_chatbar:  "%ssent you a §ltpahere§r request"
+recver_timeout:  "%s's teleport request timed out"
 reqer_button_tpa:  "[§bTeleport§r]"
 reqer_button_tpahere:  "[§bTeleport Here§r]"
-reqer_cancel_left_part:  "You canceled the request to "
-reqer_change_actionbar_left_part:  "You previously sent a request to "
-reqer_change_chatbar_left_part:  "You previously sent a request to "
+reqer_cancel:  "You canceled the request to %s's request"
+reqer_change_actionbar:  "You previously sent a request to %1$s's request. The previous\
+  \ request was canceled. Sent a new request to %2$s, waiting for acceptance. Shake\
+  \ head 3 times to cancel"
+reqer_change_chatbar:  "You previously sent a request to %1$s's request. The previous\
+  \ request was canceled. Sent a new request to %2$s, waiting for acceptance"
 reqer_req_button_cancel:  "[§4Cancel§r]"
-reqer_req_tpa_actionbar_left_part:  "You sent a request to "
-reqer_req_tpa_chatbar_left_part:  "You sent a request to "
-reqer_req_tpahere_actionbar_left_part:  "You sent a request to "
-reqer_req_tpahere_chatbar_left_part:  "You sent a request to "
-reqer_timeout_left_part:  "Your request to "
+reqer_req_tpa_actionbar:  "You sent a request to %ssent a teleport request. Waiting\
+  \ for acceptance. Shake head 3 times to cancel"
+reqer_req_tpa_chatbar:  "You sent a request to %ssent a teleport request. Waiting\
+  \ for acceptance"
+reqer_req_tpahere_actionbar:  "You sent a request to %ssent a §ltpahere§r request.\
+  \ Waiting for acceptance. Shake head 3 times to cancel"
+reqer_req_tpahere_chatbar:  "You sent a request to %ssent a §ltpahere§r request.\
+  \ Waiting for acceptance"
+reqer_timeout:  "Your request to %s's teleport request has expired"
 search_id_abort:  "You stopped §asearching player IDs§r"
 search_id_dialog_done_tooltip:  "§bClick to submit name"
 search_id_dialog_cancel:  "Cancel"
@@ -379,7 +362,7 @@ teleport_anchor_actionbar:  "Anchor teleport progress: "
 teleport_binary_actionbar:  "Binary search teleport progress: "
 teleport_cal_sim_dist_actionbar:  "Simulation distance"
 teleport_cal_sim_dist_end_leftpart:  "Simulation distance calculated successfully.\
-  \ Current datapack simulation distance is:                                     "
+  \ Current datapack simulation distance is:                                       "
 teleport_cal_sim_dist_start:  "Simulation distance calculation started"
 teleport_sim_dist_warn:  "Server simulation distance is not set. Attempting to teleport\
   \ non-player targets. If teleport fails, please contact admin to recalculate or\
@@ -394,7 +377,7 @@ tick_not_working_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong
 tp_pos_abort:  "You stopped entering teleport coordinates"
 uninstall_done:  "§aSuccessfully uninstalled and disabled the datapack. §rTo fully\
   \ remove it, delete the datapack from the folder. But you can also click the button\
-  \ on the right to enable it again:      "
+  \ on the right to enable it again:        "
 uninstall_enable_folder_button:  "ENABLE1"
 uninstall_enable_folder_button_hoverevent:  "Click to enable folder-based datapack\
   \ (if exists)"
@@ -411,19 +394,18 @@ update_step1_leftpart:  "You are updating the TPA datapack. Current installed ve
   \ is "
 warp_slot_disabled_leftpart:  "The warp you accessed"
 warp_slot_disabled_rightpart:  "has been disabled"
-warp_teleport_left_part:  "You have been teleported to "
-warp_teleport_right_part:  ""
-reqer_deny_tpahere_left_part:  "The requestor is denied from teleporting here."
+warp_teleport:  "You have been teleported to %s"
+reqer_deny_tpahere:  "The requestor is denied from teleporting here.%sto you..."
 option_game_version:  "The compatible game version for the datapack file"
 option_max_anchor_summons_attempts:  "Maximum summon attempts for teleportation anchor"
 option_max_anchor_summons_attempts_hoverevent:  "§bChange the §aMaximum summon attempts\
-  \ for teleportation anchor §r(§6Unit:                            attempts§r)   §bSetting\
-  \ it too high may cause lag and unnecessary waiting, setting it too low may cause\
-  \ frequent teleportation failures."
+  \ for teleportation anchor §r(§6Unit:                              attempts§r)  \
+  \ §bSetting it too high may cause lag and unnecessary waiting, setting it too low\
+  \ may cause frequent teleportation failures."
 option_sim_dist:  "Simulation distance"
 option_sim_dist_button_cal:  "[§aCalculate§r]"
 option_sim_dist_hoverevent:  "§bChange the §aSimulation distance §r(§6Unit: chunks§r)\
-  \  Please make sure there are no players within the simulation distance from the\
+  \   Please make sure there are no players within the simulation distance from the\
   \ origin in the overworld before clicking."
 option_stricter_book_check:  "Stricter teleportation book check"
 option_stricter_book_check_incompatible:  "Stricter teleportation book check is incompatible\
@@ -455,16 +437,17 @@ teleport_incompatible:  "§aAnchor teleportation§r is not compatible with this 
   \ version"
 teleport_sim_dist_disabled:  "The server has not set the simulation distance"
 teleport_sim_dist_warn_button_calc_hoverevent:  "§bClick to start automatically calculating\
-  \ simulation distance. §cWarning:                            This operation may teleport\
-  \ the executor to a different location. Please make sure your position doesn’t need\
-  \ to remain loaded before clicking."
+  \ simulation distance. §cWarning:                              This operation may\
+  \ teleport the executor to a different location. Please make sure your position\
+  \ doesn’t need to remain loaded before clicking."
 tick_not_working_server_calling_comment:  "§l§n§4 This is a comment. The value of\
   \ `tick_not_working_server_calling` is intended for console output. Since some console\
   \ environments may not correctly render Unicode characters, an ASCII-compatible\
   \ romanized form is used instead."
 tick_not_working_tips_line1:  "You are currently calling a Tick function that doesn't\
   \ work, so you may have encountered an issue where the Tick function doesn't work.\
-  \ You can implement one of the following two methods:                           "
+  \ You can implement one of the following two methods:                           \
+  \  "
 tick_not_working_tips_line2:  "        1. Use the /schedule command to call the Tick\
   \ function."
 tick_not_working_tips_line3:  "   Or 2. Place your command block in a hidden location\
@@ -583,12 +566,9 @@ warp_menu_edit_tip:  "You are currently in edit mode. Select the operation slot 
   \ to apply the changes"
 warp_number:  "Warp#"
 warp_out_of_range:  "This public teleport spot has not been set yet"
-warp_select_left_part:  "You have selected"
-warp_select_right_part:  "as the slot being edited"
-warp_set_left_part:  "You have set"
-warp_set_middle_part:  "to"
+warp_select:  "You have selected%sas the slot being edited"
+warp_set:  "You have set%1$sto%2$s"
 warp_set_position:  "coordinates"
-warp_set_right_part:  ""
 warp_set_default_name:  "Unnamed Teleport Spot"
 warp_spec:  "Spectator mode players are not allowed to teleport to §aWarp§r"
 option_dimension_button_edit_id_notavail_hoverevent:  "§cVanilla dimensions cannot\

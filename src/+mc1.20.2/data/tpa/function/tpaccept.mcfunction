@@ -1,4 +1,4 @@
-scoreboard players operation #reqer_id tpa.variables = @s tpa.tpaccept
+# scoreboard players operation #reqer_id tpa.variables = @s tpa.tpaccept
 scoreboard players set @s tpaccept 0
 scoreboard players set @s tpa.tpaccept 0
 

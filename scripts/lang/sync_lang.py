@@ -3,6 +3,48 @@ import yaml
 from pathlib import Path
 from collections import defaultdict
 import re
+import itertools
+
+PARAM_RE = re.compile(r"%(?:(\d+)\$)?s")
+
+PERMUTATIONS = {
+    n: {
+        perm: index
+        for index, perm in enumerate(itertools.permutations(range(1, n + 1)))
+    }
+    for n in range(2, 10)
+}
+
+def convert_lang(value: str):
+    matches = list(PARAM_RE.finditer(value))
+
+    if not matches:
+        return value, None
+
+    parts = []
+    order = []
+
+    last = 0
+
+    for i, m in enumerate(matches):
+        parts.append(value[last:m.start()])
+
+        num = m.group(1)
+        if num is None:
+            # %s 按顺序编号
+            order.append(i + 1)
+        else:
+            order.append(int(num))
+
+        last = m.end()
+
+    parts.append(value[last:])
+
+    if len(order) == 1:
+        return parts, None
+
+    fmt = PERMUTATIONS[len(order)][tuple(order)]
+    return parts, fmt
 
 # ========= 基本配置 =========
 
@@ -72,17 +114,35 @@ def escape_snbt_string(s: str) -> str:
     return s.replace("\\", "\\\\").replace('"', '\\"')
 
 def snbt_compound(d: dict, pretty: bool) -> str:
-    parts = [] 
+    parts = []
+
     for k, v in d.items():
+
         if isinstance(v, str):
-            parts.append(f'{k}: "{escape_snbt_string(v)}"')
+
+            converted, fmt = convert_lang(v)
+
+            # 普通字符串
+            if isinstance(converted, str):
+                parts.append(f'{k}: "{escape_snbt_string(converted)}"')
+
+            # 参数拆分后的列表
+            else:
+                arr = ", ".join(
+                    f'"{escape_snbt_string(x)}"' for x in converted
+                )
+                parts.append(f"{k}: [{arr}]")
+
+                if fmt is not None:
+                    parts.append(f"{k}_format: {fmt}")
+
         else:
             parts.append(f"{k}: {v}")
+
     if not pretty:
         return "{" + ", ".join(parts) + "}"
 
     return "{\\\n    " + ", \\\n    ".join(parts) + " \\\n}"
-
 def snbt_list(items: list, pretty: bool) -> str:
     if not pretty:
         return "[" + ", ".join(items) + "]"

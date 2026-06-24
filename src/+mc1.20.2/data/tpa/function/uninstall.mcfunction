@@ -79,6 +79,7 @@ data remove storage tpa:tpa home
 data remove storage tpa:tpa warp
 data remove storage tpa:tpa option
 data remove storage tpa:tpa loaded_language
+data remove storage tpa:tpa loaded_lang
 data remove storage tpa:tpa lang
 
 data remove storage tpa:tpa requests
