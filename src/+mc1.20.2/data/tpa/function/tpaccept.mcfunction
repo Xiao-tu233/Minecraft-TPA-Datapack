@@ -14,3 +14,4 @@ function tpa:load_lang
 
 execute if score #recved_requests tpa.variables matches 0 run function tpa:tpaccept/no_request_found
 execute if score #recved_requests tpa.variables matches 1 run function tpa:tpaccept/found
+execute if score #recved_requests tpa.variables matches 2.. run function tpa:tpaccept/

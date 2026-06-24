@@ -19,3 +19,5 @@ execute if score #requests.popping tpa.variables matches 1 if score #requests.co
 data remove storage tpa:tpa requests[0]
 
 execute unless data storage tpa:tpa requests[0].sentinel run function tpa:requests/loop
+
+# data modify storage tpa:tpa requests set value [{reqer: 2, recver: 1, direction: 0b, timer: 6000}]
