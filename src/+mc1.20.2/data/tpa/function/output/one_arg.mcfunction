@@ -1,2 +1,4 @@
+# Input: List[2] temp.output.langs, str temp.output.arg, str, temp.output.arg_hover
+
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"temp.output.langs[0]"}, {interpret: true, storage:"tpa:tpa", nbt:"temp.output.arg", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.arg_hover"}}}, {interpret: true, storage:"tpa:tpa", nbt:"temp.output.langs[1]"}, ". "]
 title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"temp.output.langs[0]"}, {interpret: true, storage:"tpa:tpa", nbt:"temp.output.arg"}, {interpret: true, storage:"tpa:tpa", nbt:"temp.output.langs[1]"}]

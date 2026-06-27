@@ -71,11 +71,23 @@ scoreboard players operation #previous_sum_of_id tpa.variables = #sum_of_id tpa.
 # Give players a new id if their id is 1
 execute as @r[scores={tpa.player_id=1}] run function tpa:giveid
 
+
+# Personal settings
+# execute as @a[scores={tpa.extended_menu=1..}] run function tpa:extended_menu
+execute as @a[scores={tpa.mute=2..}] run function tpa:mute
+execute as @a[scores={tpa.output=3..}] run function tpa:output
+execute as @a[scores={tpaccept=2..3}] run function tpa:tpaccept_toggle
+execute as @a[scores={tpa.tpaccept_toggle=2..3}] run function tpa:tpaccept_toggle
+
+
 # Teleport requests & TPA menu
-execute as @a[scores={tpa.simple_menu=2..3}] run function tpa:simple_menu
+# execute as @a[scores={tpa.simple_menu=2..3}] run function tpa:simple_menu
 execute as @a[scores={tpa.dialog=1..}] run function tpa:dialog
+execute as @a[scores={tpa=0}] run function tpa:tpa_menu
+execute as @a[scores={tpa.tpa=0}] run function tpa:tpa_menu
 execute as @a[scores={tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpa=1..}] run function tpa:tpa
+execute as @a[scores={tpa.tpahere=0}] run function tpa:tpahere_menu
 execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere
 
 # Set back pos before death, and kill tpa book who dropped
@@ -88,8 +100,6 @@ execute as @a[scores={tpa.cancel_req=1..}] run function tpa:cancel_req
 
 execute as @a[scores={tpaccept=1}] run function tpa:tpaccept
 execute as @a[scores={tpa.tpaccept=1..}] run function tpa:tpaccept
-execute as @a[scores={tpaccept=2..3}] run function tpa:tpaccept_toggle
-execute as @a[scores={tpa.tpaccept_toggle=2..3}] run function tpa:tpaccept_toggle
 execute as @a[scores={tpaccept=..-1}] run function tpa:tpadeny
 execute as @a[scores={tpa.tpaccept=..-1}] run function tpa:tpadeny
 
@@ -103,9 +113,6 @@ run scoreboard players operation @s tpa.idfix_cd -= #ticks_skipped tpa.variables
 execute as @a[scores={tpa.idfix_cd=0..}] if score @s tpa.idfix_cd <= #ticks_skipped tpa.variables \
 run scoreboard players set @s tpa.idfix_cd 0
 
-execute as @a[scores={tpa.extended_menu=1..}] run function tpa:extended_menu
-execute as @a[scores={tpa.mute=2..}] run function tpa:mute
-execute as @a[scores={tpa.output=3..}] run function tpa:output
 execute as @a[scores={tpa.here=1..}] run function tpa:here
 
 # TPA book 传送书

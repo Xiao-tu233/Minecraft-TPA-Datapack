@@ -1,6 +1,5 @@
-scoreboard players set #is_menu_open tpa.variables 1
-scoreboard players set @s tpa.tpa 0
-scoreboard players set @s tpa 0
+scoreboard players set @s tpa.tpa -1
+scoreboard players set @s tpa -1
 
 function tpa:load_lang
 

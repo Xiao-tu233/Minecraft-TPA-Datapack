@@ -6,6 +6,10 @@ function tpa:load_lang
 execute unless score #language tpa.config matches 1.. run tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {text: "[§a设置 | Set§r]", click_event:{action:"run_command",command: "/trigger tpa.language set -1"}}]
 
 # Reset scores
+scoreboard players set @s tpa -1
+scoreboard players set @s tpa.tpa -1
+scoreboard players set @s tpa.tpahere -1
+
 scoreboard players set @s tpa.tp_to 0
 scoreboard players set @s tpa.tp_here 0
 scoreboard players set @s tpa.tpaccept 0

@@ -1,12 +1,8 @@
 scoreboard players operation #tp_here tpa.variables = @s tpa.tpahere
-scoreboard players set @s tpa.tpahere 0
+scoreboard players set @s tpa.tpahere -1
 
 function tpa:load_lang
 
-scoreboard players set #is_menu_open tpa.variables 0
-
-execute if score #tp_here tpa.variables matches 1 run function tpa:tpahere_menu
-execute if score #tp_here tpa.variables matches 1 run return 0
 
 function tpa:tpa_condition_dealing
 execute if score #condition tpa.variables matches 1..4 run return 0
