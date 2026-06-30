@@ -134,8 +134,8 @@ tellraw @a [\
 # Show the publish date, with local format
 function tpa:load/date_format
 tellraw @a [\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check_left_part"}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dates[]", "separator": ""}, "(UTC+8)", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check_right_part"}\
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check[0]"}, \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dates[]", "separator": ""}, "(UTC+8)", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check[1]"}\
 ]
 
 tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_copyright_claim"}]
