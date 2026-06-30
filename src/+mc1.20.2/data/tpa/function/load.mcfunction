@@ -151,7 +151,7 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a [\
 ]
 scoreboard players set #debug_mode tpa.config 0
 
-tellraw @a [\
+tellraw @a ["", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_options", color: "gold", click_event:{action:"run_command",command:"/function tpa:options"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_options_hoverevent"}}}," ",\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_help", color: "gold", click_event:{action:"run_command",command:"/function tpa:help"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_help_hoverevent"}}}," ",\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_update", color: "gold", click_event:{action:"run_command",command:"/function tpa:update"},hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_button_update_hoverevent"}}}," ",\
