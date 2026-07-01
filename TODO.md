@@ -53,7 +53,8 @@ Project To-do lists:
   无点击事件 灰色
   无需op 白色
   需op 金色
-- [ ] 请求重复的检测似乎没有工作
+- [x] 请求重复的检测似乎没有工作
+- [ ] 超时/请求失效时不会提示玩家
 
 - [ ] 考虑减少item作为锚点 而是盔甲架 例子如下
   summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}

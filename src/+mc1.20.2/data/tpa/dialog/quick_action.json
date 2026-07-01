@@ -9,8 +9,9 @@
         "contents": "在下方点进入来进入 TPA 对话框菜单"
     },
     "action": {
-        "label": "TPA dialog menu | TPA对话框菜单",
+        "label": "TPA Dialog Menu | TPA对话框菜单",
         "tooltip": "Click to open the TPA dialog menu | 点击打开TPA对话框菜单",
+        "width": 300,
         "action": {
             "type": "minecraft:run_command",
             "command": "trigger tpa.dialog"

@@ -71,6 +71,11 @@ scoreboard players operation #previous_sum_of_id tpa.variables = #sum_of_id tpa.
 # Give players a new id if their id is 1
 execute as @r[scores={tpa.player_id=1}] run function tpa:giveid
 
+# Update every requests: timer, availability, etc.
+function tpa:requests/update
+
+# Set back pos before death, and kill tpa book who dropped
+execute as @a[scores={tpa.if_death=1..}] run function tpa:player_died
 
 # Personal settings
 # execute as @a[scores={tpa.extended_menu=1..}] run function tpa:extended_menu
@@ -89,13 +94,6 @@ execute as @a[scores={tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpahere=0}] run function tpa:tpahere_menu
 execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere
-
-# Set back pos before death, and kill tpa book who dropped
-execute as @a[scores={tpa.if_death=1..}] run function tpa:player_died
-
-# Time out detect
-execute as @a[scores={tpa.tp_to=2..}] run function tpa:req_timer
-
 execute as @a[scores={tpa.cancel_req=1..}] run function tpa:cancel_req
 
 execute as @a[scores={tpaccept=1}] run function tpa:tpaccept

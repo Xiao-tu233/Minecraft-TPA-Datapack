@@ -10,7 +10,7 @@ execute unless score #reqer tpa.variables = #reqer tpa.variables run scoreboard 
 execute if score #requests.current_recver tpa.variables = #recver tpa.variables run scoreboard players add #requests.conditions_met tpa.variables 1
 execute unless score #recver tpa.variables = #recver tpa.variables run scoreboard players add #requests.conditions_met tpa.variables 1
 execute if score #requests.current_direction tpa.variables = #direction tpa.variables run scoreboard players add #requests.conditions_met tpa.variables 1
-execute unless score #direction tpa.variables = #recver tpa.variables run scoreboard players add #requests.conditions_met tpa.variables 1
+execute unless score #direction tpa.variables = #direction tpa.variables run scoreboard players add #requests.conditions_met tpa.variables 1
 
 execute if score #requests.conditions_met tpa.variables matches 3 run data modify storage tpa:tpa temp.matched_requests append from storage tpa:tpa requests[0]
 
@@ -19,5 +19,3 @@ execute if score #requests.popping tpa.variables matches 1 if score #requests.co
 data remove storage tpa:tpa requests[0]
 
 execute unless data storage tpa:tpa requests[0].sentinel run function tpa:requests/loop
-
-# data modify storage tpa:tpa requests set value [{reqer: 2, recver: 1, direction: 0b, timer: 6000}]
