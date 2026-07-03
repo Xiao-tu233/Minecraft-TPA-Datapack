@@ -79,12 +79,6 @@ execute as @a[scores={tpa.language=..-1}] run function tpa:language_menu
 execute as @a[scores={tpa.language=1..}] run function tpa:language
 execute as @a[scores={tpa.help=1..}] run function tpa:help
 
-execute as @a[scores={tpa.idfix=1..}] run function tpa:idfix
-execute as @a if score @s tpa.idfix_cd > #ticks_skipped tpa.variables \
-run scoreboard players operation @s tpa.idfix_cd -= #ticks_skipped tpa.variables
-execute as @a[scores={tpa.idfix_cd=0..}] if score @s tpa.idfix_cd <= #ticks_skipped tpa.variables \
-run scoreboard players set @s tpa.idfix_cd 0
-
 execute as @a[scores={tpa.here=1..}] run function tpa:here
 
 # TPA book 传送书

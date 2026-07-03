@@ -30,14 +30,6 @@ tellraw @s ["      §6- ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_enable", click_event:{action:"run_command",command:"/scoreboard players set #tp_spec tpa.config 1"}},"|",\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_disable", click_event:{action:"run_command",command:"/scoreboard players set #tp_spec tpa.config 0"}}]
 
-execute if score #compact_ids tpa.config matches 1 run \
-    tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_compact_ids", color: "aqua"}, ": ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_enabled"}]
-execute if score #compact_ids tpa.config matches 0 run \ 
-    tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_compact_ids", color: "aqua"}, ": ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_disabled"}]
-tellraw @s ["      §6- ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_enable", click_event:{action:"run_command",command:"/scoreboard players set #compact_ids tpa.config 1"}},"|",\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_disable", click_event:{action:"run_command",command:"/scoreboard players set #compact_ids tpa.config 0"}}]
-
 execute if score #carpet_fake_player_fix tpa.config matches 1 run \
     tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_carpet_fake_player_fix", color: "aqua"}, ": ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_enabled"}]
 execute if score #carpet_fake_player_fix tpa.config matches 0 run \
@@ -103,9 +95,6 @@ tellraw @s ["      §6- ", \
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_time_out", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_time_out_hoverevent"}}}, ": ", {score:{name:"#time_out",objective:"tpa.config"}, color: "white"}]
 tellraw @s ["      §6- ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"show_dialog",dialog:"tpa:option/time_out"}}]
-tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_idfix_cooldown", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_idfix_cooldown_hoverevent"}}}, ": ", {score:{name:"#idfix_cooldown",objective:"tpa.config"}, color: "white"}]
-tellraw @s ["      §6- ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"show_dialog",dialog:"tpa:option/idfix_cooldown"}}]
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp_hoverevent"}}}, ": ", {score:{name:"#warp",objective:"tpa.config"}, color: "white", hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp_number_hoverevent_leftpart"}, {score:{name:"#warp",objective:"tpa.config"}, color: "white"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp_number_hoverevent_rightpart"}]}}]
 tellraw @s ["      §6- ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"run_command",command:"/function tpa:warp/option"}}]

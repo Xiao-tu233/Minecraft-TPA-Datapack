@@ -32,9 +32,5 @@ execute if score #is_updated_from_205 tpa.config matches 1 run tag @s remove TPA
 # Detect if player is first join
 execute unless score @s tpa.uid = @s tpa.uid run function tpa:first_join
 
-# Set player ID
-# execute if score #compact_ids tpa.config matches 0 as @s[predicate=tpa:available] run scoreboard players operation @s tpa.player_id = @s tpa.uid
-# execute if score #compact_ids tpa.config matches 1 as @s[predicate=tpa:available] run scoreboard players set @s tpa.player_id 1
-
 # Show TPA menu button when player joins
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.reqer_first_join", click_event:{action:"run_command",command: "/trigger tpa"}}]

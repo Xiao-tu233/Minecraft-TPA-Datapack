@@ -82,6 +82,7 @@ data remove storage tpa:tpa loaded_language
 data remove storage tpa:tpa lang
 
 data remove storage tpa:tpa requests
+data remove storage tpa:tpa request_selector
 data remove storage tpa:tpa config
 data remove storage tpa:tpa version
 data remove storage tpa:tpa game_version

@@ -32,11 +32,3 @@ tellraw @s ["      §6- ", \
 
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_sim_dist", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_sim_dist_hoverevent"}}}, ": ", {score:{name:"#sim_dist",objective:"tpa.config"}, color: "white"}]
 tellraw @s ["      §6- ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"suggest_command",command:"/scoreboard players set #sim_dist tpa.config "}}, " ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_sim_dist_button_cal", click_event:{action:"run_command",command:"/function tpa:teleport/cal_sim_dist"}}]
-
-tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_anchor_search_retries", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_anchor_search_retries_hoverevent"}}}, ": ", {score:{name:"#anchor_search_retries",objective:"tpa.config"}, color: "white"}]
-tellraw @s ["      §6- ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"suggest_command",command:"/scoreboard players set #anchor_search_retries tpa.config "}}]
-
-tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_max_anchor_summons_attempts", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_max_anchor_summons_attempts_hoverevent"}}}, ": ", {score:{name:"#max_anchor_summons_attempts",objective:"tpa.config"}, color: "white"}]
-tellraw @s ["      §6- ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"suggest_command",command:"/scoreboard players set #max_anchor_summons_attempts tpa.config "}}]

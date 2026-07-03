@@ -21,8 +21,6 @@ scoreboard objectives add tpa.cancel_req trigger
 scoreboard objectives add tpa.uid dummy
 scoreboard objectives add tpa.is_online dummy
 scoreboard objectives add tpa.spec dummy
-scoreboard objectives add tpa.idfix trigger
-scoreboard objectives add tpa.idfix_cd dummy
 scoreboard objectives add tpa.back trigger
 scoreboard objectives add tpa.extended_menu trigger
 scoreboard objectives add tpa.mute trigger
@@ -60,7 +58,6 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Resetting online player scores... (2/6)"]
 scoreboard players set #global_current tpa.player_id 1
 execute unless score #global_current tpa.uid = #global_current tpa.uid run scoreboard players set #global_current tpa.uid 1
-execute if score #compact_ids tpa.config matches 0 run scoreboard players set @a tpa.player_id 1 
 scoreboard players set @a tpa.tpaccept 0
 scoreboard players set @a tpa.if_death 0
 scoreboard players set @a tpa.pos 0
@@ -71,9 +68,12 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing data storage... (3/6)"]
 data modify storage tpa:tpa back set value {}
 data modify storage tpa:tpa requests set value []
+data modify storage tpa:tpa request_selector.req set value {}
+data modify storage tpa:tpa request_selector.recv set value {}
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp
+
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Data storage has been initialized. (4/6)"]
 

@@ -1,3 +1,4 @@
+scoreboard players operation #cancel_index tpa.variables = @s tpa.cancel_req
 scoreboard players set @s tpa.cancel_req 0
 
 scoreboard players reset #recver tpa.variables
@@ -10,4 +11,4 @@ function tpa:load_lang
 
 execute if score #recved_requests tpa.variables matches 0 run function tpa:cancel_req/no_request_found
 execute if score #recved_requests tpa.variables matches 1 run function tpa:cancel_req/found
-execute if score #recved_requests tpa.variables matches 2.. run function tpa:cancel_req/found_multiple
+execute if score #recved_requests tpa.variables matches 2.. run function tpa:cancel_req/multiple_found
