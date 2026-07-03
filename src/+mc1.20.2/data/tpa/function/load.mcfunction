@@ -14,13 +14,10 @@ scoreboard objectives add tpa.help trigger
 scoreboard objectives add tpa.tpaccept trigger
 scoreboard objectives add tpa.tpaccept_toggle trigger
 scoreboard objectives add tpa.tpa trigger
-scoreboard objectives add tpa.tp_to dummy
 scoreboard objectives add tpa.tpahere trigger
 scoreboard objectives add tpa.simple_menu trigger
 scoreboard objectives add tpa.tp_here dummy
 scoreboard objectives add tpa.cancel_req trigger
-# scoreboard objectives remove tpa.player_id
-# scoreboard objectives add tpa.player_id dummy
 scoreboard objectives add tpa.uid dummy
 scoreboard objectives add tpa.is_online dummy
 scoreboard objectives add tpa.spec dummy
@@ -57,25 +54,14 @@ scoreboard objectives add tpa.warp trigger
 scoreboard objectives add tpa.available dummy
 # For only 1.20.2-
 scoreboard objectives add tpa.output_ dummy
+# For only 1.21.6+
 scoreboard objectives add tpa.dialog trigger
-# scoreboard objectives add tpa.head_gestures dummy
-# scoreboard objectives add tpa.yaw dummy
-# scoreboard objectives add tpa.pitch dummy
-# scoreboard objectives add tpa.yaw.origin dummy
-# scoreboard objectives add tpa.pitch.origin dummy
-# scoreboard objectives add tpa.first_extreme dummy
-# scoreboard objectives add tpa.second_extreme dummy
-# scoreboard objectives add tpa.hg.interval_timer dummy
-# scoreboard objectives add tpa.hg.sequence_timer dummy
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Objectives have been added. (1/6)"]
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Resetting online player scores... (2/6)"]
 scoreboard players set #global_current tpa.player_id 1
 execute unless score #global_current tpa.uid = #global_current tpa.uid run scoreboard players set #global_current tpa.uid 1
 execute if score #compact_ids tpa.config matches 0 run scoreboard players set @a tpa.player_id 1 
-scoreboard players set @a tpa.tp_to 0
-scoreboard players set @a tpa.tp_here 0
 scoreboard players set @a tpa.tpaccept 0
-scoreboard players set @a tpa.req_timer 0
 scoreboard players set @a tpa.if_death 0
 scoreboard players set @a tpa.pos 0
 scoreboard players set @a tpa.search_id.key 0

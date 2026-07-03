@@ -1,5 +1,9 @@
+
 execute store result score #recver tpa.variables run data get storage tpa:tpa temp.matched_requests[0].recver
 execute store result score #direction tpa.variables run data get storage tpa:tpa temp.matched_requests[0].direction
+
+execute if score #debug_mode tpa.config matches 1 run tellraw @a {translate: "[§bTPA§r] §6 Debug: §rRequest_%1$s from %2$s to %3$s removed due to CANCELLED REQUEST", with: [{score: {name: "#direction", objective: "tpa.variables"}}, {score: {name: "#reqer", objective: "tpa.variables"}}, {score: {name: "#recver", objective: "tpa.variables"}}]}
+
 tag @a remove to_modify
 execute as @a if score #recver tpa.variables = @s tpa.uid run tag @s add to_modify
 

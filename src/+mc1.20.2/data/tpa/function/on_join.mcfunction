@@ -10,10 +10,7 @@ scoreboard players set @s tpa -1
 scoreboard players set @s tpa.tpa -1
 scoreboard players set @s tpa.tpahere -1
 
-scoreboard players set @s tpa.tp_to 0
-scoreboard players set @s tpa.tp_here 0
 scoreboard players set @s tpa.tpaccept 0
-scoreboard players set @s tpa.req_timer 0
 scoreboard players set @s tpa.if_death 0
 scoreboard players set @s tpa.pos 0
 scoreboard players set @s tpa.pos.x 0

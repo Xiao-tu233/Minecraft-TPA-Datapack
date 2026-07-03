@@ -1,8 +1,8 @@
 kill @e[type=text_display, tag=tpa.license_displayer]
 
 tellraw @s ["[§bTPA§r] To make sure you can read the whole one, Go set ESC-> Options -> Video Settings -> Quality -> Entity Distance: 500% \n", \
-     {text: "[§bGo Start§r]", click_event:{action:"run_command",command: "/tp ~ ~320 ~"}, hover_event: {action: "show_text", value: "§bClick to teleport you to the start of the license."}}, " ", \
-     {text: "[§bEnd Reading§r]", click_event:{action:"run_command",command: "/kill @e[type=text_display, tag=tpa.license_displayer]"}, hover_event: {action: "show_text", value: "§bClick to end the reading and kill the text display entity."}}]
+     {text: "§6[§bGo Start§6]", click_event:{action:"run_command",command: "/tp ~ ~320 ~"}, hover_event: {action: "show_text", value: "§bClick to teleport you to the start of the license."}}, " ", \
+     {text: "§6[§bEnd Reading§6]", click_event:{action:"run_command",command: "/kill @e[type=text_display, tag=tpa.license_displayer]"}, hover_event: {action: "show_text", value: "§bClick to end the reading and kill the text display entity."}}]
 
 summon text_display ~ ~ ~ {Tags: ["tpa.license_displayer"], alignment: "center", text: '"\
 \\n\\n§bThis license version may not be the lastest version, so you need to check it on Github if you need.§r\\n\\n\

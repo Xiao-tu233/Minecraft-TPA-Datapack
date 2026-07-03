@@ -40,36 +40,10 @@ scoreboard players enable @a tpa.dialog
 execute store result storage tpa:tpa option.tp_spec int 1 run scoreboard players get #tp_spec tpa.config
 execute store result storage tpa:tpa option.carpet_fake_player_fix int 1 run scoreboard players get #carpet_fake_player_fix tpa.config
 
-# Refresh player's scores when he's online
-execute as @a unless score @s tpa.is_online matches 1 run function tpa:on_join
-
-# Make spectators and fake players not available to teleport by setting their tpa.player_id to -1
-execute if score #compact_ids tpa.config matches 1 run scoreboard players set @a[predicate=!tpa:available] tpa.player_id -1
-execute if score #compact_ids tpa.config matches 0 run scoreboard players operation @a[predicate=!tpa:available] tpa.player_id *= #-1 tpa.variables
-
-# Offline detect: {Player count decreased ? Remove offline Player ids : do nothing}
-execute store result score #current_avail_count tpa.variables if entity @a[predicate=tpa:available]
-execute store result score #current_online_count tpa.variables if entity @a
-scoreboard players set #sum_of_id tpa.variables 0
-execute as @a[predicate=tpa:available] run scoreboard players operation #sum_of_id tpa.variables += @s tpa.player_id
-
-# Give spectators and fake players whose game id was shaderred a new id
-execute if score #compact_ids tpa.config matches 1 as @a[predicate=tpa:available, scores={tpa.player_id=..-1}] run scoreboard players set @s tpa.player_id 1
-execute if score #compact_ids tpa.config matches 0 as @a[predicate=tpa:available, scores={tpa.player_id=..-1}] run scoreboard players operation @s tpa.player_id = @s tpa.uid
-
-# Remove offline player's id and give them to online players if the option is enabled
-execute if score #current_avail_count tpa.variables < #previous_avail_count tpa.variables if score #compact_ids tpa.config matches 1 \
-    run function tpa:compact_ids
-
-# Reset for next change
-execute unless score #current_avail_count tpa.variables = #previous_avail_count tpa.variables run scoreboard players operation #previous_avail_count tpa.variables = #current_avail_count tpa.variables
-
 # Update online players' online status if player count changed
 execute unless score #current_online_count tpa.variables = #previous_online_count tpa.variables run function tpa:update_online
-scoreboard players operation #previous_sum_of_id tpa.variables = #sum_of_id tpa.variables
-
-# Give players a new id if their id is 1
-execute as @r[scores={tpa.player_id=1}] run function tpa:giveid
+# Refresh player's scores when he's online
+execute as @a unless score @s tpa.is_online matches 1 run function tpa:on_join
 
 # Update every requests: timer, availability, etc.
 function tpa:requests/update
