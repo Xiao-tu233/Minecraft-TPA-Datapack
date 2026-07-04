@@ -1,6 +1,11 @@
 # Parent function: tpa:cancel_req
 
-execute if score #cancel_index tpa.variables matches 1 run function tpa:cancel_req/create_menu
-execute if score #cancel_index tpa.variables matches 2 run function tpa:cancel_req/previous_page
-execute if score #cancel_index tpa.variables matches 3..7 run function tpa:cancel_req/cancel_specific
-execute if score #cancel_index tpa.variables matches 8 run function tpa:cancel_req/next_page
+scoreboard players set #selector_profile_created tpa.variables 0
+scoreboard players operation #uid tpa.variables = @s tpa.uid
+function tpa:cancel_req/selector/get
+execute store result score #selector_profile_created tpa.variables run data get storage tpa:tpa temp.matched_selector
+
+execute if score #selector_profile_created tpa.variables matches 0 run function tpa:cancel_req/create_menu
+execute if score #selector_profile_created tpa.variables matches 1 run function tpa:cancel_req/update_menu
+
+function tpa:cancel_req/show_selector
