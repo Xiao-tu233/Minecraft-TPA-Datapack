@@ -68,8 +68,8 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing data storage... (3/6)"]
 data modify storage tpa:tpa back set value {}
 data modify storage tpa:tpa requests set value []
-data modify storage tpa:tpa request_selector.req set value {}
-data modify storage tpa:tpa request_selector.recv set value {}
+data modify storage tpa:tpa request_selector.req set value []
+data modify storage tpa:tpa request_selector.recv set value []
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp
