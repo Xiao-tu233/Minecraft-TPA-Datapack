@@ -231,7 +231,7 @@ reqer_cancel_selector_button_previous_page_hoverevent: "§b点击查看上一页
 reqer_cancel_selector_button_next_page: "下一页 ▶"
 reqer_cancel_selector_button_next_page_hoverevent: "§b点击查看下一页"
 reqer_change_actionbar: "你之前发送过了一个向%1$s的请求, 已取消前一个请求. 现在向%2$s发送了请求, 等待他接受. "
-reqer_change_chatbar: "你之前发送过了一个 向%1$s的请求, 已取消前一个请求. 现在向%2$s发送了请求, 等待他接受"
+reqer_change_chatbar: "你之前发送过了一个向%1$s的请求, 已取消前一个请求. 现在向%2$s发送了请求, 等待他接受"
 reqer_change_hoverevent: "§b你之前发送请求的玩家"
 reqer_deny_tpa_hoverevent: "§b拒绝了你的传送请求的玩家"
 reqer_deny_tpa: "%s拒绝了你的传送请求"
