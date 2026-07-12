@@ -18,8 +18,3 @@ execute if score #selector_profile_created tpa.variables matches 0 run function 
 execute if score #selector_profile_created tpa.variables matches 1.. run function tpa:cancel_req/update_menu
 
 execute unless score #cancel_index tpa.variables matches 3..7 run function tpa:cancel_req/show_selector
-
-
-# 1.  请求菜单的颜色需要优化
-# [x] 2.  上一页和下一页应该在不可以被点击的时候灰掉
-# [x] 3.  在取消具体请求的时候菜单就不需要被显示了

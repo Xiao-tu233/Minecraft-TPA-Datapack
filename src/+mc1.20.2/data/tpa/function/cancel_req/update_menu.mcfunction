@@ -8,8 +8,6 @@ execute if score #cancel_index tpa.variables matches 3..7 run function tpa:cance
 execute if score #cancel_index tpa.variables matches 3..7 run function tpa:cancel_req/cancel_specific
 execute if score #cancel_index tpa.variables matches 8 run function tpa:cancel_req/next_page
 
-tellraw @a ["cancel_index: ", {score: {name: "#cancel_index", objective: "tpa.variables"}}]
-
 scoreboard players operation #reqer tpa.variables = @s tpa.uid
 scoreboard players reset #recver tpa.variables
 scoreboard players reset #direction tpa.variables
