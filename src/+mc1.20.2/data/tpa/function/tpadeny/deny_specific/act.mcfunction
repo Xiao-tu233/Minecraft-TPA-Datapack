@@ -1,5 +1,7 @@
-execute store result score #reqer tpa.variables run data get storage tpa:tpa temp.matched_requests[0].reqer
-execute store result score #direction tpa.variables run data get storage tpa:tpa temp.matched_requests[0].direction
+# Parent function: tpa:tpadeny/deny_specific
+
+execute store result score #reqer tpa.variables run data get storage tpa:tpa temp.denied_request.reqer
+execute store result score #direction tpa.variables run data get storage tpa:tpa temp.denied_request.direction
 tag @a remove to_modify
 execute as @a if score #reqer tpa.variables = @s tpa.uid run tag @s add to_modify
 

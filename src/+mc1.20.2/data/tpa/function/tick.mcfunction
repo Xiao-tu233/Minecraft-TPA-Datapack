@@ -56,6 +56,7 @@ execute as @a[scores={tpa.if_death=1..}] run function tpa:player_died
 execute as @a[scores={tpa.mute=2..}] run function tpa:mute
 execute as @a[scores={tpa.output=3..}] run function tpa:output
 execute as @a[scores={tpaccept=2..3}] run function tpa:tpaccept_toggle
+execute as @a[scores={tpa.tpaccept=2..4}] run function tpa:tpaccept_toggle
 execute as @a[scores={tpa.tpaccept_toggle=2..3}] run function tpa:tpaccept_toggle
 
 
@@ -71,7 +72,8 @@ execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere
 execute as @a[scores={tpa.cancel_req=1..}] run function tpa:cancel_req
 
 execute as @a[scores={tpaccept=1}] run function tpa:tpaccept
-execute as @a[scores={tpa.tpaccept=1..}] run function tpa:tpaccept
+execute as @a[scores={tpa.tpaccept=1}] run function tpa:tpaccept
+execute as @a[scores={tpa.tpaccept=5..}] run function tpa:tpaccept
 execute as @a[scores={tpaccept=..-1}] run function tpa:tpadeny
 execute as @a[scores={tpa.tpaccept=..-1}] run function tpa:tpadeny
 

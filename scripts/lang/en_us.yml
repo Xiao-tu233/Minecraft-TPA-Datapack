@@ -59,7 +59,7 @@ lang_button_hoverevent:  "§bClick to open language menu"
 lang_menu_title:  "Please select language below:"
 lang_menu_select_button:  "[§aLoad recommended commands§r]"
 lang_menu_select_button_hoverevent:  "§bClick to load recommended commands in chat\
-  \ bar:                                                                "
+  \ bar:                                                                 "
 lang_disabled:  "Language feature is disabled"
 lang_selected:  "You have switched language to %s"
 lang_server_follow:  "Since Datapack default language haven't been set, so it's set\
@@ -225,9 +225,9 @@ tp_pos_spec:  "Spectators cannot §ateleport to coordinates§r"
 tp_pos_throw_on_invalid_char:  "The coordinates you entered contain invalid characters"
 tpa_menu_hoverevent:  "§bClick to send a teleport request to %s"
 tpa_menu_title:  "Player usernames and datapack IDs. Click an ID to send a teleport\
-  \ request:                                                                "
+  \ request:                                                                 "
 tpahere_menu_title:  "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r\
-  \ request:                                                                "
+  \ request:                                                                 "
 tpa_menu_extend_hoverevent:  "§bClick to expand menu"
 tpa_menu_extend:  "§bExpand§r"
 tpa_menu_you:  "You"
@@ -290,9 +290,9 @@ option_advenced_warn:  "The following settings are advanced options. Do not modi
 option_advenced_tip:  "Enable debug mode to access more advanced settings"
 option_anchor_search_retries:  "Anchor search retry count"
 option_anchor_search_retries_hoverevent:  "§bModify the number of anchor search retries\
-  \ below §r(§6Units:                                                  times §ror §6game\
-  \ ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection\
-  \ or data pollution."
+  \ below §r(§6Units:                                                   times §ror\
+  \ §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause\
+  \ misdetection or data pollution."
 option_button_notworking:  "[§4Not Working§r]"
 option_button_notworking_hoverevent:  "§bClick when tick function does not work (TPA\
   \ menu cannot be opened)"
@@ -363,7 +363,7 @@ teleport_binary_actionbar:  "Binary search teleport progress: "
 teleport_cal_sim_dist_actionbar:  "Simulation distance"
 teleport_cal_sim_dist_end_leftpart:  "Simulation distance calculated successfully.\
   \ Current datapack simulation distance is:                                      \
-  \            "
+  \             "
 teleport_cal_sim_dist_start:  "Simulation distance calculation started"
 teleport_sim_dist_warn:  "Server simulation distance is not set. Attempting to teleport\
   \ non-player targets. If teleport fails, please contact admin to recalculate or\
@@ -378,7 +378,7 @@ tick_not_working_server_calling:  "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong
 tp_pos_abort:  "You stopped entering teleport coordinates"
 uninstall_done:  "§aSuccessfully uninstalled and disabled the datapack. §rTo fully\
   \ remove it, delete the datapack from the folder. But you can also click the button\
-  \ on the right to enable it again:                   "
+  \ on the right to enable it again:                    "
 uninstall_enable_folder_button:  "ENABLE1"
 uninstall_enable_folder_button_hoverevent:  "Click to enable folder-based datapack\
   \ (if exists)"
@@ -400,7 +400,7 @@ reqer_deny_tpahere:  "The requestor is denied from teleporting here.%sto you..."
 option_game_version:  "The compatible game version for the datapack file"
 option_max_anchor_summons_attempts:  "Maximum summon attempts for teleportation anchor"
 option_max_anchor_summons_attempts_hoverevent:  "§bChange the §aMaximum summon attempts\
-  \ for teleportation anchor §r(§6Unit:                                         attempts§r)\
+  \ for teleportation anchor §r(§6Unit:                                          attempts§r)\
   \   §bSetting it too high may cause lag and unnecessary waiting, setting it too\
   \ low may cause frequent teleportation failures."
 option_sim_dist:  "Simulation distance"
@@ -438,7 +438,7 @@ teleport_incompatible:  "§aAnchor teleportation§r is not compatible with this 
   \ version"
 teleport_sim_dist_disabled:  "The server has not set the simulation distance"
 teleport_sim_dist_warn_button_calc_hoverevent:  "§bClick to start automatically calculating\
-  \ simulation distance. §cWarning:                                         This operation\
+  \ simulation distance. §cWarning:                                          This operation\
   \ may teleport the executor to a different location. Please make sure your position\
   \ doesn’t need to remain loaded before clicking."
 tick_not_working_server_calling_comment:  "§l§n§4 This is a comment. The value of\
@@ -448,7 +448,7 @@ tick_not_working_server_calling_comment:  "§l§n§4 This is a comment. The valu
 tick_not_working_tips_line1:  "You are currently calling a Tick function that doesn't\
   \ work, so you may have encountered an issue where the Tick function doesn't work.\
   \ You can implement one of the following two methods:                           \
-  \             "
+  \              "
 tick_not_working_tips_line2:  "        1. Use the /schedule command to call the Tick\
   \ function."
 tick_not_working_tips_line3:  "   Or 2. Place your command block in a hidden location\
@@ -591,3 +591,5 @@ reqer_cancel_selector_button_previous_page:  "◀ 上一页"
 reqer_cancel_selector_button_previous_page_hoverevent:  "§b点击查看上一页"
 reqer_cancel_selector_button_next_page:  "下一页 ▶"
 reqer_cancel_selector_button_next_page_hoverevent:  "§b点击查看下一页"
+recver_accept_multiple_received:  "你目前收到多个传送请求 请选择你想要接受的请求"
+recver_accept_selector_title:  "收到的请求"

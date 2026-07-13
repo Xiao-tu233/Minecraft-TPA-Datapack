@@ -1,4 +1,5 @@
-# scoreboard players operation #reqer_id tpa.variables = @s tpa.tpaccept
+scoreboard players operation #deny_index tpa.variables = @s tpa.tpaccept
+execute if score #deny_index tpa.variables matches 0 run scoreboard players operation #deny_index tpa.variables = @s tpaccept
 scoreboard players set @s tpaccept 0
 scoreboard players set @s tpa.tpaccept 0
 
@@ -7,8 +8,6 @@ scoreboard players reset #reqer tpa.variables
 scoreboard players reset #direction tpa.variables
 function tpa:requests/get
 execute store result score #recved_requests tpa.variables run data get storage tpa:tpa temp.matched_requests
-
-# execute store result score #is_reqer_found tpa.variables run function tpa:reqer_test
 
 function tpa:load_lang
 

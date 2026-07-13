@@ -17,4 +17,4 @@ execute store result storage tpa:tpa temp.output.total_pages int 1 run scoreboar
 execute if score #selector_profile_created tpa.variables matches 0 run function tpa:tpaccept/create_menu
 execute if score #selector_profile_created tpa.variables matches 1.. run function tpa:tpaccept/update_menu
 
-execute unless score #accept_index tpa.variables matches 3..7 run function tpa:tpaccept/show_selector
+execute unless score #accept_index tpa.variables matches 6..10 run function tpa:tpaccept/show_selector
