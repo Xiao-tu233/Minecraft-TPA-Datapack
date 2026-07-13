@@ -3,7 +3,7 @@
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.reqer_cancel_multiple_sent"}]
 title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.reqer_cancel_multiple_sent", color: "gold"}]
 
-tellraw @s[predicate=tpa:output/show_chatbar] [{text: "------------ ", color: "dark_aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.reqer_cancel_selector_title", color: "aqua"}, {text: " (", color: "gray"}, {color: "white", storage: "tpa:tpa", nbt: "temp.output.current_page"}, {text: "/", color: "gray"}, {color: "white", storage: "tpa:tpa", nbt: "temp.output.total_pages"}, {text: ") ------------", color: "dark_aqua"}]
+tellraw @s[predicate=tpa:output/show_chatbar] [{text: "------------ ", color: "white"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.reqer_cancel_selector_title", color: "aqua"}, {text: " (", color: "gray"}, {color: "white", storage: "tpa:tpa", nbt: "temp.output.current_page"}, {text: "/", color: "gray"}, {color: "white", storage: "tpa:tpa", nbt: "temp.output.total_pages"}, {text: ") ------------", color: "white"}]
 
 execute store result score #selector.index_format tpa.variables run data get storage tpa:tpa loaded_lang.reqer_cancel_selector_index_format
 
