@@ -2,6 +2,9 @@
 # @return: data storage tpa:tpa temp.name
 tag @s add self
 data remove storage tpa:tpa temp.text
+
+execute unless entity @n[type=minecraft:text_display,tag=tpa.text_display] run say entity doesn't exist
+
 data modify entity @n[type=minecraft:text_display,tag=tpa.text_display] text set value {selector:"@p[tag=self]"}
 
 # Remove a quote by using macro function

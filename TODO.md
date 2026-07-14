@@ -80,6 +80,7 @@ Project To-do lists:
 - [ ] 增加更多脚本 在增加新功能的时候同步更改
 - [ ] 单独的update函数来更新命令存储(关于warp和home)
 - [ ] 建立List(名字可以再斟酌一下)的class 用来处理所有 列表里放复合标签 且用复合标签的特定键来辩识是否匹配的所有对象
+- [ ] 数据包第一次被加载时服务器里玩家的id不会正确的被加入users列表
 
 ## Experimental Ideas (“哪些东西很酷但还不确定？”)
 - [ ] Head gestures (Functions are at zhencangthings/datapacks/head_gestures)

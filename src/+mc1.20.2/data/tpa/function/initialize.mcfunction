@@ -8,8 +8,7 @@ function tpa:init_storage_lang
 function tpa_extra:init_storage_lang
 
 # Add Text Display for component parsing
-forceload add 29999984 29999984
-summon minecraft:text_display 29999984 336 29999984 {alignment:"center", Tags: ["tpa.text_display"]}
+function tpa:attemp_summon_text_displayer
 
 execute unless score #version tpa.config = #version tpa.config run function tpa:initialize/options
 
@@ -23,6 +22,7 @@ execute if score #is_updated_from_205 tpa.config matches 1 run function tpa:init
 # Default max_command_sequence_length if which was set so small
 execute store result score #max_command_sequence_length tpa.variables run gamerule max_command_sequence_length
 execute if score #max_command_sequence_length tpa.variables matches ..65535 run gamerule max_command_sequence_length 65536
+
 
 
 # |  # | 维度名称（示例）                              | 来源模组                                | 常见命名空间 ID / 常见整数 ID（若有）                                  | 推荐颜色 (HEX) | 备注                                                       |

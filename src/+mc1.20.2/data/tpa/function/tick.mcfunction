@@ -5,6 +5,12 @@ execute store result score #if_skip_tick tpa.variables run function tpa:if_skip_
 scoreboard players add #ticks_skipped tpa.variables 1
 execute if score #if_skip_tick tpa.variables matches 1 run return 0
 
+execute unless entity @n[type=minecraft:text_display, tag=tpa.text_display] run return run scoreboard players set #if_skip_tick tpa.variables 1
+
+scoreboard players add @a tpa.is_online 0
+execute as @p[scores={tpa.is_online=0}] run function tpa:on_join
+execute if entity @p[scores={tpa.is_online=0}] run return run scoreboard players set #if_skip_tick tpa.variables 1
+
 scoreboard players enable @a tpa.help
 scoreboard players enable @a tpa
 scoreboard players enable @a tpa.tpa
@@ -40,11 +46,6 @@ scoreboard players enable @a tpa.dialog
 execute store result storage tpa:tpa option.tp_spec int 1 run scoreboard players get #tp_spec tpa.config
 execute store result storage tpa:tpa option.carpet_fake_player_fix int 1 run scoreboard players get #carpet_fake_player_fix tpa.config
 
-# Update online players' online status if player count changed
-execute unless score #current_online_count tpa.variables = #previous_online_count tpa.variables run function tpa:update_online
-# Refresh player's scores when he's online
-execute as @a unless score @s tpa.is_online matches 1 run function tpa:on_join
-
 # Update every requests: timer, availability, etc.
 function tpa:requests/update
 
@@ -63,6 +64,7 @@ execute as @a[scores={tpa.tpaccept_toggle=2..3}] run function tpa:tpaccept_toggl
 # Teleport requests & TPA menu
 # execute as @a[scores={tpa.simple_menu=2..3}] run function tpa:simple_menu
 execute as @a[scores={tpa.dialog=1..}] run function tpa:dialog
+
 execute as @a[scores={tpa=0}] run function tpa:tpa_menu
 execute as @a[scores={tpa.tpa=0}] run function tpa:tpa_menu
 execute as @a[scores={tpa=1..}] run function tpa:tpa
