@@ -1,29 +1,15 @@
 
 scoreboard players set #is_menu_open tpa.variables 1
-scoreboard players set @s tpa.tpahere 0
+scoreboard players set @s tpa.tpahere -1
 
 function tpa:load_lang
 
 function tpa:sounds/levelup
-tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_title"}]
-function tpa:iddisplay {"id_1": 2, "id_2": 3, "id_3": 4, "id_4": 5, "id_5": 6, "direction": "tpahere"}
-function tpa:iddisplay {"id_1": 7, "id_2": 8, "id_3": 9, "id_4": 10, "id_5": 11, "direction": "tpahere"}
-function tpa:iddisplay {"id_1": 12, "id_2": 13, "id_3": 14, "id_4": 15, "id_5": 16, "direction": "tpahere"}
-function tpa:iddisplay {"id_1": 17, "id_2": 18, "id_3": 19, "id_4": 20, "id_5": 21, "direction": "tpahere"}
-tellraw @s [" ...", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_extend", click_event:{action:"run_command",command: "/trigger tpa.extended_menu"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_extend_hoverevent"}}},"}"]
+scoreboard players set #request_menu.direction tpa.variables 1
+scoreboard players set #request_menu.page tpa.variables 1
+function tpa:request_menu/open
 
-tellraw @s [\
-    " ", \
-    {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_you", \
-        color: "gold", \
-        hover_event: {\
-            action: "show_text", \
-            "value": {selector: "@s"}\
-        }\
-    }, \
+tellraw @s ["",\
     {\
         interpret: true, \
         storage: "tpa:tpa", \
@@ -35,7 +21,7 @@ tellraw @s [\
     }, \
     {\
         color: "aqua", \
-        score: {name: "@s", objective: "tpa.player_id"}\
+        score: {name: "@s", objective: "tpa.uid"}\
     }\
 ]
 tellraw @s ["", \

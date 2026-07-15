@@ -19,7 +19,6 @@ scoreboard players enable @a tpa.cancel_req
 scoreboard players enable @a tpaccept
 scoreboard players enable @a tpa.tpaccept
 scoreboard players enable @a tpa.tpaccept_toggle
-scoreboard players enable @a tpa.extended_menu
 scoreboard players enable @a tpa.idfix
 scoreboard players enable @a tpa.search_id
 scoreboard players enable @a tpa.mute
@@ -53,7 +52,6 @@ function tpa:requests/update
 execute as @a[scores={tpa.if_death=1..}] run function tpa:player_died
 
 # Personal settings
-# execute as @a[scores={tpa.extended_menu=1..}] run function tpa:extended_menu
 execute as @a[scores={tpa.mute=2..}] run function tpa:mute
 execute as @a[scores={tpa.output=3..}] run function tpa:output
 execute as @a[scores={tpaccept=2..3}] run function tpa:tpaccept_toggle
@@ -67,9 +65,12 @@ execute as @a[scores={tpa.dialog=1..}] run function tpa:dialog
 
 execute as @a[scores={tpa=0}] run function tpa:tpa_menu
 execute as @a[scores={tpa.tpa=0}] run function tpa:tpa_menu
+execute as @a[scores={tpa=-23..-2}] run function tpa:request_menu/tpa
+execute as @a[scores={tpa.tpa=-23..-2}] run function tpa:request_menu/tpa
 execute as @a[scores={tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpa=1..}] run function tpa:tpa
 execute as @a[scores={tpa.tpahere=0}] run function tpa:tpahere_menu
+execute as @a[scores={tpa.tpahere=-23..-2}] run function tpa:request_menu/tpahere
 execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere
 execute as @a[scores={tpa.cancel_req=1..}] run function tpa:cancel_req
 

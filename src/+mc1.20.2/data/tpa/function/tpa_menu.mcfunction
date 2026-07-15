@@ -4,12 +4,9 @@ scoreboard players set @s tpa -1
 function tpa:load_lang
 
 function tpa:sounds/levelup
-tellraw @s [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_title"}]
-function tpa:iddisplay {"id_1": 2, "id_2": 3, "id_3": 4, "id_4": 5, "id_5": 6, "direction": "tpa"}
-function tpa:iddisplay {"id_1": 7, "id_2": 8, "id_3": 9, "id_4": 10, "id_5": 11, "direction": "tpa"}
-function tpa:iddisplay {"id_1": 12, "id_2": 13, "id_3": 14, "id_4": 15, "id_5": 16, "direction": "tpa"}
-function tpa:iddisplay {"id_1": 17, "id_2": 18, "id_3": 19, "id_4": 20, "id_5": 21, "direction": "tpa"}
-tellraw @s [" ...", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_extend", click_event:{action:"run_command",command: "/trigger tpa.extended_menu"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_extend_hoverevent"}}},"}"]
+scoreboard players set #request_menu.direction tpa.variables 0
+scoreboard players set #request_menu.page tpa.variables 1
+function tpa:request_menu/open
 
 tellraw @s [\
     " ", \
@@ -34,17 +31,11 @@ tellraw @s [\
     }, \
     {\
         color: "aqua", \
-        score: {name: "@s", objective: "tpa.player_id"}\
+        score: {name: "@s", objective: "tpa.uid"}\
     }\
 ]
 tellraw @s ["", \
     {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_idfix_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.idfix"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_idfix_button_hoverevent"}}\
-    }, " ", {\
         interpret: true, \
         storage: "tpa:tpa", \
         nbt: "loaded_lang.tpa_menu_search_id_button", \
@@ -121,11 +112,6 @@ tellraw @s [\
         storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_refresh", \
         click_event:{action:"run_command",command: "/trigger tpa.tpa"}, \
         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_refresh_hoverevent"}} \
-    }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_simplemenu_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.simple_menu set 2"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_simplemenu_button_hoverevent"}}\
     }, " ", {\
         interpret: true, \
         storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_dialog", \

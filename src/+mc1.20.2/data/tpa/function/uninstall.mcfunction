@@ -27,7 +27,6 @@ scoreboard objectives remove tpa.idfix_cd
 scoreboard objectives remove tpa.back
 scoreboard objectives remove tpa.config
 scoreboard objectives remove tpa.variables
-scoreboard objectives remove tpa.extended_menu
 scoreboard objectives remove tpa.mute
 scoreboard objectives remove tpa.search_id
 scoreboard objectives remove tpa.search_id.key
@@ -70,7 +69,6 @@ tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
 data remove storage tpa:tpa back
-data remove storage tpa:tpa extended_menu
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa pos
