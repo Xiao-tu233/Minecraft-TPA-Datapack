@@ -60,18 +60,19 @@ execute as @a[scores={tpa.tpaccept_toggle=2..3}] run function tpa:tpaccept_toggl
 
 
 # Teleport requests & TPA menu
-# execute as @a[scores={tpa.simple_menu=2..3}] run function tpa:simple_menu
-execute as @a[scores={tpa.dialog=1..}] run function tpa:dialog
-
-execute as @a[scores={tpa=0}] run function tpa:tpa_menu
-execute as @a[scores={tpa.tpa=0}] run function tpa:tpa_menu
 execute as @a[scores={tpa=-23..-2}] run function tpa:request_menu/tpa
-execute as @a[scores={tpa.tpa=-23..-2}] run function tpa:request_menu/tpa
+execute as @a[scores={tpa=0}] run function tpa:tpa_menu
 execute as @a[scores={tpa=1..}] run function tpa:tpa
+
+execute as @a[scores={tpa.tpa=-23..-2}] run function tpa:request_menu/tpa
+execute as @a[scores={tpa.tpa=0}] run function tpa:tpa_menu
 execute as @a[scores={tpa.tpa=1..}] run function tpa:tpa
-execute as @a[scores={tpa.tpahere=0}] run function tpa:tpahere_menu
+
 execute as @a[scores={tpa.tpahere=-23..-2}] run function tpa:request_menu/tpahere
+execute as @a[scores={tpa.tpahere=0}] run function tpa:tpahere_menu
 execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere
+
+execute as @a[scores={tpa.dialog=1..}] run function tpa:dialog
 execute as @a[scores={tpa.cancel_req=1..}] run function tpa:cancel_req
 
 execute as @a[scores={tpaccept=1}] run function tpa:tpaccept
@@ -95,7 +96,7 @@ clear @a[scores={tpa.book=0}] minecraft:written_book[minecraft:custom_data={isTp
 # Kill book item entity which is not dropped by any avail player
 execute as @e[type=item, name='Written Book'] if data entity @s Item.components."minecraft:custom_data".isTpaBook run kill @s
 # Remove book from Item Frame with book=0 player nearby
-execute as @e[type=!item, nbt={Item:{components:{"minecraft:custom_data":{isTpaBook: 1b}}}}] run data remove entity @s Item
+execute as @e[type=!item, nbt={Item: {components: {"minecraft:custom_data": {isTpaBook: 1b}}}}] run data remove entity @s Item
 
 # 上一位置
 execute as @a[scores={back=1..}] run function tpa:back

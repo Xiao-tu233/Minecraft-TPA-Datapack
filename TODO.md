@@ -49,15 +49,17 @@ Project To-do lists:
      考虑是否有开销影响：在每个玩家进游戏的时候计算他们的游戏名 然后仅仅在构建菜单是调用他们而不是对于每个玩家都重新计算 （此处有优化空间 可以复制一份uid和玩家游戏名的数组 在每查找到一名玩家后移除一个）
      新的id管理方案可以直接移除id修复（或者保守一点将其移入设置界面）
 
-- [ ] 移除了simple menu
-- [ ] 区分对应所需权限的按钮 with 不同的按钮边框颜色
+     ! 输出需要人工复核, 存在1.15完全无法使用的nbt文本组件格式
+
+- [x] 移除了simple menu
+- [x] 区分对应所需权限的按钮 with 不同的按钮边框颜色
   无点击事件 灰色
   无需op 白色
   需op 金色
 - [x] 请求重复的检测似乎没有工作
 - [x] 超时/请求失效时不会提示玩家
 - [x] TPAHERE
-- [ ] condition of cancel multiple requests and accept multiple requests
+- [x] condition of cancel multiple requests and accept multiple requests
 
 - [ ] 考虑减少item作为锚点 而是盔甲架 例子如下
   summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
@@ -80,7 +82,7 @@ Project To-do lists:
 - [ ] 增加更多脚本 在增加新功能的时候同步更改
 - [ ] 单独的update函数来更新命令存储(关于warp和home)
 - [ ] 建立List(名字可以再斟酌一下)的class 用来处理所有 列表里放复合标签 且用复合标签的特定键来辩识是否匹配的所有对象
-- [ ] 数据包第一次被加载时服务器里玩家的id不会正确的被加入users列表
+- [x] 数据包第一次被加载时服务器里玩家的id不会正确的被加入users列表
 
 ## Experimental Ideas (“哪些东西很酷但还不确定？”)
 - [ ] Head gestures (Functions are at zhencangthings/datapacks/head_gestures)
@@ -98,15 +100,14 @@ Project To-do lists:
 - [ ] 增加数据包设置项管理
 - [ ] Add [APPLY] button in options menu
 - [ ] trigger记分板显示名最好可以带颜色
-- [ ] make objective tpa default -1 so that /trigger tpa will make tpa 0
-- [ ] 上述问题解决之后 id就可以从1开始了
+- [x] make objective tpa default -1 so that /trigger tpa will make tpa 0
+- [x] 上述问题解决之后 id就可以从1开始了
 - [ ] 尝试execute at, execute position子指令能不能把二分法的approach缩减到一个1tick
 
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu
 - [ ] Add a snowball menu
 - [ ] If the above one is possible, make Actionbar a screen and player and turn their rotations to control the 光标 in a GUI-like way
-- [ ] 考虑是否要在新版本直接使用宏函数/数据存储替代基于tags的recver_test/reqer_test
 - [ ] 增加不同玩家对不同功能使用的可能性调整（权限组系统？）
 
 ## Performance Optimization (“哪里还能更快？” )

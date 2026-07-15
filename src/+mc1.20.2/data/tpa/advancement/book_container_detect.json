@@ -127,7 +127,7 @@
                         "entity": "this",
                         "condition": "entity_properties",
                         "predicate": {
-                            "type": [
+                            "entity_type": [
                                 "minecraft:chest_minecart",
                                 "minecraft:hopper_minecart"
                             ]
@@ -167,7 +167,7 @@
                         "entity": "this",
                         "condition": "entity_properties",
                         "predicate": {
-                            "type": [
+                            "entity_type": [
                                 "minecraft:oak_chest_boat",
                                 "minecraft:spruce_chest_boat",
                                 "minecraft:birch_chest_boat",

@@ -33,7 +33,6 @@ extended_menu_title: "======================§bTPA§6 菜单§r=================
 here_button_tpa: "[§b请求传送§r]"
 here_button_tpa_hoverevent: "§b点击快捷向他发送传送请求"
 here_button_tpa_notavail_hoverevent: "§c玩家不允许被传送"
-here_spec: "旁观者模式玩家不允许使用§a广播位置§r"
 here_voxel_hoverevent: "§b点击添加VoxelMap路径点"
 here_xaero_hoverevent: "§6点击添加Xearo's Minimap路径点"
 home_act: "已将你传送至传送点#%s"
