@@ -1,15 +1,19 @@
 # Parent function: tpa:home/each_home
 # @macro: {id: int, dim_color: str}
 
+$data modify storage tpa:tpa temp.output.x set string storage tpa:tpa temp.home.$(id).x
+$data modify storage tpa:tpa temp.output.y set string storage tpa:tpa temp.home.$(id).y
+$data modify storage tpa:tpa temp.output.z set string storage tpa:tpa temp.home.$(id).z
+
 $tellraw @s[predicate=tpa:output/show_chatbar] [\
     "  ", \
     {\
         interpret: true, \
         storage: "tpa:tpa", nbt: "loaded_lang.home_number", color:"$(dim_color)", \
         hover_event: {action: "show_text", value: [\
-            {nbt: "temp.home.$(id).x", storage: "tpa:tpa",color:"$(dim_color)"}, " ", \
-            {nbt: "temp.home.$(id).y", storage: "tpa:tpa",color:"$(dim_color)"}, " ", \
-            {nbt: "temp.home.$(id).z", storage: "tpa:tpa",color:"$(dim_color)"}\
+            {interpret: true, nbt: "temp.output.x", storage: "tpa:tpa", color:"$(dim_color)"}, " ", \
+            {interpret: true, nbt: "temp.output.y", storage: "tpa:tpa", color:"$(dim_color)"}, " ", \
+            {interpret: true, nbt: "temp.output.z", storage: "tpa:tpa", color:"$(dim_color)"}\
         ]}\
     }, {storage: "tpa:tpa", nbt: "temp.args.id", color:"$(dim_color)"}, " ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_tp_button", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_display_tp_button_hoverevent"}},click_event: {action: "run_command", command: "/trigger tpa.home set $(id)"}}, " ", \

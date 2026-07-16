@@ -55,8 +55,6 @@ scoreboard objectives add tpa.output_ dummy
 scoreboard objectives add tpa.dialog trigger
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Objectives have been added. (1/6)"]
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Resetting online player scores... (2/6)"]
-scoreboard players set #global_current tpa.player_id 1
-execute unless score #global_current tpa.uid = #global_current tpa.uid run scoreboard players set #global_current tpa.uid 1
 scoreboard players set @a tpa.tpaccept 0
 scoreboard players set @a tpa.if_death 0
 scoreboard players set @a tpa.pos 0
@@ -73,8 +71,6 @@ data modify storage tpa:tpa request_selector.recv set value []
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp
-
-
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Data storage has been initialized. (4/6)"]
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Removing tags... (4/6)"]
@@ -82,6 +78,10 @@ tag @a remove not_match
 tag @a remove to_modify
 tag @a remove id
 kill @e[type=text_display, tag=tpa.license_displayer]
+
+# Add Text Display for component parsing
+execute unless entity @n[type=minecraft:text_display, tag=tpa.text_display] run function tpa:load/attemp_summon_text_displayer
+
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Tags are removed. (5/6)"]
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing variables... (5/6)"]

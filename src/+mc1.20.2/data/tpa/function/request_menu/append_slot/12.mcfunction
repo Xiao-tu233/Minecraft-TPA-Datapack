@@ -1,4 +1,4 @@
-﻿# Parent function: tpa:request_menu/append_slot
+# Parent function: tpa:request_menu/append_slot
 
 tag @a remove tpa.request_menu.slot.12
 scoreboard players reset #request_menu.current_uid tpa.variables

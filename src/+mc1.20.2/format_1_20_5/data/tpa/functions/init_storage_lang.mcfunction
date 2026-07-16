@@ -38,7 +38,6 @@ data modify storage tpa:tpa temp.lang set value \
     here_button_tpa: "[§b请求传送§r]", \
     here_button_tpa_hoverevent: "§b点击快捷向他发送传送请求", \
     here_button_tpa_notavail_hoverevent: "§c玩家不允许被传送", \
-    here_spec: "旁观者模式玩家不允许使用§a广播位置§r", \
     here_voxel_hoverevent: "§b点击添加VoxelMap路径点", \
     here_xaero_hoverevent: "§6点击添加Xearo's Minimap路径点", \
     home_act: ["已将你传送至传送点#", ""], \
@@ -372,13 +371,13 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_search_id_button_hoverevent: "§b点击呼出聊天栏键盘来搜索用户名", \
     tpa_menu_simplemenu_button: "[§b简略菜单§r]", \
     tpa_menu_simplemenu_button_hoverevent: "§b切换到简略菜单", \
-    tpa_menu_title: "下方是玩家数据包编号和游戏用户名, 点击编号来请求传送§l其他玩家§r: {", \
+    tpa_menu_title: "选择下方玩家，发送传送请求: ", \
     tpa_menu_tpaheremenu_button: "[§b传送此处菜单§r]", \
     tpa_menu_tpaheremenu_button_hoverevent: "§b点击来跳转到传送此处菜单", \
     tpa_menu_tpamenu_button: "[§b传送菜单§r]", \
     tpa_menu_tpamenu_button_hoverevent: "§b点击来跳转到传送菜单", \
     tpa_menu_you: "你", \
-    tpahere_menu_title: "下方是玩家数据包编号和游戏用户名, 点击编号来请求其他玩家传送§l你§r: {", \
+    tpahere_menu_title: "选择下方玩家，发送传送此处请求:", \
     uninstall_done: "§a成功卸载并禁用数据包. §r在文件夹删除数据包本体来彻底卸载 或者 点击右边的按钮再次启用: ", \
     uninstall_enable_folder_button: "启用1", \
     uninstall_enable_folder_button_hoverevent: "点击启用文件夹形式的数据包(如果存在)", \
@@ -508,7 +507,7 @@ data modify storage tpa:tpa temp.lang set value \
     lang_button_hoverevent: "§bClick to open language menu", \
     lang_menu_title: "Please select language below:", \
     lang_menu_select_button: "[§aLoad recommended commands§r]", \
-    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                                                ", \
+    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                                                 ", \
     lang_disabled: "Language feature is disabled", \
     lang_selected: ["You have switched language to ", ""], \
     lang_server_follow: ["Since Datapack default language haven't been set, so it's set to ", " now"], \
@@ -647,8 +646,8 @@ data modify storage tpa:tpa temp.lang set value \
     tp_pos_spec: "Spectators cannot §ateleport to coordinates§r", \
     tp_pos_throw_on_invalid_char: "The coordinates you entered contain invalid characters", \
     tpa_menu_hoverevent: ["§bClick to send a teleport request to ", ""], \
-    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                ", \
-    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                                                ", \
+    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                 ", \
+    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                                                 ", \
     tpa_menu_extend_hoverevent: "§bClick to expand menu", \
     tpa_menu_extend: "§bExpand§r", \
     tpa_menu_you: "You", \
@@ -707,7 +706,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "The following settings are advanced options. Do not modify unless you know what you are doing.", \
     option_advenced_tip: "Enable debug mode to access more advanced settings", \
     option_anchor_search_retries: "Anchor search retry count", \
-    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                                                  times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
+    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                                                   times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
     option_carpet_fake_player_fix_incompatible: "Carpet fake player fix is incompatible with this version", \
@@ -761,7 +760,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_anchor_actionbar: "Anchor teleport progress: ", \
     teleport_binary_actionbar: "Binary search teleport progress: ", \
     teleport_cal_sim_dist_actionbar: "Simulation distance", \
-    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                                                  ", \
+    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                                                   ", \
     teleport_cal_sim_dist_start: "Simulation distance calculation started", \
     teleport_sim_dist_warn: "Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails, please contact admin to recalculate or manually set, or use binary teleport.", \
     teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
@@ -771,7 +770,7 @@ data modify storage tpa:tpa temp.lang set value \
     tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
     tp_pos_abort: "You stopped entering teleport coordinates", \
-    uninstall_done: "§aSuccessfully uninstalled and disabled the datapack. §rTo fully remove it, delete the datapack from the folder. But you can also click the button on the right to enable it again:                   ", \
+    uninstall_done: "§aSuccessfully uninstalled and disabled the datapack. §rTo fully remove it, delete the datapack from the folder. But you can also click the button on the right to enable it again:                    ", \
     uninstall_enable_folder_button: "ENABLE1", \
     uninstall_enable_folder_button_hoverevent: "Click to enable folder-based datapack (if exists)", \
     uninstall_enable_zip_button: "ENABLE2", \
@@ -785,7 +784,7 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_deny_tpahere: ["The requestor is denied from teleporting here.", "to you..."], \
     option_game_version: "The compatible game version for the datapack file", \
     option_max_anchor_summons_attempts: "Maximum summon attempts for teleportation anchor", \
-    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                                         attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
+    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                                          attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
     option_sim_dist: "Simulation distance", \
     option_sim_dist_button_cal: "[§aCalculate§r]", \
     option_sim_dist_hoverevent: "§bChange the §aSimulation distance §r(§6Unit: chunks§r)   Please make sure there are no players within the simulation distance from the origin in the overworld before clicking.", \
@@ -808,9 +807,9 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_cal_sim_dist_end_rightpart: "", \
     teleport_incompatible: "§aAnchor teleportation§r is not compatible with this game version", \
     teleport_sim_dist_disabled: "The server has not set the simulation distance", \
-    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                         This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
+    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                          This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
     tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
-    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                        ", \
+    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                         ", \
     tick_not_working_tips_line2: "        1. Use the /schedule command to call the Tick function.", \
     tick_not_working_tips_line3: "   Or 2. Place your command block in a hidden location to avoid being destroyed by Bedrock-breaking machines.", \
     tp_pos_button_abort: "[Abort]", \
@@ -1082,7 +1081,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id_hoverevent: "§bクリックしてディメンションIDを編集（クリック後、左矢印キーを押してコロンの後に入力しEnter）", \
     option_dimension_button_edit_id_notavail_hoverevent: "§c原版ディメンションは編集できません", \
     option_dimension_button_edit_namespaceid: "[§a名前空間IDを編集§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションの名前空間IDを編集(namespace:id, source location 例:                                          minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションの名前空間IDを編集(namespace:id, source location 例:                                           minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
     option_dimension_button_edit_namespaceid_notavail_hoverevent: "§c原版ディメンションは編集できません", \
     option_dimension_button_edit_name: "[§a名前を編集§r]", \
     option_dimension_button_edit_name_hoverevent: "§bクリックしてディメンションの表示名を編集（クリック後、左矢印キーを2回押して引用符内に入力しEnter。原版ディメンションは言語設定に従います）", \
@@ -1730,7 +1729,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
     option_dimension_button_edit_id_hoverevent: "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)", \
     option_dimension_button_edit_id_notavail_hoverevent: "§c原版維度無法編輯", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                                                 xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                                                  xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
     option_dimension_button_edit_namespaceid_notavail_hoverevent: "§c原版維度無法編輯", \
     option_dimension_button_edit_name_hoverevent: "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車, 該項對於原版維度會跟隨語言設定而不是當前設定)", \
     option_dimension_button_remove_hoverevent: "§b點擊移除該維度", \

@@ -11,7 +11,6 @@ execute if score #dialog tpa.variables matches 1 run data modify storage tpa:tpa
 execute if score #dialog tpa.variables matches 2 run data modify storage tpa:tpa temp.args.menu_switch_value set value 1
 
 
-execute at @s run summon minecraft:text_display ~ ~ ~ {alignment:"center",Tags:["tpa.text_display"]}
 # Requests
 data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.tpa_menu_hoverevent_left_part
 data modify storage tpa:tpa temp.args.hover_left set from entity @n[type=text_display, tag=tpa.text_display] text

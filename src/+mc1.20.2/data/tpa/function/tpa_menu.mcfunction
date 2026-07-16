@@ -4,6 +4,7 @@ scoreboard players set @s tpa -1
 function tpa:load_lang
 
 function tpa:sounds/levelup
+
 scoreboard players set #request_menu.direction tpa.variables 0
 scoreboard players set #request_menu.page tpa.variables 1
 function tpa:request_menu/open

@@ -1,4 +1,4 @@
-﻿# Parent function: tpa:request_menu/open
+# Parent function: tpa:request_menu/open
 
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_title"}]
 execute if score #request_menu.direction tpa.variables matches 0 if score #request_menu.displayed tpa.variables matches 1 run tellraw @s[predicate=tpa:output/show_chatbar] [" ", {selector: "@a[tag=tpa.request_menu.slot.0]", color: "white", click_event: {action: "run_command", command: "/trigger tpa.tpa set -3"}, hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_hoverevent_left_part"}, {selector: "@a[tag=tpa.request_menu.slot.0]"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_hoverevent_right_part"}]}}]

@@ -1,4 +1,7 @@
 # Parent Function: tpa:home/menu
+
+data modify storage tpa:tpa temp.output.limit set string storage temp.home.limit
+
 $tellraw @s[predicate=tpa:output/show_chatbar] [\
         {\
             text:"  ", \
@@ -8,9 +11,9 @@ $tellraw @s[predicate=tpa:output/show_chatbar] [\
         "[", \
         {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_new"}, \
         {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.home_number", color: "aqua"}, \
-        {storage: "tpa:tpa", nbt: "temp.args.id", color: "aqua"}, \
+        {text: "$(id)", color: "aqua"}, \
         {interpret: true, storage: "tpa:tpa", nbt: "temp.home.slash"}, \
-        {storage: "tpa:tpa", nbt: "temp.home.limit"}, \
+        {interpret: true, storage: "tpa:tpa", nbt: "temp.output.limit"}, \
         "§r]" \
     ]
 

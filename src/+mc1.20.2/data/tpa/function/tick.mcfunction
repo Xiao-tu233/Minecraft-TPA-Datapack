@@ -58,7 +58,6 @@ execute as @a[scores={tpaccept=2..3}] run function tpa:tpaccept_toggle
 execute as @a[scores={tpa.tpaccept=2..4}] run function tpa:tpaccept_toggle
 execute as @a[scores={tpa.tpaccept_toggle=2..3}] run function tpa:tpaccept_toggle
 
-
 # Teleport requests & TPA menu
 execute as @a[scores={tpa=-23..-2}] run function tpa:request_menu/tpa
 execute as @a[scores={tpa=0}] run function tpa:tpa_menu
