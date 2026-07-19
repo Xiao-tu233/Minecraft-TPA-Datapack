@@ -24,76 +24,24 @@ tellraw @s ["",\
         score: {name: "@s", objective: "tpa.uid"}\
     }\
 ]
+function tpa:tpahere_menu/display_first_buttons
 tellraw @s ["", \
-    {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_idfix_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.idfix"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_idfix_button_hoverevent"}}\
-    }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_search_id_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.search_id"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_search_id_button_hoverevent"}}\
-    }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_tpamenu_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.tpa"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_tpamenu_button_hoverevent"}}\
-    }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_back_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.back"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_back_button_hoverevent"}}\
-    }, " " \
-]
-tellraw @s ["", \
-    {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_book_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.book"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_book_button_hoverevent"}}\
-    }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_pos_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.pos"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_pos_button_hoverevent"}}\ 
-    }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_here_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.here"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_here_button_hoverevent"}}\
-    }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_home_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.home set -1"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_home_button_hoverevent"}}\
-        }, " ", {\
-        interpret: true, \
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.tpa_menu_warp_button", \
-        click_event:{action:"run_command",command: "/trigger tpa.warp set -1"}, \
-        hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_warp_button_hoverevent"}}\
-    }, " " \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_book_button_hoverevent"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_book_button"}, "]"]}, " ", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_pos_button_hoverevent"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_pos_button"}, "]"]}, " ", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.here"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_here_button_hoverevent"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_here_button"}, "]"]}, " ", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.home set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_home_button_hoverevent"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_home_button"}, "]"]}, " ", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.warp set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_warp_button_hoverevent"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_warp_button"}, "]"]}, " " \
 ]
 
 tellraw @s [\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_auto_accept"}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_enable", click_event:{action:"run_command",command: "/trigger tpa.tpaccept_toggle set 3"}}, "|", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_disable", click_event:{action:"run_command",command: "/trigger tpa.tpaccept_toggle set 2"}}, " ", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.tpaccept_toggle set 3"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_enable"}, "]"]}, "|", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.tpaccept_toggle set 2"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_disable"}, "]"]}, " ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_mute"}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_enable", click_event:{action:"run_command",command: "/trigger tpa.mute set 3"}}, "|", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_disable", click_event:{action:"run_command",command: "/trigger tpa.mute set 2"}}, " \n ", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.mute set 3"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_enable"}, "]"]}, "|", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.mute set 2"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_disable"}, "]"]}, " \n ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_output"}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_output_default", click_event:{action:"run_command",command: "/trigger tpa.output set 3"}}, "|", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_output_actionbar", click_event:{action:"run_command",command: "/trigger tpa.output set 4"}}, "|", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_output_chatbar", click_event:{action:"run_command",command: "/trigger tpa.output set 5"}}, " " \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.output set 3"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_output_default"}, "]"]}, "|", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.output set 4"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_output_actionbar"}, "]"]}, "|", \
+    {text: "[", click_event:{action:"run_command",command: "/trigger tpa.output set 5"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_output_chatbar"}, "]"]}, " " \
 ]

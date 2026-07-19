@@ -7,14 +7,15 @@ execute if score @s tpa.uid = @s tpa.uid run scoreboard players operation #reque
 execute as @a[predicate=tpa:available] if score @s tpa.uid = @s tpa.uid unless score @s tpa.uid = #request_menu.reqer_uid tpa.variables run function tpa:request_menu/append_candidate
 
 execute store result score #request_menu.total_players tpa.variables run data get storage tpa:tpa temp.request_menu.players
-scoreboard players set #request_menu.total_pages tpa.variables 1
+scoreboard players set #request_menu.total_pages tpa.variables 0
 execute if score #request_menu.total_players tpa.variables matches 1.. run scoreboard players operation #request_menu.total_pages tpa.variables = #request_menu.total_players tpa.variables
 execute if score #request_menu.total_players tpa.variables matches 1.. run scoreboard players remove #request_menu.total_pages tpa.variables 1
 execute if score #request_menu.total_players tpa.variables matches 1.. run scoreboard players operation #request_menu.total_pages tpa.variables /= #20 tpa.variables
 execute if score #request_menu.total_players tpa.variables matches 1.. run scoreboard players add #request_menu.total_pages tpa.variables 1
 
-execute if score #request_menu.page tpa.variables matches ..0 run scoreboard players set #request_menu.page tpa.variables 1
-execute if score #request_menu.page tpa.variables > #request_menu.total_pages tpa.variables run scoreboard players operation #request_menu.page tpa.variables = #request_menu.total_pages tpa.variables
+execute if score #request_menu.total_players tpa.variables matches 0 run scoreboard players set #request_menu.page tpa.variables 0
+execute if score #request_menu.total_players tpa.variables matches 1.. if score #request_menu.page tpa.variables matches ..0 run scoreboard players set #request_menu.page tpa.variables 1
+execute if score #request_menu.total_players tpa.variables matches 1.. if score #request_menu.page tpa.variables > #request_menu.total_pages tpa.variables run scoreboard players operation #request_menu.page tpa.variables = #request_menu.total_pages tpa.variables
 
 data modify storage tpa:tpa temp.current_request_menu set value {uid: 0, direction: 0, page: 1, players: []}
 execute store result storage tpa:tpa temp.current_request_menu.uid int 1 run scoreboard players get #request_menu.reqer_uid tpa.variables

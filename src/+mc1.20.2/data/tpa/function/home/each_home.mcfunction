@@ -13,6 +13,7 @@ execute if score #is_exist tpa.variables matches 0 if score #i tpa.variables mat
 # if exist: show act, del & edit buttons
 execute if score #is_exist tpa.variables matches 1 run function tpa:home/get_dim with storage tpa:tpa temp.args
 execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get #i tpa.variables
+data modify storage tpa:tpa temp.args.id set string storage tpa:tpa temp.args.id
 execute if score #is_exist tpa.variables matches 1 run function tpa:home/display with storage tpa:tpa temp.args
 execute if score #is_exist tpa.variables matches 1 run scoreboard players add #home_displayed tpa.variables 1
 

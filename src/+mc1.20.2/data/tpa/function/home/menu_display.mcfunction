@@ -17,6 +17,7 @@ execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] �
 execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get #i tpa.variables
 execute if score #home tpa.config matches 1.. run data modify storage tpa:tpa temp.home.slash set value '/'
 execute if score #home tpa.config matches 1.. store result storage tpa:tpa temp.home.limit int 1 run scoreboard players get #home tpa.config
+execute if score #home tpa.config matches 1.. run data modify storage tpa:tpa temp.home.limit set string storage tpa:tpa temp.home.limit
 # slash and limit won't be displayed when #home config is -1
 
 execute if score #if_show_new tpa.variables matches 1 run function tpa:home/new with storage tpa:tpa temp.args

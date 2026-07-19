@@ -117,6 +117,5 @@ execute if score @s tpa.output matches 1 run data modify entity @n[type=text_dis
 execute if score @s tpa.output matches 2 run data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.tpa_menu_output_actionbar_hidden
 data modify storage tpa:tpa temp.args.output_value set from entity @n[type=text_display, tag=tpa.text_display] text
 
-kill @n[type=text_display, tag=tpa.text_display]
 
 function tpa:dialog/menu with storage tpa:tpa temp.args
