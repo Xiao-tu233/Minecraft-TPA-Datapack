@@ -29,8 +29,7 @@ scoreboard players remove #request_menu.offset tpa.variables 1
 scoreboard players operation #request_menu.offset tpa.variables *= #20 tpa.variables
 function tpa:request_menu/drop_offset
 
-scoreboard players set #request_menu.displayed tpa.variables 0
-scoreboard players set #request_menu.slot tpa.variables -3
+data modify storage tpa:tpa temp.request_menu.display_list set value []
 scoreboard players set #request_menu.slots_left tpa.variables 20
 function tpa:request_menu/build_page
 function tpa:request_menu/display
