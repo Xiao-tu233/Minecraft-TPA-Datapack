@@ -1,10 +1,11 @@
-# Parent Function: tpa:back, tpa:list_online
+# Parent Function: tpa:back/available
+# @macro: {uid: int}
+# scoreboard players set #flag tpa.variables 0
+# $execute if data storage tpa:tpa back.$(id) run scoreboard players set #flag tpa.variables 1
+# execute unless score #flag tpa.variables matches 1 run return 0
 
-# Check if function is called by a player or the server: #target_id is None
-execute unless score #target_id tpa.variables = #target_id tpa.variables run scoreboard players operation #target_id tpa.variables = @s tpa.uid
+# data remove storage tpa:tpa temp.back
+$data modify storage tpa:tpa temp.back set from storage tpa:tpa back.$(uid)
 
-data remove storage tpa:tpa temp.args
-execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get #target_id tpa.variables
-
-function tpa:back/get_macro with storage tpa:tpa temp.args
-scoreboard players reset #target_id tpa.variables
+execute if score #debug_mode tpa.config matches 1 run \
+    tellraw @a ["[§bTPA§r] §6 Debug§r: ", {selector: "@s", color: "green"}, " got BACK with ", {storage: "tpa:tpa", nbt: "temp.back"}]

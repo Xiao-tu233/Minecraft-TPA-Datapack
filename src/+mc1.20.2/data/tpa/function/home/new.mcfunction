@@ -1,6 +1,6 @@
 # Parent Function: tpa:home/menu
 
-data modify storage tpa:tpa temp.output.limit set string storage temp.home.limit
+data modify storage tpa:tpa temp.output.limit set string storage tpa:tpa temp.home.limit
 
 $tellraw @s[predicate=tpa:output/show_chatbar] [\
         {\
