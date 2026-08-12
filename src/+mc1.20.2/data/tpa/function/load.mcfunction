@@ -97,6 +97,7 @@ scoreboard players set #16 tpa.variables 16
 scoreboard players set #20 tpa.variables 20
 scoreboard players set #100 tpa.variables 100
 # Variables initializations
+execute unless score #global_current tpa.uid = #global_current tpa.uid run scoreboard players set #global_current tpa.uid 1
 scoreboard players set #commands_not_match tpa.variables 0
 execute if score #carpet_fake_player_fix tpa.config matches 0 run tag @a remove tpa.fake_player
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Variables initialized. (6/6)"]
