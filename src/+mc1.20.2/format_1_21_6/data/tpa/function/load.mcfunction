@@ -76,6 +76,7 @@ tellraw @a [{storage: "tpa:tpa", nbt: "loaded_lang.header"}, {storage: "tpa:tpa"
 tellraw @a [{storage: "tpa:tpa", nbt: "loaded_lang.header"}, {storage: "tpa:tpa", nbt: "loaded_lang.load_reset_scores"}]
 scoreboard players set #global_current tpa.player_id 2
 execute unless score #global_current tpa.uid = #global_current tpa.uid run scoreboard players set #global_current tpa.uid 2
+execute unless score #compact_ids tpa.config = #compact_ids tpa.config run scoreboard players set #compact_ids tpa.config 0
 execute if score #compact_ids tpa.config matches 0 run scoreboard players set @a tpa.player_id 1
 scoreboard players set @a tpa.tp_to 0
 scoreboard players set @a tpa.tp_here 0

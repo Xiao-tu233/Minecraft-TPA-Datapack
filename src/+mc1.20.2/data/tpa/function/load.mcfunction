@@ -3,7 +3,7 @@
 scoreboard objectives remove tpa.variables
 scoreboard objectives add tpa.variables dummy
 scoreboard objectives add tpa.config dummy
-#<--!Script Version Inserting Locator-->
+# <--!Script Version Inserting Locator-->
 execute unless score #version tpa.config matches 210 run function tpa:initialize
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Adding 42 objectives... (1/6)"]
@@ -84,8 +84,8 @@ execute unless entity @n[type=minecraft:text_display, tag=tpa.text_display] run 
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Tags are removed. (5/6)"]
 
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing variables... (5/6)"]
-# constants
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing variables and constants... (5/6)"]
+# Constants
 scoreboard players set #-1 tpa.variables -1
 scoreboard players set #2 tpa.variables 2
 scoreboard players set #3 tpa.variables 3
@@ -96,8 +96,10 @@ scoreboard players set #14 tpa.variables 14
 scoreboard players set #16 tpa.variables 16
 scoreboard players set #20 tpa.variables 20
 scoreboard players set #100 tpa.variables 100
-# Variables initializations
+
+# Variables
 execute unless score #global_current tpa.uid = #global_current tpa.uid run scoreboard players set #global_current tpa.uid 1
+execute unless score #compact_ids tpa.config = #compact_ids tpa.config run scoreboard players set #compact_ids tpa.config 0
 scoreboard players set #commands_not_match tpa.variables 0
 execute if score #carpet_fake_player_fix tpa.config matches 0 run tag @a remove tpa.fake_player
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Variables initialized. (6/6)"]

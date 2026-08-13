@@ -1,0 +1,19 @@
+use ::java::data::dialog::Dialog
+
+dispatch tpa:tpa["back"] to back
+dispatch tpa:tpa["temp.dialog"] to Dialog
+
+struct back{
+    [uid]: position
+}
+
+type uid = int
+
+struct position{
+    x: (double|int),
+    y: (double|int),
+    z: (double|int),
+    dimension: #[id="dimension"] string,
+    yaw?: float,
+    pitch?: float
+}

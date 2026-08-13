@@ -101,6 +101,7 @@ Project To-do lists:
 - [x] make objective tpa default -1 so that /trigger tpa will make tpa 0
 - [x] 上述问题解决之后 id就可以从1开始了
 - [ ] 尝试execute at, execute position子指令能不能把二分法的approach缩减到一个1tick
+- [ ] uid管理设置项
 
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu

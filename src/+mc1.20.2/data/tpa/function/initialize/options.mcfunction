@@ -15,6 +15,7 @@ scoreboard players set #dimension tpa.config 3
 scoreboard players set #frequency tpa.config 20
 scoreboard players set #language tpa.config 0
 scoreboard players set #tp_spec tpa.config 0
+scoreboard players set #compact_ids tpa.config 0
 
 # Advanced options
 scoreboard players set #sequence_timer tpa.config 30

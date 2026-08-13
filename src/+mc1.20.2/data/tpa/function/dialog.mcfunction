@@ -4,11 +4,16 @@ scoreboard players set @s tpa.dialog 0
 function tpa:load_lang
 function tpa:sounds/levelup
 
-data remove storage tpa:tpa temp.args
+data remove storage tpa:tpa temp.dialog
+data modify storage tpa:tpa temp.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "close", columns: 5}
+
+data modify storage tpa:tpa temp.dialog_action_template set value {width: 100, action: {type: "minecraft:run_command"}}
+data modify storage tpa:tpa temp.dialog_menu_switch set from storage tpa:tpa temp.dialog_action_template
+execute if score #dialog tpa.variables matches 1 run function tpa:dialog/menu_switch/tpa
+execute if score #dialog tpa.variables matches 2 run function tpa:dialog/menu_switch/tpahere
+
 execute if score #dialog tpa.variables matches 1 run data modify storage tpa:tpa temp.args.direction set value "tpa"
 execute if score #dialog tpa.variables matches 2 run data modify storage tpa:tpa temp.args.direction set value "tpahere"
-execute if score #dialog tpa.variables matches 1 run data modify storage tpa:tpa temp.args.menu_switch_value set value 2
-execute if score #dialog tpa.variables matches 2 run data modify storage tpa:tpa temp.args.menu_switch_value set value 1
 
 
 # Requests

@@ -6,6 +6,7 @@ $execute as @p[scores={tpa.player_id=$(id)}] run function tpa:get_name
 $data modify storage tpa:tpa temp.args.name_$(index) set from storage tpa:tpa temp.name
 $data modify storage tpa:tpa temp.args.id_$(index) set value $(id)
 $execute as @p[scores={tpa.player_id=$(id)}] run scoreboard players add #player_got tpa.variables 1
+execute if score #player_got tpa.variables >= #max_players tpa.variables run return 0
 
 # Loop
 scoreboard players add #i tpa.variables 1

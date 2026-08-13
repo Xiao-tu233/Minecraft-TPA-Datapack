@@ -7,7 +7,6 @@ data modify storage tpa:tpa lang set value []
 function tpa:init_storage_lang
 function tpa_extra:init_storage_lang
 
-
 execute unless score #version tpa.config = #version tpa.config run function tpa:initialize/options
 
 scoreboard players set #version tpa.config 210

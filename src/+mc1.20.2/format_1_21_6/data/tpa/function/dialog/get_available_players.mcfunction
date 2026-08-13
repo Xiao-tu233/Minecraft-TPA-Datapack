@@ -3,6 +3,7 @@
 # max_players = min(20, current_avail_count)
 scoreboard players set #max_players tpa.variables 20
 execute if score #current_avail_count tpa.variables < #max_players tpa.variables run scoreboard players operation #max_players tpa.variables = #current_avail_count tpa.variables
+execute if score #max_players tpa.variables matches ..0 run return 0
 
 scoreboard players set #player_got tpa.variables 0
 scoreboard players set #i tpa.variables 2
