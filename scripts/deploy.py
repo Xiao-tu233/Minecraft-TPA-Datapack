@@ -1,14 +1,25 @@
 from pathlib import Path
 from packaging.version import Version
-import yaml
 from shutil import copytree, rmtree
+
+try:
+    import yaml
+except ModuleNotFoundError:
+    yaml = None
 
 ROOT = Path(__file__).resolve().parent.parent
 SERVER_DIR = ROOT / "servers"
 
 # Get datapack version from release_meta.yml
 with open(Path(__file__).parent / "release_meta.yml") as f:
-    release_meta = yaml.safe_load(f)
+    if yaml:
+        release_meta = yaml.safe_load(f)
+    else:
+        release_meta = {}
+        for line in f:
+            key, sep, value = line.partition(":")
+            if sep:
+                release_meta[key.strip()] = value.strip().strip("\"'")
 
 datapack_version = release_meta["version"]
 

@@ -7,7 +7,9 @@ function tpa:sounds/levelup
 
 scoreboard players set #request_menu.direction tpa.variables 0
 scoreboard players set #request_menu.page tpa.variables 1
-function tpa:request_menu/open
+scoreboard players set #request_menu.render tpa.variables 1
+function tpa:request_menu/prepare
+function tpa:request_menu/display
 
 tellraw @s [\
     " ", \
@@ -64,7 +66,7 @@ data modify storage tpa:tpa temp.menu.lang.right_bracket set value "]"
 tellraw @s ["", \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.search_id"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.right_bracket"}]}, " ", \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpaheremenu.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.tpahere"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpaheremenu.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpaheremenu.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpaheremenu.right_bracket"}]}, " ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.back"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.label", color: "aqua"}, "]"]}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.right_bracket"}, \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.back"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.right_bracket"}]}, \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.language set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_lang_button_hoverevent"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.right_bracket"}]}, " " \
 ]
 
@@ -96,12 +98,12 @@ execute if score #warp tpa.config matches 0 run function tpa:menu/warp/disabled
 execute if score #warp tpa.config matches 1.. run function tpa:menu/warp/enabled
 
 # Formatted output
-tellraw @s ["", \
-    {interpret:true,storage:"tpa:tpa",nbt:"temp.menu.book.left_bracket",click_event:{action:"run_command",command:"/trigger tpa.book"},hover_event:{action:"show_text",value:{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.book.tooltip"}},extra:[{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.book.label",color:"aqua"},{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.book.right_bracket"}]}, " ", \
-    {interpret:true,storage:"tpa:tpa",nbt:"temp.menu.pos.left_bracket",click_event:{action:"run_command",command:"/trigger tpa.pos"},hover_event:{action:"show_text",value:{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.pos.tooltip"}},extra:[{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.pos.label",color:"aqua"},{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.pos.right_bracket"}]}, " ", \
-    {interpret:true,storage:"tpa:tpa",nbt:"temp.menu.here.left_bracket",click_event:{action:"run_command",command:"/trigger tpa.here"},hover_event:{action:"show_text",value:{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.here.tooltip"}},extra:[{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.here.label",color:"aqua"},{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.here.right_bracket"}]}, " ", \
-    {interpret:true,storage:"tpa:tpa",nbt:"temp.menu.back.left_bracket",click_event:{action:"run_command",command:"/trigger tpa.home set -1"},hover_event:{action:"show_text",value:{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.back.tooltip"}},extra:[{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.back.label",color:"aqua"},{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.back.right_bracket"}]}, " ", \
-    {interpret:true,storage:"tpa:tpa",nbt:"temp.menu.warp.left_bracket",click_event:{action:"run_command",command:"/trigger tpa.warp set -1"},hover_event:{action:"show_text",value:{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.warp.tooltip"}},extra:[{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.warp.label",color:"aqua"},{interpret:true,storage:"tpa:tpa",nbt:"temp.menu.warp.right_bracket"}]}, " " \
+tellraw @s ["",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.right_bracket"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.right_bracket"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.here"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.right_bracket"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.home set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.right_bracket"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.warp set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.right_bracket"}]},  " " \
 ]
 
 tellraw @s [\

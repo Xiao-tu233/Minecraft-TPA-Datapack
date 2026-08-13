@@ -1,4 +1,4 @@
-# Parent function: tpa:request_menu/open, tpa:request_menu/resolve_slot
+# Parent function: tpa:request_menu/prepare, tpa:request_menu/resolve_slot
 
 scoreboard players set #request_menu.dropped tpa.variables 0
 execute if score #request_menu.offset tpa.variables matches 1.. if data storage tpa:tpa temp.request_menu.remaining[0] run scoreboard players set #request_menu.dropped tpa.variables 1

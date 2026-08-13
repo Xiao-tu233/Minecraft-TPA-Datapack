@@ -1,4 +1,4 @@
-# Parent function: tpa:request_menu/open
+# Parent function: tpa:request_menu/prepare
 
 function tpa:get_name
 data modify storage tpa:tpa temp.request_menu.players append value {uid: 0, name: ""}

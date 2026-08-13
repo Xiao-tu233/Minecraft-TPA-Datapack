@@ -1,4 +1,4 @@
-# Parent function: tpa:request_menu/open
+# Parent function: tpa:request_menu/prepare
 
 execute if data storage tpa:tpa temp.request_menu.remaining[0] run function tpa:request_menu/append_slot
 

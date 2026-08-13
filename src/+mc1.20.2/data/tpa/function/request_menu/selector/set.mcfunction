@@ -1,4 +1,4 @@
-# Parent function: tpa:request_menu/open
+# Parent function: tpa:request_menu/prepare
 
 scoreboard players operation #uid tpa.variables = #request_menu.reqer_uid tpa.variables
 function tpa:request_menu/selector/remove

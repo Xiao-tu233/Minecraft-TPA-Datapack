@@ -3,6 +3,7 @@
 scoreboard players reset #recver tpa.variables
 scoreboard players set #request_menu.opened tpa.variables 0
 scoreboard players set #request_menu.direction tpa.variables 1
+scoreboard players set #request_menu.render tpa.variables 0
 
 scoreboard players set #request_menu.value tpa.variables 0
 execute if score @s tpa.tpahere matches -23..-2 run scoreboard players operation #request_menu.value tpa.variables = @s tpa.tpahere

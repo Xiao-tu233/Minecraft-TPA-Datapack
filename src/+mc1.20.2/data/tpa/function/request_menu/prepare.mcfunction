@@ -1,5 +1,5 @@
 # Parent function: tpa:tpa_menu, tpa:tpahere_menu, tpa:request_menu/turn_page
-# Args: #request_menu.direction, #request_menu.page
+# Args: #request_menu.direction, #request_menu.page, #request_menu.render
 
 data modify storage tpa:tpa temp.request_menu.players set value []
 scoreboard players set #request_menu.reqer_uid tpa.variables -1
@@ -21,6 +21,8 @@ data modify storage tpa:tpa temp.current_request_menu set value {uid: 0, directi
 execute store result storage tpa:tpa temp.current_request_menu.uid int 1 run scoreboard players get #request_menu.reqer_uid tpa.variables
 execute store result storage tpa:tpa temp.current_request_menu.direction int 1 run scoreboard players get #request_menu.direction tpa.variables
 execute store result storage tpa:tpa temp.current_request_menu.page int 1 run scoreboard players get #request_menu.page tpa.variables
+execute unless score #request_menu.render tpa.variables = #request_menu.render tpa.variables run scoreboard players set #request_menu.render tpa.variables 0
+execute store result storage tpa:tpa temp.current_request_menu.render int 1 run scoreboard players get #request_menu.render tpa.variables
 data modify storage tpa:tpa temp.current_request_menu.players set from storage tpa:tpa temp.request_menu.players
 function tpa:request_menu/selector/set
 
@@ -33,4 +35,3 @@ function tpa:request_menu/drop_offset
 data modify storage tpa:tpa temp.request_menu.display_list set value []
 scoreboard players set #request_menu.slots_left tpa.variables 20
 function tpa:request_menu/build_page
-function tpa:request_menu/display
