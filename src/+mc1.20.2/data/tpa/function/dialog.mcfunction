@@ -4,13 +4,21 @@ scoreboard players set @s tpa.dialog 0
 function tpa:load_lang
 function tpa:sounds/levelup
 
-data remove storage tpa:tpa temp.dialog
-data modify storage tpa:tpa temp.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "close", columns: 5, body: {type: "minecraft:plain_message", contents: []}, actions: []}
+data modify storage tpa:tpa temp.dialog_action_template set value {width: 100, action: {type: "minecraft:run_command"}}
 
-data modify storage tpa:tpa temp.dialog.title set from storage tpa:tpa loaded_lang.tpa_menu_dialog_title
+# Dialog initialization
+function tpa:dialog/initialize
+
+# Request menu
+scoreboard players operation #request_menu.direction tpa.variables = #dialog tpa.variables
+scoreboard players remove #request_menu.direction tpa.variables 1
+scoreboard players set #request_menu.page tpa.variables 1
+scoreboard players set #request_menu.render tpa.variables 2
+function tpa:request_menu/prepare
+function tpa:request_menu/display
 
 # UID display
-data modify storage tpa:tpa temp.dialog.body.contents append value {text: "", color: "white", hover_event: {action: "show_text"}}
+data modify storage tpa:tpa temp.dialog.body.contents append value {text: "", color: "gold", hover_event: {action: "show_text"}}
 data modify storage tpa:tpa temp.dialog.body.contents[-1].text set from storage tpa:tpa loaded_lang.tpa_menu_you
 function tpa:get_name
 data modify storage tpa:tpa temp.dialog.body.contents[-1].hover_event.value set from storage tpa:tpa temp.name
@@ -19,23 +27,16 @@ data modify storage tpa:tpa temp.dialog.body.contents append value {text: "", co
 data modify storage tpa:tpa temp.dialog.body.contents[-1].text set from storage tpa:tpa loaded_lang.tpa_menu_has_id_of
 data modify storage tpa:tpa temp.dialog.body.contents[-1].hover_event.value set from storage tpa:tpa loaded_lang.tpa_menu_has_id_of_hoverevent
 
+data modify storage tpa:tpa temp.dialog.body.contents append value {text: "", color: "aqua"}
 execute store result storage tpa:tpa temp.dialog_uid int 1 run scoreboard players get @s tpa.uid
 data modify storage tpa:tpa temp.dialog_uid set string storage tpa:tpa temp.dialog_uid
-data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.dialog_uid
+data modify storage tpa:tpa temp.dialog.body.contents[-1].text set from storage tpa:tpa temp.dialog_uid
 
 
-
-data modify storage tpa:tpa temp.dialog_action_template set value {width: 100, action: {type: "minecraft:run_command"}}
 data modify storage tpa:tpa temp.dialog_menu_switch set from storage tpa:tpa temp.dialog_action_template
 execute if score #dialog tpa.variables matches 1 run function tpa:dialog/menu_switch/tpa
 execute if score #dialog tpa.variables matches 2 run function tpa:dialog/menu_switch/tpahere
 
-scoreboard players operation #request_menu.direction tpa.variables = #dialog tpa.variables
-scoreboard players remove #request_menu.direction tpa.variables 1
-scoreboard players set #request_menu.page tpa.variables 1
-scoreboard players set #request_menu.render tpa.variables 2
-function tpa:request_menu/prepare
-function tpa:request_menu/display
 
 # # Requests
 # data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.tpa_menu_hoverevent_left_part

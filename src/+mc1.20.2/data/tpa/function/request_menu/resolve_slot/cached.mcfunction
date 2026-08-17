@@ -11,5 +11,7 @@ scoreboard players operation #request_menu.offset tpa.variables *= #20 tpa.varia
 scoreboard players operation #request_menu.offset tpa.variables += #request_menu.slot_index tpa.variables
 
 data modify storage tpa:tpa temp.request_menu.remaining set from storage tpa:tpa temp.matched_request_menu.players
-function tpa:request_menu/drop_offset
+
+execute if score #request_menu.offset tpa.variables matches 1.. if data storage tpa:tpa temp.request_menu.remaining[0] run function tpa:request_menu/drop_offset
+
 execute store result score #recver tpa.variables if data storage tpa:tpa temp.request_menu.remaining[0].uid run data get storage tpa:tpa temp.request_menu.remaining[0].uid

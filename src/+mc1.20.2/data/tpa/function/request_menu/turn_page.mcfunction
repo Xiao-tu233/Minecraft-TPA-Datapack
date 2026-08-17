@@ -9,4 +9,8 @@ execute store result score #request_menu.page tpa.variables if data storage tpa:
 scoreboard players set #request_menu.render tpa.variables 0
 execute store result score #request_menu.render tpa.variables if data storage tpa:tpa temp.matched_request_menu.render run data get storage tpa:tpa temp.matched_request_menu.render
 scoreboard players operation #request_menu.page tpa.variables += #request_menu.page_delta tpa.variables
+
+# Dialog initialization
+execute if score #request_menu.render tpa.variables matches 2 run function tpa:dialog/initialize
+
 function tpa:request_menu/prepare
