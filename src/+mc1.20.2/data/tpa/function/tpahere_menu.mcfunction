@@ -85,7 +85,7 @@ data modify storage tpa:tpa temp.menu.here.tooltip set from storage tpa:tpa load
 data modify storage tpa:tpa temp.menu.here.right_bracket set value "]"
 
 # Home
-data modify storage tpa:tpa temp.menu.back.label set from storage tpa:tpa loaded_lang.tpa_menu_home_button
+data modify storage tpa:tpa temp.menu.home.label set from storage tpa:tpa loaded_lang.tpa_menu_home_button
 execute if score #home tpa.config matches 0 run function tpa:menu/home/disabled
 execute if score #home tpa.config matches 1.. run function tpa:menu/home/enabled
 
@@ -96,11 +96,11 @@ execute if score #warp tpa.config matches 1.. run function tpa:menu/warp/enabled
 
 # Formatted output
 tellraw @s ["",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.here"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.home set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.warp set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.right_bracket"}]},  " " \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.right_bracket"}]}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.right_bracket"}]}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.here"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.right_bracket"}]}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.home set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.right_bracket"}]}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.warp set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.right_bracket"}]}, " " \
 ]
 
 tellraw @s [\

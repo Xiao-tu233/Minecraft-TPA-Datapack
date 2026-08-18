@@ -152,7 +152,7 @@ option_dimension_button_edit_id_hoverevent:  "§bクリックしてディメン�
 option_dimension_button_edit_id_notavail_hoverevent:  "§c原版ディメンションは編集できません"
 option_dimension_button_edit_namespaceid:  "[§a名前空間IDを編集§r]"
 option_dimension_button_edit_namespaceid_hoverevent:  "§bクリックしてディメンションの名前空間IDを編集(namespace:id,\
-  \ source location 例:                                              minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)"
+  \ source location 例:                                               minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)"
 option_dimension_button_edit_namespaceid_notavail_hoverevent:  "§c原版ディメンションは編集できません"
 option_dimension_button_edit_name:  "[§a名前を編集§r]"
 option_dimension_button_edit_name_hoverevent:  "§bクリックしてディメンションの表示名を編集（クリック後、左矢印キーを2回押して引用符内に入力しEnter。原版ディメンションは言語設定に従います）"

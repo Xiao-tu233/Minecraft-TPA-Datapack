@@ -81,6 +81,7 @@ Project To-do lists:
 - [ ] 单独的update函数来更新命令存储(关于warp和home)
 - [ ] 建立List(名字可以再斟酌一下)的class 用来处理所有 列表里放复合标签 且用复合标签的特定键来辩识是否匹配的所有对象
 - [x] 数据包第一次被加载时服务器里玩家的id不会正确的被加入users列表
+   - [ ] 应包含更新程序: 添加玩家id到users 对于空位置使用占位符 在玩家上线时加入
 
 ## Experimental Ideas (“哪些东西很酷但还不确定？”)
 - [ ] Head gestures (Functions are at zhencangthings/datapacks/head_gestures)
@@ -91,8 +92,9 @@ Project To-do lists:
    - And then without sneak, down for 3 secs: enable
    - every gestures should be interface-ized
    - Tutorial for new players
+   - 使用粒子效果来引导手势
 - [ ] Add Signed Binary TP(to avoid numbers like 1023 takes too long)
-- [ ] For 1.13-1.15 添加虚拟物品实体储存1.15+的 storage tpa:tpa 物品储存位置需要被加载到(玩家位置上空 或 出生点常加载区块)
+- [ ] For 1.13-1.15 添加虚拟物品实体储存1.15+的 storage tpa:tpa 物品储存位置需要被加载到(玩家位置上空 或 出生点常加载区块) 或者考虑边界潜影盒 里面存放带有数据备份的物品
 - [ ] Considering use `execute positioned over <heightmap> -> execute: 将执行位置设置为符合特定高度图的一纵列方块的最高的位置。`
 - [ ] Add Search ID Book back, by crafting TPA menu book to get one
 - [ ] 增加数据包设置项管理
