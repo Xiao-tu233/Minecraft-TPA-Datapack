@@ -4,7 +4,7 @@ scoreboard players set @s tpa.dialog 0
 function tpa:load_lang
 function tpa:sounds/levelup
 
-data modify storage tpa:tpa temp.dialog_action_template set value {width: 100, label: "", tooltip: ""}
+data modify storage tpa:tpa temp.dialog_action_template set value {width: 100, label: ""}
 
 # Dialog initialization
 function tpa:dialog/initialize
@@ -45,6 +45,7 @@ execute if score #search_id tpa.config matches 1 run function tpa:dialog/menu/se
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
 execute if score #dialog tpa.variables matches 1 run function tpa:dialog/menu/switch/tpa
 execute if score #dialog tpa.variables matches 2 run function tpa:dialog/menu/switch/tpahere
+data modify storage tpa:tpa temp.dialog.actions[-1].action.type set value "minecraft:run_command"
 
 # Back
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
@@ -56,13 +57,14 @@ execute if score #back tpa.config matches 0 run function tpa:dialog/menu/back/en
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
 data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "minecraft:run_command", command: "/trigger tpa.language set -1"}
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_lang_button
-data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa loaded_lang.tpa_menu_lang_button_hoverevent
+data modify storage tpa:tpa temp.dialog.actions[-1].tooltip.text set from storage tpa:tpa loaded_lang.tpa_menu_lang_button_hoverevent
 
 # Place holder for line 1 button 5
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
 
 # Book
-data modify storage tpa:tpa temp.menu.book.label set from storage tpa:tpa loaded_lang.tpa_menu_book_button
+data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
+data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_book_button
 execute if score #book tpa.config matches 0 run function tpa:dialog/menu/book/disabled
 execute if score #book tpa.config matches 1 run function tpa:dialog/menu/book/enabled
 
@@ -70,13 +72,13 @@ execute if score #book tpa.config matches 1 run function tpa:dialog/menu/book/en
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
 data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "minecraft:run_command", command: "/trigger tpa.pos"}
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_pos_button
-data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa loaded_lang.tpa_menu_pos_button_hoverevent
+data modify storage tpa:tpa temp.dialog.actions[-1].tooltip.text set from storage tpa:tpa loaded_lang.tpa_menu_pos_button_hoverevent
 
 # Here
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
 data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "minecraft:run_command", command: "/trigger tpa.pos"}
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_here_button
-data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa loaded_lang.tpa_menu_here_button_hoverevent
+data modify storage tpa:tpa temp.dialog.actions[-1].tooltip.text set from storage tpa:tpa loaded_lang.tpa_menu_here_button_hoverevent
 
 # Home
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
@@ -85,18 +87,10 @@ execute if score #home tpa.config matches 0 run function tpa:dialog/menu/home/di
 execute if score #home tpa.config matches 1.. run function tpa:dialog/menu/home/enabled
 
 # Warp
-data modify storage tpa:tpa temp.menu.warp.label set from storage tpa:tpa loaded_lang.tpa_menu_warp_button
+data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
+data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_warp_button
 execute if score #warp tpa.config matches 0 run function tpa:dialog/menu/warp/disabled
 execute if score #warp tpa.config matches 1.. run function tpa:dialog/menu/warp/enabled
-
-# Formatted output
-tellraw @s ["",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.here"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.home set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.right_bracket"}]},  " ",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.warp set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.right_bracket"}]},  " " \
-]
 
 tellraw @s [\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_auto_accept"}, \
