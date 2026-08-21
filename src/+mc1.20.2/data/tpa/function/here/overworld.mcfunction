@@ -1,6 +1,9 @@
 data modify storage tpa:tpa temp.args.if_trans set value " -> "
 data modify storage tpa:tpa temp.args.space_trans set value " "
 
+data modify storage tpa:tpa temp.args.dimension_before_trans set from storage tpa:tpa loaded_lang.here_overworld_postion_hoverevent
+data modify storage tpa:tpa temp.args.dimension_after_trans set from storage tpa:tpa loaded_lang.here_nether_postion_hoverevent
+
 execute store result storage tpa:tpa temp.args.x_trans int 1 run data get entity @s Pos[0] 0.125
 execute store result storage tpa:tpa temp.args.y_trans int 1 run data get entity @s Pos[1] 1
 execute store result storage tpa:tpa temp.args.z_trans int 1 run data get entity @s Pos[2] 0.125

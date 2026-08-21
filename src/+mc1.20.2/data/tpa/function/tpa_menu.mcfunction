@@ -78,8 +78,12 @@ execute if score #book tpa.config matches 1 run function tpa:menu/book/enabled
 # Pos
 data modify storage tpa:tpa temp.menu.pos.left_bracket set value "["
 data modify storage tpa:tpa temp.menu.pos.label set from storage tpa:tpa loaded_lang.tpa_menu_pos_button
-data modify storage tpa:tpa temp.menu.pos.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_pos_button_hoverevent
 data modify storage tpa:tpa temp.menu.pos.right_bracket set value "]"
+scoreboard players set #tp_pos_enabled tpa.variables 1
+execute if score #tp_pos tpa.config matches 0 run scoreboard players set #tp_pos_enabled tpa.variables 0
+execute if score #tp_pos_cooldown tpa.config matches -1 run scoreboard players set #tp_pos_enabled tpa.variables 0
+execute if score #tp_pos_enabled tpa.config matches 0 run function tpa:menu/pos/disabled
+execute if score #tp_pos_enabled tpa.config matches 1 run function tpa:menu/pos/enabled
 
 # Here
 data modify storage tpa:tpa temp.menu.here.left_bracket set value "["
@@ -89,6 +93,8 @@ data modify storage tpa:tpa temp.menu.here.right_bracket set value "]"
 
 # Home
 data modify storage tpa:tpa temp.menu.home.label set from storage tpa:tpa loaded_lang.tpa_menu_home_button
+data modify storage tpa:tpa temp.menu.home.left_bracket set value "["
+data modify storage tpa:tpa temp.menu.home.right_bracket set value "]"
 execute if score #home tpa.config matches 0 run function tpa:menu/home/disabled
 execute if score #home tpa.config matches 1.. run function tpa:menu/home/enabled
 

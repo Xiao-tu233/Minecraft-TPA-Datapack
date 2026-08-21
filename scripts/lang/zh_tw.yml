@@ -329,7 +329,7 @@ option_dimension_button_edit_id_hoverevent:  "§b點擊編輯該維度的維度I
 option_dimension_button_edit_id_notavail_hoverevent:  "§c原版維度無法編輯"
 option_dimension_button_edit_namespaceid_hoverevent:  "§b點擊編輯該維度的命名空間ID(namespace:id,\
   \ source location 形如minecraft:                                                  \
-  \    xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)"
+  \     xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)"
 option_dimension_button_edit_namespaceid_notavail_hoverevent:  "§c原版維度無法編輯"
 option_dimension_button_edit_name_hoverevent:  "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車,\
   \ 該項對於原版維度會跟隨語言設定而不是當前設定)"
@@ -493,3 +493,5 @@ recver_accept_selector_title:  "已發送的請求"
 home_unavail:  "当前状态下无法操作§a传送点§r目前狀態下無法操作§a傳送點§r"
 back_unavail:  "当前状态下无法操作§a返回上一位置§r"
 book_unavail:  "当前状态下无法操作§a传送书§r"
+here_overworld_postion_hoverevent:  "主世界坐標"
+here_nether_postion_hoverevent:  "地獄坐標"

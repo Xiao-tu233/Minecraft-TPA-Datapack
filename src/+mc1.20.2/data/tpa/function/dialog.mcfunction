@@ -92,6 +92,42 @@ data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:t
 execute if score #warp tpa.config matches 0 run function tpa:dialog/menu/warp/disabled
 execute if score #warp tpa.config matches 1.. run function tpa:dialog/menu/warp/enabled
 
+# Warp
+data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
+data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_warp_button
+execute if score #warp tpa.config matches 0 run function tpa:dialog/menu/warp/disabled
+execute if score #warp tpa.config matches 1.. run function tpa:dialog/menu/warp/enabled
+
+# Auto accept
+data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
+data modify storage tpa:tpa temp.dialog.actions[-1].label set value []
+data modify storage tpa:tpa temp.dialog.actions[-1].label append from storage tpa:tpa loaded_lang.tpa_menu_auto_accept
+execute if score @s tpa.tpaccept_toggle matches 0 run data modify storage tpa:tpa temp.dialog.actions[-1].label append from storage tpa:tpa loaded_lang.tpa_menu_disabled
+execute if score @s tpa.tpaccept_toggle matches 1 run data modify storage tpa:tpa temp.dialog.actions[-1].label append from storage tpa:tpa loaded_lang.tpa_menu_enabled
+
+
+#
+# {\
+    label: "$(auto_accept)$(auto_accept_value)", \
+    tooltip: "$(switch_hover)", \
+    action: \
+    {type: "minecraft:run_command", "command": "trigger tpa.tpaccpet_toggle add 4"}, \
+    width: 100 \
+}, \
+{\
+    label: "$(mute)$(mute_value)", \
+    tooltip: "$(switch_hover)", \
+    action: \
+    {type: "minecraft:run_command", "command": "trigger tpa.mute add 4"}, \
+    width: 100 \
+}, \
+{\
+    label: "$(output)$(output_value)", \
+    tooltip: "$(switch_hover)", \
+    action: \
+    {type: "minecraft:run_command", "command": "trigger tpa.output add 6"}, \
+    width: 100 \
+}\
 tellraw @s [\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_auto_accept"}, \
     {text: "[", click_event:{action:"run_command",command: "/trigger tpa.tpaccept_toggle set 3"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_enable", color: "green"}]}, "|", \

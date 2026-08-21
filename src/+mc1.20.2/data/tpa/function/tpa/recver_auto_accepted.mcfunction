@@ -3,6 +3,9 @@
 function tpa:back/set
 tp @s @p[tag=to_modify]
 
+function tpa:sounds/tp
+execute as @p[tag=to_modify] run function tpa:sounds/tp
+
 data remove storage tpa:tpa temp.output
 data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_lang.reqer_accept_auto
 execute as @p[tag=to_modify] run function tpa:get_name

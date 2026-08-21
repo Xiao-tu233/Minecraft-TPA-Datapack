@@ -7,10 +7,10 @@ execute as @a if score #reqer tpa.variables = @s tpa.uid run tag @s add to_modif
 
 function tpa:requests/pop
 
-function tpa:sounds/tp
-execute as @p[tag=to_modify] run function tpa:sounds/tp
 execute if score #direction tpa.variables matches 0 run function tpa:tpaccept/act
 execute if score #direction tpa.variables matches 1 run function tpa:tpaccept/act_here
+function tpa:sounds/tp
+execute as @p[tag=to_modify] run function tpa:sounds/tp
 
 scoreboard players set @p[tag=to_modify] tpa.tp_to 0
 scoreboard players set @p[tag=to_modify] tpa.tp_here 0
