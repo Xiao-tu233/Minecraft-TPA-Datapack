@@ -37,7 +37,6 @@ data modify storage tpa:tpa temp.lang set value \
     extended_menu_previous_page: "§b查看上一页", \
     extended_menu_title: "======================§bTPA§6 菜单§r========================", \
     here_button_tpa: "[§b请求传送§r]", \
-    here_button_tpa_hoverevent: "§b点击快捷向他发送传送请求", \
     here_overworld_postion_hoverevent: "主世界坐标", \
     here_nether_postion_hoverevent: "地狱坐标", \
     here_button_tpa_notavail_hoverevent: "§c玩家不允许被传送", \
@@ -78,7 +77,7 @@ data modify storage tpa:tpa temp.lang set value \
     lang_menu_title: "请在下方选择语言:", \
     lang_selected: ["你已切换语言到", ""], \
     lang_server_follow: ["由于数据包服务端默认语言尚未设置, 因此现在它被设置为", ""], \
-    load_author: "此数据包由§6Xiao_tu233§r制作. ", \
+    load_author: "此数据包由§6Xiao_tu233§r以及§6Pressnre§r制作. ", \
     load_button_help: "[帮助]", \
     load_button_help_hoverevent: "点击查看帮助", \
     load_button_license: "[协议]", \
@@ -87,7 +86,7 @@ data modify storage tpa:tpa temp.lang set value \
     load_button_options_hoverevent: "点击更改数据包配置", \
     load_button_update: "[更新]", \
     load_button_update_hoverevent: "点击开始数据包的更新导引", \
-    load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233.    本数据包遵循 GPL-3.0 开源协议, 为开源项目, 但作者不建议将其用于商业化服务器.     点击下方“[协议]”查看协议原文. ", \
+    load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233     Additional contributions © 2026 Pressnre§r.    本数据包遵循 GPL-3.0 开源协议, 为开源项目, 但作者不建议将其用于商业化服务器.     点击下方“[协议]”查看协议原文. ", \
     load_date_check: ["目前版本发布于", ", 请注意更新"], \
     load_date_check_format: 123, \
     load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
@@ -511,15 +510,15 @@ data modify storage tpa:tpa temp.lang set value \
     lang_button_hoverevent: "§bClick to open language menu", \
     lang_menu_title: "Please select language below:", \
     lang_menu_select_button: "[§aLoad recommended commands§r]", \
-    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                                                     ", \
+    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                                                      ", \
     lang_disabled: "Language feature is disabled", \
     lang_selected: ["You have switched language to ", ""], \
     lang_server_follow: ["Since Datapack default language haven't been set, so it's set to ", " now"], \
     load_done: "§aData pack has been reloaded: ", \
     load_version_hoverevent: "§bIt's the version of TPA Datapack, Instead of Minecraft Version.", \
     load_welcome: "Welcome use TPA Datapack! ", \
-    load_copyright_claim: "Copyright © 2024-2025 Xiao_tu233 All rights reserved. No Commercial use. Click \"[LICENSE]\" button below for details", \
-    load_author: "This datapack is made by §6Xiao_tu233§r. ", \
+    load_copyright_claim: "Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is licensed under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on commercial servers. Click \"[LICENSE]\" below to view the full license text.", \
+    load_author: "This datapack is made by §6Xiao_tu233§r and §6Pressnre§r. ", \
     load_button_options: "[SETTINGS]", \
     load_button_options_hoverevent: "Click to modify options", \
     load_button_help: "[HELP]", \
@@ -650,8 +649,8 @@ data modify storage tpa:tpa temp.lang set value \
     tp_pos_spec: "Spectators cannot §ateleport to coordinates§r", \
     tp_pos_throw_on_invalid_char: "The coordinates you entered contain invalid characters", \
     tpa_menu_hoverevent: ["§bClick to send a teleport request to ", ""], \
-    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                     ", \
-    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                                                     ", \
+    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                      ", \
+    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                                                      ", \
     tpa_menu_extend_hoverevent: "§bClick to expand menu", \
     tpa_menu_extend: "§bExpand§r", \
     tpa_menu_you: "Your ", \
@@ -710,7 +709,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "The following settings are advanced options. Do not modify unless you know what you are doing.", \
     option_advenced_tip: "Enable debug mode to access more advanced settings", \
     option_anchor_search_retries: "Anchor search retry count", \
-    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                                                       times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
+    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                                                        times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
     option_carpet_fake_player_fix_incompatible: "Carpet fake player fix is incompatible with this version", \
@@ -764,7 +763,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_anchor_actionbar: "Anchor teleport progress: ", \
     teleport_binary_actionbar: "Binary search teleport progress: ", \
     teleport_cal_sim_dist_actionbar: "Simulation distance", \
-    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                                                       ", \
+    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                                                        ", \
     teleport_cal_sim_dist_start: "Simulation distance calculation started", \
     teleport_sim_dist_warn: "Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails, please contact admin to recalculate or manually set, or use binary teleport.", \
     teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
@@ -774,7 +773,7 @@ data modify storage tpa:tpa temp.lang set value \
     tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
     tp_pos_abort: "You stopped entering teleport coordinates", \
-    uninstall_done: "§aSuccessfully uninstalled and disabled the datapack. §rTo fully remove it, delete the datapack from the folder. But you can also click the button on the right to enable it again:                        ", \
+    uninstall_done: "§aSuccessfully uninstalled and disabled the datapack. §rTo fully remove it, delete the datapack from the folder. But you can also click the button on the right to enable it again:                         ", \
     uninstall_enable_folder_button: "ENABLE1", \
     uninstall_enable_folder_button_hoverevent: "Click to enable folder-based datapack (if exists)", \
     uninstall_enable_zip_button: "ENABLE2", \
@@ -788,7 +787,7 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_deny_tpahere: ["The requestor is denied from teleporting here.", "to you..."], \
     option_game_version: "The compatible game version for the datapack file", \
     option_max_anchor_summons_attempts: "Maximum summon attempts for teleportation anchor", \
-    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                                              attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
+    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                                               attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
     option_sim_dist: "Simulation distance", \
     option_sim_dist_button_cal: "[§aCalculate§r]", \
     option_sim_dist_hoverevent: "§bChange the §aSimulation distance §r(§6Unit: chunks§r)   Please make sure there are no players within the simulation distance from the origin in the overworld before clicking.", \
@@ -811,9 +810,9 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_cal_sim_dist_end_rightpart: "", \
     teleport_incompatible: "§aAnchor teleportation§r is not compatible with this game version", \
     teleport_sim_dist_disabled: "The server has not set the simulation distance", \
-    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                              This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
+    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                               This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
     tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
-    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                             ", \
+    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                              ", \
     tick_not_working_tips_line2: "        1. Use the /schedule command to call the Tick function.", \
     tick_not_working_tips_line3: "   Or 2. Place your command block in a hidden location to avoid being destroyed by Bedrock-breaking machines.", \
     tp_pos_button_abort: "[Abort]", \
@@ -935,8 +934,8 @@ data modify storage tpa:tpa temp.lang set value \
     home_unavail: "当前状态下无法操作§a传送点§r", \
     back_unavail: "当前状态下无法操作§a返回上一位置§r", \
     book_unavail: "当前状态下无法操作§a传送书§r", \
-    here_overworld_postion_hoverevent: "主世界坐标", \
-    here_nether_postion_hoverevent: "地狱坐标" \
+    here_overworld_postion_hoverevent: "Overworld Positon", \
+    here_nether_postion_hoverevent: "Nether Position" \
 }, \
   {\
     lang: "ja_jp", \
@@ -1030,7 +1029,7 @@ data modify storage tpa:tpa temp.lang set value \
     lang_server_follow: ["サーバーパックのデフォルト言語が設定されていないため、現在", "に設定されています"], \
     load_add_objectives: "46個のスコア項目を追加中... (1/6)", \
     load_added_objectives: "スコア項目を正常に追加しました... (2/6)", \
-    load_author: "このデータパックは§6Xiao_tu233§rによって作成されました。", \
+    load_author: "このデータパックは§6Xiao_tu233§rと§6Pressnre§rによって作成されました。", \
     load_button_help: "[ヘルプ]", \
     load_button_help_hoverevent: "クリックしてヘルプを表示", \
     load_button_license: "[ライセンス]", \
@@ -1039,7 +1038,7 @@ data modify storage tpa:tpa temp.lang set value \
     load_button_options_hoverevent: "クリックしてデータパック設定を変更", \
     load_button_update: "[更新]", \
     load_button_update_hoverevent: "クリックしてデータパック更新ガイドを開始", \
-    load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233. このデータパックはGPL-3.0オープンソースライセンスに従っています。 オープンソースプロジェクトですが、作者は商用サーバーでの使用を推奨していません。[ライセンス]をクリックしてライセンス全文を確認できます。", \
+    load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233    Additional contributions © 2026 Pressnre. このデータパックはGPL-3.0オープンソースライセンスに従っています。 オープンソースプロジェクトですが、作者は商用サーバーでの使用を推奨していません。[ライセンス]をクリックしてライセンス全文を確認できます。", \
     load_date_check: ["現在のバージョンは", "にリリースされました。アップデートに注意してください"], \
     load_did_reset_scores: "オンラインプレイヤーのスコアを正常にリセットしました... (3/6)", \
     load_done: "§aデータパックのリロードが完了しました: ", \
@@ -1091,7 +1090,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id_hoverevent: "§bクリックしてディメンションIDを編集（クリック後、左矢印キーを押してコロンの後に入力しEnter）", \
     option_dimension_button_edit_id_notavail_hoverevent: "§c原版ディメンションは編集できません", \
     option_dimension_button_edit_namespaceid: "[§a名前空間IDを編集§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションの名前空間IDを編集(namespace:id, source location 例:                                               minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションの名前空間IDを編集(namespace:id, source location 例:                                                minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
     option_dimension_button_edit_namespaceid_notavail_hoverevent: "§c原版ディメンションは編集できません", \
     option_dimension_button_edit_name: "[§a名前を編集§r]", \
     option_dimension_button_edit_name_hoverevent: "§bクリックしてディメンションの表示名を編集（クリック後、左矢印キーを2回押して引用符内に入力しEnter。原版ディメンションは言語設定に従います）", \
@@ -1415,8 +1414,8 @@ data modify storage tpa:tpa temp.lang set value \
     book_unavail: "当前状态下无法操作§a传送书§r", \
     recver_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
     recver_req_invalid_hoverevent: "§b你所发送请求的玩家", \
-    here_overworld_postion_hoverevent: "主世界坐标", \
-    here_nether_postion_hoverevent: "地狱坐标" \
+    here_overworld_postion_hoverevent: "オーバーワールドの座標", \
+    here_nether_postion_hoverevent: "ネザーの座標" \
 }, \
   {\
     lang: "zh_tw", \
@@ -1506,10 +1505,10 @@ data modify storage tpa:tpa temp.lang set value \
     load_removed_tags: "已成功移除標籤... (5/6)", \
     load_init_vars: "正在初始化變數... (5/6)", \
     load_initted_vars: "已成功初始化變數... (6/6)", \
-    load_done: "§a資料包重新載入完成: §r1.15 - 1.20.1 完整版 ", \
+    load_done: "§a資料包重新載入完成: ", \
     load_version_hoverevent: "§b這是TPA資料包的版本, 而不是Minecraft版本.", \
     load_welcome: "歡迎使用TPA資料包! ", \
-    load_copyright_claim: "版權所有 © 2024-2025 Xiao_tu233 保留所有權利. 不允許商業使用. 具體請點擊下方\"[協議]\" 按鈕", \
+    load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r。 本資料包採用 GPL-3.0 開源授權條款，為開源專案，但作者不建議將其用於商業伺服器。 點擊下方「[授權條款]」查看授權條款全文。", \
     load_author: "此資料包由§6Xiao_tu233§r製作. ", \
     load_button_options: "[設定]", \
     load_button_options_hoverevent: "點擊變更資料包設定", \
@@ -1517,8 +1516,8 @@ data modify storage tpa:tpa temp.lang set value \
     load_button_help_hoverevent: "點擊檢視說明", \
     load_button_update: "[更新]", \
     load_button_update_hoverevent: "點擊開始更新資料包", \
-    load_button_license: "[協議]", \
-    load_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源協議以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
+    load_button_license: "[條款]", \
+    load_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
     mute_disable: "你開啟了§a資料包音效§r", \
     mute_enable: "你§a靜音§r了資料包", \
     option_carpet_disabled: "本功能需要Carpet模組作為依賴, 而伺服器尚未安裝Carpet模組. ", \
@@ -1558,8 +1557,8 @@ data modify storage tpa:tpa temp.lang set value \
     option_button_uninstall_hoverevent: "§4點擊此按鈕來§l§n解除安裝§r§4TPA資料包! 請考慮你是否真的需要!", \
     option_button_update: "[§4更新§r]", \
     option_button_update_hoverevent: "§b點擊開始更新資料包", \
-    option_button_license: "[§4協議§r]", \
-    option_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源協議以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
+    option_button_license: "[§4條款§r]", \
+    option_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
     option_button_help: "[§4說明§r]", \
     option_button_help_hoverevent: "§b點擊開啟說明選單", \
     output_default: "你將輸出位置切換為§a聊天欄和動作欄§r", \
@@ -1745,7 +1744,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
     option_dimension_button_edit_id_hoverevent: "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)", \
     option_dimension_button_edit_id_notavail_hoverevent: "§c原版維度無法編輯", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                                                      xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                                                       xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
     option_dimension_button_edit_namespaceid_notavail_hoverevent: "§c原版維度無法編輯", \
     option_dimension_button_edit_name_hoverevent: "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車, 該項對於原版維度會跟隨語言設定而不是當前設定)", \
     option_dimension_button_remove_hoverevent: "§b點擊移除該維度", \
@@ -1904,8 +1903,8 @@ data modify storage tpa:tpa temp.lang set value \
     home_unavail: "当前状态下无法操作§a传送点§r目前狀態下無法操作§a傳送點§r", \
     back_unavail: "当前状态下无法操作§a返回上一位置§r", \
     book_unavail: "当前状态下无法操作§a传送书§r", \
-    here_overworld_postion_hoverevent: "主世界坐标", \
-    here_nether_postion_hoverevent: "地狱坐标" \
+    here_overworld_postion_hoverevent: "主世界坐標", \
+    here_nether_postion_hoverevent: "地獄坐標" \
 } \
 ]
 data modify storage tpa:tpa lang append from storage tpa:tpa temp.lang[]
