@@ -73,6 +73,7 @@ Project To-do lists:
    对于含一个参数的语言键 将两部分分开打包成列表
    对于含两个及以上的参数的语言键, 分开打包成列表之后用添加"_format"的键另建一个上述的表示顺序的数字
    并根据参数数量在调用时使用output文件夹下的函数解析输出
+- [ ] sync_lang.py 可能没有在其他的format版本中生效
 - [ ] 语言的index键应该在reload的时候被添加而不是语言的yml里
 - [x] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
 - [x] 考虑使用调试模组 Sniffer BV14TmrB1EhA
