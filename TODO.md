@@ -79,10 +79,34 @@ Project To-do lists:
 - [x] 考虑使用调试模组 Sniffer BV14TmrB1EhA
 - [ ] 将主版本改为26.2
 - [ ] 增加更多脚本 在增加新功能的时候同步更改
-- [ ] 单独的update函数来更新命令存储(关于warp和home)
+- [ ] 单独的update函数来更新命令存储(关于home)
+      - 使用宏函数进行如下更新
+        初始化时将旧的home数据存储到option.home_legacy中并初始化新的home[] 和原1.20.1-1.15的存储方式相同
+        对于上线玩家 如果option.home_legacy.$(name)存在
+        则尝试将该玩家的个人传送点数据迁移至新位置
+        首先检测服务器设置的个人传送点数量上限 如果不为-1则以其为循环次数循环从1开始为键名的option.home_legacy.$(name).$(id)
+        如果服务器设置的个人歘送点数量上限为-1 则采用这种方式最大限度的保留原数据
+        考虑一个数字作为最小的检测数量 在该数量和目前已经检测过的传送点槽位数量(不包括目前已计数的连续空槽位, 即最后一次出现数据的槽位位置)里面取更大值 如果在循环过程中出现连续该更大值的空白传送点槽位 则退出循环保存现有的传送点
+        最小的检测数量 是一个高级选项: #home_migration_min_scan 默认值为16
+         理由：
+         - 普通服务器的 Home 上限通常远小于 16；
+         - 能覆盖大多数旧数据中的空槽间隔；
+         - 只进行 16 次基础探测，迁移成本仍然很低；
+         - #home = -1 本身已经是不推荐的无限制模式，不值得为了极端稀疏数据无限增加扫描量。
+        个人传送点迁移后 移除旧储存的相关数据 具体到传送点而不是玩家 即data remove storage tpa:tpa option.home_legacy.$(name).$(id)
+        在高级选项中设置 放弃所有旧home数据 按钮 并做如下处理和警告:
+        "请在如下查看目前未被迁移到新储存格式的个人传送点" 在这里展示option.home_legacy数据
+        "你可以查询提及玩家的uid并手动使用如下指令来把这些传送点迁移到新的储存格式中"
+        "/function tpa:update/home/migrate_specific {with: {name: "ExamplePlayerName", uid: <ExampleUid>, index: <ExampleHomeIndex>}}"
+        函数会检测输入的name或者uid 其中如果name参数缺省, 
+          如果玩家在线则通过get_name函数获取玩家名称 如果离线则通过数据存储的users列表获取 如果users列表的该索引不存在则报错
+        未缺省则会对照输入的是否正确 如果通过uid获取玩家id失败则直接采用提供的name参数作为玩家名
+        如果缺省uid参数则通过数据存储的users列表获取 如果玩家不存在在users列表中则弹出2次确认是否为玩家添加uid
+        index为个人传送点槽位 为必填参数 缺省则报错
+        注意观察2.0.4-的home格式是否应该以该方式转化 记得2.0.3的历史键名转化(dim->dimension)
 - [ ] 建立List(名字可以再斟酌一下)的class 用来处理所有 列表里放复合标签 且用复合标签的特定键来辩识是否匹配的所有对象
 - [x] 数据包第一次被加载时服务器里玩家的id不会正确的被加入users列表
-   - [ ] 应包含更新程序: 添加玩家id到users 对于空位置使用占位符 在玩家上线时加入
+   - [ ] 应包含更新程序: 添加玩家id到users 对于空位置使用占位符 在玩家上线时加入 而不是直接append 否则会导致index和uid不对齐
 
 ## Experimental Ideas (“哪些东西很酷但还不确定？”)
 - [ ] Head gestures (Functions are at zhencangthings/datapacks/head_gestures)
@@ -105,6 +129,11 @@ Project To-do lists:
 - [x] 上述问题解决之后 id就可以从1开始了
 - [ ] 尝试execute at, execute position子指令能不能把二分法的approach缩减到一个1tick
 - [ ] uid管理设置项
+- [ ] 作为高级选项设置项 
+      对 1.21.5- 的版本增加非宏函数检测的get_name方式(边界潜影盒用战利品表获取头颅获取头颅数据) 
+      并在1.20.1- 版本事实默认开启, 
+      1.20.2+ 默认关闭
+      对于1.20.2-1.21.5版本 get_name 本身需要宏函数在大量使用的场景会导致卡顿 所以保留选项作为性能优化的推荐选项
 
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu

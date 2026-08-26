@@ -1,4 +1,4 @@
-# Parent function: tpa:request_menu/prepare, tpa:request_menu/resolve_slot/cached
+# Parent function: tpa:request_menu/drop_offset, tpa:request_menu/resolve_slot/cached
 data remove storage tpa:tpa temp.request_menu.remaining[0]
 scoreboard players remove #request_menu.offset tpa.variables 1
 

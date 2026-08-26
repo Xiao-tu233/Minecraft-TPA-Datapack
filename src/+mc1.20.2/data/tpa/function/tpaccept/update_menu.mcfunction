@@ -2,7 +2,7 @@
 
 data modify storage tpa:tpa temp.current_selector set from storage tpa:tpa temp.matched_selector
 
-execute if score #accept_index tpa.variables matches 1 run function tpa:tpaccept/pass
+execute if score #accept_index tpa.variables matches 1 run function tpa:pass
 execute if score #accept_index tpa.variables matches 5 run function tpa:tpaccept/previous_page
 execute if score #accept_index tpa.variables matches 6..10 run function tpa:tpaccept/selector/build_page
 execute if score #accept_index tpa.variables matches 6..10 run function tpa:tpaccept/accept_specific

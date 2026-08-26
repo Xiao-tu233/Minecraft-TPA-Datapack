@@ -2,7 +2,7 @@
 
 data modify storage tpa:tpa temp.current_selector set from storage tpa:tpa temp.matched_selector
 
-execute if score #cancel_index tpa.variables matches 1 run function tpa:cancel_req/pass
+execute if score #cancel_index tpa.variables matches 1 run function tpa:pass
 execute if score #cancel_index tpa.variables matches 2 run function tpa:cancel_req/previous_page
 execute if score #cancel_index tpa.variables matches 3..7 run function tpa:cancel_req/selector/build_page
 execute if score #cancel_index tpa.variables matches 3..7 run function tpa:cancel_req/cancel_specific

@@ -1,11 +1,10 @@
 # Parent function: tpa:tpa_menu, tpa:tpahere_menu, tpa:request_menu/turn_page
 # Args: #request_menu.direction, #request_menu.page, #request_menu.render
 
-data modify storage tpa:tpa temp.request_menu.players set value []
-scoreboard players set #request_menu.reqer_uid tpa.variables -1
-execute if score @s tpa.uid = @s tpa.uid run scoreboard players operation #request_menu.reqer_uid tpa.variables = @s tpa.uid
-execute as @a[predicate=tpa:available] if score @s tpa.uid = @s tpa.uid unless score @s tpa.uid = #request_menu.reqer_uid tpa.variables run function tpa:request_menu/append_candidate
+# Add every available players to list players(uid and name)
+function tpa:request_menu/get_available_players
 
+# Clac and slamp page
 execute store result score #request_menu.total_players tpa.variables run data get storage tpa:tpa temp.request_menu.players
 scoreboard players set #request_menu.total_pages tpa.variables 0
 execute if score #request_menu.total_players tpa.variables matches 1.. run function tpa:request_menu/prepare/available_players
@@ -27,7 +26,6 @@ data modify storage tpa:tpa temp.request_menu.remaining set from storage tpa:tpa
     scoreboard players remove #request_menu.offset tpa.variables 1
     scoreboard players operation #request_menu.offset tpa.variables *= #20 tpa.variables
 execute if score #request_menu.offset tpa.variables matches 1.. if data storage tpa:tpa temp.request_menu.remaining[0] run function tpa:request_menu/drop_offset
-
 
 data modify storage tpa:tpa temp.request_menu.page_players set value []
 scoreboard players set #request_menu.slots_left tpa.variables 20

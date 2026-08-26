@@ -1,7 +1,42 @@
 # Parent function: tpa:book/available
 
+# \
+""" \
+The TPA Menu Book now contains 4 different parts: \
+1. Feature buttons Page: (Page 0)\
+   Contains player's current uid, \
+   request menu page turning button \
+   and feature buttons like back etc. \
+2. Request menu (Page 1- Available Player Acount Devided by 7) \
+3. Home menu (Right after Request Menu, Button in Page 0 and turn to here) \
+4. Warp menu (Right after Home Menu, Button in Page 0 and turn to here) \
+"""
+
 # Clear before giving
 clear @s minecraft:written_book[minecraft:custom_data={isTpaBook:1b}]
+
+# Get request menu
+function tpa:request_menu/get_available_players
+
+# Calculate request menu pages \
+""" \
+Each player now occupies two lines: \
+one for the player name and one for the "Teleport" and "Teleport Here" buttons. \
+Therefore, a 14-line book page can display up to 7 players instead of 14, \
+while keeping long names readable. \
+"""
+execute store result score #book.total_players tpa.variables run data get storage tpa:tpa temp.request_menu.players
+scoreboard players set #book.request_menu_pages tpa.variables 0
+scoreboard players operation #book.request_menu_pages tpa.variables = #book.total_players tpa.variables
+scoreboard players remove #book.request_menu_pages tpa.variables 1
+scoreboard players operation #book.request_menu_pages tpa.variables /= #7 tpa.variables
+scoreboard players add #book.request_menu_pages tpa.variables 1
+
+# Calculate home menu pages
+function tpa:test/pass
+
+# Calculate warp menu pages
+function tpa:test/pass
 
 # Prepare for the book content editting
 

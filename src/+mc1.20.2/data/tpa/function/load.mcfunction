@@ -91,6 +91,7 @@ scoreboard players set #2 tpa.variables 2
 scoreboard players set #3 tpa.variables 3
 scoreboard players set #4 tpa.variables 4
 scoreboard players set #5 tpa.variables 5
+scoreboard players set #7 tpa.variables 7
 scoreboard players set #9 tpa.variables 9
 scoreboard players set #14 tpa.variables 14
 scoreboard players set #16 tpa.variables 16
