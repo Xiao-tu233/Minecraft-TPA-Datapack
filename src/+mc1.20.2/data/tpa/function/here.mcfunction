@@ -41,5 +41,8 @@ data modify storage tpa:tpa temp.args.n set string storage tpa:tpa temp.name 0 1
 
 execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get @s tpa.uid
 
+execute if predicate tpa:available run function tpa:here/available
+execute unless predicate tpa:available run function tpa:here/unavailable
+
 # Call macro function
 function tpa:here/display with storage tpa:tpa temp.args

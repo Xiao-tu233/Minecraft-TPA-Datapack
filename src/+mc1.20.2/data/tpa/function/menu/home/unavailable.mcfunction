@@ -1,4 +1,3 @@
-# Parent function: tpa:menu/warp/enabled
-data modify storage tpa:tpa temp.menu.warp.left_bracket set value "§8["
-data modify storage tpa:tpa temp.menu.warp.tooltip set from storage tpa:tpa loaded_lang.warp_disabled
-data modify storage tpa:tpa temp.menu.warp.right_bracket set value "§8]"
+# Parent function: tpa:tpa_menu
+data modify storage tpa:tpa temp.menu.home.button_brackets set value ["§8[", "§8]"]
+data modify storage tpa:tpa temp.menu.home.tooltip set from storage tpa:tpa loaded_lang.home_unavail

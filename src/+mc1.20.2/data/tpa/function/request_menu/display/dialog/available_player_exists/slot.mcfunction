@@ -1,5 +1,5 @@
 # Parent function: tpa:request_menu/display/dialog/available_player_exists/append_slot
-# @macro: {trigger: string, value: int}
+# @macro: {direction: string, value: int}
 
 data modify storage tpa:tpa temp.request_menu.dialog_action set value {width: 100, label: ""}
 $execute if data storage tpa:tpa temp.request_menu.dialog_remaining[0].name run data modify storage tpa:tpa temp.request_menu.dialog_action set value {width: 100, action: {type: "minecraft:run_command", command: "/trigger tpa.$(trigger) set $(value)"}, tooltip: []}

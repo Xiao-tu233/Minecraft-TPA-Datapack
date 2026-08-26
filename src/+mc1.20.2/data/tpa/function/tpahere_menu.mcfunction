@@ -38,69 +38,83 @@ tellraw @s [" ",\
 data remove storage tpa:tpa temp.menu
 
 # Search ID
+data modify storage tpa:tpa temp.menu.search_id.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.search_id.label set from storage tpa:tpa loaded_lang.tpa_menu_search_id_button
-execute if score #search_id tpa.config matches 0 run function tpa:menu/search_id
-execute if score #search_id tpa.config matches 1 run function tpa:menu/search_id_disabled
+data modify storage tpa:tpa temp.menu.search_id.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_search_id_button_hoverevent
+execute if score #search_id tpa.config matches 1 run function tpa:menu/search_id/disabled
 
 # Tpahere Menu
-data modify storage tpa:tpa temp.menu.tpamenu.left_bracket set value "["
+data modify storage tpa:tpa temp.menu.tpamenu.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.tpamenu.label set from storage tpa:tpa loaded_lang.tpa_menu_tpamenu_button
 data modify storage tpa:tpa temp.menu.tpamenu.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_tpamenu_button_hoverevent
-data modify storage tpa:tpa temp.menu.tpamenu.right_bracket set value "]"
 
 # Back
+data modify storage tpa:tpa temp.menu.back.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.back.label set from storage tpa:tpa loaded_lang.tpa_menu_back_button
+data modify storage tpa:tpa temp.menu.back.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_back_button_hoverevent
 execute if score #back tpa.config matches 1 run function tpa:menu/back/disabled
-execute if score #back tpa.config matches 0 run function tpa:menu/back/enabled
+execute if score #back tpa.config matches 0 unless predicate tpa:available run function tpa:menu/back/unavailable
 
 # Language Menu
-data modify storage tpa:tpa temp.menu.lang.left_bracket set value "["
+data modify storage tpa:tpa temp.menu.lang.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.lang.label set from storage tpa:tpa loaded_lang.tpa_menu_lang_button
 data modify storage tpa:tpa temp.menu.lang.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_lang_button_hoverevent
-data modify storage tpa:tpa temp.menu.lang.right_bracket set value "]"
+scoreboard players set #language_selection_blocked tpa.variables 0
+execute if score #player_lang tpa.config matches 0 if score #language tpa.config matches 1.. run scoreboard players set #language_selection_blocked tpa.variables 1
+execute if score #language_selection_blocked tpa.variables matches 1 run function tpa:menu/language/block
 
 # Formatted output
 tellraw @s ["", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.search_id"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.right_bracket"}]}, " ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.tpa"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.right_bracket"}]}, " ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.back"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.right_bracket"}]}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.language set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.tpa_menu_lang_button_hoverevent"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.right_bracket"}]}, " " \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.search_id"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.search_id.button_brackets[1]"}]}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.tpahere"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.tpamenu.button_brackets[1]"}]}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.back"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.back.button_brackets[1]"}]}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.language set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.lang.button_brackets[1]"}]}, " " \
 ]
 
 # Book
+data modify storage tpa:tpa temp.menu.book.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.book.label set from storage tpa:tpa loaded_lang.tpa_menu_book_button
+data modify storage tpa:tpa temp.menu.book.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_book_button_hoverevent
 execute if score #book tpa.config matches 0 run function tpa:menu/book/disabled
 execute if score #book tpa.config matches 1 run function tpa:menu/book/enabled
 
 # Pos
-data modify storage tpa:tpa temp.menu.pos.left_bracket set value "["
+data modify storage tpa:tpa temp.menu.pos.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.pos.label set from storage tpa:tpa loaded_lang.tpa_menu_pos_button
 data modify storage tpa:tpa temp.menu.pos.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_pos_button_hoverevent
-data modify storage tpa:tpa temp.menu.pos.right_bracket set value "]"
+scoreboard players set #tp_pos_enabled tpa.variables 1
+execute if score #tp_pos tpa.config matches 0 run scoreboard players set #tp_pos_enabled tpa.variables 0
+execute if score #tp_pos_cooldown tpa.config matches -1 run scoreboard players set #tp_pos_enabled tpa.variables 0
+execute if score #tp_pos_enabled tpa.config matches 0 run function tpa:menu/pos/disabled
+execute if score #tp_pos_enabled tpa.config matches 1 unless predicate tpa:available run function tpa:menu/pos/unavailable
 
 # Here
-data modify storage tpa:tpa temp.menu.here.left_bracket set value "["
+data modify storage tpa:tpa temp.menu.here.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.here.label set from storage tpa:tpa loaded_lang.tpa_menu_here_button
 data modify storage tpa:tpa temp.menu.here.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_here_button_hoverevent
-data modify storage tpa:tpa temp.menu.here.right_bracket set value "]"
 
 # Home
+data modify storage tpa:tpa temp.menu.home.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.home.label set from storage tpa:tpa loaded_lang.tpa_menu_home_button
+data modify storage tpa:tpa temp.menu.here.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_home_button_hoverevent
 execute if score #home tpa.config matches 0 run function tpa:menu/home/disabled
-execute if score #home tpa.config matches 1.. run function tpa:menu/home/enabled
+execute if score #home tpa.config matches 1.. unless predicate tpa:available run function tpa:menu/home/unavailable
 
 # Warp
+data modify storage tpa:tpa temp.menu.warp.button_brackets set value ["[", "]"]
+data modify storage tpa:tpa temp.menu.warp.label set from storage tpa:tpa loaded_lang.tpa_menu_warp_button
+data modify storage tpa:tpa temp.menu.warp.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_warp_button_hoverevent
 data modify storage tpa:tpa temp.menu.warp.label set from storage tpa:tpa loaded_lang.tpa_menu_warp_button
 execute if score #warp tpa.config matches 0 run function tpa:menu/warp/disabled
-execute if score #warp tpa.config matches 1.. run function tpa:menu/warp/enabled
+execute if score #warp tpa.config matches 1.. unless predicate tpa:available run function tpa:menu/warp/unavailable
 
 # Formatted output
 tellraw @s ["",  \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.right_bracket"}]}, " ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.right_bracket"}]}, " ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.here"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.right_bracket"}]}, " ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.home set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.right_bracket"}]}, " ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.left_bracket", click_event: {action: "run_command", command: "/trigger tpa.warp set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.right_bracket"}]}, " " \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.book.button_brackets[1]"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.pos"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.pos.button_brackets[1]"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.here"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.here.button_brackets[1]"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.home set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.home.button_brackets[1]"}]},  " ",  \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.button_brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.warp set -1"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.menu.warp.button_brackets[1]"}]},  " " \
 ]
 
 tellraw @s [\
