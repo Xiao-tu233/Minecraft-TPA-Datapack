@@ -1,0 +1,4 @@
+# Use when: The output of actionbar and chatbar is the same and with a button commanded "/trigger tpa.book"
+# Input: str temp.output.lang, str temp.output.button, str temp.output.button_hover
+tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage: "tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"temp.output.lang"}, " ", {text: "[", extra: [{interpret: true, storage:"tpa:tpa", nbt:"temp.output.button"}, "]"], click_event: {action: "run_command", command: "/trigger tpa.book"}, hover_event: {action: "show_text", value: {interpret: true, storage:"tpa:tpa", nbt:"temp.output.button_hover"}}}]
+title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"temp.output.lang"}]

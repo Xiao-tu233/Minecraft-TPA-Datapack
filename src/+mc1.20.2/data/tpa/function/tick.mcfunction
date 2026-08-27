@@ -11,6 +11,7 @@ scoreboard players add @a tpa.is_online 0
 execute as @p[scores={tpa.is_online=0}] run function tpa:on_join
 execute if entity @p[scores={tpa.is_online=0}] run return run scoreboard players set #if_skip_tick tpa.variables 1
 
+# Trigger objectives enables
 scoreboard players enable @a tpa.help
 scoreboard players enable @a tpa
 scoreboard players enable @a tpa.tpa

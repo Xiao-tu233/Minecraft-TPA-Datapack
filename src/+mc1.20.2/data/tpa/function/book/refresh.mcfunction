@@ -1,11 +1,9 @@
 # Parent function: tpa:book/state_validation
 scoreboard players set #is_book_refreshed tpa.variables 1
 kill @s
+
 execute as @p run function tpa:sounds/pick_orb
-tellraw @p[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
-    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.book_refresh"}, ". " \
-]
-title @p[predicate=tpa:output/show_actionbar] actionbar [ \
-    {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.book_refresh", color: "gold"} \
-]
+data modify storage tpa:tpa temp.output set from storage tpa:tpa loaded_lang.book_refresh
+execute as @p run function tpa:output/standard
+
 execute as @p run function tpa:book

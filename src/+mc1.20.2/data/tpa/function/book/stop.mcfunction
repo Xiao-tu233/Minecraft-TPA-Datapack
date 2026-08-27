@@ -1,22 +1,12 @@
 # Parent Function: tpa:tick
 scoreboard players set @s tpa.book 0
 clear @s minecraft:written_book[minecraft:custom_data={isTpaBook:1b}]
+
+# Output
 function tpa:load_lang
 function tpa:sounds/click
-tellraw @s[predicate=tpa:output/show_chatbar] [\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.book_stop"}, \
-    {\
-        storage: "tpa:tpa", \
-        nbt: "loaded_lang.book_reget", \
-        hover_event: {\
-            action: "show_text", \
-            value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.book_reget_hoverevent"} \
-        }, \
-        click_event: {\
-            action: "run_command", \
-            command: "/trigger tpa.book" \
-        }\
-    } \
-]
-title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.book_stop"}]
+data remove storage tpa:tpa temp.output
+data modify storage tpa:tpa temp.output.lang set from storage tpa:tpa loaded_lang.book_stop
+data modify storage tpa:tpa temp.output.button set from storage tpa:tpa loaded_lang.book_reget
+data modify storage tpa:tpa temp.output.button_hover set from storage tpa:tpa loaded_lang.book_reget_hoverevent
+function tpa:output/book/stop

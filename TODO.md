@@ -31,6 +31,8 @@ Project To-do lists:
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
+- [ ] main entries of book, search_id, tp_pos
+- [ ] back, home 的数据存储格式
 
 ## Architecture Refactor (“什么结构已经撑不住了？”)
 

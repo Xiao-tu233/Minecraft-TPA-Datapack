@@ -1,4 +1,4 @@
-
+# Parent function: tpa:book/state_validation
 # Steps:
 # 0. Check if book is placed in a entity or enderchest
 # 0.1. Item Frame or Glow Item Frame
@@ -16,8 +16,8 @@
 # 3. If Still not found, abandon Rotations and check every blocks the previous context without directions provided
 
 function tpa:sounds/no
-tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.book_check_missing"}, ". "]
-title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.book_check_missing", color:"red"}]
+data modify storage tpa:tpa temp.output set from storage tpa:tpa loaded_lang.book_check_missing
+function tpa:output/standard
 function tpa:book
 
 # Item Frame or Glow Item Frame
