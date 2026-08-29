@@ -65,9 +65,6 @@ scoreboard objectives remove tpa.dialog
 # scoreboard objectives remove tpa.hg.interval_timer
 # scoreboard objectives remove tpa.hg.sequence_timer
 
-tag @a remove not_match
-tag @a remove to_modify
-tag @a remove id
 data remove storage tpa:tpa back
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book

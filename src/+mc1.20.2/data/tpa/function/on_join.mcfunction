@@ -31,6 +31,10 @@ execute if score #is_updated_from_205 tpa.config matches 1 run tag @s remove TPA
 
 # Detect if player is first join
 execute unless score @s tpa.uid = @s tpa.uid run function tpa:first_join
+
+# Migrate this player's legacy homes after the UID and name are available.
+execute if data storage tpa:tpa option.home_legacy run function tpa:update/home
+
 function tpa:back/remove
 
 # Show TPA menu button when player joins

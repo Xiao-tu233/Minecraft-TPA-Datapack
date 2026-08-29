@@ -29,6 +29,7 @@ scoreboard players set #uses_string_dimension tpa.config 1
 scoreboard players set #uses_binary_teleport tpa.config 0
 
 # Init data storage
+data modify storage tpa:tpa home set value []
 data modify storage tpa:tpa warp set value [{}]
 data modify storage tpa:tpa option.dimension set value [{id: 0, namespaceid: "minecraft:overworld", color: "green"}, {id: -1, namespaceid: "minecraft:the_nether", color: "red"}, {id: 1, namespaceid: "minecraft:the_end", color: "light_purple"}]
 data modify storage tpa:tpa users set value [""]

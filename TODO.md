@@ -28,6 +28,8 @@ Project To-do lists:
 - [x] 三种原版维度不应该允许更改数字和命名空间ID
 - [x] TPA菜单对话框菜单应该和Manhunt一样 通过esc同样可以启动
 - [x] Fixed grammar exceptions in predicates
+- [ ] 对话框菜单不显示玩家
+- [ ] trigger warp 不显示语言
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs

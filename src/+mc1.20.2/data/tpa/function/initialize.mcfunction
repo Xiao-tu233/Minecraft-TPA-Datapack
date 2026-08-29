@@ -1,6 +1,13 @@
 # Parent function: tpa:load
-# Update detect
+
+# Update detects \
+""" \
+#is_updated_from_205 is used for \
+1. removing tag TPA_user whenever player joins \
+2. replace key dim, Dimension with dimension whenever a home is requested \
+"""
 execute if score #version tpa.config matches ..205 run scoreboard players set #is_updated_from_205 tpa.config 1
+execute if score #version tpa.config matches 206 run function tpa:initialize/update_from_206
 
 # Language Initialization
 data modify storage tpa:tpa lang set value []

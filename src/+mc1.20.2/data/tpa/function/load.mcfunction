@@ -60,6 +60,7 @@ scoreboard players set @a tpa.if_death 0
 scoreboard players set @a tpa.pos 0
 scoreboard players set @a tpa.search_id.key 0
 scoreboard players set @a tpa.search_id.capslock 0
+scoreboard players reset @a tpa.is_online
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Online player scores have been reset. (3/6)"]
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing data storage... (3/6)"]
@@ -73,16 +74,12 @@ data remove storage tpa:tpa book
 data remove storage tpa:tpa temp
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Data storage has been initialized. (4/6)"]
 
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Removing tags... (4/6)"]
-tag @a remove not_match
-tag @a remove to_modify
-tag @a remove id
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing text displayers... (4/6)"]
+# Kill license displayer if exists
 kill @e[type=text_display, tag=tpa.license_displayer]
-
 # Add Text Display for component parsing
 execute unless entity @n[type=minecraft:text_display, tag=tpa.text_display] run function tpa:load/attemp_summon_text_displayer
-
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Tags are removed. (5/6)"]
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Text displayers are initialized. (5/6)"]
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing variables and constants... (5/6)"]
 # Constants
@@ -110,22 +107,23 @@ scoreboard players operation #target_lang tpa.variables = #language tpa.config
 function tpa:load_lang
 
 tellraw @a [\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_done"}, {interpret: true, storage: "tpa:tpa", nbt: "option.version_range"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_done_extra"},\
-    {interpret: true, storage: "tpa:tpa", nbt: "option.version", hover_event:{action:"show_text",value:{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_version_hoverevent"}}}\
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_done"}, \
+    {interpret: true, storage: "tpa:tpa", nbt: "option.version_range"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_done_extra"}, \
+    {interpret: true, storage: "tpa:tpa", nbt: "option.version", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_version_hoverevent"}}}\
 ]
 
 tellraw @a [\
-    {text:"§9Discord",hover_event:{action:"show_text", "value":"https://discord.gg/QgkpxsFahw"},click_event:{action:"open_url", url:"https://discord.gg/QgkpxsFahw"}}," • ",\
-    {text:"§cYouTube",hover_event:{action:"show_text", "value":"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"},click_event:{action:"open_url", url:"https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"}}," • ",\
-    {text:"§bBilibili",hover_event:{action:"show_text", "value":"https://space.bilibili.com/433412367"},click_event:{action:"open_url", url:"https://www.bilibili.com/space/433412367"}}," • ",\
-    {text:"§0Github",hover_event:{action:"show_text", "value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"},click_event:{action:"open_url", url:"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"}}\
+    {text: "§9Discord", hover_event: {action: "show_text", value: "https://discord.gg/QgkpxsFahw"},  click_event: {action: "open_url", url: "https://discord.gg/QgkpxsFahw"}}, " • ", \
+    {text: "§cYouTube", hover_event: {action: "show_text", value: "https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"}, click_event: {action: "open_url", url: "https://www.youtube.com/channel/UCMOgi9XLPgVjLJRV6-YqQmg"}}, " • ", \
+    {text: "§bBilibili", hover_event: {action: "show_text", value: "https://www.bilibili.com/space/433412367"}, click_event: {action: "open_url", url: "https://www.bilibili.com/space/433412367"}}, " • ", \
+    {text: "§0Github", hover_event: {action: "show_text", "value":"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"},click_event:{action:"open_url", url:"https://github.com/Xiao-tu233/Minecraft-TPA-Datapack"}}\
 ]
 
 # Show the publish date, with local format
 function tpa:load/date_format
 tellraw @a [\
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check[0]"}, \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dates[]", "separator": ""}, "(UTC+8)", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check[1]"}\
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.option.dates[]", separator: ""}, "(UTC+8)", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_date_check[1]"}\
 ]
 
 tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.load_copyright_claim"}]
@@ -150,8 +148,6 @@ tellraw @a ["", \
 
 execute unless score #language tpa.config matches 1.. run tellraw @a [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.header"}, "检测到默认语言未设置, 请点击下方设置TPA数据包的服务器默认语言 | Detected Default language is not set, please click below to set default server language of TPA datapack:  ", {text: "[§a设置 | Set§r]", click_event:{action:"run_command",command: "/function tpa:option_lang_menu"}}]
 function tpa:dimension/refresh
-tellraw @a[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.reqer_first_join", click_event:{action:"run_command",command: "/trigger tpa"}}]
-
 
 # Call the tick function if the option is enabled
 execute if score #uses_tick_scheduling tpa.config matches 1 run function tpa:tick
