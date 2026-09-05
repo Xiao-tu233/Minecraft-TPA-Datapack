@@ -28,4 +28,4 @@ data modify storage tpa:tpa back append value {sentinel: 1b}
 execute unless data storage tpa:tpa back[0].sentinel run function tpa:back/scan/loop
 
 # Remove sentinel
-data remove storage tpa:tpa temp.back[0]
+data remove storage tpa:tpa back[0]

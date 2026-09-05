@@ -6,6 +6,7 @@ upsert = update OR insert \
 """ \
 
 data remove storage tpa:tpa temp.back_result 
+data remove storage tpa:tpa temp.back_scan
 scoreboard players set #back.store_result tpa.variables 0
 scoreboard players set #back.remove_current tpa.variables 0
 scoreboard players set #back.replace_current tpa.variables 1
