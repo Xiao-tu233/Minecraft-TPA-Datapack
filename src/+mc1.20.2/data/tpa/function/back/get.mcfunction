@@ -1,11 +1,13 @@
 # Parent Function: tpa:back/available
-# @macro: {uid: int}
-# scoreboard players set #flag tpa.variables 0
-# $execute if data storage tpa:tpa back.$(id) run scoreboard players set #flag tpa.variables 1
-# execute unless score #flag tpa.variables matches 1 run return 0
 
-# data remove storage tpa:tpa temp.back
-$data modify storage tpa:tpa temp.back set from storage tpa:tpa back.$(uid)
+data remove storage tpa:tpa temp.back_result 
+scoreboard players set #back.store_result tpa.variables 1
+scoreboard players set #back.remove_current tpa.variables 0
+scoreboard players set #back.replace_current tpa.variables 0
+scoreboard players operation #uid tpa.variables = @s tpa.uid
+function tpa:back/scan
 
-execute if score #debug_mode tpa.config matches 1 run \
-    tellraw @a ["[§bTPA§r] §6 Debug§r: ", {selector: "@s", color: "green"}, " got BACK with ", {storage: "tpa:tpa", nbt: "temp.back"}]
+execute if score #debug_mode tpa.config matches 1 if data storage tpa:tpa temp.back_result run \
+    tellraw @a ["[§bTPA§r] §6 Debug§r: Back get: found for ", {selector: "@s"}, {translate: "(UID:§a%s§r)", with: [{score: {name: "#uid", objective: "tpa.variables"}}]}]
+execute if score #debug_mode tpa.config matches 1 unless data storage tpa:tpa temp.back_result run \
+    tellraw @a ["[§bTPA§r] §6 Debug§r: Back get: not found for ", {selector: "@s"}, {translate: "(UID:§a%s§r)", with: [{score: {name: "#uid", objective: "tpa.variables"}}]}]
