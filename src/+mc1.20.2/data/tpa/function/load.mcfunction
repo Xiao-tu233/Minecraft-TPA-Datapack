@@ -29,7 +29,6 @@ scoreboard objectives add tpa.search_id.key trigger
 scoreboard objectives add tpa.search_id.capslock dummy
 scoreboard objectives add tpa.req_timer dummy
 scoreboard objectives add tpa.if_death deathCount
-scoreboard objectives add tpa.if_online dummy
 scoreboard objectives add tpa.book trigger
 scoreboard objectives add tpa.pos trigger
 scoreboard objectives add tpa.pos.x trigger

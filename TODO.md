@@ -192,10 +192,10 @@ Project To-do lists:
       3. 任何形式触碰维度相关内容（调用function tpa:dimension/get）
       4. 维度名称从空(name键不存在) 变为当前语言的指定维度名
       期望的效果: name 键 在被取名之前 默认不存在或者特殊值 如果被命名则显示该命名名称
-- [ ] 上一位置没有在上线的时候移除
 - [ ] Dialog 没有玩家名被显示 （考虑读一遍request_menu相关逻辑）
 - [ ] warp 尚未分离条件和使用新的output接口
-- [ ] 新的back接口尚未测试
+- [x] 新的back接口尚未测试
+- [ ] 上一位置没有在上线的时候移除 问题持续
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
