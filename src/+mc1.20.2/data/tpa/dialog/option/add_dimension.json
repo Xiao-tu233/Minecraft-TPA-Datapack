@@ -1,0 +1,35 @@
+{
+    "type": "minecraft:multi_action",
+    "title": "",
+    "inputs": [
+        {
+            "label": "Namespace ID",
+            "type": "minecraft:text",
+            "key": "namespaceid"
+        },
+        {
+            "label": "Display Name",
+            "type": "minecraft:text",
+            "key": "name"
+        },
+        {
+            "label": "Color Name or Hex Color Codes",
+            "type": "minecraft:text",
+            "key": "color"
+        },
+        {
+            "label": "Dimension ID (Number)",
+            "type": "minecraft:text",
+            "key": "id"
+        }
+    ],
+    "actions": [
+        {
+            "label": {"translate": "gui.done"},
+            "action": {
+                "type": "dynamic/run_command",
+                "template": "/data modify storage tpa:tpa option.dimension append value {namespaceid: \"$(namespaceid)\", name: \"$(name)\", color: \"$(color)\", id: $(id)}"
+            }
+        }
+    ]
+}
