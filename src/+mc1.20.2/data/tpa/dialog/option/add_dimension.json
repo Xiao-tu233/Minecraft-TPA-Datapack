@@ -1,6 +1,6 @@
 {
     "type": "minecraft:multi_action",
-    "title": "",
+    "title": "Add New Dimension",
     "inputs": [
         {
             "label": "Namespace ID",
