@@ -49,6 +49,10 @@ execute store result storage tpa:tpa option.carpet_fake_player_fix int 1 run sco
 # Update every requests: timer, availability, etc.
 function tpa:requests/update
 
+# Update player online state
+execute store result score #current_players tpa.variables if entity @a
+execute unless score #current_players tpa.variables = #total_players tpa.variables run function tpa:tick/sync_online_state
+
 # Set back pos before death, and kill tpa book who dropped
 execute as @a[scores={tpa.if_death=1..}] run function tpa:player_died
 

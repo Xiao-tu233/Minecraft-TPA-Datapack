@@ -1,4 +1,4 @@
-scoreboard players set @s tpa.is_online 1
+scoreboard players set @a tpa.is_online 1
 
 # Set default language to server language if lang is set before player first join
 execute unless score @s tpa.selected_language matches 1.. run scoreboard players operation @s tpa.selected_language = #language tpa.config
