@@ -1,4 +1,5 @@
 # Parent function: tpa:warp/menu
 function tpa:sounds/no
-tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_disabled"}, ". "]
-title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.warp_disabled", color:"red"}]
+data remove storage tpa:tpa temp.output
+data modify storage tpa:tpa temp.output set from storage tpa:tpa loaded_lang.warp_disabled
+function tpa:output/standard

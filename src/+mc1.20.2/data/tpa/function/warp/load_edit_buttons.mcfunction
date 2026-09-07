@@ -1,3 +1,4 @@
+# Parent function: tpa:warp/menu
 data modify storage tpa:tpa warp[0].warp_button_add set from storage tpa:tpa loaded_lang.warp_button_add
 data modify storage tpa:tpa warp[0].warp_button_setpos set from storage tpa:tpa loaded_lang.warp_button_setpos
 data modify storage tpa:tpa warp[0].warp_button_setname set from storage tpa:tpa loaded_lang.warp_button_setname

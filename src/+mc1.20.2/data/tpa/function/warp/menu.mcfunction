@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/option, tpa:tick(When player triggers tpa.warp to -1), Quoted by: tpa:tpa_menu
+# Parent function: tpa:warp/option, tpa:warp/available, Quoted by: tpa:tpa_menu
 
 # Storage Format:
 # {desc: string, name: string, x: int, y: int, z: int, dimension: string, disabled: boolean}
