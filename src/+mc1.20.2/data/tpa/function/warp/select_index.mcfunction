@@ -1,5 +1,4 @@
-# Parent function: tpa:warp/available
-execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow executing: §a#warp: ",{score: {name: "#warp",objective: "tpa.variables"}}]
+# Parent function: tpa:warp/available, tpa:warp/resolve_slot
 
 # Check if warp is in range
 scoreboard players set #warp.out_of_range tpa.variables 0

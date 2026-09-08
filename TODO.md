@@ -194,6 +194,29 @@ Project To-do lists:
       期望的效果: name 键 在被取名之前 默认不存在或者特殊值 如果被命名则显示该命名名称
 - [ ] Dialog 没有玩家名被显示 （考虑读一遍request_menu相关逻辑）
 - [ ] warp 尚未分离条件和使用新的output接口
+  - [ ] 如下文件尚未重构 可能在未来被重构:
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/dialog.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/disable.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/enable.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/disabled.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/load_edit_buttons.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/movedown_macro.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/movedown.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/moveup_macro.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/moveup.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/out_of_range.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/remove.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_default_name_macro.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_default_name.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_desc_dialog.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_desc.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_name_dialog.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_name.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/setpos.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/show_add.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/show_each_macro.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/show_each.mcfunction) 
+     -  [text](src/+mc1.20.2/data/tpa/function/warp/unavailable.mcfunction)
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
 

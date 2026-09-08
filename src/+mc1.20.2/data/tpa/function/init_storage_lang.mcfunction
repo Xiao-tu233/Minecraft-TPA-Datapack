@@ -440,8 +440,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set_format: 0, \
     warp_set_position: "坐标", \
     warp_set_default_name: "未命名传送点", \
-    warp_slot_disabled_leftpart: "你所访问的公共传送点", \
-    warp_slot_disabled_rightpart: "已被禁用", \
+    warp_slot_disabled: ["你所访问的公共传送点", "已被禁用"], \
     warp_teleport: ["已将你传送至", ""], \
     warp_unavail: "当前状态下无法操作§a公共传送点§r" \
 }, \
@@ -451,235 +450,24 @@ data modify storage tpa:tpa temp.lang set value \
     name: "en_us", \
     tpa_menu_no_available_player: "No available player IDs", \
     name_display: "English (United States)", \
+    header: "[§bTPA§r] ", \
     back_act: "Teleported you to the previous position", \
     back_disabled: "Server doesn't allow going §aBack§r", \
     back_not_exist: "No previous position found", \
-    back_spec: "Spectator mode players can't go §aBack§r", \
-    book_disabled: "Server doesn't allow §aTPA Book§r", \
-    book_lore: "§r§bRight click to open TPA menu. Drop to refresh. Switch offhand to stop using.", \
-    book_title: "§r§bTPA menu book §a[Press Q to Refresh] ", \
-    book_mainhand_busy: "Please hold your main hand to get the book.", \
-    book_spec: "Spectator mode players can't use §aTPA Book§r", \
-    book_stop: "You have stopped using §aTPA Book§r, you can get it again in TPA menu", \
-    command_syntax_error: "Command syntax error", \
-    extended_menu_title: "======================§bTPA§6 Menu§r=======================", \
-    extended_menu_previous_page: "§bPrevious page", \
-    extended_menu_next_page: "§bNext page", \
-    here_button_tpa: "[§bRequest Teleport§r]", \
-    here_button_tpa_hoverevent: "§bClick to send a teleport request to the player", \
-    here_voxel_hoverevent: "§bClick to add VoxelMap Waypoint", \
-    here_xaero_hoverevent: "§6Click to add Xearo's Minimap Waypoint", \
-    here_spec: "Spectator mode players can't use §aBroadcast Position§r", \
-    home_act: ["You have teleported to Home#", ""], \
-    home_create: "You haven't set any home yet.", \
-    home_create_button: "[§aCreate§r]", \
-    home_create_button_hoverevent: "§aClick to set a home", \
-    home_disabled: "Server haven't enabled §aHome§r", \
-    home_display: "§bHome#", \
-    home_display_tp_button: "[§bTeleport§r]", \
-    home_display_tp_button_hoverevent: "§bClick to teleport to this home", \
-    home_display_rm_button: "[§cRemove§r]", \
-    home_display_rm_button_hoverevent: "§cClick to remove this home", \
-    home_display_set_button: "[§aSet§r]", \
-    home_display_set_button_hoverevent: "§aClick to set home's position", \
-    home_menu_title: "You own now following homes slot: ", \
-    home_missing_hoverevent: "This home hasn't been set", \
-    home_new: "§aCreate: ", \
-    home_number: "Home#", \
-    home_not_found: ["The Home#", "doesn't exist"], \
-    home_not_found_hoverevent: "§bThe home you are looking for", \
-    home_out_of_range: ["The Home#", "is out of the server limit."], \
-    home_remove: ["You removed Home#", ""], \
-    home_remove_hoverevent: "§bHome which has been removed", \
-    home_set: ["You have set Home#", "at", ""], \
-    home_set_format: 0, \
-    home_set_overworld: "§aOverworld", \
-    home_set_the_nether: "§cNether", \
-    home_set_the_end: "§eThe End", \
-    home_set_position: "Positon", \
-    home_spec: "Spectators are not allowed to modify §aHomes§r", \
-    idfix_act: ["", "used ID fix, all player's datapack ID has been reset to the previous position"], \
-    idfix_act_hoverevent: "§bThis player used ID fix", \
-    idfix_cooldown: "§aID fix§r is on cooldown", \
-    idfix_disabled: "Server doesn't allow §aID fix§r", \
-    lang_button: "[§6Click here to select language§r]", \
-    lang_button_server: "[§6Click here to select server language§r]", \
-    lang_button_hoverevent: "§bClick to open language menu", \
-    lang_menu_title: "Please select language below:", \
-    lang_menu_select_button: "[§aLoad recommended commands§r]", \
-    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                                                         ", \
-    lang_disabled: "Language feature is disabled", \
-    lang_selected: ["You have switched language to ", ""], \
-    lang_server_follow: ["Since Datapack default language haven't been set, so it's set to ", " now"], \
-    load_done: "§aData pack has been reloaded: ", \
-    load_version_hoverevent: "§bIt's the version of TPA Datapack, Instead of Minecraft Version.", \
-    load_welcome: "Welcome use TPA Datapack! ", \
-    load_copyright_claim: "Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is licensed under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on commercial servers. Click \"[LICENSE]\" below to view the full license text.", \
-    load_author: "This datapack is made by §6Xiao_tu233§r and §6Pressnre§r. ", \
-    load_button_options: "[SETTINGS]", \
-    load_button_options_hoverevent: "Click to modify options", \
-    load_button_help: "[HELP]", \
-    load_button_help_hoverevent: "Click to see help", \
-    load_button_update: "[UPDATE]", \
-    load_button_update_hoverevent: "Click to start updating datapack", \
-    load_button_license: "[LICENSE]", \
-    load_button_license_hoverevent: "§bTo use TPA datapack, you must follow the open source license we put on Github website and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read the whole text carefully.", \
-    mute_disable: "You have enabled §aDatapack sounds§r", \
-    mute_enable: "You have §amuted§r datapack", \
-    option_carpet_disabled: "This feature needs Carpet Mod as a dependency, However Carpet isn't installed. ", \
-    option_title_line1: "==================§bTPA §6Settings Menu§r==================", \
-    option_title_line2: "Modify settings below: (Recall to see changes)", \
-    option_button_enable: "[§aENABLE§r", \
-    option_button_disable: "§cDISABLE§r]", \
-    option_button_set: "[§aSET§r]", \
-    option_debug_mode: "Debug Mode", \
-    option_tp_spec: "If Allow Spectators to Teleport", \
-    option_remove_offline: "If remove empty IDs after player offline", \
-    option_carpet_fake_player_fix: "Carpet fake player fix", \
-    option_back: "If disable back", \
-    option_search_id: "If disable search ID", \
-    option_book: "If disable tpa book", \
-    option_player_lang: "If allow player language", \
-    option_lang: "Server Language", \
-    option_lang_hoverevent: "§bEnter Language selecting menu below", \
-    option_home: "Homes a player can have", \
-    option_home_hoverevent: "§bModify §aHome A Player Owns§r (§6Units: ones§r), §b 0 for disabling home, -1 for not restricting numbers of homes(Not Recommending)", \
-    option_tp_pos: "Teleport position allow radius", \
-    option_tp_pos_hoverevent: "§bModify §aTeleport Position Allow Radius§r (§6Units: meters§r), §b 0 for disabling teleport, -1 for not restrcting radius(Not Recommending)", \
-    option_tp_pos_cooldown: "Teleport position cooldown", \
-    option_tp_pos_cooldown_hoverevent: "§bModify §aCooldown Time§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for no cooldown, -1 for disabling teleport", \
-    option_time_out: "Teleport request timeout ", \
-    option_time_out_hoverevent: "§bModify §aTeleport Request Timeout§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for disabling teleport, -1 for never timeout", \
-    option_idfix_cooldown: "ID fix cooldown", \
-    option_idfix_cooldown_hoverevent: "§bModify §aID Fix Cooldown§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for no cooldown, -1 for disabling ID fix", \
-    option_frequency: "Data pack frequency", \
-    option_frequency_hoverevent: "§bModify §aData Pack Frequency§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for disabling data pack", \
-    option_enabled: "§aENABLED§r", \
-    option_disabled: "§cDISABLED§r", \
-    option_button_uninstall: "[§4UNINSTALL§r]", \
-    option_button_uninstall_hoverevent: "§4Click this button to §l§nUninstall§r§4 TPA datapack! Please consider if you really need it!", \
-    option_button_update: "[§4UPDATE§r]", \
-    option_button_update_hoverevent: "Click to start updating datapack", \
-    option_button_license: "[§4LICENSE§r]", \
-    option_button_license_hoverevent: "§bTo use TPA datapack, you must follow the open source license we put on Github website and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read the whole text carefully.", \
-    option_button_help: "[§4HELP§r]", \
-    option_button_help_hoverevent: "Click to open help menu", \
-    output_default: "You have changed the output position to §aBOTH CHATBAR AND ACTIONBAR§r", \
-    output_hide_actionbar: "You have changed the output position to §bCHATBAR ONLY§r", \
-    output_hide_chatbar: "You have changed the output position to §aACTIONBAR ONLY§r", \
-    recver_accept_tpa: ["You accepted", "'s teleport request"], \
-    recver_accept_tpa_hoverevent: "§bThe player who sent you a teleport request", \
-    recver_accept_tpahere: ["You accepted to teleport you to", "'s place."], \
-    recver_accept_tpahere_hoverevent: "§bPlayer whose §ltpahere§r request you have accepted ", \
-    recver_accept_auto: ["Have automatically accepted", "'s teleport request'"], \
-    recver_accept_auto_hoverevent: "§bPlayer who sent you a teleport request", \
-    recver_accept_toggle_on: "You have enabled §aalways-accept§r", \
-    recver_accept_toggle_off: "You have disabled §aalways-accept§r", \
-    recver_cancel: ["", "has cancelled the request to you"], \
-    recver_cancel_hoverevent: "§bwho has canceled the request to you", \
-    recver_deny_tpa: ["You denied", "'s teleport request"], \
-    recver_deny_tpa_hoverevent: "§bThe player who sent you a teleport request", \
-    recver_deny_tpahere: ["You denied to teleport you to", "'s place."], \
-    recver_deny_tpahere_hoverevent: "§bPlayer whose §ltpahere§r request you have denied ", \
-    recver_recv_button_accept: "[§aACCEPT§r]", \
-    recver_recv_button_accept_hoverevent: "§bClick to accept the request", \
-    recver_recv_button_deny: "[§cDENY§r]", \
-    recver_recv_button_deny_hoverevent: "§bClick to deny the request", \
-    recver_recv_tpa_chatbar: ["", "sent you a teleport request"], \
-    recver_recv_tpa_hoverevent: "§bThe player who sent you a teleport request", \
-    recver_recv_tpa_actionbar: ["", "sent you a teleport request. Nod 3 times to accept, shake head 3 times to deny."], \
-    recver_recv_tpahere_hoverevent: "§bThe player who sent you a §ltpahere§r request", \
-    recver_recv_tpahere_chatbar_right_part: "sent you a §ltpahere§r request", \
-    recver_recv_tpahere_actionbar_right_part: "sent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny.", \
-    recver_req_not_exist: "No pending requests to process", \
-    recver_timeout_hoverevent: "§bThe player whose request to you timed out", \
-    recver_timeout_right_part: "'s teleport request timed out", \
-    reqer_accept_tpa: ["Teleporting to ", "..."], \
-    reqer_accept_tpa_hoverevent: "§bThe player who accepted your teleport request", \
-    reqer_accept_tpahere: ["Teleporting ", "to you..."], \
-    reqer_accept_tpahere_hoverevent: "§bThe player who accepted your §ltpahere§r request", \
-    reqer_accept_auto: ["The player enabled always-accept, teleporting you to ", "..."], \
-    reqer_accept_auto_hoverevent: "§bThe player who auto-accepted your teleport request", \
-    reqer_button_tpa_hoverevent: "§bClick to send a teleport request to this player", \
-    reqer_button_tpahere_hoverevent: "§bClick to request they teleport to your current location", \
-    reqer_cancel_hoverevent: "§bThe player whose request you canceled", \
-    reqer_cancel_right_part: "'s request", \
-    reqer_cancel_spec: "Spectators cannot §acancel requests§r", \
-    reqer_change_hoverevent: "§bThe player you previously sent a request to", \
-    reqer_change_chatbar_middle_part: "'s request. The previous request was canceled. Sent a new request to ", \
-    reqer_change_chatbar_right_part: ", waiting for acceptance", \
-    reqer_change_actionbar_middle_part: "'s request. The previous request was canceled. Sent a new request to ", \
-    reqer_change_actionbar_right_part: ", waiting for acceptance. Shake head 3 times to cancel", \
-    reqer_deny_tpa: ["Teleporting to ", "..."], \
-    reqer_deny_tpa_hoverevent: "§bThe player who denied your teleport request", \
-    reqer_deny_tpahere_hoverevent: "§bThe player who denied your §ltpahere§r request", \
-    reqer_deny_tpahere_right_part: "to you...", \
-    reqer_recver_invalid: "Target offline or not teleportable", \
-    reqer_disabled: "Server does not allow §ateleportation§r", \
-    reqer_first_join: "[§6Click me to open TPA Menu§r]", \
-    reqer_no_req_found: "You haven't sent any requests", \
-    reqer_req_button_cancel_hoverevent: "§bClick to cancel the request", \
-    reqer_req_hoverevent: "§bThe player you sent a request to", \
-    reqer_req_tpa_hoverevent: "§bThe player you sent a teleport request to", \
-    reqer_req_tpa_chatbar_right_part: "sent a teleport request. Waiting for acceptance", \
-    reqer_req_tpa_actionbar_right_part: "sent a teleport request. Waiting for acceptance. Shake head 3 times to cancel", \
-    reqer_req_tpahere_hoverevent: "§bThe player you sent a §ltpahere§r request to", \
-    reqer_req_tpahere_chatbar_right_part: "sent a §ltpahere§r request. Waiting for acceptance", \
-    reqer_req_tpahere_actionbar_right_part: "sent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times to cancel", \
-    reqer_req_not_exist: "The requested player does not exist or is offline", \
-    reqer_self: "You cannot teleport to yourself", \
-    reqer_spam: "You already sent a request to this player", \
-    reqer_spec: "Spectators cannot §ateleport§r", \
-    reqer_timeout_hoverevent: "§bThe player who did not accept your request", \
-    reqer_timeout_right_part: "'s teleport request has expired", \
-    search_id_disabled: "Server does not allow §aID search§r", \
-    search_id_throw_on_invalid_char: "The name you entered contains invalid characters", \
-    search_id_unavail_player: "Player is offline or cannot be teleported to", \
-    simple_menu_disable: "Switched TPA menu to §adetailed mode§r", \
-    simple_menu_enable: "Switched TPA menu to §asimple mode§r. You can now use §a/trigger tpa§r to open it", \
-    simple_menu_title: "Click a player below to send a teleport request", \
-    simple_menu_button_hoverevent: "§bClick to switch to detailed menu", \
-    tp_pos_act: ["Teleported you to position ", ""], \
-    tp_pos_cooldown: "§aCoordinate teleport§r is on cooldown", \
-    tp_pos_disabled: "Server does not allow §acoordinate teleport§r", \
-    tp_pos_out_of_range: "Teleport distance exceeds server radius: ", \
-    tp_pos_spec: "Spectators cannot §ateleport to coordinates§r", \
-    tp_pos_throw_on_invalid_char: "The coordinates you entered contain invalid characters", \
-    tpa_menu_hoverevent: ["§bClick to send a teleport request to ", ""], \
-    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                         ", \
-    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                                                         ", \
-    tpa_menu_extend_hoverevent: "§bClick to expand menu", \
-    tpa_menu_extend: "§bExpand§r", \
-    tpa_menu_you: "Your ", \
-    tpa_menu_has_id_of: "§aDatapack ID§r is ", \
-    tpa_menu_idfix_button_hoverevent: "§bUse this if multiple players share the same ID. This resets all player IDs.", \
-    tpa_menu_search_id_button_hoverevent: "§bClick to open chat input for TPA commands", \
-    tpa_menu_tpamenu_button_hoverevent: "§bClick to go to Teleport Menu", \
-    tpa_menu_tpaheremenu_button_hoverevent: "§bClick to go to TPA Here Menu", \
-    tpa_menu_back_button_hoverevent: "§bReturn to your position before teleporting", \
-    tpa_menu_lang_button_hoverevent: "§bClick to switch language", \
-    tpa_menu_book_button_hoverevent: "§bClick to get a TPA Book", \
-    tpa_menu_pos_button_hoverevent: "§bClick to open chat input for coordinate teleport", \
-    tpa_menu_here_button_hoverevent: "§bClick to broadcast your position", \
-    tpa_menu_home_button_hoverevent: "§bClick to open Home menu", \
-    tpa_menu_auto_accept: "Auto-accept: ", \
-    tpa_menu_mute: "Mute datapack: ", \
-    tpa_menu_output: "Output display: ", \
-    tpa_menu_output_default: "§bDefault§r", \
-    tpa_menu_output_actionbar: "§bHide chat§r", \
-    tpa_menu_output_chatbar: "§bHide action bar§r", \
-    tpa_menu_enable: "§aEnable§r", \
-    tpa_menu_disable: "§cDisable§r", \
-    tpa_menu_refresh_hoverevent: "§bClick to refresh or reopen the TPA menu", \
-    tpa_menu_simplemenu_button_hoverevent: "§bSwitch to simple menu", \
-    tick_not_working_cmdblk_name: "§r§bPlace this in a valid location", \
-    header: "[§bTPA§r] ", \
+    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
     book_check_missing: "Detected missing teleport book, reissued.", \
+    book_disabled: "Server doesn't allow §aTPA Book§r", \
     book_incompatible: "§aTeleport Book§r is incompatible with this game version", \
+    book_lore: "§r§bRight click to open TPA menu. Drop to refresh. Switch offhand to stop using.", \
+    book_mainhand_busy: "Please hold your main hand to get the book.", \
     book_refresh: "You refreshed the §aTeleport Menu Book§r", \
     book_reget: "[§bReget§r]", \
     book_reget_hoverevent: "§bClick to reget the teleport book", \
     book_stacking: "Detected stacked teleport books, extra copies have been removed", \
+    book_stop: "You have stopped using §aTPA Book§r, you can get it again in TPA menu", \
+    book_title: "§r§bTPA menu book §a[Press Q to Refresh] ", \
+    book_unavail: "当前状态下无法操作§a传送书§r", \
+    dialog: "已开启对话框菜单", \
     dimension_menu_button: "[§bDimension Settings Menu§r]", \
     dimension_menu_button_hoverevent: "§bClick to configure dimensions", \
     dimension_overworld: "Overworld", \
@@ -688,11 +476,58 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown: "Unknown Dimension", \
     dimension_unknown_detected_leftpart: "Unknown dimension detected (", \
     dimension_unknown_detected_rightpart: "), please configure it in the dimension menu: ", \
-    extended_menu_incompatible: "§aExtended menu§r is incompatible with this game version", \
+    here_button_tpa: "[§bRequest Teleport§r]", \
+    here_overworld_postion_hoverevent: "Overworld Positon", \
+    here_nether_postion_hoverevent: "Nether Position", \
     here_button_tpa_notavail_hoverevent: "§cThis player does not allow teleporting", \
+    here_voxel_hoverevent: "§bClick to add VoxelMap Waypoint", \
+    here_xaero_hoverevent: "§6Click to add Xearo's Minimap Waypoint", \
+    home_act: ["You have teleported to Home#", ""], \
+    home_create: "You haven't set any home yet.", \
+    home_create_button: "[§aCreate§r]", \
+    home_create_button_hoverevent: "§aClick to set a home", \
+    home_disabled: "Server haven't enabled §aHome§r", \
+    home_display: "§bHome#", \
+    home_display_rm_button: "[§cRemove§r]", \
+    home_display_rm_button_hoverevent: "§cClick to remove this home", \
+    home_display_set_button: "[§aSet§r]", \
+    home_display_set_button_hoverevent: "§aClick to set home's position", \
+    home_display_tp_button: "[§bTeleport§r]", \
+    home_display_tp_button_hoverevent: "§bClick to teleport to this home", \
+    home_menu_title: "You own now following homes slot: ", \
+    home_missing_hoverevent: "This home hasn't been set", \
+    home_new: "§aCreate: ", \
+    home_not_found_hoverevent: "§bThe home you are looking for", \
+    home_not_found: ["The Home#", "doesn't exist"], \
+    home_number: "Home#", \
+    home_out_of_range: ["The Home#", "is out of the server limit."], \
+    home_remove_hoverevent: "§bHome which has been removed", \
+    home_remove: ["You removed Home#", ""], \
+    home_set: ["You have set Home#", "at", ""], \
+    home_set_format: 0, \
+    home_set_position: "Positon", \
+    home_unavail: "当前状态下无法操作§a传送点§r", \
     hoverevent_suggest_tip: "§aYou should complete the command as: ", \
+    lang_button: "[§6Click here to select language§r]", \
+    lang_button_hoverevent: "§bClick to open language menu", \
+    lang_button_server: "[§6Click here to select server language§r]", \
+    lang_disabled: "Language feature is disabled", \
+    lang_menu_select_button: "[§aLoad recommended commands§r]", \
+    lang_menu_select_button_hoverevent: "§bClick to load recommended commands in chat bar:                                                                          ", \
+    lang_menu_title: "Please select language below:", \
+    lang_selected: ["You have switched language to ", ""], \
+    lang_server_follow: ["Since Datapack default language haven't been set, so it's set to ", " now"], \
+    load_author: "This datapack is made by §6Xiao_tu233§r and §6Pressnre§r. ", \
+    load_button_help: "[HELP]", \
+    load_button_help_hoverevent: "Click to see help", \
+    load_button_license: "[LICENSE]", \
+    load_button_license_hoverevent: "§bTo use TPA datapack, you must follow the open source license we put on Github website and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read the whole text carefully.", \
+    load_button_options: "[SETTINGS]", \
+    load_button_options_hoverevent: "Click to modify options", \
+    load_button_update: "[UPDATE]", \
+    load_button_update_hoverevent: "Click to start updating datapack", \
+    load_copyright_claim: "Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is licensed under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on commercial servers. Click \"[LICENSE]\" below to view the full license text.", \
     load_date_check: ["Current version was released on", ", please pay attention to updates"], \
-    load_done_extra: " Extra version ", \
     load_date_check_format: 231, \
     load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
     load_date_check_year_prefix: "", \
@@ -703,15 +538,34 @@ data modify storage tpa:tpa temp.lang set value \
     load_date_check_month_suffix: "/", \
     load_date_check_day_prefix: "", \
     load_date_check_day_suffix: "/", \
+    load_done: "§aData pack has been reloaded: ", \
+    load_done_extra: " Extra version ", \
+    load_version_hoverevent: "§bIt's the version of TPA Datapack, Instead of Minecraft Version.", \
+    load_welcome: "Welcome use TPA Datapack! ", \
+    mute_disable: "You have enabled §aDatapack sounds§r", \
+    mute_enable: "You have §amuted§r datapack", \
     option_advenced_warn: "The following settings are advanced options. Do not modify unless you know what you are doing.", \
     option_advenced_tip: "Enable debug mode to access more advanced settings", \
-    option_anchor_search_retries: "Anchor search retry count", \
-    option_anchor_search_retries_hoverevent: "§bModify the number of anchor search retries below §r(§6Units:                                                           times §ror §6game ticks / frequency§r). §bToo high may increase wait time, too low may cause misdetection or data pollution.", \
+    option_back: "If disable back", \
+    option_book: "If disable tpa book", \
+    option_button_disable: "§cDISABLE§r]", \
+    option_button_enable: "[§aENABLE§r", \
+    option_button_help: "[§4HELP§r]", \
+    option_button_help_hoverevent: "Click to open help menu", \
+    option_button_license: "[§4LICENSE§r]", \
+    option_button_license_hoverevent: "§bTo use TPA datapack, you must follow the open source license we put on Github website and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read the whole text carefully.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
+    option_button_set: "[§aSET§r]", \
+    option_button_uninstall: "[§4UNINSTALL§r]", \
+    option_button_uninstall_hoverevent: "§4Click this button to §l§nUninstall§r§4 TPA datapack! Please consider if you really need it!", \
+    option_button_update: "[§4UPDATE§r]", \
+    option_button_update_hoverevent: "Click to start updating datapack", \
+    option_carpet_disabled: "This feature needs Carpet Mod as a dependency, However Carpet isn't installed. ", \
+    option_carpet_fake_player_fix: "Carpet fake player fix", \
     option_carpet_fake_player_fix_incompatible: "Carpet fake player fix is incompatible with this version", \
-    option_compact_ids: "Remove empty ID slots after player logout", \
     option_current_game_version: "Detected game version", \
+    option_debug_mode: "Debug Mode", \
     option_debug_mode_hoverevent: "§bClick below to enable debug mode. This will provide debug information in chat, but may cause spam. Reopen the settings menu after enabling to access advanced options.", \
     option_dimension: "Compatible Dimensions", \
     option_dimension_button_add: "[§aAdd§r]", \
@@ -720,8 +574,10 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_color_hoverevent: "§bClick to edit this dimension's theme color (enter vanilla 16-color name or #XXXXXX hex code)", \
     option_dimension_button_edit_id: "[§aEdit Dimension ID§r]", \
     option_dimension_button_edit_id_hoverevent: "§cVanilla dimensions cannot be editted", \
+    option_dimension_button_edit_id_notavail_hoverevent: "§cVanilla dimensions cannot be editted", \
     option_dimension_button_edit_namespaceid: "[§aEdit Namespace ID§r]", \
     option_dimension_button_edit_namespaceid_hoverevent: "§cVanilla dimensions cannot be editted", \
+    option_dimension_button_edit_namespaceid_notavail_hoverevent: "§cVanilla dimensions cannot be editted", \
     option_dimension_button_edit_name: "[§aEdit Name§r]", \
     option_dimension_button_edit_name_hoverevent: "§bClick to edit display name. Vanilla dimensions follow language settings.", \
     option_dimension_button_remove: "[§cRemove§r]", \
@@ -731,66 +587,33 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_menu_title: "The server supports the following dimensions: ", \
     option_dimension_number_hoverevent_leftpart: "§bThe server currently supports ", \
     option_dimension_number_hoverevent_rightpart: " dimensions", \
-    option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
-    recver_recv_tpahere_actionbar: ["", "sent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny."], \
-    recver_recv_tpahere_chatbar: ["", "sent you a §ltpahere§r request"], \
-    recver_timeout: ["", "'s teleport request timed out"], \
-    reqer_button_tpa: "[§bTeleport§r]", \
-    reqer_button_tpahere: "[§bTeleport Here§r]", \
-    reqer_cancel: ["You canceled the request to ", "'s request"], \
-    reqer_change_actionbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance. Shake head 3 times to cancel"], \
-    reqer_change_actionbar_format: 0, \
-    reqer_change_chatbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance"], \
-    reqer_change_chatbar_format: 0, \
-    reqer_req_button_cancel: "[§4Cancel§r]", \
-    reqer_req_tpa_actionbar: ["You sent a request to ", "sent a teleport request. Waiting for acceptance. Shake head 3 times to cancel"], \
-    reqer_req_tpa_chatbar: ["You sent a request to ", "sent a teleport request. Waiting for acceptance"], \
-    reqer_req_tpahere_actionbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times to cancel"], \
-    reqer_req_tpahere_chatbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance"], \
-    reqer_timeout: ["Your request to ", "'s teleport request has expired"], \
-    search_id_abort: "You stopped §asearching player IDs§r", \
-    search_id_dialog_done_tooltip: "§bClick to submit name", \
-    search_id_dialog_cancel: "Cancel", \
-    search_id_dialog_cancel_tooltip: "§bClick to cancel input", \
-    search_id_incompatible: "§aSearch Player ID§r is incompatible with this game version", \
-    search_id_keyboard_title: "Click the keyboard buttons below to input player name: ", \
-    search_id_name_input: "Input: ", \
-    search_id_recall: "[§bRecall§r]", \
-    search_id_recall_hoverevent: "§bRecall search player ID keyboard", \
-    teleport_anchor_actionbar: "Anchor teleport progress: ", \
-    teleport_binary_actionbar: "Binary search teleport progress: ", \
-    teleport_cal_sim_dist_actionbar: "Simulation distance", \
-    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                                                           ", \
-    teleport_cal_sim_dist_start: "Simulation distance calculation started", \
-    teleport_sim_dist_warn: "Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails, please contact admin to recalculate or manually set, or use binary teleport.", \
-    teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
-    teleport_sim_dist_warn_button_binary: "[§aBinary Search§r]", \
-    teleport_sim_dist_warn_button_binary_hoverevent: "§b点击将传送方式设置为二分法传送", \
-    tick_not_working_button_set_schedule: "§b[设置]", \
-    tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
-    tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
-    tp_pos_abort: "You stopped entering teleport coordinates", \
-    uninstall_done: "§aSuccessfully uninstalled and disabled the datapack. §rTo fully remove it, delete the datapack from the folder. But you can also click the button on the right to enable it again:                            ", \
-    uninstall_enable_folder_button: "ENABLE1", \
-    uninstall_enable_folder_button_hoverevent: "Click to enable folder-based datapack (if exists)", \
-    uninstall_enable_zip_button: "ENABLE2", \
-    uninstall_enable_zip_button_hoverevent: "Click to enable ZIP-based datapack (if exists)", \
-    uninstall_server_calling: "Please use the client instead of the console to uninstall the datapack!", \
-    uninstall_server_calling_comment: "§l§n§4§l§n§4 This is a comment. The value of `uninstall_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, for non-English languages, an ASCII-compatible romanized form is used instead.", \
-    update_step1_leftpart: "You are updating the TPA datapack. Current installed version is ", \
-    warp_slot_disabled_leftpart: "The warp you accessed", \
-    warp_slot_disabled_rightpart: "has been disabled", \
-    warp_teleport: ["You have been teleported to ", ""], \
-    reqer_deny_tpahere: ["The requestor is denied from teleporting here.", "to you..."], \
+    option_disabled: "§cDISABLED§r", \
+    option_enabled: "§aENABLED§r", \
+    option_frequency: "Data pack frequency", \
+    option_frequency_hoverevent: "§bModify §aData Pack Frequency§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for disabling data pack", \
     option_game_version: "The compatible game version for the datapack file", \
-    option_max_anchor_summons_attempts: "Maximum summon attempts for teleportation anchor", \
-    option_max_anchor_summons_attempts_hoverevent: "§bChange the §aMaximum summon attempts for teleportation anchor §r(§6Unit:                                                  attempts§r)   §bSetting it too high may cause lag and unnecessary waiting, setting it too low may cause frequent teleportation failures.", \
+    option_home: "Homes a player can have", \
+    option_home_hoverevent: "§bModify §aHome A Player Owns§r (§6Units: ones§r), §b 0 for disabling home, -1 for not restricting numbers of homes(Not Recommending)", \
+    option_lang: "Server Language", \
+    option_lang_hoverevent: "§bEnter Language selecting menu below", \
+    option_player_lang: "If allow player language", \
+    option_search_id: "If disable search ID", \
     option_sim_dist: "Simulation distance", \
     option_sim_dist_button_cal: "[§aCalculate§r]", \
     option_sim_dist_hoverevent: "§bChange the §aSimulation distance §r(§6Unit: chunks§r)   Please make sure there are no players within the simulation distance from the origin in the overworld before clicking.", \
     option_stricter_book_check: "Stricter teleportation book check", \
     option_stricter_book_check_incompatible: "Stricter teleportation book check is incompatible with this version", \
     option_stricter_book_check_disabled: "This feature requires the Bookshelf datapack as a dependency, but the server has not installed the Bookshelf datapack.", \
+    option_time_out: "Teleport request timeout ", \
+    option_time_out_hoverevent: "§bModify §aTeleport Request Timeout§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for disabling teleport, -1 for never timeout", \
+    option_title_line1: "==================§bTPA §6Settings Menu§r==================", \
+    option_title_line2: "Modify settings below: (Recall to see changes)", \
+    option_tp_pos: "Teleport position allow radius", \
+    option_tp_pos_cooldown: "Teleport position cooldown", \
+    option_tp_pos_cooldown_hoverevent: "§bModify §aCooldown Time§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for no cooldown, -1 for disabling teleport", \
+    option_tp_pos_hoverevent: "§bModify §aTeleport Position Allow Radius§r (§6Units: meters§r), §b 0 for disabling teleport, -1 for not restrcting radius(Not Recommending)", \
+    option_tp_spec: "If Allow Spectators to Teleport", \
+    option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
     option_server_calling_comment: "§l§n§4 This is a comment. The value of `option_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
     option_uses_binary_teleport: "Use binary teleportation?", \
     option_uses_binary_teleport_hoverevent: "§bChoose §aBinary teleportation (enabled) §6or §cAnchor teleportation (disabled)", \
@@ -802,18 +625,135 @@ data modify storage tpa:tpa temp.lang set value \
     option_warp_number_hoverevent_leftpart: "§bThe server currently has ", \
     option_warp_number_hoverevent_rightpart: "§b public teleport points.", \
     option_uses_tick_scheduling: "Use /schedule command to call the Tick function", \
+    output_default: "You have changed the output position to §aBOTH CHATBAR AND ACTIONBAR§r", \
+    output_hide_actionbar: "You have changed the output position to §bCHATBAR ONLY§r", \
+    output_hide_chatbar: "You have changed the output position to §aACTIONBAR ONLY§r", \
+    recver_accept_auto_hoverevent: "§bPlayer who sent you a teleport request", \
+    recver_accept_auto: ["Have automatically accepted", "'s teleport request'"], \
+    recver_accept_toggle_off: "You have disabled §aalways-accept§r", \
+    recver_accept_toggle_on: "You have enabled §aalways-accept§r", \
+    recver_accept_tpa_hoverevent: "§bThe player who sent you a teleport request", \
+    recver_accept_tpa: ["You accepted", "'s teleport request"], \
+    recver_accept_tpahere_hoverevent: "§bPlayer whose §ltpahere§r request you have accepted ", \
+    recver_accept_tpahere: ["You accepted to teleport you to", "'s place."], \
+    recver_cancel_hoverevent: "§bwho has canceled the request to you", \
+    recver_cancel: ["", "has cancelled the request to you"], \
+    recver_deny_tpa_hoverevent: "§bThe player who sent you a teleport request", \
+    recver_deny_tpa: ["You denied", "'s teleport request"], \
+    recver_deny_tpahere_hoverevent: "§bPlayer whose §ltpahere§r request you have denied ", \
+    recver_deny_tpahere: ["You denied to teleport you to", "'s place."], \
+    recver_recv_button_accept: "[§aACCEPT§r]", \
+    recver_recv_button_accept_hoverevent: "§bClick to accept the request", \
+    recver_recv_button_deny: "[§cDENY§r]", \
+    recver_recv_button_deny_hoverevent: "§bClick to deny the request", \
+    recver_accept_multiple_received: "你目前收到多个传送请求 请选择你想要接受的请求", \
+    recver_accept_selector_title: "收到的请求", \
+    recver_recv_tpa_actionbar: ["", "sent you a teleport request. Nod 3 times to accept, shake head 3 times to deny."], \
+    recver_recv_tpa_chatbar: ["", "sent you a teleport request"], \
+    recver_recv_tpa_hoverevent: "§bThe player who sent you a teleport request", \
+    recver_recv_tpahere_actionbar: ["", "sent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny."], \
+    recver_recv_tpahere_chatbar: ["", "sent you a §ltpahere§r request"], \
+    recver_recv_tpahere_hoverevent: "§bThe player who sent you a §ltpahere§r request", \
+    recver_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
+    recver_req_invalid_hoverevent: "§b你所发送请求的玩家", \
+    recver_req_not_exist: "No pending requests to process", \
+    recver_timeout_hoverevent: "§bThe player whose request to you timed out", \
+    recver_timeout: ["", "'s teleport request timed out"], \
+    reqer_accept_auto_hoverevent: "§bThe player who auto-accepted your teleport request", \
+    reqer_accept_auto: ["The player enabled always-accept, teleporting you to ", "..."], \
+    reqer_accept_tpa_hoverevent: "§bThe player who accepted your teleport request", \
+    reqer_accept_tpa: ["Teleporting to ", "..."], \
+    reqer_accept_tpahere_hoverevent: "§bThe player who accepted your §ltpahere§r request", \
+    reqer_accept_tpahere: ["Teleporting ", "to you..."], \
+    reqer_button_tpa: "[§bTeleport§r]", \
+    reqer_button_tpa_hoverevent: "§bClick to send a teleport request to this player", \
+    reqer_button_tpahere: "[§bTeleport Here§r]", \
+    reqer_button_tpahere_hoverevent: "§bClick to request they teleport to your current location", \
+    reqer_cancel_hoverevent: "§bThe player whose request you canceled", \
+    reqer_cancel: ["You canceled the request to ", "'s request"], \
+    reqer_cancel_multiple_sent: "你目前有多个传送请求 请选择你想要取消的请求", \
+    reqer_cancel_selector_title: "请求列表", \
+    reqer_cancel_selector_index: ["", "项请求中的第", "项"], \
+    reqer_cancel_selector_index_format: 1, \
+    reqer_cancel_selector_you_placeholder: "你", \
+    reqer_cancel_selector_button_previous_page: "◀ 上一页", \
+    reqer_cancel_selector_button_previous_page_hoverevent: "§b点击查看上一页", \
+    reqer_cancel_selector_button_next_page: "下一页 ▶", \
+    reqer_cancel_selector_button_next_page_hoverevent: "§b点击查看下一页", \
+    reqer_change_actionbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance. Shake head 3 times to cancel"], \
+    reqer_change_actionbar_format: 0, \
+    reqer_change_chatbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance"], \
+    reqer_change_chatbar_format: 0, \
+    reqer_change_hoverevent: "§bThe player you previously sent a request to", \
+    reqer_deny_tpa_hoverevent: "§bThe player who denied your teleport request", \
+    reqer_deny_tpa: ["Teleporting to ", "..."], \
+    reqer_deny_tpahere_hoverevent: "§bThe player who denied your §ltpahere§r request", \
+    reqer_deny_tpahere: ["The requestor is denied from teleporting here.", "to you..."], \
+    reqer_disabled: "Server does not allow §ateleportation§r", \
+    reqer_unavail: "你不可以发送传送请求", \
+    reqer_first_join: "[§6Click me to open TPA Menu§r]", \
+    reqer_no_req_found: "You haven't sent any requests", \
+    reqer_recver_invalid: "Target offline or not teleportable", \
+    reqer_req_button_cancel: "[§4Cancel§r]", \
+    reqer_req_button_cancel_hoverevent: "§bClick to cancel the request", \
+    reqer_req_hoverevent: "§bThe player you sent a request to", \
+    reqer_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
+    reqer_req_invalid_hoverevent: "§b你所发送请求的玩家", \
+    reqer_req_not_exist: "The requested player does not exist or is offline", \
+    reqer_req_tpa: ["你向", "发送了一个传送请求. 等待他接受"], \
+    reqer_req_tpahere: ["你请求了", "传送到你的位置. 等待他接受"], \
+    reqer_req_tpa_hoverevent: "§bThe player you sent a teleport request to", \
+    reqer_req_tpahere_actionbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times to cancel"], \
+    reqer_req_tpahere_chatbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance"], \
+    reqer_req_tpahere_hoverevent: "§bThe player you sent a §ltpahere§r request to", \
+    reqer_self: "You cannot teleport to yourself", \
+    reqer_spam: "You already sent a request to this player", \
+    reqer_timeout_hoverevent: "§bThe player who did not accept your request", \
+    reqer_timeout: ["Your request to ", "'s teleport request has expired"], \
+    search_id_abort: "You stopped §asearching player IDs§r", \
+    search_id_dialog_done_tooltip: "§bClick to submit name", \
+    search_id_dialog_cancel: "Cancel", \
+    search_id_dialog_cancel_tooltip: "§bClick to cancel input", \
+    search_id_disabled: "Server does not allow §aID search§r", \
+    search_id_incompatible: "§aSearch Player ID§r is incompatible with this game version", \
+    search_id_keyboard_title: "Click the keyboard buttons below to input player name: ", \
+    search_id_name_input: "Input: ", \
+    search_id_recall: "[§bRecall§r]", \
+    search_id_recall_hoverevent: "§bRecall search player ID keyboard", \
+    search_id_throw_on_invalid_char: "The name you entered contains invalid characters", \
+    search_id_unavail_player: "Player is offline or cannot be teleported to", \
     simple_menu_button: "[§bDetailed menu§r]", \
+    simple_menu_button_hoverevent: "§bClick to switch to detailed menu", \
+    simple_menu_disable: "Switched TPA menu to §adetailed mode§r", \
     simple_menu_incompatible: "§aSimplified menu§r is not compatible with this game version", \
+    simple_menu_enable: "Switched TPA menu to §asimple mode§r. You can now use §a/trigger tpa§r to open it", \
+    simple_menu_title: "Click a player below to send a teleport request", \
+    teleport_anchor_actionbar: "Anchor teleport progress: ", \
+    teleport_binary_actionbar: "Binary search teleport progress: ", \
+    teleport_cal_sim_dist_actionbar: "Simulation distance", \
+    teleport_cal_sim_dist_end_leftpart: "Simulation distance calculated successfully. Current datapack simulation distance is:                                                            ", \
     teleport_cal_sim_dist_end_rightpart: "", \
+    teleport_cal_sim_dist_start: "Simulation distance calculation started", \
     teleport_incompatible: "§aAnchor teleportation§r is not compatible with this game version", \
     teleport_sim_dist_disabled: "The server has not set the simulation distance", \
-    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                                  This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
+    teleport_sim_dist_warn: "Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails, please contact admin to recalculate or manually set, or use binary teleport.", \
+    teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
+    teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                                   This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
+    teleport_sim_dist_warn_button_binary: "[§aBinary Search§r]", \
+    teleport_sim_dist_warn_button_binary_hoverevent: "§b点击将传送方式设置为二分法传送", \
+    tick_not_working_button_set_schedule: "§b[设置]", \
+    tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
+    tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
     tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
-    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                                 ", \
+    tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                                  ", \
     tick_not_working_tips_line2: "        1. Use the /schedule command to call the Tick function.", \
     tick_not_working_tips_line3: "   Or 2. Place your command block in a hidden location to avoid being destroyed by Bedrock-breaking machines.", \
+    tp_pos_abort: "You stopped entering teleport coordinates", \
+    tp_pos_act: ["Teleported you to position ", ""], \
     tp_pos_button_abort: "[Abort]", \
     tp_pos_button_teleport: "[Teleport]", \
+    tp_pos_cooldown: "§aCoordinate teleport§r is on cooldown", \
+    tp_pos_disabled: "Server does not allow §acoordinate teleport§r", \
     tp_pos_dialog_cancel_tooltip: "§bClick to cancel input", \
     tp_pos_dialog_done_tooltip: "§bClick to submit the set teleport coordinates", \
     tp_pos_dialog_set: "Current: ", \
@@ -823,37 +763,73 @@ data modify storage tpa:tpa temp.lang set value \
     tp_pos_dialog_set_y_tooltip: "§bClick to set the Y coordinate", \
     tp_pos_dialog_set_z: "Set Z coordinate", \
     tp_pos_dialog_set_z_tooltip: "§bClick to set the Z coordinate", \
+    tp_pos_out_of_range: "Teleport distance exceeds server radius: ", \
     tp_pos_recall: "[§bRecall§r]", \
     tp_pos_recall_hoverevent: "§bClick to recall the teleport coordinates menu", \
+    tp_pos_spec: "Spectators cannot §ateleport to coordinates§r", \
+    tp_pos_throw_on_invalid_char: "The coordinates you entered contain invalid characters", \
     tp_pos_title: "Adjust coordinates below: ", \
+    tpa_menu_auto_accept: "Auto-accept: ", \
     tpa_menu_back_button: "§bBack to previous position§r", \
+    tpa_menu_back_button_hoverevent: "§bReturn to your position before teleporting", \
     tpa_menu_book_button: "§bGet teleportation book§r", \
+    tpa_menu_book_button_hoverevent: "§bClick to get a TPA Book", \
     tpa_menu_dialog: "§bDialog menu§r", \
     tpa_menu_dialog_title: "§bTPA menu", \
     tpa_menu_dialog_hoverevent: "§bClick to open the dialog menu", \
     tpa_menu_switch_hoverevent: "§bClick to switch", \
+    tpa_menu_disable: "§cDisable§r", \
     tpa_menu_disabled: "§cDisabled", \
     tpa_menu_disabled_hoverevent: "§bClick to switch to §aEnabled", \
+    tpa_menu_enable: "§aEnable§r", \
     tpa_menu_enabled: "§aEnabled", \
     tpa_menu_enabled_hoverevent: "§bClick to switch to §cDisabled", \
+    tpa_menu_extend: "§bExpand§r", \
+    tpa_menu_extend_hoverevent: "§bClick to expand menu", \
+    tpa_menu_has_id_of: "§aDatapack ID§r is ", \
     tpa_menu_has_id_of_hoverevent: "§bThe internal player ID assigned to each player for correspondence", \
     tpa_menu_here_button: "§bBroadcast position§r", \
+    tpa_menu_here_button_hoverevent: "§bClick to broadcast your position", \
     tpa_menu_home_button: "§bHome menu§r", \
+    tpa_menu_home_button_hoverevent: "§bClick to open Home menu", \
     tpa_menu_warp_button: "§bLandmark menu§r", \
     tpa_menu_warp_button_hoverevent: "§bClick to open the public teleport point (landmark) menu", \
-    tpa_menu_idfix_button: "§bID fix§r", \
+    tpa_menu_hoverevent: ["§bClick to send a teleport request to ", ""], \
     tpa_menu_lang_button: "§bSwitch language§r", \
+    tpa_menu_lang_button_hoverevent: "§bClick to switch language", \
+    tpa_menu_mute: "Mute datapack: ", \
+    tpa_menu_output: "Output display: ", \
+    tpa_menu_output_actionbar: "§bHide chat§r", \
+    tpa_menu_output_chatbar: "§bHide action bar§r", \
+    tpa_menu_output_default: "§bDefault§r", \
     tpa_menu_output_actionbar_hidden: "§bOnly action bar§r", \
     tpa_menu_output_chatbar_hidden: "§bOnly chat bar§r", \
     tpa_menu_output_no_hidden: "§bBoth action and chat bar§r", \
     tpa_menu_pos_button: "§bTeleport coordinates§r", \
+    tpa_menu_pos_button_hoverevent: "§bClick to open chat input for coordinate teleport", \
     tpa_menu_refresh: "§6Refresh TPA menu§r", \
+    tpa_menu_refresh_hoverevent: "§bClick to refresh or reopen the TPA menu", \
     tpa_menu_search_id_button: "§bSearch player§r", \
+    tpa_menu_search_id_button_hoverevent: "§bClick to open chat input for TPA commands", \
     tpa_menu_simplemenu_button: "§bSimplified menu§r", \
+    tpa_menu_simplemenu_button_hoverevent: "§bSwitch to simple menu", \
+    tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                          ", \
     tpa_menu_tpaheremenu_button: "§bTeleport here menu§r", \
+    tpa_menu_tpaheremenu_button_hoverevent: "§bClick to go to TPA Here Menu", \
     tpa_menu_tpamenu_button: "§bTeleport menu§r", \
+    tpa_menu_tpamenu_button_hoverevent: "§bClick to go to Teleport Menu", \
+    tpa_menu_you: "Your ", \
+    tpahere_menu_title: "Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                                                          ", \
+    uninstall_done: "§aSuccessfully uninstalled and disabled the datapack. §rTo fully remove it, delete the datapack from the folder. But you can also click the button on the right to enable it again:                             ", \
+    uninstall_enable_folder_button: "ENABLE1", \
+    uninstall_enable_folder_button_hoverevent: "Click to enable folder-based datapack (if exists)", \
+    uninstall_enable_zip_button: "ENABLE2", \
+    uninstall_enable_zip_button_hoverevent: "Click to enable ZIP-based datapack (if exists)", \
+    uninstall_server_calling: "Please use the client instead of the console to uninstall the datapack!", \
+    uninstall_server_calling_comment: "§l§n§4§l§n§4 This is a comment. The value of `uninstall_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, for non-English languages, an ASCII-compatible romanized form is used instead.", \
     update_reload: "§b[Reload]", \
     update_reload_hoverevent: "Click to reload", \
+    update_step1_leftpart: "You are updating the TPA datapack. Current installed version is ", \
     update_step1_rightpart: " Please confirm to begin updating here.", \
     update_step1_button: "§b§n§l[I'm sure of what I'm doing]", \
     update_step1_hoverevent: "Please click carefully", \
@@ -906,34 +882,9 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set: ["You have set", "to", ""], \
     warp_set_format: 0, \
     warp_set_position: "coordinates", \
-    warp_set_default_name: "Unnamed Teleport Spot", \
-    warp_spec: "Spectator mode players are not allowed to teleport to §aWarp§r", \
-    option_dimension_button_edit_id_notavail_hoverevent: "§cVanilla dimensions cannot be editted", \
-    option_dimension_button_edit_namespaceid_notavail_hoverevent: "§cVanilla dimensions cannot be editted", \
-    reqer_unavail: "你不可以发送传送请求", \
-    reqer_req_tpa: ["你向", "发送了一个传送请求. 等待他接受"], \
-    recver_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
-    recver_req_invalid_hoverevent: "§b你所发送请求的玩家", \
-    reqer_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
-    reqer_req_invalid_hoverevent: "§b你所发送请求的玩家", \
-    reqer_req_tpahere: ["你请求了", "传送到你的位置. 等待他接受"], \
-    reqer_cancel_multiple_sent: "你目前有多个传送请求 请选择你想要取消的请求", \
-    reqer_cancel_selector_title: "请求列表", \
-    reqer_cancel_selector_index: ["", "项请求中的第", "项"], \
-    reqer_cancel_selector_index_format: 1, \
-    reqer_cancel_selector_you_placeholder: "你", \
-    reqer_cancel_selector_button_previous_page: "◀ 上一页", \
-    reqer_cancel_selector_button_previous_page_hoverevent: "§b点击查看上一页", \
-    reqer_cancel_selector_button_next_page: "下一页 ▶", \
-    reqer_cancel_selector_button_next_page_hoverevent: "§b点击查看下一页", \
-    recver_accept_multiple_received: "你目前收到多个传送请求 请选择你想要接受的请求", \
-    recver_accept_selector_title: "收到的请求", \
-    home_unavail: "当前状态下无法操作§a传送点§r", \
-    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
-    book_unavail: "当前状态下无法操作§a传送书§r", \
-    here_overworld_postion_hoverevent: "Overworld Positon", \
-    here_nether_postion_hoverevent: "Nether Position", \
-    dialog: "已开启对话框菜单", \
+    warp_set_default_name: "UnnamedWarp", \
+    warp_slot_disabled: ["The Warp you  named ", " has been disabled"], \
+    warp_teleport: ["You have been teleported to ", ""], \
     warp_unavail: "当前状态下无法操作§a公共传送点§r" \
 }, \
   {\
@@ -946,29 +897,20 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "前回の位置にテレポートしました", \
     back_disabled: "§a前回の位置に戻り§rはサーバーで無効になっています", \
     back_not_exist: "前回の位置を見つかりしませんでした", \
-    back_spec: "スペクテイターモードのプレーヤーは§a前回の位置§r戻れません", \
+    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
     book_check_missing: "TPAブックが失われたため、再度付与しました", \
     book_disabled: "§aTPAブック§rはサーバーで無効になっています", \
     book_incompatible: "§aTPAブック§rはこのゲームバージョンと互換性がありません", \
     book_lore: "§r§b右クリックでTPAメニューを開く。捨てるとリフレッシュ。オフハンドに持ち替えると使用停止。", \
     book_mainhand_busy: "メインハンドにアイテムを持っているため、TPAブックを受け取れません", \
-    load_date_check_format: 123, \
-    load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
-    load_date_check_year_prefix: "", \
-    load_date_check_year_suffix: "年", \
-    load_date_check_year_local_prefix: "(令和", \
-    load_date_check_year_local_suffix: "年)", \
-    load_date_check_month_prefix: "", \
-    load_date_check_month_suffix: "月", \
-    load_date_check_day_prefix: "", \
-    load_date_check_day_suffix: "日", \
     book_refresh: "§aTPAメニューの本をリフレッシュしました", \
     book_reget: "[§b再取得§r]", \
     book_reget_hoverevent: "§bクリックしてTPAブックを再取得", \
-    book_spec: "スペクテイターモードのプレイヤーは§aTPAブック§rを使用できません", \
     book_stacking: "TPAブックがスタックされていることを検出しました、余分な本は没収されました", \
     book_stop: "§aTPAブック§rの使用を停止しました。TPAメニューで再取得できます", \
     book_title: "§r§b你TPAメニューの本 §a[投げてリフレッシュ] ", \
+    book_unavail: "当前状态下无法操作§a传送书§r", \
+    dialog: "已开启对话框菜单", \
     dimension_menu_button: "[§bディメンション設定メニュー§r]", \
     dimension_menu_button_hoverevent: "§bクリックしてディメンション設定を変更", \
     dimension_overworld: "オーバーワールド", \
@@ -977,14 +919,10 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown: "不明なディメンション", \
     dimension_unknown_detected_leftpart: "不明なディメンションを検出しました(", \
     dimension_unknown_detected_rightpart: "), ディメンションメニューで設定してください: ", \
-    extended_menu_incompatible: "§a展開メニュー§rはこのゲームバージョンと互換性がありません", \
-    extended_menu_next_page: "§b次のページを見る", \
-    extended_menu_previous_page: "§b前のページを見る", \
-    extended_menu_title: "======================§bTPA§6 メニュー§r=====================", \
     here_button_tpa: "[§bテレポートリクエスト§r]", \
-    here_button_tpa_hoverevent: "§bクリックしてテレポートリクエストを送信", \
+    here_overworld_postion_hoverevent: "オーバーワールドの座標", \
+    here_nether_postion_hoverevent: "ネザーの座標", \
     here_button_tpa_notavail_hoverevent: "§cプレイヤーはテレポートを許可していません", \
-    here_spec: "スペクテイターモードのプレイヤーは§a位置をブロードキャスト§rできません", \
     here_voxel_hoverevent: "§bクリックしてVoxelMapのパスを追加", \
     here_xaero_hoverevent: "§6クリックしてXearo's Minimapのパスを追加", \
     home_act: ["テレポート先#にテレポートしました", ""], \
@@ -1011,12 +949,8 @@ data modify storage tpa:tpa temp.lang set value \
     home_set: ["ホーム#を", "設定しました", ""], \
     home_set_format: 0, \
     home_set_position: "位置", \
-    home_spec: "スペクテイターモードのプレイヤーは§aホーム§rを操作できません", \
+    home_unavail: "現在の状態では§aホーム§rを利用できません。", \
     hoverevent_suggest_tip: "§aこのコマンドを補完してください: ", \
-    idfix_act_hoverevent: "§bこのプレイヤーはID修復を使用しました", \
-    idfix_act: ["", "§aID修復§rを使用し、全プレイヤーのデータ番号と前回位置がリセットされました"], \
-    idfix_cooldown: "§aID修復§rはまだクールダウン中です", \
-    idfix_disabled: "§aID修復§rはサーバーで無効化されています", \
     lang_button: "[§6ここをクリックして言語を選択§r]", \
     lang_button_hoverevent: "§bクリックして言語メニューを表示", \
     lang_button_server: "[§6ここをクリックしてサーバー言語を選択§r]", \
@@ -1026,8 +960,6 @@ data modify storage tpa:tpa temp.lang set value \
     lang_menu_title: "下から言語を選択してください:", \
     lang_selected: ["言語を切り替えました:", ""], \
     lang_server_follow: ["サーバーパックのデフォルト言語が設定されていないため、現在", "に設定されています"], \
-    load_add_objectives: "46個のスコア項目を追加中... (1/6)", \
-    load_added_objectives: "スコア項目を正常に追加しました... (2/6)", \
     load_author: "このデータパックは§6Xiao_tu233§rと§6Pressnre§rによって作成されました。", \
     load_button_help: "[ヘルプ]", \
     load_button_help_hoverevent: "クリックしてヘルプを表示", \
@@ -1039,25 +971,24 @@ data modify storage tpa:tpa temp.lang set value \
     load_button_update_hoverevent: "クリックしてデータパック更新ガイドを開始", \
     load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233    Additional contributions © 2026 Pressnre. このデータパックはGPL-3.0オープンソースライセンスに従っています。 オープンソースプロジェクトですが、作者は商用サーバーでの使用を推奨していません。[ライセンス]をクリックしてライセンス全文を確認できます。", \
     load_date_check: ["現在のバージョンは", "にリリースされました。アップデートに注意してください"], \
-    load_did_reset_scores: "オンラインプレイヤーのスコアを正常にリセットしました... (3/6)", \
+    load_date_check_format: 123, \
+    load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
+    load_date_check_year_prefix: "", \
+    load_date_check_year_suffix: "年", \
+    load_date_check_year_local_prefix: "(令和", \
+    load_date_check_year_local_suffix: "年)", \
+    load_date_check_month_prefix: "", \
+    load_date_check_month_suffix: "月", \
+    load_date_check_day_prefix: "", \
+    load_date_check_day_suffix: "日", \
     load_done: "§aデータパックのリロードが完了しました: ", \
     load_done_extra: " 完全版 ", \
-    load_init_storage: "関連コマンドストレージを初期化中... (3/6)", \
-    load_init_vars: "変数を初期化中... (5/6)", \
-    load_initted_storage: "関連コマンドストレージを正常に初期化しました... (4/6)", \
-    load_initted_vars: "変数を正常に初期化しました... (6/6)", \
-    load_remove_tags: "タグを削除中... (4/6)", \
-    load_removed_tags: "タグを正常に削除しました... (5/6)", \
-    load_reset_scores: " オンラインプレイヤーのスコアをリセット中... (2/6)", \
-    load_title: "§eリロード中...", \
     load_version_hoverevent: "§bこれはTPAデータパックのバージョンであり、Minecraftのバージョンではありません。", \
     load_welcome: "TPAデータパックへようこそ！", \
     mute_disable: "§aデータパックのサウンド§rを有効にしました", \
     mute_enable: "データパックを§aミュート§rしました", \
     option_advenced_warn: "以下は高度な設定です。内容を理解していない場合は変更しないでください", \
     option_advenced_tip: "デバッグモードをオンにすると、さらに多くの設定を調整できます（高度設定）", \
-    option_anchor_search_retries: "テレポートアンカー探索の再試行回数", \
-    option_anchor_search_retries_hoverevent: "§b以下で§aテレポートアンカー探索の再試行回数を変更§r(§6単位: 回§rまたは§6ティック/実行頻度§r)、§b値が大きすぎると待機時間が長くなり、小さすぎるとアンカー誤認や汚染が発生する可能性があります", \
     option_back: "プレイヤーの前回位置への戻りを禁止", \
     option_book: "テレポートブックの使用を禁止", \
     option_button_disable: "§c無効§r]", \
@@ -1076,7 +1007,6 @@ data modify storage tpa:tpa temp.lang set value \
     option_carpet_disabled: "この機能はCarpetモジュールが必要ですが、サーバーにはCarpetモジュールがインストールされていません。", \
     option_carpet_fake_player_fix: "Carpetモジュールのフェイクプレイヤー修正", \
     option_carpet_fake_player_fix_incompatible: "このバージョンではCarpetモジュールのフェイクプレイヤー修正は互換性がありません", \
-    option_compact_ids: "プレイヤーがオフライン時にIDの空き番号を削除するか", \
     option_current_game_version: "現在検出されたゲームバージョン", \
     option_debug_mode: "デバッグモード", \
     option_debug_mode_hoverevent: "§b下をクリックしてデバッグモードを有効化§r。チャットに問題解決用情報を表示しますが、画面が流れる可能性があります。有効化後に再度設定メニューを開くと高度設定を調整できます", \
@@ -1089,7 +1019,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_id_hoverevent: "§bクリックしてディメンションIDを編集（クリック後、左矢印キーを押してコロンの後に入力しEnter）", \
     option_dimension_button_edit_id_notavail_hoverevent: "§c原版ディメンションは編集できません", \
     option_dimension_button_edit_namespaceid: "[§a名前空間IDを編集§r]", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションの名前空間IDを編集(namespace:id, source location 例:                                                   minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§bクリックしてディメンションの名前空間IDを編集(namespace:id, source location 例:                                                    minecraft:xxx)(クリック後、左矢印キーを2回押して引用符内に入力しEnter)", \
     option_dimension_button_edit_namespaceid_notavail_hoverevent: "§c原版ディメンションは編集できません", \
     option_dimension_button_edit_name: "[§a名前を編集§r]", \
     option_dimension_button_edit_name_hoverevent: "§bクリックしてディメンションの表示名を編集（クリック後、左矢印キーを2回押して引用符内に入力しEnter。原版ディメンションは言語設定に従います）", \
@@ -1107,13 +1037,9 @@ data modify storage tpa:tpa temp.lang set value \
     option_game_version: "データパックファイル対応ゲームバージョン", \
     option_home: "所有するホーム数", \
     option_home_hoverevent: "§b以下で§aホーム数を変更§r(§6単位: 個§r)、§b0でホーム禁止、§b-1で制限なし（非推奨）", \
-    option_idfix_cooldown: "§bID修復クールダウン", \
-    option_idfix_cooldown_hoverevent: "§b以下で§aID修復クールダウンを変更§r(§6単位: 1ティック=1/20秒§r)、§b0でクールダウンなし、§b-1でID修復禁止", \
     option_lang: "サーバー言語", \
     option_lang_hoverevent: "§b以下で言語選択メニューを開く", \
     option_player_lang: "プレイヤーの言語選択を許可するか", \
-    option_max_anchor_summons_attempts: "テレポートアンカー最大召喚試行回数", \
-    option_max_anchor_summons_attempts_hoverevent: "§b以下で§aテレポートアンカー最大召喚試行回数を変更§r(§6単位: 回§r)、§b値が大きすぎるとラグと無駄な待機が増え、小さすぎるとテレポート失敗が多発する可能性があります", \
     option_search_id: "プレイヤーID検索を無効にするか", \
     option_sim_dist: "シミュレーション距離", \
     option_sim_dist_button_cal: "[§a計算§r]", \
@@ -1163,12 +1089,16 @@ data modify storage tpa:tpa temp.lang set value \
     recver_recv_button_accept_hoverevent: "§bクリックしてリクエストを承認", \
     recver_recv_button_deny: "[§c拒否§r]", \
     recver_recv_button_deny_hoverevent: "§bクリックしてリクエストを拒否", \
+    recver_accept_multiple_received: "受信したリクエストが複数あります。承認するリクエストを選択してください。", \
+    recver_accept_selector_title: "受信したリクエスト", \
     recver_recv_tpa_actionbar: ["", "からテレポートリクエストが届きました。/trigger tpaccept で承認します"], \
     recver_recv_tpa_chatbar: ["", "からテレポートリクエストが届きました"], \
     recver_recv_tpa_hoverevent: "§bあなたにテレポートリクエストを送ったプレイヤー", \
     recver_recv_tpahere_actionbar: ["", "から§lこちらへのテレポート§rリクエストが届きました。/trigger tpaccept で承認します"], \
     recver_recv_tpahere_chatbar: ["", "から§lこちらへのテレポート§rリクエストが届きました"], \
     recver_recv_tpahere_hoverevent: "§bあなたに§lこちらへのテレポート§rリクエストを送ったプレイヤー", \
+    recver_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
+    recver_req_invalid_hoverevent: "§b你所发送请求的玩家", \
     recver_req_not_exist: "処理すべきリクエストはありません", \
     recver_timeout_hoverevent: "§bタイムアウトしたリクエストのプレイヤー", \
     recver_timeout: ["", "のテレポートリクエストはタイムアウトしました"], \
@@ -1184,7 +1114,15 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_button_tpahere_hoverevent: "§bクリックして相手をあなたの位置にテレポートさせるリクエストを送信", \
     reqer_cancel_hoverevent: "§bリクエストをキャンセルしたプレイヤー", \
     reqer_cancel: ["", "へのリクエストをキャンセルしました"], \
-    reqer_cancel_spec: "観戦者は§aリクエストをキャンセル§rできません", \
+    reqer_cancel_multiple_sent: "送信中のリクエストが複数あります。キャンセルするリクエストを選択してください。", \
+    reqer_cancel_selector_title: "送信したリクエスト", \
+    reqer_cancel_selector_index: ["", "件中 ", "件目"], \
+    reqer_cancel_selector_index_format: 1, \
+    reqer_cancel_selector_you_placeholder: "自分", \
+    reqer_cancel_selector_button_previous_page: "◀ 前のページ", \
+    reqer_cancel_selector_button_previous_page_hoverevent: "§b前のページを表示", \
+    reqer_cancel_selector_button_next_page: "次のページ ▶", \
+    reqer_cancel_selector_button_next_page_hoverevent: "§b次のページを表示", \
     reqer_change_actionbar: ["以前、", "へのリクエストを送信しました。前のリクエストをキャンセルしました。現在、", "にリクエストを送信中、承認待ちです。"], \
     reqer_change_actionbar_format: 0, \
     reqer_change_chatbar: ["以前、", "へのリクエストを送信しました。前のリクエストをキャンセルしました。現在、", "にリクエストを送信中、承認待ちです。"], \
@@ -1195,22 +1133,24 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_deny_tpahere_hoverevent: "§bあなたの§lこちらへのテレポート§rリクエストを拒否したプレイヤー", \
     reqer_deny_tpahere: ["", "あなたのリクエストを拒否しました"], \
     reqer_disabled: "サーバーは§aテレポート§rを許可していません", \
+    reqer_unavail: "テレポートリクエストを送信することは出来ません", \
     reqer_first_join: "[§6クリックしてTPAメニューを開く§r]", \
     reqer_no_req_found: "まだ誰にもリクエストを送信していません", \
     reqer_recver_invalid: "対象のプレイヤーはオフライン、またはテレポート不可です", \
     reqer_req_button_cancel: "[§4キャンセル§r]", \
     reqer_req_button_cancel_hoverevent: "§bクリックしてリクエストをキャンセル", \
     reqer_req_hoverevent: "§b送信したリクエストのプレイヤー", \
+    reqer_req_invalid: ["", "に送信したリクエストは、対象プレイヤーが利用できないため（オフラインまたはテレポート不可）、削除されました"], \
+    reqer_req_invalid_hoverevent: "§bリクエストを送信したプレイヤー", \
     reqer_req_not_exist: "リクエスト対象のプレイヤーは存在しないかオフラインです", \
-    reqer_req_tpa_actionbar: ["", "にテレポートリクエストを送信しました。承認待ちです"], \
-    reqer_req_tpa_chatbar: ["", "にテレポートリクエストを送信しました。承認待ちです"], \
+    reqer_req_tpa: ["", "にテレポートリクエストを送信しました、相手の承認を待っています"], \
+    reqer_req_tpahere: ["", "にこちらへのテレポートをリクエストしました。承認を待っています"], \
     reqer_req_tpa_hoverevent: "§b送信したテレポートリクエストのプレイヤー", \
     reqer_req_tpahere_actionbar: ["", "にあなたの位置へテレポートさせるリクエストを送信しました。承認待ちです"], \
     reqer_req_tpahere_chatbar: ["", "にあなたの位置へテレポートさせるリクエストを送信しました。承認待ちです"], \
     reqer_req_tpahere_hoverevent: "§b送信した§lこちらへのテレポート§rリクエストのプレイヤー", \
     reqer_self: "自分自身にはテレポートできません", \
     reqer_spam: "すでにリクエストを送信済みです", \
-    reqer_spec: "観戦者は§aテレポート§rできません", \
     reqer_timeout_hoverevent: "§bあなたのリクエストを承認しなかったプレイヤー", \
     reqer_timeout: ["", "へのテレポートリクエストがタイムアウトしました"], \
     search_id_abort: "§aプレイヤーID検索§r を停止しました", \
@@ -1298,8 +1238,6 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_warp_button: "§bワープメニュー§r", \
     tpa_menu_warp_button_hoverevent: "§bクリックしてワープメニューを開く", \
     tpa_menu_hoverevent: ["§bクリックして", "§bテレポートリクエストを送信"], \
-    tpa_menu_idfix_button: "§bID修復§r", \
-    tpa_menu_idfix_button_hoverevent: "§b同じIDを持つプレイヤーが2人いる場合に修復可能。すべてのプレイヤーIDをリセット", \
     tpa_menu_lang_button: "§b言語切替§r", \
     tpa_menu_lang_button_hoverevent: "§bクリックして言語を切替", \
     tpa_menu_mute: "データパックのミュート: ", \
@@ -1388,34 +1326,8 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set_format: 0, \
     warp_set_position: "座標", \
     warp_set_default_name: "名前未設定ワープ", \
-    warp_slot_disabled_leftpart: "アクセスしたワープ", \
-    warp_slot_disabled_rightpart: "は無効化されています", \
-    warp_spec: "スペクテイターモードのプレイヤーは§aワープ§rにテレポート出来ません", \
+    warp_slot_disabled: ["你所访问的公共传送点", "已被禁用"], \
     warp_teleport: ["テレポートされました：", ""], \
-    reqer_unavail: "テレポートリクエストを送信することは出来ません", \
-    reqer_req_tpa: ["", "にテレポートリクエストを送信しました、相手の承認を待っています"], \
-    reqer_req_invalid: ["", "に送信したリクエストは、対象プレイヤーが利用できないため（オフラインまたはテレポート不可）、削除されました"], \
-    reqer_req_invalid_hoverevent: "§bリクエストを送信したプレイヤー", \
-    reqer_req_tpahere: ["", "にこちらへのテレポートをリクエストしました。承認を待っています"], \
-    reqer_cancel_multiple_sent: "送信中のリクエストが複数あります。キャンセルするリクエストを選択してください。", \
-    reqer_cancel_selector_title: "送信したリクエスト", \
-    reqer_cancel_selector_index: ["", "件中 ", "件目"], \
-    reqer_cancel_selector_index_format: 1, \
-    reqer_cancel_selector_you_placeholder: "自分", \
-    reqer_cancel_selector_button_previous_page: "◀ 前のページ", \
-    reqer_cancel_selector_button_previous_page_hoverevent: "§b前のページを表示", \
-    reqer_cancel_selector_button_next_page: "次のページ ▶", \
-    reqer_cancel_selector_button_next_page_hoverevent: "§b次のページを表示", \
-    recver_accept_multiple_received: "受信したリクエストが複数あります。承認するリクエストを選択してください。", \
-    recver_accept_selector_title: "受信したリクエスト", \
-    home_unavail: "現在の状態では§aホーム§rを利用できません。", \
-    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
-    book_unavail: "当前状态下无法操作§a传送书§r", \
-    recver_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
-    recver_req_invalid_hoverevent: "§b你所发送请求的玩家", \
-    here_overworld_postion_hoverevent: "オーバーワールドの座標", \
-    here_nether_postion_hoverevent: "ネザーの座標", \
-    dialog: "已开启对话框菜单", \
     warp_unavail: "当前状态下无法操作§a公共传送点§r" \
 }, \
   {\
@@ -1428,67 +1340,80 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "已將你傳送至上一位置", \
     back_disabled: "伺服器不允許§a返回上一位置§r", \
     back_not_exist: "沒有找到上一位置", \
-    back_spec: "旁觀者模式玩家不允許§a返回上一位置§r", \
+    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
+    book_check_missing: "檢測到傳送書遺失，已重新給予", \
     book_disabled: "§a傳送書§r不相容該遊戲版本", \
+    book_incompatible: "§a傳送書§r不相容此遊戲版本", \
     book_lore: "§r§b右鍵開啟TPA選單. 丟出刷新. 切換至副手停止使用.", \
-    book_title: "§r§b傳送選單書 §a[按Q刷新] ", \
     book_mainhand_busy: "請空手來獲得傳送書.", \
-    book_spec: "旁觀者模式玩家不允許使用§a傳送書§r", \
+    book_refresh: "你刷新了§a傳送選單書§r", \
+    book_reget: "[§b重新取得§r]", \
+    book_reget_hoverevent: "§b點擊重新取得傳送書", \
+    book_stacking: "檢測到傳送書堆疊，已沒收多餘的書", \
     book_stop: "你已停止使用§a傳送書§r，可在 TPA 選單中再次取得", \
-    command_syntax_error: "指令格式錯誤", \
-    extended_menu_title: "======================§bTPA§6 選單§r========================", \
-    extended_menu_previous_page: "§b檢視上一頁", \
-    extended_menu_next_page: "§b檢視下一頁", \
+    book_title: "§r§b傳送選單書 §a[按Q刷新] ", \
+    book_unavail: "当前状态下无法操作§a传送书§r", \
+    dialog: "已开启对话框菜单", \
+    dimension_menu_button: "[§b維度設定選單§r]", \
+    dimension_menu_button_hoverevent: "§b點擊設定維度", \
+    dimension_overworld: "主世界", \
+    dimension_the_nether: "下界", \
+    dimension_the_end: "終界", \
+    dimension_unknown: "未知維度", \
+    dimension_unknown_detected_leftpart: "檢測到未知維度(", \
+    dimension_unknown_detected_rightpart: ")，請在維度選單中設定：", \
     here_button_tpa: "[§b請求傳送§r]", \
-    here_button_tpa_hoverevent: "§b點擊快捷向他發送傳送請求", \
+    here_overworld_postion_hoverevent: "主世界坐標", \
+    here_nether_postion_hoverevent: "地獄坐標", \
+    here_button_tpa_notavail_hoverevent: "§c玩家不允許被傳送", \
     here_voxel_hoverevent: "§b點擊新增VoxelMap路徑點", \
     here_xaero_hoverevent: "§6點擊新增Xaero's Minimap路徑點", \
-    here_spec: "旁觀者模式玩家不允許使用§a廣播位置§r", \
     home_act: ["已將你傳送至傳送點#", ""], \
     home_create: "你尚未建立傳送點", \
     home_create_button: "[§a新建§r]", \
     home_create_button_hoverevent: "§a點擊設定一個傳送點", \
     home_disabled: "伺服器未啟用§a傳送點§r", \
     home_display: "§b傳送點#", \
-    home_display_tp_button: "[§b傳送§r]", \
-    home_display_tp_button_hoverevent: "§b點擊傳送到這個傳送點", \
     home_display_rm_button: "[§c移除§r]", \
     home_display_rm_button_hoverevent: "§c點擊刪除這個傳送點", \
     home_display_set_button: "[§a設定§r]", \
     home_display_set_button_hoverevent: "§a點擊設定傳送點", \
+    home_display_tp_button: "[§b傳送§r]", \
+    home_display_tp_button_hoverevent: "§b點擊傳送到這個傳送點", \
     home_menu_title: "你現在擁有如下的傳送點欄位: ", \
     home_missing_hoverevent: "該傳送點尚未設定", \
     home_new: "§a新建: ", \
-    home_number: "傳送點#", \
-    home_not_found: ["你存取的傳送點#", "不存在"], \
     home_not_found_hoverevent: "§b你存取的傳送點", \
+    home_not_found: ["你存取的傳送點#", "不存在"], \
+    home_number: "傳送點#", \
     home_out_of_range: ["你存取的傳送點#", "超出了伺服器的限制"], \
-    home_remove: ["你移除了傳送點#", ""], \
     home_remove_hoverevent: "§b移除的傳送點", \
+    home_remove: ["你移除了傳送點#", ""], \
     home_set: ["你把傳送點#", "設定為", ""], \
     home_set_format: 0, \
-    home_set_overworld: "§a主世界", \
-    home_set_the_nether: "§c地獄", \
-    home_set_the_end: "§e終界", \
     home_set_position: "座標", \
-    home_spec: "旁觀者模式玩家不允許操作§a傳送點§r", \
-    idfix_act: ["", "使用了§aID修復§r, 所有玩家的資料包ID與上一位置已被重設"], \
-    idfix_act_hoverevent: "§b這名玩家使用了ID修復", \
-    idfix_cooldown: "§aID修復§r還在冷卻中", \
-    idfix_disabled: "伺服器不允許§aID修復§r", \
+    home_unavail: "当前状态下无法操作§a传送点§r目前狀態下無法操作§a傳送點§r", \
+    hoverevent_suggest_tip: "§a你應將指令補全為：", \
     lang_button: "[§6點擊這裡選擇語言§r]", \
-    lang_button_server: "[§6點擊這裡選擇伺服器語言§r]", \
     lang_button_hoverevent: "§b點擊檢視語言選單", \
-    lang_menu_title: "請在下方選擇語言:", \
+    lang_button_server: "[§6點擊這裡選擇伺服器語言§r]", \
+    lang_disabled: "伺服器禁止了玩家選擇語言", \
     lang_menu_select_button: "[§a載入推薦指令§r]", \
     lang_menu_select_button_hoverevent: "§b點擊在聊天欄載入推薦指令: ", \
-    lang_disabled: "伺服器禁止了玩家選擇語言", \
+    lang_menu_title: "請在下方選擇語言:", \
     lang_selected: ["你已切換語言到", ""], \
     lang_server_follow: ["由於資料包伺服器預設語言尚未設定, 現在它被設定為", ""], \
-    load_title: "§e重新載入中...", \
-    load_add_objectives: "正在新增42個計分項... (1/6)", \
-    load_added_objectives: "已成功地新增計分項... (2/6)", \
-    load_reset_scores: "正在重設線上玩家分數... (2/6)", \
+    load_author: "此資料包由§6Xiao_tu233§r製作. ", \
+    load_button_help: "[說明]", \
+    load_button_help_hoverevent: "點擊檢視說明", \
+    load_button_license: "[條款]", \
+    load_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
+    load_button_options: "[設定]", \
+    load_button_options_hoverevent: "點擊變更資料包設定", \
+    load_button_update: "[更新]", \
+    load_button_update_hoverevent: "點擊開始更新資料包", \
+    load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r。 本資料包採用 GPL-3.0 開源授權條款，為開源專案，但作者不建議將其用於商業伺服器。 點擊下方「[授權條款]」查看授權條款全文。", \
+    load_date_check: ["目前版本發佈於", "，請注意更新"], \
     load_date_check_format: 123, \
     load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
     load_date_check_year_prefix: "", \
@@ -1499,229 +1424,34 @@ data modify storage tpa:tpa temp.lang set value \
     load_date_check_month_suffix: "月", \
     load_date_check_day_prefix: "", \
     load_date_check_day_suffix: "日", \
-    load_did_reset_scores: "已成功重設線上玩家分數... (3/6)", \
-    load_init_storage: "正在初始化相關指令儲存... (3/6)", \
-    load_initted_storage: "已成功初始化相關指令儲存... (4/6)", \
-    load_remove_tags: "正在移除標籤... (4/6)", \
-    load_removed_tags: "已成功移除標籤... (5/6)", \
-    load_init_vars: "正在初始化變數... (5/6)", \
-    load_initted_vars: "已成功初始化變數... (6/6)", \
     load_done: "§a資料包重新載入完成: ", \
+    load_done_extra: " 完整版 ", \
     load_version_hoverevent: "§b這是TPA資料包的版本, 而不是Minecraft版本.", \
     load_welcome: "歡迎使用TPA資料包! ", \
-    load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r。 本資料包採用 GPL-3.0 開源授權條款，為開源專案，但作者不建議將其用於商業伺服器。 點擊下方「[授權條款]」查看授權條款全文。", \
-    load_author: "此資料包由§6Xiao_tu233§r製作. ", \
-    load_button_options: "[設定]", \
-    load_button_options_hoverevent: "點擊變更資料包設定", \
-    load_button_help: "[說明]", \
-    load_button_help_hoverevent: "點擊檢視說明", \
-    load_button_update: "[更新]", \
-    load_button_update_hoverevent: "點擊開始更新資料包", \
-    load_button_license: "[條款]", \
-    load_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
     mute_disable: "你開啟了§a資料包音效§r", \
     mute_enable: "你§a靜音§r了資料包", \
-    option_carpet_disabled: "本功能需要Carpet模組作為依賴, 而伺服器尚未安裝Carpet模組. ", \
-    option_title_line1: "======================§bTPA§6 設定選單§r=====================", \
-    option_title_line2: "請在下方調整設定: (需重新呼出選單以檢視變更)", \
-    option_button_enable: "§r[§a啟用§r", \
-    option_button_disable: "§c停用§r]", \
-    option_button_set: "§r[§a設定§r]", \
-    option_debug_mode: "除錯模式", \
-    option_tp_spec: "允許傳送旁觀者", \
-    option_remove_offline: "是否在玩家離線後移除ID空位", \
-    option_carpet_fake_player_fix: "Carpet模組假人修復", \
+    option_advenced_warn: "下方設定為進階設定，請勿隨意修改，除非你清楚自己在做什麼", \
+    option_advenced_tip: "啟用除錯模式以調整更多設定（進階設定）", \
     option_back: "是否停用返回上一位置", \
-    option_search_id: "是否停用搜尋ID", \
     option_book: "是否停用傳送書", \
-    option_player_lang: "是否允許玩家語言選擇", \
-    option_lang: "伺服器語言", \
-    option_lang_hoverevent: "§b在下方進入語言選擇選單", \
-    option_home: "擁有傳送點的個數", \
-    option_home_hoverevent: "§b在下方變更§a擁有傳送點的個數 §r(§6單位: 個§r), §b填0來設定禁止傳送點 §b填-1來設定不限制傳送點的數量(不推薦)", \
-    option_tp_pos: "傳送座標允許半徑", \
-    option_tp_pos_hoverevent: "§b在下方變更§a傳送座標允許半徑 §r(§6單位: 公尺§r), §b填0來設定禁止傳送 §b填-1來設定不限制半徑(不推薦)", \
-    option_tp_pos_cooldown: "傳送座標冷卻時間", \
-    option_tp_pos_cooldown_hoverevent: "§b在下方變更§a冷卻時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定無冷卻 §b填-1來設定禁止傳送", \
-    option_time_out: "傳送請求逾時時間", \
-    option_time_out_hoverevent: "§b在下方變更§a傳送請求逾時時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定禁止傳送 §b填-1來設定永不逾時", \
-    option_idfix_cooldown: "§bID修復冷卻時間", \
-    option_idfix_cooldown_hoverevent: "§b在下方變更§aID修復冷卻時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定無冷卻 填-1來設定禁止ID修復", \
-    option_frequency: "資料包執行頻率", \
-    option_frequency_hoverevent: "§b在下方變更§a資料包執行頻率 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來禁止資料包執行", \
-    option_sim_dist: "模擬距離", \
-    option_sim_dist_hoverevent: "§b在下方變更§a模擬距離 §r(§6單位: 區塊§r) 請在點擊前保證主世界原模擬點距離內", \
-    option_sim_dist_button_cal: "[§a計算§r]", \
-    option_enabled: "§a啟用§r", \
-    option_disabled: "§c停用§r", \
+    option_button_disable: "§c停用§r]", \
+    option_button_enable: "§r[§a啟用§r", \
+    option_button_help: "[§4說明§r]", \
+    option_button_help_hoverevent: "§b點擊開啟說明選單", \
+    option_button_license: "[§4條款§r]", \
+    option_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
+    option_button_notworking: "[§4無法執行§r]", \
+    option_button_notworking_hoverevent: "§b當遇到 Tick 函式無法執行（TPA 選單無法開啟）時請點擊", \
+    option_button_set: "§r[§a設定§r]", \
     option_button_uninstall: "[§4解除安裝§r]", \
     option_button_uninstall_hoverevent: "§4點擊此按鈕來§l§n解除安裝§r§4TPA資料包! 請考慮你是否真的需要!", \
     option_button_update: "[§4更新§r]", \
     option_button_update_hoverevent: "§b點擊開始更新資料包", \
-    option_button_license: "[§4條款§r]", \
-    option_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
-    option_button_help: "[§4說明§r]", \
-    option_button_help_hoverevent: "§b點擊開啟說明選單", \
-    output_default: "你將輸出位置切換為§a聊天欄和動作欄§r", \
-    output_hide_actionbar: "你將輸出位置切換為§a僅聊天欄§r", \
-    output_hide_chatbar: "你將輸出位置切換為§a僅動作欄§r", \
-    recver_accept_tpa: ["你接受了", "的傳送請求"], \
-    recver_accept_tpa_hoverevent: "§b你所接受傳送請求的玩家", \
-    recver_accept_tpahere: ["你接受了", "的§l傳送到此處§r請求"], \
-    recver_accept_tpahere_hoverevent: "§b你所接受§l傳送到此處§r請求的玩家", \
-    recver_accept_auto: ["自動接受了", "的傳送請求"], \
-    recver_accept_auto_hoverevent: "§b向你發送傳送請求的玩家", \
-    recver_accept_toggle_on: "你開啟了§a自動接受§r", \
-    recver_accept_toggle_off: "你關閉了§a自動接受§r", \
-    recver_cancel: ["", "取消了对你的請求"], \
-    recver_cancel_hoverevent: "§b取消對你請求的玩家", \
-    recver_deny_tpa: ["你拒絕了", "的傳送請求"], \
-    recver_deny_tpa_hoverevent: "§b你所拒絕傳送請求的玩家", \
-    recver_deny_tpahere: ["你拒絕了", "的§l傳送到此處§r請求"], \
-    recver_deny_tpahere_hoverevent: "§b你所拒絕§l傳送到此處§r請求的玩家", \
-    recver_recv_button_accept: "[§a接受§r]", \
-    recver_recv_button_accept_hoverevent: "§b點擊接受他的請求", \
-    recver_recv_button_deny: "[§c拒絕§r]", \
-    recver_recv_button_deny_hoverevent: "§b點擊拒絕他的請求", \
-    recver_recv_tpa_chatbar: ["", "向你發送了一個傳送請求"], \
-    recver_recv_tpa_hoverevent: "§b向你發送傳送請求的玩家", \
-    recver_recv_tpa_actionbar: ["", "向你發送了一個傳送請求, 點頭三次以接受請求, 搖頭三次以拒絕請求"], \
-    recver_recv_tpahere_chatbar: ["", "向你發送了一個§l傳送到此處§r請求"], \
-    recver_recv_tpahere_hoverevent: "§b向你發送§l傳送到此處§r請求的玩家", \
-    recver_recv_tpahere_actionbar: ["", "向你發送了一個§l傳送到此處§r請求, 點頭三次以接受請求, 搖頭三次以拒絕請求"], \
-    recver_req_not_exist: "沒有需要處理的請求", \
-    recver_timeout: ["", "的傳送請求已逾時"], \
-    recver_timeout_hoverevent: "§b向你發送逾時請求的玩家", \
-    reqer_accept_tpa: ["正在傳送你至", "..."], \
-    reqer_accept_tpa_hoverevent: "§b接受了你的傳送請求的玩家", \
-    reqer_accept_tpahere: ["正在傳送", "至你..."], \
-    reqer_accept_tpahere_hoverevent: "§b接受了你的§l傳送到此處§r請求的玩家", \
-    reqer_accept_auto: ["對方開啟了自動接受, 將你傳送至", "..."], \
-    reqer_accept_auto_hoverevent: "§b自動同意了你的傳送請求的玩家", \
-    reqer_button_tpa: "[§b傳送§r]", \
-    reqer_button_tpa_hoverevent: "§b點擊傳送向他發送傳送請求", \
-    reqer_button_tpahere: "[§b傳送至此處§r]", \
-    reqer_button_tpahere_hoverevent: "§b點擊請求他傳送到你的目前位置", \
-    reqer_cancel: ["你取消了向", "的請求"], \
-    reqer_cancel_hoverevent: "§b你取消了請求的玩家", \
-    reqer_cancel_spec: "旁觀者模式玩家不允許§a取消請求§r", \
-    reqer_change_chatbar: ["你之前發送過了一個向", "的請求, 已取消前一個請求. 現在向", "發送了請求, 等待他接受"], \
-    reqer_change_chatbar_format: 0, \
-    reqer_change_hoverevent: "§b你之前發送請求的玩家", \
-    reqer_change_actionbar: ["你之前發送過了一個向", "的請求, 已取消前一個請求. 現在向", "發送了請求, 等待他接受, 搖頭三次以取消請求"], \
-    reqer_change_actionbar_format: 0, \
-    reqer_deny_tpa: ["", "拒絕了你的傳送請求"], \
-    reqer_deny_tpa_hoverevent: "§b拒絕了你的傳送請求的玩家", \
-    reqer_deny_tpahere: ["", "拒絕了你的傳送請求"], \
-    reqer_deny_tpahere_hoverevent: "§b拒絕了你的§l傳送到此處§r請求的玩家", \
-    reqer_recver_invalid: "你請求的玩家已離線或不允許被傳送", \
-    reqer_disabled: "伺服器不允許§a傳送§r", \
-    reqer_first_join: "[§6點我開啟TPA選單§r]", \
-    reqer_no_req_found: "你還未向玩家發送任何請求", \
-    reqer_req_button_cancel: "[§4取消§r]", \
-    reqer_req_button_cancel_hoverevent: "§b點擊取消請求", \
-    reqer_req_hoverevent: "§b你所發送請求的玩家", \
-    reqer_req_tpa_chatbar: ["你向", "發送了一個傳送請求. 等待他接受"], \
-    reqer_req_tpa_hoverevent: "§b你所發送傳送請求的玩家", \
-    reqer_req_tpa_actionbar: ["你向", "發送了一個傳送請求. 等待他接受, 搖頭三次以取消請求"], \
-    reqer_req_tpahere_chatbar: ["你向", "發送了一個傳送他到你的所在位置請求. 等待他接受"], \
-    reqer_req_tpahere_hoverevent: "§b你所發送§l傳送到此處§r請求的玩家", \
-    reqer_req_tpahere_actionbar: ["你向", "發送了一個傳送他到你的所在位置的請求. 等待他接受, 搖頭三次以取消請求"], \
-    reqer_req_not_exist: "請求的玩家不存在或不在線", \
-    reqer_self: "你不能傳送你自己", \
-    reqer_spam: "你已經向他發送過請求了", \
-    reqer_spec: "旁觀者模式玩家不允許§a傳送§r", \
-    reqer_timeout: ["你向", "的傳送請求已逾時"], \
-    reqer_timeout_hoverevent: "§b未接受你的請求的玩家", \
-    search_id_disabled: "§a搜尋ID§r不相容該遊戲版本", \
-    search_id_throw_on_invalid_char: "你輸入的名稱包含不合法的字元", \
-    search_id_unavail_player: "對方離線或不允許被傳送", \
-    simple_menu_disable: "你將TPA選單切換至§a詳細選單", \
-    simple_menu_enable: "你將TPA選單切換至§a簡略選單 §r你現在可以直接使用/trigger tpa來開啟簡略選單", \
-    simple_menu_title: "點擊下方玩家名稱發送傳送請求", \
-    simple_menu_button: "[§b詳細選單§r]", \
-    simple_menu_button_hoverevent: "§b點擊切換至詳細選單", \
-    teleport_tryagain: "請重試", \
-    tp_pos_act: ["已將你傳送至座標", ""], \
-    tp_pos_cooldown: "§a傳送座標§r還在冷卻中", \
-    tp_pos_disabled: "伺服器不允許§a傳送座標§r", \
-    tp_pos_out_of_range: "傳送距離超過了伺服器設定的半徑", \
-    tp_pos_spec: "旁觀者模式玩家不允許§a傳送座標§r", \
-    tp_pos_throw_on_invalid_char: "你輸入的座標包含不合法的字元", \
-    tp_pos_title: "在下方調整坐標: ", \
-    tp_pos_button_teleport: "[傳送]", \
-    tp_pos_button_abort: "[停止]", \
-    tp_pos_abort: "你已停止輸入傳送坐標", \
-    tpa_menu_hoverevent: ["§b點擊向", "§b發送傳送請求"], \
-    tpa_menu_title: "這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送傳送請求: ", \
-    tpahere_menu_title: "這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送§l傳送到此處§r請求: ", \
-    tpa_menu_extend_hoverevent: "§b點擊展開選單", \
-    tpa_menu_extend: "§b展開§r", \
-    tpa_menu_you: "你", \
-    tpa_menu_has_id_of: "的§a資料包ID§r是", \
-    tpa_menu_idfix_button: "§bID修復§r", \
-    tpa_menu_idfix_button_hoverevent: "§b如果你遇到兩個相同玩家擁有同一id的問題, 你可以嘗試這個修復. 此修復會重設所有玩家的id.", \
-    tpa_menu_search_id_button: "§b搜尋ID§r", \
-    tpa_menu_search_id_button_hoverevent: "§b點擊呼出聊天欄鍵盤輸入tpa指令", \
-    tpa_menu_tpamenu_button: "§b傳送選單§r", \
-    tpa_menu_tpamenu_button_hoverevent: "§b點擊來跳轉到傳送選單", \
-    tpa_menu_tpaheremenu_button: "§b傳送至此處選單§r", \
-    tpa_menu_tpaheremenu_button_hoverevent: "§b點擊來跳轉到傳送至此處選單", \
-    tpa_menu_back_button: "§b返回上一位置§r", \
-    tpa_menu_back_button_hoverevent: "§b回到傳送前位置", \
-    tpa_menu_lang_button: "§b切換語言§r", \
-    tpa_menu_lang_button_hoverevent: "§b點擊切換語言", \
-    tpa_menu_book_button: "§b取得傳送書§r", \
-    tpa_menu_book_button_hoverevent: "§b點擊來取得傳送書", \
-    tpa_menu_pos_button: "§b傳送座標§r", \
-    tpa_menu_pos_button_hoverevent: "§b點擊呼出聊天欄鍵盤輸入tpa指令", \
-    tpa_menu_here_button: "§b廣播位置§r", \
-    tpa_menu_here_button_hoverevent: "§b點擊廣播你的位置", \
-    tpa_menu_home_button: "§b傳送點選單§r", \
-    tpa_menu_home_button_hoverevent: "§b點擊開啟傳送點(home)選單", \
-    tpa_menu_auto_accept: "自動接受: ", \
-    tpa_menu_mute: "靜音資料包: ", \
-    tpa_menu_output: "輸出顯示位置: ", \
-    tpa_menu_output_default: "§b預設§r", \
-    tpa_menu_output_actionbar: "§b隱藏聊天欄§r", \
-    tpa_menu_output_chatbar: "§b隱藏動作欄§r", \
-    tpa_menu_enable: "§a開啟§r", \
-    tpa_menu_disable: "§c關閉§r", \
-    tpa_menu_refresh: "§6刷新TPA選單§r", \
-    tpa_menu_refresh_hoverevent: "§b點擊此處刷新或重新呼出TPA選單", \
-    tpa_menu_simplemenu_button: "§b簡略選單§r", \
-    tpa_menu_simplemenu_button_hoverevent: "§b切換到簡略選單", \
-    tick_not_working_cmdblk_name: "§r§b在合適的地方把它放下", \
-    extended_menu_disabled: "§a展開選單§r不相容此遊戲版本", \
-    simple_menu_disabled: "§a簡略選單§r不相容此遊戲版本", \
-    book_check_missing: "檢測到傳送書遺失，已重新給予", \
-    book_incompatible: "§a傳送書§r不相容此遊戲版本", \
-    book_refresh: "你刷新了§a傳送選單書§r", \
-    book_reget: "[§b重新取得§r]", \
-    book_reget_hoverevent: "§b點擊重新取得傳送書", \
-    book_stacking: "檢測到傳送書堆疊，已沒收多餘的書", \
-    dimension_menu_button: "[§b維度設定選單§r]", \
-    dimension_menu_button_hoverevent: "§b點擊設定維度", \
-    dimension_overworld: "主世界", \
-    dimension_the_nether: "下界", \
-    dimension_the_end: "終界", \
-    dimension_unknown: "未知維度", \
-    dimension_unknown_detected_leftpart: "檢測到未知維度(", \
-    dimension_unknown_detected_rightpart: ")，請在維度選單中設定：", \
-    extended_menu_incompatible: "§a展開選單§r不相容此遊戲版本", \
-    here_button_tpa_notavail_hoverevent: "§c玩家不允許被傳送", \
-    hoverevent_suggest_tip: "§a你應將指令補全為：", \
-    load_date_check: ["目前版本發佈於", "，請注意更新"], \
-    load_done_extra: " 完整版 ", \
-    option_advenced_warn: "下方設定為進階設定，請勿隨意修改，除非你清楚自己在做什麼", \
-    option_advenced_tip: "啟用除錯模式以調整更多設定（進階設定）", \
-    option_anchor_search_retries: "尋找傳送錨點的重試次數", \
-    option_anchor_search_retries_hoverevent: "§b在下方更改§a尋找傳送錨點的重試次數 §r(§6單位：次 §r或 §6遊戲刻／執行頻率§r)，§b調整過大會延長等待時間，過小可能導致錨點誤判或污染", \
-    option_button_notworking: "[§4無法執行§r]", \
-    option_button_notworking_hoverevent: "§b當遇到 Tick 函式無法執行（TPA 選單無法開啟）時請點擊", \
+    option_carpet_disabled: "本功能需要Carpet模組作為依賴, 而伺服器尚未安裝Carpet模組. ", \
+    option_carpet_fake_player_fix: "Carpet模組假人修復", \
     option_carpet_fake_player_fix_incompatible: "Carpet 模組假人修復不相容此版本", \
-    option_compact_ids: "是否在玩家離線後移除編號空位", \
     option_current_game_version: "目前偵測到的遊戲版本", \
+    option_debug_mode: "除錯模式", \
     option_debug_mode_hoverevent: "§b點擊下方啟用以開啟除錯模式，這會在聊天欄提供排錯訊息，但同時也可能造成洗頻", \
     option_dimension: "已相容維度", \
     option_dimension_button_add: "[§a新增§r]", \
@@ -1729,27 +1459,47 @@ data modify storage tpa:tpa temp.lang set value \
     option_dimension_button_edit_color: "[§a編輯顏色§r]", \
     option_dimension_button_edit_color_hoverevent: "§b點擊編輯該維度的主題顏色（原版 16 色英文或 #XXXXXX 十六進位）", \
     option_dimension_button_edit_id: "[§a編輯維度 ID§r]", \
+    option_dimension_button_edit_id_hoverevent: "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)", \
+    option_dimension_button_edit_id_notavail_hoverevent: "§c原版維度無法編輯", \
     option_dimension_button_edit_namespaceid: "[§a編輯命名空間 ID§r]", \
+    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                                                           xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
+    option_dimension_button_edit_namespaceid_notavail_hoverevent: "§c原版維度無法編輯", \
     option_dimension_button_edit_name: "[§a編輯名稱§r]", \
+    option_dimension_button_edit_name_hoverevent: "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車, 該項對於原版維度會跟隨語言設定而不是當前設定)", \
     option_dimension_button_remove: "[§c移除§r]", \
+    option_dimension_button_remove_hoverevent: "§b點擊移除該維度", \
     option_dimension_button_remove_notavail_hoverevent: "§c原版維度無法移除", \
+    option_dimension_hoverevent: "§b在下方設定按鈕開啟§a維度兼容§6菜單 §b同時右側的數字會是目前已兼容的維度數量", \
     option_dimension_menu_title: "伺服器相容以下維度：", \
     option_dimension_number_hoverevent_leftpart: "§b伺服器目前相容了 ", \
     option_dimension_number_hoverevent_rightpart: " 個維度", \
+    option_disabled: "§c停用§r", \
+    option_enabled: "§a啟用§r", \
+    option_frequency: "資料包執行頻率", \
+    option_frequency_hoverevent: "§b在下方變更§a資料包執行頻率 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來禁止資料包執行", \
     option_game_version: "資料包檔案相容的遊戲版本", \
-    option_max_anchor_summons_attempts: "傳送錨點最大召喚嘗試次數", \
-    option_max_anchor_summons_attempts_hoverevent: "§b在下方更改§a最大嘗試次數 §r(§6單位：次§r)，§b過大會增加卡頓，過小可能導致傳送失敗", \
+    option_home: "擁有傳送點的個數", \
+    option_home_hoverevent: "§b在下方變更§a擁有傳送點的個數 §r(§6單位: 個§r), §b填0來設定禁止傳送點 §b填-1來設定不限制傳送點的數量(不推薦)", \
+    option_lang: "伺服器語言", \
+    option_lang_hoverevent: "§b在下方進入語言選擇選單", \
+    option_player_lang: "是否允許玩家語言選擇", \
+    option_search_id: "是否停用搜尋ID", \
+    option_sim_dist: "模擬距離", \
+    option_sim_dist_button_cal: "[§a計算§r]", \
+    option_sim_dist_hoverevent: "§b在下方變更§a模擬距離 §r(§6單位: 區塊§r) 請在點擊前保證主世界原模擬點距離內", \
     option_stricter_book_check: "更嚴格的傳送書檢查", \
     option_stricter_book_check_incompatible: "更嚴格的傳送書檢查不相容此版本", \
     option_stricter_book_check_disabled: "此功能需要 Bookshelf 資料包作為依賴，但伺服器尚未安裝", \
+    option_time_out: "傳送請求逾時時間", \
+    option_time_out_hoverevent: "§b在下方變更§a傳送請求逾時時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定禁止傳送 §b填-1來設定永不逾時", \
+    option_title_line1: "======================§bTPA§6 設定選單§r=====================", \
+    option_title_line2: "請在下方調整設定: (需重新呼出選單以檢視變更)", \
+    option_tp_pos: "傳送座標允許半徑", \
+    option_tp_pos_cooldown: "傳送座標冷卻時間", \
+    option_tp_pos_cooldown_hoverevent: "§b在下方變更§a冷卻時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定無冷卻 §b填-1來設定禁止傳送", \
+    option_tp_pos_hoverevent: "§b在下方變更§a傳送座標允許半徑 §r(§6單位: 公尺§r), §b填0來設定禁止傳送 §b填-1來設定不限制半徑(不推薦)", \
+    option_tp_spec: "允許傳送旁觀者", \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
-    option_dimension_button_edit_id_hoverevent: "§b點擊編輯該維度的維度ID(點擊後請按下鍵盤上的左箭頭, 在冒號後填寫，輸入好後回車)", \
-    option_dimension_button_edit_id_notavail_hoverevent: "§c原版維度無法編輯", \
-    option_dimension_button_edit_namespaceid_hoverevent: "§b點擊編輯該維度的命名空間ID(namespace:id, source location 形如minecraft:                                                          xxx)(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫, 輸入好後回車)", \
-    option_dimension_button_edit_namespaceid_notavail_hoverevent: "§c原版維度無法編輯", \
-    option_dimension_button_edit_name_hoverevent: "§b點擊編輯該維度的顯示名稱(點擊後請按兩次鍵盤上的左箭頭, 在引號中填寫，輸入好後回車, 該項對於原版維度會跟隨語言設定而不是當前設定)", \
-    option_dimension_button_remove_hoverevent: "§b點擊移除該維度", \
-    option_dimension_hoverevent: "§b在下方設定按鈕開啟§a維度兼容§6菜單 §b同時右側的數字會是目前已兼容的維度數量", \
     option_server_calling_comment: "§l§n§4這裡是一個註解 因為上面的option_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示", \
     option_uses_binary_teleport: "是否使用二分法傳送", \
     option_uses_binary_teleport_hoverevent: "§b在下方選擇§a使用二分法傳送(啟用) §6抑或是 §c使用錨點傳送(禁用)", \
@@ -1761,16 +1511,109 @@ data modify storage tpa:tpa temp.lang set value \
     option_warp_number_hoverevent_leftpart: "§b伺服器目前設定了 ", \
     option_warp_number_hoverevent_rightpart: "§b 個公共傳送點", \
     option_uses_tick_scheduling: "是否使用/schedule指令呼叫Tick函數", \
+    output_default: "你將輸出位置切換為§a聊天欄和動作欄§r", \
+    output_hide_actionbar: "你將輸出位置切換為§a僅聊天欄§r", \
+    output_hide_chatbar: "你將輸出位置切換為§a僅動作欄§r", \
+    recver_accept_auto_hoverevent: "§b向你發送傳送請求的玩家", \
+    recver_accept_auto: ["自動接受了", "的傳送請求"], \
+    recver_accept_toggle_off: "你關閉了§a自動接受§r", \
+    recver_accept_toggle_on: "你開啟了§a自動接受§r", \
+    recver_accept_tpa_hoverevent: "§b你所接受傳送請求的玩家", \
+    recver_accept_tpa: ["你接受了", "的傳送請求"], \
+    recver_accept_tpahere_hoverevent: "§b你所接受§l傳送到此處§r請求的玩家", \
+    recver_accept_tpahere: ["你接受了", "的§l傳送到此處§r請求"], \
+    recver_cancel_hoverevent: "§b取消對你請求的玩家", \
+    recver_cancel: ["", "取消了对你的請求"], \
+    recver_deny_tpa_hoverevent: "§b你所拒絕傳送請求的玩家", \
+    recver_deny_tpa: ["你拒絕了", "的傳送請求"], \
+    recver_deny_tpahere_hoverevent: "§b你所拒絕§l傳送到此處§r請求的玩家", \
+    recver_deny_tpahere: ["你拒絕了", "的§l傳送到此處§r請求"], \
+    recver_recv_button_accept: "[§a接受§r]", \
+    recver_recv_button_accept_hoverevent: "§b點擊接受他的請求", \
+    recver_recv_button_deny: "[§c拒絕§r]", \
+    recver_recv_button_deny_hoverevent: "§b點擊拒絕他的請求", \
+    recver_accept_multiple_received: "目前狀態下無法操作§a傳送點§r", \
+    recver_accept_selector_title: "已發送的請求", \
+    recver_recv_tpa_actionbar: ["", "向你發送了一個傳送請求, 點頭三次以接受請求, 搖頭三次以拒絕請求"], \
+    recver_recv_tpa_chatbar: ["", "向你發送了一個傳送請求"], \
+    recver_recv_tpa_hoverevent: "§b向你發送傳送請求的玩家", \
+    recver_recv_tpahere_actionbar: ["", "向你發送了一個§l傳送到此處§r請求, 點頭三次以接受請求, 搖頭三次以拒絕請求"], \
+    recver_recv_tpahere_chatbar: ["", "向你發送了一個§l傳送到此處§r請求"], \
+    recver_recv_tpahere_hoverevent: "§b向你發送§l傳送到此處§r請求的玩家", \
+    recver_req_invalid: ["你向 ", " 發送的請求因目標玩家無法使用（離線或無法傳送）而已移除"], \
+    recver_req_invalid_hoverevent: "§b你所發送請求的玩家", \
+    recver_req_not_exist: "沒有需要處理的請求", \
+    recver_timeout_hoverevent: "§b向你發送逾時請求的玩家", \
+    recver_timeout: ["", "的傳送請求已逾時"], \
+    reqer_accept_auto_hoverevent: "§b自動同意了你的傳送請求的玩家", \
+    reqer_accept_auto: ["對方開啟了自動接受, 將你傳送至", "..."], \
+    reqer_accept_tpa_hoverevent: "§b接受了你的傳送請求的玩家", \
+    reqer_accept_tpa: ["正在傳送你至", "..."], \
+    reqer_accept_tpahere_hoverevent: "§b接受了你的§l傳送到此處§r請求的玩家", \
+    reqer_accept_tpahere: ["正在傳送", "至你..."], \
+    reqer_button_tpa: "[§b傳送§r]", \
+    reqer_button_tpa_hoverevent: "§b點擊傳送向他發送傳送請求", \
+    reqer_button_tpahere: "[§b傳送至此處§r]", \
+    reqer_button_tpahere_hoverevent: "§b點擊請求他傳送到你的目前位置", \
+    reqer_cancel_hoverevent: "§b你取消了請求的玩家", \
+    reqer_cancel: ["你取消了向", "的請求"], \
+    reqer_cancel_multiple_sent: "你目前有多個傳送請求，請選擇要取消的請求", \
+    reqer_cancel_selector_title: "", \
+    reqer_cancel_selector_index: ["", "项请求中的第", "项"], \
+    reqer_cancel_selector_index_format: 1, \
+    reqer_cancel_selector_you_placeholder: "你", \
+    reqer_cancel_selector_button_previous_page: "◀ 上一頁", \
+    reqer_cancel_selector_button_previous_page_hoverevent: "§b點擊查看上一頁", \
+    reqer_cancel_selector_button_next_page: "下一頁 ▶", \
+    reqer_cancel_selector_button_next_page_hoverevent: "§b點擊查看下一頁", \
+    reqer_change_actionbar: ["你之前發送過了一個向", "的請求, 已取消前一個請求. 現在向", "發送了請求, 等待他接受, 搖頭三次以取消請求"], \
+    reqer_change_actionbar_format: 0, \
+    reqer_change_chatbar: ["你之前發送過了一個向", "的請求, 已取消前一個請求. 現在向", "發送了請求, 等待他接受"], \
+    reqer_change_chatbar_format: 0, \
+    reqer_change_hoverevent: "§b你之前發送請求的玩家", \
+    reqer_deny_tpa_hoverevent: "§b拒絕了你的傳送請求的玩家", \
+    reqer_deny_tpa: ["", "拒絕了你的傳送請求"], \
+    reqer_deny_tpahere_hoverevent: "§b拒絕了你的§l傳送到此處§r請求的玩家", \
+    reqer_deny_tpahere: ["", "拒絕了你的傳送請求"], \
+    reqer_disabled: "伺服器不允許§a傳送§r", \
+    reqer_unavail: "你無法發送傳送請求", \
+    reqer_first_join: "[§6點我開啟TPA選單§r]", \
+    reqer_no_req_found: "你還未向玩家發送任何請求", \
+    reqer_recver_invalid: "你請求的玩家已離線或不允許被傳送", \
+    reqer_req_button_cancel: "[§4取消§r]", \
+    reqer_req_button_cancel_hoverevent: "§b點擊取消請求", \
+    reqer_req_hoverevent: "§b你所發送請求的玩家", \
+    reqer_req_invalid: ["你向 ", " 發送的請求因目標玩家無法使用（離線或無法傳送）而已移除"], \
+    reqer_req_invalid_hoverevent: "§b你所發送請求的玩家", \
+    reqer_req_not_exist: "請求的玩家不存在或不在線", \
+    reqer_req_tpa: ["你已向 ", " 發送傳送請求，等待對方接受"], \
+    reqer_req_tpahere: ["你已邀請 ", " 傳送到你的位置，等待對方接受"], \
+    reqer_req_tpa_hoverevent: "§b你所發送傳送請求的玩家", \
+    reqer_req_tpahere_actionbar: ["你向", "發送了一個傳送他到你的所在位置的請求. 等待他接受, 搖頭三次以取消請求"], \
+    reqer_req_tpahere_chatbar: ["你向", "發送了一個傳送他到你的所在位置請求. 等待他接受"], \
+    reqer_req_tpahere_hoverevent: "§b你所發送§l傳送到此處§r請求的玩家", \
+    reqer_self: "你不能傳送你自己", \
+    reqer_spam: "你已經向他發送過請求了", \
+    reqer_timeout_hoverevent: "§b未接受你的請求的玩家", \
+    reqer_timeout: ["你向", "的傳送請求已逾時"], \
     search_id_abort: "你停止了§a搜尋玩家編號§r", \
     search_id_dialog_done_tooltip: "§b點擊提交名字", \
     search_id_dialog_cancel: "取消", \
     search_id_dialog_cancel_tooltip: "§b點擊取消輸入", \
+    search_id_disabled: "§a搜尋ID§r不相容該遊戲版本", \
     search_id_incompatible: "§a搜尋玩家編號§r不兼容該遊戲版本", \
     search_id_keyboard_title: "請點擊下方鍵盤按鍵來在上方輸入玩家名: ", \
     search_id_name_input: "已輸入: ", \
     search_id_recall: "[§b重新呼出§r]", \
     search_id_recall_hoverevent: "§b重新呼出搜尋玩家編號軟鍵盤", \
+    search_id_throw_on_invalid_char: "你輸入的名稱包含不合法的字元", \
+    search_id_unavail_player: "對方離線或不允許被傳送", \
+    simple_menu_button: "[§b詳細選單§r]", \
+    simple_menu_button_hoverevent: "§b點擊切換至詳細選單", \
+    simple_menu_disable: "你將TPA選單切換至§a詳細選單", \
     simple_menu_incompatible: "§a簡略菜單§r不兼容此遊戲版本", \
+    simple_menu_enable: "你將TPA選單切換至§a簡略選單 §r你現在可以直接使用/trigger tpa來開啟簡略選單", \
+    simple_menu_title: "點擊下方玩家名稱發送傳送請求", \
     teleport_anchor_actionbar: "錨點傳送進度: ", \
     teleport_binary_actionbar: "二分法傳送進度: ", \
     teleport_cal_sim_dist_actionbar: "模擬距離", \
@@ -1791,6 +1634,12 @@ data modify storage tpa:tpa temp.lang set value \
     tick_not_working_tips_line1: "你現在正在呼叫Tick不工作函數 因此你應該遇到了Tick函數不工作的情況 你現在可以實現以下兩種方式的其中一種:", \
     tick_not_working_tips_line2: "        1. 設定使用/schedule指令呼叫Tick函數", \
     tick_not_working_tips_line3: "   或者 2. 把你手中的命令方塊放到隱蔽的位置 以避免被破基岩機破壞", \
+    tp_pos_abort: "你已停止輸入傳送坐標", \
+    tp_pos_act: ["已將你傳送至座標", ""], \
+    tp_pos_button_abort: "[停止]", \
+    tp_pos_button_teleport: "[傳送]", \
+    tp_pos_cooldown: "§a傳送座標§r還在冷卻中", \
+    tp_pos_disabled: "伺服器不允許§a傳送座標§r", \
     tp_pos_dialog_cancel_tooltip: "§b點擊取消輸入", \
     tp_pos_dialog_done_tooltip: "§b點擊傳送提交的座標", \
     tp_pos_dialog_set: "當前: ", \
@@ -1800,22 +1649,63 @@ data modify storage tpa:tpa temp.lang set value \
     tp_pos_dialog_set_y_tooltip: "§b點擊設定Y座標", \
     tp_pos_dialog_set_z: "設定Z座標", \
     tp_pos_dialog_set_z_tooltip: "§b點擊設定Z座標", \
+    tp_pos_out_of_range: "傳送距離超過了伺服器設定的半徑", \
     tp_pos_recall: "[§b重新呼出§r]", \
     tp_pos_recall_hoverevent: "§b點擊重新呼出傳送座標菜單", \
+    tp_pos_spec: "旁觀者模式玩家不允許§a傳送座標§r", \
+    tp_pos_throw_on_invalid_char: "你輸入的座標包含不合法的字元", \
+    tp_pos_title: "在下方調整坐標: ", \
+    tpa_menu_auto_accept: "自動接受: ", \
+    tpa_menu_back_button: "§b返回上一位置§r", \
+    tpa_menu_back_button_hoverevent: "§b回到傳送前位置", \
+    tpa_menu_book_button: "§b取得傳送書§r", \
+    tpa_menu_book_button_hoverevent: "§b點擊來取得傳送書", \
     tpa_menu_dialog: "§b對話框菜單§r", \
     tpa_menu_dialog_title: "§bTPA菜單", \
     tpa_menu_dialog_hoverevent: "§b點擊開啟對話框菜單", \
     tpa_menu_switch_hoverevent: "§b點擊切換", \
+    tpa_menu_disable: "§c關閉§r", \
     tpa_menu_disabled: "§c禁用", \
     tpa_menu_disabled_hoverevent: "§b點擊切換到§a啟用", \
+    tpa_menu_enable: "§a開啟§r", \
     tpa_menu_enabled: "§a啟用", \
     tpa_menu_enabled_hoverevent: "§b點擊切換到§c禁用", \
+    tpa_menu_extend: "§b展開§r", \
+    tpa_menu_extend_hoverevent: "§b點擊展開選單", \
+    tpa_menu_has_id_of: "的§a資料包ID§r是", \
     tpa_menu_has_id_of_hoverevent: "§b資料包內部分配給每個玩家的編號 用於對應玩家", \
+    tpa_menu_here_button: "§b廣播位置§r", \
+    tpa_menu_here_button_hoverevent: "§b點擊廣播你的位置", \
+    tpa_menu_home_button: "§b傳送點選單§r", \
+    tpa_menu_home_button_hoverevent: "§b點擊開啟傳送點(home)選單", \
     tpa_menu_warp_button: "§b地標菜單§r", \
     tpa_menu_warp_button_hoverevent: "§b點擊開啟公共傳送點(地標)菜單", \
+    tpa_menu_hoverevent: ["§b點擊向", "§b發送傳送請求"], \
+    tpa_menu_lang_button: "§b切換語言§r", \
+    tpa_menu_lang_button_hoverevent: "§b點擊切換語言", \
+    tpa_menu_mute: "靜音資料包: ", \
+    tpa_menu_output: "輸出顯示位置: ", \
+    tpa_menu_output_actionbar: "§b隱藏聊天欄§r", \
+    tpa_menu_output_chatbar: "§b隱藏動作欄§r", \
+    tpa_menu_output_default: "§b預設§r", \
     tpa_menu_output_actionbar_hidden: "§b僅聊天欄§r", \
     tpa_menu_output_chatbar_hidden: "§b僅動作欄§r", \
     tpa_menu_output_no_hidden: "§b動作欄和聊天欄§r", \
+    tpa_menu_pos_button: "§b傳送座標§r", \
+    tpa_menu_pos_button_hoverevent: "§b點擊呼出聊天欄鍵盤輸入tpa指令", \
+    tpa_menu_refresh: "§6刷新TPA選單§r", \
+    tpa_menu_refresh_hoverevent: "§b點擊此處刷新或重新呼出TPA選單", \
+    tpa_menu_search_id_button: "§b搜尋ID§r", \
+    tpa_menu_search_id_button_hoverevent: "§b點擊呼出聊天欄鍵盤輸入tpa指令", \
+    tpa_menu_simplemenu_button: "§b簡略選單§r", \
+    tpa_menu_simplemenu_button_hoverevent: "§b切換到簡略選單", \
+    tpa_menu_title: "這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送傳送請求: ", \
+    tpa_menu_tpaheremenu_button: "§b傳送至此處選單§r", \
+    tpa_menu_tpaheremenu_button_hoverevent: "§b點擊來跳轉到傳送至此處選單", \
+    tpa_menu_tpamenu_button: "§b傳送選單§r", \
+    tpa_menu_tpamenu_button_hoverevent: "§b點擊來跳轉到傳送選單", \
+    tpa_menu_you: "你", \
+    tpahere_menu_title: "這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送§l傳送到此處§r請求: ", \
     uninstall_done: "§a成功解除安裝並停用資料包。§r請至資料夾刪除資料包本體即可完全解除安裝，或點擊右側按鈕重新啟用：", \
     uninstall_enable_folder_button: "啟用1", \
     uninstall_enable_folder_button_hoverevent: "點擊啟用資料夾形式的資料包（若存在）", \
@@ -1879,34 +1769,8 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set_format: 0, \
     warp_set_position: "座標", \
     warp_set_default_name: "未命名傳送點", \
-    warp_slot_disabled_leftpart: "你所訪問的公共傳送點", \
-    warp_slot_disabled_rightpart: "已被禁用", \
-    warp_spec: "旁觀者模式玩家不允許傳送§a公共傳送點§r", \
+    warp_slot_disabled: ["你所访问的公共传送点", "已被禁用"], \
     warp_teleport: ["已將你傳送至", ""], \
-    reqer_unavail: "你無法發送傳送請求", \
-    reqer_req_tpa: ["你已向 ", " 發送傳送請求，等待對方接受"], \
-    recver_req_invalid: ["你向 ", " 發送的請求因目標玩家無法使用（離線或無法傳送）而已移除"], \
-    recver_req_invalid_hoverevent: "§b你所發送請求的玩家", \
-    reqer_req_invalid: ["你向 ", " 發送的請求因目標玩家無法使用（離線或無法傳送）而已移除"], \
-    reqer_req_invalid_hoverevent: "§b你所發送請求的玩家", \
-    reqer_req_tpahere: ["你已邀請 ", " 傳送到你的位置，等待對方接受"], \
-    reqer_cancel_multiple_sent: "你目前有多個傳送請求，請選擇要取消的請求", \
-    reqer_cancel_selector_title: "", \
-    reqer_cancel_selector_index: ["", "项请求中的第", "项"], \
-    reqer_cancel_selector_index_format: 1, \
-    reqer_cancel_selector_you_placeholder: "你", \
-    reqer_cancel_selector_button_previous_page: "◀ 上一頁", \
-    reqer_cancel_selector_button_previous_page_hoverevent: "§b點擊查看上一頁", \
-    reqer_cancel_selector_button_next_page: "下一頁 ▶", \
-    reqer_cancel_selector_button_next_page_hoverevent: "§b點擊查看下一頁", \
-    recver_accept_multiple_received: "目前狀態下無法操作§a傳送點§r", \
-    recver_accept_selector_title: "已發送的請求", \
-    home_unavail: "当前状态下无法操作§a传送点§r目前狀態下無法操作§a傳送點§r", \
-    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
-    book_unavail: "当前状态下无法操作§a传送书§r", \
-    here_overworld_postion_hoverevent: "主世界坐標", \
-    here_nether_postion_hoverevent: "地獄坐標", \
-    dialog: "已开启对话框菜单", \
     warp_unavail: "当前状态下无法操作§a公共传送点§r" \
 } \
 ]

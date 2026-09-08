@@ -53,6 +53,7 @@ scoreboard objectives add tpa.output_ dummy
 # For only 1.21.6+
 scoreboard objectives add tpa.dialog trigger
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Objectives have been added. (1/6)"]
+
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Resetting online player scores... (2/6)"]
 scoreboard players set @a tpa.tpaccept 0
 scoreboard players set @a tpa.if_death 0
@@ -67,6 +68,7 @@ data modify storage tpa:tpa back set value []
 data modify storage tpa:tpa requests set value []
 data modify storage tpa:tpa request_menu.menus set value []
 data modify storage tpa:tpa request_selector set value {req: [], recv: []}
+data modify storage tpa:tpa warp[0] set value {}
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp

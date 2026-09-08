@@ -1,4 +1,4 @@
-# Parent Function: tpa:back/available
+# Parent function: tpa:back/available
 
 data remove storage tpa:tpa temp.back_result 
 scoreboard players set #back.store_result tpa.variables 1

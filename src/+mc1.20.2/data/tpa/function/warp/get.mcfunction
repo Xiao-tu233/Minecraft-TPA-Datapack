@@ -1,5 +1,9 @@
 # Parent function: tpa:warp
-# @macro: {index: int}
-# @output: temp.warp
-$execute store result score #warp_disabled tpa.variables run data get storage tpa:tpa warp[$(index)].disabled
-$execute if score #warp_disabled tpa.variables matches 0 run data modify storage tpa:tpa temp.warp set from storage tpa:tpa warp[$(index)]
+
+data remove storage tpa:tpa temp.warp_result
+scoreboard players set #warp.store_result tpa.variables 1
+scoreboard players set #warp.remove_current tpa.variables 0
+scoreboard players set #warp.replace_current tpa.variables 0
+function tpa:warp/scan
+
+execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Warp get: found for ", {selector: "@s"}, {translate: "(UID:§a%s§r)", with: [{score: {name: "#uid", objective: "tpa.variables"}}]}]
