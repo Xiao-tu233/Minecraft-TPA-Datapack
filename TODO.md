@@ -198,13 +198,10 @@ Project To-do lists:
      -  [text](src/+mc1.20.2/data/tpa/function/warp/dialog.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/disable.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/enable.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/disabled.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/load_edit_buttons.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/movedown_macro.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/movedown.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/moveup_macro.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/moveup.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/out_of_range.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/remove.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/set_default_name_macro.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/set_default_name.mcfunction) 
@@ -216,7 +213,6 @@ Project To-do lists:
      -  [text](src/+mc1.20.2/data/tpa/function/warp/show_add.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/show_each_macro.mcfunction) 
      -  [text](src/+mc1.20.2/data/tpa/function/warp/show_each.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/unavailable.mcfunction)
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
 
