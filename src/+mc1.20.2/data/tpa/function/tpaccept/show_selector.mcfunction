@@ -14,6 +14,7 @@ data modify storage tpa:tpa temp.output.next_page set string storage tpa:tpa tem
 execute store result storage tpa:tpa temp.output.total_requests int 1 run scoreboard players get #selector.total_requests tpa.variables
 data modify storage tpa:tpa temp.output.total_requests set string storage tpa:tpa temp.output.total_requests
 execute store result storage tpa:tpa temp.output.total_pages int 1 run scoreboard players get #selector.total_pages tpa.variables
+data modify storage tpa:tpa temp.output.total_pages set string storage tpa:tpa temp.output.total_pages
 
 function tpa:tpaccept/selector/build_page
 

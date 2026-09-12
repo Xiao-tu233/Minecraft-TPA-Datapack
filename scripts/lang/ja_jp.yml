@@ -6,7 +6,6 @@ header: '[§bTPA§r] '
 back_act: 前回の位置にテレポートしました
 back_disabled: §a前回の位置に戻り§rはサーバーで無効になっています
 back_not_exist: 前回の位置を見つかりしませんでした
-back_unavail: 当前状态下无法操作§a返回上一位置§r
 book_check_missing: TPAブックが失われたため、再度付与しました
 book_disabled: §aTPAブック§rはサーバーで無効になっています
 book_incompatible: §aTPAブック§rはこのゲームバージョンと互換性がありません
@@ -18,8 +17,6 @@ book_reget_hoverevent: §bクリックしてTPAブックを再取得
 book_stacking: TPAブックがスタックされていることを検出しました、余分な本は没収されました
 book_stop: §aTPAブック§rの使用を停止しました。TPAメニューで再取得できます
 book_title: '§r§b你TPAメニューの本 §a[投げてリフレッシュ] '
-book_unavail: 当前状态下无法操作§a传送书§r
-dialog: 已开启对话框菜单
 dimension_menu_button: '[§bディメンション設定メニュー§r]'
 dimension_menu_button_hoverevent: §bクリックしてディメンション設定を変更
 dimension_overworld: オーバーワールド
@@ -29,8 +26,6 @@ dimension_unknown: 不明なディメンション
 dimension_unknown_detected_leftpart: 不明なディメンションを検出しました(
 dimension_unknown_detected_rightpart: '), ディメンションメニューで設定してください: '
 here_button_tpa: '[§bテレポートリクエスト§r]'
-here_overworld_postion_hoverevent: オーバーワールドの座標
-here_nether_postion_hoverevent: ネザーの座標
 here_button_tpa_notavail_hoverevent: §cプレイヤーはテレポートを許可していません
 here_voxel_hoverevent: §bクリックしてVoxelMapのパスを追加
 here_xaero_hoverevent: §6クリックしてXearo's Minimapのパスを追加
@@ -207,8 +202,6 @@ recver_recv_tpa_hoverevent: §bあなたにテレポートリクエストを送�
 recver_recv_tpahere_actionbar: '%sから§lこちらへのテレポート§rリクエストが届きました。/trigger tpaccept で承認します'
 recver_recv_tpahere_chatbar: '%sから§lこちらへのテレポート§rリクエストが届きました'
 recver_recv_tpahere_hoverevent: §bあなたに§lこちらへのテレポート§rリクエストを送ったプレイヤー
-recver_req_invalid: 你向%s发送的请求因目标玩家不可用(离线或无法传送)已被移除
-recver_req_invalid_hoverevent: §b你所发送请求的玩家
 recver_req_not_exist: 処理すべきリクエストはありません
 recver_timeout_hoverevent: §bタイムアウトしたリクエストのプレイヤー
 recver_timeout: '%sのテレポートリクエストはタイムアウトしました'
@@ -424,7 +417,6 @@ warp_button_setpos: '[§a位置設定§r]'
 warp_button_setpos_hoverevent: §bクリックしてこのワープを現在位置に設定
 warp_desc_disabled: §cこのワープは無効化されています
 warp_disabled: §aワープ§rはサーバーで無効化されています
-warp_menu_title: 'サーバーに設定されているワープ: '
 warp_menu_edit_tip: 現在編集モードです。下のインデックスから操作スロットを選択し、下のボタンでデータを変更、最後に適用をクリックして反映してください
 warp_number: ワープ#
 warp_out_of_range: このワープは未設定です
@@ -432,6 +424,4 @@ warp_select: '%sを編集中のスロットとして選択しました'
 warp_set: '%1$sを%2$s'
 warp_set_position: 座標
 warp_set_default_name: 名前未設定ワープ
-warp_slot_disabled: 你所访问的公共传送点%s已被禁用
 warp_teleport: テレポートされました：%s
-warp_unavail: 当前状态下无法操作§a公共传送点§r

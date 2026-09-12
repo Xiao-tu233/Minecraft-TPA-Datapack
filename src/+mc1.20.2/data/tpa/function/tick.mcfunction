@@ -9,7 +9,12 @@ execute unless entity @n[type=minecraft:text_display, tag=tpa.text_display] run 
 
 scoreboard players add @a tpa.is_online 0
 execute as @p[scores={tpa.is_online=0}] run function tpa:on_join
+
 execute if entity @p[scores={tpa.is_online=0}] run return run scoreboard players set #if_skip_tick tpa.variables 1
+ 
+# Update player online state
+execute store result score #current_players tpa.variables if entity @a
+execute unless score #current_players tpa.variables = #total_players tpa.variables run function tpa:tick/sync_online_state
 
 # Trigger objectives enables
 scoreboard players enable @a tpa.help
@@ -48,10 +53,6 @@ execute store result storage tpa:tpa option.carpet_fake_player_fix int 1 run sco
 
 # Update every requests: timer, availability, etc.
 function tpa:requests/update
-
-# Update player online state
-execute store result score #current_players tpa.variables if entity @a
-execute unless score #current_players tpa.variables = #total_players tpa.variables run function tpa:tick/sync_online_state
 
 # Set back pos before death, and kill tpa book who dropped
 execute as @a[scores={tpa.if_death=1..}] run function tpa:player_died

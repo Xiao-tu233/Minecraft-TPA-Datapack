@@ -169,6 +169,7 @@ Project To-do lists:
                     execute as @a[scores={...=1..}] run tp @s ~1 ~ ~
                     execute as @a[scores={...=1..}] run scoreboard players remove @s ... 1
       The reason why it can't be a must because we must have the maxinum distance when using binary format.
+- [ ] output/ 文件夹的接口应该更明确使用temp.output存储内的内容作为参数来源 不应该使用loaded_lang
 
 ## UX Improvements (“玩家体验哪里不好？”)
 - [x] 应该有2个启用按钮对应两种文件名在tpa:uninstall
@@ -194,27 +195,15 @@ Project To-do lists:
       期望的效果: name 键 在被取名之前 默认不存在或者特殊值 如果被命名则显示该命名名称
 - [ ] Dialog 没有玩家名被显示 （考虑读一遍request_menu相关逻辑）
 - [ ] warp 尚未分离条件和使用新的output接口
-  - [ ] 如下文件尚未重构 可能在未来被重构:
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/dialog.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/disable.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/enable.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/movedown_macro.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/movedown.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/moveup_macro.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/moveup.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/remove.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_default_name_macro.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_default_name.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_desc_dialog.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_desc.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_name_dialog.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/set_name.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/setpos.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/show_add.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/show_each_macro.mcfunction) 
-     -  [text](src/+mc1.20.2/data/tpa/function/warp/show_each.mcfunction) 
+   - [ ] 重构所有warp rm, set, move
+   - [ ] warp的新增按钮
+   - [ ] Dialog
+- [ ] 实现release_meta.yml
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
+- [ ] 菜单中的按钮静态检测可以通过堆叠enabled(带指令)按钮和disabled按钮显示并动态调整两者按钮文本来动态调整按钮是否存在点击事件 e.g, [返回上一位置][返回上一位置] 前者括号为白色且带点击命令 后者反之 选择显示何者来决定是否存在点击事件
+- [x] coords in here copiable
+      - compatible with other dimensions
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index

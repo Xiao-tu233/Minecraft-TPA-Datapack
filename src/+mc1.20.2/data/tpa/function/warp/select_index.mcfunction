@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/available, tpa:warp/resolve_slot
+# Parent function: tpa:warp/enabled
 
 # Check if warp is in range
 scoreboard players set #warp.out_of_range tpa.variables 0

@@ -6,7 +6,7 @@ header: '[§bTPA§r] '
 back_act: Teleported you to the previous position
 back_disabled: Server doesn't allow going §aBack§r
 back_not_exist: No previous position found
-back_unavail: 当前状态下无法操作§a返回上一位置§r
+back_unavail: You can't operate §aBack§r in current state
 book_check_missing: Detected missing teleport book, reissued.
 book_disabled: Server doesn't allow §aTPA Book§r
 book_incompatible: §aTeleport Book§r is incompatible with this game version
@@ -18,8 +18,6 @@ book_reget_hoverevent: §bClick to reget the teleport book
 book_stacking: Detected stacked teleport books, extra copies have been removed
 book_stop: You have stopped using §aTPA Book§r, you can get it again in TPA menu
 book_title: '§r§bTPA menu book §a[Press Q to Refresh] '
-book_unavail: 当前状态下无法操作§a传送书§r
-dialog: 已开启对话框菜单
 dimension_menu_button: '[§bDimension Settings Menu§r]'
 dimension_menu_button_hoverevent: §bClick to configure dimensions
 dimension_overworld: Overworld
@@ -29,8 +27,6 @@ dimension_unknown: Unknown Dimension
 dimension_unknown_detected_leftpart: Unknown dimension detected (
 dimension_unknown_detected_rightpart: '), please configure it in the dimension menu: '
 here_button_tpa: '[§bRequest Teleport§r]'
-here_overworld_postion_hoverevent: Overworld Positon
-here_nether_postion_hoverevent: Nether Position
 here_button_tpa_notavail_hoverevent: §cThis player does not allow teleporting
 here_voxel_hoverevent: §bClick to add VoxelMap Waypoint
 here_xaero_hoverevent: §6Click to add Xearo's Minimap Waypoint
@@ -57,7 +53,6 @@ home_remove_hoverevent: §bHome which has been removed
 home_remove: You removed Home#%s
 home_set: You have set Home#%1$sat%2$s
 home_set_position: Positon
-home_unavail: 当前状态下无法操作§a传送点§r
 hoverevent_suggest_tip: '§aYou should complete the command as: '
 lang_button: '[§6Click here to select language§r]'
 lang_button_hoverevent: §bClick to open language menu
@@ -217,16 +212,12 @@ recver_recv_button_accept: '[§aACCEPT§r]'
 recver_recv_button_accept_hoverevent: §bClick to accept the request
 recver_recv_button_deny: '[§cDENY§r]'
 recver_recv_button_deny_hoverevent: §bClick to deny the request
-recver_accept_multiple_received: 你目前收到多个传送请求 请选择你想要接受的请求
-recver_accept_selector_title: 收到的请求
 recver_recv_tpa_actionbar: '%ssent you a teleport request. Nod 3 times to accept, shake head 3 times to deny.'
 recver_recv_tpa_chatbar: '%ssent you a teleport request'
 recver_recv_tpa_hoverevent: §bThe player who sent you a teleport request
 recver_recv_tpahere_actionbar: '%ssent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny.'
 recver_recv_tpahere_chatbar: '%ssent you a §ltpahere§r request'
 recver_recv_tpahere_hoverevent: §bThe player who sent you a §ltpahere§r request
-recver_req_invalid: 你向%s发送的请求因目标玩家不可用(离线或无法传送)已被移除
-recver_req_invalid_hoverevent: §b你所发送请求的玩家
 recver_req_not_exist: No pending requests to process
 recver_timeout_hoverevent: §bThe player whose request to you timed out
 recver_timeout: '%s''s teleport request timed out'
@@ -242,14 +233,6 @@ reqer_button_tpahere: '[§bTeleport Here§r]'
 reqer_button_tpahere_hoverevent: §bClick to request they teleport to your current location
 reqer_cancel_hoverevent: §bThe player whose request you canceled
 reqer_cancel: You canceled the request to %s's request
-reqer_cancel_multiple_sent: 你目前有多个传送请求 请选择你想要取消的请求
-reqer_cancel_selector_title: 请求列表
-reqer_cancel_selector_index: '%2$s项请求中的第%1$s项'
-reqer_cancel_selector_you_placeholder: 你
-reqer_cancel_selector_button_previous_page: ◀ 上一页
-reqer_cancel_selector_button_previous_page_hoverevent: §b点击查看上一页
-reqer_cancel_selector_button_next_page: 下一页 ▶
-reqer_cancel_selector_button_next_page_hoverevent: §b点击查看下一页
 reqer_change_actionbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new request
   to %2$s, waiting for acceptance. Shake head 3 times to cancel
 reqer_change_chatbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new request
@@ -260,18 +243,13 @@ reqer_deny_tpa: Teleporting to %s...
 reqer_deny_tpahere_hoverevent: §bThe player who denied your §ltpahere§r request
 reqer_deny_tpahere: The requestor is denied from teleporting here.%sto you...
 reqer_disabled: Server does not allow §ateleportation§r
-reqer_unavail: 你不可以发送传送请求
 reqer_first_join: '[§6Click me to open TPA Menu§r]'
 reqer_no_req_found: You haven't sent any requests
 reqer_recver_invalid: Target offline or not teleportable
 reqer_req_button_cancel: '[§4Cancel§r]'
 reqer_req_button_cancel_hoverevent: §bClick to cancel the request
 reqer_req_hoverevent: §bThe player you sent a request to
-reqer_req_invalid: 你向%s发送的请求因目标玩家不可用(离线或无法传送)已被移除
-reqer_req_invalid_hoverevent: §b你所发送请求的玩家
 reqer_req_not_exist: The requested player does not exist or is offline
-reqer_req_tpa: 你向%s发送了一个传送请求. 等待他接受
-reqer_req_tpahere: 你请求了%s传送到你的位置. 等待他接受
 reqer_req_tpa_hoverevent: §bThe player you sent a teleport request to
 reqer_req_tpahere_actionbar: You sent a request to %ssent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times
   to cancel
@@ -314,9 +292,6 @@ teleport_sim_dist_warn_button_calc_hoverevent: '§bClick to start automatically 
   operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded
   before clicking.'
 teleport_sim_dist_warn_button_binary: '[§aBinary Search§r]'
-teleport_sim_dist_warn_button_binary_hoverevent: §b点击将传送方式设置为二分法传送
-tick_not_working_button_set_schedule: §b[设置]
-tick_not_working_button_set_schedule_hoverevent: §b点击设置/schedule指令调用Tick函数
 tick_not_working_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!
 tick_not_working_server_calling_comment: §l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended
   for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized
@@ -461,7 +436,6 @@ warp_button_setpos: '[§aSet Position§r]'
 warp_button_setpos_hoverevent: §bClick to set this public teleport spot to your current position
 warp_desc_disabled: §cThis public teleport spot is disabled
 warp_disabled: §aPublic teleport spot§r has been disabled by the server
-warp_menu_title: 'The server has set the following public teleport spots: '
 warp_menu_edit_tip: You are currently in edit mode. Select the operation slot below by index, then modify specific data using
   the buttons below. Finally, click Apply to apply the changes
 warp_number: Warp#
@@ -472,4 +446,3 @@ warp_set_position: coordinates
 warp_set_default_name: UnnamedWarp
 warp_slot_disabled: The Warp you  named %s has been disabled
 warp_teleport: You have been teleported to %s
-warp_unavail: 当前状态下无法操作§a公共传送点§r

@@ -13,7 +13,7 @@
   scoreboard players operation #uid tpa.variables = @s tpa.uid \
 
 # Add sentinel
-data modify storage tpa:tpa warp[0].page append value {sentinel: 1b}
+data modify storage tpa:tpa warp[0].pages append value {sentinel: 1b}
 
 # Rotate list
 execute unless data storage tpa:tpa warp[0].pages[0].sentinel run function tpa:warp/page/scan/loop

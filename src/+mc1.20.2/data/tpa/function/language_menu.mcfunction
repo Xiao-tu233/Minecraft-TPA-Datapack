@@ -1,4 +1,5 @@
 scoreboard players set @s tpa.language 0
+
 scoreboard players set #is_server_selecting tpa.variables 0
 execute if score #target_lang tpa.variables = #target_lang tpa.variables run scoreboard players set #is_server_selecting tpa.variables 1
 function tpa:load_lang

@@ -68,7 +68,7 @@ data modify storage tpa:tpa back set value []
 data modify storage tpa:tpa requests set value []
 data modify storage tpa:tpa request_menu.menus set value []
 data modify storage tpa:tpa request_selector set value {req: [], recv: []}
-data modify storage tpa:tpa warp[0] set value {}
+data modify storage tpa:tpa warp[0] set value {pages: []}
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp

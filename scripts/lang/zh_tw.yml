@@ -6,7 +6,6 @@ header: '[§bTPA§r] '
 back_act: 已將你傳送至上一位置
 back_disabled: 伺服器不允許§a返回上一位置§r
 back_not_exist: 沒有找到上一位置
-back_unavail: 当前状态下无法操作§a返回上一位置§r
 book_check_missing: 檢測到傳送書遺失，已重新給予
 book_disabled: §a傳送書§r不相容該遊戲版本
 book_incompatible: §a傳送書§r不相容此遊戲版本
@@ -18,8 +17,6 @@ book_reget_hoverevent: §b點擊重新取得傳送書
 book_stacking: 檢測到傳送書堆疊，已沒收多餘的書
 book_stop: 你已停止使用§a傳送書§r，可在 TPA 選單中再次取得
 book_title: '§r§b傳送選單書 §a[按Q刷新] '
-book_unavail: 当前状态下无法操作§a传送书§r
-dialog: 已开启对话框菜单
 dimension_menu_button: '[§b維度設定選單§r]'
 dimension_menu_button_hoverevent: §b點擊設定維度
 dimension_overworld: 主世界
@@ -29,8 +26,6 @@ dimension_unknown: 未知維度
 dimension_unknown_detected_leftpart: 檢測到未知維度(
 dimension_unknown_detected_rightpart: )，請在維度選單中設定：
 here_button_tpa: '[§b請求傳送§r]'
-here_overworld_postion_hoverevent: 主世界坐標
-here_nether_postion_hoverevent: 地獄坐標
 here_button_tpa_notavail_hoverevent: §c玩家不允許被傳送
 here_voxel_hoverevent: §b點擊新增VoxelMap路徑點
 here_xaero_hoverevent: §6點擊新增Xaero's Minimap路徑點
@@ -57,7 +52,7 @@ home_remove_hoverevent: §b移除的傳送點
 home_remove: 你移除了傳送點#%s
 home_set: 你把傳送點#%1$s設定為%2$s
 home_set_position: 座標
-home_unavail: 当前状态下无法操作§a传送点§r目前狀態下無法操作§a傳送點§r
+home_unavail: 目前狀態下無法操作§a傳送點§r
 hoverevent_suggest_tip: §a你應將指令補全為：
 lang_button: '[§6點擊這裡選擇語言§r]'
 lang_button_hoverevent: §b點擊檢視語言選單
@@ -226,7 +221,6 @@ reqer_cancel_hoverevent: §b你取消了請求的玩家
 reqer_cancel: 你取消了向%s的請求
 reqer_cancel_multiple_sent: 你目前有多個傳送請求，請選擇要取消的請求
 reqer_cancel_selector_title: ''
-reqer_cancel_selector_index: '%2$s项请求中的第%1$s项'
 reqer_cancel_selector_you_placeholder: 你
 reqer_cancel_selector_button_previous_page: ◀ 上一頁
 reqer_cancel_selector_button_previous_page_hoverevent: §b點擊查看上一頁
@@ -424,7 +418,6 @@ warp_button_setpos: '[§a取址§r]'
 warp_button_setpos_hoverevent: §b點擊把該公共傳送點設置到當前位置
 warp_desc_disabled: §c該公共傳送點已被禁用
 warp_disabled: §a公共傳送點§r已被伺服器禁用
-warp_menu_title: 伺服器設定了以下的公共傳送點：
 warp_menu_edit_tip: 目前處於編輯模式，請在下方通過索引選擇操作槽位後，在下方按鈕更改具體資料，最後點擊應用來應用更改
 warp_number: 公共傳送點#
 warp_out_of_range: 該公共傳送點尚未設定
@@ -432,6 +425,4 @@ warp_select: 你選中了%s作為正在編輯的槽位
 warp_set: 你把%1$s設為%2$s
 warp_set_position: 座標
 warp_set_default_name: 未命名傳送點
-warp_slot_disabled: 你所访问的公共传送点%s已被禁用
 warp_teleport: 已將你傳送至%s
-warp_unavail: 当前状态下无法操作§a公共传送点§r

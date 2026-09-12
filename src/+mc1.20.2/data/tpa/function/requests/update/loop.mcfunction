@@ -16,11 +16,11 @@ execute as @a if score @s tpa.uid = #requests.current_reqer tpa.variables if pre
 execute if score #requests.vaild_players tpa.variables matches ..1 run scoreboard players set #requests.invalid tpa.variables 2
 
 # Tick timer: originally from tpa:req_timer(merged)
-execute if score @s tpa.req_timer <= #ticks_skipped tpa.variables \
-    run scoreboard players set @s tpa.req_timer 0
+execute if score #requests.current_timer tpa.variables <= #ticks_skipped tpa.variables \
+    run scoreboard players set #requests.current_timer tpa.variables 0
 # else:
-# execute if score @s tpa.req_timer > #ticks_skipped tpa.variables run
-    scoreboard players operation @s tpa.req_timer -= #ticks_skipped tpa.variables
+execute if score #requests.current_timer tpa.variables > #ticks_skipped tpa.variables \
+    run scoreboard players operation #requests.current_timer tpa.variables -= #ticks_skipped tpa.variables
 execute store result storage tpa:tpa requests[0].timer int 1 run scoreboard players get #requests.current_timer tpa.variables
 
 data modify storage tpa:tpa requests append from storage tpa:tpa requests[0]

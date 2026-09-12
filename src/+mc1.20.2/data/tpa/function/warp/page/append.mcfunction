@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/page/set
+# Parent function: tpa:warp/page/set, tpa:warp/enabled
 
 data modify storage tpa:tpa temp.warp.page_candidate set value {}
 execute store result storage tpa:tpa temp.warp.page_candidate.uid int 1 run scoreboard players get #uid tpa.variables

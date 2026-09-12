@@ -1,7 +1,7 @@
 # Parent function: tpa:warp
 # @macro: {dim: str, x: int, y: int, z: int}
 function tpa:back/set
-$execute in $(dimension) run tp @s $(x) $(y) $(z)
+$execute in $(dim) run tp @s $(x) $(y) $(z)
 
 function tpa:sounds/tp
 

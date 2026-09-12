@@ -34,8 +34,8 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown_detected_leftpart: "检测到未知维度(", \
     dimension_unknown_detected_rightpart: "), 请在维度菜单设置: ", \
     here_button_tpa: "§b请求传送§r", \
-    here_overworld_postion_hoverevent: "主世界坐标", \
-    here_nether_postion_hoverevent: "地狱坐标", \
+    here_dim_postion_hoverevent: ["", "坐标"], \
+    here_postion_hoverevent: "点击复制坐标", \
     here_button_tpa_notavail_hoverevent: "§c玩家不允许被传送", \
     here_voxel_hoverevent: "§b点击添加VoxelMap路径点", \
     here_xaero_hoverevent: "§6点击添加Xearo's Minimap路径点", \
@@ -400,42 +400,50 @@ data modify storage tpa:tpa temp.lang set value \
     update_step5_hoverevent: "点击加载数据包", \
     update_step5_rightpart: " 如果出现未知的记分项 请从第3步开始检查 这可能是由数据包安装版本不正确或未知不正确所导致的 其他问题请咨询Xiao_tu233", \
     update_nextstep: "§b[下一步]", \
-    warp_button_add: "[§a新建传送点§r]", \
+    warp_button_add: "§a新建传送点§r", \
     warp_button_add_hoverevent: "§b点击在当前位置新建一个公共传送点", \
     warp_button_apply: "[§a应用§r]", \
     warp_button_apply_hoverevent: "§b点击应用所缓存的更改", \
     warp_button_cancel: "[§c取消§r]", \
     warp_button_cancel_hoverevent: "§b点击放弃所缓存的更改", \
-    warp_button_enable: "[§a启用§r]", \
+    warp_button_enable: "§a启用§r", \
     warp_button_enable_hoverevent: "§b点击启用该公共传送点", \
-    warp_button_disable: "[§c禁用§r]", \
+    warp_button_disable: "§c禁用§r", \
     warp_button_disable_hoverevent: "§b点击禁用该公共传送点(除名字之外的相关信息将被隐藏 启用以查看)", \
-    warp_button_moveup: "[§d上移§r]", \
+    warp_button_moveup: "§d上移§r", \
     warp_button_moveup_hoverevent: "§b点击互换该公共传送点与上方公共传送点的位置", \
     warp_button_moveup_notavail_hoverevent: "§c无法上移, 该传送点已经位于最上方", \
-    warp_button_movedown: "[§d下移§r]", \
+    warp_button_movedown: "§d下移§r", \
     warp_button_movedown_hoverevent: "§b点击互换该公共传送点与下方公共传送点的位置", \
-    warp_button_tp: "[§b传送§r]", \
+    warp_button_tp: "§b传送§r", \
     warp_button_tp_hoverevent: "§b点击传送到该公共传送点", \
-    warp_button_rm: "[§c移除§r]", \
+    warp_button_rm: "§c移除§r", \
     warp_button_rm_hoverevent: "§b点击移除该公共传送点", \
     warp_button_select: "[§a选择§r]", \
     warp_button_select_hoverevent: "§b点击选择该公共传送点槽位, 以作为应用时写入更改的槽位", \
     warp_button_unselect: "[§c取消选择§r]", \
     warp_button_unselect_hoverevent: "§b点击取消选择该公共传送点槽位", \
-    warp_button_setdesc: "[§a设描述§r]", \
+    warp_button_setdesc: "§a设描述§r", \
     warp_button_setdesc_hoverevent: "§b点击设置该公共传送点的描述(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
-    warp_button_setname: "[§a取名§r]", \
+    warp_button_setname: "§a取名§r", \
     warp_button_setname_hoverevent: "§b点击设置该公共传送点的名字(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
-    warp_button_setpos: "[§a取址§r]", \
+    warp_button_setpos: "§a取址§r", \
     warp_button_setpos_hoverevent: "§b点击把该公共传送点设置到当前位置", \
     warp_desc_disabled: "§c该公共传送点已被禁用", \
     warp_disabled: "§a公共传送点§r已被服务器禁用", \
-    warp_menu_title: "服务器设置了如下的公共传送点: ", \
+    warp_hoverevent_location: ["", "中的", ""], \
+    warp_hoverevent_location_format: 1, \
     warp_menu_edit_tip: "目前处于编辑模式 请在下方通过索引选择操作槽位后在下方按钮更改具体数据最后点击应用来应用更改", \
     warp_number: "公共传送点#", \
     warp_out_of_range: "该公共传送点尚未设置", \
     warp_select: ["你选中了", "作为正在编辑的槽位"], \
+    warp_selector_title: "公共传送点列表", \
+    warp_selector_index: ["", "项传送点中的第", "项"], \
+    warp_selector_index_format: 1, \
+    warp_selector_button_previous_page: "◀ 上一页", \
+    warp_selector_button_previous_page_hoverevent: "§b点击查看上一页", \
+    warp_selector_button_next_page: "下一页 ▶", \
+    warp_selector_button_next_page_hoverevent: "§b点击查看下一页", \
     warp_set: ["你把", "设置为", ""], \
     warp_set_format: 0, \
     warp_set_position: "坐标", \
@@ -454,7 +462,7 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "Teleported you to the previous position", \
     back_disabled: "Server doesn't allow going §aBack§r", \
     back_not_exist: "No previous position found", \
-    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
+    back_unavail: "You can't operate §aBack§r in current state", \
     book_check_missing: "Detected missing teleport book, reissued.", \
     book_disabled: "Server doesn't allow §aTPA Book§r", \
     book_incompatible: "§aTeleport Book§r is incompatible with this game version", \
@@ -466,8 +474,6 @@ data modify storage tpa:tpa temp.lang set value \
     book_stacking: "Detected stacked teleport books, extra copies have been removed", \
     book_stop: "You have stopped using §aTPA Book§r, you can get it again in TPA menu", \
     book_title: "§r§bTPA menu book §a[Press Q to Refresh] ", \
-    book_unavail: "当前状态下无法操作§a传送书§r", \
-    dialog: "已开启对话框菜单", \
     dimension_menu_button: "[§bDimension Settings Menu§r]", \
     dimension_menu_button_hoverevent: "§bClick to configure dimensions", \
     dimension_overworld: "Overworld", \
@@ -477,8 +483,6 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown_detected_leftpart: "Unknown dimension detected (", \
     dimension_unknown_detected_rightpart: "), please configure it in the dimension menu: ", \
     here_button_tpa: "[§bRequest Teleport§r]", \
-    here_overworld_postion_hoverevent: "Overworld Positon", \
-    here_nether_postion_hoverevent: "Nether Position", \
     here_button_tpa_notavail_hoverevent: "§cThis player does not allow teleporting", \
     here_voxel_hoverevent: "§bClick to add VoxelMap Waypoint", \
     here_xaero_hoverevent: "§6Click to add Xearo's Minimap Waypoint", \
@@ -506,7 +510,6 @@ data modify storage tpa:tpa temp.lang set value \
     home_set: ["You have set Home#", "at", ""], \
     home_set_format: 0, \
     home_set_position: "Positon", \
-    home_unavail: "当前状态下无法操作§a传送点§r", \
     hoverevent_suggest_tip: "§aYou should complete the command as: ", \
     lang_button: "[§6Click here to select language§r]", \
     lang_button_hoverevent: "§bClick to open language menu", \
@@ -646,16 +649,12 @@ data modify storage tpa:tpa temp.lang set value \
     recver_recv_button_accept_hoverevent: "§bClick to accept the request", \
     recver_recv_button_deny: "[§cDENY§r]", \
     recver_recv_button_deny_hoverevent: "§bClick to deny the request", \
-    recver_accept_multiple_received: "你目前收到多个传送请求 请选择你想要接受的请求", \
-    recver_accept_selector_title: "收到的请求", \
     recver_recv_tpa_actionbar: ["", "sent you a teleport request. Nod 3 times to accept, shake head 3 times to deny."], \
     recver_recv_tpa_chatbar: ["", "sent you a teleport request"], \
     recver_recv_tpa_hoverevent: "§bThe player who sent you a teleport request", \
     recver_recv_tpahere_actionbar: ["", "sent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny."], \
     recver_recv_tpahere_chatbar: ["", "sent you a §ltpahere§r request"], \
     recver_recv_tpahere_hoverevent: "§bThe player who sent you a §ltpahere§r request", \
-    recver_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
-    recver_req_invalid_hoverevent: "§b你所发送请求的玩家", \
     recver_req_not_exist: "No pending requests to process", \
     recver_timeout_hoverevent: "§bThe player whose request to you timed out", \
     recver_timeout: ["", "'s teleport request timed out"], \
@@ -671,15 +670,6 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_button_tpahere_hoverevent: "§bClick to request they teleport to your current location", \
     reqer_cancel_hoverevent: "§bThe player whose request you canceled", \
     reqer_cancel: ["You canceled the request to ", "'s request"], \
-    reqer_cancel_multiple_sent: "你目前有多个传送请求 请选择你想要取消的请求", \
-    reqer_cancel_selector_title: "请求列表", \
-    reqer_cancel_selector_index: ["", "项请求中的第", "项"], \
-    reqer_cancel_selector_index_format: 1, \
-    reqer_cancel_selector_you_placeholder: "你", \
-    reqer_cancel_selector_button_previous_page: "◀ 上一页", \
-    reqer_cancel_selector_button_previous_page_hoverevent: "§b点击查看上一页", \
-    reqer_cancel_selector_button_next_page: "下一页 ▶", \
-    reqer_cancel_selector_button_next_page_hoverevent: "§b点击查看下一页", \
     reqer_change_actionbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance. Shake head 3 times to cancel"], \
     reqer_change_actionbar_format: 0, \
     reqer_change_chatbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance"], \
@@ -690,18 +680,13 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_deny_tpahere_hoverevent: "§bThe player who denied your §ltpahere§r request", \
     reqer_deny_tpahere: ["The requestor is denied from teleporting here.", "to you..."], \
     reqer_disabled: "Server does not allow §ateleportation§r", \
-    reqer_unavail: "你不可以发送传送请求", \
     reqer_first_join: "[§6Click me to open TPA Menu§r]", \
     reqer_no_req_found: "You haven't sent any requests", \
     reqer_recver_invalid: "Target offline or not teleportable", \
     reqer_req_button_cancel: "[§4Cancel§r]", \
     reqer_req_button_cancel_hoverevent: "§bClick to cancel the request", \
     reqer_req_hoverevent: "§bThe player you sent a request to", \
-    reqer_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
-    reqer_req_invalid_hoverevent: "§b你所发送请求的玩家", \
     reqer_req_not_exist: "The requested player does not exist or is offline", \
-    reqer_req_tpa: ["你向", "发送了一个传送请求. 等待他接受"], \
-    reqer_req_tpahere: ["你请求了", "传送到你的位置. 等待他接受"], \
     reqer_req_tpa_hoverevent: "§bThe player you sent a teleport request to", \
     reqer_req_tpahere_actionbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times to cancel"], \
     reqer_req_tpahere_chatbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance"], \
@@ -740,9 +725,6 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
     teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                                   This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
     teleport_sim_dist_warn_button_binary: "[§aBinary Search§r]", \
-    teleport_sim_dist_warn_button_binary_hoverevent: "§b点击将传送方式设置为二分法传送", \
-    tick_not_working_button_set_schedule: "§b[设置]", \
-    tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
     tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
     tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                                  ", \
@@ -874,7 +856,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_setpos_hoverevent: "§bClick to set this public teleport spot to your current position", \
     warp_desc_disabled: "§cThis public teleport spot is disabled", \
     warp_disabled: "§aPublic teleport spot§r has been disabled by the server", \
-    warp_menu_title: "The server has set the following public teleport spots: ", \
     warp_menu_edit_tip: "You are currently in edit mode. Select the operation slot below by index, then modify specific data using the buttons below. Finally, click Apply to apply the changes", \
     warp_number: "Warp#", \
     warp_out_of_range: "This public teleport spot has not been set yet", \
@@ -884,8 +865,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set_position: "coordinates", \
     warp_set_default_name: "UnnamedWarp", \
     warp_slot_disabled: ["The Warp you  named ", " has been disabled"], \
-    warp_teleport: ["You have been teleported to ", ""], \
-    warp_unavail: "当前状态下无法操作§a公共传送点§r" \
+    warp_teleport: ["You have been teleported to ", ""] \
 }, \
   {\
     lang: "ja_jp", \
@@ -897,7 +877,6 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "前回の位置にテレポートしました", \
     back_disabled: "§a前回の位置に戻り§rはサーバーで無効になっています", \
     back_not_exist: "前回の位置を見つかりしませんでした", \
-    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
     book_check_missing: "TPAブックが失われたため、再度付与しました", \
     book_disabled: "§aTPAブック§rはサーバーで無効になっています", \
     book_incompatible: "§aTPAブック§rはこのゲームバージョンと互換性がありません", \
@@ -909,8 +888,6 @@ data modify storage tpa:tpa temp.lang set value \
     book_stacking: "TPAブックがスタックされていることを検出しました、余分な本は没収されました", \
     book_stop: "§aTPAブック§rの使用を停止しました。TPAメニューで再取得できます", \
     book_title: "§r§b你TPAメニューの本 §a[投げてリフレッシュ] ", \
-    book_unavail: "当前状态下无法操作§a传送书§r", \
-    dialog: "已开启对话框菜单", \
     dimension_menu_button: "[§bディメンション設定メニュー§r]", \
     dimension_menu_button_hoverevent: "§bクリックしてディメンション設定を変更", \
     dimension_overworld: "オーバーワールド", \
@@ -920,8 +897,6 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown_detected_leftpart: "不明なディメンションを検出しました(", \
     dimension_unknown_detected_rightpart: "), ディメンションメニューで設定してください: ", \
     here_button_tpa: "[§bテレポートリクエスト§r]", \
-    here_overworld_postion_hoverevent: "オーバーワールドの座標", \
-    here_nether_postion_hoverevent: "ネザーの座標", \
     here_button_tpa_notavail_hoverevent: "§cプレイヤーはテレポートを許可していません", \
     here_voxel_hoverevent: "§bクリックしてVoxelMapのパスを追加", \
     here_xaero_hoverevent: "§6クリックしてXearo's Minimapのパスを追加", \
@@ -1097,8 +1072,6 @@ data modify storage tpa:tpa temp.lang set value \
     recver_recv_tpahere_actionbar: ["", "から§lこちらへのテレポート§rリクエストが届きました。/trigger tpaccept で承認します"], \
     recver_recv_tpahere_chatbar: ["", "から§lこちらへのテレポート§rリクエストが届きました"], \
     recver_recv_tpahere_hoverevent: "§bあなたに§lこちらへのテレポート§rリクエストを送ったプレイヤー", \
-    recver_req_invalid: ["你向", "发送的请求因目标玩家不可用(离线或无法传送)已被移除"], \
-    recver_req_invalid_hoverevent: "§b你所发送请求的玩家", \
     recver_req_not_exist: "処理すべきリクエストはありません", \
     recver_timeout_hoverevent: "§bタイムアウトしたリクエストのプレイヤー", \
     recver_timeout: ["", "のテレポートリクエストはタイムアウトしました"], \
@@ -1317,7 +1290,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_setpos_hoverevent: "§bクリックしてこのワープを現在位置に設定", \
     warp_desc_disabled: "§cこのワープは無効化されています", \
     warp_disabled: "§aワープ§rはサーバーで無効化されています", \
-    warp_menu_title: "サーバーに設定されているワープ: ", \
     warp_menu_edit_tip: "現在編集モードです。下のインデックスから操作スロットを選択し、下のボタンでデータを変更、最後に適用をクリックして反映してください", \
     warp_number: "ワープ#", \
     warp_out_of_range: "このワープは未設定です", \
@@ -1326,9 +1298,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set_format: 0, \
     warp_set_position: "座標", \
     warp_set_default_name: "名前未設定ワープ", \
-    warp_slot_disabled: ["你所访问的公共传送点", "已被禁用"], \
-    warp_teleport: ["テレポートされました：", ""], \
-    warp_unavail: "当前状态下无法操作§a公共传送点§r" \
+    warp_teleport: ["テレポートされました：", ""] \
 }, \
   {\
     lang: "zh_tw", \
@@ -1340,7 +1310,6 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "已將你傳送至上一位置", \
     back_disabled: "伺服器不允許§a返回上一位置§r", \
     back_not_exist: "沒有找到上一位置", \
-    back_unavail: "当前状态下无法操作§a返回上一位置§r", \
     book_check_missing: "檢測到傳送書遺失，已重新給予", \
     book_disabled: "§a傳送書§r不相容該遊戲版本", \
     book_incompatible: "§a傳送書§r不相容此遊戲版本", \
@@ -1352,8 +1321,6 @@ data modify storage tpa:tpa temp.lang set value \
     book_stacking: "檢測到傳送書堆疊，已沒收多餘的書", \
     book_stop: "你已停止使用§a傳送書§r，可在 TPA 選單中再次取得", \
     book_title: "§r§b傳送選單書 §a[按Q刷新] ", \
-    book_unavail: "当前状态下无法操作§a传送书§r", \
-    dialog: "已开启对话框菜单", \
     dimension_menu_button: "[§b維度設定選單§r]", \
     dimension_menu_button_hoverevent: "§b點擊設定維度", \
     dimension_overworld: "主世界", \
@@ -1363,8 +1330,6 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown_detected_leftpart: "檢測到未知維度(", \
     dimension_unknown_detected_rightpart: ")，請在維度選單中設定：", \
     here_button_tpa: "[§b請求傳送§r]", \
-    here_overworld_postion_hoverevent: "主世界坐標", \
-    here_nether_postion_hoverevent: "地獄坐標", \
     here_button_tpa_notavail_hoverevent: "§c玩家不允許被傳送", \
     here_voxel_hoverevent: "§b點擊新增VoxelMap路徑點", \
     here_xaero_hoverevent: "§6點擊新增Xaero's Minimap路徑點", \
@@ -1392,7 +1357,7 @@ data modify storage tpa:tpa temp.lang set value \
     home_set: ["你把傳送點#", "設定為", ""], \
     home_set_format: 0, \
     home_set_position: "座標", \
-    home_unavail: "当前状态下无法操作§a传送点§r目前狀態下無法操作§a傳送點§r", \
+    home_unavail: "目前狀態下無法操作§a傳送點§r", \
     hoverevent_suggest_tip: "§a你應將指令補全為：", \
     lang_button: "[§6點擊這裡選擇語言§r]", \
     lang_button_hoverevent: "§b點擊檢視語言選單", \
@@ -1559,8 +1524,6 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_cancel: ["你取消了向", "的請求"], \
     reqer_cancel_multiple_sent: "你目前有多個傳送請求，請選擇要取消的請求", \
     reqer_cancel_selector_title: "", \
-    reqer_cancel_selector_index: ["", "项请求中的第", "项"], \
-    reqer_cancel_selector_index_format: 1, \
     reqer_cancel_selector_you_placeholder: "你", \
     reqer_cancel_selector_button_previous_page: "◀ 上一頁", \
     reqer_cancel_selector_button_previous_page_hoverevent: "§b點擊查看上一頁", \
@@ -1760,7 +1723,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_setpos_hoverevent: "§b點擊把該公共傳送點設置到當前位置", \
     warp_desc_disabled: "§c該公共傳送點已被禁用", \
     warp_disabled: "§a公共傳送點§r已被伺服器禁用", \
-    warp_menu_title: "伺服器設定了以下的公共傳送點：", \
     warp_menu_edit_tip: "目前處於編輯模式，請在下方通過索引選擇操作槽位後，在下方按鈕更改具體資料，最後點擊應用來應用更改", \
     warp_number: "公共傳送點#", \
     warp_out_of_range: "該公共傳送點尚未設定", \
@@ -1769,9 +1731,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set_format: 0, \
     warp_set_position: "座標", \
     warp_set_default_name: "未命名傳送點", \
-    warp_slot_disabled: ["你所访问的公共传送点", "已被禁用"], \
-    warp_teleport: ["已將你傳送至", ""], \
-    warp_unavail: "当前状态下无法操作§a公共传送点§r" \
+    warp_teleport: ["已將你傳送至", ""] \
 } \
 ]
 data modify storage tpa:tpa lang append from storage tpa:tpa temp.lang[]
