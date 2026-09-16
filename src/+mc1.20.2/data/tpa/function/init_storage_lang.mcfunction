@@ -474,6 +474,8 @@ data modify storage tpa:tpa temp.lang set value \
     book_stacking: "Detected stacked teleport books, extra copies have been removed", \
     book_stop: "You have stopped using §aTPA Book§r, you can get it again in TPA menu", \
     book_title: "§r§bTPA menu book §a[Press Q to Refresh] ", \
+    book_unavail: "You are not allowed to use the §aTeleport Book§r in the current state", \
+    dialog: "Dialog menu opened", \
     dimension_menu_button: "[§bDimension Settings Menu§r]", \
     dimension_menu_button_hoverevent: "§bClick to configure dimensions", \
     dimension_overworld: "Overworld", \
@@ -483,6 +485,8 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown_detected_leftpart: "Unknown dimension detected (", \
     dimension_unknown_detected_rightpart: "), please configure it in the dimension menu: ", \
     here_button_tpa: "[§bRequest Teleport§r]", \
+    here_dim_postion_hoverevent: ["Position in ", ""], \
+    here_postion_hoverevent: "Click to copy coordinates", \
     here_button_tpa_notavail_hoverevent: "§cThis player does not allow teleporting", \
     here_voxel_hoverevent: "§bClick to add VoxelMap Waypoint", \
     here_xaero_hoverevent: "§6Click to add Xearo's Minimap Waypoint", \
@@ -510,6 +514,7 @@ data modify storage tpa:tpa temp.lang set value \
     home_set: ["You have set Home#", "at", ""], \
     home_set_format: 0, \
     home_set_position: "Positon", \
+    home_unavail: "You are not allowed to use the §aTeleport Book§r in the current state", \
     hoverevent_suggest_tip: "§aYou should complete the command as: ", \
     lang_button: "[§6Click here to select language§r]", \
     lang_button_hoverevent: "§bClick to open language menu", \
@@ -649,12 +654,16 @@ data modify storage tpa:tpa temp.lang set value \
     recver_recv_button_accept_hoverevent: "§bClick to accept the request", \
     recver_recv_button_deny: "[§cDENY§r]", \
     recver_recv_button_deny_hoverevent: "§bClick to deny the request", \
+    recver_accept_multiple_received: "You currently have multiple teleport requests. Please select the request you want to accept", \
+    recver_accept_selector_title: "Received Requests", \
     recver_recv_tpa_actionbar: ["", "sent you a teleport request. Nod 3 times to accept, shake head 3 times to deny."], \
     recver_recv_tpa_chatbar: ["", "sent you a teleport request"], \
     recver_recv_tpa_hoverevent: "§bThe player who sent you a teleport request", \
     recver_recv_tpahere_actionbar: ["", "sent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny."], \
     recver_recv_tpahere_chatbar: ["", "sent you a §ltpahere§r request"], \
     recver_recv_tpahere_hoverevent: "§bThe player who sent you a §ltpahere§r request", \
+    recver_req_invalid: ["Your request to ", " has been removed since the target player is unavailable (offline or unable to teleport)"], \
+    recver_req_invalid_hoverevent: "§bThe player you sent a request to", \
     recver_req_not_exist: "No pending requests to process", \
     recver_timeout_hoverevent: "§bThe player whose request to you timed out", \
     recver_timeout: ["", "'s teleport request timed out"], \
@@ -670,6 +679,15 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_button_tpahere_hoverevent: "§bClick to request they teleport to your current location", \
     reqer_cancel_hoverevent: "§bThe player whose request you canceled", \
     reqer_cancel: ["You canceled the request to ", "'s request"], \
+    reqer_cancel_multiple_sent: "You currently have multiple teleport requests. Please select the request you want to cancel", \
+    reqer_cancel_selector_title: "Request List", \
+    reqer_cancel_selector_index: ["Requests ", " of ", ""], \
+    reqer_cancel_selector_index_format: 0, \
+    reqer_cancel_selector_you_placeholder: "You", \
+    reqer_cancel_selector_button_previous_page: "◀ Previous Page", \
+    reqer_cancel_selector_button_previous_page_hoverevent: "§bClick to turn to the previous page", \
+    reqer_cancel_selector_button_next_page: "Next Page ▶", \
+    reqer_cancel_selector_button_next_page_hoverevent: "§bClick to turn to the next page", \
     reqer_change_actionbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance. Shake head 3 times to cancel"], \
     reqer_change_actionbar_format: 0, \
     reqer_change_chatbar: ["You previously sent a request to ", "'s request. The previous request was canceled. Sent a new request to ", ", waiting for acceptance"], \
@@ -680,12 +698,15 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_deny_tpahere_hoverevent: "§bThe player who denied your §ltpahere§r request", \
     reqer_deny_tpahere: ["The requestor is denied from teleporting here.", "to you..."], \
     reqer_disabled: "Server does not allow §ateleportation§r", \
+    reqer_unavail: "You are not allowed to sent teleport requests in the current state", \
     reqer_first_join: "[§6Click me to open TPA Menu§r]", \
     reqer_no_req_found: "You haven't sent any requests", \
     reqer_recver_invalid: "Target offline or not teleportable", \
     reqer_req_button_cancel: "[§4Cancel§r]", \
     reqer_req_button_cancel_hoverevent: "§bClick to cancel the request", \
     reqer_req_hoverevent: "§bThe player you sent a request to", \
+    reqer_req_invalid: ["Your request to ", " has been removed because the target player is unavailable (offline or unable to teleport)"], \
+    reqer_req_invalid_hoverevent: "§bThe player you sent a request to", \
     reqer_req_not_exist: "The requested player does not exist or is offline", \
     reqer_req_tpa_hoverevent: "§bThe player you sent a teleport request to", \
     reqer_req_tpahere_actionbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times to cancel"], \
@@ -856,16 +877,25 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_setpos_hoverevent: "§bClick to set this public teleport spot to your current position", \
     warp_desc_disabled: "§cThis public teleport spot is disabled", \
     warp_disabled: "§aPublic teleport spot§r has been disabled by the server", \
+    warp_hoverevent_location: ["", " of ", ""], \
+    warp_hoverevent_location_format: 0, \
     warp_menu_edit_tip: "You are currently in edit mode. Select the operation slot below by index, then modify specific data using the buttons below. Finally, click Apply to apply the changes", \
     warp_number: "Warp#", \
     warp_out_of_range: "This public teleport spot has not been set yet", \
     warp_select: ["You have selected", "as the slot being edited"], \
+    warp_selector_title: "Warp List", \
+    warp_selector_index: ["Warp ", " of %2$"], \
+    warp_selector_button_previous_page: "◀ Previous Page", \
+    warp_selector_button_previous_page_hoverevent: "§bClick to turn to the previous page", \
+    warp_selector_button_next_page: "nuNext Page ▶ll", \
+    warp_selector_button_next_page_hoverevent: "§bClick to turn to the next page", \
     warp_set: ["You have set", "to", ""], \
     warp_set_format: 0, \
     warp_set_position: "coordinates", \
     warp_set_default_name: "UnnamedWarp", \
     warp_slot_disabled: ["The Warp you  named ", " has been disabled"], \
-    warp_teleport: ["You have been teleported to ", ""] \
+    warp_teleport: ["You have been teleported to ", ""], \
+    warp_unavail: "You are not allowed to access §aWarps§r in the current state" \
 }, \
   {\
     lang: "ja_jp", \
@@ -877,6 +907,7 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "前回の位置にテレポートしました", \
     back_disabled: "§a前回の位置に戻り§rはサーバーで無効になっています", \
     back_not_exist: "前回の位置を見つかりしませんでした", \
+    back_unavail: "現在の状態では§a前の位置に戻る§rことはできません", \
     book_check_missing: "TPAブックが失われたため、再度付与しました", \
     book_disabled: "§aTPAブック§rはサーバーで無効になっています", \
     book_incompatible: "§aTPAブック§rはこのゲームバージョンと互換性がありません", \
@@ -888,6 +919,8 @@ data modify storage tpa:tpa temp.lang set value \
     book_stacking: "TPAブックがスタックされていることを検出しました、余分な本は没収されました", \
     book_stop: "§aTPAブック§rの使用を停止しました。TPAメニューで再取得できます", \
     book_title: "§r§b你TPAメニューの本 §a[投げてリフレッシュ] ", \
+    book_unavail: "現在の状態では§aテレポートブック§rを使用できません", \
+    dialog: "ダイアログメニューを開きました", \
     dimension_menu_button: "[§bディメンション設定メニュー§r]", \
     dimension_menu_button_hoverevent: "§bクリックしてディメンション設定を変更", \
     dimension_overworld: "オーバーワールド", \
@@ -897,6 +930,8 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown_detected_leftpart: "不明なディメンションを検出しました(", \
     dimension_unknown_detected_rightpart: "), ディメンションメニューで設定してください: ", \
     here_button_tpa: "[§bテレポートリクエスト§r]", \
+    here_dim_postion_hoverevent: ["", "での座標"], \
+    here_postion_hoverevent: "クリックして座標をコピー", \
     here_button_tpa_notavail_hoverevent: "§cプレイヤーはテレポートを許可していません", \
     here_voxel_hoverevent: "§bクリックしてVoxelMapのパスを追加", \
     here_xaero_hoverevent: "§6クリックしてXearo's Minimapのパスを追加", \
@@ -1072,6 +1107,8 @@ data modify storage tpa:tpa temp.lang set value \
     recver_recv_tpahere_actionbar: ["", "から§lこちらへのテレポート§rリクエストが届きました。/trigger tpaccept で承認します"], \
     recver_recv_tpahere_chatbar: ["", "から§lこちらへのテレポート§rリクエストが届きました"], \
     recver_recv_tpahere_hoverevent: "§bあなたに§lこちらへのテレポート§rリクエストを送ったプレイヤー", \
+    recver_req_invalid: ["", "へのリクエストは、対象のプレイヤーが利用できないため（オフラインまたはテレポート不可）、削除されました"], \
+    recver_req_invalid_hoverevent: "§bリクエストを送信したプレイヤー", \
     recver_req_not_exist: "処理すべきリクエストはありません", \
     recver_timeout_hoverevent: "§bタイムアウトしたリクエストのプレイヤー", \
     recver_timeout: ["", "のテレポートリクエストはタイムアウトしました"], \
@@ -1290,15 +1327,26 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_setpos_hoverevent: "§bクリックしてこのワープを現在位置に設定", \
     warp_desc_disabled: "§cこのワープは無効化されています", \
     warp_disabled: "§aワープ§rはサーバーで無効化されています", \
+    warp_hoverevent_location: ["", "件中", ""], \
+    warp_hoverevent_location_format: 1, \
     warp_menu_edit_tip: "現在編集モードです。下のインデックスから操作スロットを選択し、下のボタンでデータを変更、最後に適用をクリックして反映してください", \
     warp_number: "ワープ#", \
     warp_out_of_range: "このワープは未設定です", \
     warp_select: ["", "を編集中のスロットとして選択しました"], \
+    warp_selector_title: "ワープ一覧", \
+    warp_selector_index: ["", "個のワープ中", "個"], \
+    warp_selector_index_format: 1, \
+    warp_selector_button_previous_page: "◀ 前のページ", \
+    warp_selector_button_previous_page_hoverevent: "§bクリックして前のページを表示", \
+    warp_selector_button_next_page: "次のページ ▶", \
+    warp_selector_button_next_page_hoverevent: "§bクリックして次のページを表示", \
     warp_set: ["", "を", ""], \
     warp_set_format: 0, \
     warp_set_position: "座標", \
     warp_set_default_name: "名前未設定ワープ", \
-    warp_teleport: ["テレポートされました：", ""] \
+    warp_slot_disabled: ["アクセスしようとしたワープ", "は無効化されています"], \
+    warp_teleport: ["テレポートされました：", ""], \
+    warp_unavail: "現在の状態では§aワープ§rを使用できません" \
 }, \
   {\
     lang: "zh_tw", \
@@ -1310,6 +1358,7 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "已將你傳送至上一位置", \
     back_disabled: "伺服器不允許§a返回上一位置§r", \
     back_not_exist: "沒有找到上一位置", \
+    back_unavail: "目前狀態下無法操作§a返回上一個位置§r", \
     book_check_missing: "檢測到傳送書遺失，已重新給予", \
     book_disabled: "§a傳送書§r不相容該遊戲版本", \
     book_incompatible: "§a傳送書§r不相容此遊戲版本", \
@@ -1321,6 +1370,8 @@ data modify storage tpa:tpa temp.lang set value \
     book_stacking: "檢測到傳送書堆疊，已沒收多餘的書", \
     book_stop: "你已停止使用§a傳送書§r，可在 TPA 選單中再次取得", \
     book_title: "§r§b傳送選單書 §a[按Q刷新] ", \
+    book_unavail: "目前狀態下無法操作§a傳送書§r", \
+    dialog: "已開啟對話框選單", \
     dimension_menu_button: "[§b維度設定選單§r]", \
     dimension_menu_button_hoverevent: "§b點擊設定維度", \
     dimension_overworld: "主世界", \
@@ -1330,6 +1381,8 @@ data modify storage tpa:tpa temp.lang set value \
     dimension_unknown_detected_leftpart: "檢測到未知維度(", \
     dimension_unknown_detected_rightpart: ")，請在維度選單中設定：", \
     here_button_tpa: "[§b請求傳送§r]", \
+    here_dim_postion_hoverevent: ["", "座標"], \
+    here_postion_hoverevent: "點擊複製座標", \
     here_button_tpa_notavail_hoverevent: "§c玩家不允許被傳送", \
     here_voxel_hoverevent: "§b點擊新增VoxelMap路徑點", \
     here_xaero_hoverevent: "§6點擊新增Xaero's Minimap路徑點", \
@@ -1524,6 +1577,8 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_cancel: ["你取消了向", "的請求"], \
     reqer_cancel_multiple_sent: "你目前有多個傳送請求，請選擇要取消的請求", \
     reqer_cancel_selector_title: "", \
+    reqer_cancel_selector_index: ["", "項請求中的第", "項"], \
+    reqer_cancel_selector_index_format: 1, \
     reqer_cancel_selector_you_placeholder: "你", \
     reqer_cancel_selector_button_previous_page: "◀ 上一頁", \
     reqer_cancel_selector_button_previous_page_hoverevent: "§b點擊查看上一頁", \
@@ -1723,15 +1778,26 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_setpos_hoverevent: "§b點擊把該公共傳送點設置到當前位置", \
     warp_desc_disabled: "§c該公共傳送點已被禁用", \
     warp_disabled: "§a公共傳送點§r已被伺服器禁用", \
+    warp_hoverevent_location: ["", "中的", ""], \
+    warp_hoverevent_location_format: 1, \
     warp_menu_edit_tip: "目前處於編輯模式，請在下方通過索引選擇操作槽位後，在下方按鈕更改具體資料，最後點擊應用來應用更改", \
     warp_number: "公共傳送點#", \
     warp_out_of_range: "該公共傳送點尚未設定", \
     warp_select: ["你選中了", "作為正在編輯的槽位"], \
+    warp_selector_title: "公開傳送點列表", \
+    warp_selector_index: ["", "項傳送點中的第", "項"], \
+    warp_selector_index_format: 1, \
+    warp_selector_button_previous_page: "◀ 上一頁", \
+    warp_selector_button_previous_page_hoverevent: "§b點擊查看上一頁", \
+    warp_selector_button_next_page: "下一頁 ▶", \
+    warp_selector_button_next_page_hoverevent: "§b點擊查看下一頁", \
     warp_set: ["你把", "設為", ""], \
     warp_set_format: 0, \
     warp_set_position: "座標", \
     warp_set_default_name: "未命名傳送點", \
-    warp_teleport: ["已將你傳送至", ""] \
+    warp_slot_disabled: ["你所造訪的公共傳送點", "已停用"], \
+    warp_teleport: ["已將你傳送至", ""], \
+    warp_unavail: "目前狀態下無法操作§a公開傳送點§r" \
 } \
 ]
 data modify storage tpa:tpa lang append from storage tpa:tpa temp.lang[]

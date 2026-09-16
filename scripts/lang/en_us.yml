@@ -18,6 +18,8 @@ book_reget_hoverevent: §bClick to reget the teleport book
 book_stacking: Detected stacked teleport books, extra copies have been removed
 book_stop: You have stopped using §aTPA Book§r, you can get it again in TPA menu
 book_title: '§r§bTPA menu book §a[Press Q to Refresh] '
+book_unavail: You are not allowed to use the §aTeleport Book§r in the current state
+dialog: Dialog menu opened
 dimension_menu_button: '[§bDimension Settings Menu§r]'
 dimension_menu_button_hoverevent: §bClick to configure dimensions
 dimension_overworld: Overworld
@@ -27,6 +29,8 @@ dimension_unknown: Unknown Dimension
 dimension_unknown_detected_leftpart: Unknown dimension detected (
 dimension_unknown_detected_rightpart: '), please configure it in the dimension menu: '
 here_button_tpa: '[§bRequest Teleport§r]'
+here_dim_postion_hoverevent: Position in %s
+here_postion_hoverevent: Click to copy coordinates
 here_button_tpa_notavail_hoverevent: §cThis player does not allow teleporting
 here_voxel_hoverevent: §bClick to add VoxelMap Waypoint
 here_xaero_hoverevent: §6Click to add Xearo's Minimap Waypoint
@@ -53,6 +57,7 @@ home_remove_hoverevent: §bHome which has been removed
 home_remove: You removed Home#%s
 home_set: You have set Home#%1$sat%2$s
 home_set_position: Positon
+home_unavail: You are not allowed to use the §aTeleport Book§r in the current state
 hoverevent_suggest_tip: '§aYou should complete the command as: '
 lang_button: '[§6Click here to select language§r]'
 lang_button_hoverevent: §bClick to open language menu
@@ -212,12 +217,16 @@ recver_recv_button_accept: '[§aACCEPT§r]'
 recver_recv_button_accept_hoverevent: §bClick to accept the request
 recver_recv_button_deny: '[§cDENY§r]'
 recver_recv_button_deny_hoverevent: §bClick to deny the request
+recver_accept_multiple_received: You currently have multiple teleport requests. Please select the request you want to accept
+recver_accept_selector_title: Received Requests
 recver_recv_tpa_actionbar: '%ssent you a teleport request. Nod 3 times to accept, shake head 3 times to deny.'
 recver_recv_tpa_chatbar: '%ssent you a teleport request'
 recver_recv_tpa_hoverevent: §bThe player who sent you a teleport request
 recver_recv_tpahere_actionbar: '%ssent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny.'
 recver_recv_tpahere_chatbar: '%ssent you a §ltpahere§r request'
 recver_recv_tpahere_hoverevent: §bThe player who sent you a §ltpahere§r request
+recver_req_invalid: Your request to %s has been removed since the target player is unavailable (offline or unable to teleport)
+recver_req_invalid_hoverevent: §bThe player you sent a request to
 recver_req_not_exist: No pending requests to process
 recver_timeout_hoverevent: §bThe player whose request to you timed out
 recver_timeout: '%s''s teleport request timed out'
@@ -233,6 +242,14 @@ reqer_button_tpahere: '[§bTeleport Here§r]'
 reqer_button_tpahere_hoverevent: §bClick to request they teleport to your current location
 reqer_cancel_hoverevent: §bThe player whose request you canceled
 reqer_cancel: You canceled the request to %s's request
+reqer_cancel_multiple_sent: You currently have multiple teleport requests. Please select the request you want to cancel
+reqer_cancel_selector_title: Request List
+reqer_cancel_selector_index: Requests %1$s of %2$s
+reqer_cancel_selector_you_placeholder: You
+reqer_cancel_selector_button_previous_page: ◀ Previous Page
+reqer_cancel_selector_button_previous_page_hoverevent: §bClick to turn to the previous page
+reqer_cancel_selector_button_next_page: Next Page ▶
+reqer_cancel_selector_button_next_page_hoverevent: §bClick to turn to the next page
 reqer_change_actionbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new request
   to %2$s, waiting for acceptance. Shake head 3 times to cancel
 reqer_change_chatbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new request
@@ -243,12 +260,15 @@ reqer_deny_tpa: Teleporting to %s...
 reqer_deny_tpahere_hoverevent: §bThe player who denied your §ltpahere§r request
 reqer_deny_tpahere: The requestor is denied from teleporting here.%sto you...
 reqer_disabled: Server does not allow §ateleportation§r
+reqer_unavail: You are not allowed to sent teleport requests in the current state
 reqer_first_join: '[§6Click me to open TPA Menu§r]'
 reqer_no_req_found: You haven't sent any requests
 reqer_recver_invalid: Target offline or not teleportable
 reqer_req_button_cancel: '[§4Cancel§r]'
 reqer_req_button_cancel_hoverevent: §bClick to cancel the request
 reqer_req_hoverevent: §bThe player you sent a request to
+reqer_req_invalid: Your request to %s has been removed because the target player is unavailable (offline or unable to teleport)
+reqer_req_invalid_hoverevent: §bThe player you sent a request to
 reqer_req_not_exist: The requested player does not exist or is offline
 reqer_req_tpa_hoverevent: §bThe player you sent a teleport request to
 reqer_req_tpahere_actionbar: You sent a request to %ssent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times
@@ -436,13 +456,21 @@ warp_button_setpos: '[§aSet Position§r]'
 warp_button_setpos_hoverevent: §bClick to set this public teleport spot to your current position
 warp_desc_disabled: §cThis public teleport spot is disabled
 warp_disabled: §aPublic teleport spot§r has been disabled by the server
+warp_hoverevent_location: '%1$s of %2$s'
 warp_menu_edit_tip: You are currently in edit mode. Select the operation slot below by index, then modify specific data using
   the buttons below. Finally, click Apply to apply the changes
 warp_number: Warp#
 warp_out_of_range: This public teleport spot has not been set yet
 warp_select: You have selected%sas the slot being edited
+warp_selector_title: Warp List
+warp_selector_index: Warp %1$s of %2$
+warp_selector_button_previous_page: ◀ Previous Page
+warp_selector_button_previous_page_hoverevent: §bClick to turn to the previous page
+warp_selector_button_next_page: nuNext Page ▶ll
+warp_selector_button_next_page_hoverevent: §bClick to turn to the next page
 warp_set: You have set%1$sto%2$s
 warp_set_position: coordinates
 warp_set_default_name: UnnamedWarp
 warp_slot_disabled: The Warp you  named %s has been disabled
 warp_teleport: You have been teleported to %s
+warp_unavail: You are not allowed to access §aWarps§r in the current state
