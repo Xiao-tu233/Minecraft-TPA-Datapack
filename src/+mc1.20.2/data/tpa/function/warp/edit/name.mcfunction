@@ -12,6 +12,7 @@ data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_la
 data modify storage tpa:tpa temp.output.target_langs set from storage tpa:tpa loaded_lang.warp_edit_target_index
 data modify storage tpa:tpa temp.output.target_index_langs set from storage tpa:tpa loaded_lang.warp_edit_target_name
 data modify storage tpa:tpa temp.output.index set string storage tpa:tpa temp.warp_edit.index
+data modify storage tpa:tpa temp.output.dialog_title set from storage tpa:tpa loaded_lang.warp_edit_dialog_title
 
 data modify storage tpa:tpa temp.output.input_name.label set from storage tpa:tpa loaded_lang.warp_edit_button_input_name
 data modify storage tpa:tpa temp.output.input_name.brackets set value ["§6[", "§6]"]
@@ -36,26 +37,4 @@ data modify storage tpa:tpa temp.output.cancel.tooltip set from storage tpa:tpa 
 # warp_edit_button_input_name: "输入名字"
 # warp_edit_button_input_name_hoverevent: "§b点击后在命令输入框中填写名字并执行"
 
-
 function tpa:output/warp/edit
-
-# tellraw @s [
-#     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_edit_title_prefix"},
-#     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_number"},
-#     {score: {name: "#warp.edit.index", objective: "tpa.variables"}, color: "aqua"},
-#     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_edit_title_index"},
-#     {score: {name: "#warp.edit.index", objective: "tpa.variables"}, color: "aqua"},
-#     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_edit_title_name_suffix"},
-#     "\n",
-#     {text: "[", color: "white", extra: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_edit_input_name"}, "]"],
-#         click_event: {action: "suggest_command", command: "/data modify storage tpa:tpa temp.warp_edit.name set value \"\""},
-#         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_edit_input_name_hoverevent"}}},
-#     " ",
-#     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_button_apply",
-#         click_event: {action: "run_command", command: "/function tpa:warp/edit/name/apply"},
-#         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_button_apply_hoverevent"}}},
-#     " ",
-#     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_button_cancel",
-#         click_event: {action: "run_command", command: "/function tpa:warp/edit/cancel"},
-#         hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.warp_button_cancel_hoverevent"}}}
-# ]
