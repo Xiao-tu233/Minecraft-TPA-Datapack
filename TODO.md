@@ -202,6 +202,7 @@ Project To-do lists:
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
 - [ ] 菜单中的按钮静态检测可以通过堆叠enabled(带指令)按钮和disabled按钮显示并动态调整两者按钮文本来动态调整按钮是否存在点击事件 e.g, [返回上一位置][返回上一位置] 前者括号为白色且带点击命令 后者反之 选择显示何者来决定是否存在点击事件
+- [ ] 广播位置和家菜单悬停文本错位了
 - [x] coords in here copiable
       - compatible with other dimensions
 
