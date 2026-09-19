@@ -399,6 +399,8 @@ warp_button_apply: '[§a適用§r]'
 warp_button_apply_hoverevent: §bクリックしてキャッシュされた変更を適用
 warp_button_cancel: '[§cキャンセル§r]'
 warp_button_cancel_hoverevent: §bクリックしてキャッシュされた変更を破棄
+warp_edit_invalid: この公共ワープは存在しません
+warp_edit_no_value: 空ではない内容を入力してください
 warp_button_enable: '[§a有効化§r]'
 warp_button_enable_hoverevent: §bクリックしてこのワープを有効化
 warp_button_disable: '[§c無効化§r]'

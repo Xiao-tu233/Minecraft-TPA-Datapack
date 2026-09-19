@@ -428,6 +428,8 @@ warp_button_apply: '[§aApply§r]'
 warp_button_apply_hoverevent: §bClick to apply the cached changes
 warp_button_cancel: '[§cCancel§r]'
 warp_button_cancel_hoverevent: §bClick to discard the cached changes
+warp_edit_invalid: This public teleport point does not exist
+warp_edit_no_value: Please enter a non-empty value
 warp_button_enable: '[§aEnable§r]'
 warp_button_enable_hoverevent: §bClick to enable this public teleport point
 warp_button_disable: '[§cDisable§r]'

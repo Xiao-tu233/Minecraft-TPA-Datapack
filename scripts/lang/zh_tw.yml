@@ -399,6 +399,8 @@ warp_button_apply: '[§a應用§r]'
 warp_button_apply_hoverevent: §b點擊應用所儲存的更改
 warp_button_cancel: '[§c取消§r]'
 warp_button_cancel_hoverevent: §b點擊放棄所儲存的更改
+warp_edit_invalid: "該公共傳送點不存在"
+warp_edit_no_value: "請輸入非空內容"
 warp_button_enable: '[§a啟用§r]'
 warp_button_enable_hoverevent: §b點擊啟用該公共傳送點
 warp_button_disable: '[§c禁用§r]'

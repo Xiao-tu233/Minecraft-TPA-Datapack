@@ -129,9 +129,7 @@ execute as @a[scores={tpa.removehome=1..}] run function tpa:removehome
 # Warp
 execute as @a[scores={tpa.warp=..-1}] run function tpa:warp
 execute as @a[scores={tpa.warp=1..}] run function tpa:warp
-execute if score #editting_warp.trigger tpa.variables = #editting_warp.trigger tpa.variables unless score #editting_warp.trigger tpa.variables = #editting_warp tpa.variables as @p[tag=tpa.warp_editor] run function tpa:warp/select
-execute if entity @p[tag=tpa.warp_editor] run function tpa:warp/countdown
-execute unless entity @p[tag=tpa.warp_editor] run scoreboard players set #warp_edit_countdown tpa.variables 3000
+execute if score #editting_warp.trigger tpa.variables = #editting_warp.trigger tpa.variables unless score #editting_warp.trigger tpa.variables = #editting_warp tpa.variables run function tpa:warp/select
 
 # Both below one no longer needs Ingame keyboard datapack as dependency
 # Search ID

@@ -49,6 +49,3 @@ execute if score #is_editting_warp tpa.variables matches 1 run tellraw @s ["  ",
 # Remove button display for non-OPs
 scoreboard players set #is_editting_warp tpa.variables 0
 data modify storage tpa:tpa warp[0] set value {}
-
-# Tag self for selection
-tag @s add tpa.warp_editor
