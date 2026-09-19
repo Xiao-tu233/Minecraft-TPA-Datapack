@@ -39,5 +39,5 @@ data modify storage tpa:tpa temp.args.dialog.body append from storage tpa:tpa te
 
 data modify storage tpa:tpa temp.args.dialog.inputs set value [{key: "name", type: "text"}]
 data modify storage tpa:tpa temp.args.dialog.inputs[0].label set from storage tpa:tpa temp.output.input_name.label
-data modify storage tpa:tpa temp.args.dialog.actions set value []
+data modify storage tpa:tpa temp.args.dialog.actions set value [{type: "minecraft:dynamic/run_command", command: "data modify storage tpa:tpa\"\""}]
 function tpa:warp/dialog with storage tpa:tpa temp.args
