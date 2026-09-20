@@ -39,5 +39,7 @@ data modify storage tpa:tpa temp.args.dialog.body append from storage tpa:tpa te
 
 data modify storage tpa:tpa temp.args.dialog.inputs set value [{key: "name", type: "text"}]
 data modify storage tpa:tpa temp.args.dialog.inputs[0].label set from storage tpa:tpa temp.output.input_name.label
-data modify storage tpa:tpa temp.args.dialog.actions set value [{type: "dynamic/run_command", command: "/data modify storage tpa:tpa temp.\"\""}]
+data modify storage tpa:tpa temp.args.dialog.actions set value [{type: "dynamic/run_command", command: "/data modify storage tpa:tpa temp.warp_edit.name set value \"$(name)\""}]
+data modify storage tpa:tpa temp.args.dialog.actions[-1].label set from storage tpa:tpa temp.output.appldata modify storage tpa:tpa temp.arg
+
 function tpa:warp/dialog with storage tpa:tpa temp.args
