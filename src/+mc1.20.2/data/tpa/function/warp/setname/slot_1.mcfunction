@@ -5,4 +5,4 @@ scoreboard players set #warp.edit.index tpa.variables 1
 scoreboard players operation #warp.edit.index tpa.variables += #warp.page.offset tpa.variables
 
 function tpa:warp/edit/check_edittor
-execute if score #warp.edittor_matching tpa.variables matches 1 run function tpa:warp/edit/name
+execute if score #warp.occupied tpa.variables matches 0 run function tpa:warp/edit/name
