@@ -1,4 +1,4 @@
-# Parent function tpa:warp/setname/slot_*, tpa:warp/setdesc/slot_*
+# Parent function tpa:warp/setname, tpa:warp/setdesc
 
 # Remove expired session: 5 minutes
 execute store result score #warp.delta_time tpa.variables run time query gametime

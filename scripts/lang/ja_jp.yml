@@ -399,8 +399,6 @@ warp_button_apply: '[§a適用§r]'
 warp_button_apply_hoverevent: §bクリックしてキャッシュされた変更を適用
 warp_button_cancel: '[§cキャンセル§r]'
 warp_button_cancel_hoverevent: §bクリックしてキャッシュされた変更を破棄
-warp_edit_invalid: この公共ワープは存在しません
-warp_edit_no_value: 空ではない内容を入力してください
 warp_button_enable: '[§a有効化§r]'
 warp_button_enable_hoverevent: §bクリックしてこのワープを有効化
 warp_button_disable: '[§c無効化§r]'
@@ -426,6 +424,8 @@ warp_button_setpos: '[§a位置設定§r]'
 warp_button_setpos_hoverevent: §bクリックしてこのワープを現在位置に設定
 warp_desc_disabled: §cこのワープは無効化されています
 warp_disabled: §aワープ§rはサーバーで無効化されています
+warp_edit_invalid: この公共ワープは存在しません
+warp_edit_no_value: 空ではない内容を入力してください
 warp_hoverevent_location: '%2$s件中%1$s'
 warp_menu_edit_tip: 現在編集モードです。下のインデックスから操作スロットを選択し、下のボタンでデータを変更、最後に適用をクリックして反映してください
 warp_number: ワープ#

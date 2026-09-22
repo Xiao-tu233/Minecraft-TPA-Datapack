@@ -24,3 +24,125 @@ languages:
       source: §b点击设置/schedule指令调用Tick函数
       status: missing_key
       translation: null
+    warp_edit:
+      source: 你正在编辑%s
+      status: missing_key
+      translation: null
+    warp_edit_button_input_desc:
+      source: 输入描述
+      status: missing_key
+      translation: null
+    warp_edit_button_input_desc_hoverevent:
+      source: §b点击后在命令输入框中填写描述并执行
+      status: missing_key
+      translation: null
+    warp_edit_button_input_name:
+      source: 输入名字
+      status: missing_key
+      translation: null
+    warp_edit_button_input_name_hoverevent:
+      source: §b点击后在命令输入框中填写名字并执行
+      status: missing_key
+      translation: null
+    warp_edit_occupied:
+      source: 其他玩家(UID:%s)正在编辑公共传送点
+      status: missing_key
+      translation: null
+    warp_edit_dialog_title:
+      source: ''
+      status: missing_key
+      translation: null
+    warp_edit_target_index:
+      source: (索引:%s)
+      status: missing_key
+      translation: null
+    warp_edit_target_name:
+      source: '%s的名字'
+      status: missing_key
+      translation: null
+    warp_edit_target_desc:
+      source: '%s的描述'
+      status: missing_key
+      translation: null
+  ja_jp:
+    warp_edit:
+      source: 你正在编辑%s
+      status: missing_key
+      translation: null
+    warp_edit_button_input_desc:
+      source: 输入描述
+      status: missing_key
+      translation: null
+    warp_edit_button_input_desc_hoverevent:
+      source: §b点击后在命令输入框中填写描述并执行
+      status: missing_key
+      translation: null
+    warp_edit_button_input_name:
+      source: 输入名字
+      status: missing_key
+      translation: null
+    warp_edit_button_input_name_hoverevent:
+      source: §b点击后在命令输入框中填写名字并执行
+      status: missing_key
+      translation: null
+    warp_edit_occupied:
+      source: 其他玩家(UID:%s)正在编辑公共传送点
+      status: missing_key
+      translation: null
+    warp_edit_dialog_title:
+      source: ''
+      status: missing_key
+      translation: null
+    warp_edit_target_index:
+      source: (索引:%s)
+      status: missing_key
+      translation: null
+    warp_edit_target_name:
+      source: '%s的名字'
+      status: missing_key
+      translation: null
+    warp_edit_target_desc:
+      source: '%s的描述'
+      status: missing_key
+      translation: null
+  zh_tw:
+    warp_edit:
+      source: 你正在编辑%s
+      status: missing_key
+      translation: null
+    warp_edit_button_input_desc:
+      source: 输入描述
+      status: missing_key
+      translation: null
+    warp_edit_button_input_desc_hoverevent:
+      source: §b点击后在命令输入框中填写描述并执行
+      status: missing_key
+      translation: null
+    warp_edit_button_input_name:
+      source: 输入名字
+      status: missing_key
+      translation: null
+    warp_edit_button_input_name_hoverevent:
+      source: §b点击后在命令输入框中填写名字并执行
+      status: missing_key
+      translation: null
+    warp_edit_occupied:
+      source: 其他玩家(UID:%s)正在编辑公共传送点
+      status: missing_key
+      translation: null
+    warp_edit_dialog_title:
+      source: ''
+      status: missing_key
+      translation: null
+    warp_edit_target_index:
+      source: (索引:%s)
+      status: missing_key
+      translation: null
+    warp_edit_target_name:
+      source: '%s的名字'
+      status: missing_key
+      translation: null
+    warp_edit_target_desc:
+      source: '%s的描述'
+      status: missing_key
+      translation: null

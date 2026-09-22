@@ -1,5 +1,6 @@
 spyglass.json
 .vscode/
 servers/
+non-test_servers/
 sync_datapack.py
 java/

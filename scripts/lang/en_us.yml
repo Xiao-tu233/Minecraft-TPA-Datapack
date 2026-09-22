@@ -428,8 +428,6 @@ warp_button_apply: '[§aApply§r]'
 warp_button_apply_hoverevent: §bClick to apply the cached changes
 warp_button_cancel: '[§cCancel§r]'
 warp_button_cancel_hoverevent: §bClick to discard the cached changes
-warp_edit_invalid: This public teleport point does not exist
-warp_edit_no_value: Please enter a non-empty value
 warp_button_enable: '[§aEnable§r]'
 warp_button_enable_hoverevent: §bClick to enable this public teleport point
 warp_button_disable: '[§cDisable§r]'
@@ -458,6 +456,8 @@ warp_button_setpos: '[§aSet Position§r]'
 warp_button_setpos_hoverevent: §bClick to set this public teleport spot to your current position
 warp_desc_disabled: §cThis public teleport spot is disabled
 warp_disabled: §aPublic teleport spot§r has been disabled by the server
+warp_edit_invalid: This public teleport point does not exist
+warp_edit_no_value: Please enter a non-empty value
 warp_hoverevent_location: '%1$s of %2$s'
 warp_menu_edit_tip: You are currently in edit mode. Select the operation slot below by index, then modify specific data using
   the buttons below. Finally, click Apply to apply the changes

@@ -399,8 +399,6 @@ warp_button_apply: '[§a應用§r]'
 warp_button_apply_hoverevent: §b點擊應用所儲存的更改
 warp_button_cancel: '[§c取消§r]'
 warp_button_cancel_hoverevent: §b點擊放棄所儲存的更改
-warp_edit_invalid: "該公共傳送點不存在"
-warp_edit_no_value: "請輸入非空內容"
 warp_button_enable: '[§a啟用§r]'
 warp_button_enable_hoverevent: §b點擊啟用該公共傳送點
 warp_button_disable: '[§c禁用§r]'
@@ -426,6 +424,8 @@ warp_button_setpos: '[§a取址§r]'
 warp_button_setpos_hoverevent: §b點擊把該公共傳送點設置到當前位置
 warp_desc_disabled: §c該公共傳送點已被禁用
 warp_disabled: §a公共傳送點§r已被伺服器禁用
+warp_edit_invalid: 該公共傳送點不存在
+warp_edit_no_value: 請輸入非空內容
 warp_hoverevent_location: '%2$s中的%1$s'
 warp_menu_edit_tip: 目前處於編輯模式，請在下方通過索引選擇操作槽位後，在下方按鈕更改具體資料，最後點擊應用來應用更改
 warp_number: 公共傳送點#

@@ -16,7 +16,7 @@
 # warp_edit_button_input_name_hoverevent: "§b点击后在命令输入框中填写名字并执行"
 
 tellraw @s ["", {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.langs[0]"}, {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.target_langs[0]"}, {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.target_name", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.target_desc"}}}, {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.target_index_langs[0]"}, {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.index"}, {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.target_index_langs[1]"}, {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.target_langs[1]"}, {interpret: true,  storage: "tpa:tpa", nbt: "temp.output.langs[1]"}]
-tellraw @s ["  ", {text: "", click_event: {action: "suggest_command", command: "/data modify storage tpa:tpa temp.warp_edit.name set value \"\""}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.tooltip"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.brackets[1]"}]}}, {text: "", click_event: {action: "suggest_command", command: "/data modify storage tpa:tpa temp.warp_edit.desc set value \"\""}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.tooltip"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.brackets[1]"}]}}, " ", {text: "", click_event: {action: "run_command", command: "/function tpa:warp/edit/apply"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.tooltip"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.brackets[1]"}]}}, " ", {text: "", click_event: {action: "run_command", command: "/function tpa:warp/edit/cancel"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.tooltip"}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.brackets[1]"}]}}]
+tellraw @s ["  ", {text: "", click_event: {action: "suggest_command", command: "/data modify storage tpa:tpa temp.warp_edit.name set value \"\""}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_name.brackets[1]"}]}, {text: "", click_event: {action: "suggest_command", command: "/data modify storage tpa:tpa temp.warp_edit.desc set value \"\""}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.input_desc.brackets[1]"}]}, " ", {text: "", click_event: {action: "run_command", command: "/function tpa:warp/edit/apply"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.apply.brackets[1]"}]}, " ", {text: "", click_event: {action: "run_command", command: "/function tpa:warp/edit/cancel"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.tooltip"}}, extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.cancel.brackets[1]"}]}]
 
 data remove storage tpa:tpa temp.dialog
 data modify storage tpa:tpa temp.dialog.type set value "multi_action"
@@ -25,20 +25,19 @@ data modify storage tpa:tpa temp.dialog.can_close_with_escape set value true
 data modify storage tpa:tpa temp.dialog.pause set value false
 data modify storage tpa:tpa temp.dialog.columns set value 3
 
-data modify storage tpa:tpa temp.dialog.body set value []
-data modify storage tpa:tpa temp.dialog.body append from storage tpa:tpa temp.output.langs[0]
-data modify storage tpa:tpa temp.dialog.body append from storage tpa:tpa temp.output.target_langs[0]
-data modify storage tpa:tpa temp.dialog.body append value {}
-data modify storage tpa:tpa temp.dialog.body[-1].text set from storage tpa:tpa temp.output.target_name
-data modify storage tpa:tpa temp.dialog.body[-1].hover_event.action set value "show_text"
-data modify storage tpa:tpa temp.dialog.body[-1].hover_event.value set from storage tpa:tpa temp.output.target_desc
-data modify storage tpa:tpa temp.dialog.body append from storage tpa:tpa temp.output.target_index_langs[0]
-data modify storage tpa:tpa temp.dialog.body append from storage tpa:tpa temp.output.index
-data modify storage tpa:tpa temp.dialog.body append from storage tpa:tpa temp.output.target_index_langs[1]
-data modify storage tpa:tpa temp.dialog.body append from storage tpa:tpa temp.output.target_langs[1]
-data modify storage tpa:tpa temp.dialog.body append from storage tpa:tpa temp.output.langs[1]
+data modify storage tpa:tpa temp.dialog.body set value {type: "plain_message", contents: []}
+data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.output.langs[0]
+data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.output.target_langs[0]
+data modify storage tpa:tpa temp.dialog.body.contents append value {hover_event: {action: "show_text"}}
+data modify storage tpa:tpa temp.dialog.body.contents[-1].text set from storage tpa:tpa temp.output.target_name
+data modify storage tpa:tpa temp.dialog.body.contents[-1].hover_event.value set from storage tpa:tpa temp.output.target_desc
+data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.output.target_index_langs[0]
+data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.output.index
+data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.output.target_index_langs[1]
+data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.output.target_langs[1]
+data modify storage tpa:tpa temp.dialog.body.contents append from storage tpa:tpa temp.output.langs[1]
 
-data modify storage tpa:tpa temp.dialog.inputs set value [{key: "name", type: "text"}, {key: "desc", type: "text"}]
+data modify storage tpa:tpa temp.dialog.inputs set value [{key: "name", type: "text", label: ""}, {key: "desc", type: "text", label: ""}]
 data modify storage tpa:tpa temp.dialog.inputs[0].label set from storage tpa:tpa temp.output.input_name.label
 data modify storage tpa:tpa temp.dialog.inputs[1].label set from storage tpa:tpa temp.output.input_desc.label
 data modify storage tpa:tpa temp.dialog.inputs[0].tooltip set from storage tpa:tpa temp.output.input_name.tooltip
@@ -46,26 +45,21 @@ data modify storage tpa:tpa temp.dialog.inputs[1].tooltip set from storage tpa:t
 
 data modify storage tpa:tpa temp.dialog.actions set value []
 
-data modify storage tpa:tpa temp.dialog.actions append value {}
-data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "dynamic/run_command", command: "/data modify storage tpa:tpa temp.warp_edit.name set value \"$(name)\""}
+data modify storage tpa:tpa temp.dialog.actions append value {action: {type: "dynamic/run_command", template: "/data modify storage tpa:tpa temp.warp_edit.name set value \"$(name)\""}, label: ""}
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa temp.output.input_name.label
 data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa temp.output.input_name.tooltip
 
-data modify storage tpa:tpa temp.dialog.actions append value {}
-data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "dynamic/run_command", command: "/data modify storage tpa:tpa temp.warp_edit.desc set value \"$(desc)\""}
+data modify storage tpa:tpa temp.dialog.actions append value {action: {type: "dynamic/run_command", template: "/data modify storage tpa:tpa temp.warp_edit.desc set value \"$(desc)\""}, label: ""}
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa temp.output.input_desc.label
 data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa temp.output.input_desc.tooltip
 
-data modify storage tpa:tpa temp.dialog.actions append value {}
-data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "run_command", command: "/function tpa:warp/edit/apply"}
+data modify storage tpa:tpa temp.dialog.actions append value {action: {type: "run_command", command: "/function tpa:warp/edit/apply"}}
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa temp.output.apply.label
 data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa temp.output.apply.tooltip
 
-data modify storage tpa:tpa temp.dialog.actions append value {}
-data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "run_command", command: "/function tpa:warp/edit/cancel"}
+data modify storage tpa:tpa temp.dialog.actions append value {action: {type: "run_command", command: "/function tpa:warp/edit/cancel"}}
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa temp.output.cancel.label
 data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa temp.output.cancel.tooltip
-
 
 data remove storage tpa:tpa temp.args
 data modify storage tpa:tpa temp.args.dialog set from storage tpa:tpa temp.dialog
