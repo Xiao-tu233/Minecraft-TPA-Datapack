@@ -199,6 +199,7 @@ Project To-do lists:
    - [ ] 重构所有warp rm, set, move
    - [ ] warp的新增按钮
    - [ ] Dialog
+      - Hide buttons and inputs if not neccessary   
 - [ ] 实现release_meta.yml
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
