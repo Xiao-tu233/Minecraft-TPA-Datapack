@@ -1,4 +1,5 @@
-# Parent function tpa:warp/setname, tpa:warp/setdesc
+# Parent function tpa:warp/setname, tpa:warp/setdesc, tpa:warp/edit/apply/valid
+#! This function needs a rename, please call AI for renaming
 
 # Remove expired session: 5 minutes
 execute store result score #warp.delta_time tpa.variables run time query gametime

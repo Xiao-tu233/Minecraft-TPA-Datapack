@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/edit/name, tpa:warp/edit/desc
+# Parent function: tpa:warp/setname, tpa:warp/setdesc
 
 function tpa:warp/page/get
 
