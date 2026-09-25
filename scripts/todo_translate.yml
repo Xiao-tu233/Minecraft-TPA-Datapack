@@ -24,12 +24,20 @@ languages:
       source: §b点击设置/schedule指令调用Tick函数
       status: missing_key
       translation: null
+    warp_button_setdesc_hoverevent:
+      source: §b点击进入该公共传送点的描述编辑菜单
+      status: missing_key
+      translation: null
+    warp_button_setname_hoverevent:
+      source: §b点击进入该公共传送点的名称编辑菜单
+      status: missing_key
+      translation: null
     warp_edit:
-      source: 你正在编辑%s
+      source: 你正在编辑%s. 请点击下方的输入按钮，补全并执行推荐命令，将内容写入缓存，确认无误后点击“应用”保存更改
       status: missing_key
       translation: null
     warp_edit_button_input_desc:
-      source: 输入描述
+      source: §a输入描述
       status: missing_key
       translation: null
     warp_edit_button_input_desc_hoverevent:
@@ -37,7 +45,7 @@ languages:
       status: missing_key
       translation: null
     warp_edit_button_input_name:
-      source: 输入名字
+      source: §a输入名字
       status: missing_key
       translation: null
     warp_edit_button_input_name_hoverevent:
@@ -49,7 +57,7 @@ languages:
       status: missing_key
       translation: null
     warp_edit_dialog_title:
-      source: ''
+      source: 公共传送点编辑对话框菜单
       status: missing_key
       translation: null
     warp_edit_target_index:
@@ -65,12 +73,20 @@ languages:
       status: missing_key
       translation: null
   ja_jp:
+    warp_button_setdesc_hoverevent:
+      source: §b点击进入该公共传送点的描述编辑菜单
+      status: missing_key
+      translation: null
+    warp_button_setname_hoverevent:
+      source: §b点击进入该公共传送点的名称编辑菜单
+      status: missing_key
+      translation: null
     warp_edit:
-      source: 你正在编辑%s
+      source: 你正在编辑%s. 请点击下方的输入按钮，补全并执行推荐命令，将内容写入缓存，确认无误后点击“应用”保存更改
       status: missing_key
       translation: null
     warp_edit_button_input_desc:
-      source: 输入描述
+      source: §a输入描述
       status: missing_key
       translation: null
     warp_edit_button_input_desc_hoverevent:
@@ -78,7 +94,7 @@ languages:
       status: missing_key
       translation: null
     warp_edit_button_input_name:
-      source: 输入名字
+      source: §a输入名字
       status: missing_key
       translation: null
     warp_edit_button_input_name_hoverevent:
@@ -90,7 +106,7 @@ languages:
       status: missing_key
       translation: null
     warp_edit_dialog_title:
-      source: ''
+      source: 公共传送点编辑对话框菜单
       status: missing_key
       translation: null
     warp_edit_target_index:
@@ -106,12 +122,20 @@ languages:
       status: missing_key
       translation: null
   zh_tw:
+    warp_button_setdesc_hoverevent:
+      source: §b点击进入该公共传送点的描述编辑菜单
+      status: missing_key
+      translation: null
+    warp_button_setname_hoverevent:
+      source: §b点击进入该公共传送点的名称编辑菜单
+      status: missing_key
+      translation: null
     warp_edit:
-      source: 你正在编辑%s
+      source: 你正在编辑%s. 请点击下方的输入按钮，补全并执行推荐命令，将内容写入缓存，确认无误后点击“应用”保存更改
       status: missing_key
       translation: null
     warp_edit_button_input_desc:
-      source: 输入描述
+      source: §a输入描述
       status: missing_key
       translation: null
     warp_edit_button_input_desc_hoverevent:
@@ -119,7 +143,7 @@ languages:
       status: missing_key
       translation: null
     warp_edit_button_input_name:
-      source: 输入名字
+      source: §a输入名字
       status: missing_key
       translation: null
     warp_edit_button_input_name_hoverevent:
@@ -131,7 +155,7 @@ languages:
       status: missing_key
       translation: null
     warp_edit_dialog_title:
-      source: ''
+      source: 公共传送点编辑对话框菜单
       status: missing_key
       translation: null
     warp_edit_target_index:

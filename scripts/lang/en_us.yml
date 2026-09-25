@@ -447,11 +447,7 @@ warp_button_select_hoverevent: §bClick to select this public teleport spot slot
 warp_button_unselect: '[§cUnselect§r]'
 warp_button_unselect_hoverevent: §bClick to unselect this public teleport spot slot
 warp_button_setdesc: '[§aSet Description§r]'
-warp_button_setdesc_hoverevent: §bClick to set the description of this public teleport spot (after clicking, press the left
-  arrow key on your keyboard, enter the description within quotes, then press Enter)
 warp_button_setname: '[§aSet Name§r]'
-warp_button_setname_hoverevent: §bClick to set the name of this public teleport spot (after clicking, press the left arrow
-  key on your keyboard, enter the name within quotes, then press Enter)
 warp_button_setpos: '[§aSet Position§r]'
 warp_button_setpos_hoverevent: §bClick to set this public teleport spot to your current position
 warp_desc_disabled: §cThis public teleport spot is disabled
@@ -459,8 +455,6 @@ warp_disabled: §aPublic teleport spot§r has been disabled by the server
 warp_edit_invalid: This public teleport point does not exist
 warp_edit_no_value: Please enter a non-empty value
 warp_hoverevent_location: '%1$s of %2$s'
-warp_menu_edit_tip: You are currently in edit mode. Select the operation slot below by index, then modify specific data using
-  the buttons below. Finally, click Apply to apply the changes
 warp_number: Warp#
 warp_out_of_range: This public teleport spot has not been set yet
 warp_select: You have selected%sas the slot being edited

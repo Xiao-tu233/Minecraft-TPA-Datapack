@@ -424,28 +424,27 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_unselect: "[§c取消选择§r]", \
     warp_button_unselect_hoverevent: "§b点击取消选择该公共传送点槽位", \
     warp_button_setdesc: "§a设描述§r", \
-    warp_button_setdesc_hoverevent: "§b点击设置该公共传送点的描述(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
+    warp_button_setdesc_hoverevent: "§b点击进入该公共传送点的描述编辑菜单", \
     warp_button_setname: "§a取名§r", \
-    warp_button_setname_hoverevent: "§b点击设置该公共传送点的名字(点击后请按下键盘上的左箭头, 在引号中填写, 输好后回车)", \
+    warp_button_setname_hoverevent: "§b点击进入该公共传送点的名称编辑菜单", \
     warp_button_setpos: "§a取址§r", \
     warp_button_setpos_hoverevent: "§b点击把该公共传送点设置到当前位置", \
     warp_desc_disabled: "§c该公共传送点已被禁用", \
     warp_disabled: "服务器尚未设置任何§a公共传送点§r", \
-    warp_edit: ["你正在编辑", ""], \
-    warp_edit_button_input_desc: "输入描述", \
+    warp_edit: ["你正在编辑", ". 请点击下方的输入按钮，补全并执行推荐命令，将内容写入缓存，确认无误后点击“应用”保存更改"], \
+    warp_edit_button_input_desc: "§a输入描述", \
     warp_edit_button_input_desc_hoverevent: "§b点击后在命令输入框中填写描述并执行", \
-    warp_edit_button_input_name: "输入名字", \
+    warp_edit_button_input_name: "§a输入名字", \
     warp_edit_button_input_name_hoverevent: "§b点击后在命令输入框中填写名字并执行", \
     warp_edit_invalid: "该公共传送点不存在", \
     warp_edit_occupied: ["其他玩家(UID:", ")正在编辑公共传送点"], \
-    warp_edit_dialog_title: "", \
+    warp_edit_dialog_title: "公共传送点编辑对话框菜单", \
     warp_edit_no_value: "请输入非空内容", \
     warp_edit_target_index: ["(索引:", ")"], \
     warp_edit_target_name: ["", "的名字"], \
     warp_edit_target_desc: ["", "的描述"], \
     warp_hoverevent_location: ["", "中的", ""], \
     warp_hoverevent_location_format: 1, \
-    warp_menu_edit_tip: "目前处于编辑模式 请在下方通过索引选择操作槽位后在下方按钮更改具体数据最后点击应用来应用更改", \
     warp_number: "公共传送点#", \
     warp_out_of_range: "该公共传送点尚未设置", \
     warp_select: ["你选中了", "作为正在编辑的槽位"], \
@@ -882,9 +881,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_unselect: "[§cUnselect§r]", \
     warp_button_unselect_hoverevent: "§bClick to unselect this public teleport spot slot", \
     warp_button_setdesc: "[§aSet Description§r]", \
-    warp_button_setdesc_hoverevent: "§bClick to set the description of this public teleport spot (after clicking, press the left arrow key on your keyboard, enter the description within quotes, then press Enter)", \
     warp_button_setname: "[§aSet Name§r]", \
-    warp_button_setname_hoverevent: "§bClick to set the name of this public teleport spot (after clicking, press the left arrow key on your keyboard, enter the name within quotes, then press Enter)", \
     warp_button_setpos: "[§aSet Position§r]", \
     warp_button_setpos_hoverevent: "§bClick to set this public teleport spot to your current position", \
     warp_desc_disabled: "§cThis public teleport spot is disabled", \
@@ -893,7 +890,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_edit_no_value: "Please enter a non-empty value", \
     warp_hoverevent_location: ["", " of ", ""], \
     warp_hoverevent_location_format: 0, \
-    warp_menu_edit_tip: "You are currently in edit mode. Select the operation slot below by index, then modify specific data using the buttons below. Finally, click Apply to apply the changes", \
     warp_number: "Warp#", \
     warp_out_of_range: "This public teleport spot has not been set yet", \
     warp_select: ["You have selected", "as the slot being edited"], \
@@ -1334,9 +1330,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_unselect: "[§c選択解除§r]", \
     warp_button_unselect_hoverevent: "§bクリックしてこのワープスロットの選択を解除", \
     warp_button_setdesc: "[§a説明設定§r]", \
-    warp_button_setdesc_hoverevent: "§bクリックしてこのワープの説明を設定（クリック後、キーボード左矢印を押し、引用符内に入力して Enter）", \
     warp_button_setname: "[§a名前設定§r]", \
-    warp_button_setname_hoverevent: "§bクリックしてこのワープの名前を設定（クリック後、キーボード左矢印を押し、引用符内に入力して Enter）", \
     warp_button_setpos: "[§a位置設定§r]", \
     warp_button_setpos_hoverevent: "§bクリックしてこのワープを現在位置に設定", \
     warp_desc_disabled: "§cこのワープは無効化されています", \
@@ -1345,7 +1339,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_edit_no_value: "空ではない内容を入力してください", \
     warp_hoverevent_location: ["", "件中", ""], \
     warp_hoverevent_location_format: 1, \
-    warp_menu_edit_tip: "現在編集モードです。下のインデックスから操作スロットを選択し、下のボタンでデータを変更、最後に適用をクリックして反映してください", \
     warp_number: "ワープ#", \
     warp_out_of_range: "このワープは未設定です", \
     warp_select: ["", "を編集中のスロットとして選択しました"], \
@@ -1787,9 +1780,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_unselect: "[§c取消選擇§r]", \
     warp_button_unselect_hoverevent: "§b點擊取消選擇該公共傳送點槽位", \
     warp_button_setdesc: "[§a設描述§r]", \
-    warp_button_setdesc_hoverevent: "§b點擊設置該公共傳送點的描述（點擊後請按下鍵盤上的左箭頭，在引號中填寫，輸入後回車）", \
     warp_button_setname: "[§a取名§r]", \
-    warp_button_setname_hoverevent: "§b點擊設置該公共傳送點的名字（點擊後請按下鍵盤上的左箭頭，在引號中填寫，輸入後回車）", \
     warp_button_setpos: "[§a取址§r]", \
     warp_button_setpos_hoverevent: "§b點擊把該公共傳送點設置到當前位置", \
     warp_desc_disabled: "§c該公共傳送點已被禁用", \
@@ -1798,7 +1789,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_edit_no_value: "請輸入非空內容", \
     warp_hoverevent_location: ["", "中的", ""], \
     warp_hoverevent_location_format: 1, \
-    warp_menu_edit_tip: "目前處於編輯模式，請在下方通過索引選擇操作槽位後，在下方按鈕更改具體資料，最後點擊應用來應用更改", \
     warp_number: "公共傳送點#", \
     warp_out_of_range: "該公共傳送點尚未設定", \
     warp_select: ["你選中了", "作為正在編輯的槽位"], \

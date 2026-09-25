@@ -417,9 +417,7 @@ warp_button_select_hoverevent: §b點擊選擇該公共傳送點槽位，作為�
 warp_button_unselect: '[§c取消選擇§r]'
 warp_button_unselect_hoverevent: §b點擊取消選擇該公共傳送點槽位
 warp_button_setdesc: '[§a設描述§r]'
-warp_button_setdesc_hoverevent: §b點擊設置該公共傳送點的描述（點擊後請按下鍵盤上的左箭頭，在引號中填寫，輸入後回車）
 warp_button_setname: '[§a取名§r]'
-warp_button_setname_hoverevent: §b點擊設置該公共傳送點的名字（點擊後請按下鍵盤上的左箭頭，在引號中填寫，輸入後回車）
 warp_button_setpos: '[§a取址§r]'
 warp_button_setpos_hoverevent: §b點擊把該公共傳送點設置到當前位置
 warp_desc_disabled: §c該公共傳送點已被禁用
@@ -427,7 +425,6 @@ warp_disabled: §a公共傳送點§r已被伺服器禁用
 warp_edit_invalid: 該公共傳送點不存在
 warp_edit_no_value: 請輸入非空內容
 warp_hoverevent_location: '%2$s中的%1$s'
-warp_menu_edit_tip: 目前處於編輯模式，請在下方通過索引選擇操作槽位後，在下方按鈕更改具體資料，最後點擊應用來應用更改
 warp_number: 公共傳送點#
 warp_out_of_range: 該公共傳送點尚未設定
 warp_select: 你選中了%s作為正在編輯的槽位

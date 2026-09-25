@@ -417,9 +417,7 @@ warp_button_select_hoverevent: §bクリックしてこのワープスロット�
 warp_button_unselect: '[§c選択解除§r]'
 warp_button_unselect_hoverevent: §bクリックしてこのワープスロットの選択を解除
 warp_button_setdesc: '[§a説明設定§r]'
-warp_button_setdesc_hoverevent: §bクリックしてこのワープの説明を設定（クリック後、キーボード左矢印を押し、引用符内に入力して Enter）
 warp_button_setname: '[§a名前設定§r]'
-warp_button_setname_hoverevent: §bクリックしてこのワープの名前を設定（クリック後、キーボード左矢印を押し、引用符内に入力して Enter）
 warp_button_setpos: '[§a位置設定§r]'
 warp_button_setpos_hoverevent: §bクリックしてこのワープを現在位置に設定
 warp_desc_disabled: §cこのワープは無効化されています
@@ -427,7 +425,6 @@ warp_disabled: §aワープ§rはサーバーで無効化されています
 warp_edit_invalid: この公共ワープは存在しません
 warp_edit_no_value: 空ではない内容を入力してください
 warp_hoverevent_location: '%2$s件中%1$s'
-warp_menu_edit_tip: 現在編集モードです。下のインデックスから操作スロットを選択し、下のボタンでデータを変更、最後に適用をクリックして反映してください
 warp_number: ワープ#
 warp_out_of_range: このワープは未設定です
 warp_select: '%sを編集中のスロットとして選択しました'
