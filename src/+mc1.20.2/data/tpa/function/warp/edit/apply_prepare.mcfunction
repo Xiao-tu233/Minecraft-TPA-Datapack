@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/edit/name/apply, tpa:warp/edit/desc/apply
+# Parent function: tpa:warp/edit/apply
 
 # The input command only writes name/desc. The apply action binds the edit to
 # the current player and the slot selected before the submenu was opened.

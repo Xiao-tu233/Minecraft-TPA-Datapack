@@ -517,7 +517,7 @@ data modify storage tpa:tpa temp.lang set value \
     home_missing_hoverevent: "This home hasn't been set", \
     home_new: "§aCreate: ", \
     home_not_found_hoverevent: "§bThe home you are looking for", \
-    home_not_found: ["The Home#", "doesn't exist"], \
+    home_not_found: ["The Home#", " doesn't exist"], \
     home_number: "Home#", \
     home_out_of_range: ["The Home#", "is out of the server limit."], \
     home_remove_hoverevent: "§bHome which has been removed", \
@@ -719,6 +719,8 @@ data modify storage tpa:tpa temp.lang set value \
     reqer_req_invalid: ["Your request to ", " has been removed because the target player is unavailable (offline or unable to teleport)"], \
     reqer_req_invalid_hoverevent: "§bThe player you sent a request to", \
     reqer_req_not_exist: "The requested player does not exist or is offline", \
+    reqer_req_tpa: ["You sent a teleport request to ", ". Waiting for responsing"], \
+    reqer_req_tpahere: ["You requested ", " to teleport to you. Waiting for responsing"], \
     reqer_req_tpa_hoverevent: "§bThe player you sent a teleport request to", \
     reqer_req_tpahere_actionbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times to cancel"], \
     reqer_req_tpahere_chatbar: ["You sent a request to ", "sent a §ltpahere§r request. Waiting for acceptance"], \
@@ -757,6 +759,8 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_sim_dist_warn_button_calc: "[§aCalculate§r]", \
     teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                                   This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
     teleport_sim_dist_warn_button_binary: "[§aBinary Search§r]", \
+    teleport_sim_dist_warn_button_binary_hoverevent: "§bClick to switch the Teleport Method to Binary Teleport", \
+    tick_not_working_button_set_schedule_hoverevent: "§bClick to turn on Calling Tick Function with /schedule command", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
     tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
     tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                                  ", \
@@ -859,13 +863,13 @@ data modify storage tpa:tpa temp.lang set value \
     update_nextstep: "§b[Next step]", \
     warp_button_add: "[§aCreate new teleport point§r]", \
     warp_button_add_hoverevent: "§bClick to create a new public teleport point at your current location", \
-    warp_button_apply: "[§aApply§r]", \
+    warp_button_apply: "§aApply§r", \
     warp_button_apply_hoverevent: "§bClick to apply the cached changes", \
-    warp_button_cancel: "[§cCancel§r]", \
+    warp_button_cancel: "§cCancel§r", \
     warp_button_cancel_hoverevent: "§bClick to discard the cached changes", \
-    warp_button_enable: "[§aEnable§r]", \
+    warp_button_enable: "§aEnable§r", \
     warp_button_enable_hoverevent: "§bClick to enable this public teleport point", \
-    warp_button_disable: "[§cDisable§r]", \
+    warp_button_disable: "§cDisable§r", \
     warp_button_disable_hoverevent: "§bClick to disable this public teleport point (except for name, other information will be hidden, enable to view)", \
     warp_button_moveup: "[§dMove up§r]", \
     warp_button_moveup_hoverevent: "§bClick to swap this public teleport spot with the one above", \
@@ -881,23 +885,35 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_unselect: "[§cUnselect§r]", \
     warp_button_unselect_hoverevent: "§bClick to unselect this public teleport spot slot", \
     warp_button_setdesc: "[§aSet Description§r]", \
+    warp_button_setdesc_hoverevent: "§bClick to open the Description Editting Menu of the warp", \
     warp_button_setname: "[§aSet Name§r]", \
+    warp_button_setname_hoverevent: "§bClick to open the Name Editting Menu of the warp", \
     warp_button_setpos: "[§aSet Position§r]", \
     warp_button_setpos_hoverevent: "§bClick to set this public teleport spot to your current position", \
     warp_desc_disabled: "§cThis public teleport spot is disabled", \
     warp_disabled: "§aPublic teleport spot§r has been disabled by the server", \
+    warp_edit: ["You are editting ", ". Please click the input button below, complete and execute the suggest command, , click \"Apply\" to save"], \
+    warp_edit_button_input_desc: "§aInput Description", \
+    warp_edit_button_input_desc_hoverevent: "§bClick and fill a description in the suggest command and then execute", \
+    warp_edit_button_input_name: "§aInput Name", \
+    warp_edit_button_input_name_hoverevent: "§bFill a name and execute in the suggest command", \
     warp_edit_invalid: "This public teleport point does not exist", \
+    warp_edit_occupied: ["Another player with UID of ", " is editting the warp"], \
+    warp_edit_dialog_title: "Warp Editting Dialog Menu", \
     warp_edit_no_value: "Please enter a non-empty value", \
+    warp_edit_target_index: ["(index: ", ")"], \
+    warp_edit_target_name: ["Name of ", ""], \
+    warp_edit_target_desc: ["Description of ", ""], \
     warp_hoverevent_location: ["", " of ", ""], \
     warp_hoverevent_location_format: 0, \
     warp_number: "Warp#", \
-    warp_out_of_range: "This public teleport spot has not been set yet", \
+    warp_out_of_range: "This Warp has not been set yet", \
     warp_select: ["You have selected", "as the slot being edited"], \
     warp_selector_title: "Warp List", \
     warp_selector_index: ["Warp ", " of %2$"], \
     warp_selector_button_previous_page: "◀ Previous Page", \
     warp_selector_button_previous_page_hoverevent: "§bClick to turn to the previous page", \
-    warp_selector_button_next_page: "nuNext Page ▶ll", \
+    warp_selector_button_next_page: "Next Page ▶", \
     warp_selector_button_next_page_hoverevent: "§bClick to turn to the next page", \
     warp_set: ["You have set", "to", ""], \
     warp_set_format: 0, \
@@ -1330,11 +1346,13 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_unselect: "[§c選択解除§r]", \
     warp_button_unselect_hoverevent: "§bクリックしてこのワープスロットの選択を解除", \
     warp_button_setdesc: "[§a説明設定§r]", \
+    warp_button_setdesc_hoverevent: "クリックしてワープのディスクリプション編集メーニュを入る", \
     warp_button_setname: "[§a名前設定§r]", \
     warp_button_setpos: "[§a位置設定§r]", \
     warp_button_setpos_hoverevent: "§bクリックしてこのワープを現在位置に設定", \
     warp_desc_disabled: "§cこのワープは無効化されています", \
     warp_disabled: "§aワープ§rはサーバーで無効化されています", \
+    warp_edit_button_input_name: "§a名前を入力", \
     warp_edit_invalid: "この公共ワープは存在しません", \
     warp_edit_no_value: "空ではない内容を入力してください", \
     warp_hoverevent_location: ["", "件中", ""], \

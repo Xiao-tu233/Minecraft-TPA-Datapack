@@ -4,79 +4,11 @@
 # Keep translation as null when the entry is not translated yet.
 languages:
   en_us:
-    reqer_req_tpa:
-      source: 你向%s发送了一个传送请求. 等待他接受
-      status: missing_key
-      translation: null
-    reqer_req_tpahere:
-      source: 你请求了%s传送到你的位置. 等待他接受
-      status: missing_key
-      translation: null
-    teleport_sim_dist_warn_button_binary_hoverevent:
-      source: §b点击将传送方式设置为二分法传送
-      status: missing_key
-      translation: null
     tick_not_working_button_set_schedule:
       source: §b[设置]
       status: missing_key
       translation: null
-    tick_not_working_button_set_schedule_hoverevent:
-      source: §b点击设置/schedule指令调用Tick函数
-      status: missing_key
-      translation: null
-    warp_button_setdesc_hoverevent:
-      source: §b点击进入该公共传送点的描述编辑菜单
-      status: missing_key
-      translation: null
-    warp_button_setname_hoverevent:
-      source: §b点击进入该公共传送点的名称编辑菜单
-      status: missing_key
-      translation: null
-    warp_edit:
-      source: 你正在编辑%s. 请点击下方的输入按钮，补全并执行推荐命令，将内容写入缓存，确认无误后点击“应用”保存更改
-      status: missing_key
-      translation: null
-    warp_edit_button_input_desc:
-      source: §a输入描述
-      status: missing_key
-      translation: null
-    warp_edit_button_input_desc_hoverevent:
-      source: §b点击后在命令输入框中填写描述并执行
-      status: missing_key
-      translation: null
-    warp_edit_button_input_name:
-      source: §a输入名字
-      status: missing_key
-      translation: null
-    warp_edit_button_input_name_hoverevent:
-      source: §b点击后在命令输入框中填写名字并执行
-      status: missing_key
-      translation: null
-    warp_edit_occupied:
-      source: 其他玩家(UID:%s)正在编辑公共传送点
-      status: missing_key
-      translation: null
-    warp_edit_dialog_title:
-      source: 公共传送点编辑对话框菜单
-      status: missing_key
-      translation: null
-    warp_edit_target_index:
-      source: (索引:%s)
-      status: missing_key
-      translation: null
-    warp_edit_target_name:
-      source: '%s的名字'
-      status: missing_key
-      translation: null
-    warp_edit_target_desc:
-      source: '%s的描述'
-      status: missing_key
-      translation: null
   ja_jp:
-    warp_button_setdesc_hoverevent:
-      source: §b点击进入该公共传送点的描述编辑菜单
-      status: missing_key
-      translation: null
     warp_button_setname_hoverevent:
       source: §b点击进入该公共传送点的名称编辑菜单
       status: missing_key
@@ -91,10 +23,6 @@ languages:
       translation: null
     warp_edit_button_input_desc_hoverevent:
       source: §b点击后在命令输入框中填写描述并执行
-      status: missing_key
-      translation: null
-    warp_edit_button_input_name:
-      source: §a输入名字
       status: missing_key
       translation: null
     warp_edit_button_input_name_hoverevent:
