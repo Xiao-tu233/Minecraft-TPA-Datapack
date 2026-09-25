@@ -93,8 +93,8 @@ languages:
     warp_edit_target_name:
       source: '%s的名字'
       status: missing_key
-      translation: null
+      translation: '%s的名字'
     warp_edit_target_desc:
       source: '%s的描述'
       status: missing_key
-      translation: null
+      translation: '%s的描述'
