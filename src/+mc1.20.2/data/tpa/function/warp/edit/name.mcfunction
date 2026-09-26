@@ -27,6 +27,6 @@ data modify storage tpa:tpa temp.output.cancel.label set from storage tpa:tpa lo
 data modify storage tpa:tpa temp.output.cancel.brackets set value ["§6[", "§6]"]
 data modify storage tpa:tpa temp.output.cancel.tooltip set from storage tpa:tpa loaded_lang.warp_button_cancel_hoverevent
 
-data modify storage tpa:tpa temp.output.edit_command_template set value "/data modify storage tpa:tpa temp.warp_edit.desc set value \"$(edit)\""
+data modify storage tpa:tpa temp.output.edit_command_template set value "/data modify storage tpa:tpa temp.warp_edit.name set value \"$(edit)\""
 
 function tpa:output/warp/edit

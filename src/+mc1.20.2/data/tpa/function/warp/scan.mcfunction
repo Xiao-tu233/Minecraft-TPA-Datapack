@@ -16,7 +16,8 @@ data modify storage tpa:tpa warp append value {sentinel: 1b}
 
 scoreboard players set #warp.current_slot tpa.variables 0
 
-execute if score #warp.replace_current tpa.variables matches 1 store result score #warp.scan_count tpa.variables run data get storage tpa:tpa temp.warp_candidate
+#                                                              Check if storage tpa:tpa temp.warp_candidate is a compound because if which is compound, scan_count will be set to 7
+execute if score #warp.replace_current tpa.variables matches 1 unless data storage tpa:tpa temp.warp_candidate.x store result score #warp.scan_count tpa.variables run data get storage tpa:tpa temp.warp_candidate
 
 scoreboard players set #warp.end tpa.variables -1
 scoreboard players operation #warp.end tpa.variables += #warp tpa.variables
