@@ -207,9 +207,10 @@ Project To-do lists:
 - [ ] 广播位置和家菜单悬停文本错位了
 - [x] coords in here copiable
       - compatible with other dimensions
+- [ ] 在warp设置菜单被调用的时候，应该显示是否有未保存的编辑。
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
 - [ ] For 1.17+ consider use entity mark to replace most of the visual items
 - [ ] Main version 26.3
-- [ ] 考虑将 +mc1.15 和 +mc1.13 分别改为 format_1_20_1 和 format_1_14_4 并 通过脚本做原版mc中pack.mcmeta中会做的事情
+- [ ] 考虑将 mc1.15 和 +mc1.13 分别改为 format_1_20_1 和 format_1_14_4 并 通过脚本做原版mc中pack.mcmeta中会做的事情
