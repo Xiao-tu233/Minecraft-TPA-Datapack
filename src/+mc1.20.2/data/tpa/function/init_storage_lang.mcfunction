@@ -461,7 +461,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set: ["你把", "设置为", ""], \
     warp_set_format: 0, \
     warp_set_position: "坐标", \
-    warp_set_default_name: "未命名传送点", \
+    warp_default_name: "未命名传送点", \
     warp_slot_disabled: ["你所访问的公共传送点", "已被禁用"], \
     warp_teleport: ["已将你传送至", ""], \
     warp_unavail: "当前状态下无法操作§a公共传送点§r" \
@@ -549,7 +549,7 @@ data modify storage tpa:tpa temp.lang set value \
     load_button_update: "[UPDATE]", \
     load_button_update_hoverevent: "Click to start updating datapack", \
     load_copyright_claim: "Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is licensed under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on commercial servers. Click \"[LICENSE]\" below to view the full license text.", \
-    load_date_check: ["Current version was released on", ", please pay attention to updates"], \
+    load_date_check: ["Current version was released on ", ", please pay attention to updates"], \
     load_date_check_format: 231, \
     load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
     load_date_check_year_prefix: "", \
@@ -642,10 +642,10 @@ data modify storage tpa:tpa temp.lang set value \
     option_uses_string_dimension: "Recognize string dimensions?", \
     option_uses_string_dimension_hoverevent: "§bChoose §aUse strings for dimension storage (1.16+ enabled) §6or §cUse integers for dimension storage (1.16- disabled)", \
     option_version: "Datapack version", \
-    option_warp: "Public teleport points", \
-    option_warp_hoverevent: "§bClick below to open the §aPublic teleport point §6menu, the number on the right indicates the number of public teleport points currently set.", \
+    option_warp: "warps", \
+    option_warp_hoverevent: "§bClick below to open the §awarp §6menu, the number on the right indicates the number of warps currently set.", \
     option_warp_number_hoverevent_leftpart: "§bThe server currently has ", \
-    option_warp_number_hoverevent_rightpart: "§b public teleport points.", \
+    option_warp_number_hoverevent_rightpart: "§b warps.", \
     option_uses_tick_scheduling: "Use /schedule command to call the Tick function", \
     output_default: "You have changed the output position to §aBOTH CHATBAR AND ACTIONBAR§r", \
     output_hide_actionbar: "You have changed the output position to §bCHATBAR ONLY§r", \
@@ -814,7 +814,7 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_home_button: "§bHome menu§r", \
     tpa_menu_home_button_hoverevent: "§bClick to open Home menu", \
     tpa_menu_warp_button: "§bLandmark menu§r", \
-    tpa_menu_warp_button_hoverevent: "§bClick to open the public teleport point (landmark) menu", \
+    tpa_menu_warp_button_hoverevent: "§bClick to open the warp (landmark) menu", \
     tpa_menu_hoverevent: ["§bClick to send a teleport request to ", ""], \
     tpa_menu_lang_button: "§bSwitch language§r", \
     tpa_menu_lang_button_hoverevent: "§bClick to switch language", \
@@ -865,35 +865,35 @@ data modify storage tpa:tpa temp.lang set value \
     update_step5_rightpart: " If unknown scoreboard items appear, please start from step 3. This may be caused by incorrect version or unknown issues. For other issues, please consult Xiao_tu233.", \
     update_nextstep: "§b[Next step]", \
     warp_button_add: "[§aCreate new teleport point§r]", \
-    warp_button_add_hoverevent: "§bClick to create a new public teleport point at your current location", \
-    warp_button_apply: "§aApply§r", \
+    warp_button_add_hoverevent: "§bClick to create a new warp at your current location", \
+    warp_button_apply: "§bApply§r", \
     warp_button_apply_hoverevent: "§bClick to apply the cached changes", \
     warp_button_cancel: "§cCancel§r", \
     warp_button_cancel_hoverevent: "§bClick to discard the cached changes", \
     warp_button_enable: "§aEnable§r", \
-    warp_button_enable_hoverevent: "§bClick to enable this public teleport point", \
+    warp_button_enable_hoverevent: "§bClick to enable this warp", \
     warp_button_disable: "§cDisable§r", \
-    warp_button_disable_hoverevent: "§bClick to disable this public teleport point (except for name, other information will be hidden, enable to view)", \
+    warp_button_disable_hoverevent: "§bClick to disable this warp (except for name, other information will be hidden, enable to view)", \
     warp_button_moveup: "§dMove up§r", \
-    warp_button_moveup_hoverevent: "§bClick to swap this public teleport spot with the one above", \
+    warp_button_moveup_hoverevent: "§bClick to swap this warp with the one above", \
     warp_button_moveup_notavail_hoverevent: "§cCannot move up, this teleport spot is already at the top", \
     warp_button_movedown: "§dMove Down§r", \
-    warp_button_movedown_hoverevent: "§bClick to swap this public teleport spot with the one below", \
+    warp_button_movedown_hoverevent: "§bClick to swap this warp with the one below", \
     warp_button_tp: "§bTeleport§r", \
-    warp_button_tp_hoverevent: "§bClick to teleport to this public teleport spot", \
+    warp_button_tp_hoverevent: "§bClick to teleport to this warp", \
     warp_button_rm: "§cRemove§r", \
-    warp_button_rm_hoverevent: "§bClick to remove this public teleport spot", \
+    warp_button_rm_hoverevent: "§bClick to remove this warp", \
     warp_button_select: "[§aSelect§r]", \
-    warp_button_select_hoverevent: "§bClick to select this public teleport spot slot to write changes when applying", \
+    warp_button_select_hoverevent: "§bClick to select this warp slot to write changes when applying", \
     warp_button_unselect: "§cUnselect§r", \
-    warp_button_unselect_hoverevent: "§bClick to unselect this public teleport spot slot", \
+    warp_button_unselect_hoverevent: "§bClick to unselect this warp slot", \
     warp_button_setdesc: "§aSet Description§r", \
     warp_button_setdesc_hoverevent: "§bClick to open the Description Editting Menu of the warp", \
     warp_button_setname: "§aSet Name§r", \
     warp_button_setname_hoverevent: "§bClick to open the Name Editting Menu of the warp", \
     warp_button_setpos: "§aSet Position§r", \
-    warp_button_setpos_hoverevent: "§bClick to set this public teleport spot to your current position", \
-    warp_desc_disabled: "§cThis public teleport spot is disabled", \
+    warp_button_setpos_hoverevent: "§bClick to set this warp to your current position", \
+    warp_desc_disabled: "§cThis warp is disabled", \
     warp_disabled: "§aWarps§r have been disabled by the server", \
     warp_edit: ["You are editting ", ". Please click the input button below, complete and execute the suggest command, click \"Apply\" to save"], \
     warp_edit_button_input_desc: "§aInput Description", \
@@ -916,16 +916,16 @@ data modify storage tpa:tpa temp.lang set value \
     warp_out_of_range: "This Warp has not been set yet", \
     warp_select: ["You have selected", "as the slot being edited"], \
     warp_selector_title: "Warp List", \
-    warp_selector_index: ["Warp ", " of %2$"], \
+    warp_selector_index: ["Warp ", " of ", ""], \
+    warp_selector_index_format: 0, \
     warp_selector_button_previous_page: "◀ Previous Page", \
     warp_selector_button_previous_page_hoverevent: "§bClick to turn to the previous page", \
     warp_selector_button_next_page: "Next Page ▶", \
     warp_selector_button_next_page_hoverevent: "§bClick to turn to the next page", \
-    warp_set: ["You have set", "to", ""], \
+    warp_set: ["You have set ", " to ", ""], \
     warp_set_format: 0, \
     warp_set_position: "coordinates", \
-    warp_set_default_name: "UnnamedWarp", \
-    warp_slot_disabled: ["The Warp you  named ", " has been disabled"], \
+    warp_slot_disabled: ["The Warp named ", " has been disabled"], \
     warp_teleport: ["You have been teleported to ", ""], \
     warp_unavail: "You are not allowed to access §aWarps§r in the current state" \
 }, \
@@ -1376,7 +1376,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set: ["", "を", ""], \
     warp_set_format: 0, \
     warp_set_position: "座標", \
-    warp_set_default_name: "名前未設定ワープ", \
     warp_slot_disabled: ["アクセスしようとしたワープ", "は無効化されています"], \
     warp_teleport: ["テレポートされました：", ""], \
     warp_unavail: "現在の状態では§aワープ§rを使用できません" \
@@ -1828,7 +1827,6 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set: ["你把", "設為", ""], \
     warp_set_format: 0, \
     warp_set_position: "座標", \
-    warp_set_default_name: "未命名傳送點", \
     warp_slot_disabled: ["你所造訪的公共傳送點", "已停用"], \
     warp_teleport: ["已將你傳送至", ""], \
     warp_unavail: "目前狀態下無法操作§a公開傳送點§r" \

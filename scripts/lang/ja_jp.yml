@@ -438,7 +438,6 @@ warp_selector_button_next_page: 次のページ ▶
 warp_selector_button_next_page_hoverevent: §bクリックして次のページを表示
 warp_set: '%1$sを%2$s'
 warp_set_position: 座標
-warp_set_default_name: 名前未設定ワープ
 warp_slot_disabled: アクセスしようとしたワープ%sは無効化されています
 warp_teleport: テレポートされました：%s
 warp_unavail: 現在の状態では§aワープ§rを使用できません

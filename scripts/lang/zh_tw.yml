@@ -438,7 +438,6 @@ warp_selector_button_next_page: 下一頁 ▶
 warp_selector_button_next_page_hoverevent: §b點擊查看下一頁
 warp_set: 你把%1$s設為%2$s
 warp_set_position: 座標
-warp_set_default_name: 未命名傳送點
 warp_slot_disabled: 你所造訪的公共傳送點%s已停用
 warp_teleport: 已將你傳送至%s
 warp_unavail: 目前狀態下無法操作§a公開傳送點§r

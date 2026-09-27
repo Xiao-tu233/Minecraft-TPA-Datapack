@@ -191,8 +191,8 @@ option_uses_string_dimension_hoverevent: §bChoose §aUse strings for dimension 
   for dimension storage (1.16- disabled)
 option_version: Datapack version
 option_warp: warps
-option_warp_hoverevent: §bClick below to open the §awarp §6menu, the number on the right indicates the number
-  of warps currently set.
+option_warp_hoverevent: §bClick below to open the §awarp §6menu, the number on the right indicates the number of warps currently
+  set.
 option_warp_number_hoverevent_leftpart: '§bThe server currently has '
 option_warp_number_hoverevent_rightpart: §b warps.
 option_uses_tick_scheduling: Use /schedule command to call the Tick function
@@ -435,26 +435,26 @@ warp_button_cancel_hoverevent: §bClick to discard the cached changes
 warp_button_enable: §aEnable§r
 warp_button_enable_hoverevent: §bClick to enable this warp
 warp_button_disable: §cDisable§r
-warp_button_disable_hoverevent: §bClick to disable this warp (except for name, other information will be
-  hidden, enable to view)
-warp_button_moveup: '§dMove up§r'
+warp_button_disable_hoverevent: §bClick to disable this warp (except for name, other information will be hidden, enable to
+  view)
+warp_button_moveup: §dMove up§r
 warp_button_moveup_hoverevent: §bClick to swap this warp with the one above
 warp_button_moveup_notavail_hoverevent: §cCannot move up, this teleport spot is already at the top
-warp_button_movedown: '§dMove Down§r'
+warp_button_movedown: §dMove Down§r
 warp_button_movedown_hoverevent: §bClick to swap this warp with the one below
-warp_button_tp: '§bTeleport§r'
+warp_button_tp: §bTeleport§r
 warp_button_tp_hoverevent: §bClick to teleport to this warp
-warp_button_rm: '§cRemove§r'
+warp_button_rm: §cRemove§r
 warp_button_rm_hoverevent: §bClick to remove this warp
 warp_button_select: '[§aSelect§r]'
 warp_button_select_hoverevent: §bClick to select this warp slot to write changes when applying
-warp_button_unselect: '§cUnselect§r'
+warp_button_unselect: §cUnselect§r
 warp_button_unselect_hoverevent: §bClick to unselect this warp slot
-warp_button_setdesc: '§aSet Description§r'
+warp_button_setdesc: §aSet Description§r
 warp_button_setdesc_hoverevent: §bClick to open the Description Editting Menu of the warp
-warp_button_setname: '§aSet Name§r'
+warp_button_setname: §aSet Name§r
 warp_button_setname_hoverevent: §bClick to open the Name Editting Menu of the warp
-warp_button_setpos: '§aSet Position§r'
+warp_button_setpos: §aSet Position§r
 warp_button_setpos_hoverevent: §bClick to set this warp to your current position
 warp_desc_disabled: §cThis warp is disabled
 warp_disabled: §aWarps§r have been disabled by the server
@@ -486,7 +486,6 @@ warp_selector_button_next_page: Next Page ▶
 warp_selector_button_next_page_hoverevent: §bClick to turn to the next page
 warp_set: You have set %1$s to %2$s
 warp_set_position: coordinates
-warp_set_default_name: UnnamedWarp
 warp_slot_disabled: The Warp named %s has been disabled
 warp_teleport: You have been teleported to %s
 warp_unavail: You are not allowed to access §aWarps§r in the current state
