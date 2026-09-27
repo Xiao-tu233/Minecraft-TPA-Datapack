@@ -443,6 +443,9 @@ data modify storage tpa:tpa temp.lang set value \
     warp_edit_target_index: ["(索引:", ")"], \
     warp_edit_target_name: ["", "的名字"], \
     warp_edit_target_desc: ["", "的描述"], \
+    warp_edit_unsaved_warn: ["你有上次尚未应用的更改: 将", "改为", ". 请点击应用来保存更改或者点击取消来舍弃更改"], \
+    warp_edit_unsaved_warn_format: 0, \
+    warp_edit_unsaved_warn_dialog_title: "公共传送点编辑未保存提醒对话框", \
     warp_hoverevent_location: ["", "中的", ""], \
     warp_hoverevent_location_format: 1, \
     warp_number: "公共传送点#", \
@@ -871,40 +874,43 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_enable_hoverevent: "§bClick to enable this public teleport point", \
     warp_button_disable: "§cDisable§r", \
     warp_button_disable_hoverevent: "§bClick to disable this public teleport point (except for name, other information will be hidden, enable to view)", \
-    warp_button_moveup: "[§dMove up§r]", \
+    warp_button_moveup: "§dMove up§r", \
     warp_button_moveup_hoverevent: "§bClick to swap this public teleport spot with the one above", \
     warp_button_moveup_notavail_hoverevent: "§cCannot move up, this teleport spot is already at the top", \
-    warp_button_movedown: "[§dMove Down§r]", \
+    warp_button_movedown: "§dMove Down§r", \
     warp_button_movedown_hoverevent: "§bClick to swap this public teleport spot with the one below", \
-    warp_button_tp: "[§bTeleport§r]", \
+    warp_button_tp: "§bTeleport§r", \
     warp_button_tp_hoverevent: "§bClick to teleport to this public teleport spot", \
-    warp_button_rm: "[§cRemove§r]", \
+    warp_button_rm: "§cRemove§r", \
     warp_button_rm_hoverevent: "§bClick to remove this public teleport spot", \
     warp_button_select: "[§aSelect§r]", \
     warp_button_select_hoverevent: "§bClick to select this public teleport spot slot to write changes when applying", \
-    warp_button_unselect: "[§cUnselect§r]", \
+    warp_button_unselect: "§cUnselect§r", \
     warp_button_unselect_hoverevent: "§bClick to unselect this public teleport spot slot", \
-    warp_button_setdesc: "[§aSet Description§r]", \
+    warp_button_setdesc: "§aSet Description§r", \
     warp_button_setdesc_hoverevent: "§bClick to open the Description Editting Menu of the warp", \
-    warp_button_setname: "[§aSet Name§r]", \
+    warp_button_setname: "§aSet Name§r", \
     warp_button_setname_hoverevent: "§bClick to open the Name Editting Menu of the warp", \
-    warp_button_setpos: "[§aSet Position§r]", \
+    warp_button_setpos: "§aSet Position§r", \
     warp_button_setpos_hoverevent: "§bClick to set this public teleport spot to your current position", \
     warp_desc_disabled: "§cThis public teleport spot is disabled", \
-    warp_disabled: "§aPublic teleport spot§r has been disabled by the server", \
-    warp_edit: ["You are editting ", ". Please click the input button below, complete and execute the suggest command, , click \"Apply\" to save"], \
+    warp_disabled: "§aWarps§r have been disabled by the server", \
+    warp_edit: ["You are editting ", ". Please click the input button below, complete and execute the suggest command, click \"Apply\" to save"], \
     warp_edit_button_input_desc: "§aInput Description", \
     warp_edit_button_input_desc_hoverevent: "§bClick and fill a description in the suggest command and then execute", \
     warp_edit_button_input_name: "§aInput Name", \
     warp_edit_button_input_name_hoverevent: "§bFill a name and execute in the suggest command", \
-    warp_edit_invalid: "This public teleport point does not exist", \
+    warp_edit_invalid: "The warp does not exist", \
     warp_edit_occupied: ["Another player with UID of ", " is editting the warp"], \
     warp_edit_dialog_title: "Warp Editting Dialog Menu", \
     warp_edit_no_value: "Please enter a non-empty value", \
     warp_edit_target_index: ["(index: ", ")"], \
     warp_edit_target_name: ["Name of ", ""], \
     warp_edit_target_desc: ["Description of ", ""], \
-    warp_hoverevent_location: ["", " of ", ""], \
+    warp_edit_unsaved_warn: ["Your previous edit contains an unapplied change: ", " will replace ", ". Click \"Apply\" to apply it or \"Cancel\" to discard it."], \
+    warp_edit_unsaved_warn_format: 1, \
+    warp_edit_unsaved_warn_dialog_title: "Warp Edit Unsaved Warning Dialog", \
+    warp_hoverevent_location: ["", " in ", ""], \
     warp_hoverevent_location_format: 0, \
     warp_number: "Warp#", \
     warp_out_of_range: "This Warp has not been set yet", \
@@ -1805,6 +1811,8 @@ data modify storage tpa:tpa temp.lang set value \
     warp_disabled: "§a公共傳送點§r已被伺服器禁用", \
     warp_edit_invalid: "該公共傳送點不存在", \
     warp_edit_no_value: "請輸入非空內容", \
+    warp_edit_target_name: ["", "的名字"], \
+    warp_edit_target_desc: ["", "的描述"], \
     warp_hoverevent_location: ["", "中的", ""], \
     warp_hoverevent_location_format: 1, \
     warp_number: "公共傳送點#", \

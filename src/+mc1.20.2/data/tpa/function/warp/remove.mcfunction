@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/remove/slot_*
+# Parent function: tpa:warp/remove/slot
 
 data remove storage tpa:tpa temp.warp_result
 scoreboard players set #warp.store_result tpa.variables 0

@@ -15,3 +15,5 @@ scoreboard players operation #warp.total_pages tpa.variables /= #5 tpa.variables
 
 execute if score #warp tpa.config matches 0 run function tpa:warp/option/empty
 execute if score #warp tpa.config matches 1.. run function tpa:warp/menu
+
+execute if data storage tpa:tpa temp.warp_edit run function tpa:warp/edit/unsaved/check

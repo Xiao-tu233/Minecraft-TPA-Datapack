@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/slot_*
+# Parent function: tpa:warp/setname/slot_*
 function tpa:warp/edit/slot_offset
 scoreboard players operation #warp.edit.index tpa.variables = #warp.setname.slot tpa.variables
 scoreboard players operation #warp.edit.index tpa.variables += #warp.page.offset tpa.variables

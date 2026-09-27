@@ -49,6 +49,14 @@ languages:
       source: '%s的描述'
       status: missing_key
       translation: null
+    warp_edit_unsaved_warn:
+      source: '你有上次尚未应用的更改: 将%1$s改为%2$s. 请点击应用来保存更改或者点击取消来舍弃更改'
+      status: missing_key
+      translation: null
+    warp_edit_unsaved_warn_dialog_title:
+      source: 公共传送点编辑未保存提醒对话框
+      status: missing_key
+      translation: null
   zh_tw:
     warp_button_setdesc_hoverevent:
       source: §b点击进入该公共传送点的描述编辑菜单
@@ -90,11 +98,11 @@ languages:
       source: (索引:%s)
       status: missing_key
       translation: null
-    warp_edit_target_name:
-      source: '%s的名字'
+    warp_edit_unsaved_warn:
+      source: '你有上次尚未应用的更改: 将%1$s改为%2$s. 请点击应用来保存更改或者点击取消来舍弃更改'
       status: missing_key
-      translation: '%s的名字'
-    warp_edit_target_desc:
-      source: '%s的描述'
+      translation: null
+    warp_edit_unsaved_warn_dialog_title:
+      source: 公共传送点编辑未保存提醒对话框
       status: missing_key
-      translation: '%s的描述'
+      translation: null

@@ -424,6 +424,8 @@ warp_desc_disabled: §c該公共傳送點已被禁用
 warp_disabled: §a公共傳送點§r已被伺服器禁用
 warp_edit_invalid: 該公共傳送點不存在
 warp_edit_no_value: 請輸入非空內容
+warp_edit_target_name: '%s的名字'
+warp_edit_target_desc: '%s的描述'
 warp_hoverevent_location: '%2$s中的%1$s'
 warp_number: 公共傳送點#
 warp_out_of_range: 該公共傳送點尚未設定

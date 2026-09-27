@@ -82,7 +82,7 @@ load_button_update_hoverevent: Click to start updating datapack
 load_copyright_claim: Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is licensed
   under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on commercial servers.
   Click "[LICENSE]" below to view the full license text.
-load_date_check: Current version was released on%s, please pay attention to updates
+load_date_check: Current version was released on %s, please pay attention to updates
 load_date_check_format: 231
 load_date_check_format_comment: §r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day
 load_date_check_year_prefix: ''
@@ -428,7 +428,7 @@ update_step5_rightpart: ' If unknown scoreboard items appear, please start from 
 update_nextstep: §b[Next step]
 warp_button_add: '[§aCreate new teleport point§r]'
 warp_button_add_hoverevent: §bClick to create a new public teleport point at your current location
-warp_button_apply: §aApply§r
+warp_button_apply: §bApply§r
 warp_button_apply_hoverevent: §bClick to apply the cached changes
 warp_button_cancel: §cCancel§r
 warp_button_cancel_hoverevent: §bClick to discard the cached changes
@@ -437,46 +437,49 @@ warp_button_enable_hoverevent: §bClick to enable this public teleport point
 warp_button_disable: §cDisable§r
 warp_button_disable_hoverevent: §bClick to disable this public teleport point (except for name, other information will be
   hidden, enable to view)
-warp_button_moveup: '[§dMove up§r]'
+warp_button_moveup: '§dMove up§r'
 warp_button_moveup_hoverevent: §bClick to swap this public teleport spot with the one above
 warp_button_moveup_notavail_hoverevent: §cCannot move up, this teleport spot is already at the top
-warp_button_movedown: '[§dMove Down§r]'
+warp_button_movedown: '§dMove Down§r'
 warp_button_movedown_hoverevent: §bClick to swap this public teleport spot with the one below
-warp_button_tp: '[§bTeleport§r]'
+warp_button_tp: '§bTeleport§r'
 warp_button_tp_hoverevent: §bClick to teleport to this public teleport spot
-warp_button_rm: '[§cRemove§r]'
+warp_button_rm: '§cRemove§r'
 warp_button_rm_hoverevent: §bClick to remove this public teleport spot
 warp_button_select: '[§aSelect§r]'
 warp_button_select_hoverevent: §bClick to select this public teleport spot slot to write changes when applying
-warp_button_unselect: '[§cUnselect§r]'
+warp_button_unselect: '§cUnselect§r'
 warp_button_unselect_hoverevent: §bClick to unselect this public teleport spot slot
-warp_button_setdesc: '[§aSet Description§r]'
+warp_button_setdesc: '§aSet Description§r'
 warp_button_setdesc_hoverevent: §bClick to open the Description Editting Menu of the warp
-warp_button_setname: '[§aSet Name§r]'
+warp_button_setname: '§aSet Name§r'
 warp_button_setname_hoverevent: §bClick to open the Name Editting Menu of the warp
-warp_button_setpos: '[§aSet Position§r]'
+warp_button_setpos: '§aSet Position§r'
 warp_button_setpos_hoverevent: §bClick to set this public teleport spot to your current position
 warp_desc_disabled: §cThis public teleport spot is disabled
-warp_disabled: §aPublic teleport spot§r has been disabled by the server
-warp_edit: You are editting %s. Please click the input button below, complete and execute the suggest command, , click "Apply"
+warp_disabled: §aWarps§r have been disabled by the server
+warp_edit: You are editting %s. Please click the input button below, complete and execute the suggest command, click "Apply"
   to save
 warp_edit_button_input_desc: §aInput Description
 warp_edit_button_input_desc_hoverevent: §bClick and fill a description in the suggest command and then execute
 warp_edit_button_input_name: §aInput Name
 warp_edit_button_input_name_hoverevent: §bFill a name and execute in the suggest command
-warp_edit_invalid: This public teleport point does not exist
+warp_edit_invalid: The warp does not exist
 warp_edit_occupied: Another player with UID of %s is editting the warp
 warp_edit_dialog_title: Warp Editting Dialog Menu
 warp_edit_no_value: Please enter a non-empty value
 warp_edit_target_index: '(index: %s)'
 warp_edit_target_name: Name of %s
 warp_edit_target_desc: Description of %s
-warp_hoverevent_location: '%1$s of %2$s'
+warp_edit_unsaved_warn: 'Your previous edit contains an unapplied change: %2$s will replace %1$s. Click "Apply" to apply it
+  or "Cancel" to discard it.'
+warp_edit_unsaved_warn_dialog_title: Warp Edit Unsaved Warning Dialog
+warp_hoverevent_location: '%1$s in %2$s'
 warp_number: Warp#
 warp_out_of_range: This Warp has not been set yet
 warp_select: You have selected%sas the slot being edited
 warp_selector_title: Warp List
-warp_selector_index: Warp %1$s of %2$
+warp_selector_index: Warp %1$s of %2$s
 warp_selector_button_previous_page: ◀ Previous Page
 warp_selector_button_previous_page_hoverevent: §bClick to turn to the previous page
 warp_selector_button_next_page: Next Page ▶
