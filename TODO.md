@@ -84,31 +84,215 @@ Project To-do lists:
 - [ ] 将主版本改为26.2
 - [ ] 增加更多脚本 在增加新功能的时候同步更改
 - [ ] 单独的update函数来更新命令存储(关于home)
-      - 使用宏函数进行如下更新
-        初始化时将旧的home数据存储到option.home_legacy中并初始化新的home[] 和原1.20.1-1.15的存储方式相同
-        对于上线玩家 如果option.home_legacy.$(name)存在
-        则尝试将该玩家的个人传送点数据迁移至新位置
-        首先检测服务器设置的个人传送点数量上限 如果不为-1则以其为循环次数循环从1开始为键名的option.home_legacy.$(name).$(id)
-        如果服务器设置的个人歘送点数量上限为-1 则采用这种方式最大限度的保留原数据
-        考虑一个数字作为最小的检测数量 在该数量和目前已经检测过的传送点槽位数量(不包括目前已计数的连续空槽位, 即最后一次出现数据的槽位位置)里面取更大值 如果在循环过程中出现连续该更大值的空白传送点槽位 则退出循环保存现有的传送点
-        最小的检测数量 是一个高级选项: #home_migration_min_scan 默认值为16
-         理由：
-         - 普通服务器的 Home 上限通常远小于 16；
-         - 能覆盖大多数旧数据中的空槽间隔；
-         - 只进行 16 次基础探测，迁移成本仍然很低；
-         - #home = -1 本身已经是不推荐的无限制模式，不值得为了极端稀疏数据无限增加扫描量。
-        个人传送点迁移后 移除旧储存的相关数据 具体到传送点而不是玩家 即data remove storage tpa:tpa option.home_legacy.$(name).$(id)
-        在高级选项中设置 放弃所有旧home数据 按钮 并做如下处理和警告:
-        "请在如下查看目前未被迁移到新储存格式的个人传送点" 在这里展示option.home_legacy数据
-        "你可以查询提及玩家的uid并手动使用如下指令来把这些传送点迁移到新的储存格式中"
-        "/function tpa:update/home/migrate_specific {with: {name: "ExamplePlayerName", uid: <ExampleUid>, index: <ExampleHomeIndex>}}"
-        函数会检测输入的name或者uid 其中如果name参数缺省, 
-          如果玩家在线则通过get_name函数获取玩家名称 如果离线则通过数据存储的users列表获取 如果users列表的该索引不存在则报错
-        未缺省则会对照输入的是否正确 如果通过uid获取玩家id失败则直接采用提供的name参数作为玩家名
-        如果缺省uid参数则通过数据存储的users列表获取 如果玩家不存在在users列表中则弹出2次确认是否为玩家添加uid
-        index为个人传送点槽位 为必填参数 缺省则报错
-        注意观察2.0.4-的home格式是否应该以该方式转化 记得2.0.3的历史键名转化(dim->dimension)
-         考虑新的更新方式 通过data modify ... set string ... 把复合标签转化为snbt 并借助宏函数模拟解析直到复合标签剩下{}
+      ```text
+                  from AI: 明白。按你的前提，**字符串解析方案应作为 Home 迁移的权威路径**，不再用“连续空槽位”推断数据结束位置。这样才真正避免稀疏槽位导致遗漏。
+
+            ## 函数命名建议
+
+            建议分成四层：
+
+            ```text
+            tpa:update/home/backup
+            tpa:update/home/migrate_player
+            tpa:update/home/serialize
+            tpa:update/home/parse
+            ```
+
+            解析部分可以继续细分：
+
+            ```text
+            tpa:update/home/parse/next_slot
+            tpa:update/home/parse/field
+            tpa:update/home/parse/value
+            tpa:update/home/parse/finish
+            ```
+
+            写入和清理：
+
+            ```text
+            tpa:update/home/normalize_slot
+            tpa:update/home/commit_slot
+            tpa:update/home/remove_legacy_slot
+            ```
+
+            手动迁移相关：
+
+            ```text
+            tpa:update/home/migrate_specific
+            tpa:update/home/migrate_specific/resolve_name
+            tpa:update/home/migrate_specific/resolve_uid
+            tpa:update/home/migrate_specific/confirm_uid
+            ```
+
+            这里建议使用 `serialize` 表示“复合标签转字符串”，使用 `parse` 表示“字符串解析为字段”，使用 `migrate` 表示完整迁移流程。
+
+            ## 解析器需要记录的状态
+
+            至少需要这些状态：
+
+            ```text
+            temp.home_migration.snbt
+            temp.home_migration.key
+            temp.home_migration.value
+            temp.home_migration.slot
+            #home_migration.cursor
+            #home_migration.depth
+            #home_migration.in_string
+            #home_migration.escape
+            #home_migration.state
+            ```
+
+            注意不能只识别 `:`, `{`, `}`，还必须处理：
+
+            ```text
+            ,       字段分隔符
+            "       字符串开始/结束
+            \       字符串转义
+            [ ]     未来可能出现的列表值
+            空白    字符串外可以忽略
+            ```
+
+            尤其是：
+
+            ```snbt
+            "minecraft:overworld"
+            ```
+
+            其中的 `:` 不能被当作字段分隔符。因此只有在 `in_string = 0` 时，才允许识别语法符号。
+
+            ## 迁移流程建议
+
+            ```text
+            backup
+            复制旧 home 到 option.home_legacy
+            初始化新的 home
+            写入迁移状态
+
+            migrate_player
+            获取玩家名
+            解析 UID
+            序列化 option.home_legacy.<name>
+            逐个解析 Home 槽位
+
+            normalize_slot
+            x/y/z 保持原值
+            dim 转换为 dimension
+            兼容 Dimension、dim 等历史键名
+
+            commit_slot
+            写入新的 home 列表
+            确认成功后删除对应的 option.home_legacy.<name>.<id>
+
+            finish
+            只有该玩家没有未处理槽位时，才删除空的玩家节点
+            ```
+
+            `#home_migration_min_scan` 在字符串解析模式下不应再作为终止条件。解析器应该一直处理到对应的 `}`。这个选项最多只能作为：
+
+            - 防止异常数据造成无限递归的安全上限；
+            - 旧格式无法序列化时的备用扫描策略。
+
+            ## UID 缺失时的处理
+
+            不要把没有 UID 的玩家写成 `uid: 0`。建议：
+
+            ```text
+            uid = 0       保留给无效/未识别身份
+            uid = -1      仅用于临时迁移状态
+            ```
+
+            处理规则：
+
+            1. 玩家在线：直接使用当前执行者的 `tpa.uid`。
+            2. 玩家离线但 `users[uid]` 存在：使用 users 映射。
+            3. 名字和 UID 都无法确认：保留原始数据，不删除，并放入待处理区域。
+            4. `migrate_specific` 提供 name 和 uid 时：
+               - UID 能找到对应名字且与 name 不一致，应警告，不要静默覆盖；
+               - UID 查不到时，才允许采用用户提供的 name；
+               - 缺少 UID 时，先通过 users 反查；
+               - 仍找不到时，再进入两次确认的“创建 UID”流程。
+
+            最重要的是：手动创建 UID 后，玩家下次加入时必须先按名字或别名查找已有 UID，不能再次执行普通的新玩家 UID 分配。
+
+            ## `users` 当前结构是否需要马上改
+
+            当前：
+
+            ```snbt
+            users: ["", "PictureIsHere", "OtherPlayer"]
+            ```
+
+            作为：
+
+            ```text
+            UID -> 玩家名
+            ```
+
+            的索引是合理的，尤其适合当前兼容旧版本的实现。暂时不建议为了 Home 迁移同时重构它。
+
+            但它不适合作为完整用户数据库，因为无法记录：
+
+            - 玩家改名前的名字；
+            - 首次加入时间；
+            - 最后在线时间；
+            - UID 是否为手动保留；
+            - 用户设置或管理状态。
+
+            长期可以升级成：
+
+            ```snbt
+            users: [
+               {},
+               {
+                  uid: 1,
+                  name: "PictureIsHere",
+                  aliases: ["OldName"],
+                  reserved: 0b
+               }
+            ]
+            ```
+
+            不过这会影响大量旧代码。更稳妥的过渡方案是保留现有：
+
+            ```snbt
+            users: ["", "PictureIsHere"]
+            ```
+
+            再增加：
+
+            ```snbt
+            user_meta: [
+               {
+                  uid: 1,
+                  aliases: ["OldName"],
+                  reserved: 0b
+               }
+            ]
+            ```
+
+            这样现有 `users[uid]` 访问方式不变，同时可以支持未来的用户管理。
+
+            ## 一个必须提前考虑的问题
+
+            旧 Home 是按玩家名存储的：
+
+            ```text
+            option.home_legacy.<name>
+            ```
+
+            如果玩家改过名字，仅依赖当前 `users[uid]` 可能找不到旧节点。因此建议保留别名，或者允许：
+
+            ```mcfunction
+            /function tpa:update/home/migrate_specific {with: {name: "OldName", uid: 1, index: 3}}
+            ```
+
+            总体上，你的字符串解析方案适合作为一次性的完整迁移器。关键是：
+
+            - 不用空槽位判断结束；
+            - 只在完整解析并成功写入后删除旧槽位；
+            - UID 无法确认时保留数据；
+            - `users` 先作为索引使用，用户资料以后再独立扩展。
+            ```
 - [ ] 建立List(名字可以再斟酌一下)的class 用来处理所有 列表里放复合标签 且用复合标签的特定键来辩识是否匹配的所有对象
 - [x] 数据包第一次被加载时服务器里玩家的id不会正确的被加入users列表
    - [ ] 应包含更新程序: 添加玩家id到users 对于空位置使用占位符 在玩家上线时加入 而不是直接append 否则会导致index和uid不对齐
