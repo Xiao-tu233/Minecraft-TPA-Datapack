@@ -1,8 +1,6 @@
-# Parent function: tpa:on_join
-# Migrate the current player's legacy homes after the player has a UID.
+# Parent function: tpa:initialize
+# The current format is a list of {x, y, z, dimension, uid, id} compounds.
 
-function tpa:get_name
-data remove storage tpa:tpa temp.args
-execute store result storage tpa:tpa temp.update_hargsome.uid int 1 run scoreboard players get @s tpa.uid
-data modify storage tpa:tpa temp.args.name set from storage tpa:tpa temp.name
-function tpa:update/home/prepare with storage tpa:tpa temp.args
+data modify storage tpa:tpa temp.args.home set from storage tpa:tpa home
+data modify storage tpa:tpa home set value []
+function tpa:update/home/convert_snbt with storage tpa:tpa temp.args
