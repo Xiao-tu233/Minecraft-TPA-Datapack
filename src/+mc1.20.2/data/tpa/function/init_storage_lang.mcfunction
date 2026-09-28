@@ -578,7 +578,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_button_license_hoverevent: "§bTo use TPA datapack, you must follow the open source license we put on Github website and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read the whole text carefully.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
-    option_button_set: "[§aSET§r]", \
+    option_button_set: "[§aModify§r]", \
     option_button_uninstall: "[§4UNINSTALL§r]", \
     option_button_uninstall_hoverevent: "§4Click this button to §l§nUninstall§r§4 TPA datapack! Please consider if you really need it!", \
     option_button_update: "[§4UPDATE§r]", \
@@ -813,8 +813,8 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_here_button_hoverevent: "§bClick to broadcast your position", \
     tpa_menu_home_button: "§bHome menu§r", \
     tpa_menu_home_button_hoverevent: "§bClick to open Home menu", \
-    tpa_menu_warp_button: "§bLandmark menu§r", \
-    tpa_menu_warp_button_hoverevent: "§bClick to open the warp (landmark) menu", \
+    tpa_menu_warp_button: "Warp Menu§r", \
+    tpa_menu_warp_button_hoverevent: "§bClick to open the Warp menu", \
     tpa_menu_hoverevent: ["§bClick to send a teleport request to ", ""], \
     tpa_menu_lang_button: "§bSwitch language§r", \
     tpa_menu_lang_button_hoverevent: "§bClick to switch language", \
@@ -864,7 +864,7 @@ data modify storage tpa:tpa temp.lang set value \
     update_step5_hoverevent: "Click to load the datapack", \
     update_step5_rightpart: " If unknown scoreboard items appear, please start from step 3. This may be caused by incorrect version or unknown issues. For other issues, please consult Xiao_tu233.", \
     update_nextstep: "§b[Next step]", \
-    warp_button_add: "[§aCreate new teleport point§r]", \
+    warp_button_add: "§aCreate new Warp§r", \
     warp_button_add_hoverevent: "§bClick to create a new warp at your current location", \
     warp_button_apply: "§bApply§r", \
     warp_button_apply_hoverevent: "§bClick to apply the cached changes", \
