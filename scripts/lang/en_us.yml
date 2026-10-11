@@ -15,7 +15,7 @@ book_mainhand_busy: Please hold your main hand to get the book.
 book_refresh: You refreshed the §aTeleport Menu Book§r
 book_reget: '[§bReget§r]'
 book_reget_hoverevent: §bClick to reget the teleport book
-book_stacking: Detected stacked teleport books, extra copies have been removed
+book_stacking: Duplicate teleport menu books detected. Your books have been reset.
 book_stop: You have stopped using §aTPA Book§r, you can get it again in TPA menu
 book_title: '§r§bTPA menu book §a[Press Q to Refresh] '
 book_unavail: You are not allowed to use the §aTeleport Book§r in the current state

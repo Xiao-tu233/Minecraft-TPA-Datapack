@@ -15,7 +15,7 @@ book_mainhand_busy: メインハンドにアイテムを持っているため、
 book_refresh: §aTPAメニューの本をリフレッシュしました
 book_reget: '[§b再取得§r]'
 book_reget_hoverevent: §bクリックしてTPAブックを再取得
-book_stacking: TPAブックがスタックされていることを検出しました、余分な本は没収されました
+book_stacking: TPAブックが複数検出されたため、リセットしました
 book_stop: §aTPAブック§rの使用を停止しました。TPAメニューで再取得できます
 book_title: '§r§b你TPAメニューの本 §a[投げてリフレッシュ] '
 book_unavail: 現在の状態では§aテレポートブック§rを使用できません
