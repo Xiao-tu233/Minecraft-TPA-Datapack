@@ -11,7 +11,5 @@ scoreboard players set #option.update.depth tpa.variables 0
 data modify storage tpa:tpa temp.args.current_key set value ""
 data modify storage tpa:tpa temp.args.token set value ""
 data remove storage tpa:tpa temp.args.current
-data remove storage tpa:tpa temp.args.output
 
 function tpa:update/home/scan_char with storage tpa:tpa temp.args
-data remove storage tpa:tpa temp.args
