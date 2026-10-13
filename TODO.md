@@ -186,7 +186,7 @@ Project To-do lists:
             - UID 无法确认时保留数据；
             - `users` 先作为索引使用，用户资料以后再独立扩展。
             ```
-            - 当对应用户的所有home已经被迁移 option.home_legacy.<name> 路径并没有被移除
+            - [x] 当对应用户的所有home已经被迁移 option.home_legacy.<name> 路径并没有被移除
             - 对未知用户名的储存尚未测试并有待商榷
 
 - [ ] 建立List(名字可以再斟酌一下)的class 用来处理所有 列表里放复合标签 且用复合标签的特定键来辩识是否匹配的所有对象

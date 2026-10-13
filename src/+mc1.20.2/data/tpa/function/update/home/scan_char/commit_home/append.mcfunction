@@ -8,11 +8,5 @@ data modify storage tpa:tpa temp.args.output.y set from storage tpa:tpa temp.arg
 data modify storage tpa:tpa temp.args.output.z set from storage tpa:tpa temp.args.current.z
 data modify storage tpa:tpa temp.args.output.dimension set from storage tpa:tpa temp.args.current.dimension
 $data modify storage tpa:tpa temp.args.output.id set value $(current_id)
-data modify storage tpa:tpa temp.args.uid set from storage tpa:tpa temp.args.output.uid
-data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.args.output.id
-scoreboard players set #option.update.home_conflict tpa.variables 0
-scoreboard players set #option.update.home_appended tpa.variables 0
-$execute if data storage tpa:tpa home[{uid:$(uid),id:$(id)}] run scoreboard players set #option.update.home_conflict tpa.variables 1
-execute unless score #option.update.home_conflict tpa.variables matches 1 store success score #option.update.home_appended tpa.variables run data modify storage tpa:tpa home append from storage tpa:tpa temp.args.output
-execute if score #option.update.home_conflict tpa.variables matches 1 run function tpa:update/home/scan_char/commit_home/remove_legacy with storage tpa:tpa temp.args
-execute if score #option.update.home_appended tpa.variables matches 1 run function tpa:update/home/scan_char/commit_home/remove_legacy with storage tpa:tpa temp.args
+data modify storage tpa:tpa home append from storage tpa:tpa temp.args.output
+$data remove storage tpa:tpa option.home_legacy.$(current_name).$(current_id)
