@@ -1,2 +1,5 @@
 scoreboard players set #version tpa.config 206
-data modify storage tpa:tpa home set value {1: {1: {x: 100, y: 100, dim: "overworld", z: 100}, 2: {x: 100, y: 100, Dimension: "minecraft:overworld", z: 100}}, 2: {1: {x: 100, y: 100, dim: "overworld", z: 100}, 2: {x: 100, y: 100, Dimension: "minecraft:overworld", z: 100}}}
+data remove storage tpa:tpa option.home_legacy
+function tpa:get_name
+data modify storage tpa:tpa temp.args.name set from storage tpa:tpa temp.name
+function tpa:test/init_example_legacy_home/set with storage tpa:tpa temp.args
