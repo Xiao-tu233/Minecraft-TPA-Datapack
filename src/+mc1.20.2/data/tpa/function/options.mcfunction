@@ -44,7 +44,9 @@ execute if score #back tpa.config matches 0 run \
     tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_back", color: "aqua"}, ": ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_disabled"}]
 tellraw @s ["      §6- ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_enable", click_event:{action:"run_command",command:"/scoreboard players set #back tpa.config 1"}},"|",\
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_disable", click_event:{action:"run_command",command:"/scoreboard players set #back tpa.config 0"}}]
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_disable", click_event:{action:"run_command",command:"/scoreboard players set #back tpa.config 0"}}, " ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_reset", hoverevent: {action: "show_text", value: {storage: "tpa:tpa", nbt: "loaded_lang.option_back_reset_hoverevent"}}, click_event:{action:"run_command",command:"/function tpa:back/option/reset"}} \
+]
 
 execute if score #search_id tpa.config matches 1 run \
     tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_search_id", color: "aqua"}, ": ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_enabled"}]

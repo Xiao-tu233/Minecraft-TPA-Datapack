@@ -103,9 +103,8 @@ execute as @e[type=item, name='Written Book'] if data entity @s Item.components.
 # Remove book from Item Frame with book=0 player nearby
 execute as @e[type=!item, nbt={Item: {components: {"minecraft:custom_data": {isTpaBook: 1b}}}}] run data remove entity @s Item
 
-# 上一位置
-execute as @a[scores={back=1..}] run function tpa:back
-execute as @a[scores={tpa.back=1..}] run function tpa:back
+# Back
+execute as @a[predicate=tpa:back] run function tpa:back
 
 # Home
 execute as @a[predicate=tpa:home] run function tpa:home

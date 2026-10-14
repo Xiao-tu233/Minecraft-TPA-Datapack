@@ -1,0 +1,1 @@
+tellraw @a [{storage: "tpa:tpa", nbt: "loaded_lang.header"}, {storage: "tpa:tpa", nbt: "temp.output"}, "."]

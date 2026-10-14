@@ -30,6 +30,7 @@ Project To-do lists:
 - [x] Fixed grammar exceptions in predicates
 - [ ] 对话框菜单不显示玩家
 - [ ] trigger warp 不显示语言
+- [x] Back不再会在离线时移除 在设置菜单中增加移除所有玩家上一位置按钮 玩家同样可以通过/trigger back set -1 移除自己的上一位置
 
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
@@ -220,6 +221,7 @@ Project To-do lists:
       并在1.20.1- 版本事实默认开启, 
       1.20.2+ 默认关闭
       对于1.20.2-1.21.5版本 get_name 本身需要宏函数在大量使用的场景会导致卡顿 所以保留选项作为性能优化的推荐选项
+- [ ] 对于传送的目标坐标应该存在判定 如果目标位置不合法则返回这次传送 如果back不合法应该不储存这次back
 
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu
