@@ -4,6 +4,22 @@
 # Keep translation as null when the entry is not translated yet.
 languages:
   en_us:
+    back_remove:
+      source: 移除了上一位置
+      status: missing_key
+      translation: The previous position has been removed
+    back_reset:
+      source: 重置了所有玩家的上一位置
+      status: missing_key
+      translation: The previous positions of every player have been reset
+    option_back_reset_hoverevent:
+      source: 点击重置所有玩家的上一位置
+      status: missing_key
+      translation: Click to reset the previous positions of every players
+    option_button_reset:
+      source: '[§b重置§r]'
+      status: missing_key
+      translation: '[§bReset§r]'
     tick_not_working_button_set_schedule:
       source: §b[设置]
       status: missing_key
@@ -11,24 +27,40 @@ languages:
     warp_default_name:
       source: 未命名传送点
       status: missing_key
-      translation: null
+      translation: UnnamedWarp
   ja_jp:
+    back_remove:
+      source: 移除了上一位置
+      status: missing_key
+      translation: 自分の前の位置が削除されました
+    back_reset:
+      source: 重置了所有玩家的上一位置
+      status: missing_key
+      translation: 皆んなプレイヤーの前の位置がリセットされました
+    option_back_reset_hoverevent:
+      source: 点击重置所有玩家的上一位置
+      status: missing_key
+      translation: クリックして皆んなプレイヤーの前の位置がリセット
+    option_button_reset:
+      source: '[§b重置§r]'
+      status: missing_key
+      translation: '[§bリセット§r]'
     warp_button_setname_hoverevent:
       source: §b点击进入该公共传送点的名称编辑菜单
       status: missing_key
-      translation: null
+      translation: §bクリックしてワープの名前編集メニューを開きます
     warp_edit:
       source: 你正在编辑%s. 请点击下方的输入按钮，补全并执行推荐命令，将内容写入缓存，确认无误后点击“应用”保存更改
       status: missing_key
-      translation: null
+      translation: '%sを編集中です。下の入力ボタンをクリックし、コマンド入力欄に表示されたコマンドに編集内容を入力して実行してください。入力内容は一時保存されます。確認後、「適用」をクリックすると変更が保存されます'
     warp_edit_button_input_desc:
       source: §a输入描述
       status: missing_key
-      translation: null
+      translation: §a説明を入力
     warp_edit_button_input_desc_hoverevent:
       source: §b点击后在命令输入框中填写描述并执行
       status: missing_key
-      translation: null
+      translation: §bクリックした入力欄に説明を書いて実行
     warp_edit_button_input_name_hoverevent:
       source: §b点击后在命令输入框中填写名字并执行
       status: missing_key
@@ -36,7 +68,7 @@ languages:
     warp_edit_occupied:
       source: 其他玩家(UID:%s)正在编辑公共传送点
       status: missing_key
-      translation: null
+      translation: 他のプレイヤー（UID:%s）はワープが編集しています
     warp_edit_dialog_title:
       source: 公共传送点编辑对话框菜单
       status: missing_key
@@ -66,6 +98,22 @@ languages:
       status: missing_key
       translation: null
   zh_tw:
+    back_remove:
+      source: 移除了上一位置
+      status: missing_key
+      translation: null
+    back_reset:
+      source: 重置了所有玩家的上一位置
+      status: missing_key
+      translation: null
+    option_back_reset_hoverevent:
+      source: 点击重置所有玩家的上一位置
+      status: missing_key
+      translation: null
+    option_button_reset:
+      source: '[§b重置§r]'
+      status: missing_key
+      translation: null
     warp_button_setdesc_hoverevent:
       source: §b点击进入该公共传送点的描述编辑菜单
       status: missing_key

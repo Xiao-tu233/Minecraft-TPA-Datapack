@@ -11,16 +11,18 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "已将你传送至上一位置", \
     back_disabled: "§a返回上一位置§r已被服务器禁用", \
     back_not_exist: "没有找到上一位置", \
+    back_remove: "移除了上一位置", \
+    back_reset: "重置了所有玩家的上一位置", \
     back_unavail: "当前状态下无法操作§a返回上一位置§r", \
     book_check_missing: "检测到传送书丢失, 已重新给予", \
     book_disabled: "§a传送书§r已被服务器禁用", \
     book_incompatible: "§a传送书§r不兼容此游戏版本", \
-    book_lore: "§r§b右键打开TPA菜单. 丢出刷新. 切换至副手停止使用.", \
+    book_lore: "§r§b右键打开TPA菜单. 丢弃刷新. 切换至副手停止使用.", \
     book_mainhand_busy: "请空手来获得传送书", \
     book_refresh: "你刷新了§a传送菜单书", \
     book_reget: "[§b重新获取§r]", \
     book_reget_hoverevent: "§b点击重新获取传送书", \
-    book_stacking: "检测到传送书堆叠, 已没收多余的书", \
+    book_stacking: "检测到传送菜单书数量异常，已重置", \
     book_stop: "你已停止使用§a传送书§r, 可在TPA菜单里再次获取 ", \
     book_title: "§r§b传送菜单书 §a[扔出刷新] ", \
     book_unavail: "当前状态下无法操作§a传送书§r", \
@@ -104,6 +106,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "下方设置为高级设置，请勿随意修改，除非你知道自己在做什么", \
     option_advenced_tip: "打开调试模式以调节更多设置(高级设置)", \
     option_back: "禁止玩家返回上一位置", \
+    option_back_reset_hoverevent: "点击重置所有玩家的上一位置", \
     option_book: "禁止玩家使用传送书", \
     option_button_disable: "§c禁用§r]", \
     option_button_enable: "§r[§a启用§r", \
@@ -113,6 +116,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_button_license_hoverevent: "§b使用 TPA 数据包时请遵循我们在 GitHub 上开源协议. §b同时, 作者§l§n不建议§r§b将本数据包用于§l§n商业用途§r§b的服务器. §b为避免误解, 请您在使用前仔细阅读并理解完整协议内容. ", \
     option_button_notworking: "[§4无法运行§r]", \
     option_button_notworking_hoverevent: "§b当遇到tick函数无法运行(TPA菜单无法打开)时请点击", \
+    option_button_reset: "[§b重置§r]", \
     option_button_set: "§r[§a设置§r]", \
     option_button_uninstall: "[§4卸载§r]", \
     option_button_uninstall_hoverevent: "§4点击此按钮来§l§n卸载§r§4TPA数据包! 请考虑你是否真的需要!", \
@@ -485,7 +489,7 @@ data modify storage tpa:tpa temp.lang set value \
     book_refresh: "You refreshed the §aTeleport Menu Book§r", \
     book_reget: "[§bReget§r]", \
     book_reget_hoverevent: "§bClick to reget the teleport book", \
-    book_stacking: "Detected stacked teleport books, extra copies have been removed", \
+    book_stacking: "Duplicate teleport menu books detected. Your books have been reset.", \
     book_stop: "You have stopped using §aTPA Book§r, you can get it again in TPA menu", \
     book_title: "§r§bTPA menu book §a[Press Q to Refresh] ", \
     book_unavail: "You are not allowed to use the §aTeleport Book§r in the current state", \
@@ -948,7 +952,7 @@ data modify storage tpa:tpa temp.lang set value \
     book_refresh: "§aTPAメニューの本をリフレッシュしました", \
     book_reget: "[§b再取得§r]", \
     book_reget_hoverevent: "§bクリックしてTPAブックを再取得", \
-    book_stacking: "TPAブックがスタックされていることを検出しました、余分な本は没収されました", \
+    book_stacking: "TPAブックが複数検出されたため、リセットしました", \
     book_stop: "§aTPAブック§rの使用を停止しました。TPAメニューで再取得できます", \
     book_title: "§r§b你TPAメニューの本 §a[投げてリフレッシュ] ", \
     book_unavail: "現在の状態では§aテレポートブック§rを使用できません", \
