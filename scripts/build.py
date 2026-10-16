@@ -11,6 +11,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
 
+try:
+    from build_rules import apply_build_rules
+except ModuleNotFoundError:
+    from scripts.build_rules import apply_build_rules  # type: ignore[no-redef]
+
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
@@ -565,6 +570,22 @@ def build_profile(
         legacy=not modern,
         overlay_destinations=overlay_destinations,
     )
+
+    if modern:
+        # The base source is the newest variant; overlays are converted on
+        # their own version boundary.
+        apply_build_rules(artifact / "data", profile.max_version.parts)
+        for overlay_version in overlay_versions:
+            overlay_data = (
+                artifact
+                / format_directory_name(overlay_version)
+                / "data"
+            )
+            apply_build_rules(overlay_data, overlay_version.parts)
+    else:
+        # A single legacy artifact must work across its full version range.
+        apply_build_rules(artifact / "data", profile.min_version.parts)
+
     return {
         "profile": profile.suffix,
         "path": str(artifact.relative_to(ROOT)).replace("\\", "/"),
