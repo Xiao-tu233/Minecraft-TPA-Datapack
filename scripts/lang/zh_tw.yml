@@ -6,6 +6,8 @@ header: '[§bTPA§r] '
 back_act: 已將你傳送至上一位置
 back_disabled: 伺服器不允許§a返回上一位置§r
 back_not_exist: 沒有找到上一位置
+back_remove: 已移除上一位置
+back_reset: 已重置所有玩家的上一位置
 back_unavail: 目前狀態下無法操作§a返回上一個位置§r
 book_check_missing: 檢測到傳送書遺失，已重新給予
 book_disabled: §a傳送書§r不相容該遊戲版本
@@ -99,6 +101,7 @@ mute_enable: 你§a靜音§r了資料包
 option_advenced_warn: 下方設定為進階設定，請勿隨意修改，除非你清楚自己在做什麼
 option_advenced_tip: 啟用除錯模式以調整更多設定（進階設定）
 option_back: 是否停用返回上一位置
+option_back_reset_hoverevent: §b點擊重置所有玩家的上一位置
 option_book: 是否停用傳送書
 option_button_disable: §c停用§r]
 option_button_enable: §r[§a啟用§r
@@ -108,6 +111,7 @@ option_button_license: '[§4條款§r]'
 option_button_license_hoverevent: §b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文
 option_button_notworking: '[§4無法執行§r]'
 option_button_notworking_hoverevent: §b當遇到 Tick 函式無法執行（TPA 選單無法開啟）時請點擊
+option_button_reset: '[§b重置§r]'
 option_button_set: §r[§a設定§r]
 option_button_uninstall: '[§4解除安裝§r]'
 option_button_uninstall_hoverevent: §4點擊此按鈕來§l§n解除安裝§r§4TPA資料包! 請考慮你是否真的需要!
@@ -272,12 +276,6 @@ search_id_recall: '[§b重新呼出§r]'
 search_id_recall_hoverevent: §b重新呼出搜尋玩家編號軟鍵盤
 search_id_throw_on_invalid_char: 你輸入的名稱包含不合法的字元
 search_id_unavail_player: 對方離線或不允許被傳送
-simple_menu_button: '[§b詳細選單§r]'
-simple_menu_button_hoverevent: §b點擊切換至詳細選單
-simple_menu_disable: 你將TPA選單切換至§a詳細選單
-simple_menu_incompatible: §a簡略菜單§r不兼容此遊戲版本
-simple_menu_enable: 你將TPA選單切換至§a簡略選單 §r你現在可以直接使用/trigger tpa來開啟簡略選單
-simple_menu_title: 點擊下方玩家名稱發送傳送請求
 teleport_anchor_actionbar: '錨點傳送進度: '
 teleport_binary_actionbar: '二分法傳送進度: '
 teleport_cal_sim_dist_actionbar: 模擬距離
@@ -361,8 +359,6 @@ tpa_menu_refresh: §6刷新TPA選單§r
 tpa_menu_refresh_hoverevent: §b點擊此處刷新或重新呼出TPA選單
 tpa_menu_search_id_button: §b搜尋ID§r
 tpa_menu_search_id_button_hoverevent: §b點擊呼出聊天欄鍵盤輸入tpa指令
-tpa_menu_simplemenu_button: §b簡略選單§r
-tpa_menu_simplemenu_button_hoverevent: §b切換到簡略選單
 tpa_menu_title: '這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送傳送請求: '
 tpa_menu_tpaheremenu_button: §b傳送至此處選單§r
 tpa_menu_tpaheremenu_button_hoverevent: §b點擊來跳轉到傳送至此處選單
@@ -417,15 +413,27 @@ warp_button_select_hoverevent: §b點擊選擇該公共傳送點槽位，作為�
 warp_button_unselect: '[§c取消選擇§r]'
 warp_button_unselect_hoverevent: §b點擊取消選擇該公共傳送點槽位
 warp_button_setdesc: '[§a設描述§r]'
+warp_button_setdesc_hoverevent: §b點擊進入該公共傳送點的描述編輯選單
 warp_button_setname: '[§a取名§r]'
+warp_button_setname_hoverevent: §b點擊進入該公共傳送點的名稱編輯選單
 warp_button_setpos: '[§a取址§r]'
 warp_button_setpos_hoverevent: §b點擊把該公共傳送點設置到當前位置
 warp_desc_disabled: §c該公共傳送點已被禁用
 warp_disabled: §a公共傳送點§r已被伺服器禁用
+warp_edit: 你正在編輯%s。請點擊下方的輸入按鈕，補全並執行建議指令，將內容寫入暫存；確認無誤後，點擊「應用」儲存變更。
+warp_edit_button_input_desc: §a輸入描述
+warp_edit_button_input_desc_hoverevent: §b點擊後在命令輸入框中填寫描述並執行
+warp_edit_button_input_name: §a輸入名字
+warp_edit_button_input_name_hoverevent: §b點擊後在命令輸入框中填寫名字並執行
 warp_edit_invalid: 該公共傳送點不存在
+warp_edit_occupied: 其他玩家（UID:%s）正在編輯公共傳送點
+warp_edit_dialog_title: 公共傳送點編輯對話框
 warp_edit_no_value: 請輸入非空內容
+warp_edit_target_index: (索引：%s)
 warp_edit_target_name: '%s的名字'
 warp_edit_target_desc: '%s的描述'
+warp_edit_unsaved_warn: 有尚未套用的變更：將%1$s改為%2$s。點擊「應用」儲存變更，或點擊「取消」捨棄變更。
+warp_edit_unsaved_warn_dialog_title: 公共傳送點編輯：未套用的變更
 warp_hoverevent_location: '%2$s中的%1$s'
 warp_number: 公共傳送點#
 warp_out_of_range: 該公共傳送點尚未設定
@@ -438,6 +446,7 @@ warp_selector_button_next_page: 下一頁 ▶
 warp_selector_button_next_page_hoverevent: §b點擊查看下一頁
 warp_set: 你把%1$s設為%2$s
 warp_set_position: 座標
+warp_default_name: 未命名傳送點
 warp_slot_disabled: 你所造訪的公共傳送點%s已停用
 warp_teleport: 已將你傳送至%s
 warp_unavail: 目前狀態下無法操作§a公開傳送點§r

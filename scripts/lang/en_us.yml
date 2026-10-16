@@ -6,6 +6,8 @@ header: '[§bTPA§r] '
 back_act: Teleported you to the previous position
 back_disabled: Server doesn't allow going §aBack§r
 back_not_exist: No previous position found
+back_remove: The previous position has been removed
+back_reset: The previous positions of every player have been reset
 back_unavail: You can't operate §aBack§r in current state
 book_check_missing: Detected missing teleport book, reissued.
 book_disabled: Server doesn't allow §aTPA Book§r
@@ -102,6 +104,7 @@ mute_enable: You have §amuted§r datapack
 option_advenced_warn: The following settings are advanced options. Do not modify unless you know what you are doing.
 option_advenced_tip: Enable debug mode to access more advanced settings
 option_back: If disable back
+option_back_reset_hoverevent: Click to reset the previous positions of every players
 option_book: If disable tpa book
 option_button_disable: §cDISABLE§r]
 option_button_enable: '[§aENABLE§r'
@@ -113,6 +116,7 @@ option_button_license_hoverevent: §bTo use TPA datapack, you must follow the op
   the whole text carefully.
 option_button_notworking: '[§4Not Working§r]'
 option_button_notworking_hoverevent: §bClick when tick function does not work (TPA menu cannot be opened)
+option_button_reset: '[§bReset§r]'
 option_button_set: '[§aModify§r]'
 option_button_uninstall: '[§4UNINSTALL§r]'
 option_button_uninstall_hoverevent: §4Click this button to §l§nUninstall§r§4 TPA datapack! Please consider if you really need
@@ -293,12 +297,6 @@ search_id_recall: '[§bRecall§r]'
 search_id_recall_hoverevent: §bRecall search player ID keyboard
 search_id_throw_on_invalid_char: The name you entered contains invalid characters
 search_id_unavail_player: Player is offline or cannot be teleported to
-simple_menu_button: '[§bDetailed menu§r]'
-simple_menu_button_hoverevent: §bClick to switch to detailed menu
-simple_menu_disable: Switched TPA menu to §adetailed mode§r
-simple_menu_incompatible: §aSimplified menu§r is not compatible with this game version
-simple_menu_enable: Switched TPA menu to §asimple mode§r. You can now use §a/trigger tpa§r to open it
-simple_menu_title: Click a player below to send a teleport request
 teleport_anchor_actionbar: 'Anchor teleport progress: '
 teleport_binary_actionbar: 'Binary search teleport progress: '
 teleport_cal_sim_dist_actionbar: Simulation distance
@@ -315,6 +313,7 @@ teleport_sim_dist_warn_button_calc_hoverevent: '§bClick to start automatically 
   before clicking.'
 teleport_sim_dist_warn_button_binary: '[§aBinary Search§r]'
 teleport_sim_dist_warn_button_binary_hoverevent: §bClick to switch the Teleport Method to Binary Teleport
+tick_not_working_button_set_schedule: §b[Set]
 tick_not_working_button_set_schedule_hoverevent: §bClick to turn on Calling Tick Function with /schedule command
 tick_not_working_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!
 tick_not_working_server_calling_comment: §l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended
@@ -388,8 +387,6 @@ tpa_menu_refresh: §6Refresh TPA menu§r
 tpa_menu_refresh_hoverevent: §bClick to refresh or reopen the TPA menu
 tpa_menu_search_id_button: §bSearch player§r
 tpa_menu_search_id_button_hoverevent: §bClick to open chat input for TPA commands
-tpa_menu_simplemenu_button: §bSimplified menu§r
-tpa_menu_simplemenu_button_hoverevent: §bSwitch to simple menu
 tpa_menu_title: 'Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                          '
 tpa_menu_tpaheremenu_button: §bTeleport here menu§r
 tpa_menu_tpaheremenu_button_hoverevent: §bClick to go to TPA Here Menu
@@ -426,7 +423,7 @@ update_step5_hoverevent: Click to load the datapack
 update_step5_rightpart: ' If unknown scoreboard items appear, please start from step 3. This may be caused by incorrect version
   or unknown issues. For other issues, please consult Xiao_tu233.'
 update_nextstep: §b[Next step]
-warp_button_add: '§aCreate new Warp§r'
+warp_button_add: §aCreate new Warp§r
 warp_button_add_hoverevent: §bClick to create a new warp at your current location
 warp_button_apply: §bApply§r
 warp_button_apply_hoverevent: §bClick to apply the cached changes
@@ -486,6 +483,7 @@ warp_selector_button_next_page: Next Page ▶
 warp_selector_button_next_page_hoverevent: §bClick to turn to the next page
 warp_set: You have set %1$s to %2$s
 warp_set_position: coordinates
+warp_default_name: UnnamedWarp
 warp_slot_disabled: The Warp named %s has been disabled
 warp_teleport: You have been teleported to %s
 warp_unavail: You are not allowed to access §aWarps§r in the current state

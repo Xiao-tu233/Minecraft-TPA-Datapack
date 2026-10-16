@@ -283,12 +283,6 @@ data modify storage tpa:tpa temp.lang set value \
     search_id_recall_hoverevent: "§b重新呼出搜索玩家编号软键盘", \
     search_id_throw_on_invalid_char: "你输入的名字包含不合法的字符", \
     search_id_unavail_player: "对方不在线或不允许被传送", \
-    simple_menu_button: "[§b详细菜单§r]", \
-    simple_menu_button_hoverevent: "§b点击切换至详细菜单", \
-    simple_menu_disable: "你将TPA菜单切换至§a详细菜单", \
-    simple_menu_incompatible: "§a简略菜单§r不兼容此游戏版本", \
-    simple_menu_enable: "你将TPA菜单切换至§a简略菜单 §r你现在可以直接使用/trigger tpa来打开简略菜单", \
-    simple_menu_title: "点击下方玩家名发送传送请求", \
     teleport_anchor_actionbar: "锚点传送进度: ", \
     teleport_binary_actionbar: "二分法传送进度: ", \
     teleport_cal_sim_dist_actionbar: "模拟距离", \
@@ -372,8 +366,6 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_refresh_hoverevent: "§b点击此处刷新或重新呼出TPA菜单", \
     tpa_menu_search_id_button: "§b搜索玩家§r", \
     tpa_menu_search_id_button_hoverevent: "§b点击呼出聊天栏键盘来搜索用户名", \
-    tpa_menu_simplemenu_button: "§b简略菜单§r", \
-    tpa_menu_simplemenu_button_hoverevent: "§b切换到简略菜单", \
     tpa_menu_title: "选择下方玩家，发送传送请求: ", \
     tpa_menu_tpaheremenu_button: "§b传送此处菜单§r", \
     tpa_menu_tpaheremenu_button_hoverevent: "§b点击来跳转到传送此处菜单", \
@@ -480,6 +472,8 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "Teleported you to the previous position", \
     back_disabled: "Server doesn't allow going §aBack§r", \
     back_not_exist: "No previous position found", \
+    back_remove: "The previous position has been removed", \
+    back_reset: "The previous positions of every player have been reset", \
     back_unavail: "You can't operate §aBack§r in current state", \
     book_check_missing: "Detected missing teleport book, reissued.", \
     book_disabled: "Server doesn't allow §aTPA Book§r", \
@@ -573,6 +567,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "The following settings are advanced options. Do not modify unless you know what you are doing.", \
     option_advenced_tip: "Enable debug mode to access more advanced settings", \
     option_back: "If disable back", \
+    option_back_reset_hoverevent: "Click to reset the previous positions of every players", \
     option_book: "If disable tpa book", \
     option_button_disable: "§cDISABLE§r]", \
     option_button_enable: "[§aENABLE§r", \
@@ -582,6 +577,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_button_license_hoverevent: "§bTo use TPA datapack, you must follow the open source license we put on Github website and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read the whole text carefully.", \
     option_button_notworking: "[§4Not Working§r]", \
     option_button_notworking_hoverevent: "§bClick when tick function does not work (TPA menu cannot be opened)", \
+    option_button_reset: "[§bReset§r]", \
     option_button_set: "[§aModify§r]", \
     option_button_uninstall: "[§4UNINSTALL§r]", \
     option_button_uninstall_hoverevent: "§4Click this button to §l§nUninstall§r§4 TPA datapack! Please consider if you really need it!", \
@@ -748,12 +744,6 @@ data modify storage tpa:tpa temp.lang set value \
     search_id_recall_hoverevent: "§bRecall search player ID keyboard", \
     search_id_throw_on_invalid_char: "The name you entered contains invalid characters", \
     search_id_unavail_player: "Player is offline or cannot be teleported to", \
-    simple_menu_button: "[§bDetailed menu§r]", \
-    simple_menu_button_hoverevent: "§bClick to switch to detailed menu", \
-    simple_menu_disable: "Switched TPA menu to §adetailed mode§r", \
-    simple_menu_incompatible: "§aSimplified menu§r is not compatible with this game version", \
-    simple_menu_enable: "Switched TPA menu to §asimple mode§r. You can now use §a/trigger tpa§r to open it", \
-    simple_menu_title: "Click a player below to send a teleport request", \
     teleport_anchor_actionbar: "Anchor teleport progress: ", \
     teleport_binary_actionbar: "Binary search teleport progress: ", \
     teleport_cal_sim_dist_actionbar: "Simulation distance", \
@@ -767,6 +757,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_sim_dist_warn_button_calc_hoverevent: "§bClick to start automatically calculating simulation distance. §cWarning:                                                   This operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded before clicking.", \
     teleport_sim_dist_warn_button_binary: "[§aBinary Search§r]", \
     teleport_sim_dist_warn_button_binary_hoverevent: "§bClick to switch the Teleport Method to Binary Teleport", \
+    tick_not_working_button_set_schedule: "§b[Set]", \
     tick_not_working_button_set_schedule_hoverevent: "§bClick to turn on Calling Tick Function with /schedule command", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
     tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
@@ -836,8 +827,6 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_refresh_hoverevent: "§bClick to refresh or reopen the TPA menu", \
     tpa_menu_search_id_button: "§bSearch player§r", \
     tpa_menu_search_id_button_hoverevent: "§bClick to open chat input for TPA commands", \
-    tpa_menu_simplemenu_button: "§bSimplified menu§r", \
-    tpa_menu_simplemenu_button_hoverevent: "§bSwitch to simple menu", \
     tpa_menu_title: "Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                          ", \
     tpa_menu_tpaheremenu_button: "§bTeleport here menu§r", \
     tpa_menu_tpaheremenu_button_hoverevent: "§bClick to go to TPA Here Menu", \
@@ -929,6 +918,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set: ["You have set ", " to ", ""], \
     warp_set_format: 0, \
     warp_set_position: "coordinates", \
+    warp_default_name: "UnnamedWarp", \
     warp_slot_disabled: ["The Warp named ", " has been disabled"], \
     warp_teleport: ["You have been teleported to ", ""], \
     warp_unavail: "You are not allowed to access §aWarps§r in the current state" \
@@ -943,6 +933,8 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "前回の位置にテレポートしました", \
     back_disabled: "§a前回の位置に戻り§rはサーバーで無効になっています", \
     back_not_exist: "前回の位置を見つかりしませんでした", \
+    back_remove: "自分の前の位置が削除されました", \
+    back_reset: "皆んなプレイヤーの前の位置がリセットされました", \
     back_unavail: "現在の状態では§a前の位置に戻る§rことはできません", \
     book_check_missing: "TPAブックが失われたため、再度付与しました", \
     book_disabled: "§aTPAブック§rはサーバーで無効になっています", \
@@ -1036,6 +1028,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "以下は高度な設定です。内容を理解していない場合は変更しないでください", \
     option_advenced_tip: "デバッグモードをオンにすると、さらに多くの設定を調整できます（高度設定）", \
     option_back: "プレイヤーの前回位置への戻りを禁止", \
+    option_back_reset_hoverevent: "クリックして皆んなプレイヤーの前の位置がリセット", \
     option_book: "テレポートブックの使用を禁止", \
     option_button_disable: "§c無効§r]", \
     option_button_enable: "§r[§a有効§r", \
@@ -1045,6 +1038,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_button_license_hoverevent: "§bTPAデータパックを使用する際は、GitHub上のオープンソースライセンスに従ってください。§bまた、作者§l§nは商用サーバーでの使用を推奨していません。§b誤解を避けるため、使用前にライセンス内容をよく読んで理解してください。", \
     option_button_notworking: "[§4動作不可§r]", \
     option_button_notworking_hoverevent: "§bTick関数が動作しない場合（TPAメニューが開かない場合）はクリックしてください", \
+    option_button_reset: "[§bリセット§r]", \
     option_button_set: "§r[§a設定§r]", \
     option_button_uninstall: "[§4アンインストール§r]", \
     option_button_uninstall_hoverevent: "§4クリックして§l§nTPAデータパックをアンインストール§r§4します！本当に必要か確認してください！", \
@@ -1211,17 +1205,11 @@ data modify storage tpa:tpa temp.lang set value \
     search_id_recall_hoverevent: "§bプレイヤーID検索キーボードを再呼出", \
     search_id_throw_on_invalid_char: "入力した名前に無効な文字が含まれています", \
     search_id_unavail_player: "相手がオフラインか、テレポートを許可していません", \
-    simple_menu_button: "[§b詳細メニュー§r]", \
-    simple_menu_button_hoverevent: "§bクリックして詳細メニューに切り替え", \
-    simple_menu_disable: "TPAメニューを§a詳細メニュー§rに切り替えました", \
-    simple_menu_incompatible: "§a簡略メニュー§r はこのゲームバージョンと互換性がありません", \
-    simple_menu_enable: "TPAメニューを§a簡略メニュー§rに切り替えました §r今 /trigger tpa で簡略メニューを直接開けます", \
-    simple_menu_title: "下のプレイヤー名をクリックしてテレポートリクエストを送信", \
     teleport_anchor_actionbar: "アンカーテレポート進行状況: ", \
     teleport_binary_actionbar: "二分法テレポート進行状況: ", \
     teleport_cal_sim_dist_actionbar: "シミュレーション距離", \
-    teleport_cal_sim_dist_end_leftpart: "シミュレーション距離計算成功、現在サーバー設定のパケットシミュ距離: ", \
-    teleport_cal_sim_dist_end_rightpart: "", \
+    teleport_cal_sim_dist_end_leftpart: "シミュレーション距離の計算に成功しました。現在サーバーに設定されているデータパックのシミュレーション距離は", \
+    teleport_cal_sim_dist_end_rightpart: "です", \
     teleport_cal_sim_dist_start: "シミュレーション距離計算を開始しました", \
     teleport_incompatible: "§aアンカーテレポート§r はこのゲームバージョンと互換性がありません", \
     teleport_sim_dist_disabled: "サーバーはまだシミュレーション距離を設定していません", \
@@ -1300,8 +1288,6 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_refresh_hoverevent: "§bクリックしてTPAメニューを更新または再呼出", \
     tpa_menu_search_id_button: "§bプレイヤー検索§r", \
     tpa_menu_search_id_button_hoverevent: "§bクリックしてチャット欄キーボードを呼出しユーザー名検索", \
-    tpa_menu_simplemenu_button: "§b簡略メニュー§r", \
-    tpa_menu_simplemenu_button_hoverevent: "§b簡略メニューに切替", \
     tpa_menu_title: "下はプレイヤーデータパックIDとゲーム内ユーザー名、IDをクリックして他のプレイヤー§lにテレポートリクエスト§r: {", \
     tpa_menu_tpaheremenu_button: "§bここにテレポートメニュー§r", \
     tpa_menu_tpaheremenu_button_hoverevent: "§bクリックしてここにテレポートメニューを開く", \
@@ -1314,7 +1300,7 @@ data modify storage tpa:tpa temp.lang set value \
     uninstall_enable_folder_button_hoverevent: "フォルダー版のデータパック（存在する場合）を有効化する", \
     uninstall_enable_zip_button: "有効化2", \
     uninstall_enable_zip_button_hoverevent: "ZIP形式のデータパック（存在する場合）を有効する", \
-    uninstall_server_calling: "Deitapaketto no aninsutouru ni wa, konsourude wa naku kuraianto wo shiyou shite kudasai!", \
+    uninstall_server_calling: "Deitapakku no aninsutouru ni wa, konsourude wa naku kuraianto wo shiyou shite kudasai!", \
     uninstall_server_calling_comment: "§l§n§4これはコメントです：uninstall_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     update_reload: "§b[リロード]", \
     update_reload_hoverevent: "クリックしてリロード", \
@@ -1322,7 +1308,7 @@ data modify storage tpa:tpa temp.lang set value \
     update_step1_rightpart: " です。ここで更新を開始することを確認してください", \
     update_step1_button: "§b§n§l[自分の操作を理解しています]", \
     update_step1_hoverevent: "慎重にクリックしてください", \
-    update_step2: "最新バージョンのデータパックを GitHub、QQ グループ、または Modrinth からダウンロードしてください", \
+    update_step2: "最新バージョンのデータパックを GitHubかModrinth からダウンロードしてください", \
     update_step3: "次のインストールのために右側のボタンをクリックしてデータパックを一時的に無効化してください", \
     update_step3_button: "§b[データパックを無効化]", \
     update_step3_hoverevent: "無効化できない場合は、データパックのファイル名が正しいか確認してください", \
@@ -1358,13 +1344,26 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_setdesc: "[§a説明設定§r]", \
     warp_button_setdesc_hoverevent: "クリックしてワープのディスクリプション編集メーニュを入る", \
     warp_button_setname: "[§a名前設定§r]", \
+    warp_button_setname_hoverevent: "§bクリックしてワープの名前編集メニューを開きます", \
     warp_button_setpos: "[§a位置設定§r]", \
     warp_button_setpos_hoverevent: "§bクリックしてこのワープを現在位置に設定", \
     warp_desc_disabled: "§cこのワープは無効化されています", \
     warp_disabled: "§aワープ§rはサーバーで無効化されています", \
+    warp_edit: ["", "を編集中です。下の入力ボタンをクリックし、コマンド入力欄に表示されたコマンドに編集内容を入力して実行してください。入力内容は一時保存されます。確認後、「適用」をクリックすると変更が保存されます"], \
+    warp_edit_button_input_desc: "§a説明を入力", \
+    warp_edit_button_input_desc_hoverevent: "§bクリックした入力欄に説明を書いて実行", \
     warp_edit_button_input_name: "§a名前を入力", \
+    warp_edit_button_input_name_hoverevent: "§bクリックしてコマンド入力欄に名前を入力し、実行してください", \
     warp_edit_invalid: "この公共ワープは存在しません", \
+    warp_edit_occupied: ["他のプレイヤー（UID:", "）はワープが編集しています"], \
+    warp_edit_dialog_title: "公共ワープ編集ダイアログ", \
     warp_edit_no_value: "空ではない内容を入力してください", \
+    warp_edit_target_index: ["(インデックス: ", ")"], \
+    warp_edit_target_name: ["", "の名前"], \
+    warp_edit_target_desc: ["", "の説明"], \
+    warp_edit_unsaved_warn: ["未適用の変更があります：", "を", "に変更します。「適用」をクリックすると変更を保存し、「キャンセル」をクリックすると変更を破棄します。"], \
+    warp_edit_unsaved_warn_format: 0, \
+    warp_edit_unsaved_warn_dialog_title: "ワープ編集：未適用の変更", \
     warp_hoverevent_location: ["", "件中", ""], \
     warp_hoverevent_location_format: 1, \
     warp_number: "ワープ#", \
@@ -1380,6 +1379,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set: ["", "を", ""], \
     warp_set_format: 0, \
     warp_set_position: "座標", \
+    warp_default_name: "名前のないワープ", \
     warp_slot_disabled: ["アクセスしようとしたワープ", "は無効化されています"], \
     warp_teleport: ["テレポートされました：", ""], \
     warp_unavail: "現在の状態では§aワープ§rを使用できません" \
@@ -1394,6 +1394,8 @@ data modify storage tpa:tpa temp.lang set value \
     back_act: "已將你傳送至上一位置", \
     back_disabled: "伺服器不允許§a返回上一位置§r", \
     back_not_exist: "沒有找到上一位置", \
+    back_remove: "已移除上一位置", \
+    back_reset: "已重置所有玩家的上一位置", \
     back_unavail: "目前狀態下無法操作§a返回上一個位置§r", \
     book_check_missing: "檢測到傳送書遺失，已重新給予", \
     book_disabled: "§a傳送書§r不相容該遊戲版本", \
@@ -1487,6 +1489,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_advenced_warn: "下方設定為進階設定，請勿隨意修改，除非你清楚自己在做什麼", \
     option_advenced_tip: "啟用除錯模式以調整更多設定（進階設定）", \
     option_back: "是否停用返回上一位置", \
+    option_back_reset_hoverevent: "§b點擊重置所有玩家的上一位置", \
     option_book: "是否停用傳送書", \
     option_button_disable: "§c停用§r]", \
     option_button_enable: "§r[§a啟用§r", \
@@ -1496,6 +1499,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_button_license_hoverevent: "§b使用TPA資料包必須遵循我們在Github網站上的開源條款以及對§l§n商業§r§b使用的限制，否則將會存在§6§l侵權§r§b的風險，所以請您仔細認真閱讀全文", \
     option_button_notworking: "[§4無法執行§r]", \
     option_button_notworking_hoverevent: "§b當遇到 Tick 函式無法執行（TPA 選單無法開啟）時請點擊", \
+    option_button_reset: "[§b重置§r]", \
     option_button_set: "§r[§a設定§r]", \
     option_button_uninstall: "[§4解除安裝§r]", \
     option_button_uninstall_hoverevent: "§4點擊此按鈕來§l§n解除安裝§r§4TPA資料包! 請考慮你是否真的需要!", \
@@ -1662,12 +1666,6 @@ data modify storage tpa:tpa temp.lang set value \
     search_id_recall_hoverevent: "§b重新呼出搜尋玩家編號軟鍵盤", \
     search_id_throw_on_invalid_char: "你輸入的名稱包含不合法的字元", \
     search_id_unavail_player: "對方離線或不允許被傳送", \
-    simple_menu_button: "[§b詳細選單§r]", \
-    simple_menu_button_hoverevent: "§b點擊切換至詳細選單", \
-    simple_menu_disable: "你將TPA選單切換至§a詳細選單", \
-    simple_menu_incompatible: "§a簡略菜單§r不兼容此遊戲版本", \
-    simple_menu_enable: "你將TPA選單切換至§a簡略選單 §r你現在可以直接使用/trigger tpa來開啟簡略選單", \
-    simple_menu_title: "點擊下方玩家名稱發送傳送請求", \
     teleport_anchor_actionbar: "錨點傳送進度: ", \
     teleport_binary_actionbar: "二分法傳送進度: ", \
     teleport_cal_sim_dist_actionbar: "模擬距離", \
@@ -1751,8 +1749,6 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_refresh_hoverevent: "§b點擊此處刷新或重新呼出TPA選單", \
     tpa_menu_search_id_button: "§b搜尋ID§r", \
     tpa_menu_search_id_button_hoverevent: "§b點擊呼出聊天欄鍵盤輸入tpa指令", \
-    tpa_menu_simplemenu_button: "§b簡略選單§r", \
-    tpa_menu_simplemenu_button_hoverevent: "§b切換到簡略選單", \
     tpa_menu_title: "這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送傳送請求: ", \
     tpa_menu_tpaheremenu_button: "§b傳送至此處選單§r", \
     tpa_menu_tpaheremenu_button_hoverevent: "§b點擊來跳轉到傳送至此處選單", \
@@ -1807,15 +1803,28 @@ data modify storage tpa:tpa temp.lang set value \
     warp_button_unselect: "[§c取消選擇§r]", \
     warp_button_unselect_hoverevent: "§b點擊取消選擇該公共傳送點槽位", \
     warp_button_setdesc: "[§a設描述§r]", \
+    warp_button_setdesc_hoverevent: "§b點擊進入該公共傳送點的描述編輯選單", \
     warp_button_setname: "[§a取名§r]", \
+    warp_button_setname_hoverevent: "§b點擊進入該公共傳送點的名稱編輯選單", \
     warp_button_setpos: "[§a取址§r]", \
     warp_button_setpos_hoverevent: "§b點擊把該公共傳送點設置到當前位置", \
     warp_desc_disabled: "§c該公共傳送點已被禁用", \
     warp_disabled: "§a公共傳送點§r已被伺服器禁用", \
+    warp_edit: ["你正在編輯", "。請點擊下方的輸入按鈕，補全並執行建議指令，將內容寫入暫存；確認無誤後，點擊「應用」儲存變更。"], \
+    warp_edit_button_input_desc: "§a輸入描述", \
+    warp_edit_button_input_desc_hoverevent: "§b點擊後在命令輸入框中填寫描述並執行", \
+    warp_edit_button_input_name: "§a輸入名字", \
+    warp_edit_button_input_name_hoverevent: "§b點擊後在命令輸入框中填寫名字並執行", \
     warp_edit_invalid: "該公共傳送點不存在", \
+    warp_edit_occupied: ["其他玩家（UID:", "）正在編輯公共傳送點"], \
+    warp_edit_dialog_title: "公共傳送點編輯對話框", \
     warp_edit_no_value: "請輸入非空內容", \
+    warp_edit_target_index: ["(索引：", ")"], \
     warp_edit_target_name: ["", "的名字"], \
     warp_edit_target_desc: ["", "的描述"], \
+    warp_edit_unsaved_warn: ["有尚未套用的變更：將", "改為", "。點擊「應用」儲存變更，或點擊「取消」捨棄變更。"], \
+    warp_edit_unsaved_warn_format: 0, \
+    warp_edit_unsaved_warn_dialog_title: "公共傳送點編輯：未套用的變更", \
     warp_hoverevent_location: ["", "中的", ""], \
     warp_hoverevent_location_format: 1, \
     warp_number: "公共傳送點#", \
@@ -1831,6 +1840,7 @@ data modify storage tpa:tpa temp.lang set value \
     warp_set: ["你把", "設為", ""], \
     warp_set_format: 0, \
     warp_set_position: "座標", \
+    warp_default_name: "未命名傳送點", \
     warp_slot_disabled: ["你所造訪的公共傳送點", "已停用"], \
     warp_teleport: ["已將你傳送至", ""], \
     warp_unavail: "目前狀態下無法操作§a公開傳送點§r" \

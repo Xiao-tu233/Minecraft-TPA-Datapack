@@ -6,6 +6,8 @@ header: '[§bTPA§r] '
 back_act: 前回の位置にテレポートしました
 back_disabled: §a前回の位置に戻り§rはサーバーで無効になっています
 back_not_exist: 前回の位置を見つかりしませんでした
+back_remove: 自分の前の位置が削除されました
+back_reset: 皆んなプレイヤーの前の位置がリセットされました
 back_unavail: 現在の状態では§a前の位置に戻る§rことはできません
 book_check_missing: TPAブックが失われたため、再度付与しました
 book_disabled: §aTPAブック§rはサーバーで無効になっています
@@ -100,6 +102,7 @@ mute_enable: データパックを§aミュート§rしました
 option_advenced_warn: 以下は高度な設定です。内容を理解していない場合は変更しないでください
 option_advenced_tip: デバッグモードをオンにすると、さらに多くの設定を調整できます（高度設定）
 option_back: プレイヤーの前回位置への戻りを禁止
+option_back_reset_hoverevent: クリックして皆んなプレイヤーの前の位置がリセット
 option_book: テレポートブックの使用を禁止
 option_button_disable: §c無効§r]
 option_button_enable: §r[§a有効§r
@@ -109,6 +112,7 @@ option_button_license: '[§4ライセンス§r]'
 option_button_license_hoverevent: §bTPAデータパックを使用する際は、GitHub上のオープンソースライセンスに従ってください。§bまた、作者§l§nは商用サーバーでの使用を推奨していません。§b誤解を避けるため、使用前にライセンス内容をよく読んで理解してください。
 option_button_notworking: '[§4動作不可§r]'
 option_button_notworking_hoverevent: §bTick関数が動作しない場合（TPAメニューが開かない場合）はクリックしてください
+option_button_reset: '[§bリセット§r]'
 option_button_set: §r[§a設定§r]
 option_button_uninstall: '[§4アンインストール§r]'
 option_button_uninstall_hoverevent: §4クリックして§l§nTPAデータパックをアンインストール§r§4します！本当に必要か確認してください！
@@ -272,17 +276,11 @@ search_id_recall: '[§b再呼出§r]'
 search_id_recall_hoverevent: §bプレイヤーID検索キーボードを再呼出
 search_id_throw_on_invalid_char: 入力した名前に無効な文字が含まれています
 search_id_unavail_player: 相手がオフラインか、テレポートを許可していません
-simple_menu_button: '[§b詳細メニュー§r]'
-simple_menu_button_hoverevent: §bクリックして詳細メニューに切り替え
-simple_menu_disable: TPAメニューを§a詳細メニュー§rに切り替えました
-simple_menu_incompatible: §a簡略メニュー§r はこのゲームバージョンと互換性がありません
-simple_menu_enable: TPAメニューを§a簡略メニュー§rに切り替えました §r今 /trigger tpa で簡略メニューを直接開けます
-simple_menu_title: 下のプレイヤー名をクリックしてテレポートリクエストを送信
 teleport_anchor_actionbar: 'アンカーテレポート進行状況: '
 teleport_binary_actionbar: '二分法テレポート進行状況: '
 teleport_cal_sim_dist_actionbar: シミュレーション距離
-teleport_cal_sim_dist_end_leftpart: 'シミュレーション距離計算成功、現在サーバー設定のパケットシミュ距離: '
-teleport_cal_sim_dist_end_rightpart: ''
+teleport_cal_sim_dist_end_leftpart: 'シミュレーション距離の計算に成功しました。現在サーバーに設定されているデータパックのシミュレーション距離は'
+teleport_cal_sim_dist_end_rightpart: 'です'
 teleport_cal_sim_dist_start: シミュレーション距離計算を開始しました
 teleport_incompatible: §aアンカーテレポート§r はこのゲームバージョンと互換性がありません
 teleport_sim_dist_disabled: サーバーはまだシミュレーション距離を設定していません
@@ -361,8 +359,6 @@ tpa_menu_refresh: §6TPAメニュー更新§r
 tpa_menu_refresh_hoverevent: §bクリックしてTPAメニューを更新または再呼出
 tpa_menu_search_id_button: §bプレイヤー検索§r
 tpa_menu_search_id_button_hoverevent: §bクリックしてチャット欄キーボードを呼出しユーザー名検索
-tpa_menu_simplemenu_button: §b簡略メニュー§r
-tpa_menu_simplemenu_button_hoverevent: §b簡略メニューに切替
 tpa_menu_title: '下はプレイヤーデータパックIDとゲーム内ユーザー名、IDをクリックして他のプレイヤー§lにテレポートリクエスト§r: {'
 tpa_menu_tpaheremenu_button: §bここにテレポートメニュー§r
 tpa_menu_tpaheremenu_button_hoverevent: §bクリックしてここにテレポートメニューを開く
@@ -375,7 +371,7 @@ uninstall_enable_folder_button: 有効化1
 uninstall_enable_folder_button_hoverevent: フォルダー版のデータパック（存在する場合）を有効化する
 uninstall_enable_zip_button: 有効化2
 uninstall_enable_zip_button_hoverevent: ZIP形式のデータパック（存在する場合）を有効する
-uninstall_server_calling: Deitapaketto no aninsutouru ni wa, konsourude wa naku kuraianto wo shiyou shite kudasai!
+uninstall_server_calling: Deitapakku no aninsutouru ni wa, konsourude wa naku kuraianto wo shiyou shite kudasai!
 uninstall_server_calling_comment: §l§n§4これはコメントです：uninstall_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 update_reload: §b[リロード]
 update_reload_hoverevent: クリックしてリロード
@@ -383,7 +379,7 @@ update_step1_leftpart: 'TPAデータパックのアップデートを実行中�
 update_step1_rightpart: ' です。ここで更新を開始することを確認してください'
 update_step1_button: §b§n§l[自分の操作を理解しています]
 update_step1_hoverevent: 慎重にクリックしてください
-update_step2: 最新バージョンのデータパックを GitHub、QQ グループ、または Modrinth からダウンロードしてください
+update_step2: 最新バージョンのデータパックを GitHubかModrinth からダウンロードしてください
 update_step3: 次のインストールのために右側のボタンをクリックしてデータパックを一時的に無効化してください
 update_step3_button: §b[データパックを無効化]
 update_step3_hoverevent: 無効化できない場合は、データパックのファイル名が正しいか確認してください
@@ -419,13 +415,25 @@ warp_button_unselect_hoverevent: §bクリックしてこのワープスロッ�
 warp_button_setdesc: '[§a説明設定§r]'
 warp_button_setdesc_hoverevent: クリックしてワープのディスクリプション編集メーニュを入る
 warp_button_setname: '[§a名前設定§r]'
+warp_button_setname_hoverevent: §bクリックしてワープの名前編集メニューを開きます
 warp_button_setpos: '[§a位置設定§r]'
 warp_button_setpos_hoverevent: §bクリックしてこのワープを現在位置に設定
 warp_desc_disabled: §cこのワープは無効化されています
 warp_disabled: §aワープ§rはサーバーで無効化されています
+warp_edit: '%sを編集中です。下の入力ボタンをクリックし、コマンド入力欄に表示されたコマンドに編集内容を入力して実行してください。入力内容は一時保存されます。確認後、「適用」をクリックすると変更が保存されます'
+warp_edit_button_input_desc: §a説明を入力
+warp_edit_button_input_desc_hoverevent: §bクリックした入力欄に説明を書いて実行
 warp_edit_button_input_name: §a名前を入力
+warp_edit_button_input_name_hoverevent: §bクリックしてコマンド入力欄に名前を入力し、実行してください
 warp_edit_invalid: この公共ワープは存在しません
+warp_edit_occupied: 他のプレイヤー（UID:%s）はワープが編集しています
+warp_edit_dialog_title: 公共ワープ編集ダイアログ
 warp_edit_no_value: 空ではない内容を入力してください
+warp_edit_target_index: '(インデックス: %s)'
+warp_edit_target_name: '%sの名前'
+warp_edit_target_desc: '%sの説明'
+warp_edit_unsaved_warn: 未適用の変更があります：%1$sを%2$sに変更します。「適用」をクリックすると変更を保存し、「キャンセル」をクリックすると変更を破棄します。
+warp_edit_unsaved_warn_dialog_title: ワープ編集：未適用の変更
 warp_hoverevent_location: '%2$s件中%1$s'
 warp_number: ワープ#
 warp_out_of_range: このワープは未設定です
@@ -438,6 +446,7 @@ warp_selector_button_next_page: 次のページ ▶
 warp_selector_button_next_page_hoverevent: §bクリックして次のページを表示
 warp_set: '%1$sを%2$s'
 warp_set_position: 座標
+warp_default_name: 名前のないワープ
 warp_slot_disabled: アクセスしようとしたワープ%sは無効化されています
 warp_teleport: テレポートされました：%s
 warp_unavail: 現在の状態では§aワープ§rを使用できません
