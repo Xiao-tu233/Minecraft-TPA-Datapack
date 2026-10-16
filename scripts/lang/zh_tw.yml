@@ -1,6 +1,5 @@
 id: 3
 name: zh_tw
-tpa_menu_no_available_player: 沒有可用的玩家ID
 name_display: 正體中文（臺灣）
 header: '[§bTPA§r] '
 back_act: 已將你傳送至上一位置
@@ -79,11 +78,10 @@ load_button_options: '[設定]'
 load_button_options_hoverevent: 點擊變更資料包設定
 load_button_update: '[更新]'
 load_button_update_hoverevent: 點擊開始更新資料包
-load_copyright_claim: Copyright © 2024-2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r。 本資料包採用 GPL-3.0 開源授權條款，為開源專案，但作者不建議將其用於商業伺服器。
-  點擊下方「[授權條款]」查看授權條款全文。
+load_copyright_claim: Copyright © 2024-2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r。 本資料包採用 GPL-3.0 
+  開源授權條款，為開源專案，但作者不建議將其用於商業伺服器。 點擊下方「[授權條款]」查看授權條款全文。
 load_date_check: 目前版本發佈於%s，請注意更新
 load_date_check_format: 123
-load_date_check_format_comment: §r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day
 load_date_check_year_prefix: ''
 load_date_check_year_suffix: 年
 load_date_check_year_local_prefix: (民國
@@ -170,8 +168,8 @@ option_tp_pos_cooldown: 傳送座標冷卻時間
 option_tp_pos_cooldown_hoverevent: '§b在下方變更§a冷卻時間 §r(§6單位: 1 遊戲刻 = 1/20 秒§r), §b填0來設定無冷卻 §b填-1來設定禁止傳送'
 option_tp_pos_hoverevent: '§b在下方變更§a傳送座標允許半徑 §r(§6單位: 公尺§r), §b填0來設定禁止傳送 §b填-1來設定不限制半徑(不推薦)'
 option_tp_spec: 允許傳送旁觀者
+# option_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示
 option_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!
-option_server_calling_comment: §l§n§4這裡是一個註解 因為上面的option_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示
 option_uses_binary_teleport: 是否使用二分法傳送
 option_uses_binary_teleport_hoverevent: §b在下方選擇§a使用二分法傳送(啟用) §6抑或是 §c使用錨點傳送(禁用)
 option_uses_string_dimension: 是否識別字串維度
@@ -289,10 +287,12 @@ teleport_sim_dist_warn_button_calc: '[§a計算§r]'
 teleport_sim_dist_warn_button_calc_hoverevent: '§b點擊開始自動計算模擬距離   §c注意: 執行可能會導致執行者被傳送到其他位置    請確保你的位置不需要保持加載再點擊'
 teleport_sim_dist_warn_button_binary: '[§a二分法§r]'
 teleport_sim_dist_warn_button_binary_hoverevent: §b點擊將傳送方式設定為二分法傳送
+# Example comment
 tick_not_working_button_set_schedule: §b[設定]
 tick_not_working_button_set_schedule_hoverevent: §b點擊設定/schedule指令呼叫Tick函數
-tick_not_working_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!
-tick_not_working_server_calling_comment: §l§n§c這裡是一個註解 因為上面的tick_not_working_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示
+# tick_not_working_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示
+tick_not_working_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 
+  Ming4ling4fang1kuai4!
 tick_not_working_tips_line1: '你現在正在呼叫Tick不工作函數 因此你應該遇到了Tick函數不工作的情況 你現在可以實現以下兩種方式的其中一種:'
 tick_not_working_tips_line2: '        1. 設定使用/schedule指令呼叫Tick函數'
 tick_not_working_tips_line3: '   或者 2. 把你手中的命令方塊放到隱蔽的位置 以避免被破基岩機破壞'
@@ -346,6 +346,7 @@ tpa_menu_hoverevent: §b點擊向%s§b發送傳送請求
 tpa_menu_lang_button: §b切換語言§r
 tpa_menu_lang_button_hoverevent: §b點擊切換語言
 tpa_menu_mute: '靜音資料包: '
+tpa_menu_no_available_player: 沒有可用的玩家ID
 tpa_menu_output: '輸出顯示位置: '
 tpa_menu_output_actionbar: §b隱藏聊天欄§r
 tpa_menu_output_chatbar: §b隱藏動作欄§r
@@ -371,8 +372,8 @@ uninstall_enable_folder_button: 啟用1
 uninstall_enable_folder_button_hoverevent: 點擊啟用資料夾形式的資料包（若存在）
 uninstall_enable_zip_button: 啟用2
 uninstall_enable_zip_button_hoverevent: 點擊啟用 ZIP 形式的資料包（若存在）
+# uninstall_server_calling 需要顯示於控制台，如果直接使用漢字可能會顯示為亂碼，因此此處使用拼音表示
 uninstall_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 xie4zai3 Shu4ju4bao1!
-uninstall_server_calling_comment: §l§n§4這裡是一個註解。由於上方的 uninstall_server_calling 需要顯示於控制台，如果直接使用漢字可能會顯示為亂碼，因此此處使用拼音表示。
 update_reload: §b[重載]
 update_reload_hoverevent: 點擊重載
 update_step1_leftpart: '您正在進行TPA資料包的更新程序 目前已安裝的資料包版本是 '

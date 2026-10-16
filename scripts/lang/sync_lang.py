@@ -1,4 +1,4 @@
-"""Synchronize language sources and generate Minecraft language storage.
+"""Synchronize language sources and prepare Minecraft language storage.
 
 The Chinese language file is the source of truth for both keys and key order.
 Other language files are completed from that source without losing existing
@@ -6,6 +6,10 @@ translations. The synchronizer only tracks keys that are missing from a target
 language. A value equal to the base language is not evidence of a missing
 translation: empty values, shared UI text, comments, and technical strings can
 all legitimately be identical.
+
+YAML comments stay attached to their keys during reordering. Base-language
+comments are copied to target files and pending workbench entries only when
+those keys do not already have a comment.
 
 scripts/todo_translate.yml is a small YAML translation workbench. Each pending entry
 stores the source value, the reason it is pending, and an editable translation field:
@@ -23,20 +27,46 @@ a fallback. When ``translation`` is filled in, the next run writes it to the
 language file and removes the completed entry from the workbench. A pending
 entry is also completed when the target language file was edited directly and
 now contains a value different from its pending source.
+The build script imports :func:`synchronize_sources` and
+:func:`generate_mcfunction` to write generated storage into build artifacts.
+This module deliberately does not write generated files into ``src``.
 """
 
 from __future__ import annotations
 
 import argparse
+import copy
 import itertools
 import re
 from collections import OrderedDict
-from dataclasses import dataclass
 from functools import lru_cache
+from io import StringIO
 from pathlib import Path
 from typing import Any
 
-import yaml
+try:
+    from ruamel.yaml import YAML
+    from ruamel.yaml.comments import CommentedMap, CommentedSeq
+    from ruamel.yaml.error import YAMLError
+except ImportError as error:
+    raise SystemExit(
+        "Missing dependency ruamel.yaml. Install it with "
+        "'python -m pip install -r scripts/requirements.txt'."
+    ) from error
+
+
+yaml = YAML()
+yaml.preserve_quotes = True
+yaml.allow_unicode = True
+yaml.default_flow_style = False
+yaml.width = 120
+
+
+def represent_explicit_null(representer: Any, value: None) -> Any:
+    return representer.represent_scalar("tag:yaml.org,2002:null", "null")
+
+
+yaml.representer.add_representer(type(None), represent_explicit_null)
 
 
 PARAMETER_RE = re.compile(r"%(?:(\d+)\$)?s")
@@ -47,53 +77,29 @@ TODO_HEADER = (
     "# Keep translation as null when the entry is not translated yet.\n"
 )
 
-LanguageData = OrderedDict[str, Any]
-WorkbenchEntry = dict[str, Any]
-Workbench = OrderedDict[str, OrderedDict[str, WorkbenchEntry]]
+LanguageData = CommentedMap
+WorkbenchEntry = CommentedMap
+Workbench = CommentedMap
 
 STATUS_MISSING_KEY = "missing_key"
 WORKBENCH_STATUSES = frozenset({STATUS_MISSING_KEY})
 
 BASE_LANG_FILE = "zh_cn.yml"
-CORE_LANGUAGES = {"zh_cn", "en_us", "zh_tw", "ja_jp"}
+CORE_LANGUAGES = {"zh_cn", "en_us", "zh_tw", "zh_hk", "ja_jp", "ko_kr"}
 
 ROOT = Path(__file__).resolve().parents[2]
 LANG_DIR = ROOT / "scripts" / "lang"
 TODO_PATH = ROOT / "scripts" / "todo_translate.yml"
 
 
-@dataclass(frozen=True)
-class GeneratedTarget:
-    path: Path
-    pretty: bool
+def deduplicate_comment_lines(lines: list[str]) -> list[str]:
+    """Collapse repeated adjacent comment lines introduced by old runs."""
 
-
-CORE_TARGETS = (
-    GeneratedTarget(
-        ROOT / "src/+mc1.15/data/tpa/functions/init_storage_lang.mcfunction",
-        pretty=False,
-    ),
-    GeneratedTarget(
-        ROOT
-        / "src/+mc1.20.2/format_1_20_5/data/tpa/functions/init_storage_lang.mcfunction",
-        pretty=True,
-    ),
-    GeneratedTarget(
-        ROOT / "src/+mc1.20.2/data/tpa/function/init_storage_lang.mcfunction",
-        pretty=True,
-    ),
-)
-
-EXTRA_TARGETS = (
-    GeneratedTarget(
-        ROOT / "src/lang_extra/data/tpa_extra/functions/init_storage_lang.mcfunction",
-        pretty=False,
-    ),
-    GeneratedTarget(
-        ROOT / "src/lang_extra/data/tpa_extra/function/init_storage_lang.mcfunction",
-        pretty=True,
-    ),
-)
+    result: list[str] = []
+    for line in lines:
+        if not result or result[-1] != line:
+            result.append(line)
+    return result
 
 
 def load_yaml(path: Path, default: Any) -> Any:
@@ -103,21 +109,59 @@ def load_yaml(path: Path, default: Any) -> Any:
         return default
 
     with path.open("r", encoding="utf-8") as stream:
-        return yaml.safe_load(stream) or default
+        return yaml.load(stream) or default
 
 
-def normalize_language_data(data: Any) -> OrderedDict[str, Any]:
+def extract_key_comments(path: Path) -> dict[str, str]:
+    """Read standalone comments immediately preceding top-level YAML keys."""
+
+    lines = path.read_text(encoding="utf-8").splitlines()
+    comments: dict[str, str] = {}
+    key_pattern = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*):(?:\s|$)")
+
+    for index, line in enumerate(lines):
+        match = key_pattern.match(line)
+        if match is None:
+            continue
+
+        block = []
+        cursor = index - 1
+        while cursor >= 0:
+            previous = lines[cursor]
+            if previous.startswith("#"):
+                block.append(previous[1:].lstrip())
+            elif previous.strip():
+                break
+            cursor -= 1
+
+        if block:
+            comments[match.group(1)] = "\n".join(
+                deduplicate_comment_lines(list(reversed(block)))
+            )
+
+    return comments
+
+
+def normalize_language_data(
+    data: Any,
+    key_comments: dict[str, str] | None = None,
+) -> LanguageData:
     """Normalize supported language-file shapes into an ordered mapping."""
 
     if isinstance(data, list):
         if not data or not isinstance(data[0], dict):
-            return OrderedDict()
+            return CommentedMap()
         data = data[0]
 
     if not isinstance(data, dict):
-        return OrderedDict()
+        return CommentedMap()
 
-    return OrderedDict(data.items())
+    normalized = CommentedMap(data.items())
+    for key, comment in (key_comments or {}).items():
+        if key in normalized:
+            normalized.yaml_set_comment_before_after_key(key, before=comment)
+
+    return normalized
 
 
 def language_code(path: Path, data: LanguageData) -> str:
@@ -128,7 +172,7 @@ def language_code(path: Path, data: LanguageData) -> str:
 
 
 def plain_data(value: Any) -> Any:
-    """Convert ordered mappings into regular mappings accepted by PyYAML."""
+    """Convert YAML mappings into regular Python values for SNBT output."""
 
     if isinstance(value, dict):
         return {key: plain_data(item) for key, item in value.items()}
@@ -141,25 +185,51 @@ def save_yaml(
     path: Path,
     data: LanguageData,
     previous_data: LanguageData,
+    comments_changed: bool = False,
 ) -> bool:
-    """Write a language file only when its ordered data actually changed."""
+    """Write a language file only when data, order, or copied comments changed."""
 
-    if list(previous_data.items()) == list(data.items()):
+    if list(previous_data.items()) == list(data.items()) and not comments_changed:
         return False
 
     return write_text_if_changed(path, dump_yaml(data))
 
 
+def round_trip_data(value: Any) -> Any:
+    """Wrap generated mappings so ruamel can serialize them consistently."""
+
+    if isinstance(value, CommentedMap):
+        return value
+    if isinstance(value, dict):
+        result = CommentedMap()
+        for key, item in value.items():
+            result[key] = round_trip_data(item)
+        return result
+    if isinstance(value, CommentedSeq):
+        return value
+    if isinstance(value, list):
+        return CommentedSeq(round_trip_data(item) for item in value)
+    return value
+
+
+def copy_key_comment(source: Any, target: Any, key: Any) -> bool:
+    """Copy a key's YAML comment when the destination has no comment for it."""
+
+    source_comments = getattr(getattr(source, "ca", None), "items", {})
+    target_comments = getattr(getattr(target, "ca", None), "items", {})
+    if key in target_comments or key not in source_comments:
+        return False
+
+    target.ca.items[key] = copy.deepcopy(source_comments[key])
+    return True
+
+
 def dump_yaml(data: Any) -> str:
     """Serialize YAML with stable ordering and readable Unicode text."""
 
-    return yaml.safe_dump(
-        plain_data(data),
-        allow_unicode=True,
-        default_flow_style=False,
-        sort_keys=False,
-        width=120,
-    )
+    stream = StringIO()
+    yaml.dump(round_trip_data(data), stream)
+    return stream.getvalue()
 
 
 def write_text_if_changed(path: Path, content: str) -> bool:
@@ -182,7 +252,7 @@ def load_workbench() -> Workbench:
     """
 
     if not TODO_PATH.exists():
-        return OrderedDict()
+        return CommentedMap()
 
     try:
         raw = load_yaml(TODO_PATH, {})
@@ -191,11 +261,11 @@ def load_workbench() -> Workbench:
         # so the first run can migrate it instead of losing its pending keys.
         return load_legacy_workbench()
     if isinstance(raw, dict) and isinstance(raw.get("languages"), dict):
-        result: Workbench = OrderedDict()
+        result: Workbench = CommentedMap()
         for language, entries in raw["languages"].items():
             if not isinstance(entries, dict):
                 continue
-            result[language] = OrderedDict()
+            result[language] = CommentedMap()
             for key, entry in entries.items():
                 if not isinstance(entry, dict):
                     continue
@@ -216,11 +286,14 @@ def load_workbench() -> Workbench:
                 if status not in WORKBENCH_STATUSES:
                     status = STATUS_MISSING_KEY
 
-                result[language][key] = {
-                    "source": entry.get("source"),
-                    "status": status,
-                    "translation": translation,
-                }
+                normalized_entry = CommentedMap(
+                    (
+                        ("source", entry.get("source")),
+                        ("status", status),
+                        ("translation", translation),
+                    )
+                )
+                result[language][key] = normalized_entry
         return result
 
     return load_legacy_workbench()
@@ -229,7 +302,7 @@ def load_workbench() -> Workbench:
 def load_legacy_workbench() -> Workbench:
     """Parse the previous section-based workbench format."""
 
-    result: Workbench = OrderedDict()
+    result: Workbench = CommentedMap()
     language = None
 
     for line in TODO_PATH.read_text(encoding="utf-8").splitlines():
@@ -238,14 +311,16 @@ def load_legacy_workbench() -> Workbench:
             continue
         if line.startswith("[") and line.endswith("]"):
             language = line[1:-1].strip()
-            result.setdefault(language, OrderedDict())
+            result.setdefault(language, CommentedMap())
             continue
         if language is not None:
-            result[language][line] = {
-                "source": None,
-                "status": STATUS_MISSING_KEY,
-                "translation": None,
-            }
+            result[language][line] = CommentedMap(
+                (
+                    ("source", None),
+                    ("status", STATUS_MISSING_KEY),
+                    ("translation", None),
+                )
+            )
 
     return result
 
@@ -255,7 +330,7 @@ def save_workbench(
 ) -> bool:
     """Persist the workbench without rewriting it when nothing changed."""
 
-    document: OrderedDict[str, Any] = OrderedDict()
+    document = CommentedMap()
     document["languages"] = workbench
     return write_text_if_changed(TODO_PATH, TODO_HEADER + dump_yaml(document))
 
@@ -263,49 +338,80 @@ def save_workbench(
 def ordered_language_data(
     base_data: LanguageData,
     language_data: LanguageData,
-) -> LanguageData:
-    """Return only base-language keys, in the base-language order.
+) -> tuple[LanguageData, bool]:
+    """Prune and reorder keys while keeping each key's comments attached.
 
     The base language defines both the supported key set and its order.
     Target-only keys are stale by definition and must not be appended back to
-    the synchronized language file.
+    the synchronized language file. Existing target comments win; missing
+    comments are copied from the corresponding base-language key.
     """
 
-    return OrderedDict(
-        (key, language_data[key])
-        for key in base_data
-        if key in language_data
-    )
+    comments_changed = False
+    for key in list(language_data):
+        if key not in base_data:
+            del language_data[key]
+
+    for key in base_data:
+        if key not in language_data:
+            continue
+
+        comments_changed |= copy_key_comment(base_data, language_data, key)
+
+        language_data.move_to_end(key)
+
+    return language_data, comments_changed
 
 
 def ordered_workbench(
     workbench: Workbench,
     base_data: LanguageData,
+    base_comments: dict[str, str],
 ) -> Workbench:
-    """Keep pending entries only for keys that still exist in the base language."""
+    """Keep pending entries in base-key order with their source comments."""
 
-    ordered: Workbench = OrderedDict()
-    for language, entries in workbench.items():
-        ordered_entries = OrderedDict(
-            (key, entries[key]) for key in base_data if key in entries
-        )
-        if ordered_entries:
-            ordered[language] = ordered_entries
-    return ordered
+    for language in list(workbench):
+        entries = workbench[language]
+        if not isinstance(entries, dict):
+            del workbench[language]
+            continue
+
+        for key in list(entries):
+            if key not in base_data:
+                del entries[key]
+
+        for key in base_data:
+            if key not in entries:
+                continue
+            comment = base_comments.get(key)
+            if comment is not None and key not in entries.ca.items:
+                entries.yaml_set_comment_before_after_key(
+                    key,
+                    before=comment,
+                    indent=4,
+                )
+            entries.move_to_end(key)
+
+        if not entries:
+            del workbench[language]
+
+    return workbench
 
 
 def make_workbench_entry(source: Any, status: str) -> WorkbenchEntry:
     """Build a new pending entry with a stable field order."""
 
-    return {
-        "source": source,
-        "status": status,
-        "translation": None,
-    }
+    return CommentedMap(
+        (
+            ("source", source),
+            ("status", status),
+            ("translation", None),
+        )
+    )
 
 
 def apply_workbench_translation(
-    entries: OrderedDict[str, WorkbenchEntry],
+    entries: Workbench,
     key: str,
     source: Any,
     current_value: Any,
@@ -366,14 +472,14 @@ def synchronize_language(
     base_data: LanguageData,
     language_data: LanguageData,
     workbench: Workbench,
-) -> tuple[LanguageData, int, int]:
+) -> tuple[LanguageData, int, int, bool]:
     """Merge one language file and return data plus workbench counts.
 
     ``missing`` counts keys that were absent from the target language. Existing
     values are always preserved, including values equal to the base language.
     """
 
-    entries = workbench.setdefault(language, OrderedDict())
+    entries = workbench.setdefault(language, CommentedMap())
     missing = 0
     completed = 0
 
@@ -419,11 +525,8 @@ def synchronize_language(
             del entries[key]
             completed += 1
 
-    return (
-        ordered_language_data(base_data, language_data),
-        missing,
-        completed,
-    )
+    ordered_data, comments_changed = ordered_language_data(base_data, language_data)
+    return ordered_data, missing, completed, comments_changed
 
 
 @lru_cache(maxsize=None)
@@ -510,9 +613,14 @@ def generate_mcfunction(
     )
 
 
-def write_generated_targets(
+def split_language_data(
     all_languages: OrderedDict[str, LanguageData],
-) -> None:
+) -> tuple[
+    OrderedDict[str, LanguageData],
+    OrderedDict[str, LanguageData],
+]:
+    """Split languages into the main package and the optional language pack."""
+
     core = OrderedDict(
         (language, data)
         for language, data in all_languages.items()
@@ -523,25 +631,101 @@ def write_generated_targets(
         for language, data in all_languages.items()
         if language not in CORE_LANGUAGES
     )
+    return core, extra
 
-    for target in CORE_TARGETS:
-        changed = write_text_if_changed(
-            target.path,
-            generate_mcfunction(core, target.pretty, extra=False),
+
+def synchronize_sources(check: bool = False) -> OrderedDict[str, LanguageData]:
+    """Synchronize YAML sources and return all languages in source order.
+
+    ``check=True`` performs the same in-memory merge and reports pending work,
+    but does not write YAML or the translation workbench. Generated Minecraft
+    functions are intentionally not written here; the build step writes them
+    into each selected artifact.
+    """
+
+    base_path = LANG_DIR / BASE_LANG_FILE
+    base_comments = extract_key_comments(base_path)
+    base_data = normalize_language_data(
+        load_yaml(base_path, {}),
+        base_comments,
+    )
+    if not base_data:
+        raise ValueError(f"Base language is empty or missing: {base_path}")
+
+    workbench = load_workbench()
+    all_languages: OrderedDict[str, LanguageData] = OrderedDict()
+    all_languages["zh_cn"] = base_data
+
+    print("== Synchronizing language files ==")
+    for language_path in sorted(LANG_DIR.glob("*.yml")):
+        if language_path.name == BASE_LANG_FILE:
+            continue
+
+        language_data = normalize_language_data(
+            load_yaml(language_path, {}),
+            extract_key_comments(language_path),
         )
-        marker = "updated" if changed else "unchanged"
-        print(f"[CORE] {target.path} <- {', '.join(core)} ({marker})")
+        previous_data = OrderedDict(language_data)
+        language_name = language_code(language_path, language_data)
+        language_data, missing, completed, comments_changed = synchronize_language(
+            language_name,
+            base_data,
+            language_data,
+            workbench,
+        )
+        all_languages[language_name] = language_data
 
-    for target in EXTRA_TARGETS:
-        changed = write_text_if_changed(
-            target.path,
-            generate_mcfunction(extra, target.pretty, extra=True),
+        if check:
+            print(
+                f"[CHECK] {language_path.name}: "
+                f"+missing {missing}, completed {completed}"
+            )
+            continue
+
+        changed = save_yaml(
+            language_path,
+            language_data,
+            previous_data,
+            comments_changed,
         )
         marker = "updated" if changed else "unchanged"
         print(
-            f"[EXTRA] {target.path} <- "
-            f"{', '.join(extra) or '(none)'} ({marker})"
+            f"[{language_path.name}] +missing {missing}, "
+            f"completed {completed}, {marker}"
         )
+
+    # Keep pending entries in base-language order and remove entries whose keys
+    # were deleted from the base language.
+    workbench = ordered_workbench(workbench, base_data, base_comments)
+
+    if check:
+        pending = sum(len(entries) for entries in workbench.values())
+        print(f"[CHECK] pending translation entries: {pending}")
+        return all_languages
+
+    print(
+        f"[{TODO_PATH.relative_to(ROOT)}] "
+        + ("updated" if save_workbench(workbench) else "unchanged")
+    )
+    return all_languages
+
+
+def generate_language_targets(
+    all_languages: OrderedDict[str, LanguageData],
+    pretty: bool,
+) -> tuple[str, str]:
+    """Return generated core and extension functions for build artifacts.
+
+    The first value is the core language storage. The second is the optional
+    ``tpa_extra`` storage. Formatting is selected by the caller because legacy
+    and modern Minecraft function files use different line layouts.
+    """
+
+    core, extra = split_language_data(all_languages)
+    return (
+        generate_mcfunction(core, pretty=pretty, extra=False),
+        generate_mcfunction(extra, pretty=pretty, extra=True),
+    )
 
 
 def parse_args() -> argparse.Namespace:
@@ -556,60 +740,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    base_data = normalize_language_data(load_yaml(LANG_DIR / BASE_LANG_FILE, {}))
-    if not base_data:
-        raise SystemExit(
-            f"Base language is empty or missing: {LANG_DIR / BASE_LANG_FILE}"
-        )
-
-    workbench = load_workbench()
-    all_languages: OrderedDict[str, LanguageData] = OrderedDict()
-    all_languages["zh_cn"] = base_data
-
-    print("== Synchronizing language files ==")
-    for language_path in sorted(LANG_DIR.glob("*.yml")):
-        if language_path.name == BASE_LANG_FILE:
-            continue
-
-        language_data = normalize_language_data(load_yaml(language_path, {}))
-        previous_data = OrderedDict(language_data)
-        language_name = language_code(language_path, language_data)
-        language_data, missing, completed = synchronize_language(
-            language_name,
-            base_data,
-            language_data,
-            workbench,
-        )
-        all_languages[language_name] = language_data
-
-        if args.check:
-            print(
-                f"[CHECK] {language_path.name}: "
-                f"+missing {missing}, completed {completed}"
-            )
-        else:
-            changed = save_yaml(language_path, language_data, previous_data)
-            marker = "updated" if changed else "unchanged"
-            print(
-                f"[{language_path.name}] +missing {missing}, "
-                f"completed {completed}, {marker}"
-            )
-
-    # Keep pending entries in base-language order and remove entries whose keys
-    # were deleted from the base language.
-    workbench = ordered_workbench(workbench, base_data)
-
-    if args.check:
-        pending = sum(len(entries) for entries in workbench.values())
-        print(f"[CHECK] pending translation entries: {pending}")
-        return
-
-    print(
-        f"[{TODO_PATH.relative_to(ROOT)}] "
-        + ("updated" if save_workbench(workbench) else "unchanged")
-    )
-    print("\n== Generating mcfunction files ==")
-    write_generated_targets(all_languages)
+    synchronize_sources(check=args.check)
     print("\nsync_lang.py completed")
 
 

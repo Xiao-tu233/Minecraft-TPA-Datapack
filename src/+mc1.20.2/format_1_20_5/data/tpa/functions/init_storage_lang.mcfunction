@@ -5,7 +5,6 @@ data modify storage tpa:tpa temp.lang set value \
     lang: "zh_cn", \
     id: 1, \
     name: "zh_cn", \
-    tpa_menu_no_available_player: "没有可用的玩家ID", \
     name_display: "简体中文（中国大陆）", \
     header: "[§bTPA§r] ", \
     back_act: "已将你传送至上一位置", \
@@ -88,7 +87,6 @@ data modify storage tpa:tpa temp.lang set value \
     load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233     Additional contributions © 2026 Pressnre§r.    本数据包遵循 GPL-3.0 开源协议, 为开源项目, 但作者不建议将其用于商业化服务器.     点击下方“[协议]”查看协议原文. ", \
     load_date_check: ["目前版本发布于", ", 请注意更新"], \
     load_date_check_format: 123, \
-    load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
     load_date_check_year_prefix: "", \
     load_date_check_year_suffix: "年", \
     load_date_check_year_local_prefix: "", \
@@ -175,7 +173,6 @@ data modify storage tpa:tpa temp.lang set value \
     option_tp_pos_hoverevent: "§b在下方更改§a传送坐标允许半径 §r(§6单位: 米§r), §b填0来设置禁止传送 §b填-1来设置不限制半径(不推荐)", \
     option_tp_spec: "允许传送旁观者", \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
-    option_server_calling_comment: "§l§n§4这里是一个注释 因为上面的option_server_calling需要被控制台所显示 如果直接写汉字会被显示为乱码 这里使用拼音来进行表示", \
     option_uses_binary_teleport: "是否使用二分法传送", \
     option_uses_binary_teleport_hoverevent: "§b在下方选择§a使用二分法传送(启用) §6抑或是 §c使用锚点传送(禁用)", \
     option_uses_string_dimension: "是否识别字符串维度", \
@@ -299,7 +296,6 @@ data modify storage tpa:tpa temp.lang set value \
     tick_not_working_button_set_schedule: "§b[设置]", \
     tick_not_working_button_set_schedule_hoverevent: "§b点击设置/schedule指令调用Tick函数", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
-    tick_not_working_server_calling_comment: "§l§n§c这里是一个注释 因为上面的tick_not_working_server_calling需要被控制台所显示 如果直接写汉字会被显示为乱码 这里使用拼音来进行表示", \
     tick_not_working_tips_line1: "你现在正在调用Tick不工作函数 因此你应该遇到了Tick函数不工作的情况 你现在可以实现以下两种方式的其中一种:", \
     tick_not_working_tips_line2: "        1. 设置使用/schedule指令调用Tick函数", \
     tick_not_working_tips_line3: "   或者 2. 把你手中的命令方块放到隐蔽的位置 以避免被破基岩机破坏", \
@@ -353,6 +349,7 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_lang_button: "§b切换语言§r", \
     tpa_menu_lang_button_hoverevent: "§b点击切换语言", \
     tpa_menu_mute: "静音数据包: ", \
+    tpa_menu_no_available_player: "没有可用的玩家ID", \
     tpa_menu_output: "输出显示位置: ", \
     tpa_menu_output_actionbar: "§b隐藏聊天栏§r", \
     tpa_menu_output_chatbar: "§b隐藏动作栏§r", \
@@ -379,7 +376,6 @@ data modify storage tpa:tpa temp.lang set value \
     uninstall_enable_zip_button: "启用2", \
     uninstall_enable_zip_button_hoverevent: "点击启用ZIP形式的数据包(如果存在)", \
     uninstall_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 xie4zai3 Shu4ju4bao1!", \
-    uninstall_server_calling_comment: "§l§n§4这里是一个注释 因为上面的uninstall_server_calling需要被控制台所显示 如果直接写汉字会被显示为乱码 这里使用拼音来进行表示", \
     update_reload: "§b[重载]", \
     update_reload_hoverevent: "点击重载", \
     update_step1_leftpart: "您正在进行TPA数据包的更新程序 目前已安装的数据包版本是 ", \
@@ -466,7 +462,6 @@ data modify storage tpa:tpa temp.lang set value \
     lang: "en_us", \
     id: 2, \
     name: "en_us", \
-    tpa_menu_no_available_player: "No available player IDs", \
     name_display: "English (United States)", \
     header: "[§bTPA§r] ", \
     back_act: "Teleported you to the previous position", \
@@ -549,7 +544,6 @@ data modify storage tpa:tpa temp.lang set value \
     load_copyright_claim: "Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is licensed under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on commercial servers. Click \"[LICENSE]\" below to view the full license text.", \
     load_date_check: ["Current version was released on ", ", please pay attention to updates"], \
     load_date_check_format: 231, \
-    load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
     load_date_check_year_prefix: "", \
     load_date_check_year_suffix: "", \
     load_date_check_year_local_prefix: "", \
@@ -635,8 +629,7 @@ data modify storage tpa:tpa temp.lang set value \
     option_tp_pos_cooldown_hoverevent: "§bModify §aCooldown Time§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for no cooldown, -1 for disabling teleport", \
     option_tp_pos_hoverevent: "§bModify §aTeleport Position Allow Radius§r (§6Units: meters§r), §b 0 for disabling teleport, -1 for not restrcting radius(Not Recommending)", \
     option_tp_spec: "If Allow Spectators to Teleport", \
-    option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
-    option_server_calling_comment: "§l§n§4 This is a comment. The value of `option_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
+    option_server_calling: "Please modify configs in Client instead of Server terminal.", \
     option_uses_binary_teleport: "Use binary teleportation?", \
     option_uses_binary_teleport_hoverevent: "§bChoose §aBinary teleportation (enabled) §6or §cAnchor teleportation (disabled)", \
     option_uses_string_dimension: "Recognize string dimensions?", \
@@ -759,8 +752,7 @@ data modify storage tpa:tpa temp.lang set value \
     teleport_sim_dist_warn_button_binary_hoverevent: "§bClick to switch the Teleport Method to Binary Teleport", \
     tick_not_working_button_set_schedule: "§b[Set]", \
     tick_not_working_button_set_schedule_hoverevent: "§bClick to turn on Calling Tick Function with /schedule command", \
-    tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
-    tick_not_working_server_calling_comment: "§l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used instead.", \
+    tick_not_working_server_calling: "Please acquire Command block in client instead of server terminal.", \
     tick_not_working_tips_line1: "You are currently calling a Tick function that doesn't work, so you may have encountered an issue where the Tick function doesn't work. You can implement one of the following two methods:                                                  ", \
     tick_not_working_tips_line2: "        1. Use the /schedule command to call the Tick function.", \
     tick_not_working_tips_line3: "   Or 2. Place your command block in a hidden location to avoid being destroyed by Bedrock-breaking machines.", \
@@ -814,6 +806,7 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_lang_button: "§bSwitch language§r", \
     tpa_menu_lang_button_hoverevent: "§bClick to switch language", \
     tpa_menu_mute: "Mute datapack: ", \
+    tpa_menu_no_available_player: "No available player IDs", \
     tpa_menu_output: "Output display: ", \
     tpa_menu_output_actionbar: "§bHide chat§r", \
     tpa_menu_output_chatbar: "§bHide action bar§r", \
@@ -840,7 +833,6 @@ data modify storage tpa:tpa temp.lang set value \
     uninstall_enable_zip_button: "ENABLE2", \
     uninstall_enable_zip_button_hoverevent: "Click to enable ZIP-based datapack (if exists)", \
     uninstall_server_calling: "Please use the client instead of the console to uninstall the datapack!", \
-    uninstall_server_calling_comment: "§l§n§4§l§n§4 This is a comment. The value of `uninstall_server_calling` is intended for console output. Since some console environments may not correctly render Unicode characters, for non-English languages, an ASCII-compatible romanized form is used instead.", \
     update_reload: "§b[Reload]", \
     update_reload_hoverevent: "Click to reload", \
     update_step1_leftpart: "You are updating the TPA datapack. Current installed version is ", \
@@ -927,7 +919,6 @@ data modify storage tpa:tpa temp.lang set value \
     lang: "ja_jp", \
     id: 4, \
     name: "ja_jp", \
-    tpa_menu_no_available_player: "利用可能なプレイヤーIDがありません", \
     name_display: "日本語（日本）", \
     header: "[§bTPA§r] ", \
     back_act: "前回の位置にテレポートしました", \
@@ -1010,7 +1001,6 @@ data modify storage tpa:tpa temp.lang set value \
     load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233    Additional contributions © 2026 Pressnre. このデータパックはGPL-3.0オープンソースライセンスに従っています。 オープンソースプロジェクトですが、作者は商用サーバーでの使用を推奨していません。[ライセンス]をクリックしてライセンス全文を確認できます。", \
     load_date_check: ["現在のバージョンは", "にリリースされました。アップデートに注意してください"], \
     load_date_check_format: 123, \
-    load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
     load_date_check_year_prefix: "", \
     load_date_check_year_suffix: "年", \
     load_date_check_year_local_prefix: "(令和", \
@@ -1097,7 +1087,6 @@ data modify storage tpa:tpa temp.lang set value \
     option_tp_pos_hoverevent: "§b以下で§aテレポート座標許可範囲を変更§r(§6単位: メートル§r), §b0でテレポート禁止, §b-1で範囲無制限(非推奨)", \
     option_tp_spec: "観戦者のテレポートを許可", \
     option_server_calling: "kuraianto wo shiyou shi, konsouru dewa naku settei wo henkou shite kudasai!", \
-    option_server_calling_comment: "§l§n§4これはコメントです：option_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     option_uses_binary_teleport: "二分法テレポートを使用するか", \
     option_uses_binary_teleport_hoverevent: "§b以下で§a二分法テレポートを使用(有効) §6または §cアンカー式テレポート(無効)", \
     option_uses_string_dimension: "文字列ディメンションを認識するか", \
@@ -1221,7 +1210,6 @@ data modify storage tpa:tpa temp.lang set value \
     tick_not_working_button_set_schedule: "§b[設定]", \
     tick_not_working_button_set_schedule_hoverevent: "§bクリックして /schedule コマンドでTick関数を呼び出し", \
     tick_not_working_server_calling: "kuraianto wo shiyou shi, konsouru dewa naku komando burokku wo shutoku shite kudasai!", \
-    tick_not_working_server_calling_comment: "§l§n§4これはコメントです：tick_not_working_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     tick_not_working_tips_line1: "現在 Tick不動関数を呼び出しています。そのため、Tick関数が動作しない状況に直面する可能性があります。次のどちらかの方法を実施してください:", \
     tick_not_working_tips_line2: "        1. /schedule コマンドで Tick関数を呼び出す", \
     tick_not_working_tips_line3: "   または 2. 命令ブロックを隠し場所に置いて、破壊防止", \
@@ -1275,6 +1263,7 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_lang_button: "§b言語切替§r", \
     tpa_menu_lang_button_hoverevent: "§bクリックして言語を切替", \
     tpa_menu_mute: "データパックのミュート: ", \
+    tpa_menu_no_available_player: "利用可能なプレイヤーIDがありません", \
     tpa_menu_output: "出力表示場所: ", \
     tpa_menu_output_actionbar: "§bチャット欄非表示§r", \
     tpa_menu_output_chatbar: "§bアクションバー非表示§r", \
@@ -1301,7 +1290,6 @@ data modify storage tpa:tpa temp.lang set value \
     uninstall_enable_zip_button: "有効化2", \
     uninstall_enable_zip_button_hoverevent: "ZIP形式のデータパック（存在する場合）を有効する", \
     uninstall_server_calling: "Deitapakku no aninsutouru ni wa, konsourude wa naku kuraianto wo shiyou shite kudasai!", \
-    uninstall_server_calling_comment: "§l§n§4これはコメントです：uninstall_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。", \
     update_reload: "§b[リロード]", \
     update_reload_hoverevent: "クリックしてリロード", \
     update_step1_leftpart: "TPAデータパックのアップデートを実行中です。現在インストールされているデータパックのバージョンは ", \
@@ -1388,7 +1376,6 @@ data modify storage tpa:tpa temp.lang set value \
     lang: "zh_tw", \
     id: 3, \
     name: "zh_tw", \
-    tpa_menu_no_available_player: "沒有可用的玩家ID", \
     name_display: "正體中文（臺灣）", \
     header: "[§bTPA§r] ", \
     back_act: "已將你傳送至上一位置", \
@@ -1471,7 +1458,6 @@ data modify storage tpa:tpa temp.lang set value \
     load_copyright_claim: "Copyright © 2024-2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r。 本資料包採用 GPL-3.0 開源授權條款，為開源專案，但作者不建議將其用於商業伺服器。 點擊下方「[授權條款]」查看授權條款全文。", \
     load_date_check: ["目前版本發佈於", "，請注意更新"], \
     load_date_check_format: 123, \
-    load_date_check_format_comment: "§r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day", \
     load_date_check_year_prefix: "", \
     load_date_check_year_suffix: "年", \
     load_date_check_year_local_prefix: "(民國", \
@@ -1558,7 +1544,6 @@ data modify storage tpa:tpa temp.lang set value \
     option_tp_pos_hoverevent: "§b在下方變更§a傳送座標允許半徑 §r(§6單位: 公尺§r), §b填0來設定禁止傳送 §b填-1來設定不限制半徑(不推薦)", \
     option_tp_spec: "允許傳送旁觀者", \
     option_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!", \
-    option_server_calling_comment: "§l§n§4這裡是一個註解 因為上面的option_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示", \
     option_uses_binary_teleport: "是否使用二分法傳送", \
     option_uses_binary_teleport_hoverevent: "§b在下方選擇§a使用二分法傳送(啟用) §6抑或是 §c使用錨點傳送(禁用)", \
     option_uses_string_dimension: "是否識別字串維度", \
@@ -1682,7 +1667,6 @@ data modify storage tpa:tpa temp.lang set value \
     tick_not_working_button_set_schedule: "§b[設定]", \
     tick_not_working_button_set_schedule_hoverevent: "§b點擊設定/schedule指令呼叫Tick函數", \
     tick_not_working_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!", \
-    tick_not_working_server_calling_comment: "§l§n§c這裡是一個註解 因為上面的tick_not_working_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示", \
     tick_not_working_tips_line1: "你現在正在呼叫Tick不工作函數 因此你應該遇到了Tick函數不工作的情況 你現在可以實現以下兩種方式的其中一種:", \
     tick_not_working_tips_line2: "        1. 設定使用/schedule指令呼叫Tick函數", \
     tick_not_working_tips_line3: "   或者 2. 把你手中的命令方塊放到隱蔽的位置 以避免被破基岩機破壞", \
@@ -1736,6 +1720,7 @@ data modify storage tpa:tpa temp.lang set value \
     tpa_menu_lang_button: "§b切換語言§r", \
     tpa_menu_lang_button_hoverevent: "§b點擊切換語言", \
     tpa_menu_mute: "靜音資料包: ", \
+    tpa_menu_no_available_player: "沒有可用的玩家ID", \
     tpa_menu_output: "輸出顯示位置: ", \
     tpa_menu_output_actionbar: "§b隱藏聊天欄§r", \
     tpa_menu_output_chatbar: "§b隱藏動作欄§r", \
@@ -1762,7 +1747,6 @@ data modify storage tpa:tpa temp.lang set value \
     uninstall_enable_zip_button: "啟用2", \
     uninstall_enable_zip_button_hoverevent: "點擊啟用 ZIP 形式的資料包（若存在）", \
     uninstall_server_calling: "Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 xie4zai3 Shu4ju4bao1!", \
-    uninstall_server_calling_comment: "§l§n§4這裡是一個註解。由於上方的 uninstall_server_calling 需要顯示於控制台，如果直接使用漢字可能會顯示為亂碼，因此此處使用拼音表示。", \
     update_reload: "§b[重載]", \
     update_reload_hoverevent: "點擊重載", \
     update_step1_leftpart: "您正在進行TPA資料包的更新程序 目前已安裝的資料包版本是 ", \

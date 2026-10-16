@@ -1,6 +1,5 @@
 id: 2
 name: en_us
-tpa_menu_no_available_player: No available player IDs
 name_display: English (United States)
 header: '[§bTPA§r] '
 back_act: Teleported you to the previous position
@@ -74,19 +73,19 @@ load_author: 'This datapack is made by §6Xiao_tu233§r and §6Pressnre§r. '
 load_button_help: '[HELP]'
 load_button_help_hoverevent: Click to see help
 load_button_license: '[LICENSE]'
-load_button_license_hoverevent: §bTo use TPA datapack, you must follow the open source license we put on Github website and
-  the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read
-  the whole text carefully.
+load_button_license_hoverevent: §bTo use TPA datapack, you must follow the open source license we put on Github website 
+  and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please
+  read the whole text carefully.
 load_button_options: '[SETTINGS]'
 load_button_options_hoverevent: Click to modify options
 load_button_update: '[UPDATE]'
 load_button_update_hoverevent: Click to start updating datapack
-load_copyright_claim: Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is licensed
-  under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on commercial servers.
-  Click "[LICENSE]" below to view the full license text.
+load_copyright_claim: Copyright © 2024–2026 Xiao_tu233 Additional contributions © 2026 Pressnre§r. This datapack is 
+  licensed under the GPL-3.0 license and is an open-source project. However, the author does not recommend using it on 
+  commercial servers. Click "[LICENSE]" below to view the full license text.
 load_date_check: Current version was released on %s, please pay attention to updates
+# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day
 load_date_check_format: 231
-load_date_check_format_comment: §r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day
 load_date_check_year_prefix: ''
 load_date_check_year_suffix: ''
 load_date_check_year_local_prefix: ''
@@ -111,16 +110,16 @@ option_button_enable: '[§aENABLE§r'
 option_button_help: '[§4HELP§r]'
 option_button_help_hoverevent: Click to open help menu
 option_button_license: '[§4LICENSE§r]'
-option_button_license_hoverevent: §bTo use TPA datapack, you must follow the open source license we put on Github website
-  and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. So please read
-  the whole text carefully.
+option_button_license_hoverevent: §bTo use TPA datapack, you must follow the open source license we put on Github 
+  website and the restrictions on §l§ncommercial§r§b use. Otherwise, a §6§lcopyright infringement§r§b risk will exist. 
+  So please read the whole text carefully.
 option_button_notworking: '[§4Not Working§r]'
 option_button_notworking_hoverevent: §bClick when tick function does not work (TPA menu cannot be opened)
 option_button_reset: '[§bReset§r]'
 option_button_set: '[§aModify§r]'
 option_button_uninstall: '[§4UNINSTALL§r]'
-option_button_uninstall_hoverevent: §4Click this button to §l§nUninstall§r§4 TPA datapack! Please consider if you really need
-  it!
+option_button_uninstall_hoverevent: §4Click this button to §l§nUninstall§r§4 TPA datapack! Please consider if you really
+  need it!
 option_button_update: '[§4UPDATE§r]'
 option_button_update_hoverevent: Click to start updating datapack
 option_carpet_disabled: 'This feature needs Carpet Mod as a dependency, However Carpet isn''t installed. '
@@ -128,8 +127,8 @@ option_carpet_fake_player_fix: Carpet fake player fix
 option_carpet_fake_player_fix_incompatible: Carpet fake player fix is incompatible with this version
 option_current_game_version: Detected game version
 option_debug_mode: Debug Mode
-option_debug_mode_hoverevent: §bClick below to enable debug mode. This will provide debug information in chat, but may cause
-  spam. Reopen the settings menu after enabling to access advanced options.
+option_debug_mode_hoverevent: §bClick below to enable debug mode. This will provide debug information in chat, but may 
+  cause spam. Reopen the settings menu after enabling to access advanced options.
 option_dimension: Compatible Dimensions
 option_dimension_button_add: '[§aAdd§r]'
 option_dimension_button_add_hoverevent: §bClick to add a new dimension
@@ -170,8 +169,8 @@ option_sim_dist_hoverevent: '§bChange the §aSimulation distance §r(§6Unit: c
   within the simulation distance from the origin in the overworld before clicking.'
 option_stricter_book_check: Stricter teleportation book check
 option_stricter_book_check_incompatible: Stricter teleportation book check is incompatible with this version
-option_stricter_book_check_disabled: This feature requires the Bookshelf datapack as a dependency, but the server has not
-  installed the Bookshelf datapack.
+option_stricter_book_check_disabled: This feature requires the Bookshelf datapack as a dependency, but the server has 
+  not installed the Bookshelf datapack.
 option_time_out: 'Teleport request timeout '
 option_time_out_hoverevent: '§bModify §aTeleport Request Timeout§r (§6Units: 1 game tick = 1/20 seconds§r), §b 0 for disabling
   teleport, -1 for never timeout'
@@ -184,19 +183,17 @@ option_tp_pos_cooldown_hoverevent: '§bModify §aCooldown Time§r (§6Units: 1 g
 option_tp_pos_hoverevent: '§bModify §aTeleport Position Allow Radius§r (§6Units: meters§r), §b 0 for disabling teleport, -1
   for not restrcting radius(Not Recommending)'
 option_tp_spec: If Allow Spectators to Teleport
-option_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!
-option_server_calling_comment: §l§n§4 This is a comment. The value of `option_server_calling` is intended for console output.
-  Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized form is used
-  instead.
+# option_server_calling is displayed in the console, where non-ASCII characters may appear as mojibake(encoding corruption). Please use an ASCII-only romanized form for this translation (for example, pinyin for Chinese).
+option_server_calling: Please modify configs in Client instead of Server terminal.
 option_uses_binary_teleport: Use binary teleportation?
 option_uses_binary_teleport_hoverevent: §bChoose §aBinary teleportation (enabled) §6or §cAnchor teleportation (disabled)
 option_uses_string_dimension: Recognize string dimensions?
-option_uses_string_dimension_hoverevent: §bChoose §aUse strings for dimension storage (1.16+ enabled) §6or §cUse integers
-  for dimension storage (1.16- disabled)
+option_uses_string_dimension_hoverevent: §bChoose §aUse strings for dimension storage (1.16+ enabled) §6or §cUse 
+  integers for dimension storage (1.16- disabled)
 option_version: Datapack version
 option_warp: warps
-option_warp_hoverevent: §bClick below to open the §awarp §6menu, the number on the right indicates the number of warps currently
-  set.
+option_warp_hoverevent: §bClick below to open the §awarp §6menu, the number on the right indicates the number of warps 
+  currently set.
 option_warp_number_hoverevent_leftpart: '§bThe server currently has '
 option_warp_number_hoverevent_rightpart: §b warps.
 option_uses_tick_scheduling: Use /schedule command to call the Tick function
@@ -221,7 +218,8 @@ recver_recv_button_accept: '[§aACCEPT§r]'
 recver_recv_button_accept_hoverevent: §bClick to accept the request
 recver_recv_button_deny: '[§cDENY§r]'
 recver_recv_button_deny_hoverevent: §bClick to deny the request
-recver_accept_multiple_received: You currently have multiple teleport requests. Please select the request you want to accept
+recver_accept_multiple_received: You currently have multiple teleport requests. Please select the request you want to 
+  accept
 recver_accept_selector_title: Received Requests
 recver_recv_tpa_actionbar: '%ssent you a teleport request. Nod 3 times to accept, shake head 3 times to deny.'
 recver_recv_tpa_chatbar: '%ssent you a teleport request'
@@ -229,7 +227,8 @@ recver_recv_tpa_hoverevent: §bThe player who sent you a teleport request
 recver_recv_tpahere_actionbar: '%ssent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny.'
 recver_recv_tpahere_chatbar: '%ssent you a §ltpahere§r request'
 recver_recv_tpahere_hoverevent: §bThe player who sent you a §ltpahere§r request
-recver_req_invalid: Your request to %s has been removed since the target player is unavailable (offline or unable to teleport)
+recver_req_invalid: Your request to %s has been removed since the target player is unavailable (offline or unable to 
+  teleport)
 recver_req_invalid_hoverevent: §bThe player you sent a request to
 recver_req_not_exist: No pending requests to process
 recver_timeout_hoverevent: §bThe player whose request to you timed out
@@ -254,10 +253,10 @@ reqer_cancel_selector_button_previous_page: ◀ Previous Page
 reqer_cancel_selector_button_previous_page_hoverevent: §bClick to turn to the previous page
 reqer_cancel_selector_button_next_page: Next Page ▶
 reqer_cancel_selector_button_next_page_hoverevent: §bClick to turn to the next page
-reqer_change_actionbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new request
-  to %2$s, waiting for acceptance. Shake head 3 times to cancel
-reqer_change_chatbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new request
-  to %2$s, waiting for acceptance
+reqer_change_actionbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new 
+  request to %2$s, waiting for acceptance. Shake head 3 times to cancel
+reqer_change_chatbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new 
+  request to %2$s, waiting for acceptance
 reqer_change_hoverevent: §bThe player you previously sent a request to
 reqer_deny_tpa_hoverevent: §bThe player who denied your teleport request
 reqer_deny_tpa: Teleporting to %s...
@@ -271,14 +270,15 @@ reqer_recver_invalid: Target offline or not teleportable
 reqer_req_button_cancel: '[§4Cancel§r]'
 reqer_req_button_cancel_hoverevent: §bClick to cancel the request
 reqer_req_hoverevent: §bThe player you sent a request to
-reqer_req_invalid: Your request to %s has been removed because the target player is unavailable (offline or unable to teleport)
+reqer_req_invalid: Your request to %s has been removed because the target player is unavailable (offline or unable to 
+  teleport)
 reqer_req_invalid_hoverevent: §bThe player you sent a request to
 reqer_req_not_exist: The requested player does not exist or is offline
 reqer_req_tpa: You sent a teleport request to %s. Waiting for responsing
 reqer_req_tpahere: You requested %s to teleport to you. Waiting for responsing
 reqer_req_tpa_hoverevent: §bThe player you sent a teleport request to
-reqer_req_tpahere_actionbar: You sent a request to %ssent a §ltpahere§r request. Waiting for acceptance. Shake head 3 times
-  to cancel
+reqer_req_tpahere_actionbar: You sent a request to %ssent a §ltpahere§r request. Waiting for acceptance. Shake head 3 
+  times to cancel
 reqer_req_tpahere_chatbar: You sent a request to %ssent a §ltpahere§r request. Waiting for acceptance
 reqer_req_tpahere_hoverevent: §bThe player you sent a §ltpahere§r request to
 reqer_self: You cannot teleport to yourself
@@ -305,20 +305,19 @@ teleport_cal_sim_dist_end_rightpart: ''
 teleport_cal_sim_dist_start: Simulation distance calculation started
 teleport_incompatible: §aAnchor teleportation§r is not compatible with this game version
 teleport_sim_dist_disabled: The server has not set the simulation distance
-teleport_sim_dist_warn: Server simulation distance is not set. Attempting to teleport non-player targets. If teleport fails,
-  please contact admin to recalculate or manually set, or use binary teleport.
+teleport_sim_dist_warn: Server simulation distance is not set. Attempting to teleport non-player targets. If teleport 
+  fails, please contact admin to recalculate or manually set, or use binary teleport.
 teleport_sim_dist_warn_button_calc: '[§aCalculate§r]'
 teleport_sim_dist_warn_button_calc_hoverevent: '§bClick to start automatically calculating simulation distance. §cWarning:                                                   This
   operation may teleport the executor to a different location. Please make sure your position doesn’t need to remain loaded
   before clicking.'
 teleport_sim_dist_warn_button_binary: '[§aBinary Search§r]'
 teleport_sim_dist_warn_button_binary_hoverevent: §bClick to switch the Teleport Method to Binary Teleport
+# Example comment
 tick_not_working_button_set_schedule: §b[Set]
 tick_not_working_button_set_schedule_hoverevent: §bClick to turn on Calling Tick Function with /schedule command
-tick_not_working_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 huo4qu3 Ming4ling4fang1kuai4!
-tick_not_working_server_calling_comment: §l§n§4 This is a comment. The value of `tick_not_working_server_calling` is intended
-  for console output. Since some console environments may not correctly render Unicode characters, an ASCII-compatible romanized
-  form is used instead.
+# tick_not_working_server_calling is displayed in the console, where non-ASCII characters may appear as mojibake(encoding corruption). Please use an ASCII-only romanized form for this translation (for example, pinyin for Chinese).
+tick_not_working_server_calling: Please acquire Command block in client instead of server terminal.
 tick_not_working_tips_line1: 'You are currently calling a Tick function that doesn''t work, so you may have encountered an
   issue where the Tick function doesn''t work. You can implement one of the following two methods:                                                  '
 tick_not_working_tips_line2: '        1. Use the /schedule command to call the Tick function.'
@@ -374,6 +373,7 @@ tpa_menu_hoverevent: §bClick to send a teleport request to %s
 tpa_menu_lang_button: §bSwitch language§r
 tpa_menu_lang_button_hoverevent: §bClick to switch language
 tpa_menu_mute: 'Mute datapack: '
+tpa_menu_no_available_player: No available player IDs
 tpa_menu_output: 'Output display: '
 tpa_menu_output_actionbar: §bHide chat§r
 tpa_menu_output_chatbar: §bHide action bar§r
@@ -400,10 +400,8 @@ uninstall_enable_folder_button: ENABLE1
 uninstall_enable_folder_button_hoverevent: Click to enable folder-based datapack (if exists)
 uninstall_enable_zip_button: ENABLE2
 uninstall_enable_zip_button_hoverevent: Click to enable ZIP-based datapack (if exists)
+# uninstall_server_callingis displayed in the console, where non-ASCII characters may appear as mojibake(encoding corruption). Please use an ASCII-only romanized form for this translation (for example, pinyin for Chinese).
 uninstall_server_calling: Please use the client instead of the console to uninstall the datapack!
-uninstall_server_calling_comment: §l§n§4§l§n§4 This is a comment. The value of `uninstall_server_calling` is intended for
-  console output. Since some console environments may not correctly render Unicode characters, for non-English languages,
-  an ASCII-compatible romanized form is used instead.
 update_reload: §b[Reload]
 update_reload_hoverevent: Click to reload
 update_step1_leftpart: 'You are updating the TPA datapack. Current installed version is '
@@ -414,10 +412,10 @@ update_step2: Please download the latest version of the datapack from GitHub, QQ
 update_step3: Please click the button on the right to temporarily disable the datapack for the next installation step.
 update_step3_button: §b[Disable datapack]
 update_step3_hoverevent: If you can’t disable it, please check if the datapack’s file name is correct.
-update_step4: We're almost done, please drag the datapack file into the datapacks folder and unzip it, then delete the old
-  datapack.
-update_step5_leftright: Afterwards, we’ve completed the installation of the TPA datapack. If everything works, start adjusting
-  the datapack settings. If it didn’t load correctly, please try.
+update_step4: We're almost done, please drag the datapack file into the datapacks folder and unzip it, then delete the 
+  old datapack.
+update_step5_leftright: Afterwards, we’ve completed the installation of the TPA datapack. If everything works, start 
+  adjusting the datapack settings. If it didn’t load correctly, please try.
 update_step5_button: §b[Load]
 update_step5_hoverevent: Click to load the datapack
 update_step5_rightpart: ' If unknown scoreboard items appear, please start from step 3. This may be caused by incorrect version
@@ -432,8 +430,8 @@ warp_button_cancel_hoverevent: §bClick to discard the cached changes
 warp_button_enable: §aEnable§r
 warp_button_enable_hoverevent: §bClick to enable this warp
 warp_button_disable: §cDisable§r
-warp_button_disable_hoverevent: §bClick to disable this warp (except for name, other information will be hidden, enable to
-  view)
+warp_button_disable_hoverevent: §bClick to disable this warp (except for name, other information will be hidden, enable 
+  to view)
 warp_button_moveup: §dMove up§r
 warp_button_moveup_hoverevent: §bClick to swap this warp with the one above
 warp_button_moveup_notavail_hoverevent: §cCannot move up, this teleport spot is already at the top
@@ -455,8 +453,8 @@ warp_button_setpos: §aSet Position§r
 warp_button_setpos_hoverevent: §bClick to set this warp to your current position
 warp_desc_disabled: §cThis warp is disabled
 warp_disabled: §aWarps§r have been disabled by the server
-warp_edit: You are editting %s. Please click the input button below, complete and execute the suggest command, click "Apply"
-  to save
+warp_edit: You are editting %s. Please click the input button below, complete and execute the suggest command, click 
+  "Apply" to save
 warp_edit_button_input_desc: §aInput Description
 warp_edit_button_input_desc_hoverevent: §bClick and fill a description in the suggest command and then execute
 warp_edit_button_input_name: §aInput Name

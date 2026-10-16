@@ -1,6 +1,5 @@
 id: 4
 name: ja_jp
-tpa_menu_no_available_player: 利用可能なプレイヤーIDがありません
 name_display: 日本語（日本）
 header: '[§bTPA§r] '
 back_act: 前回の位置にテレポートしました
@@ -74,17 +73,16 @@ load_author: このデータパックは§6Xiao_tu233§rと§6Pressnre§rによ�
 load_button_help: '[ヘルプ]'
 load_button_help_hoverevent: クリックしてヘルプを表示
 load_button_license: '[ライセンス]'
-load_button_license_hoverevent: §bTPAデータパックを使用する際は、GitHubで公開されているライセンスに従ってください。 §bまた、作者§l§nはこのデータパックを§r§b商用サーバーで使用することを推奨していません。
-  §b誤解を避けるため、使用前にライセンス全文をよく読んで理解してください。
+load_button_license_hoverevent: §bTPAデータパックを使用する際は、GitHubで公開されているライセンスに従ってください。 
+  §bまた、作者§l§nはこのデータパックを§r§b商用サーバーで使用することを推奨していません。 §b誤解を避けるため、使用前にライセンス全文をよく読んで理解してください。
 load_button_options: '[設定]'
 load_button_options_hoverevent: クリックしてデータパック設定を変更
 load_button_update: '[更新]'
 load_button_update_hoverevent: クリックしてデータパック更新ガイドを開始
-load_copyright_claim: Copyright © 2024-2026 Xiao_tu233    Additional contributions © 2026 Pressnre. このデータパックはGPL-3.0オープンソースライセンスに従っています。
-  オープンソースプロジェクトですが、作者は商用サーバーでの使用を推奨していません。[ライセンス]をクリックしてライセンス全文を確認できます。
+load_copyright_claim: Copyright © 2024-2026 Xiao_tu233    Additional contributions © 2026 Pressnre. 
+  このデータパックはGPL-3.0オープンソースライセンスに従っています。 オープンソースプロジェクトですが、作者は商用サーバーでの使用を推奨していません。[ライセンス]をクリックしてライセンス全文を確認できます。
 load_date_check: 現在のバージョンは%sにリリースされました。アップデートに注意してください
 load_date_check_format: 123
-load_date_check_format_comment: §r§l§n# 1 for year, 2 for month, 3 for day, '123' here means the format is Year-Month-Day
 load_date_check_year_prefix: ''
 load_date_check_year_suffix: 年
 load_date_check_year_local_prefix: (令和
@@ -109,7 +107,8 @@ option_button_enable: §r[§a有効§r
 option_button_help: '[§4ヘルプ§r]'
 option_button_help_hoverevent: §bクリックしてヘルプメニューを開く
 option_button_license: '[§4ライセンス§r]'
-option_button_license_hoverevent: §bTPAデータパックを使用する際は、GitHub上のオープンソースライセンスに従ってください。§bまた、作者§l§nは商用サーバーでの使用を推奨していません。§b誤解を避けるため、使用前にライセンス内容をよく読んで理解してください。
+option_button_license_hoverevent: 
+  §bTPAデータパックを使用する際は、GitHub上のオープンソースライセンスに従ってください。§bまた、作者§l§nは商用サーバーでの使用を推奨していません。§b誤解を避けるため、使用前にライセンス内容をよく読んで理解してください。
 option_button_notworking: '[§4動作不可§r]'
 option_button_notworking_hoverevent: §bTick関数が動作しない場合（TPAメニューが開かない場合）はクリックしてください
 option_button_reset: '[§bリセット§r]'
@@ -170,8 +169,8 @@ option_tp_pos_cooldown: テレポート座標クールダウン時間
 option_tp_pos_cooldown_hoverevent: '§b以下で§aクールダウン時間を変更§r(§6単位: 1ゲームティック = 1/20秒§r), §b0を入力するとクールダウン無し, §b-1を入力するとテレポート禁止'
 option_tp_pos_hoverevent: '§b以下で§aテレポート座標許可範囲を変更§r(§6単位: メートル§r), §b0でテレポート禁止, §b-1で範囲無制限(非推奨)'
 option_tp_spec: 観戦者のテレポートを許可
+# option_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 option_server_calling: kuraianto wo shiyou shi, konsouru dewa naku settei wo henkou shite kudasai!
-option_server_calling_comment: §l§n§4これはコメントです：option_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 option_uses_binary_teleport: 二分法テレポートを使用するか
 option_uses_binary_teleport_hoverevent: §b以下で§a二分法テレポートを使用(有効) §6または §cアンカー式テレポート(無効)
 option_uses_string_dimension: 文字列ディメンションを認識するか
@@ -284,15 +283,17 @@ teleport_cal_sim_dist_end_rightpart: 'です'
 teleport_cal_sim_dist_start: シミュレーション距離計算を開始しました
 teleport_incompatible: §aアンカーテレポート§r はこのゲームバージョンと互換性がありません
 teleport_sim_dist_disabled: サーバーはまだシミュレーション距離を設定していません
-teleport_sim_dist_warn: サーバーがシミュレーション距離を設定していません。プレイヤー以外の対象にテレポートを試みています。失敗した場合は管理者に連絡し距離を再計算するか、手動で設定するか、二分法テレポートを使用してください
+teleport_sim_dist_warn: 
+  サーバーがシミュレーション距離を設定していません。プレイヤー以外の対象にテレポートを試みています。失敗した場合は管理者に連絡し距離を再計算するか、手動で設定するか、二分法テレポートを使用してください
 teleport_sim_dist_warn_button_calc: '[§a計算§r]'
 teleport_sim_dist_warn_button_calc_hoverevent: '§bクリックしてシミュレーション距離を自動計算開始  §c注意: 実行するとテレポート位置が変わる可能性があります    現在位置を安全に保つ場合のみクリックしてください'
 teleport_sim_dist_warn_button_binary: '[§a二分法§r]'
 teleport_sim_dist_warn_button_binary_hoverevent: §bクリックしてテレポート方法を二分法に設定
+# Example comment
 tick_not_working_button_set_schedule: §b[設定]
 tick_not_working_button_set_schedule_hoverevent: §bクリックして /schedule コマンドでTick関数を呼び出し
+# tick_not_working_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 tick_not_working_server_calling: kuraianto wo shiyou shi, konsouru dewa naku komando burokku wo shutoku shite kudasai!
-tick_not_working_server_calling_comment: §l§n§4これはコメントです：tick_not_working_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 tick_not_working_tips_line1: '現在 Tick不動関数を呼び出しています。そのため、Tick関数が動作しない状況に直面する可能性があります。次のどちらかの方法を実施してください:'
 tick_not_working_tips_line2: '        1. /schedule コマンドで Tick関数を呼び出す'
 tick_not_working_tips_line3: '   または 2. 命令ブロックを隠し場所に置いて、破壊防止'
@@ -346,6 +347,7 @@ tpa_menu_hoverevent: §bクリックして%s§bテレポートリクエストを
 tpa_menu_lang_button: §b言語切替§r
 tpa_menu_lang_button_hoverevent: §bクリックして言語を切替
 tpa_menu_mute: 'データパックのミュート: '
+tpa_menu_no_available_player: 利用可能なプレイヤーIDがありません
 tpa_menu_output: '出力表示場所: '
 tpa_menu_output_actionbar: §bチャット欄非表示§r
 tpa_menu_output_chatbar: §bアクションバー非表示§r
@@ -371,8 +373,8 @@ uninstall_enable_folder_button: 有効化1
 uninstall_enable_folder_button_hoverevent: フォルダー版のデータパック（存在する場合）を有効化する
 uninstall_enable_zip_button: 有効化2
 uninstall_enable_zip_button_hoverevent: ZIP形式のデータパック（存在する場合）を有効する
+# uninstall_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 uninstall_server_calling: Deitapakku no aninsutouru ni wa, konsourude wa naku kuraianto wo shiyou shite kudasai!
-uninstall_server_calling_comment: §l§n§4これはコメントです：uninstall_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 update_reload: §b[リロード]
 update_reload_hoverevent: クリックしてリロード
 update_step1_leftpart: 'TPAデータパックのアップデートを実行中です。現在インストールされているデータパックのバージョンは '

@@ -1,4 +1,5 @@
 version: "2.1"
-date: [2026,10,01]
-distribution_channel: "global"
+date: [2026,11,01]
+desc: "§bTPA_Datapack {version} for MC{min_format}-{max_format} by Xiao_tu233 at YT/Bilibili/抖音/Modrinth/PMC/CurseForge/Discord/MC百科"
+lang_extra_desc: "§bTPA_Datapack language extra pack {version} for MC1.15-26.3 by Xiao_tu233"
 # To edit functions: tpa:uninstall, tpa:initialize, tpa:publish_date, tpa:update, tpa:update_disable, tpa:load
