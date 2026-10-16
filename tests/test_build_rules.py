@@ -4,11 +4,38 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.build_rules import apply_build_rules
+from scripts.build_rules import apply_build_rules, convert_relative_path
 from scripts.build_rules.before_1_20_2 import remove_function_line_continuations
 
 
 class BuildRulesTests(unittest.TestCase):
+    def test_resource_directory_names_follow_target_version(self) -> None:
+        source = Path(
+            "data/minecraft/tags/function/tpa.mcfunction"
+        )
+        self.assertEqual(
+            convert_relative_path(source, (1, 20, 6, 0)),
+            Path("data/minecraft/tags/functions/tpa.mcfunction"),
+        )
+        self.assertEqual(
+            convert_relative_path(
+                Path("data/tpa/predicate/available.json"),
+                (1, 20, 6, 0),
+            ),
+            Path("data/tpa/predicates/available.json"),
+        )
+        self.assertEqual(
+            convert_relative_path(
+                Path("data/tpa/advancement/book.json"),
+                (1, 20, 6, 0),
+            ),
+            Path("data/tpa/advancements/book.json"),
+        )
+        self.assertEqual(
+            convert_relative_path(source, (1, 21, 0, 0)),
+            source,
+        )
+
     def test_removes_continuations_and_preserves_other_lines(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             data_root = Path(directory)

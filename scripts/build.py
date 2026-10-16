@@ -12,9 +12,12 @@ from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
 
 try:
-    from build_rules import apply_build_rules
+    from build_rules import apply_build_rules, convert_relative_path
 except ModuleNotFoundError:
-    from scripts.build_rules import apply_build_rules  # type: ignore[no-redef]
+    from scripts.build_rules import (  # type: ignore[no-redef]
+        apply_build_rules,
+        convert_relative_path,
+    )
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -218,23 +221,11 @@ def discover_extra_overlays() -> List[Tuple[McVersion, Path]]:
     return sorted(overlays, key=lambda item: item[0], reverse=True)
 
 
-def converted_relative_path(relative: Path, legacy: bool) -> Path:
-    if not legacy:
-        return relative
-
-    converted = []
-    for part in relative.parts:
-        converted.append(
-            {
-                "function": "functions",
-                "predicate": "predicates",
-                "advancement": "advancements",
-            }.get(part, part)
-        )
-    return Path(*converted)
-
-
-def copy_data_tree(source_data: Path, destination_root: Path, legacy: bool) -> None:
+def copy_data_tree(
+    source_data: Path,
+    destination_root: Path,
+    target_version: Tuple[int, int, int, int],
+) -> None:
     if not source_data.is_dir():
         raise FileNotFoundError(f"Missing data directory: {source_data}")
 
@@ -242,7 +233,10 @@ def copy_data_tree(source_data: Path, destination_root: Path, legacy: bool) -> N
         if not source_file.is_file():
             continue
         relative = source_file.relative_to(source_data)
-        destination = destination_root / "data" / converted_relative_path(relative, legacy)
+        destination = destination_root / "data" / convert_relative_path(
+            relative,
+            target_version,
+        )
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source_file, destination)
 
@@ -473,7 +467,7 @@ def has_legacy_source(profile: BuildProfile) -> bool:
 
 
 def build_modern(profile: BuildProfile, artifact: Path) -> List[Tuple[McVersion, Path]]:
-    copy_data_tree(EXTRA / "data", artifact, legacy=False)
+    copy_data_tree(EXTRA / "data", artifact, profile.max_version.parts)
     overlays = [
         (overlay_version, overlay_root)
         for overlay_version, overlay_root in discover_extra_overlays()
@@ -481,7 +475,7 @@ def build_modern(profile: BuildProfile, artifact: Path) -> List[Tuple[McVersion,
     ]
     for overlay_version, overlay_root in overlays:
         target = artifact / format_directory_name(overlay_version)
-        copy_data_tree(overlay_root / "data", target, legacy=False)
+        copy_data_tree(overlay_root / "data", target, overlay_version.parts)
         write_set_game_version(target, legacy=False, value=overlay_version.text)
     write_set_game_version(artifact, legacy=False, value=profile.max_version.text)
     copy_pack_image(artifact)
@@ -492,14 +486,14 @@ def build_legacy_from_extra(profile: BuildProfile, artifact: Path) -> None:
     cutoff = profile.legacy_cutoff
     if cutoff is None:
         raise ValueError(f"Legacy profile {profile.suffix} has no overlay cutoff")
-    copy_data_tree(EXTRA / "data", artifact, legacy=True)
+    copy_data_tree(EXTRA / "data", artifact, profile.min_version.parts)
     overlays = [
         (overlay_version, overlay_root)
         for overlay_version, overlay_root in discover_extra_overlays()
         if overlay_version >= cutoff
     ]
     for _, overlay_root in overlays:
-        copy_data_tree(overlay_root / "data", artifact, legacy=True)
+        copy_data_tree(overlay_root / "data", artifact, profile.min_version.parts)
     write_set_game_version(
         artifact,
         legacy=True,
@@ -519,7 +513,10 @@ def build_legacy_fallback(profile: BuildProfile, artifact: Path) -> None:
         if not source_file.is_file() or source_file.name in {"pack.mcmeta", "pack.png"}:
             continue
         relative = source_file.relative_to(profile.source_fallback)
-        destination = artifact / relative
+        destination = artifact / convert_relative_path(
+            relative,
+            profile.min_version.parts,
+        )
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source_file, destination)
     write_set_game_version(
