@@ -1,0 +1,10 @@
+{
+    "condition": "entity_scores",
+    "entity": "this",
+    "scores": {
+        "tpa.output_": {
+            "min": 1,
+            "max": 2
+        }
+    }
+}

@@ -27,6 +27,8 @@ BUILD = ROOT / "build"
 RELEASE_META = ROOT / "scripts" / "release_meta.yml"
 PACK_IMAGE = ROOT / "pack.png"
 LANG_EXTRA = SRC / "lang_extra"
+MODERN_SOURCE_FALLBACK = SRC / "+mc1.20.2"
+VERSION_INSERTING_LOCATOR = "#<--!Script Version Inserting Locator-->"
 LanguageTargets = Tuple[Tuple[str, str], Tuple[str, str]]
 
 
@@ -201,11 +203,11 @@ def format_directory_name(game_version: McVersion) -> str:
     return "format_" + game_version.text.replace(".", "_")
 
 
-def discover_extra_overlays() -> List[Tuple[McVersion, Path]]:
+def discover_overlays() -> List[Tuple[McVersion, Path]]:
     if not EXTRA.is_dir():
         raise FileNotFoundError(f"Missing source directory: {EXTRA}")
 
-    overlays: List[Tuple[McVersion, Path]] = []
+    overlays: Dict[McVersion, Path] = {}
     for child in EXTRA.iterdir():
         if not child.is_dir() or child.name == "data":
             continue
@@ -217,8 +219,38 @@ def discover_extra_overlays() -> List[Tuple[McVersion, Path]]:
         if not (child / "data").is_dir():
             print(f"Skipping overlay without data/: {child.relative_to(ROOT)}")
             continue
-        overlays.append((child_version, child))
-    return sorted(overlays, key=lambda item: item[0], reverse=True)
+        overlays[child_version] = child
+
+    # During the source migration, keep using active overlays from the old
+    # format_* tree until their corresponding src/extra/<version> is present.
+    legacy_meta_path = MODERN_SOURCE_FALLBACK / "pack.mcmeta"
+    if legacy_meta_path.is_file():
+        legacy_meta = json.loads(legacy_meta_path.read_text(encoding="utf-8"))
+        entries = legacy_meta.get("overlays", {}).get("entries", [])
+        for entry in entries:
+            directory = entry.get("directory")
+            if not isinstance(directory, str) or not directory.startswith("format_"):
+                raise ValueError(
+                    f"Invalid legacy overlay directory in {legacy_meta_path}: {directory!r}"
+                )
+
+            version_text = directory.removeprefix("format_").replace("_", ".")
+            overlay_version = version(version_text)
+            if overlay_version in overlays:
+                continue
+
+            legacy_root = MODERN_SOURCE_FALLBACK / directory
+            if not (legacy_root / "data").is_dir():
+                raise FileNotFoundError(
+                    f"Active overlay {directory!r} is missing its data/ directory"
+                )
+            overlays[overlay_version] = legacy_root
+            print(
+                f"  Using legacy overlay source "
+                f"{legacy_root.relative_to(ROOT)} until it is migrated to src/extra"
+            )
+
+    return sorted(overlays.items(), key=lambda item: item[0], reverse=True)
 
 
 def copy_data_tree(
@@ -438,6 +470,110 @@ def write_pack_meta(destination: Path, pack_meta: Dict[str, object]) -> None:
     )
 
 
+def get_artifact_version_code(artifact: Path) -> str:
+    """Read the version code that this artifact's initialize function stores."""
+
+    candidates = (
+        artifact / "data" / "tpa" / "function" / "initialize.mcfunction",
+        artifact / "data" / "tpa" / "functions" / "initialize.mcfunction",
+    )
+    for path in candidates:
+        if not path.is_file():
+            continue
+        content = path.read_text(encoding="utf-8")
+        match = re.search(
+            r"(?m)^scoreboard players set #version tpa\.config (\d+)\s*$",
+            content,
+        )
+        if match:
+            return match.group(1)
+    raise ValueError(f"No #version initialization command found in {artifact}")
+
+
+def apply_version_insertions(
+    artifact: Path,
+    profile: BuildProfile,
+    release_version: str,
+) -> int:
+    """Resolve build-specific values at marked locations in mcfunction files."""
+
+    changed_files = 0
+    for path in artifact.rglob("*.mcfunction"):
+        original = path.read_text(encoding="utf-8")
+        lines = original.splitlines(keepends=True)
+        locator_indexes = [
+            index
+            for index, line in enumerate(lines)
+            if line.rstrip("\r\n") == VERSION_INSERTING_LOCATOR
+        ]
+        if not locator_indexes:
+            continue
+
+        for index in reversed(locator_indexes):
+            if index + 1 >= len(lines):
+                raise ValueError(f"Version locator has no following command: {path}")
+
+            following = lines[index + 1]
+            if path.name == "initialize.mcfunction":
+                version_pattern = r'(option\.version set value ")[^"]*(")'
+                if not re.search(version_pattern, following):
+                    raise ValueError(f"Expected option.version after locator: {path}")
+                version_line = re.sub(
+                    version_pattern,
+                    lambda match: f'{match.group(1)}v{release_version}{match.group(2)}',
+                    following,
+                )
+                lines[index + 1] = version_line
+
+                if index + 2 >= len(lines):
+                    raise ValueError(f"Missing option.version_range after locator: {path}")
+                range_pattern = r'(option\.version_range set value ")[^"]*(")'
+                if not re.search(range_pattern, lines[index + 2]):
+                    raise ValueError(f"Expected option.version_range after locator: {path}")
+                range_line = re.sub(
+                    range_pattern,
+                    lambda match: (
+                        f'{match.group(1)}{profile.min_version.text} - '
+                        f'{profile.max_version.text}{match.group(2)}'
+                    ),
+                    lines[index + 2],
+                )
+                lines[index + 2] = range_line
+            elif path.name == "uninstall.mcfunction":
+                filename_pattern = r'TPA_Datapack-[^\\"]+'
+                if not re.search(filename_pattern, following):
+                    raise ValueError(f"Expected artifact filename after locator: {path}")
+                updated = re.sub(
+                    filename_pattern,
+                    artifact.name,
+                    following,
+                )
+                lines[index + 1] = updated
+            elif path.name == "load.mcfunction":
+                version_code = get_artifact_version_code(artifact)
+                version_check_pattern = (
+                    r"(execute unless score #version tpa\.config matches )\d+"
+                )
+                if not re.search(version_check_pattern, following):
+                    raise ValueError(f"Expected #version check after locator: {path}")
+                updated = re.sub(
+                    version_check_pattern,
+                    lambda match: f"{match.group(1)}{version_code}",
+                    following,
+                )
+                lines[index + 1] = updated
+            else:
+                raise ValueError(f"Unsupported version locator location: {path}")
+
+            del lines[index]
+
+        updated_content = "".join(lines)
+        if updated_content != original:
+            path.write_text(updated_content, encoding="utf-8", newline="")
+            changed_files += 1
+    return changed_files
+
+
 def make_language_extra_meta(meta: Dict[str, str]) -> Dict[str, object]:
     description = meta.get(
         "lang_extra_desc",
@@ -470,7 +606,7 @@ def build_modern(profile: BuildProfile, artifact: Path) -> List[Tuple[McVersion,
     copy_data_tree(EXTRA / "data", artifact, profile.max_version.parts)
     overlays = [
         (overlay_version, overlay_root)
-        for overlay_version, overlay_root in discover_extra_overlays()
+        for overlay_version, overlay_root in discover_overlays()
         if overlay_version >= profile.min_version
     ]
     for overlay_version, overlay_root in overlays:
@@ -489,7 +625,7 @@ def build_legacy_from_extra(profile: BuildProfile, artifact: Path) -> None:
     copy_data_tree(EXTRA / "data", artifact, profile.min_version.parts)
     overlays = [
         (overlay_version, overlay_root)
-        for overlay_version, overlay_root in discover_extra_overlays()
+        for overlay_version, overlay_root in discover_overlays()
         if overlay_version >= cutoff
     ]
     for _, overlay_root in overlays:
@@ -552,6 +688,10 @@ def build_profile(
         build_legacy_fallback(profile, artifact)
         overlay_versions = []
         modern = False
+
+    inserted_files = apply_version_insertions(artifact, profile, release_version)
+    if inserted_files:
+        print(f"  Inserted build-specific version values in {inserted_files} file(s)")
 
     write_pack_meta(
         artifact,

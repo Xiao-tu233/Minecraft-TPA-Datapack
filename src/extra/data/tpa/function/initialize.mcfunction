@@ -20,7 +20,7 @@ execute unless score #version tpa.config = #version tpa.config run function tpa:
 scoreboard players set #version tpa.config 210
 #<--!Script Version Inserting Locator-->
 data modify storage tpa:tpa option.version set value "v2.1"
-data modify storage tpa:tpa option.version_range set value "1.20.2 - 26.2"
+data modify storage tpa:tpa option.version_range set value "1.20.2 - 26.3"
 function tpa:set_game_version
 execute if score #is_updated_from_205 tpa.config matches 1 run function tpa:initialize/update_from_205
 

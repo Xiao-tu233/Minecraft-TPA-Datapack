@@ -263,13 +263,13 @@ Project To-do lists:
 - [ ] 加入服务器预设配置 方便不同体量服务器
 - [ ] Update TPA book format, including buttons in TPA menu
 - [ ] Show specific player amount in TPA menu according to the currently server player and even server settings
-- [ ] Make menus like home and warp page switchable to make every button directly commands accessible without index adding in the end 比方说传送点，第一页比如我放5个位置 那就会存在玩家分数储存为页码比如是2 那我就会在触发记分项的时候比方说触发的8 那就会是 传送点#6的第二个操作
+- [x] Make menus like home and warp page switchable to make every button directly commands accessible without index adding in the end 比方说传送点，第一页比如我放5个位置 那就会存在玩家分数储存为页码比如是2 那我就会在触发记分项的时候比方说触发的8 那就会是 传送点#6的第二个操作
 - [x] 在编辑公共传送点时
    - 检测比如name, desc这些字符串的变化
    - 考虑直接应用更改 或者在更改后更改对应按钮的外观 或者直接将更改结果拟显示在目标槽位
    - 增加这些更改之后的提示就像选择槽位时一样
 - [x] 精简 load 函数中的提示   将部分提示改到调试模式 然后在数据包完全加载之后再关调试模式同时提示它被关掉
-- [ ] 特别是日语 很多语序坏掉了
+- [x] 特别是日语 很多语序坏掉了
 - [ ] 维度的名称总会是简体中文. 
       变成别的语言的复现: 
       1. function tpa:initialize
@@ -283,7 +283,7 @@ Project To-do lists:
    - [x] warp的新增按钮
    - [ ] Dialog
       - Hide buttons and inputs if not neccessary   
-- [ ] 实现release_meta.yml
+- [x] 实现release_meta.yml
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
 - [ ] 菜单中的按钮静态检测可以通过堆叠enabled(带指令)按钮和disabled按钮显示并动态调整两者按钮文本来动态调整按钮是否存在点击事件 e.g, [返回上一位置][返回上一位置] 前者括号为白色且带点击命令 后者反之 选择显示何者来决定是否存在点击事件
@@ -295,5 +295,5 @@ Project To-do lists:
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
 - [ ] For 1.17+ consider use entity mark to replace most of the visual items
-- [ ] Main version 26.3
-- [ ] 考虑将 mc1.15 和 +mc1.13 分别改为 format_1_20_1 和 format_1_14_4 并 通过脚本做原版mc中pack.mcmeta中会做的事情
+- [x] Main version 26.3
+- [x] 考虑将 mc1.15 和 +mc1.13 分别改为 format_1_20_1 和 format_1_14_4 并 通过脚本做原版mc中pack.mcmeta中会做的事情

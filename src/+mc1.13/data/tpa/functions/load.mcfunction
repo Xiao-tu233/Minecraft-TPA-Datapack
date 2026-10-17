@@ -4,7 +4,7 @@ scoreboard objectives remove tpa.variables
 scoreboard objectives add tpa.variables dummy
 scoreboard objectives add tpa.config dummy
 #<--!Script Version Inserting Locator-->
-execute unless score #version tpa.config matches 210 run function tpa:initialize
+execute unless score #version tpa.config matches 206 run function tpa:initialize
 
 # Load language file
 scoreboard players operation #target_lang tpa.variables = #language tpa.config
