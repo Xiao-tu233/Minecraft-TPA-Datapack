@@ -1,1 +1,0 @@
-execute at @s run playsound minecraft:entity.player.levelup ambient @s[scores={tpa.mute=0}]

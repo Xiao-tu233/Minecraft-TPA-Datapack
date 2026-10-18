@@ -1,1 +1,0 @@
-execute at @s run playsound minecraft:ui.button.click ambient @s[scores={tpa.mute=0}]
