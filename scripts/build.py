@@ -27,7 +27,6 @@ BUILD = ROOT / "build"
 RELEASE_META = ROOT / "scripts" / "release_meta.yml"
 PACK_IMAGE = ROOT / "pack.png"
 LANG_EXTRA = SRC / "lang_extra"
-MODERN_SOURCE_FALLBACK = SRC / "+mc1.20.2"
 VERSION_INSERTING_LOCATOR = "#<--!Script Version Inserting Locator-->"
 LanguageTargets = Tuple[Tuple[str, str], Tuple[str, str]]
 
@@ -84,7 +83,6 @@ class BuildProfile:
     suffix: str
     min_version: McVersion
     max_version: McVersion
-    source_fallback: Path
     legacy_cutoff: Optional[McVersion] = None
 
     @property
@@ -135,21 +133,18 @@ PROFILES: Tuple[BuildProfile, ...] = (
         suffix="+mc1.13",
         min_version=version("1.13"),
         max_version=version("1.14.4"),
-        source_fallback=SRC / "+mc1.13",
         legacy_cutoff=version("1.14.4"),
     ),
     BuildProfile(
         suffix="+mc1.15",
         min_version=version("1.15"),
         max_version=version("1.20.1"),
-        source_fallback=SRC / "+mc1.15",
         legacy_cutoff=version("1.20.1"),
     ),
     BuildProfile(
         suffix="+mc1.20.2",
         min_version=version("1.20.2"),
         max_version=version("26.3"),
-        source_fallback=SRC / "+mc1.20.2",
     ),
 )
 
@@ -220,35 +215,6 @@ def discover_overlays() -> List[Tuple[McVersion, Path]]:
             print(f"Skipping overlay without data/: {child.relative_to(ROOT)}")
             continue
         overlays[child_version] = child
-
-    # During the source migration, keep using active overlays from the old
-    # format_* tree until their corresponding src/extra/<version> is present.
-    legacy_meta_path = MODERN_SOURCE_FALLBACK / "pack.mcmeta"
-    if legacy_meta_path.is_file():
-        legacy_meta = json.loads(legacy_meta_path.read_text(encoding="utf-8"))
-        entries = legacy_meta.get("overlays", {}).get("entries", [])
-        for entry in entries:
-            directory = entry.get("directory")
-            if not isinstance(directory, str) or not directory.startswith("format_"):
-                raise ValueError(
-                    f"Invalid legacy overlay directory in {legacy_meta_path}: {directory!r}"
-                )
-
-            version_text = directory.removeprefix("format_").replace("_", ".")
-            overlay_version = version(version_text)
-            if overlay_version in overlays:
-                continue
-
-            legacy_root = MODERN_SOURCE_FALLBACK / directory
-            if not (legacy_root / "data").is_dir():
-                raise FileNotFoundError(
-                    f"Active overlay {directory!r} is missing its data/ directory"
-                )
-            overlays[overlay_version] = legacy_root
-            print(
-                f"  Using legacy overlay source "
-                f"{legacy_root.relative_to(ROOT)} until it is migrated to src/extra"
-            )
 
     return sorted(overlays.items(), key=lambda item: item[0], reverse=True)
 
@@ -594,14 +560,6 @@ def prepare_artifact(profile: BuildProfile, release_version: str) -> Path:
     return prepare_named_artifact(profile.artifact_name.format(release=release_version))
 
 
-def has_legacy_source(profile: BuildProfile) -> bool:
-    return bool(
-        profile.legacy_cutoff
-        and (EXTRA / profile.legacy_cutoff.text / "data").is_dir()
-        and (EXTRA / "data").is_dir()
-    )
-
-
 def build_modern(profile: BuildProfile, artifact: Path) -> List[Tuple[McVersion, Path]]:
     copy_data_tree(EXTRA / "data", artifact, profile.max_version.parts)
     overlays = [
@@ -639,35 +597,6 @@ def build_legacy_from_extra(profile: BuildProfile, artifact: Path) -> None:
     copy_pack_image(artifact)
 
 
-def build_legacy_fallback(profile: BuildProfile, artifact: Path) -> None:
-    if not profile.source_fallback.is_dir():
-        raise FileNotFoundError(
-            f"Neither new legacy layers nor fallback source exists for {profile.suffix}: "
-            f"{profile.source_fallback}"
-        )
-    for source_file in profile.source_fallback.rglob("*"):
-        if not source_file.is_file() or source_file.name in {"pack.mcmeta", "pack.png"}:
-            continue
-        relative = source_file.relative_to(profile.source_fallback)
-        destination = artifact / convert_relative_path(
-            relative,
-            profile.min_version.parts,
-        )
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source_file, destination)
-    write_set_game_version(
-        artifact,
-        legacy=True,
-        value=f"{profile.min_version.text} - {profile.max_version.text}",
-        detect_legacy_runtime=profile.suffix == "+mc1.15",
-    )
-    copy_pack_image(artifact)
-    print(
-        f"  {profile.suffix}: using legacy fallback "
-        f"{profile.source_fallback.relative_to(ROOT)} until its src/extra layers are available"
-    )
-
-
 def build_profile(
     profile: BuildProfile,
     meta: Dict[str, str],
@@ -680,12 +609,8 @@ def build_profile(
         overlays = build_modern(profile, artifact)
         overlay_versions = [item[0] for item in overlays]
         modern = True
-    elif has_legacy_source(profile):
-        build_legacy_from_extra(profile, artifact)
-        overlay_versions = []
-        modern = False
     else:
-        build_legacy_fallback(profile, artifact)
+        build_legacy_from_extra(profile, artifact)
         overlay_versions = []
         modern = False
 
