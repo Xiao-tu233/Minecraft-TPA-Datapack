@@ -5,3 +5,4 @@ build/
 non-test_servers/
 sync_datapack.py
 java/
+*/__pycache__/
