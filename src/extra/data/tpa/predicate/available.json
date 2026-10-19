@@ -1,83 +1,85 @@
 {
-    "condition": "minecraft:all_of",
     "terms": [
         {
-            "condition": "minecraft:any_of",
             "terms": [
                 {
-                    "condition": "minecraft:all_of",
                     "terms": [
                         {
-                            "condition": "minecraft:value_check",
                             "value": {
                                 "type": "minecraft:storage",
                                 "storage": "tpa:tpa",
-                                "path": "option.tp_spec" 
+                                "path": "option.tp_spec"
                             },
-                            "range": 0
+                            "type": "minecraft:int_value_check",
+                            "test": 0
                         },
                         {
-                            "condition": "minecraft:inverted",
                             "term": {
-                                "condition": "minecraft:entity_properties",
                                 "entity": "this",
                                 "predicate": {
                                     "minecraft:type_specific/player": {
-                                        "gamemode": ["spectator"]
+                                        "gamemode": [
+                                            "spectator"
+                                        ]
                                     }
-                                }
-                            }
+                                },
+                                "type": "minecraft:entity_properties"
+                            },
+                            "type": "minecraft:inverted"
                         }
-                    ]
+                    ],
+                    "type": "minecraft:all_of"
                 },
                 {
-                    "condition": "minecraft:value_check",
                     "value": {
                         "type": "minecraft:storage",
                         "storage": "tpa:tpa",
-                        "path": "option.tp_spec" 
+                        "path": "option.tp_spec"
                     },
-                    "range": 1
+                    "type": "minecraft:int_value_check",
+                    "test": 1
                 }
-            ]
+            ],
+            "type": "minecraft:any_of"
         },
         {
-            "condition": "minecraft:any_of",
             "terms": [
                 {
-                    "condition": "minecraft:value_check",
                     "value": {
                         "type": "minecraft:storage",
                         "storage": "tpa:tpa",
-                        "path": "option.carpet_fake_player_fix" 
+                        "path": "option.carpet_fake_player_fix"
                     },
-                    "range": 0
+                    "type": "minecraft:int_value_check",
+                    "test": 0
                 },
                 {
-                    "condition": "minecraft:all_of",
                     "terms": [
                         {
-                            "condition": "minecraft:value_check",
                             "value": {
                                 "type": "minecraft:storage",
                                 "storage": "tpa:tpa",
-                                "path": "option.carpet_fake_player_fix" 
+                                "path": "option.carpet_fake_player_fix"
                             },
-                            "range": 1
+                            "type": "minecraft:int_value_check",
+                            "test": 1
                         },
                         {
-                            "condition": "minecraft:inverted",
                             "term": {
-                                "condition": "minecraft:entity_properties",
                                 "entity": "this",
                                 "predicate": {
                                     "nbt": "{Tags: [\"tpa.fake_player\"]}"
-                                }
-                            }
+                                },
+                                "type": "minecraft:entity_properties"
+                            },
+                            "type": "minecraft:inverted"
                         }
-                    ]
+                    ],
+                    "type": "minecraft:all_of"
                 }
-            ]
+            ],
+            "type": "minecraft:any_of"
         }
-    ]
+    ],
+    "type": "minecraft:all_of"
 }

@@ -1,21 +1,21 @@
 {
-    "condition": "any_of",
     "terms": [
         {
-            "condition": "entity_scores",
             "entity": "this",
             "scores": {
                 "tpa.book": 1
-            }
+            },
+            "type": "entity_scores"
         },
         {
-            "condition": "entity_scores",
             "entity": "this",
             "scores": {
                 "tpa.book": {
                     "min": 3
                 }
-            }
+            },
+            "type": "entity_scores"
         }
-    ]
+    ],
+    "type": "any_of"
 }

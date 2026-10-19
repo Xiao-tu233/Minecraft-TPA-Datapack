@@ -1,0 +1,253 @@
+{
+    "criteria": {
+        "open_container": {
+            "trigger": "minecraft:any_block_use",
+            "conditions": {
+                "player": {
+                    "terms": [
+                        {
+                            "entity": "this",
+                            "scores": {
+                                "tpa.book": 2
+                            },
+                            "type": "entity_scores"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                },
+                "location": {
+                    "terms": [
+                        {
+                            "terms": [
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:chest"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:trapped_chest"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:barrel"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:furnace"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:smoker"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:blast_furnace"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:dispenser"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:dropper"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:hopper"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:crafter"
+                                    }
+                                },
+                                {
+                                    "predicate": {
+                                        "block": {
+                                            "blocks": "#minecraft:copper_chests"
+                                        }
+                                    },
+                                    "type": "minecraft:location_check"
+                                },
+                                {
+                                    "predicate": {
+                                        "block": {
+                                            "blocks": "#minecraft:shulker_boxes"
+                                        }
+                                    },
+                                    "type": "minecraft:location_check"
+                                }
+                            ],
+                            "type": "any_of"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                }
+            }
+        },
+        "interact_block_container": {
+            "trigger": "minecraft:item_used_on_block",
+            "conditions": {
+                "player": {
+                    "terms": [
+                        {
+                            "entity": "this",
+                            "scores": {
+                                "tpa.book": 2
+                            },
+                            "type": "entity_scores"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                },
+                "location": {
+                    "terms": [
+                        {
+                            "terms": [
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:lectern"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:chiseled_bookshelf"
+                                    }
+                                },
+                                {
+                                    "type": "minecraft:match_block",
+                                    "predicate": {
+                                        "blocks": "minecraft:decorated_pot"
+                                    }
+                                }
+                            ],
+                            "type": "any_of"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                }
+            }
+        },
+        "interact_minecart": {
+            "trigger": "player_interacted_with_entity",
+            "conditions": {
+                "player": {
+                    "terms": [
+                        {
+                            "entity": "this",
+                            "scores": {
+                                "tpa.book": 2
+                            },
+                            "type": "entity_scores"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                },
+                "entity": {
+                    "terms": [
+                        {
+                            "entity": "this",
+                            "predicate": {
+                                "entity_type": [
+                                    "minecraft:chest_minecart",
+                                    "minecraft:hopper_minecart"
+                                ]
+                            },
+                            "type": "entity_properties"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                }
+            }
+        },
+        "interact_entity_container": {
+            "trigger": "player_interacted_with_entity",
+            "conditions": {
+                "player": {
+                    "terms": [
+                        {
+                            "terms": [
+                                {
+                                    "entity": "this",
+                                    "scores": {
+                                        "tpa.book": 2
+                                    },
+                                    "type": "minecraft:entity_scores"
+                                },
+                                {
+                                    "entity": "this",
+                                    "predicate": {
+                                        "flags": {
+                                            "is_sneaking": true
+                                        }
+                                    },
+                                    "type": "minecraft:entity_properties"
+                                }
+                            ],
+                            "type": "all_of"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                },
+                "entity": {
+                    "terms": [
+                        {
+                            "entity": "this",
+                            "predicate": {
+                                "entity_type": [
+                                    "minecraft:oak_chest_boat",
+                                    "minecraft:spruce_chest_boat",
+                                    "minecraft:birch_chest_boat",
+                                    "minecraft:jungle_chest_boat",
+                                    "minecraft:acacia_chest_boat",
+                                    "minecraft:dark_oak_chest_boat",
+                                    "minecraft:mangrove_chest_boat",
+                                    "minecraft:cherry_chest_boat",
+                                    "minecraft:pale_oak_chest_boat",
+                                    "minecraft:bamboo_chest_raft",
+                                    "minecraft:mule",
+                                    "minecraft:donkey",
+                                    "minecraft:llama",
+                                    "minecraft:trader_llama"
+                                ]
+                            },
+                            "type": "entity_properties"
+                        }
+                    ],
+                    "type": "minecraft:all_of"
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "open_container",
+            "interact_block_container",
+            "interact_minecart",
+            "interact_entity_container"
+        ]
+    ],
+    "rewards": {
+        "function": "tpa:book/set_interaction_context"
+    }
+}

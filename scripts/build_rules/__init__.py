@@ -13,6 +13,7 @@ from typing import Callable, Optional, Tuple
 
 from .before_1_20_2 import remove_function_line_continuations
 from .before_1_21 import use_plural_resource_directories
+from .before_26_3 import downgrade_26_3_conditions
 
 
 Version = Tuple[int, int, int, int]
@@ -38,6 +39,11 @@ RULES = (
         introduced_in=(1, 21, 0, 0),
         name="use plural resource directories",
         convert_path=use_plural_resource_directories,
+    ),
+    BuildRule(
+        introduced_in=(26, 3, 0, 0),
+        name="downgrade predicate and advancement conditions",
+        apply=downgrade_26_3_conditions,
     ),
 )
 

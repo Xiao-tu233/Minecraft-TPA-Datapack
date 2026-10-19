@@ -30,6 +30,9 @@ available.
   commands readable by versions through 1.20.1.
 - `before_1_21.py`: converts the `function`, `predicate`, and `advancement`
   resource directories to their pre-1.21 plural names.
+- `before_26_3.py`: restores legacy condition `condition` keys and Advancement
+  arrays, maps `int_value_check` back to `value_check`, and maps `match_block`
+  back to `block_state_property`.
 
 Version-specific gameplay or data-model changes that cannot be mechanically
 derived belong in the corresponding source overlay under `src/extra/`, not in

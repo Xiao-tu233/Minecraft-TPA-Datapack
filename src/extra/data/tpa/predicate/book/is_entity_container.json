@@ -1,5 +1,4 @@
 {
-    "condition": "entity_properties",
     "entity": "this",
     "predicate": {
         "entity_type": [
@@ -20,5 +19,6 @@
             "minecraft:llama",
             "minecraft:trader_llama"
         ]
-    }
+    },
+    "type": "entity_properties"
 }

@@ -1,41 +1,41 @@
 {
-    "condition": "any_of",
     "terms": [
         {
-            "condition": "entity_scores",
             "entity": "this",
             "scores": {
                 "tpa.back": {
                     "max": -1
                 }
-            }
+            },
+            "type": "entity_scores"
         },
         {
-            "condition": "entity_scores",
             "entity": "this",
             "scores": {
                 "tpa.back": {
                     "min": 1
                 }
-            }
+            },
+            "type": "entity_scores"
         },
         {
-            "condition": "entity_scores",
             "entity": "this",
             "scores": {
                 "back": {
                     "max": -1
                 }
-            }
+            },
+            "type": "entity_scores"
         },
         {
-            "condition": "entity_scores",
             "entity": "this",
             "scores": {
                 "back": {
                     "min": 1
                 }
-            }
+            },
+            "type": "entity_scores"
         }
-    ]
+    ],
+    "type": "any_of"
 }

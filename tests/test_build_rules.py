@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
 
 from scripts.build_rules import apply_build_rules, convert_relative_path
 from scripts.build_rules.before_1_20_2 import remove_function_line_continuations
+from scripts.build_rules.before_26_3 import downgrade_condition_schema
 
 
 class BuildRulesTests(unittest.TestCase):
@@ -78,6 +80,94 @@ class BuildRulesTests(unittest.TestCase):
             self.assertEqual(
                 function.read_text(encoding="utf-8"),
                 "execute if entity @a run say test\n",
+            )
+
+    def test_26_3_conditions_downgrade_to_26_2_schema(self) -> None:
+        advancement = {
+            "criteria": {
+                "interact": {
+                    "trigger": "minecraft:any_block_use",
+                    "conditions": {
+                        "player": {
+                            "type": "minecraft:all_of",
+                            "terms": [
+                                {
+                                    "type": "minecraft:entity_scores",
+                                    "entity": "this",
+                                    "scores": {"tpa.book": 2},
+                                }
+                            ],
+                        }
+                    },
+                }
+            }
+        }
+        predicate = {
+            "type": "minecraft:any_of",
+            "terms": [
+                {
+                    "type": "minecraft:int_value_check",
+                    "value": {"type": "minecraft:storage", "storage": "tpa:tpa", "path": "option.x"},
+                    "test": 1,
+                }
+            ],
+        }
+        advancement["criteria"]["interact"]["conditions"]["location"] = {
+            "type": "minecraft:match_block",
+            "predicate": {"blocks": "minecraft:chest"},
+        }
+
+        downgraded_advancement = downgrade_condition_schema(advancement, advancement=True)
+        downgraded_predicate = downgrade_condition_schema(predicate, advancement=False)
+
+        self.assertEqual(
+            downgraded_advancement["criteria"]["interact"]["conditions"]["player"],
+            [{
+                "condition": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {"tpa.book": 2},
+            }],
+        )
+        downgraded_block = downgraded_advancement["criteria"]["interact"]["conditions"]["location"][0]
+        self.assertEqual(downgraded_block["condition"], "minecraft:block_state_property")
+        self.assertEqual(downgraded_block["block"], "minecraft:chest")
+        self.assertEqual(downgraded_predicate["condition"], "minecraft:any_of")
+        value_check = downgraded_predicate["terms"][0]
+        self.assertEqual(value_check["condition"], "minecraft:value_check")
+        self.assertEqual(value_check["range"], 1)
+        self.assertEqual(
+            value_check["value"]["type"],
+            "minecraft:storage",
+        )
+
+    def test_26_3_rule_applies_only_to_older_build_targets(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            data_root = Path(directory)
+            predicate_dir = data_root / "tpa" / "predicate"
+            advancement_dir = data_root / "tpa" / "advancement"
+            predicate_dir.mkdir(parents=True)
+            advancement_dir.mkdir(parents=True)
+            predicate = predicate_dir / "available.json"
+            advancement = advancement_dir / "book.json"
+            predicate.write_text(
+                '{"type":"minecraft:any_of","terms":[{"type":"minecraft:entity_scores","scores":{"x":1}}]}',
+                encoding="utf-8",
+            )
+            advancement.write_text(
+                '{"criteria":{"use":{"conditions":{"player":{"type":"minecraft:all_of","terms":[{"type":"minecraft:entity_scores","scores":{"x":1}}]}}}}}',
+                encoding="utf-8",
+            )
+
+            self.assertEqual(apply_build_rules(data_root, (26, 3, 0, 0)), 0)
+            self.assertIn('"type"', predicate.read_text(encoding="utf-8"))
+
+            self.assertEqual(apply_build_rules(data_root, (26, 2, 0, 0)), 2)
+            predicate_json = json.loads(predicate.read_text(encoding="utf-8"))
+            advancement_json = json.loads(advancement.read_text(encoding="utf-8"))
+            self.assertEqual(predicate_json["condition"], "minecraft:any_of")
+            self.assertEqual(
+                advancement_json["criteria"]["use"]["conditions"]["player"][0]["condition"],
+                "minecraft:entity_scores",
             )
 
 
