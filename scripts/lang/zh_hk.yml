@@ -168,7 +168,7 @@ option_tp_pos_cooldown_hoverevent: "§b喺下方更改§a冷卻時間 §r(§6單
 option_tp_pos_hoverevent: "§b喺下方更改§a傳送座標允許半徑 §r(§6單位:格§r).§b輸入 0 以停用傳送;§b輸入 -1 則代表半徑不限(唔建議)."
 option_tp_spec: "是否允許旁觀者傳送"
 # option_server_calling is displayed in the console, where non-ASCII characters may appear as mojibake(encoding corruption). Please use an ASCII-only romanized form for this translation (for example, pinyin for Chinese).
-option_server_calling: "cing2 si2 jung6 haak3 wu6 dyun1, ji4 bat1 si6 hung3 zai3 toi4 loi4 tiu4 zing2 cit3 ding6!"
+option_server_calling: "cing2 hai2 jau4 hei3 haak3 wu6 dyun1 nou6 jap6 min6 tiu4 zing2 cit3 ding6, m4 hou2 hai2 hung3 zai3 toi4 cou1 zok3."
 option_uses_binary_teleport: "是否使用二分法傳送"
 option_uses_binary_teleport_hoverevent: "§b喺下方選擇§a二分法傳送(啟用)§6或§c錨點傳送(停用)"
 option_uses_string_dimension: "是否識別字串形式嘅維度"
@@ -289,8 +289,7 @@ teleport_sim_dist_warn_button_binary_hoverevent: "§b點擊將傳送方式設定
 tick_not_working_button_set_schedule: "§b[設定]"
 tick_not_working_button_set_schedule_hoverevent: "§b點擊設定/schedule指令調用Tick函數"
 # tick_not_working_server_calling is displayed in the console, where non-ASCII characters may appear as mojibake(encoding corruption). Please use an ASCII-only romanized form for this translation (for example, pinyin for Chinese).
-tick_not_working_server_calling: "cing2 si2 jung6 haak3 wu6 dyun1, ji4 bat1 si6 hung3 zai3 toi4 loi4 ceoi2 dak1 ming6 ling6
-  fong1 faai3!"
+tick_not_working_server_calling: "cing2 hai2 jau4 hei3 haak3 wu6 dyun1 nou6 jap6 min6 wok6ceoi2 ming6ling6 fong1faai3, m4 hou2 hai2 hung3 zai3 toi4 cou1 zok3."
 tick_not_working_tips_line1: "你而家正使用Tick函數無法運作時嘅替代函數,因此你應該遇到咗Tick函數無法運作嘅情況.你可以選擇以下其中一種方法:"
 tick_not_working_tips_line2: "        1. 設定使用 /schedule指令呼叫Tick函數"
 tick_not_working_tips_line3: "   或者 2. 將手上嘅命令方塊放喺隱蔽位置,避免被破基岩機破壞"
@@ -369,7 +368,7 @@ uninstall_enable_folder_button_hoverevent: "點擊以啟用資料夾形式嘅Dat
 uninstall_enable_zip_button: "啟用 2"
 uninstall_enable_zip_button_hoverevent: "點擊以啟用ZIP形式嘅Datapack(如有)"
 # uninstall_server_callingis displayed in the console, where non-ASCII characters may appear as mojibake(encoding corruption). Please use an ASCII-only romanized form for this translation (for example, pinyin for Chinese).
-uninstall_server_calling: "cing2 si2 jung6 haak3 wu6 dyun1, ji4 bat1 si6 hung3 zai3 toi4 loi4 sit3 zoi3 zi1 liu6 baau1!"
+uninstall_server_calling: "cing2 hai2 jau4 hei3 haak3 wu6 dyun1 nou6 jap6 min6 gaai2ceoi4 on1zong1, m4 hou2 hai2 hung3 zai3 toi4 sit3 zoi3!"
 update_reload: "§b[重新載入]"
 update_reload_hoverevent: "點擊以重新載入"
 update_step1_leftpart: "你正準備更新TPA Datapack.目前已安裝嘅Datapack版本為 "
