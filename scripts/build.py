@@ -122,7 +122,10 @@ PACK_FORMAT_BOUNDARIES: Tuple[Tuple[McVersion, PackFormat], ...] = tuple(
         ("1.21.9", 91, 0),
         ("1.21.11", 97, 0),
         ("26.1", 101, 0),
-        ("26.2", 105, 0),
+        # Minecraft 26.2 reports the data-pack format as 107.1.  Keeping the
+        # minor component matters here: overlay selection compares the full
+        # PackFormat, not only the major number.
+        ("26.2", 107, 1),
         ("26.3", 107, 1),
     )
 )
@@ -346,7 +349,9 @@ def make_pack_meta(
         description_minimum = profile.min_version
 
     pack: Dict[str, object] = {
-        "pack_format": maximum.json_value if modern else supported_minimum.json_value,
+        # ``pack_format`` is the legacy major-only field.  Minor formats such
+        # as 107.1 are valid only in min_format/max_format.
+        "pack_format": maximum.major if modern else supported_minimum.major,
         "description": format_description(
             meta,
             profile,
@@ -377,8 +382,8 @@ def make_pack_meta(
                     supported_minimum.range_value,
                     overlay_format.range_value,
                 ],
-                "min_format": supported_minimum.range_value,
-                "max_format": overlay_format.range_value,
+                "min_format": [supported_minimum.major, supported_minimum.minor],
+                "max_format": [overlay_format.major, overlay_format.minor],
                 "directory": format_directory_name(overlay_version),
             }
         )
@@ -569,6 +574,12 @@ def build_modern(profile: BuildProfile, artifact: Path) -> List[Tuple[McVersion,
     ]
     for overlay_version, overlay_root in overlays:
         target = artifact / format_directory_name(overlay_version)
+        # An overlay must also contain the base resources whose syntax or
+        # resource paths need to be downgraded for its format.  Otherwise the
+        # game falls back to the 26.3 base resource and never sees the build
+        # rule conversion.  Overlay-specific source files are copied second
+        # so they retain their intended precedence.
+        copy_data_tree(EXTRA / "data", target, overlay_version.parts)
         copy_data_tree(overlay_root / "data", target, overlay_version.parts)
         write_set_game_version(target, legacy=False, value=overlay_version.text)
     write_set_game_version(artifact, legacy=False, value=profile.max_version.text)

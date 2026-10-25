@@ -170,6 +170,68 @@ class BuildRulesTests(unittest.TestCase):
                 "minecraft:entity_scores",
             )
 
+    def test_overlay_build_has_converted_base_resources(self) -> None:
+        """A legacy overlay must override incompatible base resources."""
+        from scripts import build as build_script
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "source"
+            target = root / "artifact"
+            (source / "data" / "tpa" / "predicate").mkdir(parents=True)
+            (source / "data" / "tpa" / "predicate" / "available.json").write_text(
+                json.dumps(
+                    {
+                        "type": "minecraft:any_of",
+                        "terms": [
+                            {
+                                "type": "minecraft:int_value_check",
+                                "value": {
+                                    "type": "minecraft:storage",
+                                    "storage": "tpa:tpa",
+                                    "path": "option.x",
+                                },
+                                "test": 1,
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            build_script.copy_data_tree(
+                source / "data",
+                target,
+                (26, 2, 0, 0),
+            )
+            build_script.apply_build_rules(target / "data", (26, 2, 0, 0))
+
+            converted = json.loads(
+                (target / "data" / "tpa" / "predicate" / "available.json").read_text(
+                    encoding="utf-8"
+                )
+            )
+            self.assertEqual(converted["condition"], "minecraft:any_of")
+            self.assertEqual(converted["terms"][0]["condition"], "minecraft:value_check")
+
+    def test_26_2_overlay_covers_the_server_pack_format(self) -> None:
+        from scripts import build as build_script
+
+        profile = next(
+            item for item in build_script.PROFILES if item.suffix == "+mc1.20.2"
+        )
+        metadata = build_script.make_pack_meta(
+            {"version": "test"},
+            profile,
+            [build_script.version("26.2")],
+            modern=True,
+        )
+        entry = metadata["overlays"]["entries"][0]
+        self.assertEqual(metadata["pack"]["pack_format"], 107)
+        self.assertEqual(entry["formats"], [16, 107])
+        self.assertEqual(entry["min_format"], [16, 0])
+        self.assertEqual(entry["max_format"], [107, 1])
+
 
 if __name__ == "__main__":
     unittest.main()
