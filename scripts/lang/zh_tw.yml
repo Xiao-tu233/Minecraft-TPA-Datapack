@@ -332,12 +332,10 @@ tpa_menu_disabled_hoverevent: §b點擊切換到§a啟用
 tpa_menu_enable: §a開啟§r
 tpa_menu_enabled: §a啟用
 tpa_menu_enabled_hoverevent: §b點擊切換到§c禁用
-tpa_menu_extend: §b展開§r
-tpa_menu_extend_hoverevent: §b點擊展開選單
 tpa_menu_has_id_of: 的§a資料包ID§r是
 tpa_menu_has_id_of_hoverevent: §b資料包內部分配給每個玩家的編號 用於對應玩家
-tpa_menu_here_button: §b廣播位置§r
-tpa_menu_here_button_hoverevent: §b點擊廣播你的位置
+tpa_menu_here_button: §b分享位置§r
+tpa_menu_here_button_hoverevent: §b點擊在聊天欄分享你的位置
 tpa_menu_home_button: §b傳送點選單§r
 tpa_menu_home_button_hoverevent: §b點擊開啟傳送點(home)選單
 tpa_menu_warp_button: §b地標菜單§r

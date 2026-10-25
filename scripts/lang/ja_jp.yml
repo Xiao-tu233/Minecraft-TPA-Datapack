@@ -289,7 +289,6 @@ teleport_sim_dist_warn_button_calc: '[§a計算§r]'
 teleport_sim_dist_warn_button_calc_hoverevent: '§bクリックしてシミュレーション距離を自動計算開始  §c注意: 実行するとテレポート位置が変わる可能性があります    現在位置を安全に保つ場合のみクリックしてください'
 teleport_sim_dist_warn_button_binary: '[§a二分法§r]'
 teleport_sim_dist_warn_button_binary_hoverevent: §bクリックしてテレポート方法を二分法に設定
-# Example comment
 tick_not_working_button_set_schedule: §b[設定]
 tick_not_working_button_set_schedule_hoverevent: §bクリックして /schedule コマンドでTick関数を呼び出し
 # tick_not_working_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
@@ -333,8 +332,6 @@ tpa_menu_disabled_hoverevent: §bクリックして§a有効化§r
 tpa_menu_enable: §a有効化§r
 tpa_menu_enabled: §a有効
 tpa_menu_enabled_hoverevent: §bクリックして§c無効化§r
-tpa_menu_extend: §bもっと見る§r
-tpa_menu_extend_hoverevent: §bクリックしてメニューを展開
 tpa_menu_has_id_of: '§aデータパックID§rは '
 tpa_menu_has_id_of_hoverevent: §b各プレイヤーに割り当てられた内部ID、対応用
 tpa_menu_here_button: §b位置を通知§r

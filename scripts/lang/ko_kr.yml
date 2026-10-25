@@ -338,8 +338,6 @@ tpa_menu_disabled_hoverevent: "§b클릭하여 §a활성화§r로 전환합니�
 tpa_menu_enable: "§a켜기§r"
 tpa_menu_enabled: "§a활성화"
 tpa_menu_enabled_hoverevent: "§b클릭하여 §c비활성화§r로 전환합니다"
-tpa_menu_extend: "§b더 보기§r"
-tpa_menu_extend_hoverevent: "§b클릭하여 메뉴를 펼칩니다"
 tpa_menu_has_id_of: "의 §a데이터 팩 ID§r는"
 tpa_menu_has_id_of_hoverevent: "§b플레이어마다 내부 대응용으로 할당된 데이터 팩 내부 ID"
 tpa_menu_here_button: "§b위치 알리기§r"

@@ -1,4 +1,4 @@
-id: 1
+id: 5
 name: "zh_hk"
 name_display: "繁體中文(香港特別行政區)"
 header: "[§bTPA§r] "
@@ -330,8 +330,6 @@ tpa_menu_disabled_hoverevent: "§b點擊以切換至§a啟用"
 tpa_menu_enable: "§a開啟§r"
 tpa_menu_enabled: "§a啟用"
 tpa_menu_enabled_hoverevent: "§b點擊以切換至§c停用"
-tpa_menu_extend: "§b更多§r"
-tpa_menu_extend_hoverevent: "§b點擊以展開選單"
 tpa_menu_has_id_of: "嘅§aDatapack編號§r係"
 tpa_menu_has_id_of_hoverevent: "§bDatapack內部分配畀每位玩家,用嚟識別玩家嘅編號"
 tpa_menu_here_button: "§b分享位置§r"

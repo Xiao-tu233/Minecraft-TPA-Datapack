@@ -359,15 +359,13 @@ tpa_menu_disabled_hoverevent: §bClick to switch to §aEnabled
 tpa_menu_enable: §aEnable§r
 tpa_menu_enabled: §aEnabled
 tpa_menu_enabled_hoverevent: §bClick to switch to §cDisabled
-tpa_menu_extend: §bExpand§r
-tpa_menu_extend_hoverevent: §bClick to expand menu
 tpa_menu_has_id_of: '§aDatapack ID§r is '
 tpa_menu_has_id_of_hoverevent: §bThe internal player ID assigned to each player for correspondence
-tpa_menu_here_button: §bBroadcast position§r
-tpa_menu_here_button_hoverevent: §bClick to broadcast your position
+tpa_menu_here_button: §bShare Position§r
+tpa_menu_here_button_hoverevent: §bClick to share with your position in char bar
 tpa_menu_home_button: §bHome menu§r
-tpa_menu_home_button_hoverevent: §bClick to open Home menu
-tpa_menu_warp_button: Warp Menu§r
+tpa_menu_home_button_hoverevent: §bClick to open the Home menu
+tpa_menu_warp_button: §bWarp Menu§r
 tpa_menu_warp_button_hoverevent: §bClick to open the Warp menu
 tpa_menu_hoverevent: §bClick to send a teleport request to %s
 tpa_menu_lang_button: §bSwitch language§r
