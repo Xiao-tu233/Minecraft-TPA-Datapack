@@ -228,10 +228,10 @@ class BuildRulesTests(unittest.TestCase):
             modern=True,
         )
         entry = metadata["overlays"]["entries"][0]
-        self.assertEqual(metadata["pack"]["pack_format"], 107)
+        self.assertEqual(metadata["pack"]["pack_format"], 121)
         self.assertEqual(entry["formats"], [16, 107])
-        self.assertEqual(entry["min_format"], [16, 0])
-        self.assertEqual(entry["max_format"], [107, 1])
+        self.assertEqual(entry["min_format"], 16)
+        self.assertEqual(entry["max_format"], 107)
 
     def test_modern_overlay_contains_only_converted_files_without_source_data(self) -> None:
         from scripts import build as build_script
@@ -270,6 +270,36 @@ class BuildRulesTests(unittest.TestCase):
             self.assertFalse(
                 (overlay / "tpa" / "function" / "unchanged.mcfunction").exists()
             )
+            self.assertFalse(
+                (
+                    artifact
+                    / "format_26_1"
+                    / "data"
+                    / "tpa"
+                    / "predicate"
+                    / "available.json"
+                ).exists()
+            )
+            self.assertTrue(
+                (
+                    artifact
+                    / "format_1_20_5"
+                    / "data"
+                    / "tpa"
+                    / "functions"
+                    / "unchanged.mcfunction"
+                ).exists()
+            )
+            self.assertFalse(
+                (
+                    artifact
+                    / "format_1_20_3"
+                    / "data"
+                    / "tpa"
+                    / "functions"
+                    / "unchanged.mcfunction"
+                ).exists()
+            )
             self.assertTrue((artifact / "format_26_2").is_dir())
 
     def test_required_overlay_is_generated_without_version_data_directory(self) -> None:
@@ -281,7 +311,22 @@ class BuildRulesTests(unittest.TestCase):
             with patch.object(build_script, "EXTRA", extra):
                 overlays = build_script.discover_overlays()
 
-            self.assertEqual([item[0].text for item in overlays], ["26.2"])
+            self.assertEqual(
+                [item[0].text for item in overlays],
+                [
+                    "26.2",
+                    "26.1",
+                    "1.21.11",
+                    "1.21.9",
+                    "1.21.6",
+                    "1.21.5",
+                    "1.21.2",
+                    "1.21",
+                    "1.20.5",
+                    "1.20.3",
+                    "1.20.2",
+                ],
+            )
             self.assertFalse(overlays[0][1].exists())
 
     def test_build_language_sync_is_explicit(self) -> None:

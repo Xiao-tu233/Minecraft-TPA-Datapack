@@ -13,10 +13,11 @@ from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
 
 try:
-    from build_rules import apply_build_rules, convert_relative_path
+    from build_rules import apply_build_rules, applicable_rules, convert_relative_path
 except ModuleNotFoundError:
     from scripts.build_rules import (  # type: ignore[no-redef]
         apply_build_rules,
+        applicable_rules,
         convert_relative_path,
     )
 
@@ -123,11 +124,8 @@ PACK_FORMAT_BOUNDARIES: Tuple[Tuple[McVersion, PackFormat], ...] = tuple(
         ("1.21.9", 91, 0),
         ("1.21.11", 97, 0),
         ("26.1", 101, 0),
-        # Minecraft 26.2 reports the data-pack format as 107.1.  Keeping the
-        # minor component matters here: overlay selection compares the full
-        # PackFormat, not only the major number.
         ("26.2", 107, 1),
-        ("26.3", 107, 1),
+        ("26.3", 121, 0),
     )
 )
 
@@ -152,10 +150,14 @@ PROFILES: Tuple[BuildProfile, ...] = (
     ),
 )
 
-# 26.2 is a format boundary for the modern artifact, even when it has no
-# version-specific source files. The overlay is generated from the base
-# source after applying the rules introduced in 26.3.
-REQUIRED_MODERN_OVERLAYS: Tuple[McVersion, ...] = (version("26.2"),)
+# Every format boundary below the modern base needs an overlay directory. The
+# entries intentionally overlap: Minecraft uses the last matching entry, so a
+# package can provide a complete snapshot at each supported format boundary.
+REQUIRED_MODERN_OVERLAYS: Tuple[McVersion, ...] = tuple(
+    boundary
+    for boundary, _ in PACK_FORMAT_BOUNDARIES
+    if version("1.20.2") <= boundary < version("26.3")
+)
 
 
 def load_release_meta() -> Dict[str, str]:
@@ -279,35 +281,27 @@ def copy_converted_data_tree(
             shutil.copy2(source_file, destination)
 
 
-def copy_changed_converted_data_tree(
-    source_data: Path,
+def copy_changed_data_tree(
+    converted_data: Path,
     baseline_data: Path,
     destination_root: Path,
-    target_version: Tuple[int, int, int, int],
 ) -> None:
-    """Copy only converted base resources that differ from the main tree."""
+    """Copy only resources introduced by this overlay over the newer layer."""
 
-    with tempfile.TemporaryDirectory(prefix="tpa-build-overlay-") as directory:
-        converted_root = Path(directory)
-        (converted_root / "data").mkdir(parents=True)
-        copy_data_tree(source_data, converted_root, target_version)
-        apply_build_rules(converted_root / "data", target_version)
+    for source_file in converted_data.rglob("*"):
+        if not source_file.is_file():
+            continue
+        relative = source_file.relative_to(converted_data)
+        baseline_file = baseline_data / relative
+        if (
+            baseline_file.is_file()
+            and source_file.read_bytes() == baseline_file.read_bytes()
+        ):
+            continue
 
-        converted_data = converted_root / "data"
-        for source_file in converted_data.rglob("*"):
-            if not source_file.is_file():
-                continue
-            relative = source_file.relative_to(converted_data)
-            baseline_file = baseline_data / relative
-            if (
-                baseline_file.is_file()
-                and source_file.read_bytes() == baseline_file.read_bytes()
-            ):
-                continue
-
-            destination = destination_root / "data" / relative
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source_file, destination)
+        destination = destination_root / "data" / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source_file, destination)
 
 
 def copy_pack_image(destination: Path) -> None:
@@ -439,19 +433,23 @@ def make_pack_meta(
     )
 
     entries = []
-    for overlay_version in overlay_versions:
+    for overlay_version in sorted(overlay_versions, reverse=True):
         overlay_format = get_pack_format(overlay_version)
-        entries.append(
-            {
-                "formats": [
-                    supported_minimum.range_value,
-                    overlay_format.range_value,
-                ],
-                "min_format": [supported_minimum.major, supported_minimum.minor],
-                "max_format": [overlay_format.major, overlay_format.minor],
-                "directory": format_directory_name(overlay_version),
-            }
-        )
+        entry: Dict[str, object] = {
+            "formats": [supported_minimum.range_value, overlay_format.range_value],
+            "directory": format_directory_name(overlay_version),
+        }
+        # This is the layout used by the existing modern source metadata:
+        # min_format/max_format are scalar compatibility fields for the
+        # 1.21+ entries, while the 1.20.x entries only need formats.
+        if overlay_version >= version("1.21"):
+            entry.update(
+                {
+                    "min_format": supported_minimum.range_value,
+                    "max_format": overlay_format.range_value,
+                }
+            )
+        entries.append(entry)
     pack_meta: Dict[str, object] = {"pack": pack}
     pack_meta["overlays"] = {"entries": entries}
     return pack_meta
@@ -462,9 +460,16 @@ def write_set_game_version(
     legacy: bool,
     value: str,
     detect_legacy_runtime: bool = False,
+    target_version: Optional[Tuple[int, int, int, int]] = None,
 ) -> None:
-    folder = "functions" if legacy else "function"
-    target = destination / "data" / "tpa" / folder / "set_game_version.mcfunction"
+    relative = Path(
+        "tpa/functions/set_game_version.mcfunction"
+        if legacy
+        else "tpa/function/set_game_version.mcfunction"
+    )
+    if target_version is not None:
+        relative = convert_relative_path(relative, target_version)
+    target = destination / "data" / relative
     target.parent.mkdir(parents=True, exist_ok=True)
     if detect_legacy_runtime:
         content = (
@@ -635,25 +640,50 @@ def build_modern(profile: BuildProfile, artifact: Path) -> List[Tuple[McVersion,
     overlays = [
         (overlay_version, overlay_root)
         for overlay_version, overlay_root in discover_overlays()
-        if overlay_version >= profile.min_version
+        if profile.min_version <= overlay_version < profile.max_version
     ]
-    for overlay_version, overlay_root in overlays:
-        target = artifact / format_directory_name(overlay_version)
-        # The overlay only needs resources whose converted path or contents
-        # differ from the main tree. Missing resources fall back to the main
-        # tree, while source overlay files retain their normal precedence.
-        copy_changed_converted_data_tree(
-            EXTRA / "data",
-            artifact / "data",
-            target,
-            overlay_version.parts,
-        )
-        copy_converted_data_tree(
-            overlay_root / "data",
-            target,
-            overlay_version.parts,
-        )
-        write_set_game_version(target, legacy=False, value=overlay_version.text)
+
+    # Build every converted base tree once.  An overlay is incremental: its
+    # files are compared with the already newer converted tree, not with the
+    # modern base.  This matches the cumulative overlay order in pack.mcmeta.
+    with tempfile.TemporaryDirectory(prefix="tpa-build-modern-variants-") as directory:
+        variants_root = Path(directory)
+        converted_by_rule_set: Dict[Tuple[str, ...], Path] = {}
+        converted_variants: Dict[McVersion, Path] = {}
+        for overlay_version, _ in overlays:
+            rule_set = tuple(
+                rule.name for rule in applicable_rules(overlay_version.parts)
+            )
+            converted_data = converted_by_rule_set.get(rule_set)
+            if converted_data is None:
+                variant_root = variants_root / str(len(converted_by_rule_set))
+                variant_root.mkdir(parents=True)
+                copy_data_tree(EXTRA / "data", variant_root, overlay_version.parts)
+                apply_build_rules(variant_root / "data", overlay_version.parts)
+                converted_data = variant_root / "data"
+                converted_by_rule_set[rule_set] = converted_data
+            converted_variants[overlay_version] = converted_data
+
+        newer_data = artifact / "data"
+        for overlay_version, overlay_root in overlays:
+            target = artifact / format_directory_name(overlay_version)
+            copy_changed_data_tree(
+                converted_variants[overlay_version],
+                newer_data,
+                target,
+            )
+            copy_converted_data_tree(
+                overlay_root / "data",
+                target,
+                overlay_version.parts,
+            )
+            write_set_game_version(
+                target,
+                legacy=False,
+                value=overlay_version.text,
+                target_version=overlay_version.parts,
+            )
+            newer_data = converted_variants[overlay_version]
     write_set_game_version(artifact, legacy=False, value=profile.max_version.text)
     copy_pack_image(artifact)
     return overlays

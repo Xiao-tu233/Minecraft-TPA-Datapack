@@ -25,7 +25,6 @@ scoreboard players enable @a tpa.cancel_req
 scoreboard players enable @a tpaccept
 scoreboard players enable @a tpa.tpaccept
 scoreboard players enable @a tpa.tpaccept_toggle
-scoreboard players enable @a tpa.idfix
 scoreboard players enable @a tpa.search_id
 scoreboard players enable @a tpa.mute
 scoreboard players enable @a tpa.output
