@@ -22,4 +22,4 @@ execute if score #home tpa.config matches 1.. run data modify storage tpa:tpa te
 
 execute if score #if_show_new tpa.variables matches 1 run function tpa:home/new with storage tpa:tpa temp.args
 
-function tpa:home/dialog with storage tpa:tpa temp.args
+function tpa:util/dialog with storage tpa:tpa temp.args

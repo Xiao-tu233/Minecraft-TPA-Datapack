@@ -1,10 +1,5 @@
 # Parent function: tpa:home/selected
 
-
-function tpa:get_name
-data modify storage tpa:tpa temp.args.name set from storage tpa:tpa temp.name
-function tpa:home/temp with storage tpa:tpa temp.args
-
 # Tip the player if he hasn't had a home yet
-execute unless data storage tpa:tpa temp.home run function tpa:home/create_tip
-execute if data storage tpa:tpa temp.home run function tpa:home/has_home
+execute if score #home.trigger_state tpa.variables matches 1 run function tpa:home/set
+execute unless score #home.trigger_state tpa.variables matches 1 run function tpa:home/check_selected

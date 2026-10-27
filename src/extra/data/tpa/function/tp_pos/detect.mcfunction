@@ -33,7 +33,7 @@ execute if score #condition tpa.variables matches 4 run function tpa:sounds/no
 execute if score #condition tpa.variables matches 4 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_out_of_range"}, ". "]
 execute if score #condition tpa.variables matches 4 run title @s[predicate=tpa:output/show_actionbar] actionbar [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.tp_pos_out_of_range", color: "red"}]
 
-execute store result storage tpa:tpa temp.arg.x int 1 run scoreboard players get @s tpa.pos.x_temp
-execute store result storage tpa:tpa temp.arg.y int 1 run scoreboard players get @s tpa.pos.y_temp
-execute store result storage tpa:tpa temp.arg.z int 1 run scoreboard players get @s tpa.pos.z_temp
-execute if score #condition tpa.variables matches 6 run function tpa:tp_pos/act with storage tpa:tpa temp.arg
+execute store result storage tpa:tpa temp.args.x int 1 run scoreboard players get @s tpa.pos.x_temp
+execute store result storage tpa:tpa temp.args.y int 1 run scoreboard players get @s tpa.pos.y_temp
+execute store result storage tpa:tpa temp.args.z int 1 run scoreboard players get @s tpa.pos.z_temp
+execute if score #condition tpa.variables matches 6 run function tpa:tp_pos/teleport

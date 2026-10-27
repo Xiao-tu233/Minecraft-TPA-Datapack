@@ -5,7 +5,7 @@ data modify storage tpa:tpa temp.output.slots append value {}
 # Check if the warp is available
 execute store result score #warp_disabled tpa.variables run data get storage tpa:tpa temp.warp_result[0].disabled
 
-data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.warp_result[0].dim
+data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.warp_result[0].dimension
 function tpa:dimension/get
 #! For 1.20.1-, temp.output.color is the number id of the dimension or -2 for gray(warp disabled)
 data modify storage tpa:tpa temp.output.slots[-1].color set from storage tpa:tpa temp.dimension.color

@@ -1,7 +1,7 @@
 # Parent function: tpa:warp/option, tpa:warp/available, Quoted by: tpa:tpa_menu
 
 # Storage Format:
-# {desc: string, name: string, x: int, y: int, z: int, dim: string, disabled: boolean}
+# {desc: string, name: string, x: int, y: int, z: int, dimension: string, disabled: boolean}
 
 # Load language, title
 function tpa:load_lang

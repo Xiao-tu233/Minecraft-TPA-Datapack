@@ -36,4 +36,4 @@ data modify storage tpa:tpa temp.args.dialog.title set from entity @n[type=text_
 # Call loop function
 function tpa:language_menu_loop
 
-function tpa:language/dialog with storage tpa:tpa temp.args
+function tpa:util/dialog with storage tpa:tpa temp.args

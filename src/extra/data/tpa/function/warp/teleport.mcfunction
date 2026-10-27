@@ -1,7 +1,14 @@
-# Parent function: tpa:warp
-# @macro: {dim: str, x: int, y: int, z: int}
+# Parent function: tpa:warp/within_range
+# @macro: {dimension: str, x: int, y: int, z: int}
 function tpa:back/set
-$execute in $(dim) run tp @s $(x) $(y) $(z)
+
+data remove storage tpa:tpa temp.teleport
+data modify storage tpa:tpa temp.teleport.Pos[0] set from storage tpa:tpa temp.warp_result.x
+data modify storage tpa:tpa temp.teleport.Pos[1] set from storage tpa:tpa temp.warp_result.y
+data modify storage tpa:tpa temp.teleport.Pos[2] set from storage tpa:tpa temp.warp_result.z
+data modify storage tpa:tpa temp.teleport.Dimension set from storage tpa:tpa temp.warp_result.dimension
+data modify storage tpa:tpa temp.teleport.Rotation set from entity @s Rotation
+function tpa:teleport/main
 
 function tpa:sounds/tp
 

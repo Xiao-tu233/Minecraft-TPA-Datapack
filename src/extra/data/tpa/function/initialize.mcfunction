@@ -7,7 +7,7 @@
 2. replace key dim, Dimension with dimension whenever a home is requested \
 """
 execute if score #version tpa.config matches ..205 run scoreboard players set #is_updated_from_205 tpa.config 1
-execute if score #version tpa.config matches 206 run function tpa:update/home
+execute if score #version tpa.config matches ..206 run function tpa:update/from_206
 
 # Language Initialization
 data modify storage tpa:tpa lang set value []
@@ -22,11 +22,10 @@ scoreboard players set #version tpa.config 210
 data modify storage tpa:tpa option.version set value "v2.1"
 data modify storage tpa:tpa option.version_range set value "1.20.2 - 26.3"
 function tpa:set_game_version
-execute if score #is_updated_from_205 tpa.config matches 1 run function tpa:initialize/update_from_205
+execute if score #is_updated_from_205 tpa.config matches 1 run function tpa:update/from_205
 
 # Default max_command_sequence_length if which was set so small
-execute store result score #max_command_sequence_length tpa.variables run gamerule max_command_sequence_length
-execute if score #max_command_sequence_length tpa.variables matches ..65535 run gamerule max_command_sequence_length 65536
+function tpa:initialize/default_max_command_sequence_length
 
 
 

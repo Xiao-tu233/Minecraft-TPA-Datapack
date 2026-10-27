@@ -136,4 +136,4 @@ data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "min
 # Macro call
 data remove storage tpa:tpa temp.args
 data modify storage tpa:tpa temp.args.dialog set from storage tpa:tpa temp.dialog
-function tpa:dialog/display with storage tpa:tpa temp.args
+function tpa:util/dialog with storage tpa:tpa temp.args
