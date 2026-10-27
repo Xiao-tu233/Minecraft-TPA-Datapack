@@ -82,8 +82,8 @@ Project To-do lists:
 - [ ] 语言的index键应该在reload的时候被添加而不是语言的yml里
 - [x] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
 - [x] 考虑使用调试模组 Sniffer BV14TmrB1EhA
-- [ ] 将主版本改为26.2
-- [ ] 增加更多脚本 在增加新功能的时候同步更改
+- [x] 将主版本改为26.3
+- [x] 增加更多脚本 在增加新功能的时候同步更改
 - [ ] 单独的update函数来更新命令存储(关于home)
       ```text
             ## UID 缺失时的处理
@@ -254,6 +254,7 @@ Project To-do lists:
                     execute as @a[scores={...=1..}] run scoreboard players remove @s ... 1
       The reason why it can't be a must because we must have the maxinum distance when using binary format.
 - [ ] output/ 文件夹的接口应该更明确使用temp.output存储内的内容作为参数来源 不应该使用loaded_lang
+　　　　考虑进一步整合 output 中的接口 分离 通知(notice) 和 菜单(Menu) 菜单更多的直接利用已有的dialog定义格式
 
 ## UX Improvements (“玩家体验哪里不好？”)
 - [x] 应该有2个启用按钮对应两种文件名在tpa:uninstall
@@ -291,6 +292,10 @@ Project To-do lists:
 - [x] coords in here copiable
       - compatible with other dimensions
 - [x] 在warp设置菜单被调用的时候，应该显示是否有未保存的编辑。
+- [ ] 将输出调整整合成单独的输出菜单 包括 聊天栏显示开关 动作栏显示开关 对话框显示开关 头部手势开关
+   - 当动作栏显示为关时 强制聊天栏为开 
+   - 当聊天栏显示为关和动作栏显示为开时 自动开启头部手势并配提示 在该情况下强制关闭头部手势会带警告
+   - 当对话框显示为开时 对应菜单仅在对话框显示 不再在聊天栏/动作栏显示  同时在通知输出位置提示对话框已打开 附按钮作为fallback输出聊天栏/动作栏 如果对话框菜单没有被正确渲染
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
