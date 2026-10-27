@@ -7,6 +7,7 @@ import ast
 import json
 import re
 import shutil
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Sequence, Tuple
@@ -151,6 +152,11 @@ PROFILES: Tuple[BuildProfile, ...] = (
     ),
 )
 
+# 26.2 is a format boundary for the modern artifact, even when it has no
+# version-specific source files. The overlay is generated from the base
+# source after applying the rules introduced in 26.3.
+REQUIRED_MODERN_OVERLAYS: Tuple[McVersion, ...] = (version("26.2"),)
+
 
 def load_release_meta() -> Dict[str, str]:
     """Read scalar release fields without making PyYAML mandatory."""
@@ -201,7 +207,9 @@ def format_directory_name(game_version: McVersion) -> str:
     return "format_" + game_version.text.replace(".", "_")
 
 
-def discover_overlays() -> List[Tuple[McVersion, Path]]:
+def discover_overlays(
+    *, include_required: bool = True
+) -> List[Tuple[McVersion, Path]]:
     if not EXTRA.is_dir():
         raise FileNotFoundError(f"Missing source directory: {EXTRA}")
 
@@ -214,10 +222,14 @@ def discover_overlays() -> List[Tuple[McVersion, Path]]:
         except ValueError:
             print(f"Skipping non-version source directory: {child.relative_to(ROOT)}")
             continue
-        if not (child / "data").is_dir():
-            print(f"Skipping overlay without data/: {child.relative_to(ROOT)}")
-            continue
         overlays[child_version] = child
+
+    if include_required:
+        for overlay_version in REQUIRED_MODERN_OVERLAYS:
+            overlays.setdefault(
+                overlay_version,
+                EXTRA / overlay_version.text,
+            )
 
     return sorted(overlays.items(), key=lambda item: item[0], reverse=True)
 
@@ -242,6 +254,62 @@ def copy_data_tree(
         shutil.copy2(source_file, destination)
 
 
+def copy_converted_data_tree(
+    source_data: Path,
+    destination_root: Path,
+    target_version: Tuple[int, int, int, int],
+) -> None:
+    """Copy an optional source tree after applying target-version rules."""
+
+    if not source_data.is_dir():
+        return
+
+    with tempfile.TemporaryDirectory(prefix="tpa-build-converted-") as directory:
+        converted_root = Path(directory)
+        (converted_root / "data").mkdir(parents=True)
+        copy_data_tree(source_data, converted_root, target_version)
+        apply_build_rules(converted_root / "data", target_version)
+
+        for source_file in (converted_root / "data").rglob("*"):
+            if not source_file.is_file():
+                continue
+            relative = source_file.relative_to(converted_root / "data")
+            destination = destination_root / "data" / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source_file, destination)
+
+
+def copy_changed_converted_data_tree(
+    source_data: Path,
+    baseline_data: Path,
+    destination_root: Path,
+    target_version: Tuple[int, int, int, int],
+) -> None:
+    """Copy only converted base resources that differ from the main tree."""
+
+    with tempfile.TemporaryDirectory(prefix="tpa-build-overlay-") as directory:
+        converted_root = Path(directory)
+        (converted_root / "data").mkdir(parents=True)
+        copy_data_tree(source_data, converted_root, target_version)
+        apply_build_rules(converted_root / "data", target_version)
+
+        converted_data = converted_root / "data"
+        for source_file in converted_data.rglob("*"):
+            if not source_file.is_file():
+                continue
+            relative = source_file.relative_to(converted_data)
+            baseline_file = baseline_data / relative
+            if (
+                baseline_file.is_file()
+                and source_file.read_bytes() == baseline_file.read_bytes()
+            ):
+                continue
+
+            destination = destination_root / "data" / relative
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source_file, destination)
+
+
 def copy_pack_image(destination: Path) -> None:
     if not PACK_IMAGE.is_file():
         raise FileNotFoundError(f"Missing project pack.png: {PACK_IMAGE}")
@@ -258,8 +326,8 @@ def write_text_if_changed(path: Path, content: str) -> bool:
     return True
 
 
-def synchronize_languages() -> LanguageTargets:
-    """Synchronize language YAML files and return generated language content."""
+def synchronize_languages(*, check: bool) -> LanguageTargets:
+    """Load synchronized language content without writing unless requested."""
 
     # build.py is normally executed as ``python scripts/build.py``, where the
     # scripts directory is already importable. The fallback also supports
@@ -272,7 +340,7 @@ def synchronize_languages() -> LanguageTargets:
             synchronize_sources,
         )
 
-    all_languages = synchronize_sources()
+    all_languages = synchronize_sources(check=check)
     return (
         generate_language_targets(all_languages, pretty=True),
         generate_language_targets(all_languages, pretty=False),
@@ -283,7 +351,6 @@ def write_generated_language_files(
     destination: Path,
     language_targets: LanguageTargets,
     legacy: bool,
-    overlay_destinations: Sequence[Path] = (),
     include_core: bool = True,
     include_extra: bool = False,
 ) -> None:
@@ -293,16 +360,14 @@ def write_generated_language_files(
     core_content, extra_content = legacy_targets if legacy else modern_targets
     folder = "functions" if legacy else "function"
 
-    destinations = [destination, *overlay_destinations]
-    for target in destinations:
-        core_path = target / "data" / "tpa" / folder / "init_storage_lang.mcfunction"
-        extra_path = (
-            target / "data" / "tpa_extra" / folder / "init_storage_lang.mcfunction"
-        )
-        if include_core:
-            write_text_if_changed(core_path, core_content)
-        if include_extra:
-            write_text_if_changed(extra_path, extra_content)
+    core_path = destination / "data" / "tpa" / folder / "init_storage_lang.mcfunction"
+    extra_path = (
+        destination / "data" / "tpa_extra" / folder / "init_storage_lang.mcfunction"
+    )
+    if include_core:
+        write_text_if_changed(core_path, core_content)
+    if include_extra:
+        write_text_if_changed(extra_path, extra_content)
 
 
 def prepare_named_artifact(name: str) -> Path:
@@ -574,13 +639,20 @@ def build_modern(profile: BuildProfile, artifact: Path) -> List[Tuple[McVersion,
     ]
     for overlay_version, overlay_root in overlays:
         target = artifact / format_directory_name(overlay_version)
-        # An overlay must also contain the base resources whose syntax or
-        # resource paths need to be downgraded for its format.  Otherwise the
-        # game falls back to the 26.3 base resource and never sees the build
-        # rule conversion.  Overlay-specific source files are copied second
-        # so they retain their intended precedence.
-        copy_data_tree(EXTRA / "data", target, overlay_version.parts)
-        copy_data_tree(overlay_root / "data", target, overlay_version.parts)
+        # The overlay only needs resources whose converted path or contents
+        # differ from the main tree. Missing resources fall back to the main
+        # tree, while source overlay files retain their normal precedence.
+        copy_changed_converted_data_tree(
+            EXTRA / "data",
+            artifact / "data",
+            target,
+            overlay_version.parts,
+        )
+        copy_converted_data_tree(
+            overlay_root / "data",
+            target,
+            overlay_version.parts,
+        )
         write_set_game_version(target, legacy=False, value=overlay_version.text)
     write_set_game_version(artifact, legacy=False, value=profile.max_version.text)
     copy_pack_image(artifact)
@@ -594,11 +666,12 @@ def build_legacy_from_extra(profile: BuildProfile, artifact: Path) -> None:
     copy_data_tree(EXTRA / "data", artifact, profile.min_version.parts)
     overlays = [
         (overlay_version, overlay_root)
-        for overlay_version, overlay_root in discover_overlays()
+        for overlay_version, overlay_root in discover_overlays(include_required=False)
         if overlay_version >= cutoff
     ]
     for _, overlay_root in overlays:
-        copy_data_tree(overlay_root / "data", artifact, profile.min_version.parts)
+        if (overlay_root / "data").is_dir():
+            copy_data_tree(overlay_root / "data", artifact, profile.min_version.parts)
     write_set_game_version(
         artifact,
         legacy=True,
@@ -633,28 +706,16 @@ def build_profile(
         artifact,
         make_pack_meta(meta, profile, overlay_versions, modern),
     )
-    overlay_destinations = [
-        artifact / format_directory_name(overlay_version)
-        for overlay_version in overlay_versions
-    ]
     write_generated_language_files(
         artifact,
         language_targets,
         legacy=not modern,
-        overlay_destinations=overlay_destinations,
     )
 
     if modern:
         # The base source is the newest variant; overlays are converted on
         # their own version boundary.
         apply_build_rules(artifact / "data", profile.max_version.parts)
-        for overlay_version in overlay_versions:
-            overlay_data = (
-                artifact
-                / format_directory_name(overlay_version)
-                / "data"
-            )
-            apply_build_rules(overlay_data, overlay_version.parts)
     else:
         # A single legacy artifact must work across its full version range.
         apply_build_rules(artifact / "data", profile.min_version.parts)
@@ -726,13 +787,21 @@ def parse_args() -> argparse.Namespace:
         choices=[profile.suffix for profile in PROFILES],
         help="Build only this source profile; may be passed more than once",
     )
+    parser.add_argument(
+        "--sync-languages",
+        action="store_true",
+        help=(
+            "write synchronized language YAML and todo_translate.yml before building; "
+            "default builds only check them in memory"
+        ),
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     meta = load_release_meta()
-    language_targets = synchronize_languages()
+    language_targets = synchronize_languages(check=not args.sync_languages)
     BUILD.mkdir(parents=True, exist_ok=True)
     selected = [
         profile for profile in PROFILES if not args.profile or profile.suffix in args.profile

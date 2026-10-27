@@ -4,6 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.build_rules import apply_build_rules, convert_relative_path
 from scripts.build_rules.before_1_20_2 import remove_function_line_continuations
@@ -231,6 +232,75 @@ class BuildRulesTests(unittest.TestCase):
         self.assertEqual(entry["formats"], [16, 107])
         self.assertEqual(entry["min_format"], [16, 0])
         self.assertEqual(entry["max_format"], [107, 1])
+
+    def test_modern_overlay_contains_only_converted_files_without_source_data(self) -> None:
+        from scripts import build as build_script
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            extra = root / "extra"
+            artifact = root / "artifact"
+            pack_image = root / "pack.png"
+            pack_image.write_bytes(b"png")
+
+            (extra / "data" / "tpa" / "predicate").mkdir(parents=True)
+            (extra / "data" / "tpa" / "predicate" / "available.json").write_text(
+                '{"type":"minecraft:any_of","terms":[]}',
+                encoding="utf-8",
+            )
+            (extra / "data" / "tpa" / "function").mkdir(parents=True)
+            (extra / "data" / "tpa" / "function" / "unchanged.mcfunction").write_text(
+                "say unchanged\n",
+                encoding="utf-8",
+            )
+            artifact.mkdir()
+
+            profile = next(
+                item for item in build_script.PROFILES if item.suffix == "+mc1.20.2"
+            )
+            with patch.object(build_script, "EXTRA", extra), patch.object(
+                build_script, "PACK_IMAGE", pack_image
+            ):
+                build_script.build_modern(profile, artifact)
+
+            overlay = artifact / "format_26_2" / "data"
+            self.assertTrue(
+                (overlay / "tpa" / "predicate" / "available.json").is_file()
+            )
+            self.assertFalse(
+                (overlay / "tpa" / "function" / "unchanged.mcfunction").exists()
+            )
+            self.assertTrue((artifact / "format_26_2").is_dir())
+
+    def test_required_overlay_is_generated_without_version_data_directory(self) -> None:
+        from scripts import build as build_script
+
+        with tempfile.TemporaryDirectory() as directory:
+            extra = Path(directory) / "extra"
+            (extra / "data").mkdir(parents=True)
+            with patch.object(build_script, "EXTRA", extra):
+                overlays = build_script.discover_overlays()
+
+            self.assertEqual([item[0].text for item in overlays], ["26.2"])
+            self.assertFalse(overlays[0][1].exists())
+
+    def test_build_language_sync_is_explicit(self) -> None:
+        from scripts import build as build_script
+
+        with patch(
+            "scripts.lang.sync_lang.synchronize_sources",
+            return_value={},
+        ) as synchronize_sources:
+            with patch(
+                "scripts.lang.sync_lang.generate_language_targets",
+                return_value=((), ()),
+            ):
+                build_script.synchronize_languages(check=True)
+                synchronize_sources.assert_called_once_with(check=True)
+
+                synchronize_sources.reset_mock()
+                build_script.synchronize_languages(check=False)
+                synchronize_sources.assert_called_once_with(check=False)
 
 
 if __name__ == "__main__":
