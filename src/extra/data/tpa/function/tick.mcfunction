@@ -76,6 +76,7 @@ execute as @a[scores={tpa.tpahere=-23..-2}] run function tpa:request_menu/tpaher
 execute as @a[scores={tpa.tpahere=0}] run function tpa:tpahere_menu
 execute as @a[scores={tpa.tpahere=1..}] run function tpa:tpahere
 
+execute as @a[scores={tpa.dialog=-1}] run function tpa:dialog/default
 execute as @a[scores={tpa.dialog=1..}] run function tpa:dialog
 execute as @a[scores={tpa.cancel_req=1..}] run function tpa:cancel_req
 
