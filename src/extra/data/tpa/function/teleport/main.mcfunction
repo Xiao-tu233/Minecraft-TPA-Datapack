@@ -9,11 +9,11 @@
 # This extra layer is intentional: keeping the caller-facing function stable
 # prevents every feature that teleports a player from needing its own overlay.
 
-data remove storage tpa:tpa temp.arg
+data remove storage tpa:tpa temp.args
 data modify storage tpa:tpa temp.args.x set from storage tpa:tpa temp.teleport.Pos[0] 
 data modify storage tpa:tpa temp.args.y set from storage tpa:tpa temp.teleport.Pos[1] 
 data modify storage tpa:tpa temp.args.z set from storage tpa:tpa temp.teleport.Pos[2] 
-data modify storage tpa:tpa temp.args.dimension set from storage tpa:tpa temp.teleport.dimension 
+data modify storage tpa:tpa temp.args.dimension set from storage tpa:tpa temp.teleport.Dimension 
 data modify storage tpa:tpa temp.args.yaw set from storage tpa:tpa temp.teleport.Rotation[0] 
 data modify storage tpa:tpa temp.args.pitch set from storage tpa:tpa temp.teleport.Rotation[1]
 function tpa:teleport/get_destin with storage tpa:tpa temp.args

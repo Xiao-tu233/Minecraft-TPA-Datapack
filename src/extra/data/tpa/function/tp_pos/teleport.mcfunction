@@ -16,6 +16,8 @@ title @s[predicate=tpa:output/show_actionbar] actionbar [\
 ]
 function tpa:back/set
 data remove storage tpa:tpa temp.teleport
+data modify storage tpa:tpa temp.teleport.Pos set value [0.0d, 0.0d, 0.0d]
+data modify storage tpa:tpa temp.teleport.Rotation set value [0.0f, 0.0f]
 data modify storage tpa:tpa temp.teleport.Pos[0] set from storage tpa:tpa temp.args.x
 data modify storage tpa:tpa temp.teleport.Pos[1] set from storage tpa:tpa temp.args.y
 data modify storage tpa:tpa temp.teleport.Pos[2] set from storage tpa:tpa temp.args.z

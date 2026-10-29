@@ -7,6 +7,8 @@ function tpa:output/standard
 function tpa:back/capture
 
 data remove storage tpa:tpa temp.teleport
+data modify storage tpa:tpa temp.teleport.Pos set value [0.0d, 0.0d, 0.0d]
+data modify storage tpa:tpa temp.teleport.Rotation set value [0.0f, 0.0f]
 data modify storage tpa:tpa temp.teleport.Pos[0] set from storage tpa:tpa temp.back_result.x
 data modify storage tpa:tpa temp.teleport.Pos[1] set from storage tpa:tpa temp.back_result.y
 data modify storage tpa:tpa temp.teleport.Pos[2] set from storage tpa:tpa temp.back_result.z
