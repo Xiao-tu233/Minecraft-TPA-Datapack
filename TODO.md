@@ -297,6 +297,7 @@ Project To-do lists:
    - 当聊天栏显示为关和动作栏显示为开时 自动开启头部手势并配提示 在该情况下强制关闭头部手势会带警告
    - 当对话框显示为开时 对应菜单仅在对话框显示 不再在聊天栏/动作栏显示  同时在通知输出位置提示对话框已打开 附按钮作为fallback输出聊天栏/动作栏 如果对话框菜单没有被正确渲染
 - [ ] 考虑把 Quick Action of Dialog 用emoji表情或者其他字符而不是语言来写label
+      - [ ] 使ESC的默认行为可定义 和前面的dialog显示设置一起 用tpa.dialog计分项来记录状态
 - [ ] Rewrite tp_pos with data storage
 
 ## Cross-version Compat (“不同版本哪里不一致？”)

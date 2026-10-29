@@ -1,17 +1,26 @@
 {
-    "type": "minecraft:notice",
-    "title": "TPA Quick Action | TPA 快速操作",
+    "type": "minecraft:confirmation",
+    "title": "§e⚡ §bTPA",
     "can_close_with_escape": true,
     "after_action": "none",
     "pause": false,
     "body": {
         "type": "minecraft:plain_message",
-        "contents": "在下方点进入来进入 TPA 对话框菜单"
+        "contents": "§a↓ ▶ §6☰ TPA"
     },
-    "action": {
-        "label": "TPA Dialog Menu | TPA对话框菜单",
-        "tooltip": "Click to open the TPA dialog menu | 点击打开TPA对话框菜单",
-        "width": 300,
+    "no": {
+        "label": "§c❌",
+        "tooltip": "§b❌ ⚡ TPA",
+        "width": 50,
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger tpa.dialog set -1"
+        }
+    },
+    "yes": {
+        "label": "§6▶ TPA",
+        "tooltip": "§b▶ ☰ TPA",
+        "width": 250,
         "action": {
             "type": "minecraft:run_command",
             "command": "trigger tpa.dialog"
