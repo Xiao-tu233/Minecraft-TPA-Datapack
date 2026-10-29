@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:notice",
+    "title": "§e⚡ §bTPA",
+    "can_close_with_escape": true,
+    "after_action": "none",
+    "pause": false,
+    "body": {
+        "type": "minecraft:plain_message",
+        "contents": "\n\n\n\n\n\n\n §a↓ ▶ §6☰ TPA"
+    },
+    "action": {
+        "label": "§6▶ TPA",
+        "tooltip": "§b▶ ☰ TPA",
+        "width": 300,
+        "action": {
+            "type": "minecraft:run_command",
+            "command": "trigger tpa.dialog"
+        }
+    }
+}

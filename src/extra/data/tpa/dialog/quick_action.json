@@ -1,29 +1,27 @@
 {
-    "type": "minecraft:confirmation",
+    "type": "minecraft:multi_action",
     "title": "§e⚡ §bTPA",
     "can_close_with_escape": true,
-    "after_action": "none",
+    "after_action": "close",
     "pause": false,
     "body": {
         "type": "minecraft:plain_message",
-        "contents": "§a↓ ▶ §6☰ TPA"
+        "contents": "\n\n\n\n\n\n\n §a↓ ▶ §6☰ TPA \n\n\n\n\n\n\n"
     },
-    "no": {
+    "exit_action": {
         "label": "§c❌",
         "tooltip": "§b❌ ⚡ TPA",
-        "width": 50,
-        "action": {
-            "type": "minecraft:run_command",
-            "command": "trigger tpa.dialog set -1"
-        }
+        "width": 200
     },
-    "yes": {
-        "label": "§6▶ TPA",
-        "tooltip": "§b▶ ☰ TPA",
-        "width": 250,
-        "action": {
-            "type": "minecraft:run_command",
-            "command": "trigger tpa.dialog"
+    "actions": [
+        {
+            "label": "§6▶ TPA",
+            "tooltip": "§b▶ ☰ TPA",
+            "width": 300,
+            "action": {
+                "type": "minecraft:run_command",
+                "command": "trigger tpa.dialog"
+            }
         }
-    }
+    ]
 }
