@@ -6,7 +6,6 @@ function tpa:sounds/levelup
 data modify storage tpa:tpa temp.output set from storage tpa:tpa loaded_lang.dialog
 function tpa:output/standard
 
-
 data modify storage tpa:tpa temp.dialog_action_template set value {width: 100, label: ""}
 
 # Dialog initialization
@@ -45,7 +44,6 @@ execute if score #search_id tpa.config matches 0 run data modify storage tpa:tpa
 execute if score #search_id tpa.config matches 1 run function tpa:dialog/menu/search_id_disabled
 
 # Tpahere Menu
-
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
 execute if score #dialog tpa.variables matches 1 run function tpa:dialog/menu/switch/tpa
 execute if score #dialog tpa.variables matches 2 run function tpa:dialog/menu/switch/tpahere
@@ -111,7 +109,7 @@ data modify storage tpa:tpa temp.dialog.actions[-1].label append from storage tp
 execute if score @s tpa.tpaccept_toggle matches 0 run data modify storage tpa:tpa temp.dialog.actions[-1].label append from storage tpa:tpa loaded_lang.tpa_menu_disabled
 execute if score @s tpa.tpaccept_toggle matches 1 run data modify storage tpa:tpa temp.dialog.actions[-1].label append from storage tpa:tpa loaded_lang.tpa_menu_enabled
 data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa loaded_lang.tpa_menu_switch_hoverevent
-data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "minecraft:run_command", command: "/trigger tpa.tpaccpet_toggle add 4"}
+data modify storage tpa:tpa temp.dialog.actions[-1].action set value {type: "minecraft:run_command", command: "/trigger tpa.tpaccept_toggle add 4"}
 
 # Mute
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template

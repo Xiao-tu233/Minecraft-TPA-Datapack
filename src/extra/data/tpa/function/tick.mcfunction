@@ -96,9 +96,10 @@ execute as @a[predicate=tpa:is_requesting_book] run function tpa:book
 execute as @a[scores={tpa.book=2}] run function tpa:book/state_validation
 execute as @a[scores={tpa.book=2}] if items entity @s weapon.offhand written_book[custom_data={isTpaBook: 1b}] run function tpa:book/stop
 # Clear Players shouldn't have book
-clear @a[scores={tpa.book=0}] minecraft:written_book[minecraft:custom_data={isTpaBook:1b}]
+clear @a[scores={tpa.book=0}] minecraft:written_book[minecraft:custom_data={isTpaBook: 1b}]
 # Kill book item entity which is not dropped by any avail player
-execute as @e[type=item, name='Written Book'] if data entity @s Item.components."minecraft:custom_data".isTpaBook run kill @s
+# execute as @e[type=item, name='Written Book'] if data entity @s Item.components."minecraft:custom_data".isTpaBook run kill @s
+execute as @e[type=item, name='Written Book'] if items entity @s contents minecraft:written_book[minecraft:custom_data={isTpaBook:1b}] run kill @s
 # Remove book from Item Frame with book=0 player nearby
 execute as @e[type=!item, nbt={Item: {components: {"minecraft:custom_data": {isTpaBook: 1b}}}}] run data remove entity @s Item
 
