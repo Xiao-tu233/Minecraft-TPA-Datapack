@@ -32,4 +32,4 @@ execute unless score #each_home.finished tpa.variables matches 1 if score #home_
 execute unless score #each_home.finished tpa.variables matches 1 if score #home_displayed tpa.variables >= #home_owns tpa.variables run scoreboard players set #each_home.continue tpa.variables 0
 
 # Recursive call
-execute if score #each_home.continue tpa.variables matches 1 run function tpa:home/each_home
+execute if score #each_home.continue tpa.variables matches 1 run function tpa:home/each_home with storage tpa:tpa temp.args

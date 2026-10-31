@@ -8,10 +8,14 @@ function tpa:dimension/refresh
 function tpa:sounds/levelup
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_menu_title"}]
 
-function tpa:get_name
-function tpa:home/temp with storage tpa:tpa temp
+scoreboard players set #home.match_all tpa.variables 1
+function tpa:home/get
+scoreboard players set #home.match_all tpa.variables 0
+data modify storage tpa:tpa temp.home set from storage tpa:tpa temp.home_result
+data remove storage tpa:tpa temp.home_result
+execute store result score #home_owns tpa.variables run data get storage tpa:tpa temp.home
 
-execute unless data storage tpa:tpa temp.home run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
+execute if score #home_owns tpa.variables matches 0 run tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, \
         {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_create"}, \
         {\
             interpret: true, \
@@ -21,4 +25,4 @@ execute unless data storage tpa:tpa temp.home run tellraw @s[predicate=tpa:outpu
             hover_event: {action: "show_text", value: {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_create_button_hoverevent"}}\
         }\
     ]
-execute if data storage tpa:tpa temp.home run function tpa:home/menu_display
+execute if score #home_owns tpa.variables matches 1.. run function tpa:home/menu_display

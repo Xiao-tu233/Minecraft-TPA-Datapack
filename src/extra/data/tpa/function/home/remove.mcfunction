@@ -1,12 +1,12 @@
 # Parent Function: tpa:removehome
-# @macro: {name: str, id: int}
-$data remove storage tpa:tpa home.$(name).$(id)
 
-# Parent function: tpa:warp/remove/slot
+data remove storage tpa:tpa temp.home_result
+scoreboard players set #home.match_all tpa.variables 0
+scoreboard players set #home.store_result tpa.variables 0
+scoreboard players set #home.remove_current tpa.variables 1
+scoreboard players set #home.replace_current tpa.variables 0
+scoreboard players operation #uid tpa.variables = @s tpa.uid
+function tpa:home/scan
 
-data remove storage tpa:tpa temp.warp_result
-scoreboard players set #warp.store_result tpa.variables 0
-scoreboard players set #warp.remove_current tpa.variables 1
-scoreboard players set #warp.replace_current tpa.variables 0
-scoreboard players set #warp.scan_count tpa.variables 1
-function tpa:warp/scan
+# Refresh the menu after a removal, keeping the same UID-based view.
+function tpa:home/menu

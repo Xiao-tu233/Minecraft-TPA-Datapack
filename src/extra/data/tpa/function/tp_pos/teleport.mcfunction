@@ -21,7 +21,9 @@ data modify storage tpa:tpa temp.teleport.Rotation set value [0.0f, 0.0f]
 data modify storage tpa:tpa temp.teleport.Pos[0] set from storage tpa:tpa temp.args.x
 data modify storage tpa:tpa temp.teleport.Pos[1] set from storage tpa:tpa temp.args.y
 data modify storage tpa:tpa temp.teleport.Pos[2] set from storage tpa:tpa temp.args.z
-data modify storage tpa:tpa temp.teleport.Dimension set from entity @s Dimension
+data modify storage tpa:tpa temp.args.id set from entity @s Dimension
+function tpa:dimension/get
+data modify storage tpa:tpa temp.teleport.Dimension set from storage tpa:tpa temp.dimension.namespaceid
 data modify storage tpa:tpa temp.teleport.Rotation set from entity @s Rotation
 function tpa:teleport/main
 function tpa:sounds/tp

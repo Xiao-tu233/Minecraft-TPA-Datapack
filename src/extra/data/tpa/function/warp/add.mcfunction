@@ -8,7 +8,9 @@ data modify storage tpa:tpa warp append value {disabled: 0b, desc: ""}
 execute store result storage tpa:tpa warp[-1].x int 1 run data get entity @s Pos[0]
 execute store result storage tpa:tpa warp[-1].y int 1 run data get entity @s Pos[1]
 execute store result storage tpa:tpa warp[-1].z int 1 run data get entity @s Pos[2]
-data modify storage tpa:tpa warp[-1].dimension set from entity @s Dimension
+data modify storage tpa:tpa temp.args.id set from entity @s Dimension
+function tpa:dimension/get
+data modify storage tpa:tpa warp[-1].dimension set from storage tpa:tpa temp.dimension.namespaceid
 function tpa:warp/add/default_name
 
 # Turn to next page for player if the added warp is on the next page

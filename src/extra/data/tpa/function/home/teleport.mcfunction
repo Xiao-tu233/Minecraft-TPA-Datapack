@@ -1,8 +1,15 @@
 # Parent function: tpa:home/has_home
 
 function tpa:back/set
-execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get #home tpa.variables
-function tpa:home/act_macro with storage tpa:tpa temp.args
+data remove storage tpa:tpa temp.teleport
+data modify storage tpa:tpa temp.teleport.Pos set value [0.0d, 0.0d, 0.0d]
+data modify storage tpa:tpa temp.teleport.Rotation set value [0.0f, 0.0f]
+data modify storage tpa:tpa temp.teleport.Pos[0] set from storage tpa:tpa temp.home_result.x
+data modify storage tpa:tpa temp.teleport.Pos[1] set from storage tpa:tpa temp.home_result.y
+data modify storage tpa:tpa temp.teleport.Pos[2] set from storage tpa:tpa temp.home_result.z
+data modify storage tpa:tpa temp.teleport.Dimension set from storage tpa:tpa temp.home_result.dimension
+data modify storage tpa:tpa temp.teleport.Rotation set from entity @s Rotation
+function tpa:teleport/main
 
 function tpa:sounds/tp
 data remove storage tpa:tpa temp.output

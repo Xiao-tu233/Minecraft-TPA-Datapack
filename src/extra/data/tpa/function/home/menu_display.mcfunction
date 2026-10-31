@@ -10,7 +10,7 @@ scoreboard players set #home_displayed tpa.variables 0
 scoreboard players set #home_owns tpa.variables 0
 execute store result score #home_owns tpa.variables run data get storage tpa:tpa temp.home
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow showing: §a#home_owns: ",{score: {name: "#home_owns",objective: "tpa.variables"}}]
-function tpa:home/each_home
+function tpa:home/each_home with storage tpa:tpa temp.args
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: §rNow showing: §a#if_show_new: ",{score: {name: "#if_show_new",objective: "tpa.variables"}}]
 

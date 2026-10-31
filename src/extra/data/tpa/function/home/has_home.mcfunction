@@ -1,9 +1,8 @@
 # Parent function: tpa:home/within_range
 
-execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get #home tpa.variables
-scoreboard players set #is_exist tpa.variables 0
-function tpa:home/is_exist with storage tpa:tpa temp.args
+scoreboard players set #home.match_all tpa.variables 0
+function tpa:home/get
 
-# If he has one, but the provided id is not valid, tell him home's not found.
-execute if score #is_exist tpa.variables matches 0 run function tpa:home/not_found
-execute unless score #is_exist tpa.variables matches 0 run function tpa:home/teleport
+# If the UID+id pair is not valid, tell him Home is not found.
+execute unless data storage tpa:tpa temp.home_result run function tpa:home/not_found
+execute if data storage tpa:tpa temp.home_result run function tpa:home/teleport

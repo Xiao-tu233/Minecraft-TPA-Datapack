@@ -11,7 +11,9 @@ data modify storage tpa:tpa temp.warp_candidate set from storage tpa:tpa temp.wa
 execute store result storage tpa:tpa temp.warp_candidate.x int 1 run data get entity @s Pos[0]
 execute store result storage tpa:tpa temp.warp_candidate.y int 1 run data get entity @s Pos[1]
 execute store result storage tpa:tpa temp.warp_candidate.z int 1 run data get entity @s Pos[2]
-data modify storage tpa:tpa temp.warp_candidate.dimension set from entity @s Dimension
+data modify storage tpa:tpa temp.args.id set from entity @s Dimension
+function tpa:dimension/get
+data modify storage tpa:tpa temp.warp_candidate.dimension set from storage tpa:tpa temp.dimension.namespaceid
 
 scoreboard players operation #warp tpa.variables = #warp.edit.index tpa.variables
 function tpa:warp/set

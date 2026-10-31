@@ -1,7 +1,8 @@
-# Parent function: tpa:warp/scan/loop
-#! This is a private function, shouldn't be called by functions outside tpa:warp/ folder or even players
+# Parent function: tpa:home/scan/loop
+#! This is a private function, shouldn't be called by functions outside tpa:home/ folder or even players
 
-data modify storage tpa:tpa temp.warp_scan set from storage tpa:tpa warp[1]
-execute if score #warp.store_result tpa.variables matches 1 run data modify storage tpa:tpa temp.warp_result set from storage tpa:tpa temp.warp_scan
-execute if score #warp.replace_current tpa.variables matches 1 run data modify storage tpa:tpa warp[1] set from storage tpa:tpa temp.warp_candidate
-execute unless score #warp.remove_current tpa.variables matches 1 run data modify storage tpa:tpa warp append from storage tpa:tpa warp[1]
+data modify storage tpa:tpa temp.home_scan set from storage tpa:tpa home[0]
+execute if score #home.store_result tpa.variables matches 1 run data modify storage tpa:tpa temp.home_result set from storage tpa:tpa temp.home_scan
+execute if score #home.replace_current tpa.variables matches 1 run data modify storage tpa:tpa home[0] set from storage tpa:tpa temp.home_candidate
+execute unless score #home.remove_current tpa.variables matches 1 run data modify storage tpa:tpa home append from storage tpa:tpa home[0]
+scoreboard players set #home.matched tpa.variables 1
