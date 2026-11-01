@@ -25,11 +25,11 @@ data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.home_cand
 function tpa:dimension/get
 
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[0]
-execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.coordinate_components[]
+execute if score #output.index_format tpa.variables matches 0 run function tpa:home/set/append_coordinate_components
 execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[1]
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
-execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.coordinate_components[]
+execute if score #output.index_format tpa.variables matches 1 run function tpa:home/set/append_coordinate_components
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[2]
 
 # args[1] contains x,y,z,dim,home_set_position
