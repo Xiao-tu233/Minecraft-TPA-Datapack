@@ -8,9 +8,14 @@ function tpa:dimension/refresh
 function tpa:sounds/levelup
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.header"}, {interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.home_menu_title"}]
 
+data remove storage tpa:tpa temp.home_result
+data modify storage tpa:tpa temp.home_result set value {}
 scoreboard players set #home.match_all tpa.variables 1
-function tpa:home/get
-scoreboard players set #home.match_all tpa.variables 0
+scoreboard players set #home.store_result tpa.variables 1
+scoreboard players set #home.remove_current tpa.variables 0
+scoreboard players set #home.replace_current tpa.variables 0
+scoreboard players operation #uid tpa.variables = @s tpa.uid
+function tpa:home/scan
 data modify storage tpa:tpa temp.home set from storage tpa:tpa temp.home_result
 data remove storage tpa:tpa temp.home_result
 execute store result score #home_owns tpa.variables run data get storage tpa:tpa temp.home

@@ -1,7 +1,7 @@
-# Parent function: tpa:home/menu, tpa:home/has_home
+# Parent function: tpa:home/has_home
 
 data remove storage tpa:tpa temp.home_result
-execute if score #home.match_all tpa.variables matches 1 run data modify storage tpa:tpa temp.home_result set value {}
+scoreboard players set #home.match_all tpa.variables 0
 scoreboard players set #home.store_result tpa.variables 1
 scoreboard players set #home.remove_current tpa.variables 0
 scoreboard players set #home.replace_current tpa.variables 0

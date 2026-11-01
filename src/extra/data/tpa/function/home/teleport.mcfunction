@@ -10,11 +10,3 @@ data modify storage tpa:tpa temp.teleport.Pos[2] set from storage tpa:tpa temp.h
 data modify storage tpa:tpa temp.teleport.Dimension set from storage tpa:tpa temp.home_result.dimension
 data modify storage tpa:tpa temp.teleport.Rotation set from entity @s Rotation
 function tpa:teleport/main
-
-function tpa:sounds/tp
-data remove storage tpa:tpa temp.output
-data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_lang.home_act
-execute store result storage tpa:tpa temp.output.arg int 1 run scoreboard players get #home tpa.variables
-data modify storage tpa:tpa temp.output.arg set string storage tpa:tpa temp.output.arg
-data modify storage tpa:tpa temp.output.arg_hover set value ""
-function tpa:output/one_arg

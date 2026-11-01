@@ -31,19 +31,20 @@ scoreboard players reset #output.index_format tpa.variables
 execute store result score #output.index_format tpa.variables run data get storage tpa:tpa loaded_lang.warp_hoverevent_location_format
 data modify storage tpa:tpa temp.output.format_parser set value []
 
-data modify storage tpa:tpa temp.output.append_indexes.enabled.tooltip.x set string storage tpa:tpa temp.warp_candidate.x
-data modify storage tpa:tpa temp.output.append_indexes.enabled.tooltip.y set string storage tpa:tpa temp.warp_candidate.y
-data modify storage tpa:tpa temp.output.append_indexes.enabled.tooltip.z set string storage tpa:tpa temp.warp_candidate.z
+data modify storage tpa:tpa temp.output.coordinate_components set value ["", " ", "", " ", ""]
+data modify storage tpa:tpa temp.output.coordinate_components[0] set string storage tpa:tpa temp.home_candidate.x
+data modify storage tpa:tpa temp.output.coordinate_components[2] set string storage tpa:tpa temp.home_candidate.y
+data modify storage tpa:tpa temp.output.coordinate_components[4] set string storage tpa:tpa temp.home_candidate.z
+
 data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.warp_candidate.dimension
 function tpa:dimension/get
-data modify storage tpa:tpa temp.output.append_indexes.enabled.tooltip.dimension set from storage tpa:tpa temp.dimension.name
 
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.warp_hoverevent_location[0]
-execute if score #output.index_format tpa.variables matches 0 run function tpa:output/warp/append_indexes
-execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.append_indexes.enabled.tooltip.dimension
+execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.coordinate_components[]
+execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.warp_hoverevent_location[1]
-execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.append_indexes.enabled.tooltip.dimension
-execute if score #output.index_format tpa.variables matches 1 run function tpa:output/warp/append_indexes
+execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
+execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.coordinate_components[]
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.warp_hoverevent_location[2]
 
 

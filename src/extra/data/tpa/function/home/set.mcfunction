@@ -1,38 +1,38 @@
 # Parent Function: tpa:home/within_range
+# This function is not techiquely a interface, this includes the output after home set is done
 
-# Build the flat-list candidate. The identity is always the pair (uid, id).
-data remove storage tpa:tpa temp.home_candidate
-data modify storage tpa:tpa temp.home_candidate set value {}
-execute store result storage tpa:tpa temp.home_candidate.uid int 1 run scoreboard players get @s tpa.uid
-execute store result storage tpa:tpa temp.home_candidate.id int 1 run scoreboard players get #home tpa.variables
-execute store result storage tpa:tpa temp.home_candidate.x int 1 run data get entity @s Pos[0]
-execute store result storage tpa:tpa temp.home_candidate.y int 1 run data get entity @s Pos[1]
-execute store result storage tpa:tpa temp.home_candidate.z int 1 run data get entity @s Pos[2]
-data modify storage tpa:tpa temp.args.id set from entity @s Dimension
+function tpa:home/capture
+function tpa:home/upsert
+
+# Outputs
+data remove storage tpa:tpa temp.output
+data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_lang.home_set
+data modify storage tpa:tpa temp.output.langs_format set from storage tpa:tpa loaded_lang.home_set_format
+data modify storage tpa:tpa temp.output.args set value ["", []]
+data modify storage tpa:tpa temp.output.args[0] set from storage tpa:tpa temp.home_candidate.id
+
+# Parse format of location langs
+scoreboard players reset #output.index_format tpa.variables
+execute store result score #output.index_format tpa.variables run data get storage tpa:tpa loaded_lang.home_hoverevent_location_format
+data modify storage tpa:tpa temp.output.format_parser set value []
+
+data modify storage tpa:tpa temp.output.coordinate_components set value ["", " ", "", " ", ""]
+data modify storage tpa:tpa temp.output.coordinate_components[0] set string storage tpa:tpa temp.home_candidate.x
+data modify storage tpa:tpa temp.output.coordinate_components[2] set string storage tpa:tpa temp.home_candidate.y
+data modify storage tpa:tpa temp.output.coordinate_components[4] set string storage tpa:tpa temp.home_candidate.z
+
+data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.home_candidate.dimension
 function tpa:dimension/get
-data modify storage tpa:tpa temp.home_candidate.dimension set from storage tpa:tpa temp.dimension.namespaceid
 
-data remove storage tpa:tpa temp.home_result
-scoreboard players set #home.match_all tpa.variables 0
-scoreboard players set #home.store_result tpa.variables 0
-scoreboard players set #home.remove_current tpa.variables 0
-scoreboard players set #home.replace_current tpa.variables 1
-scoreboard players operation #uid tpa.variables = @s tpa.uid
-function tpa:home/scan
+data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[0]
+execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.coordinate_components[]
+execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
+data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[1]
+execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
+execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.coordinate_components[]
+data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[2]
 
-# Insert if this UID+id pair did not exist; otherwise scan replaced it.
-execute unless score #home.match_found tpa.variables matches 1 run data modify storage tpa:tpa home append from storage tpa:tpa temp.home_candidate
-
-# Keep the human-readable values needed by the confirmation output.
-data remove storage tpa:tpa temp.home
-data modify storage tpa:tpa temp.home set from storage tpa:tpa temp.home_candidate
-execute store result storage tpa:tpa temp.home.x int 1 run data get entity @s Pos[0]
-execute store result storage tpa:tpa temp.home.y int 1 run data get entity @s Pos[1]
-execute store result storage tpa:tpa temp.home.z int 1 run data get entity @s Pos[2]
-data modify storage tpa:tpa temp.home.x set string storage tpa:tpa temp.home.x
-data modify storage tpa:tpa temp.home.y set string storage tpa:tpa temp.home.y
-data modify storage tpa:tpa temp.home.z set string storage tpa:tpa temp.home.z
-data modify storage tpa:tpa temp.home.dimension set from storage tpa:tpa temp.dimension.name
-
-function tpa:home/set_done
-function tpa:home/menu
+# args[1] contains x,y,z,dim,home_set_position
+data modify storage tpa:tpa temp.output.args[1] set from storage tpa:tpa temp.output.format_parser
+data modify storage tpa:tpa temp.output.arg_hovers set value ["", ""]
+function tpa:output/two_args

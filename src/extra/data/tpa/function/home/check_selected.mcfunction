@@ -1,4 +1,6 @@
 # Parent function: tpa:home/within_range
 
-execute if score #home.trigger_state tpa.variables matches 2 run function tpa:home/remove
-execute unless score #home.trigger_state tpa.variables matches 2 run function tpa:home/has_home
+function tpa:home/get
+
+execute unless data storage tpa:tpa temp.home_result run function tpa:home/not_found
+execute if data storage tpa:tpa temp.home_result run function tpa:home/has_home

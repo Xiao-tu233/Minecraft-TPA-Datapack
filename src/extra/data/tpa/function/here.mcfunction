@@ -33,7 +33,7 @@ execute unless score #dim_num tpa.variables matches -1..0 run function tpa:here/
 # Get player's name and id
 function tpa:get_name
 data modify storage tpa:tpa temp.args.name set from storage tpa:tpa temp.name
-# n: char = name[0:1]
+# n: char = name.charAt(0)
 data modify storage tpa:tpa temp.args.n set string storage tpa:tpa temp.name 0 1
 
 execute store result storage tpa:tpa temp.args.id int 1 run scoreboard players get @s tpa.uid
