@@ -4,6 +4,11 @@
 function tpa:home/capture
 function tpa:home/upsert
 
+# Keep the player's high-water Home slot current for the -9 add action.
+function tpa:home/page/get
+execute if score #home tpa.variables > #home.max_id tpa.variables run scoreboard players operation #home.max_id tpa.variables = #home tpa.variables
+function tpa:home/page/set_max_id
+
 # Outputs
 data remove storage tpa:tpa temp.output
 data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_lang.home_set

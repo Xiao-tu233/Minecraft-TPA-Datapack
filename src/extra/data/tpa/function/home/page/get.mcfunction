@@ -1,4 +1,5 @@
 # Parent function: tpa:home/enabled
+data remove storage tpa:tpa temp.home_page_scan
 scoreboard players set #home.page.result tpa.variables 0
 scoreboard players set #home.max_id tpa.variables 0
 scoreboard players set #home.page.store_result tpa.variables 1

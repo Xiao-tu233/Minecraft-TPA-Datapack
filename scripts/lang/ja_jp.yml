@@ -247,7 +247,7 @@ reqer_unavail: テレポートリクエストを送信することは出来ま�
 reqer_first_join: '[§6クリックしてTPAメニューを開く§r]'
 reqer_no_req_found: まだ誰にもリクエストを送信していません
 reqer_recver_invalid: 対象のプレイヤーはオフライン、またはテレポート不可です
-reqer_req_button_cancel: '[§4キャンセル§r]'
+reqer_req_button_cancel: '§4キャンセル§r'
 reqer_req_button_cancel_hoverevent: §bクリックしてリクエストをキャンセル
 reqer_req_hoverevent: §b送信したリクエストのプレイヤー
 reqer_req_invalid: '%sに送信したリクエストは、対象プレイヤーが利用できないため（オフラインまたはテレポート不可）、削除されました'

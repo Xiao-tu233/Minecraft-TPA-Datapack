@@ -11,7 +11,7 @@ function tpa:home/scan
 function tpa:home/page/set_max_id
 
 # Calc total pages
-scoreboard players operation #home.total_pages tpa.variables = #home.max tpa.variables
+scoreboard players operation #home.total_pages tpa.variables = #home.max_id tpa.variables
 scoreboard players add #home.total_pages tpa.variables 4
 scoreboard players operation #home.total_pages tpa.variables /= #5 tpa.variables
 

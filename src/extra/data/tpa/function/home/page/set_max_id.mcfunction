@@ -1,6 +1,7 @@
 # Parent function: tpa:home/menu
 # Persist the maximum Home slot found by tpa:home/scan for this player's UID.
 
+data remove storage tpa:tpa temp.home_page_scan
 scoreboard players set #home.page.store_result tpa.variables 0
 scoreboard players set #home.page.replace_current tpa.variables 0
 scoreboard players set #home.page.update_max_id tpa.variables 1
