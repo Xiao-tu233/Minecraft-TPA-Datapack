@@ -284,6 +284,7 @@ Project To-do lists:
    - [x] warp的新增按钮
    - [ ] Dialog
       - Hide buttons and inputs if not neccessary   
+   - [ ] 1.17- slot color display compatitibility: temp.output.color will be the number id of the dimension 
 - [x] 实现release_meta.yml
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续

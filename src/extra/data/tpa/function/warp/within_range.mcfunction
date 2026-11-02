@@ -1,4 +1,4 @@
-# Parent function: tpa:warp/selected
+# Parent function: tpa:warp/select_index
 function tpa:warp/get
 
 execute store result score #warp.disabled tpa.variables run data get storage tpa:tpa temp.warp_result.disabled

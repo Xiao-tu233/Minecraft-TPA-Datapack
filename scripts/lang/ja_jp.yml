@@ -41,20 +41,12 @@ home_create_button: '[§a新しく設定§r]'
 home_create_button_hoverevent: §aクリックしてホームを設定
 home_disabled: §aホーム§rはサーバーで無効化されています
 home_display: §bホーム#
-home_display_rm_button: '[§c削除§r]'
-home_display_rm_button_hoverevent: §cクリックしてこのホームを削除
-home_display_set_button: '[§a設定§r]'
-home_display_set_button_hoverevent: §aクリックしてホームを設定
-home_display_tp_button: '[§bテレポート§r]'
-home_display_tp_button_hoverevent: §bクリックしてこのホームにテレポート
 home_menu_title: '現在、次のホームスロットがあります: '
 home_missing_hoverevent: このホームはまだ設定されていません
 home_new: '§a新しく設定: '
-home_not_found_hoverevent: アクセスしたホーム
 home_not_found: アクセスしたホーム#%sが存在しません
 home_number: ホーム#
 home_out_of_range: アクセスしたホーム#%sがサーバーの制限を超えています
-home_remove_hoverevent: §b削除されたホーム
 home_remove: ホーム#を削除しました%s
 home_set: ホーム#を%1$s設定しました%2$s
 home_set_position: 位置

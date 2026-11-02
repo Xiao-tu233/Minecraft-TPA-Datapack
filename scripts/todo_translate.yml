@@ -2,4 +2,249 @@
 # status: missing_key = key was absent from the target language.
 # Fill translation and run the script to apply it.
 # Keep translation as null when the entry is not translated yet.
-languages: {}
+languages:
+  en_us:
+    home_button_rm:
+      source: "移除"
+      status: missing_key
+      translation: Remoe
+    home_button_rm_hoverevent:
+      source: "§c点击删除该传送点"
+      status: missing_key
+      translation: null
+    home_button_set:
+      source: "设置"
+      status: missing_key
+      translation: null
+    home_button_set_hoverevent:
+      source: "§a点击在当前位置设置传送点坐标"
+      status: missing_key
+      translation: null
+    home_button_tp:
+      source: "传送"
+      status: missing_key
+      translation: null
+    home_button_tp_hoverevent:
+      source: "§b点击传送到这个传送点"
+      status: missing_key
+      translation: null
+    home_selector_title:
+      source: "个人传送点列表"
+      status: missing_key
+      translation: null
+    home_selector_index:
+      source: "%2$s项传送点中的第%1$s项"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page:
+      source: "◀ 上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page_hoverevent:
+      source: "§b点击查看上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page:
+      source: "下一页 ▶"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page_hoverevent:
+      source: "§b点击查看下一页"
+      status: missing_key
+      translation: null
+  ja_jp:
+    home_button_rm:
+      source: "移除"
+      status: missing_key
+      translation: null
+    home_button_rm_hoverevent:
+      source: "§c点击删除该传送点"
+      status: missing_key
+      translation: null
+    home_button_set:
+      source: "设置"
+      status: missing_key
+      translation: null
+    home_button_set_hoverevent:
+      source: "§a点击在当前位置设置传送点坐标"
+      status: missing_key
+      translation: null
+    home_button_tp:
+      source: "传送"
+      status: missing_key
+      translation: null
+    home_button_tp_hoverevent:
+      source: "§b点击传送到这个传送点"
+      status: missing_key
+      translation: null
+    home_selector_title:
+      source: "个人传送点列表"
+      status: missing_key
+      translation: null
+    home_selector_index:
+      source: "%2$s项传送点中的第%1$s项"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page:
+      source: "◀ 上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page_hoverevent:
+      source: "§b点击查看上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page:
+      source: "下一页 ▶"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page_hoverevent:
+      source: "§b点击查看下一页"
+      status: missing_key
+      translation: null
+  ko_kr:
+    home_button_rm:
+      source: "移除"
+      status: missing_key
+      translation: null
+    home_button_rm_hoverevent:
+      source: "§c点击删除该传送点"
+      status: missing_key
+      translation: null
+    home_button_set:
+      source: "设置"
+      status: missing_key
+      translation: null
+    home_button_set_hoverevent:
+      source: "§a点击在当前位置设置传送点坐标"
+      status: missing_key
+      translation: null
+    home_button_tp:
+      source: "传送"
+      status: missing_key
+      translation: null
+    home_button_tp_hoverevent:
+      source: "§b点击传送到这个传送点"
+      status: missing_key
+      translation: null
+    home_selector_title:
+      source: "个人传送点列表"
+      status: missing_key
+      translation: null
+    home_selector_index:
+      source: "%2$s项传送点中的第%1$s项"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page:
+      source: "◀ 上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page_hoverevent:
+      source: "§b点击查看上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page:
+      source: "下一页 ▶"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page_hoverevent:
+      source: "§b点击查看下一页"
+      status: missing_key
+      translation: null
+  "zh_hk":
+    home_button_rm:
+      source: "移除"
+      status: missing_key
+      translation: null
+    home_button_rm_hoverevent:
+      source: "§c点击删除该传送点"
+      status: missing_key
+      translation: null
+    home_button_set:
+      source: "设置"
+      status: missing_key
+      translation: null
+    home_button_set_hoverevent:
+      source: "§a点击在当前位置设置传送点坐标"
+      status: missing_key
+      translation: null
+    home_button_tp:
+      source: "传送"
+      status: missing_key
+      translation: null
+    home_button_tp_hoverevent:
+      source: "§b点击传送到这个传送点"
+      status: missing_key
+      translation: null
+    home_selector_title:
+      source: "个人传送点列表"
+      status: missing_key
+      translation: null
+    home_selector_index:
+      source: "%2$s项传送点中的第%1$s项"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page:
+      source: "◀ 上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page_hoverevent:
+      source: "§b点击查看上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page:
+      source: "下一页 ▶"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page_hoverevent:
+      source: "§b点击查看下一页"
+      status: missing_key
+      translation: null
+  zh_tw:
+    home_button_rm:
+      source: "移除"
+      status: missing_key
+      translation: null
+    home_button_rm_hoverevent:
+      source: "§c点击删除该传送点"
+      status: missing_key
+      translation: null
+    home_button_set:
+      source: "设置"
+      status: missing_key
+      translation: null
+    home_button_set_hoverevent:
+      source: "§a点击在当前位置设置传送点坐标"
+      status: missing_key
+      translation: null
+    home_button_tp:
+      source: "传送"
+      status: missing_key
+      translation: null
+    home_button_tp_hoverevent:
+      source: "§b点击传送到这个传送点"
+      status: missing_key
+      translation: null
+    home_selector_title:
+      source: "个人传送点列表"
+      status: missing_key
+      translation: null
+    home_selector_index:
+      source: "%2$s项传送点中的第%1$s项"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page:
+      source: "◀ 上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_previous_page_hoverevent:
+      source: "§b点击查看上一页"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page:
+      source: "下一页 ▶"
+      status: missing_key
+      translation: null
+    home_selector_button_next_page_hoverevent:
+      source: "§b点击查看下一页"
+      status: missing_key
+      translation: null

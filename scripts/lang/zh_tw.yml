@@ -41,20 +41,12 @@ home_create_button: '[§a新建§r]'
 home_create_button_hoverevent: §a點擊設定一個傳送點
 home_disabled: 伺服器未啟用§a傳送點§r
 home_display: §b傳送點#
-home_display_rm_button: '[§c移除§r]'
-home_display_rm_button_hoverevent: §c點擊刪除這個傳送點
-home_display_set_button: '[§a設定§r]'
-home_display_set_button_hoverevent: §a點擊設定傳送點
-home_display_tp_button: '[§b傳送§r]'
-home_display_tp_button_hoverevent: §b點擊傳送到這個傳送點
 home_menu_title: '你現在擁有如下的傳送點欄位: '
 home_missing_hoverevent: 該傳送點尚未設定
 home_new: '§a新建: '
-home_not_found_hoverevent: §b你存取的傳送點
 home_not_found: 你存取的傳送點#%s不存在
 home_number: 傳送點#
 home_out_of_range: 你存取的傳送點#%s超出了伺服器的限制
-home_remove_hoverevent: §b移除的傳送點
 home_remove: 你移除了傳送點#%s
 home_set: 你把傳送點#%1$s設定為%2$s
 home_set_position: 座標

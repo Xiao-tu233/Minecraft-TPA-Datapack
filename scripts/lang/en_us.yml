@@ -41,20 +41,12 @@ home_create_button: '[§aCreate§r]'
 home_create_button_hoverevent: §aClick to set a home
 home_disabled: Server haven't enabled §aHome§r
 home_display: §bHome#
-home_display_rm_button: '[§cRemove§r]'
-home_display_rm_button_hoverevent: §cClick to remove this home
-home_display_set_button: '[§aSet§r]'
-home_display_set_button_hoverevent: §aClick to set home's position
-home_display_tp_button: '[§bTeleport§r]'
-home_display_tp_button_hoverevent: §bClick to teleport to this home
 home_menu_title: 'You own now following homes slot: '
 home_missing_hoverevent: This home hasn't been set
 home_new: '§aCreate: '
-home_not_found_hoverevent: §bThe home you are looking for
 home_not_found: The Home#%s doesn't exist
 home_number: Home#
 home_out_of_range: The Home#%sis out of the server limit.
-home_remove_hoverevent: §bHome which has been removed
 home_remove: You removed Home#%s
 home_set: You have set Home#%1$sat%2$s
 home_set_position: Positon
