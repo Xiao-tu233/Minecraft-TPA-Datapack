@@ -10,10 +10,11 @@ data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_la
 data modify storage tpa:tpa temp.output.langs_format set from storage tpa:tpa loaded_lang.home_set_format
 data modify storage tpa:tpa temp.output.args set value ["", []]
 data modify storage tpa:tpa temp.output.args[0] set from storage tpa:tpa temp.home_candidate.id
+data modify storage tpa:tpa temp.output.args[0] set string storage tpa:tpa temp.home_candidate.id
 
 # Parse format of location langs
 scoreboard players reset #output.index_format tpa.variables
-execute store result score #output.index_format tpa.variables run data get storage tpa:tpa loaded_lang.home_hoverevent_location_format
+execute store result score #output.index_format tpa.variables run data get storage tpa:tpa loaded_lang.home_set_position_format
 data modify storage tpa:tpa temp.output.format_parser set value []
 
 data modify storage tpa:tpa temp.output.coordinate_components set value ["", " ", "", " ", ""]
@@ -24,13 +25,13 @@ data modify storage tpa:tpa temp.output.coordinate_components[4] set string stor
 data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.home_candidate.dimension
 function tpa:dimension/get
 
-data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[0]
+data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_set_position[0]
 execute if score #output.index_format tpa.variables matches 0 run function tpa:home/set/append_coordinate_components
 execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
-data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[1]
+data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_set_position[1]
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.dimension.name
 execute if score #output.index_format tpa.variables matches 1 run function tpa:home/set/append_coordinate_components
-data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_hoverevent_location[2]
+data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa loaded_lang.home_set_position[2]
 
 # args[1] contains x,y,z,dim,home_set_position
 data modify storage tpa:tpa temp.output.args[1] set from storage tpa:tpa temp.output.format_parser

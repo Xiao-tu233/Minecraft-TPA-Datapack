@@ -108,8 +108,8 @@ execute as @a[predicate=tpa:back] run function tpa:back
 
 # Home
 execute as @a[predicate=tpa:home] run function tpa:home
-execute as @a[scores={tpa.sethome=1..}] run function tpa:sethome
-execute as @a[scores={tpa.removehome=1..}] run function tpa:removehome
+execute as @a[predicate=tpa:sethome] run function tpa:sethome
+execute as @a[predicate=tpa:removehome] run function tpa:removehome
 
 # Warp
 execute as @a[predicate=tpa:warp] run function tpa:warp

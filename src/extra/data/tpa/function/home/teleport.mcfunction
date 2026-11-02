@@ -1,4 +1,4 @@
-# Parent function: tpa:home/has_home
+# Parent function: tpa:home/found
 
 function tpa:back/set
 data remove storage tpa:tpa temp.teleport

@@ -6,11 +6,14 @@ Minecraft-TPA-Datapack 是一个原版 Minecraft 数据包。它面向非 OP 玩
 TPA / TPAHere 请求传送，并扩展了接受、拒绝、取消、自动接受、Back、Home、
 Warp、坐标传送、位置广播、语言选择、传送书、菜单、Dialog 和 Carpet 假人兼容。
 
-本项目同时维护完整版本和 Light 版本，以及多个 Minecraft 版本的实现。当前开发
-焦点是完整版本的 `src/+mc1.20.2`，目标游戏环境为 **Minecraft 1.20.2 到
-26.2**。除非任务明确要求，**不要修改其它版本目录**。
+本项目同时维护完整版本和 Light 版本，以及多个 Minecraft 版本的实现。当前完整包
+的实际构建源是 `src/extra`，目标游戏环境为 **Minecraft 1.20.2 到 26.3**。
+`src/+mc1.13`、`src/+mc1.15` 和 `src/+mc1.20.2` 是历史源码目录；当前
+`scripts/build.py` 不读取这些目录，而是从 `src/extra` 和其中的版本 overlay
+生成构建产物。除非任务明确要求，**不要修改其它版本目录**。
 
-状态基线：`main` 分支，`d5845db0`（`menu stastic check added`），2026-08-07。
+状态基线：`main` 分支，当前 HEAD 为 `2d5a2908`（`append_coordinate_components
+1.17 compatible`），2026-11-01。
 
 ## 当前架构
 
@@ -18,22 +21,32 @@ Warp、坐标传送、位置广播、语言选择、传送书、菜单、Dialog 
 
 ```text
 src/
-  +mc1.13/          # 1.13-1.14.4 完整版
-  +mc1.15/          # 1.15-1.20.1 完整版兼容实现
-  +mc1.20.2/        # 当前主版本；1.20.2-26.2
-  light+mc1.*/      # Light 版本
-  lang_extra/       # 额外语言包
+  extra/
+    data/            # 主包源码，目标为 26.3
+    1.20.1/data/     # 1.15-1.20.1 的手写兼容 overlay
+    1.21.8/data/     # 特定小版本的手写 overlay
+    1.21.10/data/    # 特定小版本的手写 overlay
+  +mc1.13/           # 历史源码，不是当前 build.py 输入
+  +mc1.15/           # 历史源码，不是当前 build.py 输入
+  +mc1.20.2/         # 历史源码，不是当前 build.py 输入
+  light/             # Light 版本源码
+  light+mc1.*/       # Light 版本历史目录
 scripts/
-  lang/              # 语言 YAML 源文件与同步脚本
-  deploy.py          # 向本地 servers/ 部署数据包
+  lang/              # 语言 YAML 源文件与同步实现
+  build.py           # 从 src/extra 生成 build/ 构建产物
+  build_rules/       # 自动版本转换规则
+  deploy.py          # 构建并向本地 servers/ 部署数据包
 servers/             # 本地测试服务器目录
 ```
 
-`src/+mc1.20.2/pack.mcmeta` 声明当前完整包为 `v2.1`，并通过
-`format_*` overlay 覆盖不同数据包格式的差异。修改主版本时必须同时检查对应
-overlay 是否覆盖了同一资源；不要把仅适用于较新格式的语法误放到基础目录。
+`src/extra/data` 是最高版本的基础源码。`src/extra/<version>/data` 只存该版本
+需要手写覆盖的内容；由 Minecraft 语法变化引起的通用转换应写入
+`scripts/build_rules/`，不要复制到每个 overlay。`build.py` 会按版本从高到低
+生成 `format_*` overlay、应用路径转换和语法降级规则，并在 `build/` 中生成
+最终数据包根目录及 `pack.mcmeta`。发布元数据位于 `scripts/release_meta.yml`，
+不要把构建产物当作源码编辑。
 
-README 仍有 `v2.0.6`、`26.1` 等旧版本描述，和 `pack.mcmeta` 的 v2.1 / 26.2
+README 仍有 `v2.0.6`、`26.1` 等旧版本描述，和当前构建的 v2.1 / 26.3
 状态不完全一致。文档更新是发布阻塞项，不能仅凭 README 判断当前实现状态。
 
 ### 数据包启动与运行流
@@ -59,7 +72,7 @@ tpa:tick
 
 ### 主要模块
 
-主实现位于 `src/+mc1.20.2/data/tpa/function/`：
+主实现位于 `src/extra/data/tpa/function/`：
 
 - 请求：`tpa/`、`tpahere/`、`requests/`、`request_menu/`、`tpaccept/`、
   `tpadeny/`、`cancel_req/`
@@ -70,6 +83,10 @@ tpa:tick
 - 传送功能：`back/`、`home/`、`warp/`、`here/`、`tp_pos/`、`teleport/`
 - 支撑设施：`language/`、`dimension/`、`book/`、`sounds/`、`load/`、
   `options/`
+
+版本专用手写实现位于 `src/extra/<version>/data`；例如 `src/extra/1.20.1` 使用
+复数 `functions/`，而主包使用单数 `function/`。当前构建由 `scripts/build.py`
+从 `src/extra` 统一生成，不要把历史 `src/+mc1.*` 目录当作构建输入。
 
 核心状态分布在三个地方：
 
@@ -107,6 +124,23 @@ tpa:tick
 请求菜单导航和槽位选择。改动其中任一项时必须同步检查
 `tpa:tick`、`tpa:request_menu/tpa`、`tpa:request_menu/tpahere` 及其分发函数。
 
+### Home 与 Warp 数据模型
+
+Home 主存储是带 `uid`、`id`、坐标和小写 `dimension` 键的复合标签列表；
+Home 的 `get`、`set`、`remove` 接口通过 `home/scan` 使用哨兵旋转。菜单读取
+可通过同一套扫描逻辑收集当前 UID 的多个 Home。`home/capture` 只构造候选
+数据，`home/upsert` 负责替换或追加，`home/set` 负责组合二者。
+
+Warp 主存储也是列表：`warp[0]` 是元数据，真正的公共传送点从 `warp[1]` 开始；
+Warp 没有独立的 index 键，列表位置就是索引。Warp 条目使用小写 `dimension`。
+`tpa:update/from_206/warp` 会保留 `warp[0]`，并将旧 `dim`/`Dimension` 转换为
+`dimension`。实体原生 NBT `Dimension` 不能改名。
+
+版本迁移入口按来源版本组织：`tpa:update/from_205` 处理旧版本通用兼容状态，
+`tpa:update/from_206/home` 和 `tpa:update/from_206/warp` 处理 2.0.6 结构迁移。
+新增迁移不要再创建裸的 `tpa:update/home` 或 `tpa:update/warp` 路径；同一来源
+版本的多个模块应放在对应的 `from_<version>` 目录下。
+
 ### Warp 菜单与页码模型
 
 新版 Warp 存储仍是一份列表：`warp[0]` 是元数据位置，真正的公共传送点从
@@ -137,7 +171,7 @@ tpa:tick
 - `prepare_output` 对外声明 `List[5]` 时，最后一页不足 5 个槽位也必须提供完整的
   空槽结构，或者输出层必须显式判断槽位存在。空槽不能遗留可点击事件。
 - 修改主版本 Warp 后必须检查所有 `format_*` overlay。尤其要搜索旧的
-  `data modify storage tpa:tpa warp[0] set value {}`；26.2 的格式由当前
+  `data modify storage tpa:tpa warp[0] set value {}`；26.3 的格式由当前
   `pack.mcmeta` 的格式范围决定，不能仅凭目录名判断实际生效文件。
 
 ### 在线玩家初始化与同步
@@ -153,17 +187,32 @@ tpa:tick
 “不存在未初始化玩家”的检查之后；它负责重置旧在线快照、将当前 `@a` 标记为在线，
 并把当前人数写入 `#total_players`。把它放在 `on_join` 闸门之前会掩盖尚未处理的玩家。
 
-当前工作区仍需特别检查这两个已知不一致：`on_join.mcfunction` 的在线标记不能是
-`scoreboard players set @a tpa.is_online 1`，而
-`tick/sync_online_state.mcfunction` 不能只 reset 和更新人数而遗漏
-`scoreboard players set @a tpa.is_online 1`。在这两处修正并部署前，不要把在线系统视为
-已完成。
+当前实现已经在 `tick` 中逐 tick 处理最多一名
+`@p[scores={tpa.is_online=0}]`，未初始化玩家仍存在时立即 `return`；
+`sync_online_state` 在闸门通过后重置旧快照、标记当前 `@a` 并更新人数，
+`on_join` 以 `@s` 完成当前玩家初始化。仍需通过多人同 tick 加入、离开、重连和
+`/reload` 场景进行游戏内回归，不要把“已有实现”误认为“已完成测试”。
 
 ### Back 接口约定
 
 Back 长期数据是带 `uid` 的复合标签列表，扫描使用哨兵旋转。接口职责保持清晰：
-`get` 读取匹配项，`remove` 删除匹配项，`capture` 将当前坐标放入临时结果，
-`set` 负责组合 `capture` 与 `upsert`，而 `upsert` 替换已有匹配项或追加新项。
+`get` 读取匹配项，`remove` 删除匹配项，`extract` 读取并删除匹配项，
+`capture` 将当前坐标放入临时结果，`set` 负责组合 `capture` 与 `upsert`，
+而 `upsert` 替换已有匹配项或追加新项。普通 `/trigger back` 当前走
+`back/get -> back/teleport -> back/capture -> back/upsert`，因此先保存旧位置，
+传送后再把当前位置写回 Back。
+
+新版共享传送缓存使用：
+
+```text
+temp.teleport.Pos
+temp.teleport.Rotation
+temp.teleport.Dimension
+```
+
+其中 `Dimension` 是本项目临时传送结构的约定；`back`、`home`、`warp` 和
+`tp_pos` 的调用方必须与 `teleport/main` 保持一致。传送目标的持久数据字段仍是
+小写 `dimension`。
 临时 storage 在下一次访问相关数据前清理即可；扫描函数负责移除哨兵，不需要在每个
 接口结束时重复清理。匹配状态沿用 `back_scan` 等既有语义，不要无目的改名为
 `matched`。
@@ -176,12 +225,17 @@ Back 长期数据是带 `uid` 的复合标签列表，扫描使用哨兵旋转�
 其它语言，并避免内容未变化时改写生成文件。生成的 `init_storage_lang.mcfunction`
 仍然属于构建产物，不要手工维护。
 
+`build.py` 会调用语言同步实现生成内存中的语言目标；默认使用检查模式，不应因
+纯构建而修改 YAML。只有显式传入 `--sync-languages` 才会写回同步语言和待办文件。
+构建产物输出到 `build/`，`deploy.py` 默认先运行 `build.py`，再根据
+`build/manifest.json` 将适配版本部署到 `servers/<version>/world/datapacks/`。
+
 ## 已完成任务
 
 以下为近期提交和 TODO 已勾选项反映的完成状态：
 
-- 在线玩家初始化已经采用 UID 关联和逐人处理的设计；但当前工作区的在线标记与
-  `sync_online_state` 仍有已知不一致，必须按上面的约定修正后才能视为完成。
+- 在线玩家初始化已经采用 UID 关联和逐人处理的设计；多人并发、重连和 reload
+  的游戏内回归仍待完成。
 - 请求系统已支持多请求场景的接受、取消和拒绝；拒绝按钮、声音和输出已加入。
 - 请求菜单已改为缓存列表加固定 20 槽位渲染，并支持空列表 `0/0` 状态、
   翻页与不可用翻页按钮。
@@ -195,6 +249,10 @@ Back 长期数据是带 `uid` 的复合标签列表，扫描使用哨兵旋转�
   不应擅自把它当作新功能入口。
 - 语言格式化已支持 `%s` / `%1$s` 形式的参数顺序，并生成参数拆分及
   `_format` 信息。
+- 主包已迁移到 `src/extra` 构建架构；版本特有手写内容放在
+  `src/extra/<version>/data`，通用语法转换放在 `scripts/build_rules/`。
+- Home 的列表式 `get`、`set`、`remove` 接口和 Warp 的 `dimension` 字段迁移流程
+  已加入主包。
 
 ## 未完成任务
 
@@ -208,19 +266,20 @@ Back 长期数据是带 `uid` 的复合标签列表，扫描使用哨兵旋转�
 - 完成 Warp 菜单翻页回归：确认 `warp[0].pages` 不会在重载或菜单结束时被清空，
   第二页槽位不会回到第一页，最后一页的空槽不会读取缺失数据或携带点击事件。
 - 为主版本建立并实际执行测试矩阵：1.20.2、1.20.4、1.20.5、1.21、1.21.5、
-  1.21.6 及最新正式版；旧版本矩阵也尚未完成。
+  1.21.6、26.2 和 26.3；旧版本矩阵也尚未完成。
 - 更新 README / 发布文档，使 v2.1、支持范围和实际功能一致。
 - 继续检查 Home、Warp、菜单按钮状态和请求流程在重载、多人并发、假人开启时的
   回归。
+- 验证 `tpa:update/from_206/home` 与 `tpa:update/from_206/warp` 在真实旧数据上的
+  幂等性，尤其是 Warp 元数据 `warp[0]`、旧维度键和 Home 冲突槽位。
 
 ### 架构与体验待办
 
 - 完成 ID / UID / 玩家显示列表的整体重构，明确所有持久数据的身份键。
 - 为“复合标签列表按特定键查找”的重复逻辑建立通用 `List` 抽象或统一函数组。
 - 将 Home / Warp 的命令存储更新逻辑提取为独立更新函数。
-- 决定并记录 Home 的长期数据结构策略：
-  低版本使用 `[{uid, homes:[...]}]` 加哨兵遍历；高版本可用
-  `home.<uid>.<home>` 动态路径。当前不要做无测试的大规模格式迁移。
+- 继续完善 Home 的列表扫描、菜单读取和旧格式迁移边界；当前不要在未测试时重新
+  引入动态路径或大规模改变长期数据结构。
 - 重写 Dialog；在明确开始此任务前不要顺手调整 `dialog/`。
 - 改进传送安全性和体验：安全落点、延迟/移动中断、传送锚点或二分传送方案。
 - 继续处理日语语序、维度本地化、菜单书格式、Warp 菜单与动态按钮体验。
@@ -229,7 +288,7 @@ Back 长期数据是带 `uid` 的复合标签列表，扫描使用哨兵旋转�
 
 ### 版本与兼容性
 
-- 当前任务默认仅修改 `src/+mc1.20.2`。
+- 当前任务默认修改 `src/extra/data` 或对应的 `src/extra/<version>/data` overlay。
 - 若任务同时影响 `1.15-1.20.1`，优先维持旧版可执行的列表加哨兵遍历方案；
   不要把宏函数、`return` 或新版 NBT 文本组件格式直接复制进旧版路径。
 - 主版本可以使用其目标格式支持的机制，但应把版本特有实现隔离在适当 overlay，
@@ -276,15 +335,16 @@ data modify storage tpa:tpa temp.output.arg set string storage tpa:tpa temp.outp
 1. 修复并手工测试 `request_menu/display/tpahere` 的重复渲染与 `interpret` 问题。
 2. 以两名以上玩家、超过 20 名候选、无候选、跨页、多个待接收请求、自动接受、
    拒绝和取消为场景，回归请求系统。
-3. 在 1.20.2 和一个最新目标版本先跑基础测试，再扩展到完整版本矩阵。
+3. 在 1.20.2 和 26.3 先跑基础测试，再扩展到完整版本矩阵。
 4. 在行为稳定后更新 README、发布说明和 TODO 的版本状态。
 5. 再开始 List 抽象、Home/Warp 存储策略和 Dialog 重写等较大重构，避免与请求系统
    回归混在同一个改动中。
 
 ## 容易踩坑的地方
 
-- `scripts/deploy.py` 会删除目标服务器中的同名数据包目录后重新复制源码。它是部署
-  操作，不是普通的验证命令。
+- `scripts/deploy.py` 默认先运行 `build.py`，再删除目标服务器中的旧构建数据包并
+  复制对应的 `build/` artifact。它是部署操作，不是普通的验证命令；调试已有构建
+  时可使用 `--no-build`。
 - `load.mcfunction` 会重置部分计分板、storage 和 tag；重载刷屏或状态丢失时先检查
   这里以及 `on_join`，不要只看菜单函数。
 - tick 会先处理一名尚未初始化的玩家并暂停常规流程一个 tick。这个节流是为了让
@@ -298,7 +358,9 @@ data modify storage tpa:tpa temp.output.arg set string storage tpa:tpa temp.outp
 - `text_display` 不只用于视觉显示，也被用作文本组件/名字解析桥梁。不要因“看似多余”
   而删除、改 tag 或在加载时无条件重复生成。
 - `format_*` overlay 会覆盖基础路径的同名资源。修改后若游戏行为没有变化，先检查
-  是否被 overlay 替换。
+  `build/pack.mcmeta` 的 overlay 顺序，以及目标资源是否被更高版本层覆盖。
+- 不要直接编辑 `build/`；它是可删除、可重建的生成目录。版本转换规则写在
+  `scripts/build_rules/`，手写版本差异写在 `src/extra/<version>/data`。
 - 语言源文件是 UTF-8。PowerShell 输出偶有乱码，不代表文件编码损坏；不要据此重写
   全部语言文件。
 - 工作区可能包含用户尚未提交的改动。只改与任务直接相关的文件，不要 reset、revert

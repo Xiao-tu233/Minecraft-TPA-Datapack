@@ -1,0 +1,1 @@
+data modify storage tpa:tpa home set value [{uid: 1, id: 1, x: 100, y: 100, z: 100, dimension: "minecraft:overworld"}, {uid: 2, id: 1, x: 100, y: 100, z: 100, dimension: "minecraft:overworld"}, {uid: 1, id: 3, x: 100, y: 100, z: 100, dimension: "minecraft:overworld"}]

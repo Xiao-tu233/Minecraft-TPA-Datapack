@@ -1,4 +1,4 @@
-# Parent Function: tpa:removehome
+# Parent Function: tpa:home/found
 
 data remove storage tpa:tpa temp.home_result
 scoreboard players set #home.match_all tpa.variables 0

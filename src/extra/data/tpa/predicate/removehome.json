@@ -1,0 +1,23 @@
+{
+    "terms": [
+        {
+            "entity": "this",
+            "scores": {
+                "tpa.removehome": {
+                    "max": -1
+                }
+            },
+            "type": "entity_scores"
+        },
+        {
+            "entity": "this",
+            "scores": {
+                "tpa.removehome": {
+                    "min": 1
+                }
+            },
+            "type": "entity_scores"
+        }
+    ],
+    "type": "any_of"
+}

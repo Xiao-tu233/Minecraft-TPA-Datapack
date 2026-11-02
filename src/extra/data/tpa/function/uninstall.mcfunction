@@ -71,6 +71,7 @@ data remove storage tpa:tpa book
 data remove storage tpa:tpa pos
 data remove storage tpa:tpa temp
 data remove storage tpa:tpa home
+data remove storage tpa:tpa home_pages
 data remove storage tpa:tpa warp
 data remove storage tpa:tpa option
 data remove storage tpa:tpa loaded_language
