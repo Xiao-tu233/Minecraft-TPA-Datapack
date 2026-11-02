@@ -29,11 +29,9 @@ function tpa:sounds/levelup
 data remove storage tpa:tpa temp.output
     execute store result storage tpa:tpa temp.output.current_page int 1 run scoreboard players get #home.page.result tpa.variables
     execute store result storage tpa:tpa temp.output.total_pages int 1 run scoreboard players get #home.total_pages tpa.variables
-    execute store result storage tpa:tpa temp.output.start_index int 1 run scoreboard players get #home tpa.variables
-    data modify storage tpa:tpa temp.output.start_index set string storage tpa:tpa temp.output.start_index
-#                                                                                                      /-> #home.end defined @ tpa:home/scan
-    execute store result storage tpa:tpa temp.output.end_index int 1 run scoreboard players get #home.end tpa.variables
-    data modify storage tpa:tpa temp.output.end_index set string storage tpa:tpa temp.output.end_index
+
+    data modify storage tpa:tpa temp.output.start_index set string storage tpa:tpa temp.home_page_entries[0].id
+    data modify storage tpa:tpa temp.output.end_index set string storage tpa:tpa temp.home_page_entries[-1].id
     execute store result storage tpa:tpa temp.output.total_slots int 1 run scoreboard players get #home.max_id tpa.variables
     data modify storage tpa:tpa temp.output.total_slots set string storage tpa:tpa temp.output.total_slots
 
