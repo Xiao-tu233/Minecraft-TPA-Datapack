@@ -41,6 +41,12 @@ home_create_button: "[§a新建§r]"
 home_create_button_hoverevent: "§a點擊以設定一個傳送點"
 home_disabled: "§a傳送點§r已被伺服器停用"
 home_display: "§b傳送點#"
+home_button_rm: 移除
+home_button_rm_hoverevent: §b點擊以移除呢個傳送點
+home_button_set: 設定
+home_button_set_hoverevent: §a點擊以將呢個傳送點設喺目前位置
+home_button_tp: 傳送
+home_button_tp_hoverevent: §a點擊傳送呢個傳送點
 home_menu_title: "你目前有以下傳送點欄位: "
 home_missing_hoverevent: "呢個傳送點尚未設定"
 home_new: "§a新建: "
@@ -48,6 +54,12 @@ home_not_found: "你前往嘅傳送點#%s並不存在"
 home_number: "傳送點#"
 home_out_of_range: "你前往嘅傳送點#%s超出伺服器限制"
 home_remove: "你移除咗傳送點#%s"
+home_selector_title: 私人傳送點列表
+home_selector_index: '%2$s項傳送點中的第%1$s項'
+home_selector_button_previous_page: ◀ 上一頁
+home_selector_button_previous_page_hoverevent: §b點擊查看上一頁
+home_selector_button_next_page: 下一頁 ▶
+home_selector_button_next_page_hoverevent: §b點擊查看下一頁
 home_set: "你將傳送點#%1$s設定為%2$s"
 home_set_position: "座標"
 home_unavail: "目前狀態下無法操作§a傳送點§r"

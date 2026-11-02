@@ -41,6 +41,12 @@ home_create_button: '[§aCreate§r]'
 home_create_button_hoverevent: §aClick to set a home
 home_disabled: Server haven't enabled §aHome§r
 home_display: §bHome#
+home_button_rm: Remove
+home_button_rm_hoverevent: §cClick to remove the home
+home_button_set: Set
+home_button_set_hoverevent: §aClick to set the coordinates of the home at our current position
+home_button_tp: Teleport
+home_button_tp_hoverevent: §bClick to teleport to the home
 home_menu_title: 'You own now following homes slot: '
 home_missing_hoverevent: This home hasn't been set
 home_new: '§aCreate: '
@@ -48,6 +54,12 @@ home_not_found: The Home#%s doesn't exist
 home_number: Home#
 home_out_of_range: The Home#%sis out of the server limit.
 home_remove: You removed Home#%s
+home_selector_title: Home List
+home_selector_index: 'Home %1$s of %2$s'
+home_selector_button_previous_page: ◀ Previous Page
+home_selector_button_previous_page_hoverevent: §bClick to turn to the previous page
+home_selector_button_next_page: Next Page ▶
+home_selector_button_next_page_hoverevent: §bClick to turn to the next page
 home_set: You have set Home#%1$sat%2$s
 home_set_position: Positon
 home_unavail: You are not allowed to use the §aTeleport Book§r in the current state

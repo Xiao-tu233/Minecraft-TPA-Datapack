@@ -41,6 +41,12 @@ home_create_button: "[§a새로 만들기§r]"
 home_create_button_hoverevent: "§a클릭하여 텔레포트 지점을 설정합니다"
 home_disabled: "§a텔레포트 지점§r이 서버에서 비활성화되어 있습니다"
 home_display: "§b텔레포트 지점 #"
+home_button_rm: 제거
+home_button_rm_hoverevent: §c클릭하여 이 텔레포트 지점을 삭제합니다
+home_button_set: 설정
+home_button_set_hoverevent: §a클릭하여 현재 위치에 텔레포트 지점 좌표를 설정합니다
+home_button_tp: 텔레포트
+home_button_tp_hoverevent: §b클릭하여 이 텔레포트 지점으로 이동합니다
 home_menu_title: "현재 다음 텔레포트 지점 슬롯을 사용하고 있습니다: "
 home_missing_hoverevent: "이 텔레포트 지점은 아직 설정되지 않았습니다"
 home_new: "§a새로 만들기: "
@@ -48,6 +54,12 @@ home_not_found: "접근하려는 텔레포트 지점 #%s이(가) 존재하지 �
 home_number: "텔레포트 지점 #"
 home_out_of_range: "접근하려는 텔레포트 지점 #%s이(가) 서버 제한을 초과했습니다"
 home_remove: "텔레포트 지점 #%s을(를) 삭제했습니다"
+home_selector_title: 개인 텔레포트 지점 목록
+home_selector_index: '%2$s개의 텔레포트 지점 중 %1$s번째'
+home_selector_button_previous_page: ◀ 이전 페이지
+home_selector_button_previous_page_hoverevent: §b클릭하여 이전 페이지를 봅니다
+home_selector_button_next_page: 다음 페이지 ▶
+home_selector_button_next_page_hoverevent: §b클릭하여 다음 페이지를 봅니다
 home_set: "텔레포트 지점 #%1$s을(를) %2$s(으)로 설정했습니다"
 home_set_position: "좌표"
 home_unavail: "현재 상태에서는 §a텔레포트 지점§r을 사용할 수 없습니다"
