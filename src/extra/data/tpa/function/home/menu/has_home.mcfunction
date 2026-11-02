@@ -44,7 +44,7 @@ data remove storage tpa:tpa temp.output
     data modify storage tpa:tpa temp.output.button_previous_page_hover set from storage tpa:tpa loaded_lang.home_selector_button_previous_page_hoverevent
     data modify storage tpa:tpa temp.output.button_next_page_hover set from storage tpa:tpa loaded_lang.home_selector_button_next_page_hoverevent
 
-    execute if score #home.editting tpa.variables matches 1 if score #home.page.result tpa.variables = #home.total_pages tpa.variables run function tpa:home/menu/prepare_add_button
+    execute if score #home.page.result tpa.variables = #home.total_pages tpa.variables run function tpa:home/menu/prepare_add_button
 function tpa:output/home/menu
 
 # Dialogs
