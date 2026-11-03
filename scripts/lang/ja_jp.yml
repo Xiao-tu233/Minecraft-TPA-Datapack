@@ -4,9 +4,9 @@ name_display: 日本語（日本）
 header: '[§bTPA§r] '
 back_act: 前回の位置にテレポートしました
 back_disabled: §a前回の位置に戻り§rはサーバーで無効になっています
-back_not_exist: 前回の位置を見つかりしませんでした
-back_remove: 自分の前の位置が削除されました
-back_reset: 皆んなプレイヤーの前の位置がリセットされました
+back_not_exist: 前回の位置が見つかりませんでした
+back_remove: 前回の位置が削除されました
+back_reset: 全プレイヤーの前回の位置をリセットしました
 back_unavail: 現在の状態では§a前の位置に戻る§rことはできません
 book_check_missing: TPAブックが失われたため、再度付与しました
 book_disabled: §aTPAブック§rはサーバーで無効になっています
@@ -18,7 +18,7 @@ book_reget: '[§b再取得§r]'
 book_reget_hoverevent: §bクリックしてTPAブックを再取得
 book_stacking: TPAブックが複数検出されたため、リセットしました
 book_stop: §aTPAブック§rの使用を停止しました。TPAメニューで再取得できます
-book_title: '§r§b你TPAメニューの本 §a[投げてリフレッシュ] '
+book_title: '§r§bTPAメニューの本 §a[投げてリフレッシュ] '
 book_unavail: 現在の状態では§aテレポートブック§rを使用できません
 dialog: ダイアログメニューを開きました
 dimension_menu_button: '[§bディメンション設定メニュー§r]'
@@ -195,10 +195,10 @@ recver_accept_auto_hoverevent: §bあなたにテレポートリクエストを�
 recver_accept_auto: "%sさんのテレポートリクエストを自動承認しました"
 recver_accept_toggle_off: §a自動承認§rをオフにしました
 recver_accept_toggle_on: §a自動承認§rをオンにしました
-recver_accept_tpa_hoverevent: §b承認したテレポートリクエストのプレイヤー
+recver_accept_tpa_hoverevent: §bテレポートリクエストを承認したプレイヤー
 recver_accept_tpa: '%sさんのテレポートリクエストを承認しました'
-recver_accept_tpahere_hoverevent: §b承認した§lこちらへのテレポート§rリクエストのプレイヤー
-recver_accept_tpahere: '%sさんの§lこちらへのテレポート§rリクエストを承認しました'
+recver_accept_tpahere_hoverevent: §b§lあちらへの§rテレポートリクエストを承認した§rのプレイヤー
+recver_accept_tpahere: '%sさんの§lところへ§rテレポートするリクエストを承認しました'
 recver_cancel_hoverevent: §bキャンセルしたプレイヤー
 recver_cancel: '%sさんがリクエストをキャンセルしました'
 recver_deny_tpa_hoverevent: §bテレポートリクエストを拒否したプレイヤー
