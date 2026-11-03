@@ -3,9 +3,9 @@
          int temp.output.index_format, List[3] temp.output.index, \
          str temp.output.button_previous_page, str temp.output.button_next_page, str temp.output.button_previous_page_hover, str temp.output.button_next_page_hover, \
          List[5] temp.output.slots: \
-            str|int temp.output.slots[].color, List[2] temp.output.slots[].label.display, int temp.output.slots[].label.id, \
+            str|int temp.output.slots[].color, Text temp.output.slots[].label, \
             str temp.output.slots[].tooltip.x, str temp.output.slots[].tooltip.y, str temp.output.slots[].tooltip.z, \
-            str temp.output.slots[].tooltip.dimension, str temp.output.slots[].tooltip.hoverevent_location, \
+            str temp.output.slots[].tooltip.dimension, str temp.output.slots[].tooltip.hoverevent_location, str temp.output.slots[].tooltip.missing, \
             Button temp.output.slots[].button_tp, Button temp.output.slots[].button_set, Button temp.output.slots[].button_rm, \
             Button temp.output.button_add
 #! For legacy version below 1.20.2, input temp.output.slots[].color is an integer and follows this mapping: {-1: "red", 0: "green", 1: "light_purple"}
@@ -31,7 +31,7 @@ tellraw @s[predicate=tpa:output/show_chatbar] [{text: "------------ ", color: "w
 data modify storage tpa:tpa temp.output.selector_index set value []
 data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.index[0]
 execute if score #output.index_format tpa.variables matches 0 run function tpa:output/selector/append_indexes
-execute if score #output.index_format tpa.variables matches 1 run data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.total_slots
+execute if score #output.index_format tpa.variables matches 1..2 run data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.total_slots
 data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.index[1]
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.total_slots
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/selector/append_indexes
@@ -49,7 +49,7 @@ data modify storage tpa:tpa temp.args.color_3 set from storage tpa:tpa temp.outp
 data modify storage tpa:tpa temp.args.color_4 set from storage tpa:tpa temp.output.slots[4].color
 function tpa:output/home/menu_macro with storage tpa:tpa temp.args
 
-tellraw @s {text: "  ", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[1]"}], hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.tooltip"}}, click_event: {action: "run_command", command: "/trigger tpa.home set -9"}}
+tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[1]"}], hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.tooltip"}}, click_event: {action: "run_command", command: "/trigger tpa.home set -9"}}]
 
 execute store result score #output.editting tpa.variables run data get storage tpa:tpa temp.output.editting
 execute if score #output.current_page tpa.variables matches ..1 run function tpa:output/selector/disabled/previous_page
@@ -57,8 +57,11 @@ execute if score #output.current_page tpa.variables matches 2.. run function tpa
 execute if score #output.current_page tpa.variables >= #output.total_pages tpa.variables run function tpa:output/selector/disabled/next_page
 execute if score #output.current_page tpa.variables < #output.total_pages tpa.variables run function tpa:output/selector/enabled/next_page
 
+
 tellraw @s[predicate=tpa:output/show_chatbar] ["", \
-    {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.previous_page.brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.home set -2"}, hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_previous_page_hover", color: "aqua"}, "(", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.previous_page", color: "green"}, {text: "/", color: "gray"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.total_pages", color: "white"}, ")"]}, color: "white", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.previous_page.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.previous_page.brackets[1]"}]}, \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[0]", color: "gray", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[1]", color: "gray"}]}, \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.previous_page.brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.home set -2"}, hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_previous_page_hover", color: "aqua"}, "(", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.previous_page", color: "green"}, {text: "/", color: "gray"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.total_pages", color: "white"}, ")"]}, color: "white", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.previous_page.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.previous_page.brackets[1]"}]}, \
     "                ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.next_page.brackets[0]", color: "gray", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.next_page.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.next_page.brackets[1]", color: "gray"}]}, \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.next_page.brackets[0]", click_event: {action: "run_command", command: "/trigger tpa.home set -8"}, hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_next_page_hover", color: "aqua"}, "(", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.next_page", color: "green"}, {text: "/", color: "gray"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.total_pages", color: "white"}, ")"]}, color: "white", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.next_page.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.enabled.next_page.brackets[1]"}]}, \
 ]

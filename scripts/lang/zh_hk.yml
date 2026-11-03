@@ -1,5 +1,5 @@
 id: 5
-name: "zh_hk"
+name: zh_hk
 name_display: "繁體中文(香港特別行政區)"
 header: "[§bTPA§r] "
 back_act: "已將你傳送到上一個位置"
@@ -37,19 +37,21 @@ here_voxel_hoverevent: "§b點擊以新增VoxelMap路徑點"
 here_xaero_hoverevent: "§6點擊以新增Xaero's Minimap路徑點"
 home_act: "已將你傳送到傳送點#%s"
 home_create: "你尚未建立傳送點"
-home_create_button: "[§a新建§r]"
-home_create_button_hoverevent: "§a點擊以設定一個傳送點"
+home_button_add: "§a新建: §b傳送點#%s"
+home_button_create: "§a建立§r"
+home_button_create_hoverevent: §b點擊建立一個傳送點
+home_button_add_hoverevent: "§a點擊以設定一個傳送點"
 home_disabled: "§a傳送點§r已被伺服器停用"
-home_display: "§b傳送點#"
+home_display: "傳送點#"
 home_button_rm: 移除
 home_button_rm_hoverevent: §b點擊以移除呢個傳送點
 home_button_set: 設定
 home_button_set_hoverevent: §a點擊以將呢個傳送點設喺目前位置
 home_button_tp: 傳送
 home_button_tp_hoverevent: §a點擊傳送呢個傳送點
+home_hoverevent_location: '%2$s中的%1$s'
 home_menu_title: "你目前有以下傳送點欄位: "
 home_missing_hoverevent: "呢個傳送點尚未設定"
-home_new: "§a新建: "
 home_not_found: "你前往嘅傳送點#%s並不存在"
 home_number: "傳送點#"
 home_out_of_range: "你前往嘅傳送點#%s超出伺服器限制"
@@ -60,6 +62,7 @@ home_selector_button_previous_page: ◀ 上一頁
 home_selector_button_previous_page_hoverevent: §b點擊查看上一頁
 home_selector_button_next_page: 下一頁 ▶
 home_selector_button_next_page_hoverevent: §b點擊查看下一頁
+home_selector_page_empty: 總共有%s個傳送點欄位，本頁未有已設定嘅傳送點
 home_set: "你將傳送點#%1$s設定為%2$s"
 home_set_position: "座標"
 home_unavail: "目前狀態下無法操作§a傳送點§r"

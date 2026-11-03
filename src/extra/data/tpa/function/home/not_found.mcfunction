@@ -1,4 +1,5 @@
 # Parent function: tpa:home
+function tpa:sounds/no
 data remove storage tpa:tpa temp.output
 data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_lang.home_not_found
 execute store result storage tpa:tpa temp.output.arg int 1 run scoreboard players get #home tpa.variables

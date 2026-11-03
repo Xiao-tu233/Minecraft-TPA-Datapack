@@ -35,7 +35,7 @@ Project To-do lists:
 ## Release blockers (“什么问题会阻止发版？”)
 - [ ] edit docs
 - [ ] main entries of book, search_id, tp_pos
-- [ ] back, home 的数据存储格式
+- [x] back, home 的数据存储格式
 
 ## Architecture Refactor (“什么结构已经撑不住了？”)
 
@@ -299,6 +299,16 @@ Project To-do lists:
    - 当对话框显示为开时 对应菜单仅在对话框显示 不再在聊天栏/动作栏显示  同时在通知输出位置提示对话框已打开 附按钮作为fallback输出聊天栏/动作栏 如果对话框菜单没有被正确渲染
 - [x] 考虑把 Quick Action of Dialog 用emoji表情或者其他字符而不是语言来写label
 - [ ] Rewrite tp_pos with data storage
+- [x] home current bugs:
+      - [x] 没有home时触发home时的语言没有正常显示
+      - [x] 新建按钮会超出服务器限制 "[新建: 传送点#4/3]"
+      - [x] 移除时会响传送音效而不是点击音效
+      - [x] 移除和设置时菜单音效错误地响起
+      - [x] 传送点# 这几个字的颜色错误地为青色
+      - [x] missing槽位的新建按钮前面多了一个空格 并考虑悬停文本显示新建会好一点
+      - [x] #home tpa.config = -1 时 home直接罢工
+      - [x] home_selector_page_empty 没有正常地被套用 
+      - [x] 玩家页码错误时 不会自动设置回去 (页码没有被正确的检查)
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index

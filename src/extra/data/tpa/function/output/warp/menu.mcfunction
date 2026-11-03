@@ -54,7 +54,7 @@ data modify storage tpa:tpa temp.args.color_3 set from storage tpa:tpa temp.outp
 data modify storage tpa:tpa temp.args.color_4 set from storage tpa:tpa temp.output.slots[4].color
 function tpa:output/warp/menu_macro with storage tpa:tpa temp.args
 
-tellraw @s {text: "  ", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[1]"}], hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.tooltip"}}, click_event: {action: "run_command", command: "/function tpa:warp/add"}}
+tellraw @s[predicate=tpa:output/show_chatbar] {text: "  ", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[1]"}], hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.tooltip"}}, click_event: {action: "run_command", command: "/function tpa:warp/add"}}
 
 execute store result score #output.editting tpa.variables run data get storage tpa:tpa temp.output.editting
 execute if score #output.current_page tpa.variables matches ..1 run function tpa:output/selector/disabled/previous_page

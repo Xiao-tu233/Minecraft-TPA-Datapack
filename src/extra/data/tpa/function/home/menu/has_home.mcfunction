@@ -3,6 +3,9 @@
 # Storage Format:
 # {id: int, uid: int, x: int, y: int, z: int, dimension: string(minecraft:dimension)}
 
+# A saved page can outlive the last page after a high Home is removed.
+execute if score #home.page.result tpa.variables > #home.total_pages tpa.variables run function tpa:home/page/clamp
+
 # Check is the last page
 scoreboard players operation #home.slots_on_last_page tpa.variables = #home.max_id tpa.variables
 scoreboard players operation #home.slots_on_last_page tpa.variables %= #5 tpa.variables
@@ -23,28 +26,28 @@ function tpa:home/menu/append_home
 function tpa:home/menu/append_home
 data modify storage tpa:tpa temp.home_result set from storage tpa:tpa temp.home_page_entries
 
-function tpa:sounds/levelup
+execute if score #home.plays_menu_sound tpa.variables matches 1 run function tpa:sounds/levelup
 
 # Output
 data remove storage tpa:tpa temp.output
     execute store result storage tpa:tpa temp.output.current_page int 1 run scoreboard players get #home.page.result tpa.variables
     execute store result storage tpa:tpa temp.output.total_pages int 1 run scoreboard players get #home.total_pages tpa.variables
-
-    data modify storage tpa:tpa temp.output.start_index set string storage tpa:tpa temp.home_page_entries[0].id
-    data modify storage tpa:tpa temp.output.end_index set string storage tpa:tpa temp.home_page_entries[-1].id
     execute store result storage tpa:tpa temp.output.total_slots int 1 run scoreboard players get #home.max_id tpa.variables
     data modify storage tpa:tpa temp.output.total_slots set string storage tpa:tpa temp.output.total_slots
-
     data modify storage tpa:tpa temp.output.title set from storage tpa:tpa loaded_lang.home_selector_title
-    data modify storage tpa:tpa temp.output.index_format set from storage tpa:tpa loaded_lang.home_selector_index_format
-    data modify storage tpa:tpa temp.output.index set from storage tpa:tpa loaded_lang.home_selector_index
+
+    execute unless data storage tpa:tpa temp.home_result[0] run function tpa:home/menu/page_empty
+    execute if data storage tpa:tpa temp.home_result[0] run function tpa:home/menu/page_normal
+
     function tpa:home/menu/prepare_output
     data modify storage tpa:tpa temp.output.button_previous_page set from storage tpa:tpa loaded_lang.home_selector_button_previous_page
     data modify storage tpa:tpa temp.output.button_next_page set from storage tpa:tpa loaded_lang.home_selector_button_next_page
     data modify storage tpa:tpa temp.output.button_previous_page_hover set from storage tpa:tpa loaded_lang.home_selector_button_previous_page_hoverevent
     data modify storage tpa:tpa temp.output.button_next_page_hover set from storage tpa:tpa loaded_lang.home_selector_button_next_page_hoverevent
 
-    execute if score #home.page.result tpa.variables = #home.total_pages tpa.variables run function tpa:home/menu/prepare_add_button
+    scoreboard players set #home.allows_add tpa.variables 1
+    execute if score #home.max_id tpa.variables >= #home tpa.config if score #home tpa.config matches 1.. run scoreboard players set #home.allows_add tpa.variables 0
+    execute if score #home.page.result tpa.variables = #home.total_pages tpa.variables if score #home.allows_add tpa.variables matches 1 run function tpa:home/menu/prepare_add_button
 function tpa:output/home/menu
 
 # Dialogs

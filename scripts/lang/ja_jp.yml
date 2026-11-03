@@ -37,19 +37,21 @@ here_voxel_hoverevent: §bクリックしてVoxelMapのパスを追加
 here_xaero_hoverevent: §6クリックしてXearo's Minimapのパスを追加
 home_act: テレポート先#にテレポートしました%s
 home_create: ホームがまだ設定されていません
-home_create_button: '[§a新しく設定§r]'
-home_create_button_hoverevent: §aクリックしてホームを設定
+home_button_add: "§a新規作成: §bホーム#%s"
+home_button_create: "§a作成§r"
+home_button_create_hoverevent: §bクリックしてホームを作成
+home_button_add_hoverevent: "§aクリックして新しいホームを設定"
 home_disabled: §aホーム§rはサーバーで無効化されています
-home_display: §bホーム#
+home_display: ホーム#
 home_button_rm: 削除
 home_button_rm_hoverevent: §cクリックしてこのホームを削除
 home_button_set: 設定
 home_button_set_hoverevent: §aクリックして現在地にホームの座標を設定
 home_button_tp: テレポート
 home_button_tp_hoverevent: §bクリックしてこのホームにテレポート
+home_hoverevent_location: '%2$s内の座標：%1$s'
 home_menu_title: '現在、次のホームスロットがあります: '
 home_missing_hoverevent: このホームはまだ設定されていません
-home_new: '§a新しく設定: '
 home_not_found: アクセスしたホーム#%sが存在しません
 home_number: ホーム#
 home_out_of_range: アクセスしたホーム#%sがサーバーの制限を超えています
@@ -60,6 +62,7 @@ home_selector_button_previous_page: ◀ 前のページ
 home_selector_button_previous_page_hoverevent: §bクリックして前のページを表示
 home_selector_button_next_page: 次のページ ▶
 home_selector_button_next_page_hoverevent: §bクリックして次のページを表示
+home_selector_page_empty: ホームスロットは合計%s個です。このページには設定済みのホームがありません
 home_set: ホーム#を%1$s設定しました%2$s
 home_set_position: 位置
 home_unavail: 現在の状態では§aホーム§rを利用できません。
@@ -392,20 +395,20 @@ update_step5_button: §b[ロード]
 update_step5_hoverevent: クリックしてデータパックをロード
 update_step5_rightpart: ' 不明なスコア項目が表示された場合はステップ3から確認してください。これはデータパックのインストールバージョンの不一致や不明な値が原因です。その他の問題は Xiao_tu233 に問い合わせてください'
 update_nextstep: §b[次へ]
-warp_button_add: '[§a新しいワープ§r]'
+warp_button_add: '§a新しいワープ§r'
 warp_button_add_hoverevent: §bクリックして現在位置に新しいワープを作成
-warp_button_apply: '[§a適用§r]'
+warp_button_apply: '§a適用§r'
 warp_button_apply_hoverevent: §bクリックしてキャッシュされた変更を適用
-warp_button_cancel: '[§cキャンセル§r]'
+warp_button_cancel: '§cキャンセル§r'
 warp_button_cancel_hoverevent: §bクリックしてキャッシュされた変更を破棄
-warp_button_enable: '[§a有効化§r]'
+warp_button_enable: '§a有効化§r'
 warp_button_enable_hoverevent: §bクリックしてこのワープを有効化
-warp_button_disable: '[§c無効化§r]'
+warp_button_disable: '§c無効化§r'
 warp_button_disable_hoverevent: §bクリックしてこのワープを無効化（名前以外の情報は非表示、有効化で確認可能）
-warp_button_moveup: '[§d上に移動§r]'
+warp_button_moveup: '§d上に移動§r'
 warp_button_moveup_hoverevent: §bクリックしてこのワープを上のワープと位置を入れ替え
 warp_button_moveup_notavail_hoverevent: §c上に移動できません。このワープはすでに最上部です
-warp_button_movedown: '[§d下に移動§r]'
+warp_button_movedown: '§d下に移動§r'
 warp_button_movedown_hoverevent: §bクリックしてこのワープを下のワープと位置を入れ替え
 warp_button_tp: '§bテレポート§r'
 warp_button_tp_hoverevent: §bクリックしてこのワープにテレポート
@@ -437,7 +440,7 @@ warp_edit_target_name: '%sの名前'
 warp_edit_target_desc: '%sの説明'
 warp_edit_unsaved_warn: 未適用の変更があります：%1$sを%2$sに変更します。「適用」をクリックすると変更を保存し、「キャンセル」をクリックすると変更を破棄します。
 warp_edit_unsaved_warn_dialog_title: ワープ編集：未適用の変更
-warp_hoverevent_location: '%2$s件中%1$s'
+warp_hoverevent_location: '%2$s内の座標：%1$s'
 warp_number: ワープ#
 warp_out_of_range: このワープは未設定です
 warp_select: '%sを編集中のスロットとして選択しました'

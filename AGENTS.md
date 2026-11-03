@@ -131,6 +131,17 @@ Home 的 `get`、`set`、`remove` 接口通过 `home/scan` 使用哨兵旋转。
 可通过同一套扫描逻辑收集当前 UID 的多个 Home。`home/capture` 只构造候选
 数据，`home/upsert` 负责替换或追加，`home/set` 负责组合二者。
 
+Home 菜单不依赖 `home[]` 物理列表的顺序来生成页面：
+`home/menu/has_home` 从当前页的起始 ID 开始，按递增 ID 多次调用精确的
+`tpa:home/get`，只将找到的 Home 追加到 `temp.home_page_entries`。因此传给
+`home/menu/prepare_output` 的输入是按 ID 升序排列、且只包含已存在 Home 的列表，
+长度可以小于 5；缺失槽位由输出准备阶段根据 `#home.max_id` 补成可设置的槽位，
+超过最大 ID 的槽位则保持为空。
+
+Home 页码在 `home_pages` 中按 UID 持久化。`home/page/set_max_id` 会更新该玩家
+记录中的最大 Home ID，但它本身不负责把当前页码限制到新的总页数；删除高位 Home
+或旧页码超过新页数时，必须在菜单流程中显式验证并处理页码回退。
+
 Warp 主存储也是列表：`warp[0]` 是元数据，真正的公共传送点从 `warp[1]` 开始；
 Warp 没有独立的 index 键，列表位置就是索引。Warp 条目使用小写 `dimension`。
 `tpa:update/from_206/warp` 会保留 `warp[0]`，并将旧 `dim`/`Dimension` 转换为
@@ -249,6 +260,10 @@ temp.teleport.Dimension
   不应擅自把它当作新功能入口。
 - 语言格式化已支持 `%s` / `%1$s` 形式的参数顺序，并生成参数拆分及
   `_format` 信息。
+- `sync_lang.py` 生成的语言 `_format` 键是参数排列的机器元数据，不是待翻译文本。
+  例如 `Some language %1$s other languages %2$s more languages` 会被拆成三个
+  文本片段，并生成 `_format: 0`；`0` 表示参数仍按 `1, 2` 的自然顺序排列。
+  翻译者应编辑原始字符串，不要手动翻译、删除或重命名这些 `_format` 键。
 - 主包已迁移到 `src/extra` 构建架构；版本特有手写内容放在
   `src/extra/<version>/data`，通用语法转换放在 `scripts/build_rules/`。
 - Home 的列表式 `get`、`set`、`remove` 接口和 Warp 的 `dimension` 字段迁移流程
@@ -316,10 +331,27 @@ data modify storage tpa:tpa temp.output.arg set string storage tpa:tpa temp.outp
 ### 菜单交互
 
 - 禁用按钮没有点击事件，hover 直接说明不可用原因；不要依赖“点击后才报错”。
+- Home 菜单允许使用“有点击事件”和“无点击事件”的并排文本组件来切换按钮状态：
+  通过让其中一个分支的 label 为空来控制实际显示的分支，同时控制颜色和是否带有
+  click event。未显示分支的空 label、缺少按钮数据或静态模板中的点击事件不应直接
+  判定为 bug；审查时应检查最终渲染出的文本和可点击区域。
 - 按钮外侧方括号由调用处硬编码，语言键只保存按钮正文，避免各语言重复定义边框。
 - 按钮边框色统一为：无点击事件灰色；普通可用白色；需要 OP 金色。
 - 翻页按钮边框白色、正文青色；翻页后仍显示相应的菜单标题。
 - 请求列表只显示游戏名并以灰色 `|` 分隔，不在名称前额外显示 trigger 数字。
+- `home/menu/has_home` 在构造 Home 输出前负责重置 `temp.output`；Home 输出函数
+  可以假定输入缓存已经是本次菜单的新数据，不需要重复清理或复用上一次菜单的
+  `temp.output`。
+- Home 页面没有有效条目时不要伪造 `start_index-end_index`（例如 `0-0`）。
+  这种情况应使用独立语言键，例如
+  `home_selector_page_empty: "共 %s 个传送点槽位，本页暂无已设置的传送点"`；
+  “已设置”比“有效”更准确，因为这里表达的是槽位为空，而不是数据校验失败。
+  `home_selector_index` 或页面范围文本只应在确实存在条目时显示真实 ID 范围；
+  空页使用 `home_selector_page_empty`，不要复用范围格式。
+  当前 `output/home/menu` 会消费这些摘要字段，并通过 `output/selector/append_indexes`
+  组装非空页的 ID 范围；空页使用独立的 `index_format: 2`，只插入
+  `total_slots`，不能让格式解析器去读取不存在的 `start_index`、`en_dash` 或
+  `end_index`。
 
 ### 玩家、假人与文本解析
 

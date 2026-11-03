@@ -9,6 +9,9 @@ function tpa:home/page/get
 execute if score #home tpa.variables > #home.max_id tpa.variables run scoreboard players operation #home.max_id tpa.variables = #home tpa.variables
 function tpa:home/page/set_max_id
 
+function tpa:home/menu
+
+function tpa:sounds/pick_orb
 # Outputs
 data remove storage tpa:tpa temp.output
 data modify storage tpa:tpa temp.output.langs set from storage tpa:tpa loaded_lang.home_set

@@ -256,7 +256,7 @@ def load_workbench() -> Workbench:
 
     try:
         raw = load_yaml(TODO_PATH, {})
-    except yaml.YAMLError:
+    except YAMLError:
         # The old section-based file is not valid YAML. It is still supported
         # so the first run can migrate it instead of losing its pending keys.
         return load_legacy_workbench()

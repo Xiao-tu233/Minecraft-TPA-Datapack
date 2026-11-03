@@ -8,4 +8,4 @@ scoreboard players set #home.trigger_state tpa.variables 0
 function tpa:load_lang
 
 execute if score #home tpa.config matches 0 run function tpa:home/disabled
-execute if score #home tpa.config matches 1.. run function tpa:home/enabled
+execute unless score #home tpa.config matches 0 run function tpa:home/enabled
