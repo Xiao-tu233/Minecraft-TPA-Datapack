@@ -167,8 +167,8 @@ option_sim_dist_hoverevent: '§b以下で§aシミュレーション距離を変
 option_stricter_book_check: テレポートブックのより厳密なチェック
 option_stricter_book_check_incompatible: このバージョンでは厳密なテレポートブックチェックは互換性がありません
 option_stricter_book_check_disabled: この機能にはBookshelfデータパックが必要ですが、サーバーにはインストールされていません。
-option_time_out: テレポートリクエストのタイムアウト時間
-option_time_out_hoverevent: '§b以下で§aテレポートリクエストのタイムアウト時間を変更§r(§6単位: 1ティック=1/20秒§r)、§b0で禁止、§b-1で無限'
+option_time_out: テレポートリクエストの有効期限
+option_time_out_hoverevent: '§b以下で§aテレポートリクエストの有効期限を変更§r(§6単位: 1ティック=1/20秒§r)、§b0で禁止、§b-1で無限'
 option_title_line1: ===================§bTPA§6 設定メニュー§r===================
 option_title_line2: '以下で設定を調整してください: (変更を確認するにはメニューを再度開く必要があります)'
 option_tp_pos: テレポート座標許可範囲

@@ -309,6 +309,9 @@ Project To-do lists:
       - [x] #home tpa.config = -1 时 home直接罢工
       - [x] home_selector_page_empty 没有正常地被套用 
       - [x] 玩家页码错误时 不会自动设置回去 (页码没有被正确的检查)
+- [x] 语言优化
+      - [x] 日语 英语核心功能措辞优化
+      - [x] 新增韩语粤语
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index

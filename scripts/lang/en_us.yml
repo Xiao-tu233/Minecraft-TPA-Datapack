@@ -207,51 +207,51 @@ option_uses_tick_scheduling: Use /schedule command to call the Tick function
 output_default: You have changed the output position to §aBOTH CHATBAR AND ACTIONBAR§r
 output_hide_actionbar: You have changed the output position to §bCHATBAR ONLY§r
 output_hide_chatbar: You have changed the output position to §aACTIONBAR ONLY§r
-recver_accept_auto_hoverevent: §bPlayer who sent you a teleport request
-recver_accept_auto: Have automatically accepted%s's teleport request'
-recver_accept_toggle_off: You have disabled §aalways-accept§r
-recver_accept_toggle_on: You have enabled §aalways-accept§r
-recver_accept_tpa_hoverevent: §bThe player who sent you a teleport request
-recver_accept_tpa: You accepted%s's teleport request
-recver_accept_tpahere_hoverevent: '§bPlayer whose §ltpahere§r request you have accepted '
-recver_accept_tpahere: You accepted to teleport you to%s's place.
-recver_cancel_hoverevent: §bwho has canceled the request to you
-recver_cancel: '%shas cancelled the request to you'
-recver_deny_tpa_hoverevent: §bThe player who sent you a teleport request
-recver_deny_tpa: You denied%s's teleport request
-recver_deny_tpahere_hoverevent: '§bPlayer whose §ltpahere§r request you have denied '
-recver_deny_tpahere: You denied to teleport you to%s's place.
-recver_recv_button_accept: '[§aACCEPT§r]'
+recver_accept_auto_hoverevent: §bThe player who sent you the teleport request
+recver_accept_auto: 'A teleport request from %s has been automatically accepted'
+recver_accept_toggle_off: You have disabled §aAlways-Accept§r
+recver_accept_toggle_on: You have enabled §aAlways-Accept§r
+recver_accept_tpa_hoverevent: §bThe player who sent you the teleport request
+recver_accept_tpa: You have accepted the teleport request from %s
+recver_accept_tpahere_hoverevent: '§bThe player who requested that you teleport to them'
+recver_accept_tpahere: You have accepted the request that teleports you to %s
+recver_cancel_hoverevent: §bThe player who canceled the request
+recver_cancel: '%s has cancelled the request'
+recver_deny_tpa_hoverevent: §bThe player who sent you the teleport request
+recver_deny_tpa: You have declined the teleport request from %s
+recver_deny_tpahere_hoverevent: '§bThe player who requested that you teleport to them'
+recver_deny_tpahere: You have refused to teleport you to %s
+recver_recv_button_accept: '[§aAccept§r]'
 recver_recv_button_accept_hoverevent: §bClick to accept the request
-recver_recv_button_deny: '[§cDENY§r]'
-recver_recv_button_deny_hoverevent: §bClick to deny the request
+recver_recv_button_deny: '[§cDecline§r]'
+recver_recv_button_deny_hoverevent: §bClick to decline the request
 recver_accept_multiple_received: You currently have multiple teleport requests. Please select the request you want to 
   accept
 recver_accept_selector_title: Received Requests
-recver_recv_tpa_actionbar: '%ssent you a teleport request. Nod 3 times to accept, shake head 3 times to deny.'
-recver_recv_tpa_chatbar: '%ssent you a teleport request'
-recver_recv_tpa_hoverevent: §bThe player who sent you a teleport request
-recver_recv_tpahere_actionbar: '%ssent you a §ltpahere§r request. Nod 3 times to accept, shake head 3 times to deny.'
-recver_recv_tpahere_chatbar: '%ssent you a §ltpahere§r request'
-recver_recv_tpahere_hoverevent: §bThe player who sent you a §ltpahere§r request
+recver_recv_tpa_actionbar: '%s sent you a teleport request. Accept it with /trigger tpaccept'
+recver_recv_tpa_chatbar: '%s sent you a teleport request'
+recver_recv_tpa_hoverevent: §bThe player who sent you the teleport request
+recver_recv_tpahere_actionbar: '%s requested you to teleport there. Accept it with /trigger tpaccept'
+recver_recv_tpahere_chatbar: '%s requested you to teleport to them'
+recver_recv_tpahere_hoverevent: §bThe player who sent you the request
 recver_req_invalid: Your request to %s has been removed since the target player is unavailable (offline or unable to 
   teleport)
-recver_req_invalid_hoverevent: §bThe player you sent a request to
+recver_req_invalid_hoverevent: §bThe target player you have sent the request to
 recver_req_not_exist: No pending requests to process
-recver_timeout_hoverevent: §bThe player whose request to you timed out
-recver_timeout: '%s''s teleport request timed out'
+recver_timeout_hoverevent: §bThe player whose request to you has expired
+recver_timeout: '%s''s teleport request has expired'
 reqer_accept_auto_hoverevent: §bThe player who auto-accepted your teleport request
-reqer_accept_auto: The player enabled always-accept, teleporting you to %s...
+reqer_accept_auto: The player has enabled Always-Accept, teleporting you to %s...
 reqer_accept_tpa_hoverevent: §bThe player who accepted your teleport request
-reqer_accept_tpa: Teleporting to %s...
-reqer_accept_tpahere_hoverevent: §bThe player who accepted your §ltpahere§r request
-reqer_accept_tpahere: Teleporting %sto you...
+reqer_accept_tpa: Teleporting you to %s...
+reqer_accept_tpahere_hoverevent: §bThe player who agreed to teleport them to you
+reqer_accept_tpahere: Teleporting %s to you...
 reqer_button_tpa: '[§bTeleport§r]'
 reqer_button_tpa_hoverevent: §bClick to send a teleport request to this player
 reqer_button_tpahere: '[§bTeleport Here§r]'
 reqer_button_tpahere_hoverevent: §bClick to request they teleport to your current location
-reqer_cancel_hoverevent: §bThe player whose request you canceled
-reqer_cancel: You canceled the request to %s's request
+reqer_cancel_hoverevent: §bThe player whose request you have canceled
+reqer_cancel: You have canceled the request to %s
 reqer_cancel_multiple_sent: You currently have multiple teleport requests. Please select the request you want to cancel
 reqer_cancel_selector_title: Request List
 reqer_cancel_selector_index: Requests %1$s of %2$s
@@ -260,11 +260,11 @@ reqer_cancel_selector_button_previous_page: ◀ Previous Page
 reqer_cancel_selector_button_previous_page_hoverevent: §bClick to turn to the previous page
 reqer_cancel_selector_button_next_page: Next Page ▶
 reqer_cancel_selector_button_next_page_hoverevent: §bClick to turn to the next page
-reqer_deny_tpa_hoverevent: §bThe player who denied your teleport request
+reqer_deny_tpa_hoverevent: §bThe player who declined your teleport request
 reqer_deny_tpa: Teleporting to %s...
-reqer_deny_tpahere_hoverevent: §bThe player who denied your §ltpahere§r request
-reqer_deny_tpahere: The requestor is denied from teleporting here.%sto you...
-reqer_disabled: Server does not allow §ateleportation§r
+reqer_deny_tpahere_hoverevent: §bThe player who has refused to teleport them to you
+reqer_deny_tpahere: '%s has refused to teleport here'
+reqer_disabled: Sending teleport requests are not allowed due to the server options
 reqer_unavail: You are not allowed to sent teleport requests in the current state
 reqer_first_join: '[§6Click me to open TPA Menu§r]'
 reqer_no_req_found: You haven't sent any requests
