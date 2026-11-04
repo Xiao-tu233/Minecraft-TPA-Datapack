@@ -241,9 +241,6 @@ reqer_cancel_selector_button_previous_page: ◀ 上一頁
 reqer_cancel_selector_button_previous_page_hoverevent: §b點擊查看上一頁
 reqer_cancel_selector_button_next_page: 下一頁 ▶
 reqer_cancel_selector_button_next_page_hoverevent: §b點擊查看下一頁
-reqer_change_actionbar: 你之前發送過了一個向%1$s的請求, 已取消前一個請求. 現在向%2$s發送了請求, 等待他接受, 搖頭三次以取消請求
-reqer_change_chatbar: 你之前發送過了一個向%1$s的請求, 已取消前一個請求. 現在向%2$s發送了請求, 等待他接受
-reqer_change_hoverevent: §b你之前發送請求的玩家
 reqer_deny_tpa_hoverevent: §b拒絕了你的傳送請求的玩家
 reqer_deny_tpa: '%s拒絕了你的傳送請求'
 reqer_deny_tpahere_hoverevent: §b拒絕了你的§l傳送到此處§r請求的玩家

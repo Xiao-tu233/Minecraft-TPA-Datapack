@@ -260,11 +260,6 @@ reqer_cancel_selector_button_previous_page: ◀ Previous Page
 reqer_cancel_selector_button_previous_page_hoverevent: §bClick to turn to the previous page
 reqer_cancel_selector_button_next_page: Next Page ▶
 reqer_cancel_selector_button_next_page_hoverevent: §bClick to turn to the next page
-reqer_change_actionbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new 
-  request to %2$s, waiting for acceptance. Shake head 3 times to cancel
-reqer_change_chatbar: You previously sent a request to %1$s's request. The previous request was canceled. Sent a new 
-  request to %2$s, waiting for acceptance
-reqer_change_hoverevent: §bThe player you previously sent a request to
 reqer_deny_tpa_hoverevent: §bThe player who denied your teleport request
 reqer_deny_tpa: Teleporting to %s...
 reqer_deny_tpahere_hoverevent: §bThe player who denied your §ltpahere§r request
