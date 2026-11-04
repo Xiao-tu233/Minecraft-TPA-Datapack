@@ -3,3 +3,4 @@ data modify storage tpa:tpa temp.output.buttons.disabled.next_page.brackets set 
 data modify storage tpa:tpa temp.output.buttons.disabled.next_page.label set from storage tpa:tpa temp.output.button_next_page
 data modify storage tpa:tpa temp.output.buttons.enabled.next_page.brackets set value ["", ""]
 data modify storage tpa:tpa temp.output.buttons.enabled.next_page.label set value ""
+data remove storage tpa:tpa temp.dialog.actions[-1].action

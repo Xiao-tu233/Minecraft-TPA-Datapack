@@ -27,6 +27,10 @@ execute store result storage tpa:tpa temp.output.next_page int 1 run scoreboard 
 data modify storage tpa:tpa temp.output.next_page set string storage tpa:tpa temp.output.next_page
 
 tellraw @s[predicate=tpa:output/show_chatbar] [{text: "------------ ", color: "white"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.title", color: "aqua"}, {text: " (", color: "white"}, {interpret: true, color: "white", storage: "tpa:tpa", nbt: "temp.output.current_page"}, {text: "/", color: "gray"}, {interpret: true, color: "white", storage: "tpa:tpa", nbt: "temp.output.total_pages"}, {text: ") ------------", color: "white"}]
+data modify storage tpa:tpa temp.dialog.title[0].text set from storage tpa:tpa temp.output.title
+data modify storage tpa:tpa temp.dialog.title[2].text set from storage tpa:tpa temp.output.current_page
+data modify storage tpa:tpa temp.dialog.title[4].text set from storage tpa:tpa temp.output.total_pages
+
 
 data modify storage tpa:tpa temp.output.selector_index set value []
 data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.index[0]
@@ -37,8 +41,19 @@ execute if score #output.index_format tpa.variables matches 0 run data modify st
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/selector/append_indexes
 data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.index[2]
 
-tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, color: "gray", storage: "tpa:tpa", nbt: "temp.output.selector_index[]", separator: ""}]
+data modify storage tpa:tpa temp.dialog.body.contents set from storage tpa:tpa temp.output.selector_index
+tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, color: "gray", storage: "tpa:tpa", nbt: "temp.output.selector_index"}]
 tellraw @s[predicate=tpa:output/show_chatbar] ""
+
+data modify storage tpa:tpa temp.dialog.actions set value [\
+    {width: 150}, {width: 150, action: {type: "run_command", command: "/trigger tpa.home set -3"}, label: {color: "aqua"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.sethome set -3"}, label: {color: "green"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.removehome set -3"}, label: {color: "red"}}, \
+    {width: 150}, {width: 150, action: {type: "run_command", command: "/trigger tpa.home set -4"}, label: {color: "aqua"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.sethome set -4"}, label: {color: "green"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.removehome set -4"}, label: {color: "red"}}, \
+    {width: 150}, {width: 150, action: {type: "run_command", command: "/trigger tpa.home set -5"}, label: {color: "aqua"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.sethome set -5"}, label: {color: "green"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.removehome set -5"}, label: {color: "red"}}, \
+    {width: 150}, {width: 150, action: {type: "run_command", command: "/trigger tpa.home set -6"}, label: {color: "aqua"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.sethome set -6"}, label: {color: "green"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.removehome set -6"}, label: {color: "red"}}, \
+    {width: 150}, {width: 150, action: {type: "run_command", command: "/trigger tpa.home set -7"}, label: {color: "aqua"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.sethome set -7"}, label: {color: "green"}}, {width: 150, action: {type: "run_command", command: "/trigger tpa.removehome set -7"}, label: {color: "red"}}, \
+    {width: 150, label: [""], action: {type: "run_command", command: "/trigger tpa.home set -9"}}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, \
+    {width: 150, label: {text: ""}, action: {type: "run_command", command: "/trigger tpa.home set -2"}}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: {text: ""}, action: {type: "run_command", command: "/trigger tpa.home set -8"}}\
+]
 
 data remove storage tpa:tpa temp.args
 data modify storage tpa:tpa temp.args set value {color_0: "white", color_1: "white", color_2: "white", color_3: "white", color_4: "white"}
@@ -50,13 +65,18 @@ data modify storage tpa:tpa temp.args.color_4 set from storage tpa:tpa temp.outp
 function tpa:output/home/menu_macro with storage tpa:tpa temp.args
 
 tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[1]"}], hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.tooltip"}}, click_event: {action: "run_command", command: "/trigger tpa.home set -9"}}]
+data modify storage tpa:tpa temp.dialog.actions[20].label set from storage tpa:tpa temp.output.button_add.label
+data modify storage tpa:tpa temp.dialog.actions[20].tooltip set from storage tpa:tpa temp.output.button_add.tooltip
+execute unless data storage tpa:tpa temp.output.button_add run data remove storage tpa:tpa temp.dialog.actions[20].action
 
-execute store result score #output.editting tpa.variables run data get storage tpa:tpa temp.output.editting
+scoreboard players set #output.editting tpa.variables 0
 execute if score #output.current_page tpa.variables matches ..1 run function tpa:output/selector/disabled/previous_page
 execute if score #output.current_page tpa.variables matches 2.. run function tpa:output/selector/enabled/previous_page
 execute if score #output.current_page tpa.variables >= #output.total_pages tpa.variables run function tpa:output/selector/disabled/next_page
 execute if score #output.current_page tpa.variables < #output.total_pages tpa.variables run function tpa:output/selector/enabled/next_page
 
+data modify storage tpa:tpa temp.dialog.actions[-3].label set from storage tpa:tpa temp.output.button_previous_page
+data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa temp.output.button_next_page
 
 tellraw @s[predicate=tpa:output/show_chatbar] ["", \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[0]", color: "gray", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[1]", color: "gray"}]}, \

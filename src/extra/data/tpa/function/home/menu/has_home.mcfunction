@@ -30,6 +30,10 @@ execute if score #home.plays_menu_sound tpa.variables matches 1 run function tpa
 
 # Output
 data remove storage tpa:tpa temp.output
+    # Dialogs
+    data remove storage tpa:tpa temp.dialog
+    data modify storage tpa:tpa temp.dialog set value {type: "minecraft:multi_action", body: {type: "plain_message"}, title: [{color: aqua}, {text: " (", color: "white"}, {color: "white"}, {text: "/", color: "gray"}, {color: "white"}, {text: ")", color: "white"}], pause: false, after_action: "none", columns: 4}
+
     execute store result storage tpa:tpa temp.output.current_page int 1 run scoreboard players get #home.page.result tpa.variables
     execute store result storage tpa:tpa temp.output.total_pages int 1 run scoreboard players get #home.total_pages tpa.variables
     execute store result storage tpa:tpa temp.output.total_slots int 1 run scoreboard players get #home.max_id tpa.variables
@@ -50,17 +54,12 @@ data remove storage tpa:tpa temp.output
     execute if score #home.page.result tpa.variables = #home.total_pages tpa.variables if score #home.allows_add tpa.variables matches 1 run function tpa:home/menu/prepare_add_button
 function tpa:output/home/menu
 
-# Dialogs
-# data remove storage tpa:tpa temp.args.dialog
-# data modify storage tpa:tpa temp.args.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "none", title: "$(title)", columns: 2, actions: []}
-# execute if score #home.editting tpa.variables matches 1 run data modify storage tpa:tpa temp.args.dialog.columns set value 9
-# execute if score #if_display_home_menu_title tpa.variables matches 1 run data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.home_menu_title
-# execute if score #if_display_home_menu_title tpa.variables matches 1 run data modify storage tpa:tpa temp.args.dialog.title set from entity @n[type=text_display, tag=tpa.text_display] text
+
 
 # Dialogs
 # execute if score #if_display_home_menu_title tpa.variables matches 1 run function tpa:home/dialog with storage tpa:tpa temp.args
-
-# Remove button display for non-OPs
-# data modify storage tpa:tpa home[0] set value {}
+data remove storage tpa:tpa temp.args
+data modify storage tpa:tpa temp.args.dialog set from storage tpa:tpa temp.dialog
+function tpa:util/dialog with storage tpa:tpa temp.args
 
 scoreboard players operation #home tpa.variables = #previous_home tpa.variables
