@@ -289,7 +289,7 @@ Project To-do lists:
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
 - [ ] 菜单中的按钮静态检测可以通过堆叠enabled(带指令)按钮和disabled按钮显示并动态调整两者按钮文本来动态调整按钮是否存在点击事件 e.g, [返回上一位置][返回上一位置] 前者括号为白色且带点击命令 后者反之 选择显示何者来决定是否存在点击事件
-- [ ] 广播位置和家菜单悬停文本错位了
+- [x] 广播位置和家菜单悬停文本错位了
 - [x] coords in here copiable
       - compatible with other dimensions
 - [x] 在warp设置菜单被调用的时候，应该显示是否有未保存的编辑。
@@ -312,6 +312,7 @@ Project To-do lists:
 - [x] 语言优化
       - [x] 日语 英语核心功能措辞优化
       - [x] 新增韩语粤语
+- [ ] back, home, warp, tp_pos 等调用teleport模块接口的功能需要向接口传入完成时的输出以及其他额外数据
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index

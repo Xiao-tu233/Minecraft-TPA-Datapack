@@ -362,13 +362,13 @@ tpa_menu_refresh: §6刷新TPA選單§r
 tpa_menu_refresh_hoverevent: §b點擊此處刷新或重新呼出TPA選單
 tpa_menu_search_id_button: §b搜尋ID§r
 tpa_menu_search_id_button_hoverevent: §b點擊呼出聊天欄鍵盤輸入tpa指令
-tpa_menu_title: '這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送傳送請求: '
+tpa_menu_title: '選擇下方玩家, 發送傳送請求: '
 tpa_menu_tpaheremenu_button: §b傳送至此處選單§r
-tpa_menu_tpaheremenu_button_hoverevent: §b點擊來跳轉到傳送至此處選單
+tpa_menu_tpaheremenu_button_hoverevent: §b點擊跳轉選單來請求其他玩家傳送到你這裡
 tpa_menu_tpamenu_button: §b傳送選單§r
 tpa_menu_tpamenu_button_hoverevent: §b點擊來跳轉到傳送選單
 tpa_menu_you: 你
-tpahere_menu_title: '這是玩家遊戲使用者名稱和玩家資料包id, 點擊id發送§l傳送到此處§r請求: '
+tpahere_menu_title: '選擇下方玩家, 請求玩家傳送到你這裡: '
 uninstall_done: §a成功解除安裝並停用資料包。§r請至資料夾刪除資料包本體即可完全解除安裝，或點擊右側按鈕重新啟用：
 uninstall_enable_folder_button: 啟用1
 uninstall_enable_folder_button_hoverevent: 點擊啟用資料夾形式的資料包（若存在）

@@ -99,7 +99,7 @@ data modify storage tpa:tpa temp.menu.here.tooltip set from storage tpa:tpa load
 # Home
 data modify storage tpa:tpa temp.menu.home.button_brackets set value ["[", "]"]
 data modify storage tpa:tpa temp.menu.home.label set from storage tpa:tpa loaded_lang.tpa_menu_home_button
-data modify storage tpa:tpa temp.menu.here.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_home_button_hoverevent
+data modify storage tpa:tpa temp.menu.home.tooltip set from storage tpa:tpa loaded_lang.tpa_menu_home_button_hoverevent
 execute if score #home tpa.config matches 0 run function tpa:menu/home/disabled
 execute if score #home tpa.config matches 1.. unless predicate tpa:available run function tpa:menu/home/unavailable
 

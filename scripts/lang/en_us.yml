@@ -20,11 +20,11 @@ book_stacking: Duplicate teleport menu books detected. Your books have been rese
 book_stop: You have stopped using §aTPA Book§r, you can get it again in TPA menu
 book_title: '§r§bTPA menu book §a[Press Q to Refresh] '
 book_unavail: You are not allowed to use the §aTeleport Book§r in the current state
-dialog: Dialog menu opened
+dialog: Dialog menu has been opened
 dimension_menu_button: '[§bDimension Settings Menu§r]'
 dimension_menu_button_hoverevent: §bClick to configure dimensions
 dimension_overworld: Overworld
-dimension_the_nether: Nether
+dimension_the_nether: The Nether
 dimension_the_end: The End
 dimension_unknown: Unknown Dimension
 dimension_unknown_detected_leftpart: Unknown dimension detected (
@@ -63,8 +63,8 @@ home_selector_button_previous_page_hoverevent: §bClick to turn to the previous 
 home_selector_button_next_page: Next Page ▶
 home_selector_button_next_page_hoverevent: §bClick to turn to the next page
 home_selector_page_empty: A total of %s home slots; no homes are set on this page
-home_set: You have set Home#%1$sat%2$s
-home_set_position: Positon
+home_set: You have set Home#%1$s at %2$s
+home_set_position: '%1$s in %2$s'
 home_unavail: You are not allowed to use the §aTeleport Book§r in the current state
 hoverevent_suggest_tip: '§aYou should complete the command as: '
 lang_button: '[§6Click here to select language§r]'
@@ -264,27 +264,26 @@ reqer_deny_tpa_hoverevent: §bThe player who declined your teleport request
 reqer_deny_tpa: Teleporting to %s...
 reqer_deny_tpahere_hoverevent: §bThe player who has refused to teleport them to you
 reqer_deny_tpahere: '%s has refused to teleport here'
-reqer_disabled: Sending teleport requests are not allowed due to the server options
+reqer_disabled: You cannot send teleport requests because they are disabled in the server settings
 reqer_unavail: You are not allowed to sent teleport requests in the current state
 reqer_first_join: '[§6Click me to open TPA Menu§r]'
 reqer_no_req_found: You haven't sent any requests
 reqer_recver_invalid: Target offline or not teleportable
-reqer_req_button_cancel: '[§4Cancel§r]'
+reqer_req_button_cancel: '§4Cancel§r'
 reqer_req_button_cancel_hoverevent: §bClick to cancel the request
 reqer_req_hoverevent: §bThe player you sent a request to
 reqer_req_invalid: Your request to %s has been removed because the target player is unavailable (offline or unable to 
   teleport)
 reqer_req_invalid_hoverevent: §bThe player you sent a request to
 reqer_req_not_exist: The requested player does not exist or is offline
-reqer_req_tpa: You sent a teleport request to %s. Waiting for responsing
-reqer_req_tpahere: You requested %s to teleport to you. Waiting for responsing
+reqer_req_tpa: You have sent a teleport request to %s.
+reqer_req_tpahere: You have requested %s to teleport to you.
 reqer_req_tpa_hoverevent: §bThe player you sent a teleport request to
-reqer_req_tpahere_actionbar: You sent a request to %ssent a §ltpahere§r request. Waiting for acceptance. Shake head 3 
-  times to cancel
-reqer_req_tpahere_chatbar: You sent a request to %ssent a §ltpahere§r request. Waiting for acceptance
-reqer_req_tpahere_hoverevent: §bThe player you sent a §ltpahere§r request to
-reqer_self: You cannot teleport to yourself
-reqer_spam: You already sent a request to this player
+reqer_req_tpahere_actionbar: You have requested %s to teleport to you. Waiting for acceptance. Cancel with /trigger tpa.cancel_req
+reqer_req_tpahere_chatbar: You have requested %s to teleport to you. Waiting for acceptance
+reqer_req_tpahere_hoverevent: §bThe player you requested to teleport to your place
+reqer_self: You cannot request to teleport to yourself
+reqer_spam: You had already sent a request to this player
 reqer_timeout_hoverevent: §bThe player who did not accept your request
 reqer_timeout: Your request to %s's teleport request has expired
 search_id_abort: You stopped §asearching player IDs§r
@@ -347,9 +346,9 @@ tp_pos_spec: Spectators cannot §ateleport to coordinates§r
 tp_pos_throw_on_invalid_char: The coordinates you entered contain invalid characters
 tp_pos_title: 'Adjust coordinates below: '
 tpa_menu_auto_accept: 'Auto-accept: '
-tpa_menu_back_button: §bBack to previous position§r
+tpa_menu_back_button: §bBack§r
 tpa_menu_back_button_hoverevent: §bReturn to your position before teleporting
-tpa_menu_book_button: §bGet teleportation book§r
+tpa_menu_book_button: §bGet Book§r
 tpa_menu_book_button_hoverevent: §bClick to get a TPA Book
 tpa_menu_dialog: §bDialog menu§r
 tpa_menu_dialog_title: §bTPA menu
@@ -365,9 +364,9 @@ tpa_menu_has_id_of: '§aDatapack ID§r is '
 tpa_menu_has_id_of_hoverevent: §bThe internal player ID assigned to each player for correspondence
 tpa_menu_here_button: §bShare Position§r
 tpa_menu_here_button_hoverevent: §bClick to share with your position in char bar
-tpa_menu_home_button: §bHome menu§r
+tpa_menu_home_button: §bHome§r
 tpa_menu_home_button_hoverevent: §bClick to open the Home menu
-tpa_menu_warp_button: §bWarp Menu§r
+tpa_menu_warp_button: §bWarp§r
 tpa_menu_warp_button_hoverevent: §bClick to open the Warp menu
 tpa_menu_hoverevent: §bClick to send a teleport request to %s
 tpa_menu_lang_button: §bSwitch language§r
@@ -381,19 +380,19 @@ tpa_menu_output_default: §bDefault§r
 tpa_menu_output_actionbar_hidden: §bOnly action bar§r
 tpa_menu_output_chatbar_hidden: §bOnly chat bar§r
 tpa_menu_output_no_hidden: §bBoth action and chat bar§r
-tpa_menu_pos_button: §bTeleport coordinates§r
+tpa_menu_pos_button: §bTeleport Coords§r
 tpa_menu_pos_button_hoverevent: §bClick to open chat input for coordinate teleport
 tpa_menu_refresh: §6Refresh TPA menu§r
 tpa_menu_refresh_hoverevent: §bClick to refresh or reopen the TPA menu
 tpa_menu_search_id_button: §bSearch player§r
 tpa_menu_search_id_button_hoverevent: §bClick to open chat input for TPA commands
-tpa_menu_title: 'Player usernames and datapack IDs. Click an ID to send a teleport request:                                                                          '
-tpa_menu_tpaheremenu_button: §bTeleport here menu§r
-tpa_menu_tpaheremenu_button_hoverevent: §bClick to go to TPA Here Menu
-tpa_menu_tpamenu_button: §bTeleport menu§r
-tpa_menu_tpamenu_button_hoverevent: §bClick to go to Teleport Menu
+tpa_menu_title: 'Choose a player and click on their name to send a teleport request:'
+tpa_menu_tpaheremenu_button: §btpahere§r
+tpa_menu_tpaheremenu_button_hoverevent: §bClick to send requests that other players teleport to you
+tpa_menu_tpamenu_button: §btpa§r
+tpa_menu_tpamenu_button_hoverevent: §bClick for sending regular teleport requests
 tpa_menu_you: 'Your '
-tpahere_menu_title: 'Player usernames and datapack IDs. Click an ID to send a §ltpahere§r request:                                                                          '
+tpahere_menu_title: 'Choose a player and click on their name to request them to teleport to you:'
 uninstall_done: '§aSuccessfully uninstalled and disabled the datapack. §rTo fully remove it, delete the datapack from the
   folder. But you can also click the button on the right to enable it again:                             '
 uninstall_enable_folder_button: ENABLE1
