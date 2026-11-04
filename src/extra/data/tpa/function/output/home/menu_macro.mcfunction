@@ -17,11 +17,11 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_set.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_set.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_set.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.sethome set -3"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_set.tooltip"}}}, " ", \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_rm.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_rm.label", color: "red"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_rm.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.removehome set -3"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_rm.tooltip"}}}, " ", \
 ]
-data modify storage tpa:tpa temp.dialog.actions[0].label.text set from storage tpa:tpa temp.output.slots[0].label
+data modify storage tpa:tpa temp.dialog.actions[0].label.extra set from storage tpa:tpa temp.output.slots[0].label
 data modify storage tpa:tpa temp.dialog.actions[0].label.color set from storage tpa:tpa temp.output.slots[0].color
-data modify storage tpa:tpa temp.dialog.actions[0].label.tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[0].label.tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[0].label.tooltip append from storage tpa:tpa temp.output.slots[0].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[0].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[0].tooltip append from storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[0].tooltip append from storage tpa:tpa temp.output.slots[0].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[1].label.text set from storage tpa:tpa temp.output.slots[0].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[1].tooltip set from storage tpa:tpa temp.output.slots[0].button_tp.tooltip
@@ -52,11 +52,11 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_set.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_set.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_set.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.sethome set -4"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_set.tooltip"}}}, " ", \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_rm.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_rm.label", color: "red"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_rm.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.removehome set -4"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_rm.tooltip"}}}, " ", \
 ]
-data modify storage tpa:tpa temp.dialog.actions[4].label.text set from storage tpa:tpa temp.output.slots[1].label
+data modify storage tpa:tpa temp.dialog.actions[4].label.extra set from storage tpa:tpa temp.output.slots[1].label
 data modify storage tpa:tpa temp.dialog.actions[4].label.color set from storage tpa:tpa temp.output.slots[1].color
-data modify storage tpa:tpa temp.dialog.actions[4].label.tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[4].label.tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[4].label.tooltip append from storage tpa:tpa temp.output.slots[1].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[4].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[4].tooltip append from storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[4].tooltip append from storage tpa:tpa temp.output.slots[1].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[5].label.text set from storage tpa:tpa temp.output.slots[1].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[5].tooltip set from storage tpa:tpa temp.output.slots[1].button_tp.tooltip
@@ -88,11 +88,11 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_set.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_set.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_set.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.sethome set -5"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_set.tooltip"}}}, " ", \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_rm.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_rm.label", color: "red"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_rm.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.removehome set -5"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_rm.tooltip"}}}, " ", \
 ]
-data modify storage tpa:tpa temp.dialog.actions[8].label.text set from storage tpa:tpa temp.output.slots[2].label
+data modify storage tpa:tpa temp.dialog.actions[8].label.extra set from storage tpa:tpa temp.output.slots[2].label
 data modify storage tpa:tpa temp.dialog.actions[8].label.color set from storage tpa:tpa temp.output.slots[2].color
-data modify storage tpa:tpa temp.dialog.actions[8].label.tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[8].label.tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[8].label.tooltip append from storage tpa:tpa temp.output.slots[2].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[8].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[8].tooltip append from storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[8].tooltip append from storage tpa:tpa temp.output.slots[2].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[9].label.text set from storage tpa:tpa temp.output.slots[2].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[9].tooltip set from storage tpa:tpa temp.output.slots[2].button_tp.tooltip
@@ -123,11 +123,11 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_set.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_set.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_set.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.sethome set -6"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_set.tooltip"}}}, " ", \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_rm.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_rm.label", color: "red"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_rm.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.removehome set -6"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_rm.tooltip"}}}, " ", \
 ]
-data modify storage tpa:tpa temp.dialog.actions[12].label.text set from storage tpa:tpa temp.output.slots[3].label
+data modify storage tpa:tpa temp.dialog.actions[12].label.extra set from storage tpa:tpa temp.output.slots[3].label
 data modify storage tpa:tpa temp.dialog.actions[12].label.color set from storage tpa:tpa temp.output.slots[3].color
-data modify storage tpa:tpa temp.dialog.actions[12].label.tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[12].label.tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[12].label.tooltip append from storage tpa:tpa temp.output.slots[3].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[12].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[12].tooltip append from storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[12].tooltip append from storage tpa:tpa temp.output.slots[3].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[13].label.text set from storage tpa:tpa temp.output.slots[3].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[13].tooltip set from storage tpa:tpa temp.output.slots[3].button_tp.tooltip
@@ -158,11 +158,11 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_set.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_set.label", color: "green"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_set.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.sethome set -7"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_set.tooltip"}}}, " ", \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_rm.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_rm.label", color: "red"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_rm.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.removehome set -7"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_rm.tooltip"}}}, " ", \
 ]
-data modify storage tpa:tpa temp.dialog.actions[16].label.text set from storage tpa:tpa temp.output.slots[4].label
+data modify storage tpa:tpa temp.dialog.actions[16].label.extra set from storage tpa:tpa temp.output.slots[4].label
 data modify storage tpa:tpa temp.dialog.actions[16].label.color set from storage tpa:tpa temp.output.slots[4].color
-data modify storage tpa:tpa temp.dialog.actions[16].label.tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[16].label.tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[16].label.tooltip append from storage tpa:tpa temp.output.slots[4].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[16].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[16].tooltip append from storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[16].tooltip append from storage tpa:tpa temp.output.slots[4].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[17].label.text set from storage tpa:tpa temp.output.slots[4].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[17].tooltip set from storage tpa:tpa temp.output.slots[4].button_tp.tooltip
