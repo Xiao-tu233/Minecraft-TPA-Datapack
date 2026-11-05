@@ -93,14 +93,14 @@ data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_home_button
 data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa loaded_lang.tpa_menu_home_button_hoverevent
 execute if score #home tpa.config matches 0 run function tpa:dialog/menu/home/disabled
-execute if score #home tpa.config matches 1.. run function tpa:dialog/menu/home/enabled
+execute unless score #home tpa.config matches 0 run function tpa:dialog/menu/home/enabled
 
 # Warp
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template
 data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa loaded_lang.tpa_menu_warp_button
 data modify storage tpa:tpa temp.dialog.actions[-1].tooltip set from storage tpa:tpa loaded_lang.tpa_menu_warp_button_hoverevent
 execute if score #warp tpa.config matches 0 run function tpa:dialog/menu/warp/disabled
-execute if score #warp tpa.config matches 1.. run function tpa:dialog/menu/warp/enabled
+execute unless score #warp tpa.config matches 0 run function tpa:dialog/menu/warp/enabled
 
 # Auto accept
 data modify storage tpa:tpa temp.dialog.actions append from storage tpa:tpa temp.dialog_action_template

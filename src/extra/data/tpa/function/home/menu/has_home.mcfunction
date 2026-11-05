@@ -32,7 +32,7 @@ execute if score #home.plays_menu_sound tpa.variables matches 1 run function tpa
 data remove storage tpa:tpa temp.output
     # Dialogs
     data remove storage tpa:tpa temp.dialog
-    data modify storage tpa:tpa temp.dialog set value {type: "minecraft:multi_action", body: {type: "plain_message"}, title: [{color: aqua}, {text: " (", color: "white"}, {color: "white"}, {text: "/", color: "gray"}, {color: "white"}, {text: ")", color: "white"}], pause: false, after_action: "none", columns: 4}
+    data modify storage tpa:tpa temp.dialog set value {type: "minecraft:multi_action", body: {type: "minecraft:plain_message"}, title: [{color: aqua}, {text: " (", color: "white"}, {color: "white"}, {text: "/", color: "gray"}, {color: "white"}, {text: ")", color: "white"}], pause: false, after_action: "none", columns: 4}
 
     execute store result storage tpa:tpa temp.output.current_page int 1 run scoreboard players get #home.page.result tpa.variables
     execute store result storage tpa:tpa temp.output.total_pages int 1 run scoreboard players get #home.total_pages tpa.variables

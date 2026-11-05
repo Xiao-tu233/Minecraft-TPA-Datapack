@@ -3,4 +3,4 @@ data modify storage tpa:tpa temp.output.buttons.disabled.previous_page.brackets 
 data modify storage tpa:tpa temp.output.buttons.disabled.previous_page.label set from storage tpa:tpa temp.output.button_previous_page
 data modify storage tpa:tpa temp.output.buttons.enabled.previous_page.brackets set value ["", ""]
 data modify storage tpa:tpa temp.output.buttons.enabled.previous_page.label set value ""
-data remove storage tpa:tpa temp.dialog.actions[-3].action
+data remove storage tpa:tpa temp.dialog.actions[-4].action

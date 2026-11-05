@@ -11,6 +11,7 @@ data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tp
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[0].tooltip.dimension
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/home/append_indexes
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[0].tooltip.hoverevent_location[2]
+execute unless data storage tpa:tpa temp.output.slots[0].tooltip.x run data modify storage tpa:tpa temp.output.format_parser set value [""]
 $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].label", color: "$(color_0)", \
     hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.format_parser", color: "$(color_0)"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].tooltip.missing"}]}}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_tp.space"}, \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_tp.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_tp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_tp.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.home set -3"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[0].button_tp.tooltip"}}}, " ", \
@@ -19,9 +20,10 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
 ]
 data modify storage tpa:tpa temp.dialog.actions[0].label.extra set from storage tpa:tpa temp.output.slots[0].label
 data modify storage tpa:tpa temp.dialog.actions[0].label.color set from storage tpa:tpa temp.output.slots[0].color
-data modify storage tpa:tpa temp.dialog.actions[0].tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[0].tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[0].tooltip append from storage tpa:tpa temp.output.slots[0].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[0].tooltip set value ""
+execute if data storage tpa:tpa temp.output.slots[0].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[0].tooltip set value []
+execute if data storage tpa:tpa temp.output.slots[0].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[0].tooltip append from storage tpa:tpa temp.output.format_parser[]
+execute if data storage tpa:tpa temp.output.slots[0].tooltip.missing unless data storage tpa:tpa temp.output.slots[0].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[0].tooltip set from storage tpa:tpa temp.output.slots[0].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[1].label.text set from storage tpa:tpa temp.output.slots[0].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[1].tooltip set from storage tpa:tpa temp.output.slots[0].button_tp.tooltip
@@ -46,6 +48,7 @@ data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tp
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[1].tooltip.dimension
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/home/append_indexes
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[1].tooltip.hoverevent_location[2]
+execute unless data storage tpa:tpa temp.output.slots[1].tooltip.x run data modify storage tpa:tpa temp.output.format_parser set value [""]
 $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].label", color: "$(color_1)", \
     hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.format_parser[]", separator: "", color: "$(color_1)"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].tooltip.missing"}]}}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_tp.space"}, \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_tp.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_tp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_tp.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.home set -4"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[1].button_tp.tooltip"}}}, " ", \
@@ -54,9 +57,10 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
 ]
 data modify storage tpa:tpa temp.dialog.actions[4].label.extra set from storage tpa:tpa temp.output.slots[1].label
 data modify storage tpa:tpa temp.dialog.actions[4].label.color set from storage tpa:tpa temp.output.slots[1].color
-data modify storage tpa:tpa temp.dialog.actions[4].tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[4].tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[4].tooltip append from storage tpa:tpa temp.output.slots[1].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[4].tooltip set value ""
+execute if data storage tpa:tpa temp.output.slots[1].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[4].tooltip set value []
+execute if data storage tpa:tpa temp.output.slots[1].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[4].tooltip append from storage tpa:tpa temp.output.format_parser[]
+execute if data storage tpa:tpa temp.output.slots[1].tooltip.missing unless data storage tpa:tpa temp.output.slots[1].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[4].tooltip set from storage tpa:tpa temp.output.slots[1].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[5].label.text set from storage tpa:tpa temp.output.slots[1].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[5].tooltip set from storage tpa:tpa temp.output.slots[1].button_tp.tooltip
@@ -82,6 +86,7 @@ data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tp
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[2].tooltip.dimension
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/home/append_indexes
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[2].tooltip.hoverevent_location[2]
+execute unless data storage tpa:tpa temp.output.slots[2].tooltip.x run data modify storage tpa:tpa temp.output.format_parser set value [""]
 $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].label", color: "$(color_2)", \
     hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.format_parser[]", separator: "", color: "$(color_2)"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].tooltip.missing"}]}}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_tp.space"}, \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_tp.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_tp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_tp.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.home set -5"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[2].button_tp.tooltip"}}}, " ", \
@@ -90,9 +95,10 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
 ]
 data modify storage tpa:tpa temp.dialog.actions[8].label.extra set from storage tpa:tpa temp.output.slots[2].label
 data modify storage tpa:tpa temp.dialog.actions[8].label.color set from storage tpa:tpa temp.output.slots[2].color
-data modify storage tpa:tpa temp.dialog.actions[8].tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[8].tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[8].tooltip append from storage tpa:tpa temp.output.slots[2].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[8].tooltip set value ""
+execute if data storage tpa:tpa temp.output.slots[2].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[8].tooltip set value []
+execute if data storage tpa:tpa temp.output.slots[2].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[8].tooltip append from storage tpa:tpa temp.output.format_parser[]
+execute if data storage tpa:tpa temp.output.slots[2].tooltip.missing unless data storage tpa:tpa temp.output.slots[2].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[8].tooltip set from storage tpa:tpa temp.output.slots[2].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[9].label.text set from storage tpa:tpa temp.output.slots[2].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[9].tooltip set from storage tpa:tpa temp.output.slots[2].button_tp.tooltip
@@ -117,6 +123,7 @@ data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tp
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[3].tooltip.dimension
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/home/append_indexes
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[3].tooltip.hoverevent_location[2]
+execute unless data storage tpa:tpa temp.output.slots[3].tooltip.x run data modify storage tpa:tpa temp.output.format_parser set value [""]
 $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].label", color: "$(color_3)", \
     hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.format_parser[]", separator: "", color: "$(color_3)"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].tooltip.missing"}]}}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_tp.space"}, \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_tp.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_tp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_tp.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.home set -6"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[3].button_tp.tooltip"}}}, " ", \
@@ -125,9 +132,10 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
 ]
 data modify storage tpa:tpa temp.dialog.actions[12].label.extra set from storage tpa:tpa temp.output.slots[3].label
 data modify storage tpa:tpa temp.dialog.actions[12].label.color set from storage tpa:tpa temp.output.slots[3].color
-data modify storage tpa:tpa temp.dialog.actions[12].tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[12].tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[12].tooltip append from storage tpa:tpa temp.output.slots[3].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[12].tooltip set value ""
+execute if data storage tpa:tpa temp.output.slots[3].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[12].tooltip set value []
+execute if data storage tpa:tpa temp.output.slots[3].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[12].tooltip append from storage tpa:tpa temp.output.format_parser[]
+execute if data storage tpa:tpa temp.output.slots[3].tooltip.missing unless data storage tpa:tpa temp.output.slots[3].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[12].tooltip set from storage tpa:tpa temp.output.slots[3].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[13].label.text set from storage tpa:tpa temp.output.slots[3].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[13].tooltip set from storage tpa:tpa temp.output.slots[3].button_tp.tooltip
@@ -152,6 +160,7 @@ data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tp
 execute if score #output.index_format tpa.variables matches 0 run data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[4].tooltip.dimension
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/home/append_indexes
 data modify storage tpa:tpa temp.output.format_parser append from storage tpa:tpa temp.output.slots[4].tooltip.hoverevent_location[2]
+execute unless data storage tpa:tpa temp.output.slots[4].tooltip.x run data modify storage tpa:tpa temp.output.format_parser set value [""]
 $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].label", color: "$(color_4)", \
     hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.format_parser[]", separator: "", color: "$(color_4)"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].tooltip.missing"}]}}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_tp.space"}, \
     {text: "", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_tp.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_tp.label", color: "aqua"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_tp.brackets[1]"}], click_event: {action: "run_command", command: "/trigger tpa.home set -7"}, hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.slots[4].button_tp.tooltip"}}}, " ", \
@@ -160,9 +169,10 @@ $tellraw @s[predicate=tpa:output/show_chatbar] ["  ", {interpret: true, storage:
 ]
 data modify storage tpa:tpa temp.dialog.actions[16].label.extra set from storage tpa:tpa temp.output.slots[4].label
 data modify storage tpa:tpa temp.dialog.actions[16].label.color set from storage tpa:tpa temp.output.slots[4].color
-data modify storage tpa:tpa temp.dialog.actions[16].tooltip set value []
-data modify storage tpa:tpa temp.dialog.actions[16].tooltip append from storage tpa:tpa temp.output.format_parser[]
-data modify storage tpa:tpa temp.dialog.actions[16].tooltip append from storage tpa:tpa temp.output.slots[4].tooltip.missing
+data modify storage tpa:tpa temp.dialog.actions[16].tooltip set value ""
+execute if data storage tpa:tpa temp.output.slots[4].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[16].tooltip set value []
+execute if data storage tpa:tpa temp.output.slots[4].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[16].tooltip append from storage tpa:tpa temp.output.format_parser[]
+execute if data storage tpa:tpa temp.output.slots[4].tooltip.missing unless data storage tpa:tpa temp.output.slots[4].tooltip.x run data modify storage tpa:tpa temp.dialog.actions[16].tooltip set from storage tpa:tpa temp.output.slots[4].tooltip.missing
 
 data modify storage tpa:tpa temp.dialog.actions[17].label.text set from storage tpa:tpa temp.output.slots[4].button_tp.label
 data modify storage tpa:tpa temp.dialog.actions[17].tooltip set from storage tpa:tpa temp.output.slots[4].button_tp.tooltip
