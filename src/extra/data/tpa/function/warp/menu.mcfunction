@@ -35,6 +35,11 @@ execute unless score #warp.editting tpa.variables matches 1 run function tpa:sou
 
 # Output
 data remove storage tpa:tpa temp.output
+    # Dialogs
+    data remove storage tpa:tpa temp.dialog
+    data modify storage tpa:tpa temp.dialog set value {type: "minecraft:multi_action", body: {type: "minecraft:plain_message"}, title: [{color: aqua}, {text: " (", color: "white"}, {color: "white"}, {text: "/", color: "gray"}, {color: "white"}, {text: ")", color: "white"}], pause: false, after_action: "none", columns: 2}
+    execute if score #warp.editting tpa.variables matches 1 run data modify storage tpa:tpa temp.dialog.columns set value 9
+
     execute store result storage tpa:tpa temp.output.editting byte 1 run scoreboard players get #warp.editting tpa.variables
 
     execute store result storage tpa:tpa temp.output.current_page int 1 run scoreboard players get #warp.page.result tpa.variables

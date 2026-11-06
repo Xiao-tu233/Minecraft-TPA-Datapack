@@ -45,6 +45,14 @@ data modify storage tpa:tpa temp.output.selector_index append from storage tpa:t
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, color: "gray", storage: "tpa:tpa", nbt: "temp.output.selector_index[]", separator: ""}]
 tellraw @s[predicate=tpa:output/show_chatbar] ""
 
+execute store result score #output.editting tpa.variables run data get storage tpa:tpa temp.output.editting
+data modify storage tpa:tpa temp.dialog.actions set value [\
+    {}\
+]
+execute if score #output.editting tpa.variables matches 1 run data modify storage tpa:tpa temp.dialog.actions set value [\
+    {}\
+]
+
 data remove storage tpa:tpa temp.args
 data modify storage tpa:tpa temp.args set value {color_0: "white", color_1: "white", color_2: "white", color_3: "white", color_4: "white"}
 data modify storage tpa:tpa temp.args.color_0 set from storage tpa:tpa temp.output.slots[0].color
@@ -56,7 +64,6 @@ function tpa:output/warp/menu_macro with storage tpa:tpa temp.args
 
 tellraw @s[predicate=tpa:output/show_chatbar] {text: "  ", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[1]"}], hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.tooltip"}}, click_event: {action: "run_command", command: "/function tpa:warp/add"}}
 
-execute store result score #output.editting tpa.variables run data get storage tpa:tpa temp.output.editting
 execute if score #output.current_page tpa.variables matches ..1 run function tpa:output/selector/disabled/previous_page
 execute if score #output.current_page tpa.variables matches 2.. run function tpa:output/selector/enabled/previous_page
 execute if score #output.current_page tpa.variables >= #output.total_pages tpa.variables run function tpa:output/selector/disabled/next_page
