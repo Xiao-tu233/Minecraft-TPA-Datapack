@@ -17,7 +17,7 @@ Project To-do lists:
 ## Critical Bugs　(“现在有什么坏掉了？”)
 - [x] BUG ENCOUTNED: 1.20.10 get name gets nothing
 - [ ] 传送过程有可能会触发Caves & Cliffs成就
-- [ ] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分
+- [x] Warps 菜单中 补全指令的tooltip 缺省了数字作为指令的一部分: warp菜单不再使用需要补全的按钮
 - [x] Dialog 在远离出生点的地方不工作
 - [x] 测试1.21.6+ 版本中 tpa:get_name 是不是因为text_display实体未生成而导致的获取失败
 - [x] 语言选择菜单中的数字丢失了
@@ -28,8 +28,8 @@ Project To-do lists:
 - [x] 三种原版维度不应该允许更改数字和命名空间ID
 - [x] TPA菜单对话框菜单应该和Manhunt一样 通过esc同样可以启动
 - [x] Fixed grammar exceptions in predicates
-- [ ] 对话框菜单不显示玩家
-- [ ] trigger warp 不显示语言
+- [x] 对话框菜单不显示玩家
+- [x] trigger warp 不显示语言
 - [x] Back不再会在离线时移除 在设置菜单中增加移除所有玩家上一位置按钮 玩家同样可以通过/trigger back set -1 移除自己的上一位置
 
 ## Release blockers (“什么问题会阻止发版？”)
@@ -39,7 +39,7 @@ Project To-do lists:
 
 ## Architecture Refactor (“什么结构已经撑不住了？”)
 
-- [ ] ID 改革
+- [x] ID 改革
      id译名： 编号
      uid译名：用户编号
      玩家id译名：玩家名称
@@ -63,10 +63,6 @@ Project To-do lists:
 - [x] 超时/请求失效时不会提示玩家
 - [x] TPAHERE
 - [x] condition of cancel multiple requests and accept multiple requests
-
-- [ ] 考虑减少item作为锚点 而是盔甲架 例子如下
-  summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
-
 - [x]  避免leftpart 和rightpart 使用列表
   对于2个插入元素及以上 使用顺序数字来表示 
   0 for ABC
@@ -212,8 +208,6 @@ Project To-do lists:
 - [ ] 增加数据包设置项管理
 - [ ] Add [APPLY] button in options menu
 - [ ] trigger记分板显示名最好可以带颜色
-- [x] make objective tpa default -1 so that /trigger tpa will make tpa 0
-- [x] 上述问题解决之后 id就可以从1开始了
 - [ ] 尝试execute at, execute position子指令能不能把二分法的approach缩减到一个1tick
 - [ ] uid管理设置项
 - [ ] 作为高级选项设置项 
@@ -222,6 +216,15 @@ Project To-do lists:
       1.20.2+ 默认关闭
       对于1.20.2-1.21.5版本 get_name 本身需要宏函数在大量使用的场景会导致卡顿 所以保留选项作为性能优化的推荐选项
 - [ ] 对于传送的目标坐标应该存在判定 如果目标位置不合法则返回这次传送 如果back不合法应该不储存这次back
+- [ ] 传送前摇 落地空气检测
+- [ ] Consider about the color of actionbar
+- [ ] 加入服务器预设配置 方便不同体量服务器
+- [ ] Show specific player amount in TPA menu according to the currently server player and even server settings
+- [ ] 将输出调整整合成单独的输出菜单 包括 聊天栏显示开关 动作栏显示开关 对话框显示开关 头部手势开关
+   - 当动作栏显示为关时 强制聊天栏为开 
+   - 当聊天栏显示为关和动作栏显示为开时 自动开启头部手势并配提示 在该情况下强制关闭头部手势会带警告
+   - 当对话框显示为开时 对应菜单仅在对话框显示 不再在聊天栏/动作栏显示  同时在通知输出位置提示对话框已打开 附按钮作为fallback输出聊天栏/动作栏 如果对话框菜单没有被正确渲染
+- [ ] back, home, warp, tp_pos 等调用teleport模块接口的功能需要向接口传入完成时的输出以及其他额外数据
 
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu
@@ -255,15 +258,16 @@ Project To-do lists:
       The reason why it can't be a must because we must have the maxinum distance when using binary format.
 - [ ] output/ 文件夹的接口应该更明确使用temp.output存储内的内容作为参数来源 不应该使用loaded_lang
 　　　　考虑进一步整合 output 中的接口 分离 通知(notice) 和 菜单(Menu) 菜单更多的直接利用已有的dialog定义格式
+- [ ] 考虑减少item作为锚点 而是盔甲架 例子如下
+  summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
+- [ ] For 1.17+ consider use entity mark to replace most of the visual items
 
 ## UX Improvements (“玩家体验哪里不好？”)
+- [x] make objective tpa default -1 so that /trigger tpa will make tpa 0
+- [x] 上述问题解决之后 id就可以从1开始了
 - [x] 应该有2个启用按钮对应两种文件名在tpa:uninstall
 - [ ] Lang contains author key to specify the source of the translations
-- [ ] 传送前摇 落地空气检测
-- [ ] Consider about the color of actionbar
-- [ ] 加入服务器预设配置 方便不同体量服务器
 - [ ] Update TPA book format, including buttons in TPA menu
-- [ ] Show specific player amount in TPA menu according to the currently server player and even server settings
 - [x] Make menus like home and warp page switchable to make every button directly commands accessible without index adding in the end 比方说传送点，第一页比如我放5个位置 那就会存在玩家分数储存为页码比如是2 那我就会在触发记分项的时候比方说触发的8 那就会是 传送点#6的第二个操作
 - [x] 在编辑公共传送点时
    - 检测比如name, desc这些字符串的变化
@@ -278,7 +282,7 @@ Project To-do lists:
       3. 任何形式触碰维度相关内容（调用function tpa:dimension/get）
       4. 维度名称从空(name键不存在) 变为当前语言的指定维度名
       期望的效果: name 键 在被取名之前 默认不存在或者特殊值 如果被命名则显示该命名名称
-- [ ] Dialog 没有玩家名被显示 （考虑读一遍request_menu相关逻辑）
+- [x] Dialog 没有玩家名被显示 （考虑读一遍request_menu相关逻辑）
 - [ ] warp 尚未分离条件和使用新的output接口
    - [x] 重构所有warp rm, set, move
    - [x] warp的新增按钮
@@ -293,10 +297,6 @@ Project To-do lists:
 - [x] coords in here copiable
       - compatible with other dimensions
 - [x] 在warp设置菜单被调用的时候，应该显示是否有未保存的编辑。
-- [ ] 将输出调整整合成单独的输出菜单 包括 聊天栏显示开关 动作栏显示开关 对话框显示开关 头部手势开关
-   - 当动作栏显示为关时 强制聊天栏为开 
-   - 当聊天栏显示为关和动作栏显示为开时 自动开启头部手势并配提示 在该情况下强制关闭头部手势会带警告
-   - 当对话框显示为开时 对应菜单仅在对话框显示 不再在聊天栏/动作栏显示  同时在通知输出位置提示对话框已打开 附按钮作为fallback输出聊天栏/动作栏 如果对话框菜单没有被正确渲染
 - [x] 考虑把 Quick Action of Dialog 用emoji表情或者其他字符而不是语言来写label
 - [ ] Rewrite tp_pos with data storage
 - [x] home current bugs:
@@ -312,10 +312,8 @@ Project To-do lists:
 - [x] 语言优化
       - [x] 日语 英语核心功能措辞优化
       - [x] 新增韩语粤语
-- [ ] back, home, warp, tp_pos 等调用teleport模块接口的功能需要向接口传入完成时的输出以及其他额外数据
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
-- [ ] For 1.17+ consider use entity mark to replace most of the visual items
 - [x] Main version 26.3
 - [x] 考虑将 mc1.15 和 +mc1.13 分别改为 format_1_20_1 和 format_1_14_4 并 通过脚本做原版mc中pack.mcmeta中会做的事情
