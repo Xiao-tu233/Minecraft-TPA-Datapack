@@ -77,6 +77,7 @@ Project To-do lists:
 - [x] sync_lang.py 可能没有在其他的format版本中生效
 - [ ] 语言的index键应该在reload的时候被添加而不是语言的yml里
 - [x] tpa.lang_temp -> tpa.selected_language(tpa.slct_lang)
+- [ ] 需要比较两个子版本并移除两者不同的计分板并移除 同时计分板计分项重命名需要迁移
 - [x] 考虑使用调试模组 Sniffer BV14TmrB1EhA
 - [x] 将主版本改为26.3
 - [x] 增加更多脚本 在增加新功能的时候同步更改
@@ -225,6 +226,7 @@ Project To-do lists:
    - 当聊天栏显示为关和动作栏显示为开时 自动开启头部手势并配提示 在该情况下强制关闭头部手势会带警告
    - 当对话框显示为开时 对应菜单仅在对话框显示 不再在聊天栏/动作栏显示  同时在通知输出位置提示对话框已打开 附按钮作为fallback输出聊天栏/动作栏 如果对话框菜单没有被正确渲染
 - [ ] back, home, warp, tp_pos 等调用teleport模块接口的功能需要向接口传入完成时的输出以及其他额外数据
+- [ ] Update TPA book format, including buttons in TPA menu
 
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu
@@ -267,7 +269,6 @@ Project To-do lists:
 - [x] 上述问题解决之后 id就可以从1开始了
 - [x] 应该有2个启用按钮对应两种文件名在tpa:uninstall
 - [ ] Lang contains author key to specify the source of the translations
-- [ ] Update TPA book format, including buttons in TPA menu
 - [x] Make menus like home and warp page switchable to make every button directly commands accessible without index adding in the end 比方说传送点，第一页比如我放5个位置 那就会存在玩家分数储存为页码比如是2 那我就会在触发记分项的时候比方说触发的8 那就会是 传送点#6的第二个操作
 - [x] 在编辑公共传送点时
    - 检测比如name, desc这些字符串的变化
@@ -317,3 +318,12 @@ Project To-do lists:
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index
 - [x] Main version 26.3
 - [x] 考虑将 mc1.15 和 +mc1.13 分别改为 format_1_20_1 和 format_1_14_4 并 通过脚本做原版mc中pack.mcmeta中会做的事情
+
+
+
+- [ ] warp
+- [ ] users
+- [ ] updates: online
+- [ ] dimension
+- [ ] language
+- [ ] tp_pos
