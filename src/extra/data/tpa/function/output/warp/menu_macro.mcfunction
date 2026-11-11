@@ -77,6 +77,229 @@ execute unless data storage tpa:tpa temp.output.slots[0].buttons.moveup run data
 data modify storage tpa:tpa temp.dialog.actions[8].label set from storage tpa:tpa temp.output.slots[0].buttons.movedown.label
 data modify storage tpa:tpa temp.dialog.actions[8].tooltip set from storage tpa:tpa temp.output.slots[0].buttons.movedown.tooltip
 execute unless data storage tpa:tpa temp.output.slots[0].buttons.movedown run data remove storage tpa:tpa temp.dialog.actions[8].action
+data modify storage tpa:tpa temp.dialog.actions[9].label.label set from storage tpa:tpa temp.output.slots[1].label
+data modify storage tpa:tpa temp.dialog.actions[9].label.color set from storage tpa:tpa temp.output.slots[1].color
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip set value [""]
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip append value storage tpa:tpa temp.output.slots[1].enabled.tooltip.desc
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip append value storage tpa:tpa temp.output.slots[1].enabled.tooltip.space
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip append value storage tpa:tpa temp.output.slots[1].enabled.tooltip.brackets[0]
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip append value {}
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip[-1].color set from storage tpa:tpa temp.output.slots[1].color
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip[-1].text value storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip append value storage tpa:tpa temp.output.slots[1].enabled.tooltip.brackets[1]
+data modify storage tpa:tpa temp.dialog.actions[9].tooltip append value storage tpa:tpa temp.output.slots[1].disabled.tooltip
+
+data modify storage tpa:tpa temp.dialog.actions[10].label set value []
+data modify storage tpa:tpa temp.dialog.actions[10].label append from storage tpa:tpa temp.output.slots[1].enabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[10].label append from storage tpa:tpa temp.output.slots[1].disabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[10].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[10].tooltip append from storage tpa:tpa temp.output.slots[1].enabled.button_tp.tooltip
+data modify storage tpa:tpa temp.dialog.actions[10].tooltip append from storage tpa:tpa temp.output.slots[1].disabled.button_tp.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].button_tp.enabled run data remove storage tpa:tpa temp.dialog.actions[10].action
+
+data modify storage tpa:tpa temp.dialog.actions[11].label set from storage tpa:tpa temp.output.slots[1].buttons.setpos.label
+data modify storage tpa:tpa temp.dialog.actions[11].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.setpos.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].buttons.setpos run data remove storage tpa:tpa temp.dialog.actions[11].action
+
+data modify storage tpa:tpa temp.dialog.actions[12].label set from storage tpa:tpa temp.output.slots[1].buttons.setname.label
+data modify storage tpa:tpa temp.dialog.actions[12].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.setname.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].buttons.setname run data remove storage tpa:tpa temp.dialog.actions[12].action
+
+data modify storage tpa:tpa temp.dialog.actions[13].label set from storage tpa:tpa temp.output.slots[1].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[13].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[13].action
+
+data modify storage tpa:tpa temp.dialog.actions[13].label set from storage tpa:tpa temp.output.slots[1].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[13].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[13].action
+
+data modify storage tpa:tpa temp.dialog.actions[14].label set from storage tpa:tpa temp.output.slots[1].buttons.rm.label
+data modify storage tpa:tpa temp.dialog.actions[14].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.rm.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[14].action
+
+data modify storage tpa:tpa temp.dialog.actions[15].label set value []
+data modify storage tpa:tpa temp.dialog.actions[15].label set from storage tpa:tpa temp.output.slots[1].enabled.disable.label
+data modify storage tpa:tpa temp.dialog.actions[15].label set from storage tpa:tpa temp.output.slots[1].disabled.enable.label
+data modify storage tpa:tpa temp.dialog.actions[15].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[15].tooltip set from storage tpa:tpa temp.output.slots[1].enabled.disable.tooltip
+data modify storage tpa:tpa temp.dialog.actions[15].tooltip set from storage tpa:tpa temp.output.slots[1].disabled.enable.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[15].action.command set value "/function tpa:warp/enable/slot_2"
+
+data modify storage tpa:tpa temp.dialog.actions[16].label set from storage tpa:tpa temp.output.slots[1].buttons.moveup.label
+data modify storage tpa:tpa temp.dialog.actions[16].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.moveup.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].buttons.moveup run data remove storage tpa:tpa temp.dialog.actions[16].action
+
+data modify storage tpa:tpa temp.dialog.actions[17].label set from storage tpa:tpa temp.output.slots[1].buttons.movedown.label
+data modify storage tpa:tpa temp.dialog.actions[17].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.movedown.tooltip
+execute unless data storage tpa:tpa temp.output.slots[1].buttons.movedown run data remove storage tpa:tpa temp.dialog.actions[17].action
+
+data modify storage tpa:tpa temp.dialog.actions[18].label.label set from storage tpa:tpa temp.output.slots[2].label
+data modify storage tpa:tpa temp.dialog.actions[18].label.color set from storage tpa:tpa temp.output.slots[2].color
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip set value [""]
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip append value storage tpa:tpa temp.output.slots[2].enabled.tooltip.desc
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip append value storage tpa:tpa temp.output.slots[2].enabled.tooltip.space
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip append value storage tpa:tpa temp.output.slots[2].enabled.tooltip.brackets[0]
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip append value {}
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip[-1].color set from storage tpa:tpa temp.output.slots[2].color
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip[-1].text value storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip append value storage tpa:tpa temp.output.slots[2].enabled.tooltip.brackets[1]
+data modify storage tpa:tpa temp.dialog.actions[18].tooltip append value storage tpa:tpa temp.output.slots[2].disabled.tooltip
+
+data modify storage tpa:tpa temp.dialog.actions[19].label set value []
+data modify storage tpa:tpa temp.dialog.actions[19].label append from storage tpa:tpa temp.output.slots[2].enabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[19].label append from storage tpa:tpa temp.output.slots[2].disabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[19].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[19].tooltip append from storage tpa:tpa temp.output.slots[2].enabled.button_tp.tooltip
+data modify storage tpa:tpa temp.dialog.actions[19].tooltip append from storage tpa:tpa temp.output.slots[2].disabled.button_tp.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].button_tp.enabled run data remove storage tpa:tpa temp.dialog.actions[19].action
+
+data modify storage tpa:tpa temp.dialog.actions[20].label set from storage tpa:tpa temp.output.slots[2].buttons.setpos.label
+data modify storage tpa:tpa temp.dialog.actions[20].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.setpos.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].buttons.setpos run data remove storage tpa:tpa temp.dialog.actions[20].action
+
+data modify storage tpa:tpa temp.dialog.actions[21].label set from storage tpa:tpa temp.output.slots[2].buttons.setname.label
+data modify storage tpa:tpa temp.dialog.actions[21].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.setname.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].buttons.setname run data remove storage tpa:tpa temp.dialog.actions[21].action
+
+data modify storage tpa:tpa temp.dialog.actions[22].label set from storage tpa:tpa temp.output.slots[2].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[22].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[22].action
+
+data modify storage tpa:tpa temp.dialog.actions[22].label set from storage tpa:tpa temp.output.slots[2].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[22].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[22].action
+
+data modify storage tpa:tpa temp.dialog.actions[23].label set from storage tpa:tpa temp.output.slots[2].buttons.rm.label
+data modify storage tpa:tpa temp.dialog.actions[23].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.rm.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[23].action
+
+data modify storage tpa:tpa temp.dialog.actions[24].label set value []
+data modify storage tpa:tpa temp.dialog.actions[24].label set from storage tpa:tpa temp.output.slots[2].enabled.disable.label
+data modify storage tpa:tpa temp.dialog.actions[24].label set from storage tpa:tpa temp.output.slots[2].disabled.enable.label
+data modify storage tpa:tpa temp.dialog.actions[24].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[24].tooltip set from storage tpa:tpa temp.output.slots[2].enabled.disable.tooltip
+data modify storage tpa:tpa temp.dialog.actions[24].tooltip set from storage tpa:tpa temp.output.slots[2].disabled.enable.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[24].action.command set value "/function tpa:warp/enable/slot_3"
+
+data modify storage tpa:tpa temp.dialog.actions[25].label set from storage tpa:tpa temp.output.slots[2].buttons.moveup.label
+data modify storage tpa:tpa temp.dialog.actions[25].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.moveup.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].buttons.moveup run data remove storage tpa:tpa temp.dialog.actions[25].action
+
+data modify storage tpa:tpa temp.dialog.actions[26].label set from storage tpa:tpa temp.output.slots[2].buttons.movedown.label
+data modify storage tpa:tpa temp.dialog.actions[26].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.movedown.tooltip
+execute unless data storage tpa:tpa temp.output.slots[2].buttons.movedown run data remove storage tpa:tpa temp.dialog.actions[26].action
+
+data modify storage tpa:tpa temp.dialog.actions[27].label.label set from storage tpa:tpa temp.output.slots[3].label
+data modify storage tpa:tpa temp.dialog.actions[27].label.color set from storage tpa:tpa temp.output.slots[3].color
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip set value [""]
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip append value storage tpa:tpa temp.output.slots[3].enabled.tooltip.desc
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip append value storage tpa:tpa temp.output.slots[3].enabled.tooltip.space
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip append value storage tpa:tpa temp.output.slots[3].enabled.tooltip.brackets[0]
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip append value {}
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip[-1].color set from storage tpa:tpa temp.output.slots[3].color
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip[-1].text value storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip append value storage tpa:tpa temp.output.slots[3].enabled.tooltip.brackets[1]
+data modify storage tpa:tpa temp.dialog.actions[27].tooltip append value storage tpa:tpa temp.output.slots[3].disabled.tooltip
+
+data modify storage tpa:tpa temp.dialog.actions[28].label set value []
+data modify storage tpa:tpa temp.dialog.actions[28].label append from storage tpa:tpa temp.output.slots[3].enabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[28].label append from storage tpa:tpa temp.output.slots[3].disabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[28].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[28].tooltip append from storage tpa:tpa temp.output.slots[3].enabled.button_tp.tooltip
+data modify storage tpa:tpa temp.dialog.actions[28].tooltip append from storage tpa:tpa temp.output.slots[3].disabled.button_tp.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].button_tp.enabled run data remove storage tpa:tpa temp.dialog.actions[28].action
+
+data modify storage tpa:tpa temp.dialog.actions[29].label set from storage tpa:tpa temp.output.slots[3].buttons.setpos.label
+data modify storage tpa:tpa temp.dialog.actions[29].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.setpos.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].buttons.setpos run data remove storage tpa:tpa temp.dialog.actions[29].action
+
+data modify storage tpa:tpa temp.dialog.actions[30].label set from storage tpa:tpa temp.output.slots[3].buttons.setname.label
+data modify storage tpa:tpa temp.dialog.actions[30].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.setname.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].buttons.setname run data remove storage tpa:tpa temp.dialog.actions[30].action
+
+data modify storage tpa:tpa temp.dialog.actions[31].label set from storage tpa:tpa temp.output.slots[3].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[31].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[31].action
+
+data modify storage tpa:tpa temp.dialog.actions[31].label set from storage tpa:tpa temp.output.slots[3].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[31].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[31].action
+
+data modify storage tpa:tpa temp.dialog.actions[32].label set from storage tpa:tpa temp.output.slots[3].buttons.rm.label
+data modify storage tpa:tpa temp.dialog.actions[32].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.rm.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[32].action
+
+data modify storage tpa:tpa temp.dialog.actions[33].label set value []
+data modify storage tpa:tpa temp.dialog.actions[33].label set from storage tpa:tpa temp.output.slots[3].enabled.disable.label
+data modify storage tpa:tpa temp.dialog.actions[33].label set from storage tpa:tpa temp.output.slots[3].disabled.enable.label
+data modify storage tpa:tpa temp.dialog.actions[33].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[33].tooltip set from storage tpa:tpa temp.output.slots[3].enabled.disable.tooltip
+data modify storage tpa:tpa temp.dialog.actions[33].tooltip set from storage tpa:tpa temp.output.slots[3].disabled.enable.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[33].action.command set value "/function tpa:warp/enable/slot_4"
+
+data modify storage tpa:tpa temp.dialog.actions[34].label set from storage tpa:tpa temp.output.slots[3].buttons.moveup.label
+data modify storage tpa:tpa temp.dialog.actions[34].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.moveup.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].buttons.moveup run data remove storage tpa:tpa temp.dialog.actions[34].action
+
+data modify storage tpa:tpa temp.dialog.actions[35].label set from storage tpa:tpa temp.output.slots[3].buttons.movedown.label
+data modify storage tpa:tpa temp.dialog.actions[35].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.movedown.tooltip
+execute unless data storage tpa:tpa temp.output.slots[3].buttons.movedown run data remove storage tpa:tpa temp.dialog.actions[35].action
+
+data modify storage tpa:tpa temp.dialog.actions[36].label.label set from storage tpa:tpa temp.output.slots[4].label
+data modify storage tpa:tpa temp.dialog.actions[36].label.color set from storage tpa:tpa temp.output.slots[4].color
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip set value [""]
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip append value storage tpa:tpa temp.output.slots[4].enabled.tooltip.desc
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip append value storage tpa:tpa temp.output.slots[4].enabled.tooltip.space
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip append value storage tpa:tpa temp.output.slots[4].enabled.tooltip.brackets[0]
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip append value {}
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip[-1].color set from storage tpa:tpa temp.output.slots[4].color
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip[-1].text value storage tpa:tpa temp.output.format_parser[]
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip append value storage tpa:tpa temp.output.slots[4].enabled.tooltip.brackets[1]
+data modify storage tpa:tpa temp.dialog.actions[36].tooltip append value storage tpa:tpa temp.output.slots[4].disabled.tooltip
+
+data modify storage tpa:tpa temp.dialog.actions[37].label set value []
+data modify storage tpa:tpa temp.dialog.actions[37].label append from storage tpa:tpa temp.output.slots[4].enabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[37].label append from storage tpa:tpa temp.output.slots[4].disabled.button_tp.label
+data modify storage tpa:tpa temp.dialog.actions[37].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[37].tooltip append from storage tpa:tpa temp.output.slots[4].enabled.button_tp.tooltip
+data modify storage tpa:tpa temp.dialog.actions[37].tooltip append from storage tpa:tpa temp.output.slots[4].disabled.button_tp.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].button_tp.enabled run data remove storage tpa:tpa temp.dialog.actions[37].action
+
+data modify storage tpa:tpa temp.dialog.actions[38].label set from storage tpa:tpa temp.output.slots[4].buttons.setpos.label
+data modify storage tpa:tpa temp.dialog.actions[38].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.setpos.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].buttons.setpos run data remove storage tpa:tpa temp.dialog.actions[38].action
+
+data modify storage tpa:tpa temp.dialog.actions[39].label set from storage tpa:tpa temp.output.slots[4].buttons.setname.label
+data modify storage tpa:tpa temp.dialog.actions[39].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.setname.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].buttons.setname run data remove storage tpa:tpa temp.dialog.actions[39].action
+
+data modify storage tpa:tpa temp.dialog.actions[40].label set from storage tpa:tpa temp.output.slots[4].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[40].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[40].action
+
+data modify storage tpa:tpa temp.dialog.actions[40].label set from storage tpa:tpa temp.output.slots[4].buttons.setdesc.label
+data modify storage tpa:tpa temp.dialog.actions[40].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.setdesc.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].buttons.setdesc run data remove storage tpa:tpa temp.dialog.actions[40].action
+
+data modify storage tpa:tpa temp.dialog.actions[41].label set from storage tpa:tpa temp.output.slots[4].buttons.rm.label
+data modify storage tpa:tpa temp.dialog.actions[41].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.rm.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[41].action
+
+data modify storage tpa:tpa temp.dialog.actions[42].label set value []
+data modify storage tpa:tpa temp.dialog.actions[42].label set from storage tpa:tpa temp.output.slots[4].enabled.disable.label
+data modify storage tpa:tpa temp.dialog.actions[42].label set from storage tpa:tpa temp.output.slots[4].disabled.enable.label
+data modify storage tpa:tpa temp.dialog.actions[42].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[42].tooltip set from storage tpa:tpa temp.output.slots[4].enabled.disable.tooltip
+data modify storage tpa:tpa temp.dialog.actions[42].tooltip set from storage tpa:tpa temp.output.slots[4].disabled.enable.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[42].action.command set value "/function tpa:warp/enable/slot_5"
+
+data modify storage tpa:tpa temp.dialog.actions[43].label set from storage tpa:tpa temp.output.slots[4].buttons.moveup.label
+data modify storage tpa:tpa temp.dialog.actions[43].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.moveup.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].buttons.moveup run data remove storage tpa:tpa temp.dialog.actions[43].action
+
+data modify storage tpa:tpa temp.dialog.actions[44].label set from storage tpa:tpa temp.output.slots[4].buttons.movedown.label
+data modify storage tpa:tpa temp.dialog.actions[44].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.movedown.tooltip
+execute unless data storage tpa:tpa temp.output.slots[4].buttons.movedown run data remove storage tpa:tpa temp.dialog.actions[44].action
 
 scoreboard players reset #output.index_format tpa.variables
 execute store result score #output.index_format tpa.variables run data get storage tpa:tpa temp.output.slots[1].enabled.tooltip.hoverevent_location_format
