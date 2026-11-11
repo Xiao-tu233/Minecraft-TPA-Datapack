@@ -12,7 +12,7 @@
             Button temp.output.slots[].enabled.button_tp, Button temp.output.slots[].disabled.button_tp, Button temp.output.slots[].buttons.setpos, Button temp.output.slots[].buttons.setname, Button temp.output.slots[].buttons.setdesc, \
             Button temp.output.slots[].buttons.rm, Button temp.output.slots[].enabled.disable, Button temp.output.slots[].disabled.enable, \
             Button temp.output.slots[].buttons.moveup, Button temp.output.slots[].buttons.movedown, \
-            Button temp.output.button_add \            
+        Button temp.output.button_add \            
 #! For legacy version below 1.20.2, input temp.output.slots[].color is an integer and follows this mapping: {-2: "gray", -1: "red", 0: "green", 1: "light_purple"}
 
 execute store result score #output.index_format tpa.variables run data get storage tpa:tpa temp.output.index_format
@@ -32,6 +32,9 @@ execute store result storage tpa:tpa temp.output.next_page int 1 run scoreboard 
 data modify storage tpa:tpa temp.output.next_page set string storage tpa:tpa temp.output.next_page
 
 tellraw @s[predicate=tpa:output/show_chatbar] [{text: "------------ ", color: "white"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.title", color: "aqua"}, {text: " (", color: "white"}, {interpret: true, color: "white", storage: "tpa:tpa", nbt: "temp.output.current_page"}, {text: "/", color: "gray"}, {interpret: true, color: "white", storage: "tpa:tpa", nbt: "temp.output.total_pages"}, {text: ") ------------", color: "white"}]
+data modify storage tpa:tpa temp.dialog.title[0].text set from storage tpa:tpa temp.output.title
+data modify storage tpa:tpa temp.dialog.title[2].text set from storage tpa:tpa temp.output.current_page
+data modify storage tpa:tpa temp.dialog.title[4].text set from storage tpa:tpa temp.output.total_pages
 
 data modify storage tpa:tpa temp.output.selector_index set value []
 data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.index[0]
@@ -42,15 +45,28 @@ execute if score #output.index_format tpa.variables matches 0 run data modify st
 execute if score #output.index_format tpa.variables matches 1 run function tpa:output/selector/append_indexes
 data modify storage tpa:tpa temp.output.selector_index append from storage tpa:tpa temp.output.index[2]
 
+data modify storage tpa:tpa temp.dialog.body.contents set from storage tpa:tpa temp.output.selector_index
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, color: "gray", storage: "tpa:tpa", nbt: "temp.output.selector_index[]", separator: ""}]
 tellraw @s[predicate=tpa:output/show_chatbar] ""
 
 execute store result score #output.editting tpa.variables run data get storage tpa:tpa temp.output.editting
 data modify storage tpa:tpa temp.dialog.actions set value [\
-    {}\
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -3"}, label: {text: "", color: "aqua"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -4"}, label: {text: "", color: "aqua"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -5"}, label: {text: "", color: "aqua"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -6"}, label: {text: "", color: "aqua"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -7"}, label: {text: "", color: "aqua"}, tooltip: ""}, \
+    {width: 150, label: [""]}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, \
+    {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -2"}}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -8"}}\
 ]
 execute if score #output.editting tpa.variables matches 1 run data modify storage tpa:tpa temp.dialog.actions set value [\
-    {}\
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -3"}, label: {text: "", color: "aqua"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setpos/slot_1"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setname/slot_1"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setdesc/slot_1"}, label: {text: "", color: "green"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/remove/slot_1"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/disable/slot_1"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/moveup/slot_1"}, label: {text: "", color: "light_purple"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/movedown/slot_1"}, label: {text: "", color: "light_purple"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -4"}, label: {text: "", color: "aqua"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setpos/slot_2"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setname/slot_2"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setdesc/slot_2"}, label: {text: "", color: "green"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/remove/slot_2"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/disable/slot_2"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/moveup/slot_2"}, label: {text: "", color: "light_purple"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/movedown/slot_2"}, label: {text: "", color: "light_purple"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -5"}, label: {text: "", color: "aqua"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setpos/slot_3"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setname/slot_3"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setdesc/slot_3"}, label: {text: "", color: "green"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/remove/slot_3"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/disable/slot_3"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/moveup/slot_3"}, label: {text: "", color: "light_purple"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/movedown/slot_3"}, label: {text: "", color: "light_purple"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -6"}, label: {text: "", color: "aqua"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setpos/slot_4"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setname/slot_4"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setdesc/slot_4"}, label: {text: "", color: "green"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/remove/slot_4"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/disable/slot_4"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/moveup/slot_4"}, label: {text: "", color: "light_purple"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/movedown/slot_4"}, label: {text: "", color: "light_purple"}, tooltip: ""}, \
+    {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -7"}, label: {text: "", color: "aqua"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setpos/slot_5"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setname/slot_5"}, label: {text: "", color: "green"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/setdesc/slot_5"}, label: {text: "", color: "green"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/remove/slot_5"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/disable/slot_5"}, label: {text: "", color: "red"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/moveup/slot_5"}, label: {text: "", color: "light_purple"}, tooltip: ""},  {width: 150, action: {type: "minecraft:run_command", command: "/function tpa:warp/movedown/slot_5"}, label: {text: "", color: "light_purple"}, tooltip: ""}, \
+    {width: 150, label: [""]}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, \
+    {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -2"}}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.warp set -8"}}, {width: 150, label: ""}, {width: 150, label: ""}\
 ]
 
 data remove storage tpa:tpa temp.args
@@ -63,11 +79,21 @@ data modify storage tpa:tpa temp.args.color_4 set from storage tpa:tpa temp.outp
 function tpa:output/warp/menu_macro with storage tpa:tpa temp.args
 
 tellraw @s[predicate=tpa:output/show_chatbar] {text: "  ", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[0]"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.brackets[1]"}], hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "temp.output.button_add.tooltip"}}, click_event: {action: "run_command", command: "/function tpa:warp/add"}}
+data remove storage tpa:tpa temp.output.dialog_action_button_add
+data modify storage tpa:tpa temp.output.dialog_action_button_add.label set from storage tpa:tpa temp.output.button_add.label
+data modify storage tpa:tpa temp.output.dialog_action_button_add.tooltip set from storage tpa:tpa temp.output.button_add.tooltip
+data modify storage tpa:tpa temp.output.dialog_action_button_add.action set value {type: "minecraft:run_command", command: "/function tpa:warp/add"}
+execute if data storage tpa:tpa temp.output.button_add run data modify storage tpa:tpa temp.dialog.actions[46] set from storage tpa:tpa temp.output.dialog_action_button_add
 
 execute if score #output.current_page tpa.variables matches ..1 run function tpa:output/selector/disabled/previous_page
 execute if score #output.current_page tpa.variables matches 2.. run function tpa:output/selector/enabled/previous_page
 execute if score #output.current_page tpa.variables >= #output.total_pages tpa.variables run function tpa:output/selector/disabled/next_page
 execute if score #output.current_page tpa.variables < #output.total_pages tpa.variables run function tpa:output/selector/enabled/next_page
+
+data modify storage tpa:tpa temp.dialog.actions[-7].label set from storage tpa:tpa temp.output.button_previous_page
+data modify storage tpa:tpa temp.dialog.actions[-3].label set from storage tpa:tpa temp.output.button_next_page
+execute if score #output.editting tpa.variables matches 1 run data modify storage tpa:tpa temp.dialog.actions[-7].action.command set value "/function tpa:warp/option/previous_page"
+execute if score #output.editting tpa.variables matches 1 run data modify storage tpa:tpa temp.dialog.actions[-3].action.command set value "/function tpa:warp/option/next_page"
 
 tellraw @s[predicate=tpa:output/show_chatbar] ["", \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[0]", color: "gray", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[1]", color: "gray"}]}, \

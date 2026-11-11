@@ -65,16 +65,8 @@ data remove storage tpa:tpa temp.output
 function tpa:output/warp/menu
 
 # Dialogs
-# data remove storage tpa:tpa temp.args.dialog
-# data modify storage tpa:tpa temp.args.dialog set value {type: "minecraft:multi_action", pause: false, after_action: "none", title: "$(title)", columns: 2, actions: []}
-# execute if score #warp.editting tpa.variables matches 1 run data modify storage tpa:tpa temp.args.dialog.columns set value 9
-# execute if score #if_display_warp_menu_title tpa.variables matches 1 run data modify entity @n[type=text_display, tag=tpa.text_display] text set from storage tpa:tpa loaded_lang.warp_menu_title
-# execute if score #if_display_warp_menu_title tpa.variables matches 1 run data modify storage tpa:tpa temp.args.dialog.title set from entity @n[type=text_display, tag=tpa.text_display] text
-
-# Dialogs
-# execute if score #if_display_warp_menu_title tpa.variables matches 1 run function tpa:warp/dialog with storage tpa:tpa temp.args
-
-# Remove button display for non-OPs
-# data modify storage tpa:tpa warp[0] set value {}
+data remove storage tpa:tpa temp.args
+data modify storage tpa:tpa temp.args.dialog set from storage tpa:tpa temp.dialog
+function tpa:util/dialog with storage tpa:tpa temp.args
 
 scoreboard players operation #warp tpa.variables = #previous_warp tpa.variables
