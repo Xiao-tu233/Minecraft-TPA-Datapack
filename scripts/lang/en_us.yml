@@ -431,7 +431,7 @@ warp_button_enable_hoverevent: §bClick to enable this warp
 warp_button_disable: §cDisable§r
 warp_button_disable_hoverevent: §bClick to disable this warp (except for name, other information will be hidden, enable 
   to view)
-warp_button_moveup: §dMove up§r
+warp_button_moveup: §dMove Up§r
 warp_button_moveup_hoverevent: §bClick to swap this warp with the one above
 warp_button_moveup_notavail_hoverevent: §cCannot move up, this teleport spot is already at the top
 warp_button_movedown: §dMove Down§r
