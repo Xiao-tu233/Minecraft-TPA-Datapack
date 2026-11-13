@@ -9,7 +9,9 @@
         "contents": "\n\n\n\n\n\n\n §a↓ ▶ §6☰ TPA"
     },
     "action": {
-        "label": "§6▶ TPA",
+        "label": {
+            "translate": "gui.continue"
+        },
         "tooltip": "§b▶ ☰ TPA",
         "width": 300,
         "action": {

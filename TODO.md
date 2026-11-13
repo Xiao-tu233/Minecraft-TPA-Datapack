@@ -298,7 +298,7 @@ Project To-do lists:
 - [x] coords in here copiable
       - compatible with other dimensions
 - [x] 在warp设置菜单被调用的时候，应该显示是否有未保存的编辑。
-- [x] 考虑把 Quick Action of Dialog 用emoji表情或者其他字符而不是语言来写label
+- [x] 考虑把 Quick Action of Dialog 用emoji表情或者其他字符而不是语言来写label (或者translate语言键)
 - [ ] Rewrite tp_pos with data storage
 - [x] home current bugs:
       - [x] 没有home时触发home时的语言没有正常显示

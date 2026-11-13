@@ -9,13 +9,17 @@
         "contents": "\n\n\n\n\n\n\n §a↓ ▶ §6☰ TPA \n\n\n\n\n\n\n"
     },
     "exit_action": {
-        "label": "§c❌",
+        "label": {
+            "translate": "gui.cancel"
+        },
         "tooltip": "§b❌ ⚡ TPA",
         "width": 200
     },
     "actions": [
         {
-            "label": "§6▶ TPA",
+            "label": {
+                "translate": "gui.continue"
+            },
             "tooltip": "§b▶ ☰ TPA",
             "width": 300,
             "action": {
