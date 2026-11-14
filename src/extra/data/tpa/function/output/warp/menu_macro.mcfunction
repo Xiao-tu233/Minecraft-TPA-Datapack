@@ -54,13 +54,15 @@ data modify storage tpa:tpa temp.dialog.actions[5].label set from storage tpa:tp
 data modify storage tpa:tpa temp.dialog.actions[5].tooltip set from storage tpa:tpa temp.output.slots[0].buttons.rm.tooltip
 execute unless data storage tpa:tpa temp.output.slots[0].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[5].action
 
-data modify storage tpa:tpa temp.dialog.actions[6].label set value []
+data modify storage tpa:tpa temp.dialog.actions[6].label set value [""]
 data modify storage tpa:tpa temp.dialog.actions[6].label append from storage tpa:tpa temp.output.slots[0].enabled.disable.label
 data modify storage tpa:tpa temp.dialog.actions[6].label append from storage tpa:tpa temp.output.slots[0].disabled.enable.label
-data modify storage tpa:tpa temp.dialog.actions[6].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[6].tooltip set value [""]
 data modify storage tpa:tpa temp.dialog.actions[6].tooltip append from storage tpa:tpa temp.output.slots[0].enabled.disable.tooltip
 data modify storage tpa:tpa temp.dialog.actions[6].tooltip append from storage tpa:tpa temp.output.slots[0].disabled.enable.tooltip
-execute unless data storage tpa:tpa temp.output.slots[0].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[6].action.command set value "/function tpa:warp/enable/slot_1"
+execute if data storage tpa:tpa temp.output.slots[0].disabled.enable run data modify storage tpa:tpa temp.dialog.actions[6].action.command set value "/function tpa:warp/enable/slot_1"
+execute if data storage tpa:tpa temp.output.slots[0].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[6].action.command set value "/function tpa:warp/disable/slot_1"
+execute if data storage tpa:tpa temp.dialog.actions[6].action run data modify storage tpa:tpa temp.dialog.actions[6].action.type set value "minecraft:run_command"
 
 data modify storage tpa:tpa temp.dialog.actions[7].label set from storage tpa:tpa temp.output.slots[0].buttons.moveup.label
 data modify storage tpa:tpa temp.dialog.actions[7].tooltip set from storage tpa:tpa temp.output.slots[0].buttons.moveup.tooltip
@@ -124,13 +126,15 @@ data modify storage tpa:tpa temp.dialog.actions[14].label set from storage tpa:t
 data modify storage tpa:tpa temp.dialog.actions[14].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.rm.tooltip
 execute unless data storage tpa:tpa temp.output.slots[1].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[14].action
 
-data modify storage tpa:tpa temp.dialog.actions[15].label set value []
+data modify storage tpa:tpa temp.dialog.actions[15].label set value [""]
 data modify storage tpa:tpa temp.dialog.actions[15].label append from storage tpa:tpa temp.output.slots[1].enabled.disable.label
 data modify storage tpa:tpa temp.dialog.actions[15].label append from storage tpa:tpa temp.output.slots[1].disabled.enable.label
-data modify storage tpa:tpa temp.dialog.actions[15].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[15].tooltip set value [""]
 data modify storage tpa:tpa temp.dialog.actions[15].tooltip append from storage tpa:tpa temp.output.slots[1].enabled.disable.tooltip
 data modify storage tpa:tpa temp.dialog.actions[15].tooltip append from storage tpa:tpa temp.output.slots[1].disabled.enable.tooltip
-execute unless data storage tpa:tpa temp.output.slots[1].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[15].action.command set value "/function tpa:warp/enable/slot_2"
+execute if data storage tpa:tpa temp.output.slots[1].disabled.enable run data modify storage tpa:tpa temp.dialog.actions[15].action.command set value "/function tpa:warp/enable/slot_2"
+execute if data storage tpa:tpa temp.output.slots[1].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[15].action.command set value "/function tpa:warp/disable/slot_2"
+execute if data storage tpa:tpa temp.dialog.actions[15].action run data modify storage tpa:tpa temp.dialog.actions[15].action.type set value "minecraft:run_command"
 
 data modify storage tpa:tpa temp.dialog.actions[16].label set from storage tpa:tpa temp.output.slots[1].buttons.moveup.label
 data modify storage tpa:tpa temp.dialog.actions[16].tooltip set from storage tpa:tpa temp.output.slots[1].buttons.moveup.tooltip
@@ -195,13 +199,15 @@ data modify storage tpa:tpa temp.dialog.actions[23].label set from storage tpa:t
 data modify storage tpa:tpa temp.dialog.actions[23].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.rm.tooltip
 execute unless data storage tpa:tpa temp.output.slots[2].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[23].action
 
-data modify storage tpa:tpa temp.dialog.actions[24].label set value []
+data modify storage tpa:tpa temp.dialog.actions[24].label set value [""]
 data modify storage tpa:tpa temp.dialog.actions[24].label append from storage tpa:tpa temp.output.slots[2].enabled.disable.label
 data modify storage tpa:tpa temp.dialog.actions[24].label append from storage tpa:tpa temp.output.slots[2].disabled.enable.label
-data modify storage tpa:tpa temp.dialog.actions[24].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[24].tooltip set value [""]
 data modify storage tpa:tpa temp.dialog.actions[24].tooltip append from storage tpa:tpa temp.output.slots[2].enabled.disable.tooltip
 data modify storage tpa:tpa temp.dialog.actions[24].tooltip append from storage tpa:tpa temp.output.slots[2].disabled.enable.tooltip
-execute unless data storage tpa:tpa temp.output.slots[2].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[24].action.command set value "/function tpa:warp/enable/slot_3"
+execute if data storage tpa:tpa temp.output.slots[2].disabled.enable run data modify storage tpa:tpa temp.dialog.actions[24].action.command set value "/function tpa:warp/enable/slot_3"
+execute if data storage tpa:tpa temp.output.slots[2].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[24].action.command set value "/function tpa:warp/disable/slot_3"
+execute if data storage tpa:tpa temp.dialog.actions[24].action run data modify storage tpa:tpa temp.dialog.actions[24].action.type set value "minecraft:run_command"
 
 data modify storage tpa:tpa temp.dialog.actions[25].label set from storage tpa:tpa temp.output.slots[2].buttons.moveup.label
 data modify storage tpa:tpa temp.dialog.actions[25].tooltip set from storage tpa:tpa temp.output.slots[2].buttons.moveup.tooltip
@@ -266,13 +272,15 @@ data modify storage tpa:tpa temp.dialog.actions[32].label set from storage tpa:t
 data modify storage tpa:tpa temp.dialog.actions[32].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.rm.tooltip
 execute unless data storage tpa:tpa temp.output.slots[3].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[32].action
 
-data modify storage tpa:tpa temp.dialog.actions[33].label set value []
+data modify storage tpa:tpa temp.dialog.actions[33].label set value [""]
 data modify storage tpa:tpa temp.dialog.actions[33].label append from storage tpa:tpa temp.output.slots[3].enabled.disable.label
 data modify storage tpa:tpa temp.dialog.actions[33].label append from storage tpa:tpa temp.output.slots[3].disabled.enable.label
-data modify storage tpa:tpa temp.dialog.actions[33].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[33].tooltip set value [""]
 data modify storage tpa:tpa temp.dialog.actions[33].tooltip append from storage tpa:tpa temp.output.slots[3].enabled.disable.tooltip
 data modify storage tpa:tpa temp.dialog.actions[33].tooltip append from storage tpa:tpa temp.output.slots[3].disabled.enable.tooltip
-execute unless data storage tpa:tpa temp.output.slots[3].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[33].action.command set value "/function tpa:warp/enable/slot_4"
+execute if data storage tpa:tpa temp.output.slots[3].disabled.enable run data modify storage tpa:tpa temp.dialog.actions[33].action.command set value "/function tpa:warp/enable/slot_4"
+execute if data storage tpa:tpa temp.output.slots[3].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[33].action.command set value "/function tpa:warp/disable/slot_4"
+execute if data storage tpa:tpa temp.dialog.actions[33].action run data modify storage tpa:tpa temp.dialog.actions[33].action.type set value "minecraft:run_command"
 
 data modify storage tpa:tpa temp.dialog.actions[34].label set from storage tpa:tpa temp.output.slots[3].buttons.moveup.label
 data modify storage tpa:tpa temp.dialog.actions[34].tooltip set from storage tpa:tpa temp.output.slots[3].buttons.moveup.tooltip
@@ -315,7 +323,9 @@ data modify storage tpa:tpa temp.dialog.actions[37].label append from storage tp
 data modify storage tpa:tpa temp.dialog.actions[37].tooltip set value []
 data modify storage tpa:tpa temp.dialog.actions[37].tooltip append from storage tpa:tpa temp.output.slots[4].enabled.button_tp.tooltip
 data modify storage tpa:tpa temp.dialog.actions[37].tooltip append from storage tpa:tpa temp.output.slots[4].disabled.button_tp.tooltip
-execute unless data storage tpa:tpa temp.output.slots[4].enabled.button_tp run data remove storage tpa:tpa temp.dialog.actions[37].action
+execute if data storage tpa:tpa temp.output.slots[4].disabled.enable run data modify storage tpa:tpa temp.dialog.actions[37].action.command set value "/function tpa:warp/enable/slot_4"
+execute if data storage tpa:tpa temp.output.slots[4].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[37].action.command set value "/function tpa:warp/disable/slot_4"
+execute if data storage tpa:tpa temp.dialog.actions[37].action run data modify storage tpa:tpa temp.dialog.actions[37].action.type set value "minecraft:run_command"
 
 data modify storage tpa:tpa temp.dialog.actions[38].label set from storage tpa:tpa temp.output.slots[4].buttons.setpos.label
 data modify storage tpa:tpa temp.dialog.actions[38].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.setpos.tooltip
@@ -337,13 +347,15 @@ data modify storage tpa:tpa temp.dialog.actions[41].label set from storage tpa:t
 data modify storage tpa:tpa temp.dialog.actions[41].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.rm.tooltip
 execute unless data storage tpa:tpa temp.output.slots[4].buttons.rm run data remove storage tpa:tpa temp.dialog.actions[41].action
 
-data modify storage tpa:tpa temp.dialog.actions[42].label set value []
+data modify storage tpa:tpa temp.dialog.actions[42].label set value [""]
 data modify storage tpa:tpa temp.dialog.actions[42].label append from storage tpa:tpa temp.output.slots[4].enabled.disable.label
 data modify storage tpa:tpa temp.dialog.actions[42].label append from storage tpa:tpa temp.output.slots[4].disabled.enable.label
-data modify storage tpa:tpa temp.dialog.actions[42].tooltip set value []
+data modify storage tpa:tpa temp.dialog.actions[42].tooltip set value [""]
 data modify storage tpa:tpa temp.dialog.actions[42].tooltip append from storage tpa:tpa temp.output.slots[4].enabled.disable.tooltip
 data modify storage tpa:tpa temp.dialog.actions[42].tooltip append from storage tpa:tpa temp.output.slots[4].disabled.enable.tooltip
-execute unless data storage tpa:tpa temp.output.slots[4].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[42].action.command set value "/function tpa:warp/enable/slot_5"
+execute if data storage tpa:tpa temp.output.slots[4].disabled.enable run data modify storage tpa:tpa temp.dialog.actions[42].action.command set value "/function tpa:warp/enable/slot_5"
+execute if data storage tpa:tpa temp.output.slots[4].enabled.disable run data modify storage tpa:tpa temp.dialog.actions[42].action.command set value "/function tpa:warp/disable/slot_5"
+execute if data storage tpa:tpa temp.dialog.actions[42].action run data modify storage tpa:tpa temp.dialog.actions[42].action.type set value "minecraft:run_command"
 
 data modify storage tpa:tpa temp.dialog.actions[43].label set from storage tpa:tpa temp.output.slots[4].buttons.moveup.label
 data modify storage tpa:tpa temp.dialog.actions[43].tooltip set from storage tpa:tpa temp.output.slots[4].buttons.moveup.tooltip
