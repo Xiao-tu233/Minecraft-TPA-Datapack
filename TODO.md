@@ -287,7 +287,9 @@ Project To-do lists:
 - [ ] warp 尚未分离条件和使用新的output接口
    - [x] 重构所有warp rm, set, move
    - [x] warp的新增按钮
-   - [ ] Dialog
+   - [ ] moveup move down
+      - [ ] buttons should have static check if available to move up or down
+   - [x] Dialog
       - Hide buttons and inputs if not neccessary   
    - [ ] 1.17- slot color display compatitibility: temp.output.color will be the number id of the dimension 
 - [x] 实现release_meta.yml
@@ -312,7 +314,8 @@ Project To-do lists:
       - [x] 玩家页码错误时 不会自动设置回去 (页码没有被正确的检查)
 - [x] 语言优化
       - [x] 日语 英语核心功能措辞优化
-      - [x] 新增韩语粤语
+      - [x] 
+- [x] 大部分对话框包含了可以关闭的Done按钮而不是必须用esc退出
 
 ## Cross-version Compat (“不同版本哪里不一致？”)
 - [x] 1.20.2+的情况下 公共传送点的默认名称应该为 warp_number + 槽位index

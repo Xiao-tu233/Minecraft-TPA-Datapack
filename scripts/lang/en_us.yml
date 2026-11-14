@@ -29,7 +29,7 @@ dimension_the_end: The End
 dimension_unknown: Unknown Dimension
 dimension_unknown_detected_leftpart: Unknown dimension detected (
 dimension_unknown_detected_rightpart: '), please configure it in the dimension menu: '
-here_button_tpa: '[§bRequest Teleport§r]'
+here_button_tpa: '§bRequest Teleport§r'
 here_dim_postion_hoverevent: Position in %s
 here_postion_hoverevent: Click to copy coordinates
 here_button_tpa_notavail_hoverevent: §cThis player does not allow teleporting

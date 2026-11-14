@@ -52,7 +52,7 @@ data modify storage tpa:tpa temp.dialog.actions set value [\
     {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.home set -6"}, label: {text: "", color: "aqua"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.sethome set -6"}, label: {text: "", color: "green"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.removehome set -6"}, label: {text: "", color: "red"}, tooltip: ""}, \
     {width: 150, label: {text: ""}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.home set -7"}, label: {text: "", color: "aqua"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.sethome set -7"}, label: {text: "", color: "green"}, tooltip: ""}, {width: 150, action: {type: "minecraft:run_command", command: "/trigger tpa.removehome set -7"}, label: {text: "", color: "red"}, tooltip: ""}, \
     {width: 150, label: [""], action: {type: "minecraft:run_command", command: "/trigger tpa.home set -9"}}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: ""}, \
-    {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.home set -2"}}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.home set -8"}}\
+    {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.home set -2"}, previous_page_action: 1b}, {width: 150, label: ""}, {width: 150, label: ""}, {width: 150, label: {text: ""}, action: {type: "minecraft:run_command", command: "/trigger tpa.home set -8"}, next_page_action: 1b}\
 ]
 
 data remove storage tpa:tpa temp.args
@@ -69,14 +69,18 @@ data modify storage tpa:tpa temp.dialog.actions[20].label set from storage tpa:t
 data modify storage tpa:tpa temp.dialog.actions[20].tooltip set from storage tpa:tpa temp.output.button_add.tooltip
 execute unless data storage tpa:tpa temp.output.button_add run data remove storage tpa:tpa temp.dialog.actions[20].action
 
+# No Edit mode for home menu
 scoreboard players set #output.editting tpa.variables 0
 execute if score #output.current_page tpa.variables matches ..1 run function tpa:output/selector/disabled/previous_page
 execute if score #output.current_page tpa.variables matches 2.. run function tpa:output/selector/enabled/previous_page
 execute if score #output.current_page tpa.variables >= #output.total_pages tpa.variables run function tpa:output/selector/disabled/next_page
 execute if score #output.current_page tpa.variables < #output.total_pages tpa.variables run function tpa:output/selector/enabled/next_page
 
-data modify storage tpa:tpa temp.dialog.actions[-4].label set from storage tpa:tpa temp.output.button_previous_page
-data modify storage tpa:tpa temp.dialog.actions[-1].label set from storage tpa:tpa temp.output.button_next_page
+data modify storage tpa:tpa temp.dialog.actions[{previous_page_action: 1b}].label set from storage tpa:tpa temp.output.button_previous_page
+data modify storage tpa:tpa temp.dialog.actions[{next_page_action: 1b}].label set from storage tpa:tpa temp.output.button_next_page
+
+data remove storage tpa:tpa temp.dialog.actions[{previous_page_action: 1b}].previous_page_action
+data remove storage tpa:tpa temp.dialog.actions[{next_page_action: 1b}].next_page_action
 
 tellraw @s[predicate=tpa:output/show_chatbar] ["", \
     {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[0]", color: "gray", extra: [{interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.label"}, {interpret: true, storage: "tpa:tpa", nbt: "temp.output.buttons.disabled.previous_page.brackets[1]", color: "gray"}]}, \

@@ -32,9 +32,9 @@ execute store result score #output.index_format tpa.variables run data get stora
 data modify storage tpa:tpa temp.output.format_parser set value []
 
 data modify storage tpa:tpa temp.output.coordinate_components set value ["", " ", "", " ", ""]
-data modify storage tpa:tpa temp.output.coordinate_components[0] set string storage tpa:tpa temp.home_candidate.x
-data modify storage tpa:tpa temp.output.coordinate_components[2] set string storage tpa:tpa temp.home_candidate.y
-data modify storage tpa:tpa temp.output.coordinate_components[4] set string storage tpa:tpa temp.home_candidate.z
+data modify storage tpa:tpa temp.output.coordinate_components[0] set string storage tpa:tpa temp.warp_candidate.x
+data modify storage tpa:tpa temp.output.coordinate_components[2] set string storage tpa:tpa temp.warp_candidate.y
+data modify storage tpa:tpa temp.output.coordinate_components[4] set string storage tpa:tpa temp.warp_candidate.z
 
 data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.warp_candidate.dimension
 function tpa:dimension/get
