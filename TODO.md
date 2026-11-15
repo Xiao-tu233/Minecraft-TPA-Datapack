@@ -191,6 +191,7 @@ Project To-do lists:
        - 了解到新的语法特性: [{...}] 可以作为列表索引
 - [x] 数据包第一次被加载时服务器里玩家的id不会正确的被加入users列表
    - [ ] 应包含更新程序: 添加玩家id到users 对于空位置使用占位符 在玩家上线时加入 而不是直接append 否则会导致index和uid不对齐
+- [ ] 核心功能仍需重新测试：有时请求无法正确发送
 
 ## Experimental Ideas (“哪些东西很酷但还不确定？”)
 - [ ] Head gestures (Functions are at zhencangthings/datapacks/head_gestures)
