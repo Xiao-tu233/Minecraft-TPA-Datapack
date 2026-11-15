@@ -11,7 +11,7 @@
             int temp.output.slots[].enabled.tooltip.hoverevent_location_format \
             Button temp.output.slots[].enabled.button_tp, Button temp.output.slots[].disabled.button_tp, Button temp.output.slots[].buttons.setpos, Button temp.output.slots[].buttons.setname, Button temp.output.slots[].buttons.setdesc, \
             Button temp.output.slots[].buttons.rm, Button temp.output.slots[].enabled.disable, Button temp.output.slots[].disabled.enable, \
-            Button temp.output.slots[].buttons.moveup, Button temp.output.slots[].buttons.movedown, \
+            Button temp.output.slots[].buttons.moveup.enabled, Button temp.output.slots[].buttons.moveup.disabled, Button temp.output.slots[].buttons.movedown.enabled, Button temp.output.slots[].buttons.movedown.disabled \
         Button temp.output.button_add \            
 #! For legacy version below 1.20.2, input temp.output.slots[].color is an integer and follows this mapping: {-2: "gray", -1: "red", 0: "green", 1: "light_purple"}
 

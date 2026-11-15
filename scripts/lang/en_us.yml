@@ -279,7 +279,8 @@ reqer_req_not_exist: The requested player does not exist or is offline
 reqer_req_tpa: You have sent a teleport request to %s.
 reqer_req_tpahere: You have requested %s to teleport to you.
 reqer_req_tpa_hoverevent: §bThe player you sent a teleport request to
-reqer_req_tpahere_actionbar: You have requested %s to teleport to you. Waiting for acceptance. Cancel with /trigger tpa.cancel_req
+reqer_req_tpahere_actionbar: You have requested %s to teleport to you. Waiting for acceptance. Cancel with /trigger 
+  tpa.cancel_req
 reqer_req_tpahere_chatbar: You have requested %s to teleport to you. Waiting for acceptance
 reqer_req_tpahere_hoverevent: §bThe player you requested to teleport to your place
 reqer_self: You cannot request to teleport to yourself
@@ -433,9 +434,10 @@ warp_button_disable_hoverevent: §bClick to disable this warp (except for name, 
   to view)
 warp_button_moveup: §dMove Up§r
 warp_button_moveup_hoverevent: §bClick to swap this warp with the one above
-warp_button_moveup_notavail_hoverevent: §cCannot move up, this teleport spot is already at the top
+warp_button_moveup_notavail_hoverevent: §cCannot move up, this warp is already at the top
 warp_button_movedown: §dMove Down§r
 warp_button_movedown_hoverevent: §bClick to swap this warp with the one below
+warp_button_movedown_notavail_hoverevent: "§cCannot move down, this warp is already at the buttom"
 warp_button_tp: §bTeleport§r
 warp_button_tp_hoverevent: §bClick to teleport to this warp
 warp_button_rm: §cRemove§r

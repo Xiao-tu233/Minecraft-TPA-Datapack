@@ -227,6 +227,8 @@ Project To-do lists:
    - 当对话框显示为开时 对应菜单仅在对话框显示 不再在聊天栏/动作栏显示  同时在通知输出位置提示对话框已打开 附按钮作为fallback输出聊天栏/动作栏 如果对话框菜单没有被正确渲染
 - [ ] back, home, warp, tp_pos 等调用teleport模块接口的功能需要向接口传入完成时的输出以及其他额外数据
 - [ ] Update TPA book format, including buttons in TPA menu
+- [ ] 被显示的通知的语言应该基于看到这个通知的玩家是谁 而不是触发事件的玩家: 具体来说 玩家被不同语言玩家发送请求 收到请求的通知应该为recver的lang而不是reqer
+      - [ ] 考虑将load_lang函数在一般的流程里面都移动到呼出output函数以前而不是函数的一开始
 
 ## Long-term Research (“哪些东西需要长期探索？”)
 - [ ] Chest menu
@@ -284,14 +286,14 @@ Project To-do lists:
       4. 维度名称从空(name键不存在) 变为当前语言的指定维度名
       期望的效果: name 键 在被取名之前 默认不存在或者特殊值 如果被命名则显示该命名名称
 - [x] Dialog 没有玩家名被显示 （考虑读一遍request_menu相关逻辑）
-- [ ] warp 尚未分离条件和使用新的output接口
+- [x] warp 尚未分离条件和使用新的output接口
    - [x] 重构所有warp rm, set, move
    - [x] warp的新增按钮
-   - [ ] moveup move down
-      - [ ] buttons should have static check if available to move up or down
+   - [x] moveup move down
+      - [x] buttons should have static check if available to move up or down
    - [x] Dialog
       - Hide buttons and inputs if not neccessary   
-   - [ ] 1.17- slot color display compatitibility: temp.output.color will be the number id of the dimension 
+   - [x] 1.17- slot color display compatitibility: temp.output.color will be the number id of the dimension 
 - [x] 实现release_meta.yml
 - [x] 新的back接口尚未测试
 - [x] 上一位置没有在上线的时候移除 问题持续
@@ -324,7 +326,7 @@ Project To-do lists:
 
 
 
-- [ ] warp
+- [x] warp
 - [ ] users
 - [ ] updates: online
 - [ ] dimension

@@ -19,12 +19,11 @@ data modify storage tpa:tpa temp.components.enable.tooltip set from storage tpa:
 data modify storage tpa:tpa temp.components.disable.brackets set value ["§6[", "§6]"]
 data modify storage tpa:tpa temp.components.disable.label set from storage tpa:tpa loaded_lang.warp_button_disable
 data modify storage tpa:tpa temp.components.disable.tooltip set from storage tpa:tpa loaded_lang.warp_button_disable_hoverevent
-data modify storage tpa:tpa temp.components.moveup.brackets set value ["§6[", "§6]"]
-data modify storage tpa:tpa temp.components.moveup.label set from storage tpa:tpa loaded_lang.warp_button_moveup
-data modify storage tpa:tpa temp.components.moveup.tooltip set from storage tpa:tpa loaded_lang.warp_button_moveup_hoverevent
-data modify storage tpa:tpa temp.components.movedown.brackets set value ["§6[", "§6]"]
-data modify storage tpa:tpa temp.components.movedown.label set from storage tpa:tpa loaded_lang.warp_button_movedown
-data modify storage tpa:tpa temp.components.movedown.tooltip set from storage tpa:tpa loaded_lang.warp_button_movedown_hoverevent
+
+execute if score #warp.scan.current_slot tpa.variables matches 1 run function tpa:warp/menu/prepare_output/load_edit_buttons/moveup_notavail
+execute unless score #warp.scan.current_slot tpa.variables matches 1 run function tpa:warp/menu/prepare_output/load_edit_buttons/moveup_avail
+execute if score #warp.scan.current_slot tpa.variables = #warp tpa.config run function tpa:warp/menu/prepare_output/load_edit_buttons/movedown_notavail
+execute unless score #warp.scan.current_slot tpa.variables = #warp tpa.config run function tpa:warp/menu/prepare_output/load_edit_buttons/movedown_avail
 
 data modify storage tpa:tpa warp[0].option_buttons.brackets set value ["§6[", "§6]"]
 data modify storage tpa:tpa warp[0].option_buttons.enable set from storage tpa:tpa loaded_lang.warp_button_enable

@@ -1,5 +1,6 @@
 # Parent function: tpa:warp/menu/prepare_output
 
+scoreboard players add #warp.scan.current_slot tpa.variables 1
 data modify storage tpa:tpa temp.output.slots append value {}
 
 # Check if the warp is available
@@ -7,9 +8,10 @@ execute store result score #warp_disabled tpa.variables run data get storage tpa
 
 data modify storage tpa:tpa temp.args.id set from storage tpa:tpa temp.warp_result[0].dimension
 function tpa:dimension/get
-#! For 1.20.1-, temp.output.color is the number id of the dimension 
+#! For 1.20.1-, temp.output.color is the number id of the dimension or -2 for gray(warp disabled)
 data modify storage tpa:tpa temp.output.slots[-1].color set from storage tpa:tpa temp.dimension.id
 data modify storage tpa:tpa temp.output.slots[-1].label set from storage tpa:tpa temp.warp_result[0].name
+function tpa:warp/menu/prepare_output/load_tooltip
 
 # Load buttons
 data remove storage tpa:tpa warp[0].option_buttons

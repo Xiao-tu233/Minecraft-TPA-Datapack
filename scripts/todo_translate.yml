@@ -2,4 +2,24 @@
 # status: missing_key = key was absent from the target language.
 # Fill translation and run the script to apply it.
 # Keep translation as null when the entry is not translated yet.
-languages: {}
+languages:
+  ja_jp:
+    warp_button_movedown_notavail_hoverevent:
+      source: "§c无法上移, 该传送点已经位于最下方"
+      status: missing_key
+      translation: null
+  ko_kr:
+    warp_button_movedown_notavail_hoverevent:
+      source: "§c无法上移, 该传送点已经位于最下方"
+      status: missing_key
+      translation: null
+  zh_hk:
+    warp_button_movedown_notavail_hoverevent:
+      source: "§c无法上移, 该传送点已经位于最下方"
+      status: missing_key
+      translation: null
+  zh_tw:
+    warp_button_movedown_notavail_hoverevent:
+      source: "§c无法上移, 该传送点已经位于最下方"
+      status: missing_key
+      translation: null

@@ -1,5 +1,6 @@
 # Parent function: tpa:warp/menu/prepare_output
 
+scoreboard players add #warp.scan.current_slot tpa.variables 1
 data modify storage tpa:tpa temp.output.slots append value {}
 
 # Check if the warp is available
