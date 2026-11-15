@@ -261,10 +261,19 @@ Project To-do lists:
                     execute as @a[scores={...=1..}] run scoreboard players remove @s ... 1
       The reason why it can't be a must because we must have the maxinum distance when using binary format.
 - [ ] output/ 文件夹的接口应该更明确使用temp.output存储内的内容作为参数来源 不应该使用loaded_lang
-　　　　考虑进一步整合 output 中的接口 分离 通知(notice) 和 菜单(Menu) 菜单更多的直接利用已有的dialog定义格式
+　　　　考虑进一步整合 output 中的接口 分离 通知(notice) 和 菜单(Menu), 菜单更多的直接利用已有的dialog定义格式
 - [ ] 考虑减少item作为锚点 而是盔甲架 例子如下
   summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
 - [ ] For 1.17+ consider use entity mark to replace most of the visual items
+- [ ] 后续添加output/standard/with_actions, output/one_arg/with_actions接口 用于在普通通知语句后面添加按钮
+　　　 - [ ] menu 统一以 dialog的定义格式为基准 chatbar/actionbar 统一从dialog的数据中引用
+            但此存储实际上是杂交的 即一般的actions仍然会包含 brackets 和 space 键 同时为了方便索引 如果没有 action字段 会自带action: {type: "custom", payload: "指定的无其他action标记占位符"}
+            dialog 在渲染之前 
+               data remove storage tpa:tpa temp.output.menu.actions[].space
+               data remove storage tpa:tpa temp.output.menu.actions[].brackets
+               data remove storage tpa:tpa temp.output.menu.actions[{action:{type: "custom"}}].action
+            用来符合dialog的序列化格式
+
 
 ## UX Improvements (“玩家体验哪里不好？”)
 - [x] make objective tpa default -1 so that /trigger tpa will make tpa 0
