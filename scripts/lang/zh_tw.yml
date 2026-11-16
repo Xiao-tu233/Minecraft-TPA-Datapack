@@ -407,6 +407,7 @@ warp_button_moveup_hoverevent: §b點擊互換該公共傳送點與上方公共�
 warp_button_moveup_notavail_hoverevent: §c無法上移，該傳送點已經位於最上方
 warp_button_movedown: '[§d下移§r]'
 warp_button_movedown_hoverevent: §b點擊互換該公共傳送點與下方公共傳送點的位置
+warp_button_movedown_notavail_hoverevent: §c無法下移，該傳送點已經位於最下方
 warp_button_tp: '[§b傳送§r]'
 warp_button_tp_hoverevent: §b點擊傳送到該公共傳送點
 warp_button_rm: '[§c移除§r]'

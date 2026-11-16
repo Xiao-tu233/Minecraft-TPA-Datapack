@@ -298,7 +298,7 @@ tick_not_working_button_set_schedule_hoverevent: §bクリックして /schedule
 # tick_not_working_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 tick_not_working_server_calling: kuraianto wo shiyou shi, konsouru dewa naku komando burokku wo shutoku shite kudasai!
 tick_not_working_tips_line1: '現在 Tick不動関数を呼び出しています。そのため、Tick関数が動作しない状況に直面する可能性があります。次のどちらかの方法を実施してください:'
-tick_not_working_tips_line2: '        1. /schedule コマンドで Tick関数を呼び出す'
+tick_not_working_tips_line2: '   　　　 1. /schedule コマンドで Tick関数を呼び出す'
 tick_not_working_tips_line3: '   または 2. 命令ブロックを隠し場所に置いて、破壊防止'
 tp_pos_abort: 座標入力を停止しました
 tp_pos_act: 座標にテレポートしました%s
@@ -380,7 +380,7 @@ update_reload: §b[リロード]
 update_reload_hoverevent: クリックしてリロード
 update_step1_leftpart: 'TPAデータパックのアップデートを実行中です。現在インストールされているデータパックのバージョンは '
 update_step1_rightpart: ' です。ここで更新を開始することを確認してください'
-update_step1_button: §b§n§l[自分の操作を理解しています]
+update_step1_button: §b§n§l[内容を理解したうえで続行します]
 update_step1_hoverevent: 慎重にクリックしてください
 update_step2: 最新バージョンのデータパックを GitHubかModrinth からダウンロードしてください
 update_step3: 次のインストールのために右側のボタンをクリックしてデータパックを一時的に無効化してください
@@ -404,9 +404,10 @@ warp_button_disable: '§c無効化§r'
 warp_button_disable_hoverevent: §bクリックしてこのワープを無効化（名前以外の情報は非表示、有効化で確認可能）
 warp_button_moveup: '§d上に移動§r'
 warp_button_moveup_hoverevent: §bクリックしてこのワープを上のワープと位置を入れ替え
-warp_button_moveup_notavail_hoverevent: §c上に移動できません。このワープはすでに最上部です
+warp_button_moveup_notavail_hoverevent: §cこれ以上上に移動できません。このワープはすでに一番上にあります
 warp_button_movedown: '§d下に移動§r'
 warp_button_movedown_hoverevent: §bクリックしてこのワープを下のワープと位置を入れ替え
+warp_button_movedown_notavail_hoverevent: §cこれ以上下に移動できません。このワープはすでに一番下にあります
 warp_button_tp: '§bテレポート§r'
 warp_button_tp_hoverevent: §bクリックしてこのワープにテレポート
 warp_button_rm: '§c削除§r'

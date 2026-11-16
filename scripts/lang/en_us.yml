@@ -406,7 +406,7 @@ update_reload: §b[Reload]
 update_reload_hoverevent: Click to reload
 update_step1_leftpart: 'You are updating the TPA datapack. Current installed version is '
 update_step1_rightpart: ' Please confirm to begin updating here.'
-update_step1_button: §b§n§l[I'm sure of what I'm doing]
+update_step1_button: §b§n§l[I understand and want to continue]
 update_step1_hoverevent: Please click carefully
 update_step2: Please download the latest version of the datapack from GitHub, QQ group, or Modrinth as a backup.
 update_step3: Please click the button on the right to temporarily disable the datapack for the next installation step.
@@ -437,7 +437,7 @@ warp_button_moveup_hoverevent: §bClick to swap this warp with the one above
 warp_button_moveup_notavail_hoverevent: §cCannot move up, this warp is already at the top
 warp_button_movedown: §dMove Down§r
 warp_button_movedown_hoverevent: §bClick to swap this warp with the one below
-warp_button_movedown_notavail_hoverevent: "§cCannot move down, this warp is already at the buttom"
+warp_button_movedown_notavail_hoverevent: "§cCannot move down; this warp is already at the bottom"
 warp_button_tp: §bTeleport§r
 warp_button_tp_hoverevent: §bClick to teleport to this warp
 warp_button_rm: §cRemove§r
