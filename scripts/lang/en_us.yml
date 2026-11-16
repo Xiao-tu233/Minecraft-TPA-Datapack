@@ -453,7 +453,7 @@ warp_button_setname_hoverevent: §bClick to open the Name Editting Menu of the w
 warp_button_setpos: §aSet Position§r
 warp_button_setpos_hoverevent: §bClick to set this warp to your current position
 warp_desc_disabled: §cThis warp is disabled
-warp_disabled: §aWarps§r have been disabled by the server
+warp_disabled: '§aWarps§r haven''t been set by the server yet'
 warp_edit: You are editting %s. Please click the input button below, complete and execute the suggest command, click 
   "Apply" to save
 warp_edit_button_input_desc: §aInput Description

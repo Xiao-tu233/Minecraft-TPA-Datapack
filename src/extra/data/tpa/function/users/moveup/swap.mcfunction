@@ -1,0 +1,5 @@
+scoreboard players operation #users.swap_a tpa.variables = #users.edit.index tpa.variables
+scoreboard players remove #users.swap_a tpa.variables 1
+scoreboard players operation #users.swap_b tpa.variables = #users.edit.index tpa.variables
+function tpa:users/move/save_pair
+function tpa:users/move/apply_pair

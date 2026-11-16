@@ -14,6 +14,11 @@ data modify storage tpa:tpa lang set value []
 function tpa:init_storage_lang
 function tpa_extra:init_storage_lang
 
+# Users did not exist before v2.1. Always start the new storage empty when an
+# update reaches this initializer; first_join/on_join repopulate it safely.
+data modify storage tpa:tpa users set value []
+data modify storage tpa:tpa users_pages set value []
+
 # Initialize configs if datapack is newly installed instead of updated from legacy versions
 execute unless score #version tpa.config = #version tpa.config run function tpa:initialize/options
 

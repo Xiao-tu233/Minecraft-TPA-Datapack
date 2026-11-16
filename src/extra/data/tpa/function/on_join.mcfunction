@@ -30,7 +30,12 @@ execute if score #carpet_fake_player_fix tpa.config matches 1 run function tpa:f
 execute if score #is_updated_from_205 tpa.config matches 1 run tag @s remove TPA_user
 
 # Detect if player is first join
+scoreboard players set #users.registered tpa.variables 0
 execute unless score @s tpa.uid = @s tpa.uid run function tpa:first_join
+
+# Existing players keep their UID across reloads and upgrades. Resolve their
+# UUID only during this one-time join gate, never from the regular tick path.
+execute if score @s tpa.uid matches 1.. unless score #users.registered tpa.variables matches 1 run function tpa:users/ensure
 
 # Show TPA menu button when player joins
 tellraw @s[predicate=tpa:output/show_chatbar] [{interpret: true, storage:"tpa:tpa", nbt:"loaded_lang.reqer_first_join", click_event:{action:"run_command",command: "/trigger tpa"}}]
