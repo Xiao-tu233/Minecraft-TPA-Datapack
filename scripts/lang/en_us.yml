@@ -192,6 +192,8 @@ option_tp_pos_hoverevent: '§bModify §aTeleport Position Allow Radius§r (§6Un
 option_tp_spec: If Allow Spectators to Teleport
 # option_server_calling is displayed in the console, where non-ASCII characters may appear as mojibake(encoding corruption). Please use an ASCII-only romanized form for this translation (for example, pinyin for Chinese).
 option_server_calling: Please modify configs in Client instead of Server terminal.
+option_users: Users Management
+option_users_hoverevent: §bClick the Set button below to open the §aUsers Management §6Menu
 option_uses_binary_teleport: Use binary teleportation?
 option_uses_binary_teleport_hoverevent: §bChoose §aBinary teleportation (enabled) §6or §cAnchor teleportation (disabled)
 option_uses_string_dimension: Recognize string dimensions?

@@ -9,7 +9,6 @@ scoreboard players set #users.count tpa.variables 0
 scoreboard players set #users.removed tpa.variables 0
 scoreboard players set #users.current_slot tpa.variables 0
 scoreboard players set #users.result tpa.variables 3
-execute unless data storage tpa:tpa users run data modify storage tpa:tpa users set value []
 # Reject the legacy name list explicitly, including versions with mixed NBT lists.
 scoreboard players set #users.scan_valid tpa.variables 1
 execute if data storage tpa:tpa users[0] unless data storage tpa:tpa users[0].uid run scoreboard players set #users.scan_valid tpa.variables 0

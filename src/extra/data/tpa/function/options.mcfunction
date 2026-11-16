@@ -98,9 +98,7 @@ tellraw @s ["      §6- ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"show_dialog",dialog:"tpa:option/time_out"}}]
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp_hoverevent"}}}, ": ", {score:{name:"#warp",objective:"tpa.config"}, color: "white", hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp_number_hoverevent_leftpart"}, {score:{name:"#warp",objective:"tpa.config"}, color: "white"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_warp_number_hoverevent_rightpart"}]}}]
 tellraw @s ["      §6- ", \
-    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"run_command",command:"/function tpa:warp/option"}}]
-tellraw @s ["  ", {text: "Users", color: "aqua", hover_event: {action: "show_text", value: "Edit the persistent player records"}}]
-tellraw @s ["      §6- ", {text: "[§aOpen§r]", click_event:{action:"run_command",command:"/function tpa:users/option"}, hover_event:{action:"show_text",value:"Open the users settings menu"}}]
+{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"run_command",command:"/function tpa:warp/option"}}]
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_frequency", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_frequency_hoverevent"}}}, ": ", {score:{name:"#frequency",objective:"tpa.config"}, color: "white"}]
 tellraw @s ["      §6- ", \
     {text:"[§a20 Hz§r",click_event:{action:"run_command",command:"/scoreboard players set #frequency tpa.config 20"}},"|",\

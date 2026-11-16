@@ -21,7 +21,9 @@ tellraw @s ["      §6- ", \
 tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_hoverevent"}}}, ": ", {score:{name:"#dimension",objective:"tpa.config"}, color: "white", hover_event: {action: "show_text", value: [{interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_number_hoverevent_leftpart"}, {score:{name:"#dimension",objective:"tpa.config"}, color: "white"}, {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_dimension_number_hoverevent_rightpart"}]}}]
 tellraw @s ["      §6- ", \
     {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"run_command",command:"/function tpa:dimension/menu"}}]
-
+tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_users", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_users_hoverevent"}}}, ": "]
+tellraw @s ["      §6- ", \
+    {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_button_set", click_event:{action:"run_command",command:"/function tpa:users/menu"}}]
 execute if score #uses_binary_teleport tpa.config matches 1 run \
     tellraw @s ["  ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_uses_binary_teleport", color: "aqua", hover_event: {action: "show_text", value: {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_option_uses_binary_teleport_hoverevent"}}}, ": ", {interpret: true, storage: "tpa:tpa", nbt: "loaded_lang.option_enabled"}]
 execute if score #uses_binary_teleport tpa.config matches 0 run \

@@ -2,4 +2,40 @@
 # status: missing_key = key was absent from the target language.
 # Fill translation and run the script to apply it.
 # Keep translation as null when the entry is not translated yet.
-languages: {}
+languages:
+  ja_jp:
+    option_users:
+      source: "用户管理"
+      status: missing_key
+      translation: null
+    option_users_hoverevent:
+      source: "§b在下方设置按钮打开§a用户管理§6菜单"
+      status: missing_key
+      translation: null
+  ko_kr:
+    option_users:
+      source: "用户管理"
+      status: missing_key
+      translation: null
+    option_users_hoverevent:
+      source: "§b在下方设置按钮打开§a用户管理§6菜单"
+      status: missing_key
+      translation: null
+  zh_hk:
+    option_users:
+      source: "用户管理"
+      status: missing_key
+      translation: null
+    option_users_hoverevent:
+      source: "§b在下方设置按钮打开§a用户管理§6菜单"
+      status: missing_key
+      translation: null
+  zh_tw:
+    option_users:
+      source: "用户管理"
+      status: missing_key
+      translation: null
+    option_users_hoverevent:
+      source: "§b在下方设置按钮打开§a用户管理§6菜单"
+      status: missing_key
+      translation: null
