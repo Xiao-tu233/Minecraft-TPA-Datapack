@@ -1,0 +1,2 @@
+包括menu中也得增加语言键的调用 并在zh_cn.yml定义 和warp一样
+users应该为高级设置, 应当新增对应的设置项先在zh_cn.yml生成语言键 并在option本身调用这些语言

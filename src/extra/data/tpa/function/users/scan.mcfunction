@@ -6,6 +6,7 @@
 data remove storage tpa:tpa temp.users.result
 data modify storage tpa:tpa temp.users.results set value []
 scoreboard players set #users.count tpa.variables 0
+scoreboard players set #users.removed tpa.variables 0
 scoreboard players set #users.current_slot tpa.variables 0
 scoreboard players set #users.result tpa.variables 3
 execute unless data storage tpa:tpa users run data modify storage tpa:tpa users set value []

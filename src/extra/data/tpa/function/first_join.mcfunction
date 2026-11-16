@@ -18,4 +18,10 @@ scoreboard players operation @s tpa.uid = #global_current tpa.uid
 scoreboard players add #global_current tpa.uid 1
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug: ", {storage: "tpa:tpa", nbt: "temp.name", color: "aqua", interpret: true}, " was given with the UID of ", {score: {name: "@s", objective: "tpa.uid"}}]
 
-data modify storage tpa:tpa users append from storage tpa:tpa temp.name
+data modify storage tpa:tpa temp.users.candidate set value {}
+execute store result storage tpa:tpa temp.users.candidate.uid int 1 run scoreboard players get @s tpa.uid
+data modify storage tpa:tpa temp.users.candidate.uuid set from entity @s UUID
+data modify storage tpa:tpa temp.users.candidate.name set from storage tpa:tpa temp.name
+data modify storage tpa:tpa temp.users.candidate.previous_names set value []
+function tpa:users/add
+execute if score #users.result tpa.variables matches 1 run scoreboard players set #users.registered tpa.variables 1
