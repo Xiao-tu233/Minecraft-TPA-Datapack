@@ -14,6 +14,9 @@ execute store result storage tpa:tpa temp.users.input.start int 1 run scoreboard
 execute store result storage tpa:tpa temp.users.input.end int 1 run scoreboard players get #users.menu.end tpa.variables
 function tpa:users/get_range
 
+data remove storage tpa:tpa temp.output.menu
+data modify storage tpa:tpa temp.output.menu set value {type: "minecraft:multi_action", exit_action: {label: {translate: "gui.done"}, width: 200}, body: {type: "minecraft:plain_message"}, title: [{color: aqua}, {text: " (", color: "white"}, {color: "white"}, {text: "/", color: "gray"}, {color: "white"}, {text: ")", color: "white"}], pause: false, after_action: "close", columns: 2}
+
 tellraw @s ["------------ Users (", {score: {name: "#users.page.result", objective: "tpa.variables"}}, "/", {score: {name: "#users.total_pages", objective: "tpa.variables"}}, ") ------------"]
 execute if score #users.total tpa.variables matches 0 run tellraw @s "No user records"
 execute if data storage tpa:tpa temp.users.results[0] run function tpa:users/menu/slot_1

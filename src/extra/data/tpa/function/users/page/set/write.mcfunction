@@ -4,5 +4,6 @@ execute if score #users.page.candidate tpa.variables > #users.total_pages tpa.va
 data remove storage tpa:tpa temp.users_page_scan
 scoreboard players set #users.page.store_result tpa.variables 0
 scoreboard players set #users.page.replace_current tpa.variables 1
+scoreboard players set #users.page.remove_current tpa.variables 0
 function tpa:users/page/scan
 execute if score #users.page.scan_ok tpa.variables matches 1 run function tpa:users/page/set/commit

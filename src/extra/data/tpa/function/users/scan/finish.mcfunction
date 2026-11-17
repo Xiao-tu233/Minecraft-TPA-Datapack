@@ -6,4 +6,4 @@ execute if score #users.mode tpa.variables matches 6 if score #users.removed tpa
 execute if score #users.mode tpa.variables matches 7 run scoreboard players set #users.result tpa.variables 1
 execute if score #users.count tpa.variables matches 1.. run scoreboard players set #users.result tpa.variables 1
 execute unless score #users.mode tpa.variables matches 5 if score #users.count tpa.variables matches 2.. run scoreboard players set #users.result tpa.variables 2
-execute if score #users.result tpa.variables matches 1 unless score #users.mode tpa.variables matches 5 run data modify storage tpa:tpa temp.users.result set from storage tpa:tpa temp.users.results[0]
+execute if score #users.result tpa.variables matches 1 unless score #users.mode tpa.variables matches 5 unless score #users.mode tpa.variables matches 6 run data modify storage tpa:tpa temp.users.result set from storage tpa:tpa temp.users.results[0]

@@ -2,7 +2,8 @@
 # Records: {uid: int, uuid: int[4] (optional for unbound legacy records),
 #           name: string, previous_names: List[string]}.
 # Modes: 0 UID, 1 UUID, 2 name, 3 candidate UID/UUID conflict,
-#        4 replace a validated UID, 5 menu range.
+#        4 replace a validated UID, 5 menu range, 6 remove UID,
+#        7 swap two positions, 8 locate UID position.
 data remove storage tpa:tpa temp.users.result
 data modify storage tpa:tpa temp.users.results set value []
 scoreboard players set #users.count tpa.variables 0
