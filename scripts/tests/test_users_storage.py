@@ -260,18 +260,11 @@ class UsersStorageTests(unittest.TestCase):
         self.assertEqual(self.query(runtime, 'get', uid=0), 3)
         self.assertEqual(self.query(runtime, 'find_uuid', uuid=[1, 2, 3]), 3)
 
-    def test_pages_viewers_slot_resolution_and_shrinking_list(self):
+    def test_pages_viewers_and_shrinking_list(self):
         runtime = Runtime([user(uid) for uid in [40, 2, 19, 8, 11, 70]])
         original = copy.deepcopy(runtime.storage['users'])
         runtime.call('tpa:users/page/next')
         self.assertEqual(runtime.scores[('#users.page.result', 'tpa.variables')], 2)
-        runtime.scores[('#users', 'tpa.variables')] = -3
-        runtime.call('tpa:users/resolve_slot')
-        self.assertEqual(runtime.scores[('#users.selected_uid', 'tpa.variables')], 70)
-        runtime.scores[('#users', 'tpa.variables')] = -4
-        runtime.call('tpa:users/resolve_slot')
-        self.assertEqual(runtime.scores[('#users.result', 'tpa.variables')], 0)
-        self.assertEqual(runtime.scores[('#users.selected_uid', 'tpa.variables')], 0)
         runtime.scores[('@s', 'tpa.uid')] = 2
         runtime.call('tpa:users/page/previous')
         self.assertEqual(runtime.scores[('#users.page.result', 'tpa.variables')], 1)

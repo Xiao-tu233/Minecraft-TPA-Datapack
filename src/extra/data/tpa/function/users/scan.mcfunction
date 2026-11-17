@@ -2,13 +2,11 @@
 # Records: {uid: int, uuid: int[4] (optional for unbound legacy records),
 #           name: string, previous_names: List[string]}.
 # Modes: 0 UID, 1 UUID, 2 name, 3 candidate UID/UUID conflict,
-#        4 replace a validated UID, 5 menu range, 6 remove UID,
-#        7 swap two positions, 8 locate UID position.
+#        4 replace a validated UID, 6 remove UID.
 data remove storage tpa:tpa temp.users.result
 data modify storage tpa:tpa temp.users.results set value []
 scoreboard players set #users.count tpa.variables 0
 scoreboard players set #users.removed tpa.variables 0
-scoreboard players set #users.current_slot tpa.variables 0
 scoreboard players set #users.result tpa.variables 3
 # Reject the legacy name list explicitly, including versions with mixed NBT lists.
 scoreboard players set #users.scan_valid tpa.variables 1
