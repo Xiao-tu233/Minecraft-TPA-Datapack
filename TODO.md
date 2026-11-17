@@ -267,13 +267,8 @@ Project To-do lists:
   summon armor_stand ~ ~ ~ {Tags:["tpa.teleport_anchor"],Invisible:1b,Marker:1b,NoGravity:1b,Invulnerable:1b,Silent:1b}
 - [ ] For 1.17+ consider use entity mark to replace most of the visual items
 - [ ] 后续添加output/standard/with_actions, output/one_arg/with_actions接口 用于在普通通知语句后面添加按钮
-　　　 - [ ] menu 统一以 dialog的定义格式为基准 chatbar/actionbar 统一从dialog的数据中引用
-            但此存储实际上是杂交的 即一般的actions仍然会包含 brackets 和 space 键 同时为了方便索引 如果没有 action字段 会自带action: {type: "custom", payload: "指定的无其他action标记占位符"}
-            dialog 在渲染之前 
-               data remove storage tpa:tpa temp.output.menu.actions[].space
-               data remove storage tpa:tpa temp.output.menu.actions[].brackets
-               data remove storage tpa:tpa temp.output.menu.actions[{action:{type: "custom"}}].action
-            用来符合dialog的序列化格式
+　　　 - [ ] menu 统一使用 tpa:output/menu接口
+- [ ] Rename: tpa.is_online, tpa.if_death -> tpa.online, tpa.died
 
 
 ## UX Improvements (“玩家体验哪里不好？”)

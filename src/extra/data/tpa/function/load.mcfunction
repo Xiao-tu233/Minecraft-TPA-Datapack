@@ -72,6 +72,7 @@ data modify storage tpa:tpa warp[0] set value {pages: []}
 data remove storage tpa:tpa search_id
 data remove storage tpa:tpa book
 data remove storage tpa:tpa temp
+data modify storage tpa:tpa temp.output_components set value {button_brackets: {empty: ["", ""], normal: ["[", "]"], edit: ["§6[", "§6]"]}}
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Data storage has been initialized. (4/6)"]
 
 execute if score #debug_mode tpa.config matches 1 run tellraw @a ["[§bTPA§r] §6 Debug§r: Initializing text displayers... (4/6)"]
