@@ -1,4 +1,5 @@
 .vscode/
+.venv/
 servers/
 build/
 non-test_servers/
