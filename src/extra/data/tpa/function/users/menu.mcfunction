@@ -6,7 +6,7 @@ function tpa:users/page/get
 scoreboard players operation #users.page.offset tpa.variables = #users.page.result tpa.variables
 scoreboard players remove #users.page.offset tpa.variables 1
 scoreboard players operation #users.page.offset tpa.variables *= #5 tpa.variables
-scoreboard players operation #users.uid tpa.variables = #users.page.offset tpa.variables
+scoreboard players operation #users.menu.uid tpa.variables = #users.page.offset tpa.variables
 
 data modify storage tpa:tpa temp.users.menu_user_entries set value []
 function tpa:users/menu/append_entries
@@ -53,7 +53,9 @@ data modify storage tpa:tpa temp.output.menu.actions set value [\
     ]
 data modify storage tpa:tpa temp.output.menu.actions[].width set value 100
 
-data modify storage tpa:tpa temp.users.menu_name_slot_template set value [{color: "aqua"}, "§8|", {color: "gold"}]
+# actions[{slot_key:"name_slot_*"}][{color: "gold"}], actions[{slot_key:"name_slot_*"}][1]
+data modify storage tpa:tpa temp.users.menu_name_slot_template set value [{color: "gold"}, " §8: ", {color: "aqua"}]
+data modify storage tpa:tpa temp.users.menu_empty_slot_template set value [{color: "white"}, " §8: ", {text: "(", color: "gray"}, {color: "gray"}, {text: ")", color: "gray"}]
 
 execute unless data storage tpa:tpa temp.users.menu_user_entries[0].missing run function tpa:users/menu/slot_exists/slot_0
 execute if data storage tpa:tpa temp.users.menu_user_entries[0].missing run function tpa:users/menu/slot_missing/slot_0
