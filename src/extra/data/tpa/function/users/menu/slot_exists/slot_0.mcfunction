@@ -2,8 +2,8 @@
 
 data remove storage tpa:tpa temp.users.menu_action
 data modify storage tpa:tpa temp.users.menu_action.label set from storage tpa:tpa temp.users.menu_name_slot_template
-data modify storage tpa:tpa temp.users.menu_action.label[0].text set from storage tpa:tpa temp.users.menu_user_entries[0].uid
-data modify storage tpa:tpa temp.users.menu_action.label[2].text set string storage tpa:tpa temp.users.menu_user_entries[0].name
+data modify storage tpa:tpa temp.users.menu_action.label[0].text set string storage tpa:tpa temp.users.menu_user_entries[0].uid
+data modify storage tpa:tpa temp.users.menu_action.label[2].text set from storage tpa:tpa temp.users.menu_user_entries[0].name
 data modify storage tpa:tpa temp.users.menu_action.action.value set from storage tpa:tpa temp.users.menu_user_entries[0].name
 data modify storage tpa:tpa temp.users.menu_action.tooltip set from storage tpa:tpa loaded_lang.users_name_hoverevent
 data modify storage tpa:tpa temp.output.menu.actions[{action:{slot_key:"name_slot_0"}}] merge from storage tpa:tpa temp.users.menu_action

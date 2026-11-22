@@ -178,6 +178,8 @@ option_tp_pos_hoverevent: '§b以下で§aテレポート座標許可範囲を�
 option_tp_spec: 観戦者のテレポートを許可
 # option_server_callingはコンソールに表示する必要があります。漢字や仮名を直接使用すると文字化けする可能性があるため、ここではローマ字を使用しています。
 option_server_calling: kuraianto wo shiyou shi, konsouru dewa naku settei wo henkou shite kudasai!
+option_users: "ユーザー管理"
+option_users_hoverevent: "§b下の設定ボタンから§aユーザー管理§6メニューを開きます"
 option_uses_binary_teleport: 二分法テレポートを使用するか
 option_uses_binary_teleport_hoverevent: §b以下で§a二分法テレポートを使用(有効) §6または §cアンカー式テレポート(無効)
 option_uses_string_dimension: 文字列ディメンションを認識するか
@@ -392,6 +394,23 @@ update_step5_button: §b[ロード]
 update_step5_hoverevent: クリックしてデータパックをロード
 update_step5_rightpart: ' 不明なスコア項目が表示された場合はステップ3から確認してください。これはデータパックのインストールバージョンの不一致や不明な値が原因です。その他の問題は Xiao_tu233 に問い合わせてください'
 update_nextstep: §b[次へ]
+users_name_hoverevent: "§bクリックしてプレイヤー名をコピー"
+users_button_copy_uuid: "§eUUIDをコピー"
+users_button_copy_uuid_hoverevent: "§bクリックしてユーザーのUUIDを整数配列形式([I;x,x,x,x])でコピー"
+users_button_set_name: "§a名前を設定"
+users_button_set_name_hoverevent: "§bクリックしてこのユーザースロットのプレイヤー名編集メニューを開く"
+users_button_set_uuid: "§aUUIDを設定"
+users_button_set_uuid_hoverevent: "§bクリックしてこのユーザースロットのUUID編集メニューを開く"
+users_button_set_uid: "§aユーザーIDを再設定"
+users_button_set_uid_hoverevent: "§bクリックしてこのユーザーのID再設定メニューを開く"
+users_button_select_existed: "§a既存のプレイヤーを選択"
+users_button_select_existed_hoverevent: "§bクリックして既存のプレイヤー記録をこのユーザースロットへ移動"
+users_button_register_new: "§a新しいプレイヤーを事前登録"
+users_button_register_new_hoverevent: "§bクリックしてこの空きユーザースロットの新規プレイヤー事前登録メニューを開く"
+users_button_remove: "§c削除"
+users_button_remove_hoverevent: "§bクリックしてこのユーザースロットに対応するユーザーレコードを削除"
+users_empty_slot: "空きスロット"
+users_empty_slot_hoverevent: "§bこれは空のユーザースロットです"
 warp_button_add: '§a新しいワープ§r'
 warp_button_add_hoverevent: §bクリックして現在位置に新しいワープを作成
 warp_button_apply: '§a適用§r'

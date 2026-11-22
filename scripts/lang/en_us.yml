@@ -423,6 +423,24 @@ update_step5_hoverevent: Click to load the datapack
 update_step5_rightpart: ' If unknown scoreboard items appear, please start from step 3. This may be caused by incorrect version
   or unknown issues. For other issues, please consult Xiao_tu233.'
 update_nextstep: §b[Next step]
+users_name_hoverevent: "§bClick to copy the player's in-game name"
+users_button_copy_uuid: "§eCopy UUID"
+users_button_copy_uuid_hoverevent: "§bClick to copy the user's Universally Unique Identifier (UUID) in integer-array format
+  ([I;x,x,x,x])"
+users_button_set_name: "§aSet Name"
+users_button_set_name_hoverevent: "§bClick to open the player name editor for this user slot"
+users_button_set_uuid: "§aSet UUID"
+users_button_set_uuid_hoverevent: "§bClick to open the UUID editor for this user slot"
+users_button_set_uid: "§aReset User ID"
+users_button_set_uid_hoverevent: "§bClick to open the user ID reset menu for this user"
+users_button_select_existed: "§aSelect existing player"
+users_button_select_existed_hoverevent: "§bClick to move an existing player record to this user slot"
+users_button_register_new: "§aPre-register new player"
+users_button_register_new_hoverevent: "§bClick to open the pre-registration menu for a new player in this empty user slot"
+users_button_remove: "§cRemove"
+users_button_remove_hoverevent: "§bClick to remove the user record associated with this user slot"
+users_empty_slot: "Empty slot"
+users_empty_slot_hoverevent: "§bThis is an empty user slot"
 warp_button_add: §aCreate new Warp§r
 warp_button_add_hoverevent: §bClick to create a new warp at your current location
 warp_button_apply: §bApply§r

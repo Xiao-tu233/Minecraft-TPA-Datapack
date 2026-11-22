@@ -177,6 +177,8 @@ option_tp_pos_hoverevent: '§b在下方變更§a傳送座標允許半徑 §r(§6
 option_tp_spec: 允許傳送旁觀者
 # option_server_calling需要被控制台所顯示 如果直接寫漢字會被顯示為亂碼 這裡使用拼音來進行表示
 option_server_calling: Qing3 shi3yong4 Ke4hu4duan1, er2 bu2shi4 Kong4zhi4tai2 lai2 tiao2zheng3 she4zhi4!
+option_users: "使用者管理"
+option_users_hoverevent: "§b點擊下方設定按鈕開啟§a使用者管理§6選單"
 option_uses_binary_teleport: 是否使用二分法傳送
 option_uses_binary_teleport_hoverevent: §b在下方選擇§a使用二分法傳送(啟用) §6抑或是 §c使用錨點傳送(禁用)
 option_uses_string_dimension: 是否識別字串維度
@@ -392,6 +394,23 @@ update_step5_button: §b[載入]
 update_step5_hoverevent: 點擊載入資料包
 update_step5_rightpart: ' 如果出現未知的計分項 請從第3步開始檢查 這可能是由資料包安裝版本不正確或未知不正確所導致的 其他問題請洽詢Xiao_tu233'
 update_nextstep: §b[下一步]
+users_name_hoverevent: "§b點擊複製玩家遊戲名稱"
+users_button_copy_uuid: "§e複製 UUID"
+users_button_copy_uuid_hoverevent: "§b點擊以整數陣列格式([I;x,x,x,x])複製使用者的通用唯一識別碼(UUID)"
+users_button_set_name: "§a設定名稱"
+users_button_set_name_hoverevent: "§b點擊進入此使用者欄位的玩家遊戲名稱編輯選單"
+users_button_set_uuid: "§a設定 UUID"
+users_button_set_uuid_hoverevent: "§b點擊進入此使用者欄位的通用唯一識別碼(UUID)編輯選單"
+users_button_set_uid: "§a重設使用者編號"
+users_button_set_uid_hoverevent: "§b點擊進入此使用者的編號重設選單"
+users_button_select_existed: "§a選擇現有玩家"
+users_button_select_existed_hoverevent: "§b點擊將一名現有玩家記錄移動到此使用者欄位"
+users_button_register_new: "§a預先登記新玩家"
+users_button_register_new_hoverevent: "§b點擊進入此空使用者欄位的新玩家預先登記選單"
+users_button_remove: "§c移除"
+users_button_remove_hoverevent: "§b點擊移除此使用者欄位的對應使用者記錄"
+users_empty_slot: "空欄位"
+users_empty_slot_hoverevent: "§b這是空的使用者欄位"
 warp_button_add: '[§a新增傳送點§r]'
 warp_button_add_hoverevent: §b點擊在當前位置新增一個公共傳送點
 warp_button_apply: '[§a應用§r]'
