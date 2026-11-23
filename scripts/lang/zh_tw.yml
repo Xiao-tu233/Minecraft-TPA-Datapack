@@ -396,7 +396,7 @@ update_step5_rightpart: ' 如果出現未知的計分項 請從第3步開始檢�
 update_nextstep: §b[下一步]
 users_name_hoverevent: "§b點擊複製玩家遊戲名稱"
 users_button_copy_uuid: "§e複製 UUID"
-users_button_copy_uuid_hoverevent: "§b點擊以整數陣列格式([I;x,x,x,x])複製使用者的通用唯一識別碼(UUID)"
+users_button_copy_uuid_hoverevent: "§b點擊開啟使用者通用唯一識別碼(UUID)的複製選單"
 users_button_set_name: "§a設定名稱"
 users_button_set_name_hoverevent: "§b點擊進入此使用者欄位的玩家遊戲名稱編輯選單"
 users_button_set_uuid: "§a設定 UUID"
@@ -409,6 +409,7 @@ users_button_register_new: "§a預先登記新玩家"
 users_button_register_new_hoverevent: "§b點擊進入此空使用者欄位的新玩家預先登記選單"
 users_button_remove: "§c移除"
 users_button_remove_hoverevent: "§b點擊移除此使用者欄位的對應使用者記錄"
+users_chatbar_title: '------------ %s ------------'
 users_empty_slot: "空欄位"
 users_empty_slot_hoverevent: "§b這是空的使用者欄位"
 warp_button_add: '[§a新增傳送點§r]'

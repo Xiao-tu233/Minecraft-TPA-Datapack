@@ -14,7 +14,7 @@ data modify storage tpa:tpa temp.users.menu_action.space set value " "
 data modify storage tpa:tpa temp.users.menu_action.label set from storage tpa:tpa loaded_lang.users_button_copy_uuid
 data modify storage tpa:tpa temp.users.menu_action.tooltip set from storage tpa:tpa loaded_lang.users_button_copy_uuid_hoverevent
 data modify storage tpa:tpa temp.users.menu_action.action.value set string storage tpa:tpa temp.users.menu_user_entries[1].uuid
-data modify storage tpa:tpa temp.output.menu.actions[{action:{slot_key:"uuid_slot_1"}}] merge from storage tpa:tpa temp.users.menu_action
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command: "/function tpa:users/copy_uuid/slot_1"}}] merge from storage tpa:tpa temp.users.menu_action
 
 data remove storage tpa:tpa temp.users.menu_action
 data modify storage tpa:tpa temp.users.menu_action.brackets set from storage tpa:tpa temp.output_components.button_brackets.edit

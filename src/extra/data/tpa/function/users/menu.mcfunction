@@ -1,5 +1,4 @@
 # Menu rewrite entrypoint. Keep the new dialog scaffold for the UID-slot menu.
-# TODO: assemble fixed UID slots, localized labels/actions and final rendering.
 function tpa:load_lang
 
 function tpa:users/page/get
@@ -23,7 +22,7 @@ data modify storage tpa:tpa temp.output.menu set value {type: "minecraft:multi_a
 
 # Title
 data modify storage tpa:tpa temp.output.menu.title[0].text set from storage tpa:tpa loaded_lang.users_title
-execute store result score storage tpa:tpa temp.output.menu.title[2].text int 1 run scoreboard players get #users.page.result tpa.variables
+execute store result storage tpa:tpa temp.output.menu.title[2].text int 1 run scoreboard players get #users.page.result tpa.variables
 data modify storage tpa:tpa temp.output.menu.title[2].text set string storage tpa:tpa temp.output.menu.title[2].text
 scoreboard players operation #users.total_users tpa.variables = #global_current tpa.uid
 scoreboard players remove #users.total_users tpa.variables 1
@@ -31,7 +30,7 @@ scoreboard players operation #users.total_pages tpa.variables = #total_users tpa
 scoreboard players remove #users.total_pages tpa.variables 1
 scoreboard players operation #users.total_pages tpa.variables /= #5 tpa.variables
 scoreboard players add #users.total_pages tpa.variables 1
-execute store result score storage tpa:tpa temp.output.menu.title[4].text int 1 run scoreboard players get #users.total_pages tpa.variables
+execute store result storage tpa:tpa temp.output.menu.title[4].text int 1 run scoreboard players get #users.total_pages tpa.variables
 data modify storage tpa:tpa temp.output.menu.title[4].text set string storage tpa:tpa temp.output.menu.title[4].text
 
 data modify storage tpa:tpa temp.output.menu.chatbar_title set from storage tpa:tpa loaded_lang.users_chatbar_title
@@ -39,38 +38,38 @@ data modify storage tpa:tpa temp.output.menu.chatbar_title insert 1 from storage
 
 # Body
 scoreboard players set #users.page_empty tpa.variables 0
-execute unless score #users.start_index tpa.variables = #users.start_index tpa.variables unless #users.end_index tpa.variables = #users.end_index tpa.variables \
+execute unless score #users.start_index tpa.variables = #users.start_index tpa.variables unless score #users.end_index tpa.variables = #users.end_index tpa.variables \
     run scoreboard players set #users.page_empty tpa.variables 1
 execute if score #users.page_empty tpa.variables matches 0 run function tpa:users/menu/page_normal
-execute if score #users.page_empty tpa.variables matches 0 run function tpa:users/menu/page_empty
+execute if score #users.page_empty tpa.variables matches 1 run function tpa:users/menu/page_empty
 
 data modify storage tpa:tpa temp.output.menu.actions set value [\
     {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_0"}}, \
-        {action: {type: "minecraft:copy_to_clipboard", slot_key: "uuid_slot_0"}}, \
+        {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_0"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_0"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_0"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_0"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_0"}}, \
     {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_1"}}, \
-        {action: {type: "minecraft:copy_to_clipboard", slot_key: "uuid_slot_1"}}, \
+        {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_1"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_1"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_1"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_1"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_1"}}, \
     {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_2"}}, \
-        {action: {type: "minecraft:copy_to_clipboard", slot_key: "uuid_slot_2"}}, \
+        {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_2"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_2"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_2"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_2"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_2"}}, \
     {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_3"}}, \
-        {action: {type: "minecraft:copy_to_clipboard", slot_key: "uuid_slot_3"}}, \
+        {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_3"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_3"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_3"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_3"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_3"}},  \
     {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_4"}}, \
-        {action: {type: "minecraft:copy_to_clipboard", slot_key: "uuid_slot_4"}}, \
+        {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_4"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_4"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_4"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_4"}}, \

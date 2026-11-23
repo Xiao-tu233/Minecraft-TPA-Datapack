@@ -396,7 +396,7 @@ update_step5_rightpart: ' 不明なスコア項目が表示された場合はス
 update_nextstep: §b[次へ]
 users_name_hoverevent: "§bクリックしてプレイヤー名をコピー"
 users_button_copy_uuid: "§eUUIDをコピー"
-users_button_copy_uuid_hoverevent: "§bクリックしてユーザーのUUIDを整数配列形式([I;x,x,x,x])でコピー"
+users_button_copy_uuid_hoverevent: "§bクリックしてユーザーのUUIDをコピーするメニューを開く"
 users_button_set_name: "§a名前を設定"
 users_button_set_name_hoverevent: "§bクリックしてこのユーザースロットのプレイヤー名編集メニューを開く"
 users_button_set_uuid: "§aUUIDを設定"
@@ -409,6 +409,7 @@ users_button_register_new: "§a新しいプレイヤーを事前登録"
 users_button_register_new_hoverevent: "§bクリックしてこの空きユーザースロットの新規プレイヤー事前登録メニューを開く"
 users_button_remove: "§c削除"
 users_button_remove_hoverevent: "§bクリックしてこのユーザースロットに対応するユーザーレコードを削除"
+users_chatbar_title: '------------ %s ------------'
 users_empty_slot: "空きスロット"
 users_empty_slot_hoverevent: "§bこれは空のユーザースロットです"
 warp_button_add: '§a新しいワープ§r'

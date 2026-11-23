@@ -13,8 +13,8 @@ data modify storage tpa:tpa temp.users.menu_action.brackets set from storage tpa
 data modify storage tpa:tpa temp.users.menu_action.space set value ""
 data modify storage tpa:tpa temp.users.menu_action.label set value ""
 data modify storage tpa:tpa temp.users.menu_action.tooltip set value ""
-data modify storage tpa:tpa temp.output.menu.actions[{action:{slot_key:"uuid_slot_2"}}] merge from storage tpa:tpa temp.users.menu_action
-data remove storage tpa:tpa temp.output.menu.actions[{action:{slot_key:"uuid_slot_2"}}].action
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command: "/function tpa:users/copy_uuid/slot_2"}}] merge from storage tpa:tpa temp.users.menu_action
+data remove storage tpa:tpa temp.output.menu.actions[{action:{command: "/function tpa:users/copy_uuid/slot_2"}}].action
 
 data remove storage tpa:tpa temp.users.menu_action
 data modify storage tpa:tpa temp.users.menu_action.brackets set from storage tpa:tpa temp.output_components.button_brackets.empty
@@ -45,5 +45,5 @@ data modify storage tpa:tpa temp.users.menu_action.brackets set from storage tpa
 data modify storage tpa:tpa temp.users.menu_action.space set value ""
 data modify storage tpa:tpa temp.users.menu_action.label set value ""
 data modify storage tpa:tpa temp.users.menu_action.tooltip set value ""
-data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/remove/slot_4"}}] merge from storage tpa:tpa temp.users.menu_action
-data remove storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/remove/slot_4"}}].action
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/remove/slot_2"}}] merge from storage tpa:tpa temp.users.menu_action
+data remove storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/remove/slot_2"}}].action

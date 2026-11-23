@@ -392,7 +392,7 @@ update_step5_rightpart: " 如果出现未知的记分项 请从第3步开始检�
 update_nextstep: "§b[下一步]"
 users_name_hoverevent: "§b点击复制用户游戏名"
 users_button_copy_uuid: "§e复制UUID"
-users_button_copy_uuid_hoverevent: "§b点击以整形数组格式([I;x,x,x,x])复制用户的通用唯一识别码(UUID)"
+users_button_copy_uuid_hoverevent: "§b点击进入用户通用唯一识别码(UUID)的复制菜单"
 users_button_set_name: "§a设置名字"
 users_button_set_name_hoverevent: "§b点击进入该用户槽位的玩家游戏名编辑菜单"
 users_button_set_uuid: "§a设置UUID"
