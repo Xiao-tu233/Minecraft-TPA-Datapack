@@ -21,12 +21,12 @@ data remove storage tpa:tpa temp.output.menu
 data modify storage tpa:tpa temp.output.menu set value {type: "minecraft:multi_action", exit_action: {label: {translate: "gui.done"}, width: 200}, body: {type: "minecraft:plain_message", contents: []}, title: [{color: aqua}, {text: " (", color: "white"}, {color: "white"}, {text: "/", color: "gray"}, {color: "white"}, {text: ")", color: "white"}], pause: false, after_action: "close", columns: 6}
 
 # Title
-data modify storage tpa:tpa temp.output.menu.title[0].text set from storage tpa:tpa loaded_lang.users_title
+data modify storage tpa:tpa temp.output.menu.title[0].text set from storage tpa:tpa loaded_lang.users_dialog_title
 execute store result storage tpa:tpa temp.output.menu.title[2].text int 1 run scoreboard players get #users.page.result tpa.variables
 data modify storage tpa:tpa temp.output.menu.title[2].text set string storage tpa:tpa temp.output.menu.title[2].text
 scoreboard players operation #users.total_users tpa.variables = #global_current tpa.uid
 scoreboard players remove #users.total_users tpa.variables 1
-scoreboard players operation #users.total_pages tpa.variables = #total_users tpa.variables
+scoreboard players operation #users.total_pages tpa.variables = #users.total_users tpa.variables
 scoreboard players remove #users.total_pages tpa.variables 1
 scoreboard players operation #users.total_pages tpa.variables /= #5 tpa.variables
 scoreboard players add #users.total_pages tpa.variables 1
@@ -44,40 +44,45 @@ execute if score #users.page_empty tpa.variables matches 0 run function tpa:user
 execute if score #users.page_empty tpa.variables matches 1 run function tpa:users/menu/page_empty
 
 data modify storage tpa:tpa temp.output.menu.actions set value [\
-    {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_0"}}, \
+    {action: {type: "minecraft:copy_to_clipboard"}, slot_key: "name_slot_0"}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_0"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_0"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_0"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_0"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_0"}}, \
-    {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_1"}}, \
+    {action: {type: "minecraft:copy_to_clipboard"}, slot_key: "name_slot_1"}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_1"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_1"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_1"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_1"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_1"}}, \
-    {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_2"}}, \
+    {action: {type: "minecraft:copy_to_clipboard"}, slot_key: "name_slot_2"}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_2"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_2"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_2"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_2"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_2"}}, \
-    {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_3"}}, \
+    {action: {type: "minecraft:copy_to_clipboard"}, slot_key: "name_slot_3"}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_3"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_3"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_3"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_3"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_3"}},  \
-    {action: {type: "minecraft:copy_to_clipboard", slot_key: "name_slot_4"}}, \
+    {action: {type: "minecraft:copy_to_clipboard"}, slot_key: "name_slot_4"}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/copy_uuid/slot_4"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_name/slot_4"}}, \
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uuid/slot_4"}},\
         {action: {type: "minecraft:run_command", command: "/function tpa:users/set_uid/slot_4"}}, \
-        {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_4"}} \
+        {action: {type: "minecraft:run_command", command: "/function tpa:users/remove/slot_4"}}, \
+    {label: ""}, \
+    {action: {type: "minecraft:run_command", command: "/function tpa:users/page/previous"}, label: "", tooltip: ""}, \
+    {label: ""}, \
+    {label: ""}, \
+    {action: {type: "minecraft:run_command", command: "/function tpa:users/page/next"}, label: "", tooltip: "", chatbar_label: ""}, \
+    {label: ""} \
     ]
 data modify storage tpa:tpa temp.output.menu.actions[].width set value 100
 
-# actions[{slot_key:"name_slot_*"}][{color: "gold"}], actions[{slot_key:"name_slot_*"}][1]
 data modify storage tpa:tpa temp.users.menu_name_slot_template set value [{color: "gold"}, " §8: ", {color: "aqua"}]
 data modify storage tpa:tpa temp.users.menu_empty_slot_template set value [{color: "white"}, " §8: ", {text: "(", color: "gray"}, {text: "", color: "gray"}, {text: ")", color: "gray"}]
 
@@ -91,4 +96,18 @@ execute unless data storage tpa:tpa temp.users.menu_user_entries[3].missing run 
 execute if data storage tpa:tpa temp.users.menu_user_entries[3].missing run function tpa:users/menu/slot_missing/slot_3
 execute unless data storage tpa:tpa temp.users.menu_user_entries[4].missing run function tpa:users/menu/slot_exists/slot_4
 execute if data storage tpa:tpa temp.users.menu_user_entries[4].missing run function tpa:users/menu/slot_missing/slot_4
+
+# Page controls occupy the final row. Disable navigation at the page boundaries.
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/previous"}}].brackets set from storage tpa:tpa temp.output_components.button_brackets.edit
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/previous"}}].label set from storage tpa:tpa loaded_lang.home_selector_button_previous_page
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/previous"}}].chatbar_label set from storage tpa:tpa loaded_lang.home_selector_button_previous_page
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/previous"}}].tooltip set from storage tpa:tpa loaded_lang.home_selector_button_previous_page_hoverevent
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/next"}}].brackets set from storage tpa:tpa temp.output_components.button_brackets.edit
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/next"}}].label set from storage tpa:tpa loaded_lang.home_selector_button_next_page
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/next"}}].chatbar_label set from storage tpa:tpa loaded_lang.home_selector_button_next_page
+data modify storage tpa:tpa temp.output.menu.actions[{action:{command:"/function tpa:users/page/next"}}].tooltip set from storage tpa:tpa loaded_lang.home_selector_button_next_page_hoverevent
+execute if score #users.page.result tpa.variables matches ..1 run function tpa:users/menu/previous_page_notexist
+execute if score #users.page.result tpa.variables >= #users.total_pages tpa.variables run function tpa:users/menu/next_page_notexist
+
 function tpa:output/menu
+ 

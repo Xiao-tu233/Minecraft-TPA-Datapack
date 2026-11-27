@@ -6,7 +6,7 @@ data modify storage tpa:tpa temp.users.menu_action.label[0].text set string stor
 data modify storage tpa:tpa temp.users.menu_action.label[2].text set from storage tpa:tpa temp.users.menu_user_entries[1].name
 data modify storage tpa:tpa temp.users.menu_action.action.value set from storage tpa:tpa temp.users.menu_user_entries[1].name
 data modify storage tpa:tpa temp.users.menu_action.tooltip set from storage tpa:tpa loaded_lang.users_name_hoverevent
-data modify storage tpa:tpa temp.output.menu.actions[{action:{slot_key:"name_slot_1"}}] merge from storage tpa:tpa temp.users.menu_action
+data modify storage tpa:tpa temp.output.menu.actions[{slot_key:"name_slot_1"}] merge from storage tpa:tpa temp.users.menu_action
 
 data remove storage tpa:tpa temp.users.menu_action
 data modify storage tpa:tpa temp.users.menu_action.brackets set from storage tpa:tpa temp.output_components.button_brackets.edit

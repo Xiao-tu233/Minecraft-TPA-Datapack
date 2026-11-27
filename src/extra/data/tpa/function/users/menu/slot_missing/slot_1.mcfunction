@@ -4,10 +4,9 @@ data remove storage tpa:tpa temp.users.menu_action
 data modify storage tpa:tpa temp.users.menu_action.label set from storage tpa:tpa temp.users.menu_empty_slot_template
 data modify storage tpa:tpa temp.users.menu_action.label[0].text set string storage tpa:tpa temp.users.menu_user_entries[1].uid
 data modify storage tpa:tpa temp.users.menu_action.label[{text: "", color:"gray"}].text set from storage tpa:tpa loaded_lang.users_empty_slot
-data modify storage tpa:tpa temp.users.menu_action.tooltip set from storage tpa:tpa loaded_lang.users_name_hoverevent
-data modify storage tpa:tpa temp.output.menu.actions[{action:{slot_key:"name_slot_1"}}] merge from storage tpa:tpa temp.users.menu_action
-data remove storage tpa:tpa temp.output.menu.actions[{action:{slot_key:"name_slot_1"}}].action.type
-
+data modify storage tpa:tpa temp.users.menu_action.tooltip set from storage tpa:tpa loaded_lang.users_empty_slot_hoverevent
+data modify storage tpa:tpa temp.output.menu.actions[{slot_key:"name_slot_1"}] merge from storage tpa:tpa temp.users.menu_action
+data remove storage tpa:tpa temp.output.menu.actions[{slot_key:"name_slot_1"}].action
 data remove storage tpa:tpa temp.users.menu_action
 data modify storage tpa:tpa temp.users.menu_action.brackets set from storage tpa:tpa temp.output_components.button_brackets.empty
 data modify storage tpa:tpa temp.users.menu_action.space set value ""
